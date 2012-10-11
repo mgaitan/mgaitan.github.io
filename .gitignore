@@ -1,5 +1,9 @@
 *.py[co]
 
+#nikola
+cache
+.doit*
+
 # Packages
 *.egg
 *.egg-info
