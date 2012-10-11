@@ -183,7 +183,7 @@ INDEXES_TITLE = ""  # If this is empty, the default is BLOG_TITLE
 INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' translated
 
 # Name of the theme to use. Themes are located in themes/theme_name
-THEME = 'site'
+THEME = 'custom'
 
 # Show only teasers in the index pages? Defaults to False.
 # INDEX_TEASERS = False
