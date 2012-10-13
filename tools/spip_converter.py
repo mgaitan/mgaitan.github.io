@@ -163,7 +163,7 @@ def write_meta(title, slug, date, tags=[]):
 def retrieve_articles():
     pq = PyQuery(HTML_PLAN)
     urls = pq('li a')
-    for url in urls[:1]:
+    for url in urls[33:34]:
         abs_url = SITE + url.attrib['href']
         slug = url.attrib['href'].replace('blog/article/', '')
 
@@ -175,10 +175,31 @@ def retrieve_articles():
 
             write_meta(title, slug, date, tags)
 
-            body = page('div.body')
 
-            import ipdb;ipdb.set_trace()
-            html_file.write(content.html())
+            # cleanup html
+            page('*').removeClass('spip spip_out')
+            page('*[class=""]').removeAttr('class')
+
+            # unwrap .spip_code code
+            for code in page('.spip_code code'):
+                code_tag = page(code)
+                code_content = code_tag.html().replace('<br /', '\n').replace('>&#13;', '')
+                code_tag.parent('.spip_code').replaceWith(u'<pre>%s</pre>' % code_content)
+
+            # unwrap .cadre
+            for code in page('textarea.spip_cadre'):
+                code_tag = page(code)
+                code_content = code_tag.text()
+                code_tag.parents('form').replaceWith(u'<pre>%s</pre>' % code_content)
+
+            # download and unwrap images
+            for img in page('dl dt img'):
+                img_tag = page(img)
+                # TODO !!
+
+            body = page('div.body').children()
+
+            html_file.write(body.html())
 
 
 
