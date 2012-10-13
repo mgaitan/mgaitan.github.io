@@ -1,8 +1,6 @@
-body { margin-top: 50px;}
-
 #container {
     width: 960px;
-    margin: 50 auto;
+    margin: 0 auto;
 }
 
 #contentcolumn {
@@ -17,11 +15,12 @@ img {
 }
 
 .postbox {
-    border-bottom: 2px solid darkgrey; 
+    border-bottom: 2px solid darkgrey;
     margin-bottom: 12px;
 }
 
-.footerbox {padding: 15px; text-align: center; margin-bottom: 15px;}
+.titlebox {
+    text-align: right;
+}
 
-#addthisbox {top: 180px; left:10px;}
-
+#addthisbox {margin-bottom: 12px;}
