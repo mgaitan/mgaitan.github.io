@@ -8,10 +8,10 @@ import os
 
 # Data about this site
 BLOG_AUTHOR = u'Martín Gaitán'
-BLOG_TITLE = "tin_nqn's blog "
+BLOG_TITLE = "El blog de tin_nqn"
 BLOG_URL = "http://mgaitan.github.com"
 BLOG_EMAIL = "gaitan@gmail.com"
-BLOG_DESCRIPTION = u'Un blog es un sitio web con artículos ordenados cronológicamente'
+BLOG_DESCRIPTION = u'>>> self.geek_side.post()'
 
 # post_pages contains (wildcard, destination, template, use_in_feed) tuples.
 #
@@ -35,8 +35,8 @@ BLOG_DESCRIPTION = u'Un blog es un sitio web con artículos ordenados cronológi
 #
 
 post_pages = (
-    ("posts/*.txt", "posts", "post.tmpl", True),
-    ("stories/*.txt", "stories", "story.tmpl", False),
+    ("posts/*.rst", "posts", "post.tmpl", True),
+    ("stories/*.rst", "stories", "story.tmpl", False),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -183,7 +183,7 @@ INDEXES_TITLE = ""  # If this is empty, the default is BLOG_TITLE
 INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' translated
 
 # Name of the theme to use. Themes are located in themes/theme_name
-THEME = 'site'
+THEME = 'custom'
 
 # Show only teasers in the index pages? Defaults to False.
 # INDEX_TEASERS = False
