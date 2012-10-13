@@ -185,6 +185,7 @@ INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' trans
 # Name of the theme to use. Themes are located in themes/theme_name
 THEME = 'custom'
 
+USE_BUNDLES = False
 # Show only teasers in the index pages? Defaults to False.
 # INDEX_TEASERS = False
 
