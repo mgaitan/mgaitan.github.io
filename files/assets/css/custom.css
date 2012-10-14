@@ -5,6 +5,7 @@
     line-height: 50px;
     padding-left: 2px;
     text-transform: lowercase;
+    background-color: transparent;
 }
 
 .inline li {

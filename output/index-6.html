@@ -26,6 +26,49 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/c-automatico.html">© automático</a>
+        <small>  
+             <span class="timeago" title="2009-03-07 17:28:08">2009-03-07 17:28:08</span>
+        </small></h1>
+        <div><p>Más por costumbre que utilidad solemos poner la antigüedad de un sitio
+web al pie de página, asociado al símbolo ©, o (cc) si usamos <a class="reference external" href="http://es.wikipedia.org/wiki/Creative_Commons">Creative
+Commons</a>.</p>
+<p>En el 2007 hicimos el sitio, y en este 2009 todavía muestra.</p>
+<blockquote>
+© 2007</blockquote>
+<p>¡Muy feo! Aunque no hayamos actualizado el sitio desde entonces, nuestro
+deber, como buenos mentirosos, es lograr que el visitante no se entere.</p>
+<p>Así que podemos hacer que el año, o el período <strong>Año inicio - Año
+actual</strong> se actualice automáticamente.</p>
+<p>Muy simple:</p>
+<pre class="literal-block">
+©
+
+   #SET{year, #DATE|annee} #GET{year}
+
+[(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]
+</pre>
+<div class="section" id="explicacion">
+<h2>Explicación</h2>
+<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Por convención, asumimos que el año de inicio del sitio es el año
+del primer artículo publicado, lo cual a mi me suena bastante lógico.
+<img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un bucle recupera esta información, la muestra y a la vez la
+guarda en una variable spip <tt class="docutils literal">#SET{year, #DATE|annee}</tt>.
+<img alt="image2" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Fuera del bucle comparamos el año ya mostrado con el actual,
+obtenida de la baliza #DATE sin contexto. Si son iguales, no se muestra
+nada más (para que no quede algo como © 2009 - 2009, que quedaría bien
+feo). Pero si son distintos, se muestra el año actual</p>
+<p>El resultado, será</p>
+<blockquote>
+© 2007 - 2009</blockquote>
+</div></div>
+        <p>
+        
+            <a href="posts/c-automatico.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/suscribirse-a-los-comentarios-por.html">Suscribirse a los comentarios por RSS</a>
         <small>  
              <span class="timeago" title="2009-02-27 21:04:48">2009-02-27 21:04:48</span>
@@ -633,29 +676,15 @@ GPL</a></p>
         
         </p></div>
     
-        <div class="postbox">
-        <h1><a href="posts/SPIP-el-Gestor-de-Contenidos.html">SPIP, el Gestor de Contenidos</a>
-        <small>  
-             <span class="timeago" title="2004-09-02 18:03:46">2004-09-02 18:03:46</span>
-        </small></h1>
-        <p><a class="reference external" href="http://www.spip.net/es">SPIP</a> (Sistema de Publicación para una
-Internet Participativa, de sus siglas en francés) es un software libre
-(GPL) en PHP y MySql con la estructura ideal para desarrollar sitios
-tipo revista en línea, pero también potencia y sencillez sufiente para
-lograr cualquier objetivo. Spip se comoporta como un espacio donde un
-grupo de colaboradores escribe textos de contenido y los/as lectores/as
-pueden comentarlos.</p>
-        <p>
-        
-            <a href="posts/SPIP-el-Gestor-de-Contenidos.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
     <div>
 <ul class="pager"><li class="previous">
         <a href="index-5.html">← Posts posteriores</a>
     </li>
   
+  
+    <li class="next">
+        <a href="index-7.html">Posts anteriores  →</a>
+    </li>
   
 </ul></div>
     
