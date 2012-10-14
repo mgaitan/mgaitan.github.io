@@ -9,6 +9,7 @@ from pyquery import PyQuery
 
 SITE = 'http://nqnwebs.com/'
 TARGET_SITE = 'http://mgaitan.github.com/'
+INPUT_PATH = os.path.join(os.path.dirname(__file__), 'input')
 POST_PATH = os.path.join(os.path.dirname(__file__), 'posts')
 IMG_PATH = os.path.join(os.path.dirname(__file__), 'images')
 DOWNLOADS_PATH = os.path.join(os.path.dirname(__file__), 'downloads')
@@ -181,10 +182,9 @@ def retrieve_file(relative_url):
 
 
 def retrieve_article(relative_url):
-
-    slug = relative_url.replace('blog/article/', '')
+    slug = os.path.basename(relative_url)
     abs_url = SITE + relative_url
-    html_path = os.path.join(POST_PATH, slug + '.html')
+    html_path = os.path.join(INPUT_PATH, slug + '.html')
     rst_path = os.path.join(POST_PATH, slug + '.rst')
     print 'Migrating %s to %s...' % (abs_url, rst_path)
     with codecs.open(html_path, 'w', 'utf-8') as html_file:
@@ -256,7 +256,7 @@ def migrate_all():
     urls = pq('li a')
     disqus_file = open('disqus.csv', 'w')
     disqus = csv.writer(disqus_file)
-    for url in urls[3:4]:
+    for url in urls[:10]:
         relative_url = url.attrib['href']
         row = retrieve_article(relative_url)
         disqus.writerow(row)
