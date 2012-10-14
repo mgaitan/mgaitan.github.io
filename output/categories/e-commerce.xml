@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>tin_nqn (E-Commerce)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:24:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Integración de DineroMail en SimpleCart (js)</title><link>/posts/integracion-de-dineromail-en.html</link><description>&lt;p&gt;Continuando con el &lt;a class="reference external" href="/posts/blog/article/simplecart-js-para-spip"&gt;art&amp;#237;culo
+anterior&lt;/a&gt; hay tener en cuenta
+que cuando decimos "sistema de e-commerce &lt;strong&gt;simple&lt;/strong&gt;" implica que tiene
+que ser simple tambi&amp;#233;n para el comprador.&lt;/p&gt;
+&lt;p&gt;En Argentina (y varios otros paises de latinoam&amp;#233;rica) PayPal o
+GoogleCheckout no son de uso masivo, porque el e-commerce no es una
+pr&amp;#225;ctica com&amp;#250;n y desde nuestro pa&amp;#237;s es realmente imposible "poner" plata
+en una cuenta de esas &amp;#8212; salvo que sea un pago efectuado desde el
+extranjero &amp;#8212; , y es bastante engorroso sacarla. Adem&amp;#225;s, quizas lo m&amp;#225;s
+importante, no aceptan pagos la mayor&amp;#237;a de las monedas locales
+latinoamericanas.&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/images/dineromail_pagos.jpg"&gt;|image1|&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Por eso he integrado a &lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart (js)&lt;/a&gt; el
+sistema de pagos virtuales &lt;a class="reference external" href="http://dineromail.com/"&gt;Dineromail.com&lt;/a&gt;
+que es similar a los otros pero orientado al mercado latinoamericano. Se
+puede utilizar desde Argentina, Brasil, Chile, M&amp;#233;xico y (al parecer)
+pr&amp;#243;ximamente Colombia, pagando en moneda local de cada pa&amp;#237;s o en
+d&amp;#243;lares.&lt;/p&gt;
+&lt;p&gt;La implementaci&amp;#243;n est&amp;#225; integrada al c&amp;#243;digo original en javascript, no
+sobre SPIP, por lo que puede ser &amp;#250;til para usarlo independientemente o
+integrarlo con otro CMS.&lt;/p&gt;
+&lt;p&gt;El c&amp;#243;digo est&amp;#225; &lt;a class="reference external" href="http://github.com/nqnwebs/simplecart-js"&gt;disponible en
+GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="instalacion-rapida"&gt;
+&lt;h2&gt;Instalaci&amp;#243;n r&amp;#225;pida&lt;/h2&gt;
+&lt;p&gt;Obviamente, se incluye el c&amp;#243;digo javascript en la cabecera de la p&amp;#225;gina
+HTML.&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 40)&lt;/p&gt;
+Literal block expected; none found.&lt;/div&gt;
+&lt;p&gt;y se definen, al menos, las variables requeridas:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;/root&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;&amp;#161;Listo! Al hacer Checkout, el contenido del carrito ser&amp;#225; enviado a
+DineroMail para procesar el pago.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="otros-parametros"&gt;
+&lt;h2&gt;Otros par&amp;#225;metros&lt;/h2&gt;
+&lt;p&gt;El carrito de DineroMail tiene much&amp;#237;simos par&amp;#225;metros opcionales que en
+su mayor&amp;#237;a he omitido. Mir&amp;#225; el &lt;a class="reference external" href="https://ar.dineromail.com/content/Integraci%C3%B3n-AR.pdf"&gt;manual de
+integraci&amp;#243;n&lt;/a&gt;
+para conocer la API completa. Sin embargo, algunas variables opcionales
+las tuve en cuenta. Ac&amp;#225; listo todas las implementadas:&lt;/p&gt;
+&lt;p&gt;Variable JS
+Descripci&amp;#243;n
+dmMerchantId
+N&amp;#250;mero de cuenta de DineroMail (los primeros 7 digitos sin el d&amp;#237;gito
+verificador /X). &lt;strong&gt;(requerido)&lt;/strong&gt;
+dmCountryId
+C&amp;#243;digo de pa&amp;#237;s del vendedor. 1: Argentina, 2: Brasil, 3: Chile, 4:
+M&amp;#233;xico. &lt;strong&gt;(1 por defecto)&lt;/strong&gt;
+dmSellerName
+Leyenda que el vendedor quiere mostrar en lugar de su email.
+dmHeaderImage
+URL de la imagen a mostrar en el Header
+dmCurrency
+Moneda de pago. Puede ser &lt;strong&gt;USD&lt;/strong&gt; (dolares) . Si no se define, se usar
+la &lt;strong&gt;moneda local&lt;/strong&gt; del pa&amp;#237;s del vendedor.
+dmOkUrl
+URL donde se re direcciona al comprador en caso de transacci&amp;#243;n exitosa
+dmErrorUrl
+URL donde se re direcciona al comprador en caso de transacci&amp;#243;n err&amp;#243;nea
+dmPendingUrl
+URL donde se re direcciona al comprador en caso de transacci&amp;#243;n
+pendiente.
+dmPaymentMethods
+Cadena de medios de pago permitidos. Por defecto elige todos los medios
+disponibles para el pa&amp;#237;s, pero se puede configurar espec&amp;#237;ficamente. Por
+ejemplo para permitir Pago F&amp;#225;cil, R&amp;#225;pipago y Visa en 1, 3 y 6 cuotas:
+&lt;tt class="docutils literal"&gt;ar_dm;ar_pagofacil;ar_rapipago;ar_visa,1,3,6&lt;/tt&gt;
+&lt;strong&gt;Nota:&lt;/strong&gt; Todas las variables son atributos del objeto &lt;tt class="docutils literal"&gt;simpleCart&lt;/tt&gt;,
+por ejemplo &lt;tt class="docutils literal"&gt;simpleCart.dmSellerName = "Vendedor Loco";&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Adem&amp;#225;s se puede asignar un c&amp;#243;digo de producto al item.&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 92)&lt;/p&gt;
+Literal block expected; none found.&lt;/div&gt;
+&lt;p&gt;El valor &amp;#8217;X18A&amp;#8217; se env&amp;#237;a a DineroMail para futuros controles del
+vendedor.&lt;/p&gt;
+&lt;p&gt;Es todo por ahora. &amp;#161;A vender!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="actualizacion"&gt;
+&lt;h2&gt;Actualizaci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;Agregu&amp;#233; unos selectores asociados al evento "click" para permitir
+cambiar din&amp;#225;micamente el m&amp;#233;todo de pago, de manera de darle m&amp;#225;s libertad
+al comprador.&lt;/p&gt;
+&lt;p&gt;Basta con declarar un elemento que acepte el evento &lt;a href="/posts/integracion-de-dineromail-en.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;``&lt;/span&gt;&lt;/a&gt;onclick `` y
+asociarlo a alguna de estas clases&lt;/p&gt;
+&lt;div class="system-message" id="id1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 104); &lt;em&gt;&lt;a href="/posts/integracion-de-dineromail-en.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;p&gt;class
+descripci&amp;#243;n
+simpleCart_to_paypal
+Activa PayPal como medio de pago
+simpleCart_to_googlecheckout
+Activa Google Checkout como medio de pago
+simpleCart_to_dineromail
+Activa Google Checkout como medio de pago
+Un ejemplo de uso podr&amp;#237;a ser:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Elija su m&amp;#233;todo de pago
+&lt;/pre&gt;
+&lt;/div&gt;</description><guid>/posts/integracion-de-dineromail-en.html</guid><pubDate>Tue, 14 Sep 2010 17:31:00 GMT</pubDate></item><item><title>SimpleCart(js) para SPIP</title><link>/posts/simplecart-js-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
+muy sencillo &amp;#237;ntegramente desarrollado en javascript. Permite realizar
+ventas mediante PayPal o Google Checkout y es muy extensible para
+implementar otros sistemas.&lt;/p&gt;
+&lt;p&gt;En este domingo de procrastinaci&amp;#243;n, decid&amp;#237; integrarlo a SPIP
+[&lt;a class="reference external" href="/blog/article/simplecart-js-para-spip#nb1"&gt;1&lt;/a&gt;]. Lo usar&amp;#233;, espero que
+pronto, para vender los productos del &lt;a class="reference external" href="http://www.agrupacionmazamorra.org.ar/taller-de-serigrafia-30"&gt;taller de ser&amp;#237;graf&amp;#237;a de
+Mazamorra&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="como-funciona"&gt;
+&lt;h2&gt;C&amp;#243;mo funciona&lt;/h2&gt;
+&lt;p&gt;Se instala como un plugin com&amp;#250;n y se configura mediante el plugin CFG.
+Por ahora s&amp;#243;lo soporta PayPal como medio de pago, pero incluir&amp;#233; otros.&lt;/p&gt;
+&lt;p&gt;SimpleCart usa simples se&amp;#241;aladores html, que yo he convertido en
+balizas.&lt;/p&gt;
+&lt;p&gt;Baliza
+Descripci&amp;#243;n
+#SIMPLECART_QUANTITY
+Indica la cantidad de productos
+#SIMPLECART_ITEMS
+Muestra los items en el carrito seg&amp;#250;n las cabeceras definidas en la
+p&amp;#225;gina de configuraci&amp;#243;n
+#SIMPLECART_TAX_RATE
+Indica la tasa impositiva indicada en la configuraci&amp;#243;n
+#SIMPLECART_TAX_COST
+Indica el total de impuestos
+#SIMPLECART_SHIPPING_COST
+Indica el costo de env&amp;#237;o en funci&amp;#243;n de la configuraci&amp;#243;n definida
+#SIMPLECART_TOTAL
+La suma del precio de los productos en el carrito (Subtotal)
+#SIMPLECART_FINAL_TOTAL
+Total considerando impuestos y env&amp;#237;o
+#SIMPLECART_CHECKOUT
+Genera el bot&amp;#243;n para finalizar compra (redirige al sistema de pago)
+#SIMPLECART_EMPTY
+Genera el bot&amp;#243;n para vaciar el carrito
+Con estas balizas puedes armar el carrito en cualquier lado. Los datos
+del carritos son persistentes usando cookies (incluso se conservan
+durante un tiempo aunque se abandone la p&amp;#225;gina).&lt;/p&gt;
+&lt;p&gt;Por ejemplo, este puede ser tu carrito .&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;:simplecart:your_cart:&amp;gt; (#SIMPLECART_QUANTITY items)
+
+#SIMPLECART_ITEMS
+
+
+&amp;lt;:simplecart:subtotal:&amp;gt;: #SIMPLECART_TOTAL&amp;lt;:simplecart:tax_cost:&amp;gt; (#SIMPLECART_TAX_RATE): #SIMPLECART_TAX_COST &amp;lt;:simplecart:shipping_cost:&amp;gt;:  #SIMPLECART_SHIPPING_COST &amp;lt;:simplecart:final_total:&amp;gt;: #SIMPLECART_FINAL_TOTAL
+
+#SIMPLECART_CHECKOUT
+#SIMPLECART_EMPTY
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="como-agregar-productos"&gt;
+&lt;h2&gt;C&amp;#243;mo agregar productos&lt;/h2&gt;
+&lt;p&gt;Muy simple. Se sube una im&amp;#225;gen como documento definiendo su t&amp;#237;tulo y
+descripci&amp;#243;n y se la incrusta con el modelo &lt;em&gt;item&lt;/em&gt;. El precio se indica
+con el par&amp;#225;metro &lt;em&gt;price&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, el documento 111 se vuelve un item si se lo incluye as&amp;#237;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&amp;lt;item111|price=23.4&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="un-atajo-mas"&gt;
+&lt;h2&gt;Un atajo m&amp;#225;s&lt;/h2&gt;
+&lt;p&gt;El c&amp;#243;digo para el carrito de arriba lo inclu&amp;#237; como un modelo para poder
+incrustarlo directamente desde la redacci&amp;#243;n de un art&amp;#237;culo con
+&lt;a href="/posts/simplecart-js-para-spip.html#id2"&gt;&lt;span class="problematic" id="id3"&gt;``&lt;/span&gt;&lt;/a&gt;&amp;lt;cart1&amp;gt; &lt;a href="/posts/simplecart-js-para-spip.html#id4"&gt;&lt;span class="problematic" id="id5"&gt;``&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="system-message" id="id2"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 73); &lt;em&gt;&lt;a href="/posts/simplecart-js-para-spip.html#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;div class="system-message" id="id4"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 73); &lt;em&gt;&lt;a href="/posts/simplecart-js-para-spip.html#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="demostracion"&gt;
+&lt;h2&gt;Demostraci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;Si alguien completa la transacci&amp;#243;n, lo interpretar&amp;#233; como una donaci&amp;#243;n
+:D.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="descarga"&gt;
+&lt;h2&gt;Descarga&lt;/h2&gt;
+&lt;p&gt;El plugin est&amp;#225; en desarrollo sobre
+&lt;a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart"&gt;spip-zone&lt;/a&gt;.
+Pod&amp;#233;s hacer un ckeckout SVN&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/simplecart-js-para-spip.html</guid><pubDate>Sun, 12 Sep 2010 13:34:44 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Posts sobre Metodologías ágiles | tin_nqn"><meta name="description" content="&gt;&gt;&gt; self.geek_side.post()"><meta name="author" content="Martín Gaitán"><title>Posts sobre Metodologías ágiles | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag Metodologías ágiles (es)" href="metodologias-agiles.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    
+        <div class="postbox">
+        <h1><a href="../posts/compartiendo-documentacion-de.html">Compartiendo documentación de paquetes Python</a>
+        <small>  
+             <span class="timeago" title="2011-04-10 19:16:38">2011-04-10 19:16:38</span>
+        </small></h1>
+        <div><p>Sabido es, aunque muchas veces se ignora, que un software sin
+documentación está incompleto
+[<a class="reference external" href="../blog/article/compartiendo-documentacion-de#nb1">1</a>].</p>
+<p>Si bien el manifiesto ágil
+<a class="reference external" href="http://agilemanifesto.org/iso/es/">proclama</a> <em>"Software funcionando
+sobre documentación extensiva"</em>, yo subrayaría extensiva como eufemismo
+de documentación burocrática e inútil (opiné de esto
+<a class="reference external" href="../posts/blog/article/veinteanero">acá</a>) que evidentemente no es la que hace
+falta. Pero la documentación (sobre todo la buena) es indispensable y
+para <a class="reference external" href="http://jacobian.org/writing/great-documentation/">algunos</a>, la
+parte que más los enorgullece del proyecto (y con razón).</p>
+<p>Desde el punto de vista técnico, escribir documentación (no <a class="reference external" href="http://sphinx.pocoo.org/examples.html">sólo para
+Python</a>!) es bastante fácil con
+<a class="reference external" href="http://docutils.sourceforge.net/rst.html">restructuredText</a> (qué feo
+el sitio de docutils, che!) que es <a class="reference external" href="http://www.python.org/dev/peps/pep-0287/">el markup estándar de los
+pythonistas</a>.</p>
+<p>Sobre este markup funciona <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>, el
+generador de documentación más utilizado (por lejos) en el ecosistema de
+Python. Es lo que usa la documentación de Python misma, la de Django y
+casi todo proyecto conocido o por conocer.</p>
+<p>Entonces usamos restructuredText, usamos Sphinx, pero para <a class="reference external" href="../posts/blog/article/la-sanguijuela-de-cuevana">nuestro
+proyectito de morondanga</a> que
+no tiene web propia ni nada, ¿dónde subimos la documentación generada?
+Veamos.</p>
+<div class="section" id="usando-readthedocs-org">
+<h2>Usando Readthedocs.org</h2>
+<p><a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/">Read the docs</a>
+es un sitio para hospedar documentación realizada con Sphinx. Sólo se
+necesita indicarle el repositorio público del proyecto (svn, git,
+mercurial, bazaar), subir los fuentes .rst y contenido estático
+(imágenes) aptos para Sphinx en una carpeta /doc o /docs y el sitio se
+encarga de bajar los fuentes de documentación y renderizarlos a HTML a
+través de Sphinx.</p>
+<p>Estrictamente, usando rtfd.org (como le dicen <a class="reference external" href="http://www.urbandictionary.com/define.php?term=RTFD&amp;defid=2281638">los
+amigos</a>)
+ni siquiera hace falta tener Sphinx instalado localmente.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 31); <em><a href="../posts/compartiendo-documentacion-de.html#id2">backlink</a></em></p>
+Duplicate explicit target name: "acá".</div>
+<p>Más aun, por defecto actualiza diariamente, pero se puede utilizar un
+"hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
+al repo, de manera de tener la documentación actualizada al instante.
+Para usuarios de GitHub la activación del "web hook" se explica
+<a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/webhooks.html#github">acá</a>
+. Para <a class="reference external" href="http://bitbucket.org">BitBucket.org</a> es parecido:</p>
+<ol class="arabic simple"><li>Vas a tu proyecto , click en Admin -&gt; Services</li>
+<li>Agregás el servicio "POST"</li>
+<li>Completás el campo de texto con la URL que te da ReadTheDocs en la
+página de descripción de tu proyecto (estándo logueado). Por ejemplo:</li>
+</ol><div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 60)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Y listo. Tu docu al instante.</p>
+<p>Como el sitio genera el html en vez de servir una versión generada
+previamente, la documentación que requiere introspección del código (
+todas las directivas `` .. auto* :: `` de Sphinx) este debe poder
+ejecutarse. Para eso el paquete debe ser instalable via <tt class="docutils literal">setup.py</tt> y
+hay marcar desde la página de configuración del proyecto en RTFD.org,
+que instale en un virtualenv.</p>
+<p>Para ver si hubo algún problema en la generación, podés fijarte en
+"build" donde te muestra el stdout y el stderr de la corrida de Sphinx.</p>
+</div>
+<div class="section" id="subir-la-docu-a-pypi">
+<h2>Subir la docu a PyPi</h2>
+<p>Una forma buenísima de compartir tu trabajo pythónico es a través del
+Python Package Index, <a class="reference external" href="http://pypi.python.org/pypi">pypi</a>, que es el
+índice que usan las herramientas <a class="reference external" href="http://www.pip-installer.org">pip</a> e
+easy_install. Si bien no necesarimente los paquetes deben estar
+hospedados allí (indicando en el setup.py la URL de descarga) es muy
+común y fácil hacerlo con el comando <tt class="docutils literal">upload</tt> del setup.py.</p>
+<p>Lo que muchos no
+<a class="reference external" href="http://packages.python.org/an_example_pypi_project/buildanduploadsphinx.html">saben</a>
+es que PyPi también ofrece <a class="reference external" href="http://packages.python.org/">hostear la
+documentación</a>. La forma canónica es ir a
+la página de administración de tu proyecto en PyPi y adjuntar un .zip
+con la documentación (que no necesariamente tiene que ser hecha con
+Sphinx)</p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 93)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Pero si usamos Sphinx hay una manera más fácil, manteniendosé en el
+"ecosistema" de desarrollo: usar esta <a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload/">extension de
+setuptools</a> que
+permite generar el html a través Sphinx y subirlo automáticamente. Se
+instala, obviamente, vía pypi:</p>
+<pre class="literal-block">
+$ easy_install sphinx-pypi-upload
+</pre>
+<p>Hay que condigurar un <tt class="docutils literal">setup.cfg</tt> (ubicado al nivel raiz, junto con
+<tt class="docutils literal">setup.py</tt>) indicandole dónde está la docu fuente y dónde el
+resultado. Más o menos así:</p>
+<pre class="literal-block">
+[build_sphinx]
+source-dir = doc/source
+build-dir  = doc/build
+all_files  = 1
+
+[upload_sphinx]
+upload-dir = doc/build/html
+</pre>
+<p>Luego se usa:</p>
+<pre class="literal-block">
+$ python setup.py build_sphinx
+$ python setup.py upload_sphinx
+</pre>
+<p>Y docu subida a la dire
+<em>`http://packages.python.org/tu-proyecto &lt;http://packages.python.org/tu-proyecto&gt;`_</em>
+. ¡<a class="reference external" href="http://packages.python.org/CuevanaLinks/">Charaaán</a>!</p>
+</div>
+<div class="section" id="usando-tu-repositorio-svn">
+<h2>Usando tu repositorio SVN</h2>
+<p>Si usas SVN y tu servidor lo permite, podés servir contenido estático
+(html y todo lo que produce y necesita Sphinx) directamente desde el
+repositorio.</p>
+<p>Para que el servidor Subversion muestre el html renderizado en vez del
+código (como texto plano) hay que indicarle el tipo <tt class="docutils literal">mime</tt> de cada
+archivo.</p>
+<pre class="literal-block">
+$ svn propset svn:mime-type 'text/html' FILENAME
+$ svn propset svn:mime-type 'image/jpeg' FILENAME
+</pre>
+<p>Para que esto se haga automático, se puede modificar el archivo de
+configuración <a href="../posts/compartiendo-documentacion-de.html#id3"><span class="problematic" id="id4">``</span></a>~/.subversion/config ``</p>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 144); <em><a href="../posts/compartiendo-documentacion-de.html#id4">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<pre class="literal-block">
+[miscellany]
+enable-auto-props = yes
+
+[auto-props]
+*.html = svn:mime-type=text/html
+*.css = svn:mime-type=text/css
+*.js = svn:mime-type=text/javascript
+*.png = svn:mime-type=image/png
+*.jpg = svn:mime-type=image/jpeg
+*.gif = svn:mime-type=image/gif
+</pre>
+<p>Un ejemplo de esto es el <a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">reporte de mi proyecto
+integrador</a>
+que está hospedado en Google Code</p>
+</div>
+<div class="section" id="aprovechandote-de-github">
+<h2>Aprovechándote de GitHub</h2>
+<p><a class="reference external" href="http://github.com">GitHub</a> hospeda <a class="reference external" href="http://pages.github.com/">páginas
+estáticas</a>, tanto del desarrollador/a como
+de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
+mas o menos automáticamente estas opciones que no he probado pero las
+dejo como referencia:</p>
+<p><img alt="-" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/">Hosting sphinx doc in
+github</a>
+de Luca Sbardella.
+<img alt="image1" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting">Usando
+github-tools</a>.</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/compartiendo-documentacion-de.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/la-academia-las-practicas-agiles-y.html">La academia, las prácticas ágiles y el UML</a>
+        <small>  
+             <span class="timeago" title="2011-04-06 06:21:23">2011-04-06 06:21:23</span>
+        </small></h1>
+        <div><p>La manera más fácil para aprobar una tesis de ingeniería es mentir.
+Llenar páginas y páginas, preferentemente con tablas y viñetas, de
+contenidos vacuos y tediosos que seguramente nadie, mucho menos los
+evaluadores, leerán. Sólo hay que prestar atención a que sean muchas
+páginas y lo más simétricas posibles.</p>
+<p>El ejemplo paradigmático de esto son las <a class="reference external" href="http://www.google.com/search?q=plantilla+caso+de+uso">especificaciones formales de
+casos de uso</a>,
+pasión de burócratas que tienen cabida donde no hace falta demostrar
+mucho.</p>
+<p>Pero también el UML, me atrevo a decir, en su mayor parte y nivel de
+detalle es secuaz de esta ignominia que pauperiza el nivel del software
+académico: en vez de saber programar y poder leer código, se presta
+atención a los dibujitos, poniendo el grito en el cielo si la flechita
+es negra en vez de blanca, como dice
+<a class="reference external" href="http://www.comp.lancs.ac.uk/computing/resources/IanS/">Sommerville</a>
+que debe ser.</p>
+<p>Como no me gusta mentir, la facilidad no me seduce de más (tampoco la
+dificultad) y estoy bastante conforme con <a class="reference external" href="http://code.google.com/p/gpec2010/">lo que
+hice</a> me animé a ser sensato en
+expresar cómo hice mi trabajo.</p>
+<p>No me encerré 6 meses a hacer dibujitos que resultarían perfectos,
+inescrutables y luego harían la programación trivial. Eso, al menos en
+mi experiencia, no existe (sospecho que ellos todos lo saben, lo que
+exacerba la hipocresía). Sí, en cambio, hice algunos dibujitos que me
+ayudaran a entender (y dar a entender) cómo iba la cosa, mientras iba
+programando y evaluando si estaba bien encaminado.</p>
+<p>Este espíritu es el que cobijan las <a class="reference external" href="http://agilemanifesto.org/iso/es/">prácticas
+ágiles</a>, que es el marco conceptual
+(metodológico) que adopté.</p>
+<p>La cuestión es que, para ganarle al <em>unknow how</em> de los hombres de
+corbata, hay que justificar con nombres que les suenen admirables. Hay
+que mencionar mucho IBM, Microsoft, C#, Intel. Esas son las voces que
+respetan, aunque sean pura
+<a class="reference external" href="http://es.wikipedia.org/wiki/Argumento_de_autoridad">falacia</a></p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L510xH603/anti-bullying-charity-school-tie-small-59832-3938a.jpg"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 45)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Yo justifiqué
+<a class="reference external" href="http://code.google.com/p/gpec2010/source/browse/trunk/docs/metodologia.rst?spec=svn232&amp;r=232#92">así</a>:</p>
+<blockquote>
+<p>Según afirma Terry Quatrani, evangelizadora de las metodologías
+ágiles de IBM, en <a class="reference external" href="http://agilescout.com/agile-modeling-and-uml/">The Truth About Agile
+Modeling</a> :</p>
+<blockquote>
+Aunque sigas un proceso ágil, estarás realizando cierto grado de
+modelado – sólo que no lo realizarás tanto como si utilizaras un
+proceso tradicional. La falta de formalidad en el modelado ágil
+no significa que no estás modelando, sino que te pones el foco
+en los beneficios de este sin las desventajas y confusiones de
+documentos extraños y burocráticos.</blockquote>
+<p>Por su parte, Robert Martin sostiene en <a class="reference external" href="http://stackoverflow.com/questions/61487/do-you-use-uml-in-agile-development-practices">*Agile Principles,
+Patterns, and Practices in
+C#*</a>
+que el modelado basado en UML en el desarrollo ágil es útil como
+instrumento de comunicación, pero su detalle no aporta valor
+significativo:</p>
+<blockquote>
+No gastes mucho tiempo en esta tarea, no necesitas tanto
+detalle. Los modelos y los planos son necesarios en la
+arquitectura y la construcción civil porque es caro construir
+una casa para demostrar que su diseño funciona. El software no
+es así – puedes validar tu idea con sólo codificarla, en igual
+tiempo que el que insume hacer un modelo UML que nada prueba por
+sí mismo.</blockquote>
+<p>Aun más escéptico, Alans Stevens, reconocido ingeniero en software
+[<a class="reference external" href="../blog/article/la-academia-las-practicas-agiles-y#nb1">1</a>] y
+conferencista, opina <a class="reference external" href="http://halanstevens.com/uml-sucks-really/">en un
+artículo</a>:</p>
+<blockquote>
+<p>No uso UML y noto que ninguno de mis colegas lo usa. Tengo
+sensaciones mezcladas acerca de su necesidad. Parece
+perfectamente razonable que debamos acordar como industria un
+conjunto de símbolos comunes para representar la programación
+orientada a objetos, pero UML tiene la típica apariencia de
+"diseñado por un comité".</p>
+<p>(...) El aspecto más crítico en un diseño inicial, en mi
+experiencia, es la interfaz entre la UI y el modelo de objetos.
+Lamentablemente UML no aborda este problema y en cambio parece
+obsesionado por las minucias en una parodia de distracción
+académica.</p>
+</blockquote>
+</blockquote></div>
+        <p>
+        
+            <a href="../posts/la-academia-las-practicas-agiles-y.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+    <div>
+<ul class="pager"></ul></div>
+    
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

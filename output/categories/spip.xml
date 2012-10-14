@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>tin_nqn (spip)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:24:12 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
+tratar de que se vea un poco m&amp;#225;s bonito. Como es un proceso iterativo,&lt;/p&gt;
+&lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
+&lt;div class="section" id="github-nikola"&gt;
+&lt;h2&gt;Github &amp;#9829; Nikola&lt;/h2&gt;
+&lt;p&gt;Este blog que est&amp;#225;s leyendo est&amp;#225; hospedado en &lt;a class="reference external" href="http://pages.github.com"&gt;Github Pages&lt;/a&gt; ,
+el servicio de hosting gratuito de contenido est&amp;#225;tico que ofrece Github.&lt;/p&gt;
+&lt;p&gt;A diferencia de cuando se usa Gh-pages para proyectos, donde se sirve
+el contenido del branch &lt;em&gt;gh-page&lt;/em&gt; del proyecto en cuesti&amp;#243;n,
+para usar gh-pages por usuario hay que crear
+un repo llamado &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt;.github.com (donde &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt; es el tuyo)
+y lo que sirve en &lt;a class="reference external" href="http:/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch &lt;em&gt;master&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Por este motivo cre&amp;#233; otro branch (que sin mucha imaginaci&amp;#243;n denomin&amp;#233;
+&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing"&gt;writing&lt;/a&gt; )
+donde tengo todo el mi "proyecto" hecho con Nikola&lt;/p&gt;
+&lt;p&gt;All&amp;#237; escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;El branch master es el de deploy, y sirve todo lo que haya en la carpeta
+&lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que a master,
+borrar todo y leer desde el &amp;#225;rbol del otro branch con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git checkout master
+git rm *
+git read-tree writing:output
+git commit -m 'deploying last build'
+git push
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="migrando-desde-spip"&gt;
+&lt;h2&gt;Migrando desde Spip&lt;/h2&gt;
+&lt;p&gt;Uno de los motivos que me llevaron a migrar desde &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt; es que el markup
+que usa es &lt;em&gt;ad hoc&lt;/em&gt; y muy feo. Algo as&amp;#237;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+{{{ Un intert&amp;#237;tulo }}}
+
+Esto es {{negrita}} y este [mi twitter-&amp;gt;http://twitter.com/tin_nqn_]
+&lt;/pre&gt;
+&lt;p&gt;Hasta ah&amp;#237; no se ve tan mal, pero es muy limitado cuando se trata de mostrar
+c&amp;#243;digo, necesario en todo blog mas o menos t&amp;#233;cnico.&lt;/p&gt;
+&lt;p&gt;Para migrar esquive la idea de convertir el markup de spip y opt&amp;#233; por un
+scrapping, limpieza y conversi&amp;#243;n a restructuredText usando el m&amp;#225;gico
+&lt;a class="reference external" href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;El script que hice est&amp;#225; &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;ac&amp;#225;&lt;/a&gt;
+. No es perfecto, pero est&amp;#225; lo importante: contenidos, im&amp;#225;genes, adjuntos,
+convertido a restructuredText bastante decente que mejorar&amp;#233; poco a poco
+a mano.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="estilos"&gt;
+&lt;h2&gt;Estilos&lt;/h2&gt;
+&lt;p&gt;Es mentira que a los &amp;#241;o&amp;#241;os no nos gustan las cosas (los blogs, entre otras )
+que se ven bonitos. Sucede, en realidad, que la mayor&amp;#237;a de las veces no
+venimos con &lt;em&gt;esa&lt;/em&gt; habilidad y el esfuerzo que nos implica intentarlo
+preferimos ponerlo en otra cosa. No gusta, pero no es lo m&amp;#225;s importante.&lt;/p&gt;
+&lt;p&gt;No obstante, yo quiero que este espacio sea lindo y legible. Y como hay
+muchos otros &amp;#241;o&amp;#241;os con sitios lindos y legibles que son tan amables de
+compartir sus estilos (y existe &lt;a class="reference external" href="http://twitter.github.com/bootstrap"&gt;bootstrap&lt;/a&gt;, claro) voy a ir intent&amp;#225;ndolo,
+incrementalmente.&lt;/p&gt;
+&lt;p&gt;Por ahora tom&amp;#233; ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id3" id="id1"&gt;[1]&lt;/a&gt; y de la documentaci&amp;#243;n
+de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id4" id="id2"&gt;[2]&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#191;C&amp;#243;mo se va viendo?&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><guid>/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
+&lt;p&gt;Este blog est&amp;#225; en pleno proceso de mudanza y metamorfosis. Antes estaba
+en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
+que explicar&amp;#233; m&amp;#225;s adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
+&lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
+&lt;p&gt;Espero que pronto esto est&amp;#233; m&amp;#225;s bonito y con contenido. Tambi&amp;#233;n que la
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir m&amp;#225;s.&lt;/p&gt;</description><guid>/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item></channel></rss>

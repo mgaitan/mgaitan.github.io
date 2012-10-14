@@ -1,0 +1,604 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Posts sobre SPIP | tin_nqn"><meta name="description" content="&gt;&gt;&gt; self.geek_side.post()"><meta name="author" content="Martín Gaitán"><title>Posts sobre SPIP | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag SPIP (es)" href="spip.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    
+        <div class="postbox">
+        <h1><a href="../posts/mostrar-u-ocultar-contenido-facil.html">Mostrar u ocultar contenido, fácil</a>
+        <small>  
+             <span class="timeago" title="2009-02-26 06:12:34">2009-02-26 06:12:34</span>
+        </small></h1>
+        <div><p>Adrian León consultó en la lista
+<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">spip-es</a>:</p>
+<blockquote>
+<p>Estoy intentado poner balizas de este tipo:</p>
+<p>#BOUTON_BLOCK</p>
+<p>#DEBUT_BLOCK</p>
+<p>Desde el editor del sitio privado en el texto de un artículo. No
+conozco la forma de que funcione desde ahí (sale escrito como texto
+en la página resultante. ¿Hay alguna manera de hacerlo?</p>
+</blockquote>
+<p>Estaba intentando, me enteré después, usar <a class="reference external" href="http://www.spip-contrib.net/Block-deplier-replier">este
+plugin</a></p>
+<p>Al otro día yo contesté:</p>
+<blockquote>
+<p>Hola Adrián. Desconocía de qué hablabas hasta que Marina mandó el
+link. Me parece que en el algunas ocasiones los plugins están
+opacando las soluciones más eficientes e ingeniosas, esas que
+buscabamos antes de que todo fuese "enchufable". <strong>¡Spip se está
+wordpressisando!</strong></p>
+<p>Lo que quiero decir es que me parece que hay formas mejores de hacer
+eso. Yo tengo <a class="reference external" href="http://www.lavozdelanzarote.com/Carlos-Espino-cree-que-los">un ejemplo para
+darte</a></p>
+<p>Andá al pie del artículo, y hacé click en Opinar: despliega (u
+oculta, depende del estado) el formulario de comentarios.</p>
+<p>Es, sin balizas ni plugins, lo que parece que hace esa contrib.</p>
+</blockquote>
+<p>Y el código es de risa: un pelín de jQuery (con su efecto
+<a class="reference external" href="http://docs.jquery.com/Effects/toggle">toggle()</a> )</p>
+<p>El <a class="reference external" href="http://www.lavozdelanzarote.com/squelettes/inc_article.html">esqueleto del ejemplo que
+propongo</a>
+es bien sencillo. El formulario aparece encerrado en una <tt class="docutils literal">div</tt> y
+escondido con la propiedad CSS <tt class="docutils literal">display:none</tt>. De manera simplificada
+[<a class="reference external" href="../blog/article/mostrar-u-ocultar-contenido-facil#nb1">1</a>] :</p>
+<pre class="literal-block">
+[(#FORMULAIRE_FORUM)]
+</pre>
+<p>Y el link que produce el efecto mostrar/ocultar (en este caso «opinar»
+)tiene este código.</p>
+<pre class="literal-block">
+Opinar
+</pre>
+<p>En perfecto argentino se diría: ¡una papa!</p>
+<p>Breve explicación: Al hacer click sobre el link, se ejecuta el evento
+Onclick, que mendiante jQuery (que ya se encuentra en todo sitio SPIP si
+existe la baliza #INSERT_HEAD en el <tt class="docutils literal">&lt;head&gt;</tt> de los esqueletos), se
+busca la el bloque con ID «form-comment» (o sea, el <tt class="docutils literal">div</tt> contenedor
+del formulario), y se aplica <tt class="docutils literal">toggle()</tt>, que es una funcion que si el
+bloque está oculto, lo muestra, y se está visible lo oculta. Simple y
+efectivo.</p>
+<div class="section" id="permitiendo-el-uso-desde-la-redaccion">
+<h2>Permitiendo el uso desde la redacción</h2>
+<p>Hasta aquí el reemplazo al plugin, que no da una solución completa a la
+consulta de Adrían, porque esta solución también está programado en los
+esqueletos del sitio. Pero, con simples modificaciones, se puede usar
+dentro del texto de los artículos.</p>
+<p>El truco es este: la balizas no se pueden usar en el texto, pero <strong>los
+modelos</strong> sí. Y como spip respeta el HTML, tenemos solución: generamo el
+link interruptor a través de <a class="reference external" href="http://www.spip.net/es_article3609.html">un
+modelo</a>
+[<a class="reference external" href="../blog/article/mostrar-u-ocultar-contenido-facil#nb2">2</a>].</p>
+<p>Creamos un modelo dentro de <em>modeles/toggle.html</em> (dentro de la carpeta
+de nuestros esqueletos) con el siguiente código:</p>
+<pre class="literal-block">
+#ENV{texto}
+</pre>
+<p>¡Y listo!</p>
+<p>Para usarlo, en el cuerpo del artículo se invocaría al modelo con dos
+parámetros: el identificador del contenedor, y el texto de link
+controlador.</p>
+<p>Donde se quiera mostrar el link escribimos:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 95)</p>
+Literal block expected; none found.</div>
+<p>y donde queramos que vaya el contenido oculto:</p>
+<pre class="literal-block">
+Hola amigos, esto es una astucia para el compañero Adrian!
+&lt;/div&gt;
+</pre>
+<p>Sólo hay que asegurarse de que el ID del contenedor sea el mismo que el
+parametro <em>div</em> que pasamos a nuestro modelo. Por supuesto, esto permite
+tener múltiples bloques ocultos y link controladores.</p>
+</div>
+<div class="section" id="el-resultado">
+<h2>El resultado</h2>
+<p><a class="reference external" href="../blog/article/mostrar-u-ocultar-contenido-facil#oculto">esto
+funciona?</a></p>
+<p>¡Hola amigos, esto es una astucia para el compañero Adrian!</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/mostrar-u-ocultar-contenido-facil.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/yahoo-pipes-como-por-un-tubo.html">Yahoo! Pipes como por un tubo</a>
+        <small>  
+             <span class="timeago" title="2009-02-23 20:23:40">2009-02-23 20:23:40</span>
+        </small></h1>
+        <div><p><a class="reference external" href="http://pipes.yahoo.com">Yahoo! Pipes</a> es una una herramienta web
+interactiva para agregar y manipular feeds RSS (y otras fuentes de
+datos) a nuestro antojo de forma sencilla y asequible para cualquiera.</p>
+<p>Es un entorno de programación visual online. La programación visual es
+común para los ingenieros
+(<a class="reference external" href="http://en.wikipedia.org/wiki/Simulink">Simulink</a> o
+<a class="reference external" href="http://es.wikipedia.org/wiki/LabVIEW">LabVIEW</a>) y también para los
+viejos gamers (el glorioso <a class="reference external" href="http://en.wikipedia.org/wiki/The_Incredible_Machine">The incredible
+Machine</a>.</p>
+<p>El concepto es simple: se conectan distintos módulos ("tubos", con una o
+más salidas y entradas) según las necesidades, y se va probando el
+resultado en una salida final.</p>
+<p>En Y! Pipes, luego de toda nuestra manipulación, el resultado es un feed
+personalizado que contiene únicamente lo que se quiera tener, por
+ejemplo el resultado de mezclar y flitrar dos o más fuentes de
+información.</p>
+<div class="section" id="aplicandolo-a-spip">
+<h2>Aplicandolo a SPIP</h2>
+<p>Frecuentemente queremos ofrecer un canal RSS que provea tanto las breves
+como los artículos. SPIP maneja estos objetos independientemente y es
+muy dificil hacer un esqueleto que los mezcle (hay que trabajar con
+pilas en PHP). Con Yahoo! Pipes es tan sencillo como mezclar los dos (o
+más) feeds.</p>
+<p>Esto lo hice en el sitio <a class="reference external" href="http://www.agrupacionmazamorra.com.ar">Agrupación
+Mazamorra</a>:</p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L510xH321/Pantallazo-90218.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 36)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>El resultado puede verse (y clonarse) <a class="reference external" href="http://pipes.yahoo.com/mazamorra/rss_todo">desde
+aquí</a></p>
+</div>
+<div class="section" id="mas-ejemplos">
+<h2>Más ejemplos</h2>
+<p>Pero mezclar feeds no es la única posibilidad. De hecho, Pipes es tan
+potente que permite obtener datos parseando un sitio web que no tenga un
+canal RSS o Atom disponible (pero eso es un uso muy avanzado y lo
+dejamos para otra oportunidad).</p>
+<p>Un caso que sí está al alcance de esta breve introducción es filtrar el
+contenido de un feed. Doy mi ejemplo en uso: me gusta leer a <a class="reference external" href="http://nqnwebs.com">Hernán
+Casciari</a> que además de su blog, escribe una
+columna en el diario argentino La Nación. Es un diario asquerosamente
+oligarca y de derecha (¿redundante?) así que prefieron no leer nada más
+que a este autor,</p>
+<p>Fácil: Busco el feed de la sección donde se publican sus columnas,
+filtro con la palabra clave ’Casciari’, y me libro de todo lo que no
+quiero. <a class="reference external" href="http://pipes.yahoo.com/mazamorra/casciari">Aquí el resultado</a></p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L465xH360/pipes2-4a406.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 61)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+</div>
+<div class="section" id="ejemplo-en-video">
+<h2>Ejemplo en video</h2>
+<p>Un screencast de <a class="reference external" href="http://obm.corcoles.net">otro blog más</a></p>
+<blockquote>
+Un cierto blog no ofrece los RSS filtrados por categorías. O por
+autores. O por ‘tags’. O queremos el RSS de un sitio, eliminando,
+por ejemplo, todas las entradas que hablen de petanca o del chucho
+del autor. Vamos, que nos gustaría filtrar el RSS de acuerdo con
+algún criterio propio. Para eso (y para bastantes más cosas, pero
+centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
+pequeño ’screencast’ que explica cómo recuperar las categorías (la
+de desarrollo web, en particular) que se ha cargado Feedburner…</blockquote>
+</div></div>
+        <p>
+        
+            <a href="../posts/yahoo-pipes-como-por-un-tubo.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/esqueletos-accion.html">Esqueletos Acción</a>
+        <small>  
+             <span class="timeago" title="2009-02-23 19:28:33">2009-02-23 19:28:33</span>
+        </small></h1>
+        <div><p>En septiembre de 2008 participé con un grupo de compañeros de facultad
+en el <a class="reference external" href="http://www.undec.edu.ar/Cacic2008/esp/index.html">Congreso Argentino de Ciencias de la
+Computación</a>
+realizado en la ciudad de Chilecito, La Rioja.</p>
+<p>Allí realicé un taller de 20 horas sobre <em>Accesibilidad para la web</em> a
+cargo de las licenciadas Ivana Harrari y Ana Paola Amadeo, docentes de
+la Universidad Nacional de La Plata.</p>
+<p>El taller fue de un nivel bastante bajo y con errores de implementación
+bastante groseros, partiendo de que parte del material de práctica
+estaba en formato Adobe Shockwave y todo el curso se centraba en
+software para Windows. Las docentes, de cualquier manera, fueron muy
+amables y abiertas a escuchar nuestras inquietudes.</p>
+<p>Por este motivo, con los dos compañeros que participamos de este taller,
+Lourdes Dorado y Agustín Martina, nos propusimos aprovecharlo todo lo
+que pudiésemos.</p>
+<p>Desde aquí se puede bajar los informes de los trabajos prácticos
+realizados:</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/Grupo10_Pract1.pdf">|image1|</a></td>
+</tr><tr><td>Workshop sobre Accesibilidad web TP Nº 1</td>
+</tr></tbody></table><table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/Grupo10_Pract2.pdf">|image3|</a></td>
+</tr><tr><td>Workshop sobre Accesibilidad web TP Nº 2</td>
+</tr></tbody></table><table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/Grupo10_Pract3.pdf">|image5|</a></td>
+</tr><tr><td>Workshop sobre Accesibilidad web TP Nº 3</td>
+</tr></tbody></table><p>Además, la consigna del trabajo final era evaluar las accesibilidad y
+usabilidad de un sitio web a elección, por ejemplo, el de la facultad de
+procedencia de cada grupo. Como el de <a class="reference external" href="http://efn.uncor.edu">nuestra
+facu</a> nos avergüenza, decidimos construir
+nosotros que respete las normas.</p>
+<p>Nos basamos en un <a class="reference external" href="http://sitecreative.net">diseño libre</a> y mejoramos
+aquellos aspectos que no satisfacían completamente los requerimientos.
+El resultado es el proyecto <a class="reference external" href="http://lab.nqnweb%7C%20Marso%20%7C%20Ben%20%7C%2023%20a%C3%B1os%20%7Cs.com/accion">*Accion
+Inmobiliaria*</a></p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L510xH463/Pantallazo-6-be9ab.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 55)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Podés ver la <a class="reference external" href="http://lab.nqnwebs.com/accion">demo online</a>.</p>
+<div class="section" id="caracteristicas">
+<h2>Características</h2>
+<p><img alt="-" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> CSS y XHTML estándar válido
+<img alt="image7" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Se estudió el contraste de colores y el tamaño de la fuente
+para facilitar la lectura.
+<img alt="image8" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Accesibilidad probada en navegadores en modo texto (Elink) y
+lectores de pantalla.
+<img alt="image9" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Licenciado bajo GPLv3</p>
+</div>
+<div class="section" id="descargar">
+<h2>Descargar</h2>
+<p>Podés bajarte los esqueletos, modificarlos y usarlos. Como se basa en
+GPL, tus trabajos derivados deben ser ofrecidos libremente.</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/esqueletos-accion.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/basta-de-ie6.html">¡Basta de IE6!</a>
+        <small>  
+             <span class="timeago" title="2009-02-21 17:23:07">2009-02-21 17:23:07</span>
+        </small></h1>
+        <div><p>El trabajo de un desarrollador web cuesta mechones de cabello a la hora
+de enfrentar al inmundo, malnacido e infeliz Internet Explorer 6. Horas
+y nervios perdemos intentando que nuestros sitios se vean decentemente
+en este navegador, que pese a tener casi 8 años de anitgüedad, aun tiene
+cuota de mercado. ¡Es hora de decir basta! Tomemos las armas y
+declaremosle la guerra a Internet explorer.</p>
+<div class="section" id="cuales-son-nuestras-armas">
+<h2>¿Cuáles son nuestras armas?</h2>
+<p>Te propongo dos, faciles y potentes:</p>
+<p><img alt="-" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> El script modificado por mí de la campaña <a class="reference external" href="http://www.end6.org/esp/home/">End
+6!</a>. Sólo debes copiar este código y
+pegarlo en el header de cada página de tu sitio, o sea entre <tt class="docutils literal">&lt;head&gt;</tt>
+y <tt class="docutils literal">&lt;/head&gt;</tt>.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 20)</p>
+Literal block expected; none found.</div>
+<p>Si un visitante llega usando el vetusto y abominable navegador, verá un
+cartelito como este:</p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L510xH372/textosypretextos-289a7.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 26)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p><img alt="image1" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> El plugin para spip <em>`Cambia el
+navegador! &lt;http://www.spip-contrib.net/Changez-de-navigateur&gt;`_</em> que al
+instalarlo y activarlo, muestra un mensaje en la cabecera de todo el
+sitio público si el visitante usa IE6 (o más viejo!)</p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L510xH372/image.php-ef244.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 34)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/noie.zip">|image3|</a></td>
+</tr><tr><td>Cambia el Navegador!</td>
+</tr></tbody></table><p>Puedes bajar este plugin (multilingüe) desde aquí.</p>
+</div>
+<div class="section" id="basta-de-caldo-gordo">
+<h2>Basta de ’caldo gordo’</h2>
+<p>Como desarrolladores, tenemos cosas mejores que hacer que continuar
+garantizando la compatibilidad con lo arcaico, perdiendo el tiempo en
+torno a errores ajenos a nuestros desarrollos. Todo el tiempo dispensado
+allí debería ser concentrada en conquistar los nuevos horizontes que
+requieren nuestra atención como, por ejemplo, la web móvil.</p>
+<p>Y en gran parte, esta situación es nuestra responsabilidad. Todos los
+que trabajamos en internet (y los que la usamos con pasión) conocemos y
+odiamos con fundamentos el Internet Explorer 6. Pero justamente
+nosotros, por tener razones, somos responsables de difundirlas tanto
+como podamos para educar tecnológicamente a los usuarios más
+inexperimentados.</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/basta-de-ie6.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/Control-de-Versiones-con.html">Control de Versiones con Subversion</a>
+        <small>  
+             <span class="timeago" title="2009-02-14 11:23:41">2009-02-14 11:23:41</span>
+        </small></h1>
+        <div><p>Xab, compañero de la lista
+<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">spip-es</a> me propone
+un trato:</p>
+<blockquote>
+abro una cuenta con magoya en picasa y testeo el
+<a class="reference external" href="../posts/blog/article/spicasa-adjunta-fotos-de-picasa-a">plugin</a>, y a
+cambio vos "hacés (o recomendás)" un how-to subversion aplicado a
+spip</blockquote>
+<p>Como tenía unos materiales de una charla que dí en la facu, lo comparto
+con el pueblo spipero.</p>
+<div class="section" id="subversion-un-software-de-control-de-versiones">
+<h2>Subversion, un software de control de versiones</h2>
+<p><a class="reference external" href="http://subversion.tigris.org/">Subversion</a> es el software de control
+de versiones más popular de la actualidad. Es robusto, fácil de usar,
+multiplataforma, libre y gratuito.</p>
+<p>Aquí las diapositivas (un tanto frías sin nuestra explicación) que
+presentamos.</p>
+<p>La pregunta del novato: <strong>¿Para qué sirve?</strong>. Bueno, para llevar total
+control del desarrollo de un software (u otros contenidos). Muchos lo
+hemos hecho manualmente:</p>
+<p>— Bueno, hasta aqui funciona. Hago una carpeta nueva, copio los
+archivos, y sigo.</p>
+<p>Así, al cabo de una semana de trabajo, tenemos 10 carpetas con versiones
+distintas, archivos repetidos, y no sabemos realmente cual es la version
+en curso. Más complicado aun, si se trabaja desde distintos equipos (por
+ejemplo, la notebook y la PC de escritorio).</p>
+<p>Pero además, sumemos la complicación de trabajar con colegas.</p>
+<p>— Ey, Martín, acá te mando la última versión del esqueleto de portada.
+— ¡Pero cómo! si te avisé que había modificado la portada completamente!</p>
+<p>Trabajar en equipo es casi inviable a la vieja usanza. Imaginen
+proyectos de software grandes, como SPIP. Imposible. Hace falta ayuda:
+Subversion.</p>
+</div>
+<div class="section" id="como-funciona">
+<h2>¿Cómo funciona?</h2>
+<p>Es una aplicación cliente-servidor. El cliente se instala en nuestra/s
+computadoras y el servidor está, generalmente, online. A este servidor
+online se le denomina <strong>repositorio</strong>. A la copia local de los archivos,
+<strong>copia de trabajo</strong>. A cada cambio que el repositorio recibe se le
+llama <strong>revisión</strong>.</p>
+<p><img alt="-" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Para Windows, el mejor cliente es
+<a class="reference external" href="http://tortoisesvn.tigris.org/">TortoiseSVN</a>
+<img alt="image1" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Para GNU/Linux, basta <strong>subversion</strong>, la versión para línea de
+comandos, o <strong>RapidSVN</strong>, una versión gráfica para entornos GTK.</p>
+<p>El proceso de trabajo es más o menos así:</p>
+<p><img alt="image2" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Si no existe en el repositorio nuestro código, hacemos un
+<strong>import</strong> (enviar por primera vez nuestro código al repositorio.
+<img alt="image3" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Para empezar a trabajar, necesitamos hace un <strong>checkout</strong>, es
+decir, decirle a Subversion que convierta nuestra carpeta de código (o
+la cree si no existe) en copia de trabajo.
+<img alt="image4" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Ya preparados, el trabajo cotidiano: lo comandos más frecuentes
+son tres. <strong>update</strong>, para actualizar la copia local con las ultimas
+revisiones; <strong>commit</strong> para enviar nuestras modificaciones locales al
+repositorio y crear una nueva revisión y <strong>add</strong> para agregar un archivo
+que hemos creado, y aun no existe en el repositorio.</p>
+</div>
+<div class="section" id="un-ejemplo-con-spip-zone">
+<h2>Un ejemplo con SPIP-Zone</h2>
+<p><a class="reference external" href="http://zone.spip.org">Spip-zone</a> tiene un servidor subversion
+(asociado al software <a class="reference external" href="http://trac.edgewall.org/">Trac</a> que es un
+gestor integral de proyectos de software) donde se puede alojar
+cualquier contenido libre que tenga que ver con SPIP. Es abierto para
+lectura (podés hacer checkouts y updates anonimamente) pero necesitás
+ser usuario para hacer commits. Podés pedirle un user y pass a
+<a class="reference external" href="mailto:fil@nospam--.rezo.net">Fil</a>.</p>
+<p><strong>Paso 0</strong></p>
+<p>Suponiendo que sos usuario con clave y password y querés compartir el
+desarrollo de tus squeletos, los <em>squelettes_maslindos</em> que están en la
+carpeta squelettes local (por poner un ejemplo).</p>
+<p>La dirección del repositorio, arbitraria pero recomendada, sería esta</p>
+<pre class="literal-block">
+svn://zone.spip.org/spip-zone/_squelettes_/maslindos
+</pre>
+<p>Desde <strong>Tortoise</strong>, con el boton derecho sobre la carpeta de esqueletos,
+le damos a la opción <strong>Import</strong> y ponemos la dire del repo donde la
+pide.</p>
+<p>Desde línea de comandos sería</p>
+<pre class="literal-block">
+$ svn import ./squelettes  svn://zone.spip.org/spip-zone/_squelettes_/maslindos -m "importacion de los squeletos más lindos"
+</pre>
+<p>Si la importación salió bien, debería poder ver tus archivos en la
+siguiente dirección
+<a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos">http://zone.spip.org/trac/spip-zone...</a></p>
+<p><strong>Paso 1</strong> Este es el paso inicial para aquellos que quieren probar algo
+que está en el repositorio, pero sin intenciones de enviar
+modificaciones (sólo lectura). Tambien deben hacerlo aquellos que sí lo
+van a hacer, porque la importación no implica que se haya creado una
+copia de trabajo.</p>
+<p>Así que hay que hacer el <strong>checkout</strong>. Si hiciste el paso anterior, para
+evitar complicaciones, lo mejor es borrar la carpeta que importaste.</p>
+<p>Entonces sí, sobre la carpeta raiz (donde queremos que se cree la otra),
+hacemo checkout a la dire del repo, definiendo que la copia local será
+<tt class="docutils literal">./squelettes</tt> (si no, nos creará una que se llamará <em>maslindos</em>)</p>
+<p>La dire del repo es la siempre:</p>
+<pre class="literal-block">
+svn://zone.spip.org/spip-zone/_squelettes_/maslindos
+</pre>
+<p>Por línea de comandos sería así:</p>
+<pre class="literal-block">
+$ svn checkout svn://zone.spip.org/spip-zone/_squelettes_/maslindos ./squelettes
+</pre>
+<p><a href="../posts/Control-de-Versiones-con.html#id1"><span class="problematic" id="id2">**</span></a>Pasos 2 y 3 **</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 133); <em><a href="../posts/Control-de-Versiones-con.html#id2">backlink</a></em></p>
+Inline strong start-string without end-string.</div>
+<p>Listo, tenemos nuetra copia de trabajo. Cada vez que queramos actualizar
+a la ultima versión, parados sobre la carpeta, hacemos <strong>update</strong></p>
+<pre class="literal-block">
+$ svn  update
+</pre>
+<p>Si somos desarrolladores, y queremos enviar nuestras modificaciones, hay
+que hacer <strong>commit</strong></p>
+<pre class="literal-block">
+$ svn  update
+</pre>
+<p>En caso de agregar archivos, hay que indicarselo a Subversion.</p>
+<pre class="literal-block">
+$ svn  add archivo1 archivo2 *jpg
+</pre>
+</div>
+<div class="section" id="un-video-vale-mas-que-mil-palabras">
+<h2>Un video vale más que mil palabras</h2>
+<p>Un ejemplo de flujo de trabajo por línea de comandos</p>
+<p>Y otro ejemplo usando TortoiseSVN sobre Windows.</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/Control-de-Versiones-con.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/spicasa-adjunta-fotos-de-picasa-a.html">Spicasa: adjuntá fotos de picasa a un artículo</a>
+        <small>  
+             <span class="timeago" title="2009-02-12 01:48:46">2009-02-12 01:48:46</span>
+        </small></h1>
+        <div><p>Con un poco de coca-cola en la sangre, retomé esta madrugada un
+proyectito que tenía: adjuntar fotos de un album de
+<a class="reference external" href="http://picasaweb.google.com">Picasa</a> a un artículo.</p>
+<p>El caso de uso, basado en mi propia necesidad, es el siguiente:</p>
+<p><img alt="-" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Uso PicasaWeb para subir mis fotos. A veces son albumes públicos, a
+veces no.
+<img alt="image1" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Al subir fotos, generalmente le pongo una descripción.
+<img alt="image2" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Algunas fotos las subo también a mi blog personal.</p>
+<p>La complicación es que tengo que subir las fotos a picasa y tambien a mi
+web (por ftp si son muchas). Obviamente es ineficiente, y además pierdo
+los comentarios que hice en Picasa.</p>
+<div class="section" id="con-ustedes-spicasa">
+<h2>Con ustedes, Spicasa</h2>
+<p>Spicasa intenta solucionar esto. Está basado en el plugin
+<a class="reference external" href="http://plugins.spip.net/Flickr-CC">Flickr_cc</a> pero utilizando la
+excelente biblioteca <a class="reference external" href="http://cameronhinkle.com/blog/id/8585148182656068438">Lightweight PHP Picasa
+API</a> de Cameron
+Hinkle, para interactura con la <a class="reference external" href="http://code.google.com/intl/es-AR/apis/picasaweb/overview.html">API de
+Picasa</a></p>
+<p>Permite buscar fotos públicas en Picasa y asociarlas a un artículo, al
+igual que Flickr_cc lo hace con <a class="reference external" href="http://flickr.com">Flickr</a>. Pero
+además, permite ingresar a tu cuenta y adjuntar uno de tus albumes al
+artículo. Todo con mucho AJAX y dulce de leche.</p>
+<p><img alt="image3" src="../images/Pantallazo-1-3e61d.png">
+Por supuesto, aunque cumple sus función básica, es un desarrollo
+totalmente inacabado que necesita desarrollo y depuración.</p>
+</div>
+<div class="section" id="requerimientos">
+<h2>Requerimientos</h2>
+<p><img alt="image4" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Requiere SPIP 2.0 o superior
+<img alt="image5" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> La biblioteca Lightweight PHP Picasa API está incluída. Sólo
+requiere PHP5.</p>
+</div>
+<div class="section" id="todo-y-bugs-conocidos">
+<h2>TODO y bugs conocidos</h2>
+<p><img alt="image6" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:El tamaño máximo de las fotos descargadas es 800px]
+<img alt="image7" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:No hace búsquedas de más de una palabra]
+<img alt="image8" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Hay que loguearse cada vez que se quiere adjuntar un álbum
+nuevo
+<img alt="image9" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:La ventana modal queda inaccesible si el scroll
+vertical no está arriba. (bug heredado de Flickr_cc)]</p>
+</div>
+<div class="section" id="descarga-e-instalacion">
+<h2>Descarga e instalación</h2>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/spicasa0.13.zip">|image11|</a></td>
+</tr><tr><td>Spicasa 0.13</td>
+</tr></tbody></table><p><img alt="image12" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Descromprimilo en la carpeta <em>/plugins</em> de tu sitio spip
+<img alt="image13" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Activalo desde el panel de administración
+<img alt="image14" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Al editar un artículo, te aparecerá un link con el logo de
+Spicasa para adjuntar fotos.</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/spicasa-adjunta-fotos-de-picasa-a.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/Esqueletos-de-aten-org-ar.html">Esqueletos de aten.org.ar</a>
+        <small>  
+             <span class="timeago" title="2005-02-12 04:34:26">2005-02-12 04:34:26</span>
+        </small></h1>
+        <div><p>Hola amigos de SPIP!</p>
+<p>Estos esqueletos estan basados en los de
+<a class="reference external" href="http://www.spip-contrib.net">www.spip-contrib.net</a></p>
+<p>El sitio de ejemplo esta temporalmente
+<a class="reference external" href="http://pruebas.nqnwebs.com.ar">acá</a></p>
+<p>Simplemente descomprimanlo sobre su raiz de spip. Si tienen un archivo
+mes_fonctions.php3 salvenlo antes.</p>
+<p>La palabra clave con id_mot=2 es "DESTACADOS" y los articulos
+asociacidos a esta salen en el cuadro central gris del sommaire.html .
+El resto de las palabras claves pueden pertenecer a otro grupo que sea
+"tematicas".</p>
+<p>quedan detallitos por corregir, como el plan.html que faltó, y mejorar
+un poco la paginacion de articulos. pero creo que todo funciona.</p>
+<p>Estos esqueletos son libres bajo . <a class="reference external" href="http://es.tldp.org/Otros/gples/gples.html">licencia
+GPL</a></p>
+<p>Espero les sirva. Martin Gaitan.
+<a class="reference external" href="mailto:gaitan@gmail.com">gaitan@gmail.com</a></p></div>
+        <p>
+        
+            <a href="../posts/Esqueletos-de-aten-org-ar.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/SPIP-el-Gestor-de-Contenidos.html">SPIP, el Gestor de Contenidos</a>
+        <small>  
+             <span class="timeago" title="2004-09-02 18:03:46">2004-09-02 18:03:46</span>
+        </small></h1>
+        <p><a class="reference external" href="http://www.spip.net/es">SPIP</a> (Sistema de Publicación para una
+Internet Participativa, de sus siglas en francés) es un software libre
+(GPL) en PHP y MySql con la estructura ideal para desarrollar sitios
+tipo revista en línea, pero también potencia y sencillez sufiente para
+lograr cualquier objetivo. Spip se comoporta como un espacio donde un
+grupo de colaboradores escribe textos de contenido y los/as lectores/as
+pueden comentarlos.</p>
+        <p>
+        
+            <a href="../posts/SPIP-el-Gestor-de-Contenidos.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+    <div>
+<ul class="pager"><li class="previous">
+        <a href="spip.html">← Posts posteriores</a>
+    </li>
+  
+  
+</ul></div>
+    
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

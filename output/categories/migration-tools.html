@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Posts sobre migration tools | tin_nqn"><meta name="description" content="&gt;&gt;&gt; self.geek_side.post()"><meta name="author" content="Martín Gaitán"><title>Posts sobre migration tools | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag migration tools (es)" href="migration-tools.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    
+        <div class="postbox">
+        <h1><a href="../posts/notas-rapidas-de-una-mudanza.html">Notas rápidas de una mudanza</a>
+        <small>  
+             <span class="timeago" title="2012-10-14 19:23:44">2012-10-14 19:23:44</span>
+        </small></h1>
+        <div><p>Hace unos días abría este espacio prometiendo migrar contenidos y
+tratar de que se vea un poco más bonito. Como es un proceso iterativo,</p>
+<p>Este post incluye algunas notas sobre lo que he hecho hasta el momento.</p>
+<div class="section" id="github-nikola">
+<h2>Github ♥ Nikola</h2>
+<p>Este blog que estás leyendo está hospedado en <a class="reference external" href="http://pages.github.com">Github Pages</a> ,
+el servicio de hosting gratuito de contenido estático que ofrece Github.</p>
+<p>A diferencia de cuando se usa Gh-pages para proyectos, donde se sirve
+el contenido del branch <em>gh-page</em> del proyecto en cuestión,
+para usar gh-pages por usuario hay que crear
+un repo llamado <em>&lt;username&gt;</em>.github.com (donde <em>&lt;username&gt;</em> es el tuyo)
+y lo que sirve en <a class="reference external" href="../">http:/</a>/&lt;username&gt;.github.com es directamente el branch <em>master</em></p>
+<p>Por este motivo creé otro branch (que sin mucha imaginación denominé
+<a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing">writing</a> )
+donde tengo todo el mi "proyecto" hecho con Nikola</p>
+<p>Allí escribo, intento mejorar mi <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom">theme</a>, y corro <tt class="docutils literal">nikola build</tt>.</p>
+<p>El branch master es el de deploy, y sirve todo lo que haya en la carpeta
+<tt class="docutils literal">output/</tt> del branch <tt class="docutils literal">writing</tt>. Para hacer <a class="reference external" href="http://stackoverflow.com/a/10591668">esto</a> hay que a master,
+borrar todo y leer desde el árbol del otro branch con <tt class="docutils literal"><span class="pre">read-tree</span></tt></p>
+<pre class="literal-block">
+git checkout master
+git rm *
+git read-tree writing:output
+git commit -m 'deploying last build'
+git push
+</pre>
+</div>
+<div class="section" id="migrando-desde-spip">
+<h2>Migrando desde Spip</h2>
+<p>Uno de los motivos que me llevaron a migrar desde <a class="reference external" href="http://www.spip.net">Spip</a> es que el markup
+que usa es <em>ad hoc</em> y muy feo. Algo así</p>
+<pre class="literal-block">
+{{{ Un intertítulo }}}
+
+Esto es {{negrita}} y este [mi twitter-&gt;http://twitter.com/tin_nqn_]
+</pre>
+<p>Hasta ahí no se ve tan mal, pero es muy limitado cuando se trata de mostrar
+código, necesario en todo blog mas o menos técnico.</p>
+<p>Para migrar esquive la idea de convertir el markup de spip y opté por un
+scrapping, limpieza y conversión a restructuredText usando el mágico
+<a class="reference external" href="http://johnmacfarlane.net/pandoc">Pandoc</a>.</p>
+<p>El script que hice está <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py">acá</a>
+. No es perfecto, pero está lo importante: contenidos, imágenes, adjuntos,
+convertido a restructuredText bastante decente que mejoraré poco a poco
+a mano.</p>
+</div>
+<div class="section" id="estilos">
+<h2>Estilos</h2>
+<p>Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras )
+que se ven bonitos. Sucede, en realidad, que la mayoría de las veces no
+venimos con <em>esa</em> habilidad y el esfuerzo que nos implica intentarlo
+preferimos ponerlo en otra cosa. No gusta, pero no es lo más importante.</p>
+<p>No obstante, yo quiero que este espacio sea lindo y legible. Y como hay
+muchos otros ñoños con sitios lindos y legibles que son tan amables de
+compartir sus estilos (y existe <a class="reference external" href="http://twitter.github.com/bootstrap">bootstrap</a>, claro) voy a ir intentándolo,
+incrementalmente.</p>
+<p>Por ahora tomé ideas y CSS de <a class="reference external" href="http://stevelosh.com">stevelosh.com</a> <a class="footnote-reference" href="../posts/notas-rapidas-de-una-mudanza.html#id3" id="id1">[1]</a> y de la documentación
+de <a class="reference external" href="http://flask.pocoo.org/docs/">Flask</a> <a class="footnote-reference" href="../posts/notas-rapidas-de-una-mudanza.html#id4" id="id2">[2]</a> basado en el theme <em>Readable</em> de <a class="reference external" href="http://bootswatch.com/">bootswatch.com</a></p>
+<p>¿Cómo se va viendo?</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="../posts/notas-rapidas-de-una-mudanza.html#id1">[1]</a></td><td><a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default">https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default</a></td></tr></tbody></table><table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="../posts/notas-rapidas-de-una-mudanza.html#id2">[2]</a></td><td><a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE">https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE</a></td></tr></tbody></table></div></div>
+        <p>
+        
+            <a href="../posts/notas-rapidas-de-una-mudanza.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+    <div>
+<ul class="pager"></ul></div>
+    
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>
