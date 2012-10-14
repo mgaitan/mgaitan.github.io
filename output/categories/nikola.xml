@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (nikola)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:24:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
+<rss version="2.0"><channel><title>tin_nqn (nikola)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:37:26 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco m&amp;#225;s bonito. Como es un proceso iterativo,&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;div class="section" id="github-nikola"&gt;
@@ -57,6 +57,28 @@ compartir sus estilos (y existe &lt;a class="reference external" href="http://tw
 incrementalmente.&lt;/p&gt;
 &lt;p&gt;Por ahora tom&amp;#233; ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id3" id="id1"&gt;[1]&lt;/a&gt; y de la documentaci&amp;#243;n
 de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id4" id="id2"&gt;[2]&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="disqus"&gt;
+&lt;h2&gt;Disqus&lt;/h2&gt;
+&lt;p&gt;El blog viejo usaba &lt;a class="reference external" href="http://disqus.com"&gt;Disqus&lt;/a&gt;, con un &lt;a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html"&gt;plugin&lt;/a&gt; que hice hace algun tiempo.
+Para migrar los comentarios utilic&amp;#233; el m&amp;#233;todo de subir un CSV con
+el formato:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+URL_POST_X_OLD, URL_POST_X_NEW
+URL_POST_Y_OLD, URL_POST_Y_NEW
+&lt;/pre&gt;
+&lt;p&gt;En cuesti&amp;#243;n de minutos los (pocos) comentarios estaban migrados.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="redireccion"&gt;
+&lt;h2&gt;Redirecci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;Como mantuve el slug de los viejos art&amp;#237;culos, una redirecci&amp;#243;n 301
+via .htaccess redirige del viejo blog al nuevo:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# nqnwebs.com blog rules
+RewriteCond %{HTTP_HOST} ^nqnwebs [nc]
+RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
+RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
+&lt;/pre&gt;
 &lt;p&gt;&amp;#191;C&amp;#243;mo se va viendo?&lt;/p&gt;
 &lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><guid>/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog est&amp;#225; en pleno proceso de mudanza y metamorfosis. Antes estaba

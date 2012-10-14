@@ -88,6 +88,28 @@ compartir sus estilos (y existe <a class="reference external" href="http://twitt
 incrementalmente.</p>
 <p>Por ahora tomé ideas y CSS de <a class="reference external" href="http://stevelosh.com">stevelosh.com</a> <a class="footnote-reference" href="../posts/notas-rapidas-de-una-mudanza.html#id3" id="id1">[1]</a> y de la documentación
 de <a class="reference external" href="http://flask.pocoo.org/docs/">Flask</a> <a class="footnote-reference" href="../posts/notas-rapidas-de-una-mudanza.html#id4" id="id2">[2]</a> basado en el theme <em>Readable</em> de <a class="reference external" href="http://bootswatch.com/">bootswatch.com</a></p>
+</div>
+<div class="section" id="disqus">
+<h2>Disqus</h2>
+<p>El blog viejo usaba <a class="reference external" href="http://disqus.com">Disqus</a>, con un <a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html">plugin</a> que hice hace algun tiempo.
+Para migrar los comentarios utilicé el método de subir un CSV con
+el formato:</p>
+<pre class="literal-block">
+URL_POST_X_OLD, URL_POST_X_NEW
+URL_POST_Y_OLD, URL_POST_Y_NEW
+</pre>
+<p>En cuestión de minutos los (pocos) comentarios estaban migrados.</p>
+</div>
+<div class="section" id="redireccion">
+<h2>Redirección</h2>
+<p>Como mantuve el slug de los viejos artículos, una redirección 301
+via .htaccess redirige del viejo blog al nuevo:</p>
+<pre class="literal-block">
+# nqnwebs.com blog rules
+RewriteCond %{HTTP_HOST} ^nqnwebs [nc]
+RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
+RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
+</pre>
 <p>¿Cómo se va viendo?</p>
 <table class="docutils footnote" frame="void" id="id3" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="../posts/notas-rapidas-de-una-mudanza.html#id1">[1]</a></td><td><a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default">https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default</a></td></tr></tbody></table><table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="../posts/notas-rapidas-de-una-mudanza.html#id2">[2]</a></td><td><a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE">https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE</a></td></tr></tbody></table></div></div>
         <p>

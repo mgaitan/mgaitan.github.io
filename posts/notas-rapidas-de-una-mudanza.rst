@@ -76,6 +76,30 @@ incrementalmente.
 Por ahora tomé ideas y CSS de stevelosh.com_ [1]_ y de la documentación
 de Flask_ [2]_ basado en el theme *Readable* de bootswatch.com_
 
+Disqus
+-------
+
+El blog viejo usaba Disqus_, con un plugin_ que hice hace algun tiempo.
+Para migrar los comentarios utilicé el método de subir un CSV con
+el formato:: 
+
+    URL_POST_X_OLD, URL_POST_X_NEW
+    URL_POST_Y_OLD, URL_POST_Y_NEW
+
+En cuestión de minutos los (pocos) comentarios estaban migrados.
+
+Redirección
+------------
+
+Como mantuve el slug de los viejos artículos, una redirección 301
+via .htaccess redirige del viejo blog al nuevo::
+
+    # nqnwebs.com blog rules
+    RewriteCond %{HTTP_HOST} ^nqnwebs [nc]
+    RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
+    RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
+
+
 
 ¿Cómo se va viendo? 
 
@@ -84,6 +108,8 @@ de Flask_ [2]_ basado en el theme *Readable* de bootswatch.com_
 .. [1] https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default
 .. [2] https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE
 
+.. _Disqus: http://disqus.com
+.. _plugin: http://mgaitan.github.com/posts/disqus-para-spip.html
 .. _Github Pages: http://pages.github.com
 .. _bootswatch.com: http://bootswatch.com/
 .. _Flask: http://flask.pocoo.org/docs/
