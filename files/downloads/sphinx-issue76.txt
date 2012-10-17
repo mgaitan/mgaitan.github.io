@@ -1,0 +1,59 @@
+diff -r ce4bb37a1409 sphinx/domains/std.py
+--- a/sphinx/domains/std.py	Sat Feb 05 21:48:54 2011 +0100
++++ b/sphinx/domains/std.py	Wed Mar 16 14:10:54 2011 -0300
+@@ -511,8 +511,13 @@
+                                                                      ('','',''))
+             if not docname:
+                 return None
+-            newnode = nodes.reference('', '', internal=True)
+-            innernode = nodes.emphasis(sectname, sectname)
++            newnode = nodes.reference('', '', internal=True)            
++     
++            if labelid.endswith('-num') and builder.name == 'latex':
++                innernode = nodes.raw('', '') 
++            else:
++                innernode = nodes.emphasis(sectname, sectname) 
++
+             if docname == fromdocname:
+                 newnode['refid'] = labelid
+             else:
+diff -r ce4bb37a1409 sphinx/writers/latex.py
+--- a/sphinx/writers/latex.py	Sat Feb 05 21:48:54 2011 +0100
++++ b/sphinx/writers/latex.py	Wed Mar 16 14:10:54 2011 -0300
+@@ -275,6 +275,9 @@
+     def idescape(self, id):
+         return str(unicode(id).translate(tex_replace_map))
+ 
++    def reffig(self, id):
++        return '~\\ref{%s}' % self.idescape(id)
++
+     def generate_indices(self):
+         def generate(content, collapsed):
+             ret.append('\\begin{theindex}\n')
+@@ -577,6 +580,7 @@
+ 
+     def visit_refcount(self, node):
+         self.body.append("\\emph{")
++
+     def depart_refcount(self, node):
+         self.body.append("}\\\\")
+ 
+@@ -1141,10 +1145,17 @@
+             if hashindex == -1:
+                 # reference to the document
+                 id = uri[1:] + '::doc'
++                self.body.append(self.hyperlink(id))
+             else:
+                 # reference to a label
+                 id = uri[1:].replace('#', ':')
+-            self.body.append(self.hyperlink(id))
++                if id.endswith('-num'):
++                    self.body.append(self.reffig(id))
++                    self.context.append('')
++                    return
++                else:
++                    self.body.append(self.hyperlink(id))
++                    
+             if len(node) and hasattr(node[0], 'attributes') and \
+                    'std-term' in node[0].get('classes', []):
+                 # don't add a pageref for glossary terms

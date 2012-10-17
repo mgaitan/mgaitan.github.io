@@ -1,0 +1,29 @@
+#blog-title {
+    float: left;
+    font-size: 23px;
+    font-family: 'OFL Sorts Mill Goudy','OFL Sorts Mill Goudy TT',serif;
+    line-height: 50px;
+    padding-left: 2px;
+    text-transform: lowercase;
+    background-color: transparent;
+}
+
+.inline li {
+    display: inline;
+}
+
+.postbox h1 {
+    margin-bottom: 0em;
+}
+
+.postbox h1 a:hover {
+        border-bottom: none;
+    }
+
+.postbox div {
+    margin-top: 1em;
+}
+
+.postbox  {
+    border-bottom: none;
+}
