@@ -8,7 +8,7 @@ import os
 
 # Data about this site
 BLOG_AUTHOR = u'Martín Gaitán'
-BLOG_TITLE = "El blog de tin_nqn"
+BLOG_TITLE = "tin_nqn"
 BLOG_URL = "http://mgaitan.github.com"
 BLOG_EMAIL = "gaitan@gmail.com"
 BLOG_DESCRIPTION = u'>>> self.geek_side.post()'
@@ -185,6 +185,7 @@ INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' trans
 # Name of the theme to use. Themes are located in themes/theme_name
 THEME = 'custom'
 
+USE_BUNDLES = False
 # Show only teasers in the index pages? Defaults to False.
 # INDEX_TEASERS = False
 
@@ -207,7 +208,7 @@ DISQUS_FORUM = "nqnwebs"
 
 # Enable Addthis social buttons?
 # Defaults to true
-# ADD_THIS_BUTTONS = True
+ADD_THIS_BUTTONS = False
 
 # Modify the number of Post per Index Page
 # Defaults to 10
@@ -264,11 +265,10 @@ GLOBAL_CONTEXT = {
     # You should provide a key-value pair for each used language.
     'sidebar_links': {
         DEFAULT_LANG: (
-            ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), 'Archives'),
-            ('/categories/index.html', 'Tags'),
-            ('/stories/about-nikola.html', 'About Nikola'),
-            ('/stories/handbook.html', 'The Nikola Handbook'),
-            ('http://nikola.ralsina.com.ar', 'Powered by Nikola!'),
+            ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), 'Archivos'),
+            ('/categories/index.html', u'Categorías'),
+            ('http://www.textosypretextos.com.ar', u'Textos y pretextos'),
+            ('http://nikola.ralsina.com.ar', 'Powered by Nikola'),
             ),
         }
     }

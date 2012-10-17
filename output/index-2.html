@@ -1,0 +1,588 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="tin_nqn (posts antiguos página 2) | tin_nqn"><meta name="description" content="&gt;&gt;&gt; self.geek_side.post()"><meta name="author" content="Martín Gaitán"><title>tin_nqn (posts antiguos página 2) | tin_nqn</title><!-- Le styles --><link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="assets/css/custom.css" rel="stylesheet"><script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="assets/js/jquery.timeago.js" type="text/javascript"></script><script src="assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="." title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    
+        <div class="postbox">
+        <h1><a href="posts/covertura-de-los-oscars-2011.html">Covertura de los Oscars 2011</a>
+        <small>  
+             <span class="timeago" title="2011-02-24 15:05:21">2011-02-24 15:05:21</span>
+        </small></h1>
+        <div><p>Anoche, en un arrebato procrastinador, armé <a class="reference external" href="http://oscars-awards.com">Oscars
+Awards</a> y su clon <a class="reference external" href="http://oscars-winners.com">Oscars
+Winners</a> .</p>
+<p>Aprovechando una promo de
+<a class="reference external" href="http://www.netfirms.com/domain-names/">netfirms.com</a> y con un poco de
+suerte, consegui los dos dominios por u$s 9 que pagué con PayPal. Vuelve
+la burbuja .com ?</p>
+<p>El "streaming de tweets" está basado en
+<a class="reference external" href="http://juitter.com/">juitter</a>, pequeñamente hackeado.</p></div>
+        <p>
+        
+            <a href="posts/covertura-de-los-oscars-2011.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/de-otra-galaxia.html">De otra galaxia</a>
+        <small>  
+             <span class="timeago" title="2010-11-27 20:19:38">2010-11-27 20:19:38</span>
+        </small></h1>
+        <div><p>Si el sábado a la noche antes de rendir tu última materia en vez de
+estar estudiando estás emborranchandote por ahí, sos un inconciente y/o
+la tenés muy clara. Si en cambio no estás estudiando ni emborrachando,
+pero te ponés a pensar ejercicios para el <a class="reference external" href="https://github.com/nqnwebs/python-ingenieria">curso de
+python</a> que estás dando,
+sos un nerd. Mereces un brindis de chocolatada a tu salud de todos los
+de <a class="reference external" href="http://www.whatthefolk.net/forum/viewtopic.php?f=13&amp;t=338">este
+foro</a>.</p>
+<p>Si encima blogueas al respecto, sos un nerd intergaláctico. Te explico
+por qué.</p>
+<p>Resulta que tenés este <a class="reference external" href="https://github.com/nqnwebs/python-ingenieria/raw/master/data/data.txt">archivo de
+datos</a>.
+Cada número representa la intensidad de luz de un punto y te informan
+que la imágen es cuadrada. Se supone que son datos que te dió un
+profesor una vez, para que resuelvas este mismo problema en
+¡ensamblador!</p>
+<p>Hacerlo en Python, con Numpy y Matplotlib, significa estas líneas</p>
+<pre class="literal-block">
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.fromfile ('data.txt', sep=' ')
+SIZE = int(len(data) ** .5)
+data.shape = SIZE, SIZE
+plt.imshow (data)
+plt.show ()
+</pre>
+<p>Y se obtiene este resultado:</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH385/galaxy-efc45.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 38)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Se puede limitar los valores de luz a un valor entre 0 y 255 (truncando
+valores de saturación extrema), haciendo :</p>
+<pre class="literal-block">
+plt.imshow (data.clip(0,255) )
+</pre>
+<p>Obtenemos este resultado:</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH385/galaxy-2-e0bc7.png"></div></div>
+        <p>
+        
+            <a href="posts/de-otra-galaxia.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/voto-electronico-e-ingenieros.html">Voto electrónico e ingenieros analógicos</a>
+        <small>  
+             <span class="timeago" title="2010-10-19 21:54:20">2010-10-19 21:54:20</span>
+        </small></h1>
+        <div><p>Con mucho esfuerzo propio y ajeno, estoy terminando la carrera
+<a class="reference external" href="http://computacion.efn.uncor.edu">Ingeniería en Computación</a> en la
+Universidad Nacional de Córdoba.</p>
+<p>Una particularidad de mi carrera, entre varias, es que hay mucha
+discusión y participación estudiantil. Una herramienta estratégica para
+esto ha sido un <a class="reference external" href="http://www.ceicin.org.ar/Grupo-de-Correo-de-Ingenieria-en">grupo de
+correo</a> en
+el que participan estudiantes, profesores y graduados.</p>
+<p>Allí he mantenido <a class="reference external" href="http://www.textosypretextos.com.ar/spip.php?page=recherche&amp;recherche=limando+cantos">algunas
+discusiones</a>
+con compañeros y/o profesores sobre temas diferentes. Los más
+interesantes, para mí, son los que evidencian concepciones filosóficos,
+ideológicas y políticas de cada uno.</p>
+<p>La última, que empezó el lunes, comenzó con una discusión sobre le <a class="reference external" href="http://www.vialibre.org.ar/category/activismo/voto-electronico/">voto
+electrónico</a>
+(a raiz de la charla relámpago de <a class="reference external" href="http://en.wikipedia.org/wiki/Federico_Heinz">Federico
+Heinz</a> en la
+<a class="reference external" href="posts/blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> ) que fue derivando
+a una más de fondo, sobre la concepción de ingeniero que yo quiero ser y
+la que los profesores con los que discuto en el hilo (y casi todos los
+otros) me enseñan.</p>
+<p>Como ya casi tiene telarañas, y además porque allí están todas las
+discusiones previas (las que me parecieron interesantes, bah), lo
+publiqué en <a class="reference external" href="http://www.textosypretextos.com.ar">mi otro blog</a>.</p></div>
+        <p>
+        
+            <a href="posts/voto-electronico-e-ingenieros.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/gpec-2010-el-poster.html">GPEC 2010: El poster</a>
+        <small>  
+             <span class="timeago" title="2010-10-18 13:06:48">2010-10-18 13:06:48</span>
+        </small></h1>
+        <div><p>Otra cosa que hice en
+<a class="reference external" href="posts/blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> fue presentar un
+poster sobre <a class="reference external" href="http://code.google.com/p/gpec2010/">GPEC 2010</a>, mi
+proyecto integrador para recibirme de ingeniero en computación,
+originalmente pensado para presentar en
+<a class="reference external" href="http://riteq.efn.uncor.edu/">Riteq</a> la semana que viene. El poster
+fue presentado en coautoría con Martín Cismondi y Gustavo Wolfmann, los
+directores del trabajo.</p>
+<p><img alt="image0" src="images/DSCF7067JPG-16c7-979e2.jpg">
+Como no tuve tiempo, la de PyCon es una versión que (espero) será
+mejorada para la semana que viene, con algunas figuras más.</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/poster-gpec-A4.pdf">|image2|</a></td>
+</tr><tr><td>Poster GPEC 2010 Formato A4 (reducido)</td>
+</tr></tbody></table><p>También un resumen extendido (2 páginas) aprobado por los revisores de
+RITEQ, que explica algún detalle más.</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/Resumen%20RITeQ%20Gaitan.pdf">|image4|</a></td>
+</tr><tr><td>Resumen aprobado Riteq 2010</td>
+</tr></tbody></table><p>Los fuentes están disponibles en en el repo:</p>
+<pre class="literal-block">
+svn checkout https://gpec2010.googlecode.com/svn/trunk/docs/poster
+</pre></div>
+        <p>
+        
+            <a href="posts/gpec-2010-el-poster.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/ipython-la-interactividad-al-poder.html">IPython, la interactividad al poder</a>
+        <small>  
+             <span class="timeago" title="2010-10-18 04:43:24">2010-10-18 04:43:24</span>
+        </small></h1>
+        <div><p>A lo largo de esta vida he amado, he llorado y reído, me han salido
+canas y dí algunas charlas y talleres.</p>
+<p>Me gusta la docencia, probable herencia de <a class="reference external" href="posts/blog/article/grosa">una
+grosa</a>. Me gusta compartir lo que sé, instarme a
+aprender para compartir con otros y aprender cuando enseño. Educación
+horizontal, educación popular.</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="images/chino-garce.jpg">|image1|</a></td>
+</tr></tbody></table><p>El viernes pasado, en la
+<a class="reference external" href="posts/blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> debía dar una de
+las primeras charlas, <em>`IPython, la interactividad al
+poder &lt;http://ar.pycon.org/2010/conference/schedule/event/91/&gt;`_</em> .
+Entró al cronograma en una segunda tanda de selección, con más sorpresa
+que el chino Garcé a Sudáfrica 2010. El problema es que para cuando me
+invitaron yo ya había descartado mi participación en PyCon y aceptado
+dar <a class="reference external" href="posts/blog/article/charla-python-a-los-bifes">una en mi facu</a>, también
+sobre Python pero otra. Ergo, ¡tenía que preparar 2 charlas!</p>
+<p>En el medio, solucionar horribles bugs de
+<a class="reference external" href="http://code.google.com/p/gpec2010/">GPEC</a> para la release de la
+semana que viene, un casamiento a 1500 km de mi casa (por suerte no
+mío), aprender a <a class="reference external" href="http://article.gmane.org/gmane.comp.python.myhdl/1536/">diseñar
+hardware</a>,
+malabarear estres con las <a class="reference external" href="http://python.org.ar/pyar/RemerasV3">remeras de
+PyAr</a> y terminar el
+<a class="reference external" href="posts/blog/article/gpec-2010-el-poster">poster</a> que se me ocurrió
+presentar.</p>
+<p>El contexto no favoreció a preparar la charla con anticipación. De
+hecho, pude hacerme lugar el jueves de 0:05 a 4 am para leer el manual y
+escribir lo poco que escribí. Mucha audacia teniendo en cuenta que
+algunas de las cosas que quería (de alguna manera debía) mostrar, no las
+uso/aba realmente (eso de <em>instarme a aprender</em> es posta) y más aun,
+considerando que las presentaciones con "demo" incluída son una fiesta
+orgiástica para <a class="reference external" href="http://en.wikipedia.org/wiki/Murphy's_law">Murphy</a></p>
+<p>Por eso, para descompimir la ansiedad y la casi certeza de que algo
+podía salir mal, lo primero que hice fue echarle la culpa a John Lenton,
+que fue el que
+<a class="reference external" href="http://permalink.gmane.org/gmane.org.user-groups.python.argentina/38170">incitó</a>
+a la vergüenza. La charla comienza con este disclaimer:</p>
+<pre class="literal-block">
+Disclaimer
+-----------------
+
+Todo lo que sigue es culpa de John Lenton:
+
+
+    2010/7/28 John Rowland Lenton :
+    &gt; Hola!
+    &gt;
+    &gt; Estamos organizando PyConAr. Viste? La conferencia de Python en
+    &gt; Argentina (...) te vas a dar cuenta cuando
+    &gt; estés acá en Córdoba que podrías haber presentado tu charla, y te vas
+    &gt; a sentir muy zonzo.
+</pre>
+<p>Para colmo de riesgos, descubrí algo que supongo que es un bug (TODO:
+check and report this) con la utilidad <tt class="docutils literal">Demo</tt> de IPython que usé, en
+la versión estable (0.10) y la que está en desarrollo (0.11). Por eso
+tuve que hacer un downgrade a la 0.9, que no tiene algunas cosas
+interesantes que quería mostrar (%paste, por ejemplo).</p>
+<p>Por supuesto, Murphy vino y se divirtió, pero no se burló
+sarcasticamente. Hasta que alguien me muestre un video y me ponga rojo
+de vergüenza voy a quedarme con la idea de que no estuvo tan mal. Alguno
+seguro no descrubrió nada nuevo, pero <a class="reference external" href="http://twitter.com/#!/martinvol/status/27447006335">otros parecieron
+satisfechos</a> y
+probablemente jueguen un ratito con IPython.</p>
+<div class="section" id="archivos-descarga">
+<h2>Archivos / Descarga</h2>
+<p>Como es una presentación interactiva, no hay "diapositivas". O sí, pero
+es un módulo python.</p>
+<p>Todo lo que usé (con nimios retoques respecto a lo mostrado el viernes)
+se puede bajar (o forkear) de
+<a class="reference external" href="http://github.com/nqnwebs/IPython-interactive-talk">GitHub</a> .</p>
+<pre class="literal-block">
+git clone git@github.com:nqnwebs/IPython-interactive-talk.git
+</pre>
+<p>O desde este Zip</p>
+</div></div>
+        <p>
+        
+            <a href="posts/ipython-la-interactividad-al-poder.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/pyconar-2010-el-orgullo-de.html">PyConAr 2010, el orgullo de pertenecer</a>
+        <small>  
+             <span class="timeago" title="2010-10-17 12:46:08">2010-10-17 12:46:08</span>
+        </small></h1>
+        <div><p>Ya está, ya pasó. Y estoy muy feliz de <a class="reference external" href="http://ar.pycon.org/2010/">eso que
+pasó</a>.</p>
+<p>Conocí Python oliendo la pasión con la que hablaban de este lenguaje
+gente a la que admiro mucho y empujado demandas del trabajo, la academia
+y el hartazgo, de poner un pie fuera de la web, cosa que PHP permite de
+mentirita.</p>
+<p>Me acerqué al lenguaje facilmente (<em>simple is better than complex</em>) pero
+no tan fácil a la comunidad. De hecho, acabo de fijarme en gmail y
+encontré el mail de un bonito bot y <a class="reference external" href="posts/blog/article/el-numero-mi-primer-juego">mi feo hola
+mundo</a> a la lista de <a class="reference external" href="http://www.python.org.ar">Python
+Argentina</a> fechados el 17 de enero de 2007.
+Es bastante tiempo para saber tan poco de Python y para que Python sepa
+tan poco de mí.</p>
+<p>Lamentablemente nunca pude ir a los PyCamp, que parecen ser el ámbito
+ideal para encontrar y fortalecer esa cuestión humana que a mi me
+faltaba para pertenecer y disfrutar, no sólo del lenguaje sino de su
+comunidad. Así que el año pasado, despues de la PyCon 2009 en Buenos
+Aires, me propuse tomar alguna responsabilidad si se hacía de nuevo.</p>
+<p>Cumplí a medias: me anoté como revisor y ni siquiera revisé la mía. Pero
+(haciendo volar libres dos pajaros de <a class="reference external" href="http://agrupacionmazamorra.org.ar)%20organic%C3%A9%20el%20proceso%20de%20dise%C3%B1o/elecci%C3%B3n%20y%20fabricaci%C3%B3n%20de%20las%20%5Bremeras-%3Ehttp://python.org.ar/pyar/RemerasV3">un
+sueño</a>,
+<a class="reference external" href="http://anfiloquio.usla.org.ar/view/tin_nqn/">hospedé</a> a Manu,
+presenté un <a class="reference external" href="posts/blog/article/gpec-2010-el-poster">poster</a> más grandote
+que grandioso y di una
+<a class="reference external" href="posts/blog/article/ipython-la-interactividad-al-poder">charla</a> que salió no
+demasiado mal.</p>
+<p>La alegría, más allá de las poquitas charlas que logré ver, viene por el
+lado social. Conocí, conversé, me reí y casi que me emborraché con gente
+muy linda, mucha de la cual no sólo es técnicamente brillante sino
+humanamente querible.</p>
+<p>Como apasionado de la tecnología sé que no es neutral. La tecnología, en
+esta época, es parte de la ideología.</p>
+<p>Elegir una tecnología, un lenguaje de programación, y meterle tiempo,
+ingenio y muchas veces plata a su difusión y mejora, para que muchos se
+beneficien (y se tienten a meterle tiempo, ingenio ...) es un gesto de
+solidaridad que hay que aplaudir de pie.</p>
+<p>En un sistema cuyo <em>leitmotiv</em> es <em>"vos o yo"</em> hay gente que dice <em>"vos
+y yo"</em>, y mejor aún, dice <em>"nosotros"</em>.</p></div>
+        <p>
+        
+            <a href="posts/pyconar-2010-el-orgullo-de.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/grosa.html">Grosa</a>
+        <small>  
+             <span class="timeago" title="2010-10-15 11:31:10">2010-10-15 11:31:10</span>
+        </small></h1>
+        <div><p>From: Elena Del Balzo
+Date: 2010/10/15
+Subject: Conferencia!!!
+To: Martín Gaitán</p>
+<blockquote>
+<p>Hijo Queridísimo!!!</p>
+<p>Hoy estuvimos en la universidad porque Juli recibió un título de
+postgrado. Charlando con tu padre me recordó que hoy das tu
+<a class="reference external" href="http://ar.pycon.org/2010/conference/schedule/event/91/">conferencia</a>.
+Cuántas cosas lindas nos pasan!!! Deseo que logres transmitir todo
+lo que te apasiona y defiendas siempre, en cada circunstancia de la
+vida, tus convicciones, tus valores y principios. Tenemos obligación
+de llegar a muchos con nuestros conocimientos. El saber es poder.
+Vos tenés en tu "poder" una hermosa herramienta y Sé de tu capacidad
+para socializarla.¡¡ A multiplicar, a Sumar, a Compartir!!! Abrazo.
+te amo. Ma´</p>
+</blockquote></div>
+        <p>
+        
+            <a href="posts/grosa.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/me-cago-en-vos-afip.html">Me cago en vos, AFIP</a>
+        <small>  
+             <span class="timeago" title="2010-10-08 13:46:54">2010-10-08 13:46:54</span>
+        </small></h1>
+        <div><p>El lunes a las 8am empecé mis trámites de (re)empadronamiento al
+Monotributo. Recién a las 12hs pude saber que ese día fracasaría, porque
+las "pruebas" de mi domicilio fiscal no eran válidas.</p>
+<p>El martes, flamantemente concubinado con Nati para que me sirvan las
+facturas a su nombre, después de esperar que el burócrata que te saca la
+fotito y te hace firmar en el sensor (datos "biométricos", le llaman,
+pomposos) se parara cada 5 minutos, jugara con el aire acondicionado a
+su espalda y mandara mensajitos por celular mientras la gente de la cola
+(yo incluído) se inflaba de rabia, pude obtener la inscripción y la
+clave, la rebuscada combinación alfanumérica <em>"hola1234"</em>, que es igual
+para todos (podrían, ya que están, imprimirla en el formulario,
+cierto?).</p>
+<p>Se suponía que con ese trámite de sólo 2 mañanas, al otro día (porque la
+era digital lleva su tiempo) podría terminar los trámites via web. Pero
+se suponía nomás, porque la plataforma virtual-&gt; de <strong>AFIP no funciona
+con navegadores que no sean Internet Explorer</strong>. En Firefox (o
+cualquiera de los navegadores libres) uno hace click y el formulario
+nunca se envía.</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L450xH425/2010-10-08-171708_608x574_scrot-e0f53.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 25)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Esto es, por supuesto, porque está programada fuera de estándares. Vean
+qué boludez:</p>
+<pre class="literal-block">
+Element referenced by ID/NAME in the global scope. Use W3C standard document.getElementById() instead.
+</pre>
+<p>Este chorizo tira Firebug:</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH377/2010-10-08-172527_522x385_scrot-71784.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 37)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Es un doble esfuerzo indignarse con los burócratas (que llenan
+formularios de papel o scripts javascript erróneos) y también con los
+que en la cola, indignados, bociferan en voz alta frases noventistas
+como <em>"esto no va a mejorar hasta que lo privaticen"</em>, buscando alguna
+complicidad, imagino.</p>
+<p>Pero me niego a naturalizar que las cosas del Estado deban andar mal. No
+sólo porque las pagamos entre todos (mucha veces, más de lo que valen)
+sino porque necesitamos un Estado que funcione para que todas las demás
+cosas funcionen bien.</p>
+<p>El discurso (y el avance) privatizador, comprobadamente perjudicial para
+el pueblo, ya no tiene tanta cancha como antes. Pero es hora de que
+empecemos, como
+<a class="reference external" href="http://www1.hcdn.gov.ar/proyxml/expediente.asp?fundamentos=si&amp;numexp=5914-D-2010">Estado</a>,
+pero sobre todo como ciudadanos concientes de que lo necesitamos, a
+sanarlo, quererlo, exigirlo y fortalecerlo.</p></div>
+        <p>
+        
+            <a href="posts/me-cago-en-vos-afip.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/charla-python-a-los-bifes.html">Charla: Python a los bifes</a>
+        <small>  
+             <span class="timeago" title="2010-10-07 17:52:24">2010-10-07 17:52:24</span>
+        </small></h1>
+        <div><p>Víctima de la ausencia de tiempo y la mala costumbre, a ultísimo momento
+terminé de preparar <a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html">las
+diapositivas</a>
+para la charla que dí hoy en el marco de las <a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-2010">Conferencias de Ingeniería
+en Computación, Electrónica y Biomédica
+2010</a> de <a class="reference external" href="http://www.efn.uncor.edu/">mi
+facu</a>.</p>
+<p>La charla se tituló <strong>Python a los bifes: casos reales de aplicación en
+Ingeniería</strong>. Las <a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html">diapositivas se pueden ver
+acá</a>.</p>
+<p><a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html">|image0|</a></p>
+<p><em>(F11 para ver a pantalla completa)</em></p>
+<p>El resúmen de dos líneas decía:</p>
+<blockquote>
+Basta de hablar y hablar: en la cancha se ven los pingos. Mostraré
+problemas reales de la carrera resueltos con este poderoso (y
+simple) lenguaje. Trabajos de Sistemas de Computación, Sistemas
+Operativos II, Paradigmas de programación y mi proyecto integrador
+en curso"</blockquote>
+<p>Hubo unas 40 personas, y estuvo, creo, bastante bien. Como no practiqué
+(me siento estúpido hablando solo, y mi novia me mira desorbitada —
+aburrida — cuando le hablo de computadoras) no calculé bien el tiempo y
+los ejemplos, que era el quid de la cuestión, fueron a paso raudo. Pero
+creo que a la gente le gustó y ojalá alguno se sienta motivado para leer
+el <a class="reference external" href="http://tutorialpython.com.ar">tutorial de python</a> y sumarse a
+<a class="reference external" href="http://python.org.ar">PyAr</a>.</p>
+<div class="section" id="fuentes">
+<h2>Fuentes</h2>
+<p>La presentación fue <a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.rst">escrita en
+RST</a>
+y procesada con la herramienta
+<a class="reference external" href="http://docutils.sourceforge.net/docs/user/slide-shows.html">rst2s5</a>.</p>
+<p>Tiene una licencia
+<a class="reference external" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">cc-By-NC-SA</a>.
+Podés descargar todos los fuentes con las imágenes y algunos ejemplos de
+este tar:</p>
+</div></div>
+        <p>
+        
+            <a href="posts/charla-python-a-los-bifes.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/integracion-de-dineromail-en.html">Integración de DineroMail en SimpleCart (js)</a>
+        <small>  
+             <span class="timeago" title="2010-09-14 17:31:00">2010-09-14 17:31:00</span>
+        </small></h1>
+        <div><p>Continuando con el <a class="reference external" href="posts/blog/article/simplecart-js-para-spip">artículo
+anterior</a> hay tener en cuenta
+que cuando decimos "sistema de e-commerce <strong>simple</strong>" implica que tiene
+que ser simple también para el comprador.</p>
+<p>En Argentina (y varios otros paises de latinoamérica) PayPal o
+GoogleCheckout no son de uso masivo, porque el e-commerce no es una
+práctica común y desde nuestro país es realmente imposible "poner" plata
+en una cuenta de esas — salvo que sea un pago efectuado desde el
+extranjero — , y es bastante engorroso sacarla. Además, quizas lo más
+importante, no aceptan pagos la mayoría de las monedas locales
+latinoamericanas.</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="images/dineromail_pagos.jpg">|image1|</a></td>
+</tr></tbody></table><p>Por eso he integrado a <a class="reference external" href="http://simplecartjs.com/">SimpleCart (js)</a> el
+sistema de pagos virtuales <a class="reference external" href="http://dineromail.com/">Dineromail.com</a>
+que es similar a los otros pero orientado al mercado latinoamericano. Se
+puede utilizar desde Argentina, Brasil, Chile, México y (al parecer)
+próximamente Colombia, pagando en moneda local de cada país o en
+dólares.</p>
+<p>La implementación está integrada al código original en javascript, no
+sobre SPIP, por lo que puede ser útil para usarlo independientemente o
+integrarlo con otro CMS.</p>
+<p>El código está <a class="reference external" href="http://github.com/nqnwebs/simplecart-js">disponible en
+GitHub</a></p>
+<div class="section" id="instalacion-rapida">
+<h2>Instalación rápida</h2>
+<p>Obviamente, se incluye el código javascript en la cabecera de la página
+HTML.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 40)</p>
+Literal block expected; none found.</div>
+<p>y se definen, al menos, las variables requeridas:</p>
+<pre class="literal-block">
+&lt;/root&gt;
+</pre>
+<p>¡Listo! Al hacer Checkout, el contenido del carrito será enviado a
+DineroMail para procesar el pago.</p>
+</div>
+<div class="section" id="otros-parametros">
+<h2>Otros parámetros</h2>
+<p>El carrito de DineroMail tiene muchísimos parámetros opcionales que en
+su mayoría he omitido. Mirá el <a class="reference external" href="https://ar.dineromail.com/content/Integraci%C3%B3n-AR.pdf">manual de
+integración</a>
+para conocer la API completa. Sin embargo, algunas variables opcionales
+las tuve en cuenta. Acá listo todas las implementadas:</p>
+<p>Variable JS
+Descripción
+dmMerchantId
+Número de cuenta de DineroMail (los primeros 7 digitos sin el dígito
+verificador /X). <strong>(requerido)</strong>
+dmCountryId
+Código de país del vendedor. 1: Argentina, 2: Brasil, 3: Chile, 4:
+México. <strong>(1 por defecto)</strong>
+dmSellerName
+Leyenda que el vendedor quiere mostrar en lugar de su email.
+dmHeaderImage
+URL de la imagen a mostrar en el Header
+dmCurrency
+Moneda de pago. Puede ser <strong>USD</strong> (dolares) . Si no se define, se usar
+la <strong>moneda local</strong> del país del vendedor.
+dmOkUrl
+URL donde se re direcciona al comprador en caso de transacción exitosa
+dmErrorUrl
+URL donde se re direcciona al comprador en caso de transacción errónea
+dmPendingUrl
+URL donde se re direcciona al comprador en caso de transacción
+pendiente.
+dmPaymentMethods
+Cadena de medios de pago permitidos. Por defecto elige todos los medios
+disponibles para el país, pero se puede configurar específicamente. Por
+ejemplo para permitir Pago Fácil, Rápipago y Visa en 1, 3 y 6 cuotas:
+<tt class="docutils literal">ar_dm;ar_pagofacil;ar_rapipago;ar_visa,1,3,6</tt>
+<strong>Nota:</strong> Todas las variables son atributos del objeto <tt class="docutils literal">simpleCart</tt>,
+por ejemplo <tt class="docutils literal">simpleCart.dmSellerName = "Vendedor Loco";</tt></p>
+<p>Además se puede asignar un código de producto al item.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 92)</p>
+Literal block expected; none found.</div>
+<p>El valor ’X18A’ se envía a DineroMail para futuros controles del
+vendedor.</p>
+<p>Es todo por ahora. ¡A vender!</p>
+</div>
+<div class="section" id="actualizacion">
+<h2>Actualización</h2>
+<p>Agregué unos selectores asociados al evento "click" para permitir
+cambiar dinámicamente el método de pago, de manera de darle más libertad
+al comprador.</p>
+<p>Basta con declarar un elemento que acepte el evento <a href="posts/integracion-de-dineromail-en.html#id1"><span class="problematic" id="id2">``</span></a>onclick `` y
+asociarlo a alguna de estas clases</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 104); <em><a href="posts/integracion-de-dineromail-en.html#id2">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<p>class
+descripción
+simpleCart_to_paypal
+Activa PayPal como medio de pago
+simpleCart_to_googlecheckout
+Activa Google Checkout como medio de pago
+simpleCart_to_dineromail
+Activa Google Checkout como medio de pago
+Un ejemplo de uso podría ser:</p>
+<pre class="literal-block">
+Elija su método de pago
+</pre>
+</div></div>
+        <p>
+        
+            <a href="posts/integracion-de-dineromail-en.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+    <div>
+<ul class="pager"><li class="previous">
+        <a href="index-1.html">← Posts posteriores</a>
+    </li>
+  
+  
+    <li class="next">
+        <a href="index-3.html">Posts anteriores  →</a>
+    </li>
+  
+</ul></div>
+    
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

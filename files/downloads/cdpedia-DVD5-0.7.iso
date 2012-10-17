@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+<head>
+<base href="http://nqnwebs.com/" />
+<title>Error 404 - NqN/webs ::: Diseño, Desarrollo y Hosting de sitios web</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="SPIP 2.1.10 SVN [19205]" />
+<link rel="alternate" type="application/rss+xml" title="Sindicar el sitio completo" href="http://nqnwebs.com/spip.php?page=backend" />
+<link rel="stylesheet" href="prive/spip_style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="squelettes-dist/spip_formulaires.css" type="text/css" media="projection, screen, tv" />
+<link rel='stylesheet' type='text/css' media='all' href='extensions/porte_plume/css/barre_outils.css' />
+<link rel='stylesheet' type='text/css' media='all' href='http://nqnwebs.com/spip.php?page=barre_outils_icones.css' />
+
+<link rel="stylesheet" href="squelettes-dist/habillage.css" type="text/css" media="projection, screen, tv" />
+<link rel="stylesheet" href="squelettes-dist/impression.css" type="text/css" media="print" />
+
+<script src="prive/javascript/jquery.js" type="text/javascript"></script>
+
+<script src="prive/javascript/jquery.form.js" type="text/javascript"></script>
+
+<script src="prive/javascript/ajaxCallback.js" type="text/javascript"></script>
+
+<script src="prive/javascript/jquery.cookie.js" type="text/javascript"></script>
+<!-- insert_head --><!--[if lt IE 7]>
+	<script src='extensions/msie_compat/javascript/jquery.ifixpng.js'></script>
+	<script type='text/javascript'>//<![CDATA[
+		jQuery.ifixpng('rien.gif');		
+		function fixie() {
+			jQuery('img').ifixpng();
+		}
+		$(document).ready(function() { fixie(); });
+		onAjaxLoad(fixie);	
+	//]]></script>
+<![endif]-->
+<script type='text/javascript' src='extensions/porte_plume/javascript/xregexp-min.js'></script>
+<script type='text/javascript' src='extensions/porte_plume/javascript/jquery.markitup_pour_spip.js'></script>
+<script type='text/javascript' src='extensions/porte_plume/javascript/jquery.previsu_spip.js'></script>
+<script type='text/javascript' src='http://nqnwebs.com/spip.php?page=porte_plume_start.js&amp;lang=es'></script><meta name="robots" content="none" />
+</head>
+<body class="page_404">
+	<div id="page">
+
+	
+	<div id="entete">
+<a rel="start home" href="http://www.nqnwebs.com/" title="Portada del sitio" class="accueil"><strong id="nom_site_spip">NqN/webs ::: Diseño, Desarrollo y Hosting de sitios web</strong></a>
+<div class="formulaire_spip formulaire_menu_lang" id="formulaire_menu_lang">
+	<form method="post" action="http://nqnwebs.com/spip.php?action=converser&amp;redirect=%2Fhttp%3A%2F%2Fcdpedia.nqnwebs.com%2Fcdpedia-DVD5-0.7.iso"><div>
+		<input name="action" value="converser" type="hidden" />
+<input name="redirect" value="/http://cdpedia.nqnwebs.com/cdpedia-DVD5-0.7.iso" type="hidden" />
+		<label for="var_lang">Idiomas del sitio</label>
+		<select name="var_lang" id="var_lang" onchange="this.parentNode.parentNode.submit()"><option class='maj-debut' value='el'>&#949;&#955;&#955;&#951;&#957;&#953;&#954;&#940;</option>
+<option class='maj-debut' value='es' selected='selected'>Espa&#241;ol</option>
+</select>
+		<noscript><p class="boutons"><input type="submit" class="submit" value="&gt;&gt;" /></p></noscript>
+	</div></form>
+</div></div>
+	<div id="conteneur">
+    <div id="contenu">
+
+        
+        <div id="hierarchie"><a href="http://www.nqnwebs.com/">Portada del sitio</a> &gt; <strong class="on">Error 404</strong></div>
+
+        <div class="cartouche">
+        <h1>Error 404</h1>
+        </div>
+        
+
+	</div><!--#contenu-->
+	</div><!--#conteneur-->
+
+    
+    <div id="navigation">
+
+        
+        <div class="menu rubriques">
+	<h2>Secciones</h2>
+	<ul>
+	
+		<li>
+			<a href="Inicio/">Inicio</a>
+
+			
+
+		</li>
+	
+		<li>
+			<a href="blog/">Blog</a>
+
+			
+
+		</li>
+	
+		<li>
+			<a href="conceptos/">Conceptos</a>
+
+			
+
+		</li>
+	
+		<li>
+			<a href="hosting/">Hosting</a>
+
+			
+
+		</li>
+	
+		<li>
+			<a href="portfolio/">Portfolio</a>
+
+			
+
+		</li>
+	
+		<li>
+			<a href="sobre-mi/">Sobre mi</a>
+
+			
+
+		</li>
+	
+		<li>
+			<a href="Citas/">Citas</a>
+
+			
+
+		</li>
+	
+		<li>
+			<a href="contacto/">Contacto</a>
+
+			
+
+		</li>
+	
+
+	</ul>
+</div>		
+		<div class="formulaire_spip formulaire_recherche" id="formulaire_recherche">
+<form action="http://nqnwebs.com/spip.php?page=recherche" method="get"><div>
+	<input name="page" value="recherche" type="hidden" />
+	
+	<label for="recherche">Buscar</label>
+	<input type="text" class="text" size="10" name="recherche" id="recherche" accesskey="4" /><input type="submit" class="submit" value="&gt;&gt;" title="Buscar" />
+</div></form>
+</div>
+
+    </div><!--#navigation-->
+	
+	
+	<div id="extra">
+	&nbsp;
+	</div><!--#extra-->
+
+	
+	<div id="pied">
+	<a href="http://www.spip.net/" title="Sitio desarrollado con SPIP"><img src="squelettes-dist/spip.png" alt="SPIP" width="48" height="16" /></a> | 
+	<a href="squelettes-dist/404.html" title="ver el esqueleto de esta p&aacute;gina" rel="nofollow">esqueleto</a> | <a href="http://nqnwebs.com/spip.php?page=login&amp;url=%2Fsquelettes%2Farchivos%2Fend6Off.js" rel="nofollow" class='login_modal'>Conectarse</a> | 
+	<a rel="contents" href="http://nqnwebs.com/spip.php?page=plan">Mapa del sitio</a> | 
+	<a href="http://nqnwebs.com/spip.php?page=backend" rel="alternate" title="Sindicar el sitio completo"><img src="squelettes-dist/feed.png" alt="Seguir la vida del sitio" width="16" height="16" />&nbsp;RSS&nbsp;2.0</a>
+</div>
+<!-- SPIP-CRON --><div style="background-image: url('http://nqnwebs.com/spip.php?action=cron');"></div>
+	</div><!--#page-->
+</body>
+</html>

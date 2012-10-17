@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Project Euler, Problema #2 | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Project Euler, Problema #2 | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Project Euler, Problema #2</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-09-20 16:37:47">2009-09-20 16:37:47</span>   |  
+
+        
+
+        <a href="project-euler-problema-2.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/python.html">Python</a>
+                
+            
+        
+    </small>
+    <div><p>El <a class="reference external" href="http://projecteuler.net/index.php?section=problems&amp;id=2">problema nº
+2</a> pide
+obtener la suma de todos los números impares pertenencientes a la
+<a class="reference external" href="http://es.wikipedia.org/wiki/sucesi%C3%B3n_de_Fibonacci">sucesión de
+Fibonacci</a> menores
+a 4 millones.</p>
+<p>El código con el que lo resolví es este:</p>
+<pre class="literal-block">
+def fibo(max):
+        a, b = 0, 1
+           n = a + b
+           while n &lt; max:
+                yield n
+                a, b = b, n
+                n = a + b
+
+sum([i for i in fibo(4000000) if i%2 == 0])
+</pre>
+<p>El resultado es 4613732.</p>
+<div class="section" id="explicacion">
+<h2>Explicación</h2>
+<p>Fibonacci es el "hola mundo matemático" y Python luce su elegancia con
+este problema.</p>
+<p>El aspecto interesante de la función <strong>fibo()</strong> definida en el código de
+arriba es que no se trata de una función común sino de un generador.
+Sintácticamente la diferencia está en que no utiliza la sentencia
+<strong>return</strong> sino
+<strong>`yield &lt;http://docs.python.org/reference/simple_stmts.html#the-yield-statement&gt;`_</strong>
+.</p>
+<p>La definición de
+<em>`yield &lt;http://www.wordreference.com/definition/yield&gt;`_</em>. en su
+acepción de verbo, dice «end resistance, especially under pressure or
+force;». Ceder, no oponer resistencia.</p>
+<p>La diferencia sustancial entre un yield y un return es que el yield
+devuelve el resultado parcial de cada iteración y hace una "marca de
+entrada" desde donde se comenzará a ejecutar la próxima vez que la
+función (el generador) sea invocado.</p>
+<p>Esto permite una recursividad con "<a class="reference external" href="http://en.wikipedia.org/wiki/Lazy_evaluation">evaluación
+perezosa</a>", mucho más
+eficiente en términos computacionales.</p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="resolviendo-project-euler-con.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="learning-python-4th-edition.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/project-euler-problema-2.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Limitar la cantidad de caracteres de los comentarios | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Limitar la cantidad de caracteres de los comentarios | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Limitar la cantidad de caracteres de los comentarios</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-06-10 06:41:37">2009-06-10 06:41:37</span>   |  
+
+        
+
+        <a href="limitar-la-cantidad-de-caracteres.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/spip.html">SPIP</a>
+                , 
+            
+                <a href="../categories/jquery.html">jQuery</a>
+                
+            
+        
+    </small>
+    <div><p>Si Twitter funciona con 140 caracteres los comentarios a nuestros
+artículos podrían tener 200, ¿no?</p>
+<p>Hay una forma fácil de limitar el largo permitido en un campo de texto
+mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
+caracteres restantes.</p>
+<p>Por ejemplo, esto limita el tamaño de un comentario en SPIP.</p>
+<pre class="literal-block">
+ $(document).ready(function () {
+
+     $("#texte").before("&lt;div id='chars' style='float:right;font-weigth:strong;margin-right:5px;'&gt;&lt;/div&gt;");
+
+$(function(){
+    $('#texte').keyup(function(){
+        limitChars('texte', 200, 'chars');
+    })
+    });
+ });
+
+function limitChars(textid, limit, infodiv) {
+     var text = $('#'+textid).val();
+     var textlength = text.length;
+     if(textlength &gt; limit) {
+         $('#' + infodiv).html('No puede ingresar m&amp;aacute;s de '+limit+' caracteres');
+         $('#'+textid).val(text.substr(0,limit));
+         return false;
+     } else {
+         $('#' + infodiv).html('Restan '+ (limit - textlength) +' caracteres.');
+         return true;
+     }
+}
+</pre>
+<div class="section" id="intrucciones-para-spip">
+<h2>Intrucciones para SPIP</h2>
+<ol class="arabic simple"><li>Copiar el código</li>
+<li>Pegarlo luego de la baliza #INSERT_HEAD de tu cabecera</li>
+<li>(opcional) Cambiarle el límite (el número 200),</li>
+</ol><p>¡Listo!</p>
+</div>
+<div class="section" id="intrucciones-generales">
+<h2>Intrucciones generales</h2>
+<p>Es igual al anterior, sólo debes asegurarte que tiene en jquery en la
+página. Luego cambia el selector <tt class="docutils literal">#texte</tt> por el que corresponda al
+campo que querés limitar.</p>
+</div>
+<div class="section" id="ejemplo">
+<h2>Ejemplo</h2>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="ultima-version-de-spip-por-svn.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="un-spip-para-muchos-sitios.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

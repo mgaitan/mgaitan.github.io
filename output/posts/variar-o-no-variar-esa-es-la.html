@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Variar o no variar, esa es la cuestión | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Variar o no variar, esa es la cuestión | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Variar o no variar, esa es la cuestión</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-03-15 20:03:38">2009-03-15 20:03:38</span>   |  
+
+        
+
+        <a href="variar-o-no-variar-esa-es-la.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/spip.html">SPIP</a>
+                
+            
+        
+    </small>
+    <div><p>Hace algunos días, en
+<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">spip-es</a> se planteó
+la duda de cómo controlar una cabecera diferente para algunas secciones
+en particular.</p>
+<p><a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C29008.88.7.114.173.1236164746.squirrel@correo.nodo50.org%3E">Xabi
+aportó</a>
+la solución canónica, que es crear esqueletos ad-hoc para cada sección
+difente, valiendose de los esqueletos con forma <em>rubrique-X.html</em> (donde
+X es el ID de la sección).</p>
+<p>Esto se describe en el apartado "<a class="reference external" href="http://www.spip.net/es_article2257.html">Para ir más
+lejos</a>" de la documentación.</p>
+<p>En este caso particular, sólo se quería mostrar el logo en la cabecera
+para algunas secciones. El problema es que las secciones "diferentes"
+serían iguales entre sí, pero invocando distintos esqueletos. Esto
+contradice el <a class="reference external" href="http://es.wikipedia.org/wiki/DRY">principio DRY</a>
+siempre deseable en todo desarrollo de software.</p>
+<p>Una forma sencilla, pero a la vez parcial de resolver esto, es hacer un
+<a class="reference external" href="http://es.wikipedia.org/wiki/enlace_duro">enlace duro</a> entre los
+esqueletos que son iguales.</p>
+<p>Por ejemplo, la sección 2, la 4 y la 6, tendrán el mismo esqueleto.
+Entonces creamos el rubrique-2.html y definimos rubrique-4.html y
+rubrique-6.html como enlaces duros al primero. Desde la línea de
+comandos:</p>
+<pre class="literal-block">
+$ ln rubrique-2.html rubrique-4.html
+$ ln rubrique-2.html rubrique-6.html
+</pre>
+<p>Esta solución funciona, pero es sólo para servidores <em>*nix</em> y teniendo
+acceso a la consola (por <a class="reference external" href="http://es.wikipedia.org/wiki/SSH">SSH</a>, por
+ejemplo). Además, hay que documentar bien qué se está haciendo, porque
+da lugar a errores cuando dos esqueletos "linkeados" intentan ser
+iguales.</p>
+<p>Por suerte, hay varias otras maneras de resolver esto,</p>
+<div class="section" id="filtros-de-condicion-o-filtro-match">
+<h2>Filtros de condición o filtro match</h2>
+<p><a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C516299.21618.qm@web90607.mail.mud.yahoo.com%3E">Esta
+solución</a>,
+es la que aportó <a class="reference external" href="http://www.graciasdenada.com.ar/">Juan Pablo
+Portugau</a>.</p>
+<p>Lo que plantea, es usar la baliza #ID_RUBRIQUE (que obviamente,
+devuelve el número de la sección) con filtros de comparación. Es,
+hablando en geek, un simple <strong>if</strong>: <em>Si es la sección 2, mostrar el
+logo. Sino, nada</em>:</p>
+<p>En código SPIP:</p>
+<pre class="literal-block">
+[(#ID_RUBRIQUE|=={2}|?{'#LOGO_RUBRIQUE',''})]
+</pre>
+<p>La limitación de esta solución se da cuando son múltiples los valores
+posibles. En nuestro caso, se debe mostrar el logo cuando se trata de la
+sección 2, de la 4 o de la 6. Juan Pablo propone anidar esta estructura.</p>
+<pre class="literal-block">
+[(#ID_RUBRIQUE|=={2}|?{'#LOGO_RUBRIQUE',[(#ID_RUBRIQUE|=={4}|?{'#LOGO_RUBRIQUE',[(#ID_RUBRIQUE|=={6}|?{'#LOGO_RUBRIQUE',''})]})]})]
+</pre>
+<p>Aunque es sintácticamente correcto, el código resultante es bastante
+inmantenible para un ser humano con cerebro normal y el monito parseador
+de SPIP queda agitado.</p>
+<p>Para eso existe el filtro
+<a class="reference external" href="http://www.spip.net/fr_article901.html#match">match</a>, que se vale de
+las <a class="reference external" href="http://www.regular-expressions.info/">expresiones regulares</a> para
+que hagamos nuestro festín.</p>
+<p>Lo de arriba, puede reducirse a esto:</p>
+<pre class="literal-block">
+[(#ID_RUBRIQUE|match{^(2|4|6)$}|?{'#LOGO_RUBRIQUE',''})]
+</pre>
+<p>El filtro devuelve <strong>VERDADERO</strong> si el valor de #ID_RUBRIQUE empieza
+con 2, 4 o 6 y termina con nada. Que es, dicho de otra manera, lo que
+queremos.</p>
+</div>
+<div class="section" id="y-aun-mas-claro-bucles-como-filtros">
+<h2>Y aún más claro: bucles como filtros</h2>
+<p>Las expresiones regulares <em>no son moco de pavo</em>, diría mi abuela. Super
+potentes, pero poco escalables en la curva complejidad-comprensibilidad.</p>
+<p>Hay una solución que es muy útil, sencilla pero no trivial: usar un
+bucle como filtro.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 100)</p>
+Literal block expected; none found.</div>
+<p>La explicación es de la lógica de conjuntos: los criterios de un bucle
+funcionan como condiciones AND. Deben cumplirse todas. En este caso, el
+primer criterio <tt class="docutils literal">{id_rubrique IN (1,2,4)}</tt> exige que el id_rubrique
+sea 1, 2 o 4. En el segundo <tt class="docutils literal">{id_rubrique}</tt>, se exige que sea el que
+viene en contexto. Por lo tanto, este bucle sólo funcionará (mostrará el
+logo) si el id_rubrique <em>del contexto</em> es 1, 2 o 4. En lógica, es una
+operación <a class="reference external" href="http://es.wikipedia.org/wiki/Disyunci%C3%B3n_l%C3%B3gica">O
+exclusiva</a></p>
+<p>Funciona, es más legible que cualquiera de las otras soluciones y además
+permite una clausula <em>ELSE</em> mucho más accesible, simplemente usando la
+estructura completa del bucle.</p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="una-mejor-manera-de-controlar-los.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="auto-podcast.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/variar-o-no-variar-esa-es-la.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

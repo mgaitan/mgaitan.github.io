@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="De mercurial a git, limpieza mediante | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>De mercurial a git, limpieza mediante | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">De mercurial a git, limpieza mediante</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2012-07-02 17:39:11">2012-07-02 17:39:11</span>   |  
+
+        
+
+        <a href="de-mercurial-a-git-limpieza.txt">Código</a>
+        
+    </small>
+    <div><p>Cuando decidí dar el salto desde Subversion a un DVCS estuve leyendo
+muchos posts comparativos entre las dos opciones más relevantes, Git y
+mercurial. Había que elegir entre <a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/">Mc Gyver o James
+Bond</a>
+decía uno, entre <a class="reference external" href="http://www.ericsink.com/entries/hg_denzel.html">Denzel Washington y Wesley
+Snipes</a> y la
+comparación jocosa entre estos dos grandes softwares se volvió una
+especie de meme tácito.</p>
+<p>Sabía que, a fin de cuentas, tenía que probarlos y ver cual encajaba
+mejor para mis necesidades de "solo developer". En el medio leí <a class="reference external" href="http://hginit.com/">Hg
+Init</a> del gran divulgador Joel Spolsky y, víctima
+de semejante labia, me sumergí para ese lado.</p>
+<p>Mi flujo de trabajo era bastante básico pero suficiente y superador de
+subvesion. Comparado con lo que había probado de Git era mucho menos
+verbósico (no podía entender la necesidad de Git hacer <tt class="docutils literal">add</tt> cada vez
+que quería commitear un archivo modificado) y
+<a class="reference external" href="http://bitbucket.org">Bitbucket</a> daba no sólo hospedaje gratuito para
+repositorios públicos sino también para potenciales desarrollos privados
+(cosa que GitHub, su equivalente — siendo benévolo con bitbucket — para
+Git, no daba).</p>
+<p>Con el tiempo empecé a compatir <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks">algunos
+proyectitos</a> con otros
+desarrolladores y mi inexperiencia en Mercurial me empezó a jugar en
+contra. Y justo cuando necesitaba ponerme a aprender más profundamente
+Hg, entre a laburar, muy a gusto, en
+<a class="reference external" href="http://machinalis.com">Machinalis</a> (qué vago, nunca conté nada por
+acá) donde usamos Git para el control de versiones de los proyectos,
+implementando <a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/">esta política de ramificación y
+mezcla</a>.</p>
+<p>Resultó entonces que en poquito tiempo ya sabía mucho más de Git que de
+Mercurial (con la ventaja de tenerlo a Daniel Moisset cerca para apagar
+algunos incendios que encendí las primeras semanas).</p>
+<p>Para más señales, Atlassian, la empresa detras de Bitbucket y principal
+referente de Mercurial (junto con Selenic, la creadora), comenzó a
+ofrecer Git (sin descartar mercurial) como sistema DVCS (comiéndose
+alguna que otra gastada porque alguna vez comunicó una noticia parecida
+como broma del dia de los inocentes).</p>
+<p>Asi que llegó el dia que decidí mudar un proyecto en Mercurial a Git.
+Atenti: las razones no son técnicas. No tengo suficiente conocimiento de
+Mercurial (ni de Git) para decir que uno es mejor que el otro por tales
+razones. Sólo es *mi experiencia*, que vino un poco por obligación. Y
+sí, también, siguiendo un poco a la manada. Proyectos de la envergadura
+de Django han migrado a Git (y, particularmente, a GitHub)</p>
+<div class="section" id="la-limpieza">
+<h2>La limpieza</h2>
+<p>Soy de esos que se mudan seguido. "¿Asi que si te renuevo contrato me
+aumentas 30 % el alquiler e igual te tengo que pagar comisión sin que
+hagas nada? ¡Andá a cagar!" puedo imaginarme dialogando con algun agente
+inmobiliario.</p>
+<p>Esta no era la excepción y debía mudar un repositorio mercurial que a su
+vez había sido mudado (en realidad, exportado desde el último commit, y
+arrancando de 0) desde
+<a class="reference external" href="http://code.google.com/p/gpec2010/">subversion</a>.</p>
+<p>El detalle es que el repositorio original, y por ende el nuevo en
+mercurial, tenia un montón de datos de documentación que era,
+basicamente, todos los fuentes y muchos de los archivos generados del
+reporte escrito de mi tesis.</p>
+<p>El primer changeset en el flamante mercurial consistió en borrar todo
+esa información innecesaria, pero que seguía allí, en el historial (uno
+110Mb de datos que no necesitaba).</p>
+<p>Así que ya que ahora iba a mudarme de nuevo, queria tirar a la basura
+todas esas cajas de papeles que había metido en un caja y, si bien no la
+veía, me ocupaban el placard.</p>
+<p>Despues de darle vueltas, <a class="reference external" href="http://stackoverflow.com/questions/2684898/mercurial-remove-history#8819813">encontré una
+punta</a>
+usando la extensión <a class="reference external" href="http://mercurial.selenic.com/wiki/ConvertExtension#Converting_from_Mercurial">hg convert para obtener un subconjunto de repo
+original</a>,
+por ejemplo, partiendo de un determinado cambio.</p>
+<p><img alt="-" src="local/cache-vignettes/L8xH11/puce-32883.gif"> 1. Primero, activar la extensión editando <tt class="docutils literal"><span class="pre">~/.hgrc</span></tt></p>
+<pre class="literal-block">
+[extensions]
+convert =
+</pre>
+<p><img alt="image1" src="local/cache-vignettes/L8xH11/puce-32883.gif"> 2. ¡Tirar las cajas del placard!</p>
+<pre class="literal-block">
+$ hg convert --config convert.hg.startrev=1 repo_hg_orig/ repo_hg_liviano/
+</pre>
+<p>En mi caso yo queria todo desde la revision 1. <strong>Atenti</strong>: como explica,
+esto genera un repo totalmente nuevo, con ids distintos para los
+changesets, de modo que no se puede mantener "sincronizados" ambos con
+el mismo cambio (al menos no de manera directa).</p>
+</div>
+<div class="section" id="la-mudanza">
+<h2>La mudanza</h2>
+<p>Contra todo pronóstico fruto de mi prejuicio y desidia, migrar a git fue
+extremadamente fácil usando
+<a class="reference external" href="http://repo.or.cz/w/fast-export.git">hg-fast-export</a>.</p>
+<p><img alt="image2" src="local/cache-vignettes/L8xH11/puce-32883.gif"> 1. Obtener los scripts</p>
+<pre class="literal-block">
+$ git clone git://repo.or.cz/fast-export.git
+</pre>
+<p><img alt="image3" src="local/cache-vignettes/L8xH11/puce-32883.gif"> 2. Convertir!</p>
+<pre class="literal-block">
+$ mkdir repo_git
+$ cd repo_git
+$ git init
+$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
+</pre>
+<p>¡Charánnnn...!</p>
+<p>El flag <tt class="docutils literal"><span class="pre">--force</span></tt> era necesario en mi caso porque, como explica el
+<a class="reference external" href="http://repo.or.cz/w/fast-export.git/blob_plain/master:/hg-fast-export.txt">readme.txt</a>
+<em>"hg-fast-export supports multiple branches but only named branches with
+exaclty one head each..."</em>.</p>
+<p>El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
+original que sin perder la historia útil.</p>
+<p>Parafraseando a Lito, <em>si la historia la escriben los que ganan ...
+¿ganamos ?</em></p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="como-volver-a-compartir-desde.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="bienvenidos-al-tren.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

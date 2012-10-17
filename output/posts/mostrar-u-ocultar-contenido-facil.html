@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Mostrar u ocultar contenido, fácil | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Mostrar u ocultar contenido, fácil | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Mostrar u ocultar contenido, fácil</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-02-26 06:12:34">2009-02-26 06:12:34</span>   |  
+
+        
+
+        <a href="mostrar-u-ocultar-contenido-facil.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/spip.html">SPIP</a>
+                , 
+            
+                <a href="../categories/jquery.html">jQuery</a>
+                
+            
+        
+    </small>
+    <div><p>Adrian León consultó en la lista
+<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">spip-es</a>:</p>
+<blockquote>
+<p>Estoy intentado poner balizas de este tipo:</p>
+<p>#BOUTON_BLOCK</p>
+<p>#DEBUT_BLOCK</p>
+<p>Desde el editor del sitio privado en el texto de un artículo. No
+conozco la forma de que funcione desde ahí (sale escrito como texto
+en la página resultante. ¿Hay alguna manera de hacerlo?</p>
+</blockquote>
+<p>Estaba intentando, me enteré después, usar <a class="reference external" href="http://www.spip-contrib.net/Block-deplier-replier">este
+plugin</a></p>
+<p>Al otro día yo contesté:</p>
+<blockquote>
+<p>Hola Adrián. Desconocía de qué hablabas hasta que Marina mandó el
+link. Me parece que en el algunas ocasiones los plugins están
+opacando las soluciones más eficientes e ingeniosas, esas que
+buscabamos antes de que todo fuese "enchufable". <strong>¡Spip se está
+wordpressisando!</strong></p>
+<p>Lo que quiero decir es que me parece que hay formas mejores de hacer
+eso. Yo tengo <a class="reference external" href="http://www.lavozdelanzarote.com/Carlos-Espino-cree-que-los">un ejemplo para
+darte</a></p>
+<p>Andá al pie del artículo, y hacé click en Opinar: despliega (u
+oculta, depende del estado) el formulario de comentarios.</p>
+<p>Es, sin balizas ni plugins, lo que parece que hace esa contrib.</p>
+</blockquote>
+<p>Y el código es de risa: un pelín de jQuery (con su efecto
+<a class="reference external" href="http://docs.jquery.com/Effects/toggle">toggle()</a> )</p>
+<p>El <a class="reference external" href="http://www.lavozdelanzarote.com/squelettes/inc_article.html">esqueleto del ejemplo que
+propongo</a>
+es bien sencillo. El formulario aparece encerrado en una <tt class="docutils literal">div</tt> y
+escondido con la propiedad CSS <tt class="docutils literal">display:none</tt>. De manera simplificada
+[<a class="reference external" href="../blog/article/mostrar-u-ocultar-contenido-facil#nb1">1</a>] :</p>
+<pre class="literal-block">
+[(#FORMULAIRE_FORUM)]
+</pre>
+<p>Y el link que produce el efecto mostrar/ocultar (en este caso «opinar»
+)tiene este código.</p>
+<pre class="literal-block">
+Opinar
+</pre>
+<p>En perfecto argentino se diría: ¡una papa!</p>
+<p>Breve explicación: Al hacer click sobre el link, se ejecuta el evento
+Onclick, que mendiante jQuery (que ya se encuentra en todo sitio SPIP si
+existe la baliza #INSERT_HEAD en el <tt class="docutils literal">&lt;head&gt;</tt> de los esqueletos), se
+busca la el bloque con ID «form-comment» (o sea, el <tt class="docutils literal">div</tt> contenedor
+del formulario), y se aplica <tt class="docutils literal">toggle()</tt>, que es una funcion que si el
+bloque está oculto, lo muestra, y se está visible lo oculta. Simple y
+efectivo.</p>
+<div class="section" id="permitiendo-el-uso-desde-la-redaccion">
+<h2>Permitiendo el uso desde la redacción</h2>
+<p>Hasta aquí el reemplazo al plugin, que no da una solución completa a la
+consulta de Adrían, porque esta solución también está programado en los
+esqueletos del sitio. Pero, con simples modificaciones, se puede usar
+dentro del texto de los artículos.</p>
+<p>El truco es este: la balizas no se pueden usar en el texto, pero <strong>los
+modelos</strong> sí. Y como spip respeta el HTML, tenemos solución: generamo el
+link interruptor a través de <a class="reference external" href="http://www.spip.net/es_article3609.html">un
+modelo</a>
+[<a class="reference external" href="../blog/article/mostrar-u-ocultar-contenido-facil#nb2">2</a>].</p>
+<p>Creamos un modelo dentro de <em>modeles/toggle.html</em> (dentro de la carpeta
+de nuestros esqueletos) con el siguiente código:</p>
+<pre class="literal-block">
+#ENV{texto}
+</pre>
+<p>¡Y listo!</p>
+<p>Para usarlo, en el cuerpo del artículo se invocaría al modelo con dos
+parámetros: el identificador del contenedor, y el texto de link
+controlador.</p>
+<p>Donde se quiera mostrar el link escribimos:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 95)</p>
+Literal block expected; none found.</div>
+<p>y donde queramos que vaya el contenido oculto:</p>
+<pre class="literal-block">
+Hola amigos, esto es una astucia para el compañero Adrian!
+&lt;/div&gt;
+</pre>
+<p>Sólo hay que asegurarse de que el ID del contenedor sea el mismo que el
+parametro <em>div</em> que pasamos a nuestro modelo. Por supuesto, esto permite
+tener múltiples bloques ocultos y link controladores.</p>
+</div>
+<div class="section" id="el-resultado">
+<h2>El resultado</h2>
+<p><a class="reference external" href="../blog/article/mostrar-u-ocultar-contenido-facil#oculto">esto
+funciona?</a></p>
+<p>¡Hola amigos, esto es una astucia para el compañero Adrian!</p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="yahoo-pipes-como-por-un-tubo.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="suscribirse-a-los-comentarios-por.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/mostrar-u-ocultar-contenido-facil.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

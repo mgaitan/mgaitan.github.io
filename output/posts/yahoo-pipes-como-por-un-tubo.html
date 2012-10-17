@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Yahoo! Pipes como por un tubo | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Yahoo! Pipes como por un tubo | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Yahoo! Pipes como por un tubo</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-02-23 20:23:40">2009-02-23 20:23:40</span>   |  
+
+        
+
+        <a href="yahoo-pipes-como-por-un-tubo.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/spip.html">SPIP</a>
+                , 
+            
+                <a href="../categories/web-20.html">Web 2.0</a>
+                
+            
+        
+    </small>
+    <div><p><a class="reference external" href="http://pipes.yahoo.com">Yahoo! Pipes</a> es una una herramienta web
+interactiva para agregar y manipular feeds RSS (y otras fuentes de
+datos) a nuestro antojo de forma sencilla y asequible para cualquiera.</p>
+<p>Es un entorno de programación visual online. La programación visual es
+común para los ingenieros
+(<a class="reference external" href="http://en.wikipedia.org/wiki/Simulink">Simulink</a> o
+<a class="reference external" href="http://es.wikipedia.org/wiki/LabVIEW">LabVIEW</a>) y también para los
+viejos gamers (el glorioso <a class="reference external" href="http://en.wikipedia.org/wiki/The_Incredible_Machine">The incredible
+Machine</a>.</p>
+<p>El concepto es simple: se conectan distintos módulos ("tubos", con una o
+más salidas y entradas) según las necesidades, y se va probando el
+resultado en una salida final.</p>
+<p>En Y! Pipes, luego de toda nuestra manipulación, el resultado es un feed
+personalizado que contiene únicamente lo que se quiera tener, por
+ejemplo el resultado de mezclar y flitrar dos o más fuentes de
+información.</p>
+<div class="section" id="aplicandolo-a-spip">
+<h2>Aplicandolo a SPIP</h2>
+<p>Frecuentemente queremos ofrecer un canal RSS que provea tanto las breves
+como los artículos. SPIP maneja estos objetos independientemente y es
+muy dificil hacer un esqueleto que los mezcle (hay que trabajar con
+pilas en PHP). Con Yahoo! Pipes es tan sencillo como mezclar los dos (o
+más) feeds.</p>
+<p>Esto lo hice en el sitio <a class="reference external" href="http://www.agrupacionmazamorra.com.ar">Agrupación
+Mazamorra</a>:</p>
+<div class="figure align-center">
+<img alt="" src="local/cache-vignettes/L510xH321/Pantallazo-90218.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 36)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>El resultado puede verse (y clonarse) <a class="reference external" href="http://pipes.yahoo.com/mazamorra/rss_todo">desde
+aquí</a></p>
+</div>
+<div class="section" id="mas-ejemplos">
+<h2>Más ejemplos</h2>
+<p>Pero mezclar feeds no es la única posibilidad. De hecho, Pipes es tan
+potente que permite obtener datos parseando un sitio web que no tenga un
+canal RSS o Atom disponible (pero eso es un uso muy avanzado y lo
+dejamos para otra oportunidad).</p>
+<p>Un caso que sí está al alcance de esta breve introducción es filtrar el
+contenido de un feed. Doy mi ejemplo en uso: me gusta leer a <a class="reference external" href="http://nqnwebs.com">Hernán
+Casciari</a> que además de su blog, escribe una
+columna en el diario argentino La Nación. Es un diario asquerosamente
+oligarca y de derecha (¿redundante?) así que prefieron no leer nada más
+que a este autor,</p>
+<p>Fácil: Busco el feed de la sección donde se publican sus columnas,
+filtro con la palabra clave ’Casciari’, y me libro de todo lo que no
+quiero. <a class="reference external" href="http://pipes.yahoo.com/mazamorra/casciari">Aquí el resultado</a></p>
+<div class="figure align-center">
+<img alt="" src="local/cache-vignettes/L465xH360/pipes2-4a406.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 61)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+</div>
+<div class="section" id="ejemplo-en-video">
+<h2>Ejemplo en video</h2>
+<p>Un screencast de <a class="reference external" href="http://obm.corcoles.net">otro blog más</a></p>
+<blockquote>
+Un cierto blog no ofrece los RSS filtrados por categorías. O por
+autores. O por ‘tags’. O queremos el RSS de un sitio, eliminando,
+por ejemplo, todas las entradas que hablen de petanca o del chucho
+del autor. Vamos, que nos gustaría filtrar el RSS de acuerdo con
+algún criterio propio. Para eso (y para bastantes más cosas, pero
+centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
+pequeño ’screencast’ que explica cómo recuperar las categorías (la
+de desarrollo web, en particular) que se ha cargado Feedburner…</blockquote>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="esqueletos-accion.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="mostrar-u-ocultar-contenido-facil.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/yahoo-pipes-como-por-un-tubo.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

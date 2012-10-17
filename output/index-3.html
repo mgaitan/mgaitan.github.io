@@ -1,0 +1,1017 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="tin_nqn (posts antiguos página 3) | tin_nqn"><meta name="description" content="&gt;&gt;&gt; self.geek_side.post()"><meta name="author" content="Martín Gaitán"><title>tin_nqn (posts antiguos página 3) | tin_nqn</title><!-- Le styles --><link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="assets/css/custom.css" rel="stylesheet"><script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="assets/js/jquery.timeago.js" type="text/javascript"></script><script src="assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="." title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    
+        <div class="postbox">
+        <h1><a href="posts/simplecart-js-para-spip.html">SimpleCart(js) para SPIP</a>
+        <small>  
+             <span class="timeago" title="2010-09-12 13:34:44">2010-09-12 13:34:44</span>
+        </small></h1>
+        <div><p><a class="reference external" href="http://simplecartjs.com/">SimpleCart</a> es un sistema para e-commerce
+muy sencillo íntegramente desarrollado en javascript. Permite realizar
+ventas mediante PayPal o Google Checkout y es muy extensible para
+implementar otros sistemas.</p>
+<p>En este domingo de procrastinación, decidí integrarlo a SPIP
+[<a class="reference external" href="blog/article/simplecart-js-para-spip#nb1">1</a>]. Lo usaré, espero que
+pronto, para vender los productos del <a class="reference external" href="http://www.agrupacionmazamorra.org.ar/taller-de-serigrafia-30">taller de serígrafía de
+Mazamorra</a>.</p>
+<div class="section" id="como-funciona">
+<h2>Cómo funciona</h2>
+<p>Se instala como un plugin común y se configura mediante el plugin CFG.
+Por ahora sólo soporta PayPal como medio de pago, pero incluiré otros.</p>
+<p>SimpleCart usa simples señaladores html, que yo he convertido en
+balizas.</p>
+<p>Baliza
+Descripción
+#SIMPLECART_QUANTITY
+Indica la cantidad de productos
+#SIMPLECART_ITEMS
+Muestra los items en el carrito según las cabeceras definidas en la
+página de configuración
+#SIMPLECART_TAX_RATE
+Indica la tasa impositiva indicada en la configuración
+#SIMPLECART_TAX_COST
+Indica el total de impuestos
+#SIMPLECART_SHIPPING_COST
+Indica el costo de envío en función de la configuración definida
+#SIMPLECART_TOTAL
+La suma del precio de los productos en el carrito (Subtotal)
+#SIMPLECART_FINAL_TOTAL
+Total considerando impuestos y envío
+#SIMPLECART_CHECKOUT
+Genera el botón para finalizar compra (redirige al sistema de pago)
+#SIMPLECART_EMPTY
+Genera el botón para vaciar el carrito
+Con estas balizas puedes armar el carrito en cualquier lado. Los datos
+del carritos son persistentes usando cookies (incluso se conservan
+durante un tiempo aunque se abandone la página).</p>
+<p>Por ejemplo, este puede ser tu carrito .</p>
+<pre class="literal-block">
+&lt;:simplecart:your_cart:&gt; (#SIMPLECART_QUANTITY items)
+
+#SIMPLECART_ITEMS
+
+
+&lt;:simplecart:subtotal:&gt;: #SIMPLECART_TOTAL&lt;:simplecart:tax_cost:&gt; (#SIMPLECART_TAX_RATE): #SIMPLECART_TAX_COST &lt;:simplecart:shipping_cost:&gt;:  #SIMPLECART_SHIPPING_COST &lt;:simplecart:final_total:&gt;: #SIMPLECART_FINAL_TOTAL
+
+#SIMPLECART_CHECKOUT
+#SIMPLECART_EMPTY
+</pre>
+</div>
+<div class="section" id="como-agregar-productos">
+<h2>Cómo agregar productos</h2>
+<p>Muy simple. Se sube una imágen como documento definiendo su título y
+descripción y se la incrusta con el modelo <em>item</em>. El precio se indica
+con el parámetro <em>price</em>.</p>
+<p>Por ejemplo, el documento 111 se vuelve un item si se lo incluye así</p>
+<p><tt class="docutils literal">&lt;item111|price=23.4&gt;</tt></p>
+</div>
+<div class="section" id="un-atajo-mas">
+<h2>Un atajo más</h2>
+<p>El código para el carrito de arriba lo incluí como un modelo para poder
+incrustarlo directamente desde la redacción de un artículo con
+<a href="posts/simplecart-js-para-spip.html#id2"><span class="problematic" id="id3">``</span></a>&lt;cart1&gt; <a href="posts/simplecart-js-para-spip.html#id4"><span class="problematic" id="id5">``</span></a>.</p>
+<div class="system-message" id="id2">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 73); <em><a href="posts/simplecart-js-para-spip.html#id3">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<div class="system-message" id="id4">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 73); <em><a href="posts/simplecart-js-para-spip.html#id5">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+</div>
+<div class="section" id="demostracion">
+<h2>Demostración</h2>
+<p>Si alguien completa la transacción, lo interpretaré como una donación
+:D.</p>
+</div>
+<div class="section" id="descarga">
+<h2>Descarga</h2>
+<p>El plugin está en desarrollo sobre
+<a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart">spip-zone</a>.
+Podés hacer un ckeckout SVN</p>
+</div></div>
+        <p>
+        
+            <a href="posts/simplecart-js-para-spip.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/modelos-de-negocio-floss-la.html">Modelos de negocio FLOSS, la universidad, el sector privado y el Estado</a>
+        <small>  
+             <span class="timeago" title="2010-08-26 13:19:19">2010-08-26 13:19:19</span>
+        </small></h1>
+        <div><p>Distintos laboratorios de investigación y vinculación de mi facultad del
+área química y del área computación, junto a algunas empresas de
+software locales (<a class="reference external" href="http://www.vates.com">VATES</a> y otra) y del sector
+petroquímico (<a class="reference external" href="http://www.pr3.com.ar/">Petroquímica Rio Tercero</a>)
+están conformando un <em>"Consorcio Asociativo Público Privado (CAPP)"</em> en
+el marco del programa
+<a class="reference external" href="http://www.agencia.gov.ar/spip.php?page=convocatorias_articulo&amp;mostrar=1104">FSTICS</a>
+del Ministerio de Ciencia y Tecnología de la Nación, con el fin de
+desarrollar una plataforma de desarrollo I+D de software para la
+industria. Para que contextualicemos de que hablamos: el programa
+estipula un aporte estatal de hasta el 60% para un proyecto de hasta 38
+millones de pesos.</p>
+<p>Mi participación es minúscula y aledaña: el impulsor de este proyecto es
+el Dr. Martín Cismondi, director de mi proyecto integrador que se trata
+de un prototipo del (tipo de) software que se desarrollaría desde esta
+plataforma.</p>
+<p>Cismondi es Phd en ingenieria quimica y sus investigaciones en el campo
+del equilibrio de fases tienen mucha aplicación en la industria. En
+particular en el petróleo, donde el impacto que puede tener mejorar el
+rendimiento de un proceso (por ejemplo de destilación) se mide en
+millones de morlacos.</p>
+<p>Ayer tuve oportunidad de participar de una reunión, sirviendo de una
+especie de "traductor" entre los quimicos y los informáticos.</p>
+<p>Si bien, repito, no tengo voz (mucho menos voto) en nada de lo que allí
+se resuelva, tengo interés en investigar y transmitir de la manera más
+clara posible otros modelos de negocio que, por lo que presencié ayer,
+están lejos de ser tenidos en cuenta. Me refiero, claro, a que, sobre
+todo (no muy increíblemente) desde la facultad, no se ve más allá de un
+modelo de negocio de software cerrado de venta por licencia.</p>
+<p>Apunto algunas cuestiones sin orden:</p>
+<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> El nicho de mercado es bastante acotado: industrias de gran escala
+mayormente transnacionales. Separadamente tiene mucha utilidad y
+aceptación en centros de investigación académicos.</p>
+<p><img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Desde el grupo conformado, no existe conocimiento cabal de las
+soluciones de software específicas que ese mercado, el industrial,
+demanda. Sí se sabe que el -*expertise-* y el -*know how-* que el
+grupo de investigación de Cismondi tiene son el valor diferencial.</p>
+<p><img alt="image2" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> No existe hoy peso específico suficiente, desde el punto de
+vista del producto existente, para competir con las empresas de software
+proveedoras de este nicho, sobre todo en los mercados de USA y Europa.
+Por ejemplo <a class="reference external" href="http://www.aspentech.com">Aspen Tech</a>.</p>
+<p><img alt="image3" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Es difícil, a priori inimaginable, desarrollar un producto
+genérico que satisfaga necesidades de diversos clientes potenciales. La
+especifidad de los problemas de cada industria se supone grande.</p>
+<p><img alt="image4" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Preguntas para hacerse ¿cuantos clientes reales existen en el
+mercado? ¿qué "llegada" se tiene con ellos? ¿que posibilidades reales de
+venderle un software cerrado existen, teniendo en cuenta que no se sabe
+cabalmente cuales son sus demandas? Supongiendo que se conoce un
+problema específico ¿cuanto sale desarrollar una solución ? ¿se puede
+correr el riesgo de desarrollarla sin tener asegurada su
+comercialización?</p>
+<p>Soy un novato en el área negocios con FLOSS (y en negocios, a secas,
+también) pero lo que se me ocurre viene más o menos por este lado:</p>
+<p><strong>1.</strong> Generar una estrategia para una fuerte inserción en el ámbito
+académico internacional</p>
+<ul class="simple"><li>Para esto es indispensable la libre disponibilidad del código fuente
+de manera que los métodos numérico-científicos sean transparentes,
+reproducibles y verificables. Ver <a class="reference external" href="http://www.openscience.org/blog/?p=312">este
+post</a> en OpenScience
+Project.</li>
+<li>Para evitar practicas predatorias sobre este trabajo, que alguien
+cierre y comercialice, hay que orientar a una licencia FLOSS vírica,
+donde los trabajos derivados mantengan la condicion libre.</li>
+<li>De esta manera se apunta a constituir una comunidad
+tecnologico-científica donde el nucleo de desarrollo se mantendrá en
+los autores originales pero permitiendo y aprovechando código y
+feedback de los usuarios.</li>
+<li>En esta etapa el beneficio no es a priori monetario y en cambio sí en
+cuanto a calidad del software, inserción y difusión del/los
+producto/s, fidelización de usuarios y prestigio del equipo de
+desarrollo.</li>
+</ul><p><strong>2.</strong> La repercusión de la masa crítica generada abre la puerta al
+mercado por las siguientes razones:</p>
+<ul class="simple"><li>Muchos de los académicos que utilicen y formen parte de un
+"comunidad" alrededor del sofware FLOSS desde las universidades o
+llevaran su conocimiento a la industria.</li>
+<li>Tambien los investigadores dentro de la industria tienen vínculos
+fluidos con la comunidad científica, sobre todo en estas áreas de
+investigación de vanguardia de directa aplicabilidad.</li>
+<li>El mercado a priori imposible de acceder se puede hacer más
+permeable: los responsables de investigación demandan la utilización
+del software en los procesos de la industria o sus labores
+particulares.</li>
+<li>Si el costo para la industria es nulo o bajo y de calidad, hay muchas
+probabilidades de que sea aceptado.</li>
+<li>La ventaja diferencial del cliente es evitar el <a class="reference external" href="http://en.wikipedia.org/wiki/Vendor_lock-in">vendor
+lock-in</a>. Sin embargo,
+la ventaja competitiva del equipo de desarrollo original, por su
+-*know how-* adquirido es insuperable para cualquier potencial
+competidor.</li>
+</ul><p><strong>3.</strong> Insertado en el mercado se generan posibilidades de lucro en dos
+áreas</p>
+<ul class="simple"><li>Customización y extensión del software bajo requerimientos
+específicos. Entra en el marco de
+<a class="reference external" href="http://es.wikipedia.org/wiki/SaaS">SaaS</a></li>
+<li>Capacitación y entrenamiento a equipos técnicos de la industria y la
+academia, tanto en el área de aplicación (quimicos) como de
+desarrollodo de software.</li>
+</ul><p>Muchísimo material para leer sobre el tópico hay en <a class="reference external" href="http://www.opensourcestrategies.org/">este
+sitio</a>. Yo empezaré en cuanto
+tenga tiempo. Invito también, de manera enfática, a leer <a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/contexto_de_trabajo.html#software-libre">la
+justificación</a>
+de que el software desarrollado en el marco de mi proyecto integrador lo
+libero como Software Libre</p>
+<div class="section" id="mas-alla-del-negocio">
+<h2>Más allá del negocio</h2>
+<p>Además de lo expuesto se me cruzan cuestionamientos sobre el rol de la
+universidad y el estado en este escenario.</p>
+<p>Como ciudadano y futuro profesional festejo la inversión que en los
+últimos años el Estado ha realizado para ciencia y tecnología. Apostar a
+generar valor en áreas tan estrategicas como el software es necesario, y
+plantearlo desde el punto de vista de fortalecer la industria nacional
+(pymes) es entonces doblemente valioso.</p>
+<p>Pero...</p>
+<p>¿son los laboratorios de investigación de las universidades actores que
+deben generar recursos por sí mismos? ¿A quien pertenece el conocimiento
+que se produce en la universidad? ¿A quién debe pertenecer? ¿La
+universidad actual responde a un proyecto de país ? ¿Existe tal cosa?
+¿No debiera el Estado, formar parte societaria en los consorcios para
+los cuales está aportando grandes recursos, además de ser agente
+regulador? ¿quién y cómo regula la relación e intereses existentes entre
+los grupos de investigación y el sector privado? ¿no se puede prestar a
+malversaciones y abuso del <em>sello</em> de la universidad?</p>
+</div></div>
+        <p>
+        
+            <a href="posts/modelos-de-negocio-floss-la.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/bonito-feito-pero-efectivo.html">Bonito, feito pero efectivo</a>
+        <small>  
+             <span class="timeago" title="2010-08-19 11:07:16">2010-08-19 11:07:16</span>
+        </small></h1>
+        <div><p>Hace 5 años que laburo en <a class="reference external" href="http://www.agrupacionmazamorra.com.ar">una
+organización</a> de trabajo
+barrial. Como no recibimos aportes privados y rara vez del Estado (a
+veces presentamos proyectos a programas) siempre andamos buscando formas
+de sostener económicamente nuestras actividades.</p>
+<p>Un recurso, no por viejo en desuso, es el del <em>"bono contribución"</em>, que
+muchas veces incluye un sorteo con algún premio.</p>
+<p>Además de la algo ingrata tarea de venderlos, hay que hacerlos. Alguno
+tiene uno de esos sellos numeradores (un mecanimismo que va
+incrementando el contador automáticamente ) pero igual cualquiera se
+vuelve un burócrata (más cuando hay que sellar dos veces - el bono y
+talón -).</p>
+<p>Así que ayer, en 20 minutos hice <em>Bonito</em>, un programa feo pero
+efectivo.</p>
+<p>Primero hice una plantilla en <a class="reference external" href="http://inkscape.org">Inkscape</a> donde
+entran 6 de estos bonitos en un A4.</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L500xH117/bonito2-ccc74.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 25)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Como el SVG es XML que es TEXTO, la marca XXXX se puede reemplazar
+fácilmente por el número que corresponda. Yo quería que me quedaran así:</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L400xH436/bonito-8305a.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 31)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>De esta manera, simplemente tengo que meter 6 broches a la izquierda y
+recortar, ya quedan ordenados para repartir entre los compañeros y
+compañeras.</p>
+<p>Para algunas cosas, Inkscape se puede usar por línea de comandos, por
+ejemplo para convertir entre los formatos que soporta. Así paso el SVG
+con los números reemplazados a un PDF. Después concateno todos los PDF
+de una tanda (por ejemplo agrupados de a 10, como en el dibujo) con
+Ghostscript.</p>
+<p>Acá el código:</p>
+<pre class="literal-block">
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+#       bonito.py
+#
+#       Copyright 2010 Martin Gaitán &lt;gaitan(at)gmail.com&gt;
+#
+#       This program is free software; you can redistribute it and/or modify
+#       it under the terms of the GNU General Public License as published by
+#       the Free Software Foundation; either version 2 of the License, or
+#       (at your option) any later version.
+#
+#       This program is distributed in the hope that it will be useful,
+#       but WITHOUT ANY WARRANTY; without even the implied warranty of
+#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#       GNU General Public License for more details.
+#
+#       You should have received a copy of the GNU General Public License
+#       along with this program; if not, write to the Free Software
+#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#       MA 02110-1301, USA.
+
+import sys, os
+import subprocess
+import glob
+
+def markToNum(content, num, mark='XXXX'):
+    num_as_string = '0' * (4 - len(str(num))) + str(num)
+    return content.replace(mark, num_as_string, 2)
+
+def main():
+
+    if len(sys.argv) &lt;= 1:
+        print "Modo de uso:"
+        print sys.argv[0] + " archivo.svg"
+        sys.exit(1)
+    else:
+        with open(sys.argv[1]) as input:
+            svg_content = input.read()
+
+        index_from = int(raw_input('Desde [0]') or 0)
+        number_by_page = int(raw_input('Num por pagina [6]') or 6)
+        grouped_by =  int(raw_input('agrupar de a [20]') or 20)
+        planchas = int(raw_input('Planchas [1]') or 1)
+
+
+        for plancha in range(planchas):
+            counter_from = index_from + plancha*number_by_page*grouped_by
+
+            for pagina in range(grouped_by):
+                page_content = svg_content
+                for bono in range(number_by_page):
+                    num_remplazo = counter_from + bono*grouped_by + pagina
+                    page_content = markToNum(page_content, num_remplazo)
+
+                with open('temp.svg', 'w') as output_svg:
+
+                    output_svg.write(page_content)
+
+                subprocess.call(["inkscape", "-f", 'temp.svg', '--export-dpi=150', '-A', 'temp%s.pdf' % ("0"*(4 - len(str(pagina))) + str(pagina)) ])
+
+            generator = ['gs',
+                         '-q',
+                         '-sPAPERSIZE=a4',
+                         '-dNOPAUSE',
+                         '-dBATCH',
+                         '-sDEVICE=pdfwrite',
+                         '-sOutputFile=%s-%i-%i.pdf' % (sys.argv[1][:-4], counter_from, num_remplazo),] + \
+                        ['temp%s.pdf' % ("0"*(4 - len(str(pagina))) + \
+                            str(pagina)) for pagina in range(grouped_by)]
+
+            subprocess.call(generator)
+
+            for temp in glob.glob('temp*'):
+                os.remove(temp)
+
+if __name__ == '__main__':
+    main()
+</pre>
+<p>Nada que no se pueda hacer con Bash, cierto, pero mucho más fácil de
+escribir (y de leer).</p>
+<p>De paso, acá está la plantilla, por si a alguno le sirve.</p></div>
+        <p>
+        
+            <a href="posts/bonito-feito-pero-efectivo.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/django-dash-hace-una-aplicacion.html">Django Dash: hacé una aplicación web en 2 dias</a>
+        <small>  
+             <span class="timeago" title="2010-08-06 07:38:38">2010-08-06 07:38:38</span>
+        </small></h1>
+        <div><p>Leemos en <a class="reference external" href="http://djangodash.com/">la web</a></p>
+<blockquote>
+The Django Dash is a chance for Django enthusiasts to flex their
+coding skills a little and put a fine point on “perfectionists with
+deadlines” by giving you a REAL deadline. 48 hours from start to
+stop to produce the best app you can and have a little fun in the
+process.</blockquote>
+<p>Suena a <a class="reference external" href="http://pyweek.org">PyWeek</a>
+[<a class="reference external" href="blog/article/django-dash-hace-una-aplicacion#nb1">1</a>], pero en 2
+dias. ¿Será indicio de lo rápido que se programa con Django?</p>
+<p>Atenti que la inscripción <strong>cierra el 8 de agosto</strong> (mañana).</p></div>
+        <p>
+        
+            <a href="posts/django-dash-hace-una-aplicacion.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/usando-pubsub-para-una-panel-de.html">Usando PubSub para un panel de mensajes</a>
+        <small>  
+             <span class="timeago" title="2010-08-03 12:56:55">2010-08-03 12:56:55</span>
+        </small></h1>
+        <div><p>La aplicación que estoy desarrollando,
+<a class="reference external" href="http://code.google.com/p/gpec2010">GPEC</a>, genera muchos mensajes que
+pueden ser útiles para el usuario.</p>
+<p>En softwares con <em>GUI’s</em> sencillas suele utilizarse la barra de estado
+para mostrar mensajes contextuales e información sobre el resultado de
+una acción. Pero si estos mensajes son muchos y de diversa índole, este
+espacio puede no bastar, sobre todo por la volatilidad de la información
+que la barra de estado muestra.</p>
+<p>Una solución posible es usar un panel con un <tt class="docutils literal">ListCtrl</tt> de manera de
+poder agregar los mensajes quedando un registro completo y cronológico;
+un <em>log</em> propiamente dicho.</p>
+<p><img alt="image0" src="images/mayavi2_logger-0f8f4.png">
+Surge acá un detalle: si los mensajes se generan desde "cualquier parte"
+del programa, todas esas "partes" deberían tener referencia de la
+instancia del panel/widget de log.</p>
+<p>Un ejemplo: todos las demostraciones de la aplicación de demo de
+<a class="reference external" href="http://wxpython.org">wxPython</a> tienen la siguiente estructura:</p>
+<pre class="literal-block">
+class TestPanel(wx.Panel):
+
+    def __init__(self, parent, log):
+        self.log = log
+        wx.Panel.__init__(self, parent, -1)
+        ...
+
+        self.log.WriteText(' message ... ')
+</pre>
+<p>Esto vuelve la aplicación muy acoplada: la instancia <tt class="docutils literal">log</tt> (que es un
+caja de texto en el demo) se pasea por distintos <em>namespaces</em> para estar
+disponible en todos lados.</p>
+<p>Denotemos la falta de flexibilidad: ¿que pasa si queremos ’loggear’
+mensajes desde un objeto donde no estaba previsto? ¿qué pasa si queremos
+cambiar el widget que muestra los mensajes y el método para anexar
+mensajes tiene otro nombre? ¿y si además de mostrarlos, con algunos los
+mensajes queremos hacer alguna otra cosa (ejecutar un simple sonido de
+alarma, por ejemplo) ?</p>
+<div class="section" id="pubsub">
+<h2>PubSub</h2>
+<p>Una manera más elegante y eficiente es utilizar
+<a class="reference external" href="http://pubsub.sourceforge.net">PubSub</a> una implentación en Python del
+paradigma de
+<a class="reference external" href="http://en.wikipedia.org/wiki/Publish/subscribe">publicación-suscripción</a>.</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH357/pubsub_concept-47f35.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 56)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Su implementación es trivial. Incluso viene incorporado dentro de
+wxPython.</p>
+<p>El <tt class="docutils literal">Publisher</tt> (generalmente importado como <tt class="docutils literal">pub</tt>) envía mensajes
+(cualquier objeto python) asociados a un tópico (una cadena)</p>
+<pre class="literal-block">
+from wx.lib.pubsub import Publisher as pub
+
+pub.sendMessage('log', ('ok', 'Ready! You can send any message from anywhere.') )
+</pre>
+<p>En este ejemplo, el tópico, que elegí arbritrariamente, es ’log’, y el
+mensaje es la tupla
+<tt class="docutils literal">('ok', 'Ready! You can send any message from <span class="pre">anywhere.')</span></tt></p>
+<p>Del otro lado del mostrador, cualquiera puede suscribirse a los mensajes
+con determinado tópico y asociarlos a un método/función.</p>
+<pre class="literal-block">
+class LogMessagesPanel(wx.Panel):
+    def __init__(self, parent, id):
+        wx.Panel.__init__(self, parent, id)
+
+        pub.subscribe(self.OnAppendLog, 'log')
+
+    def OnAppendLog(self, msg):
+        data = msg.data&lt;img105|center&gt;
+        #do your things with the data!
+</pre>
+<p><tt class="docutils literal">pub.subscribe</tt> <em>bindea</em> los mensajes con tópico <em>’log’</em> al método
+OnAppendLog pasando un objeto <tt class="docutils literal">msg</tt>. Nuestro mensaje real, la tupla
+que enviamos, está en <tt class="docutils literal">msg.data</tt></p>
+<p>Nada impide que sean muchos los objetos que envien mensajes con tópico
+<em>’log’</em> y muchos otros estén suscriptos a él. Y esto funciona sin
+importar dónde ocurra cada cosa!
+[<a class="reference external" href="blog/article/usando-pubsub-para-una-panel-de#nb1">1</a>].</p>
+<p>Como ejemplo completo dejo el panel log. Podés probarlo creando otro
+frame independiente que envie mensajes de log.</p>
+<pre class="literal-block">
+#       Log Panel: example of PubSub implementation
+#
+#       Copyright 2010 Martin Gaitán &lt;gaitan(at)gmail.com&gt;
+#
+#       This program is free software; you can redistribute it and/or modify
+#       it under the terms of the GNU General Public License as published by
+#       the Free Software Foundation; either version 2 of the License, or
+#       (at your option) any later version.
+#
+#       This program is distributed in the hope that it will be useful,
+#       but WITHOUT ANY WARRANTY; without even the implied warranty of
+#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#       GNU General Public License for more details.
+#
+#       You should have received a copy of the GNU General Public License
+#       along with this program; if not, write to the Free Software
+#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#       MA 02110-1301, USA.
+
+
+import wx
+from wx.lib.pubsub import Publisher as pub
+import time
+import sys
+
+from wx.lib.embeddedimage import PyEmbeddedImage
+
+icons = {}
+icons['ok'] = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAK5QTFRF"
+    "AAAA////2vO/+P3z+f31VJkEVJcEU5UEUpQEcc0GcMsGcMkGb8gGbcYGbcQGbMEGZLYFXKYF"
+    "UJAET48ETo0ETYwEasAGddALd9ANeNERetETe9IVfdIXfdMZftMbf9Mci9cwlNpAlttElttF"
+    "l9xHmtxLm91NnN1Pnd1Rnt5ToN9Xod9ZpuFhp+FjqOFlquJnr+RyseR0veiKwuqSy+2j4PTI"
+    "9vzv9/zxidYs3fPCGN7g1AAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAACXBIWXMAAAsT"
+    "AAALEwEAmpwYAAAAB3RJTUUH2gcMBC0Irn+MQAAAAINJREFUGNNjYCAJ6Bui8vXkpAxQ+LJa"
+    "ylx6CL6utKYGJyszkGVpAuZLaahzsYH4phYKxgwMOpJqatzsID6ThbIGt5G+hKoKDweIz8Ai"
+    "YaGtIiOnrMIrxAwxjJlXXl1VSYlPmBlmPLOAuLIivwgzwkJzQV4xUWZkJ5mzi7CgOtqMBbcH"
+    "AVouCiZO5Tf/AAAAAElFTkSuQmCC")
+
+#----------------------------------------------------------------------
+icons['error'] = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAAA"
+    "CXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1QsKCTIOk1O0sAAAAhpJREFUOMudk71Pk1EU"
+    "xn/3bQvlo76gxBpNoGibArYLxJREh466MmnSgRH+IjsydGYjspBAWEQHMJIWmmhj+LAkpC1N"
+    "Wyj2PcfhfUsQiRpPcnOTm/P8nuQ59xhuVA5SwDyQBsa95xKwDixlYOt6v7khfjscCi1MJpME"
+    "w2F8AwOoKp2zM87LZYqFAtVmM5uBxd8AOXg3nUy+HJmZ4XJ7G+f0FBwHVUUMWEN38U9NUt3d"
+    "5VOxuJqBVwC+rvN0Mvn6XixGe3MTbTRABFVBRUEEabboHHyjPxbDtqzoi2r1wTKsmBykhkOh"
+    "98/m5rhYW0OdDqqKKqh6YgXFhakxBFMpPm9sUGu1Zi1gfjKR4HJnB3UcEFABFXEP6oEUVMFx"
+    "uMjneTwWAZj3A+lg+D4/PnxERRkrf+dPtW/fQao1Ag8fAaT9wLjVP4iKG9jfSkRR7WB6AgDj"
+    "FnCV9r8A8PpUBQA/UOrUzyYUg6rDl5ERt0HEvVE3PDdVRN0gtdkCKFnA+vnJCcYeuiL/Iu46"
+    "iidWwRocpF2rAaxbwNL+3h6BeNwly3WRNzrtTkNQY/BHIpQODwGWrAxs1VqtbKWQp2fqqQu5"
+    "5op3qygYQ080RuPggHq7nc3Alg9gGVaeVyqzts8XHUgkcBoN5KJ99RMVMHaI3vgEjXKZwvHx"
+    "agbe3LpMdl/fwpPRUQK2jentRUVwmk069Tpfj466zou3buP/rPNPwkdmHrlYdncAAAAASUVO"
+    "RK5CYII=")
+
+#----------------------------------------------------------------------
+icons['info'] = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAAA"
+    "CXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1QMCBiAyOlCc9wAAADV0RVh0Q29tbWVudAAo"
+    "YykgMjAwNCBKYWt1YiBTdGVpbmVyCgpDcmVhdGVkIHdpdGggVGhlIEdJTVCQ2YtvAAACq0lE"
+    "QVQ4y5WSS0hUcRTGv//cO+O9OtdHJllqZlI+CEUiE8ShBiXUpKKQbGLKcGG0CBOyRcsQMapF"
+    "j02ii4igAgMDJcgQSXQmSkrNijSVTJ1xdJy5d6739W/loDURfqtz4Pt+nHM4BBFUXNnUTCkc"
+    "BiUpIISYiDHLEPq0/2Vr459edn1TVN6UwTCk72JtZVq5vQBxAg9VN+DxBVN7ej9cISbmLKV6"
+    "SX9X69eIAJYlb++11G/fk7ljLBBSRmd9khJaVVlF06NtJflZ6enJe1tuPXYBiF/LMGtFSdXV"
+    "2/Xnj5YVH8z5rKi6m7eYFQBEpyCqTg3vSmiWi+YQzXM7dSYlc3L8bScAmMIkhj1Xbi9AIKSO"
+    "sSxDLWbGIIRQUBiabiiUwuganOwuKswBw3Kn1nJhwKpC4wUrD1nRV1XNSDQzpguJsZxzV7Lg"
+    "yN+91QElkDrlEf08zyEgqVxtXYNpww0IIUTRdEiyajIMKiZYo+D1Sy5RCjErQUkbnpaGFUU3"
+    "qaqxFuEBiGFADM9KXl8gRpRVy4qk+jOSYzH6w/deVHQ6tyQp7m+LHsFqSfD6g4gTeLWjrVnc"
+    "sIKZ0QZ63gyDj2JzJ34tiwDw0yfqHye8/t7hmYUlUTZX7E+rGHKNwcph4q8bbBNCxzu7+uWZ"
+    "6fnstCTroWvtAzfPHM665P4yH2JYkui0Z1X7F5dy3IMjqsD6SsOrr/+DY6cbq2QqPC8rLbIU"
+    "HshGNM9B1XX4lkUMucbxzjWixXHS5SftNx5EBABAbV1DYohucQVkpDtOJDGEACwLdHXPBRnN"
+    "v6+j7c4U/qeaGrvV6bRRz2IfFWUX/T75jDqdNhrJy/6DoQLA/bsPkZ2bjempaWxaTqeNzsy+"
+    "MgLSEP00+sLY7AQAUFV98nqNIMQfWVhYeJ2XF/sokuk3Vkw2XnyKHQQAAAAASUVORK5CYII=")
+
+#----------------------------------------------------------------------
+icons['warning'] = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAA"
+    "CXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1gIQDictt+6SdwAAAehJREFUOMuVk8FKG2EU"
+    "hb87mc40iTODEJlK7UZDxCCGQUqaMASCSGODdBe6ECJddOcwG/EJXBt0ZcBCwEVJVgWtr1AI"
+    "PoBQXAQKhRZc1EBJMX831hLItPbAvYvL4Ttnc4UIhfDIgLcAA3jdgC/jfHoUwISjeXgOcAFH"
+    "QHWcT4tI91KwWlhY0J6kUloKVkPw7g0wYS8NemJ3l0yzSRp0E/buBQihOAXFbLksej6Pns+T"
+    "LZdlCoohFPmXdqB7AsNep6M8z1Oe56lep6NOYLgD3b82CGHFhaWM74vh+ziOg+M4GL5PxvfF"
+    "haUQViIBJuxnwUgEAaJpWJaFZVmIppEIArJgmLA/FhDC+jSk5woFjFIJEcG2bWzbRkQwSiXm"
+    "CgWmIR3C+gggBDGgsXibruk6IvKngQiarpMIAhbBMKARgsDtCuHVLLReLC8bk2dnEIuhlKLf"
+    "7wOQTCYREbi54WptjQ/n54NLqDfgnYQQewxXT8GaPz7mYbWKUgqlFLVaDYB2u42IICL8OD3l"
+    "YmODLnz/DJOawGYczJlcjnilcmcUEVzXxXXdkVu8UmEmlyMOpsCmbMPXl5CaPThgol6/S/89"
+    "wAhARLhutbjc2uI9fJNDGD4DecD/6SfwEZT+CQ4H8GYi4i+idA3DHjR/AZfefQgctOETAAAA"
+    "AElFTkSuQmCC")
+
+class LogMessagesPanel(wx.Panel):
+    def __init__(self, parent, id):
+        wx.Panel.__init__(self, parent, id)
+
+        self.list = wx.ListCtrl(self, -1,  style=  wx.LC_REPORT|wx.SUNKEN_BORDER)
+
+        self.setupList()
+
+        sizer = wx.BoxSizer()
+        sizer.Add(self.list, 1, wx.EXPAND)
+        self.SetSizerAndFit(sizer)
+
+        pub.subscribe(self.OnAppendLog, 'log')
+
+    def setupList(self):
+        """sets columns and append a imagelist """
+
+         #setup first column (which accept icons)
+        info = wx.ListItem()
+        info.m_mask = wx.LIST_MASK_TEXT | wx.LIST_MASK_IMAGE | wx.LIST_MASK_FORMAT
+        info.m_image = -1
+        info.m_format = 0
+        info.m_text = "Message"
+        self.list.InsertColumnInfo(0, info)
+        self.list.SetColumnWidth(0, 550)
+
+        #insert second column
+        self.list.InsertColumn(1, 'Time')
+        self.list.SetColumnWidth(1, 70)
+
+        #setup imagelist and an associated dict to map status-&gt;image_index
+        imgList = wx.ImageList(16, 16)
+
+
+        self.icon_map = {}
+        for key, bitmap in icons.iteritems():
+            indx = imgList.Add( bitmap.GetBitmap() )
+            self.icon_map[key] = indx
+        self.list.AssignImageList(imgList, wx.IMAGE_LIST_SMALL)
+
+    def OnAppendLog(self, msg):
+        ico = self.icon_map[msg.data[0]]
+        message = msg.data[1]
+        index = self.list.InsertImageStringItem(sys.maxint, message, ico)
+        self.list.SetStringItem(index, 1, time.strftime('%H:%M:%S'))
+
+        self.list.EnsureVisible(index) #keep scroll at bottom
+
+class TestFrame(wx.Frame):
+    def __init__(self, parent, id):
+        wx.Frame.__init__(self, parent, id, "Log Panel demo")
+        self.log = LogMessagesPanel(self, -1)
+        self.SetSize((620,150))
+        self.SetMinSize((620,150))
+
+if __name__ == "__main__":
+
+    app = wx.PySimpleApp(0)
+    wx.InitAllImageHandlers()
+    main_frame = TestFrame(None, -1)
+    app.SetTopWindow(main_frame)
+    main_frame.Show()
+
+    pub.sendMessage('log', ('ok', 'Ready! You can send any message from anywhere.') )
+    pub.sendMessage('log', ('info', "Just import pubsub.Publisher and send a 'log' message") )
+    pub.sendMessage('log', ('warning', "The message data is a tuple ('icon', 'message') ") )
+</pre>
+</div></div>
+        <p>
+        
+            <a href="posts/usando-pubsub-para-una-panel-de.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/mantener-el-scroll-vertical-de-wx.html">Mantener el scroll vertical de wx.ListCtrl abajo</a>
+        <small>  
+             <span class="timeago" title="2010-07-13 07:31:58">2010-07-13 07:31:58</span>
+        </small></h1>
+        <div><p>Un típico uso de un <tt class="docutils literal">ListCtrl</tt> es usarlo para mostrar un Log de la
+aplicación que muestra mensajes al usuario, similar a lo que puede hacer
+la barra de estada, pero con la ventaja (complementaria, si se quiere),
+de mantener un historial de los eventos ocurridos.</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH114/log-4afe3.jpg"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 9)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>En tal caso, primero, hay una decisión de diseño que hacer: ¿los nuevos
+mensajes se agregan al inicio (como un blog) o al final de la lista
+(como los comentarios) ?</p>
+<p>No sé si existe una respuesta canónica a la cuestión, pero infiriendo
+(de los pelos) el sentido de lectura occidental (de izquierda a derecha
+y de arriba hacia abajo) decidí que "un nuevo contenido" debe estar
+abajo del anterior.</p>
+<p>Eso trae aparejado un nuevo problema: si se agrega un nuevo item a
+ListCtrl al final y ya hay más de los que caben en el espacio visible
+del control, el último (el más importante) no se verá en pantalla y el
+usuario debería hacer un scroll hasta el final para verlo. Es decir,
+para un panel de Log, el scroll vertical siempre debería mantenerse
+abajo.</p>
+<p>Por suerte no hay que liarse con generar eventos programaticamente, ni
+manipular el scroll, ni obtener dimensiones del widget. He aquí una
+solución <em>"fits your brain"</em>: el método
+<a class="reference external" href="http://www.wxpython.org/docs/api/wx.ListCtrl-class.html">EnsureVisible(index)</a></p>
+<p>Por ejemplo:</p>
+<pre class="literal-block">
+def OnAppendLog(self, msg):
+    ico = self.icon_map[msg.data[0]]
+    message = msg.data[1]
+    index = self.list.InsertImageStringItem(sys.maxint, message, ico)
+    self.list.SetStringItem(index, 1, time.strftime('%H:%M:%S'))
+
+    self.list.EnsureVisible(index) #keep scroll at bottom
+</pre></div>
+        <p>
+        
+            <a href="posts/mantener-el-scroll-vertical-de-wx.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/preparados-listos-en-un-rato.html">Preparados, listos... en un rato</a>
+        <small>  
+             <span class="timeago" title="2010-07-13 06:51:43">2010-07-13 06:51:43</span>
+        </small></h1>
+        <div><p>Hace aproximadamente dos meses que estoy trabajando en lo que será mi
+proyecto final, para recibir el título de <a class="reference external" href="http://computacion.efn.uncor.edu">ingeniero en
+computación</a>.</p>
+<p>El proyecto es una aplicación de uso "científico y académico"
+implementada en Python que sirve para obtener diagramas de equilibro
+termodinámico entre fases fluidas de sistemas binarios. Toda la batahola
+está en <a class="reference external" href="http://code.google.com/p/gpec2010">este repo</a>.</p>
+<p>En concreto, el proyecto se circunscribe a la generación y [análisis
+sintáctico] de archivos de texto con el que la aplicación se comunica
+con los programas que implementan los algoritmos de cálculo, que están
+implementados en Fortran, y son, literalmente, unas cajas negras.
+[<a class="reference external" href="blog/article/preparados-listos-en-un-rato#nb1">1</a>]. Se procesan
+esos archivos para obtener arrays con los que se plotean las distintas
+curvas.</p>
+<p>Utilizo principalmente <a class="reference external" href="http://wxpython.org">wxPython</a>,
+<a class="reference external" href="http://matplotlib.sourceforge.net">Matplotlib</a> y
+<a class="reference external" href="http://numpy.sourceforge.net">Numpy</a>. Vale destacar, ya que mucho de
+un trabajo final es documentación, que escribo en
+<a class="reference external" href="http://docutils.sourceforge.net/rst.html">restructuredText</a>,
+renderizando con <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a> y el genial
+<a class="reference external" href="http://code.google.com/p/rst2pdf/">rst2pdf</a></p></div>
+        <p>
+        
+            <a href="posts/preparados-listos-en-un-rato.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/video-sis-771-671-en-ubuntu.html">Video SIS 771/671 en Ubuntu</a>
+        <small>  
+             <span class="timeago" title="2010-05-10 16:10:25">2010-05-10 16:10:25</span>
+        </small></h1>
+        <div><div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 5); <em><a href="posts/video-sis-771-671-en-ubuntu.html#id1">backlink</a></em></p>
+Duplicate explicit target name: "este xorg.conf".</div>
+<p>Esto es una ayuda memoria para mi yo dubitativo del futuro: para hacer
+funcionar el video de la notebook que es <strong>SiS 671/771</strong> en <strong>Ubuntu</strong>
+(a partir de la versión 9.10) instalar <a class="reference external" href="posts/IMG/deb/xorg-driver-sis671_0-9_i386.deb">este
+paquete</a> y [STRIKEOUT:<a class="reference external" href="posts/IMG/bin/xorg.bin">este
+xorg.conf</a>] <a class="reference external" href="posts/IMG/bin/xorg-2.bin">este xorg.conf</a>.</p>
+<p>Para pantalla dual con LCD externo a resolución full 1280x1024</p>
+<pre class="literal-block">
+# /etc/X11/xorg.conf (Xorg X Window System server configuration file)
+#
+# This file was generated by fll_xorgconfig, the F.U.L.L.S.T.O.R.Y.
+# Xorg Configuration tool.
+#
+# Edit this file with caution, and see the xorg.conf(5) manual page.
+# (Type "man xorg.conf" at the shell prompt.)
+#
+Section "ServerLayout"
+    Identifier  "Xorg Configured"
+    Screen      "Screen 0"
+EndSection
+
+#Section "ServerFlags"
+#   Option      "AllowMouseOpenFail"    "true"
+#   Option      "DontZap"       "false"
+#EndSection
+
+Section "Device"
+    Identifier  "Device 0"
+    Driver      "sis671"
+    #Driver     "vesa"
+    BoardName   "Silicon Integrated Systems [SiS] 771/671 PCIE VGA Display Adapter"
+    Option      "EnableSisCtrl" "yes"
+    Option      "DRI" "off"
+    Option      "MergedFBAuto" "true"
+    Option      "MergedNonRectangular" "on"
+    Option      "Merged DPI" "100 100"
+    Option      "MetaModes" "1280x1024-1280x800 640x460-640x460 1280x800-1280x1024"
+    BusID       "PCI:1:0:0"
+EndSection
+
+Section "Monitor"
+    Identifier  "Monitor 0"
+    ModelName   "Default Monitor"
+    HorizSync   28-96
+    VertRefresh 50-75
+    # 640x350 @ 85.00 Hz (GTF) hsync: 31.28 kHz; pclk: 25.02 MHz
+    Modeline "640x350"  25.02  640 656 720 800  350 351 354 368  -HSync +Vsync
+    # 640x400 @ 85.00 Hz (GTF) hsync: 35.78 kHz; pclk: 29.20 MHz
+    Modeline "640x400"  29.20  640 664 728 816  400 401 404 421  -HSync +Vsync
+    # 640x480 @ 60.00 Hz (GTF) hsync: 29.82 kHz; pclk: 23.86 MHz
+    Modeline "640x480"  23.86  640 656 720 800  480 481 484 497  -HSync +Vsync
+    # 640x480 @ 72.00 Hz (GTF) hsync: 36.07 kHz; pclk: 29.43 MHz
+    Modeline "640x480"  29.43  640 664 728 816  480 481 484 501  -HSync +Vsync
+    # 640x480 @ 75.00 Hz (GTF) hsync: 37.65 kHz; pclk: 30.72 MHz
+    Modeline "640x480"  30.72  640 664 728 816  480 481 484 502  -HSync +Vsync
+    # 640x480 @ 85.00 Hz (GTF) hsync: 42.92 kHz; pclk: 35.71 MHz
+    Modeline "640x480"  35.71  640 672 736 832  480 481 484 505  -HSync +Vsync
+    # 640x480 @ 100.00 Hz (GTF) hsync: 50.90 kHz; pclk: 43.16 MHz
+    Modeline "640x480"  43.16  640 680 744 848  480 481 484 509  -HSync +Vsync
+    # 720x400 @ 85.00 Hz (GTF) hsync: 35.78 kHz; pclk: 32.64 MHz
+    Modeline "720x400"  32.64  720 744 816 912  400 401 404 421  -HSync +Vsync
+    # 768x576 @ 60.00 Hz (GTF) hsync: 35.82 kHz; pclk: 34.96 MHz
+    Modeline "768x576"  34.96  768 792 872 976  576 577 580 597  -HSync +Vsync
+    # 768x576 @ 72.00 Hz (GTF) hsync: 43.27 kHz; pclk: 42.93 MHz
+    Modeline "768x576"  42.93  768 800 880 992  576 577 580 601  -HSync +Vsync
+    # 768x576 @ 75.00 Hz (GTF) hsync: 45.15 kHz; pclk: 45.51 MHz
+    Modeline "768x576"  45.51  768 808 888 1008  576 577 580 602  -HSync +Vsync
+    # 768x576 @ 85.00 Hz (GTF) hsync: 51.42 kHz; pclk: 51.84 MHz
+    Modeline "768x576"  51.84  768 808 888 1008  576 577 580 605  -HSync +Vsync
+    # 768x576 @ 100.00 Hz (GTF) hsync: 61.10 kHz; pclk: 62.57 MHz
+    Modeline "768x576"  62.57  768 816 896 1024  576 577 580 611  -HSync +Vsync
+    # 800x600 @ 56.00 Hz (GTF) hsync: 34.72 kHz; pclk: 35.55 MHz
+    Modeline "800x600"  35.55  800 832 912 1024  600 601 604 620  -HSync +Vsync
+    # 800x600 @ 60.00 Hz (GTF) hsync: 37.32 kHz; pclk: 38.22 MHz
+    Modeline "800x600"  38.22  800 832 912 1024  600 601 604 622  -HSync +Vsync
+    # 800x600 @ 72.00 Hz (GTF) hsync: 45.07 kHz; pclk: 46.87 MHz
+    Modeline "800x600"  46.87  800 840 920 1040  600 601 604 626  -HSync +Vsync
+    # 800x600 @ 75.00 Hz (GTF) hsync: 47.02 kHz; pclk: 48.91 MHz
+    Modeline "800x600"  48.91  800 840 920 1040  600 601 604 627  -HSync +Vsync
+    # 800x600 @ 85.00 Hz (GTF) hsync: 53.55 kHz; pclk: 56.55 MHz
+    Modeline "800x600"  56.55  800 840 928 1056  600 601 604 630  -HSync +Vsync
+    # 800x600 @ 100.00 Hz (GTF) hsync: 63.60 kHz; pclk: 68.18 MHz
+    Modeline "800x600"  68.18  800 848 936 1072  600 601 604 636  -HSync +Vsync
+    # 1024x600 @ 60.00 Hz (GTF) hsync: 37.32 kHz; pclk: 48.96 MHz
+    Modeline "1024x600"  48.96  1024 1064 1168 1312  600 601 604 622  -HSync +Vsync
+    # 1024x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 64.11 MHz
+    Modeline "1024x768"  64.11  1024 1080 1184 1344  768 769 772 795  -HSync +Vsync
+    # 1024x768 @ 70.00 Hz (GTF) hsync: 56.00 kHz; pclk: 76.16 MHz
+    Modeline "1024x768"  76.16  1024 1080 1192 1360  768 769 772 800  -HSync +Vsync
+    # 1024x768 @ 75.00 Hz (GTF) hsync: 60.15 kHz; pclk: 81.80 MHz
+    Modeline "1024x768"  81.80  1024 1080 1192 1360  768 769 772 802  -HSync +Vsync
+    # 1024x768 @ 85.00 Hz (GTF) hsync: 68.60 kHz; pclk: 94.39 MHz
+    Modeline "1024x768"  94.39  1024 1088 1200 1376  768 769 772 807  -HSync +Vsync
+    # 1024x768 @ 100.00 Hz (GTF) hsync: 81.40 kHz; pclk: 113.31 MHz
+    Modeline "1024x768"  113.31  1024 1096 1208 1392  768 769 772 814  -HSync +Vsync
+    # 1152x864 @ 75.00 Hz (GTF) hsync: 67.65 kHz; pclk: 104.99 MHz
+    Modeline "1152x864"  104.99  1152 1224 1352 1552  864 865 868 902  -HSync +Vsync
+    # 1152x864 @ 60.00 Hz (GTF) hsync: 53.70 kHz; pclk: 81.62 MHz
+    Modeline "1152x864"  81.62  1152 1216 1336 1520  864 865 868 895  -HSync +Vsync
+    # 1152x864 @ 85.00 Hz (GTF) hsync: 77.10 kHz; pclk: 119.65 MHz
+    Modeline "1152x864"  119.65  1152 1224 1352 1552  864 865 868 907  -HSync +Vsync
+    # 1152x864 @ 100.00 Hz (GTF) hsync: 91.50 kHz; pclk: 143.47 MHz
+    Modeline "1152x864"  143.47  1152 1232 1360 1568  864 865 868 915  -HSync +Vsync
+    # 1152x900 @ 77.00 Hz (GTF) hsync: 72.46 kHz; pclk: 112.45 MHz
+    Modeline "1152x900"  112.45  1152 1224 1352 1552  900 901 904 941  -HSync +Vsync
+    # 1152x900 @ 66.00 Hz (GTF) hsync: 61.71 kHz; pclk: 94.79 MHz
+    Modeline "1152x900"  94.79  1152 1224 1344 1536  900 901 904 935  -HSync +Vsync
+    # 1280x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 80.14 MHz
+    Modeline "1280x768"  80.14  1280 1344 1480 1680  768 769 772 795  -HSync +Vsync
+    # 1280x800 @ 60.00 Hz (GTF) hsync: 49.68 kHz; pclk: 83.46 MHz
+    Modeline "1280x800"  83.46  1280 1344 1480 1680  800 801 804 828  -HSync +Vsync
+    # 1280x960 @ 60.00 Hz (GTF) hsync: 59.64 kHz; pclk: 102.10 MHzx
+    Modeline "1280x960"  102.10  1280 1360 1496 1712  960 961 964 994  -HSync +Vsync
+    # 1280x960 @ 72.00 Hz (GTF) hsync: 72.07 kHz; pclk: 124.54 MHz
+    Modeline "1280x960"  124.54  1280 1368 1504 1728  960 961 964 1001  -HSync +Vsync
+    # 1280x960 @ 75.00 Hz (GTF) hsync: 75.15 kHz; pclk: 129.86 MHz
+    Modeline "1280x960"  129.86  1280 1368 1504 1728  960 961 964 1002  -HSync +Vsync
+    # 1280x960 @ 85.00 Hz (GTF) hsync: 85.68 kHz; pclk: 149.43 MHz
+    Modeline "1280x960"  149.43  1280 1376 1512 1744  960 961 964 1008  -HSync +Vsync
+    # 1280x960 @ 100.00 Hz (GTF) hsync: 101.70 kHz; pclk: 178.99 MHz
+    Modeline "1280x960"  178.99  1280 1376 1520 1760  960 961 964 1017  -HSync +Vsync
+    # 1280x1024 @ 60.00 Hz (GTF) hsync: 63.60 kHz; pclk: 108.88 MHz
+    Modeline "1280x1024"  108.88  1280 1360 1496 1712  1024 1025 1028 1060  -HSync +Vsync
+    # 1280x1024 @ 67.00 Hz (GTF) hsync: 71.29 kHz; pclk: 123.19 MHz
+    Modeline "1280x1024"  123.19  1280 1368 1504 1728  1024 1025 1028 1064  -HSync +Vsync
+    # 1280x1024 @ 75.00 Hz (GTF) hsync: 80.17 kHz; pclk: 138.54 MHz
+    Modeline "1280x1024"  138.54  1280 1368 1504 1728  1024 1025 1028 1069  -HSync +Vsync
+    # 1280x1024 @ 76.00 Hz (GTF) hsync: 81.32 kHz; pclk: 141.82 MHz
+    Modeline "1280x1024"  141.82  1280 1376 1512 1744  1024 1025 1028 1070  -HSync +Vsync
+    # 1280x1024 @ 85.00 Hz (GTF) hsync: 91.38 kHz; pclk: 159.36 MHz
+    Modeline "1280x1024"  159.36  1280 1376 1512 1744  1024 1025 1028 1075  -HSync +Vsync
+    # 1280x1024 @ 100.00 Hz (GTF) hsync: 108.50 kHz; pclk: 190.96 MHz
+    Modeline "1280x1024"  190.96  1280 1376 1520 1760  1024 1025 1028 1085  -HSync +Vsync
+    # 1368x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 85.86 MHz
+    Modeline "1368x768"  85.86  1368 1440 1584 1800  768 769 772 795  -HSync +Vsync
+    # 1440x900 @ 60.00 Hz (GTF) hsync: 55.92 kHz; pclk: 106.47 MHz
+    Modeline "1440x900"  106.47  1440 1520 1672 1904  900 901 904 932  -HSync +Vsync
+    # 1400x1050 @ 60.00 Hz (GTF) hsync: 65.22 kHz; pclk: 122.61 MHz
+    Modeline "1400x1050"  122.61  1400 1488 1640 1880  1050 1051 1054 1087  -HSync +Vsync
+    # 1400x1050 @ 72.00 Hz (GTF) hsync: 78.77 kHz; pclk: 149.34 MHz
+    Modeline "1400x1050"  149.34  1400 1496 1648 1896  1050 1051 1054 1094  -HSync +Vsync
+    # 1400x1050 @ 75.00 Hz (GTF) hsync: 82.20 kHz; pclk: 155.85 MHz
+    Modeline "1400x1050"  155.85  1400 1496 1648 1896  1050 1051 1054 1096  -HSync +Vsync
+    # 1400x1050 @ 85.00 Hz (GTF) hsync: 93.76 kHz; pclk: 179.26 MHz
+    Modeline "1400x1050"  179.26  1400 1504 1656 1912  1050 1051 1054 1103  -HSync +Vsync
+    # 1400x1050 @ 100.00 Hz (GTF) hsync: 111.20 kHz; pclk: 214.39 MHz
+    Modeline "1400x1050"  214.39  1400 1512 1664 1928  1050 1051 1054 1112  -HSync +Vsync
+    # 1440x900 @ 60.00 Hz (GTF) hsync: 55.92 kHz; pclk: 106.47 MHz
+    Modeline "1440x900"  106.47  1440 1520 1672 1904  900 901 904 932  -HSync +Vsync
+    # 1600x1200 @ 60.00 Hz (GTF) hsync: 74.52 kHz; pclk: 160.96 MHz
+    Modeline "1600x1200"  160.96  1600 1704 1880 2160  1200 1201 1204 1242  -HSync +Vsync
+    # 1600x1200 @ 65.00 Hz (GTF) hsync: 80.99 kHz; pclk: 176.23 MHz
+    Modeline "1600x1200"  176.23  1600 1712 1888 2176  1200 1201 1204 1246  -HSync +Vsync
+    # 1600x1200 @ 70.00 Hz (GTF) hsync: 87.43 kHz; pclk: 190.25 MHz
+    Modeline "1600x1200"  190.25  1600 1712 1888 2176  1200 1201 1204 1249  -HSync +Vsync
+    # 1600x1200 @ 75.00 Hz (GTF) hsync: 93.97 kHz; pclk: 205.99 MHz
+    Modeline "1600x1200"  205.99  1600 1720 1896 2192  1200 1201 1204 1253  -HSync +Vsync
+    # 1600x1200 @ 85.00 Hz (GTF) hsync: 107.10 kHz; pclk: 234.76 MHz
+    Modeline "1600x1200"  234.76  1600 1720 1896 2192  1200 1201 1204 1260  -HSync +Vsync
+    # 1600x1200 @ 100.00 Hz (GTF) hsync: 127.10 kHz; pclk: 280.64 MHz
+    Modeline "1600x1200"  280.64  1600 1728 1904 2208  1200 1201 1204 1271  -HSync +Vsync
+    # 1680x1050 @ 60.00 Hz (GTF) hsync: 65.22 kHz; pclk: 147.14 MHz
+    Modeline "1680x1050"  147.14  1680 1784 1968 2256  1050 1051 1054 1087  -HSync +Vsync
+    # 1792x1344 @ 60.00 Hz (GTF) hsync: 83.46 kHz; pclk: 202.97 MHz
+    Modeline "1792x1344"  202.97  1792 1920 2112 2432  1344 1345 1348 1391  -HSync +Vsync
+    # 1792x1344 @ 75.00 Hz (GTF) hsync: 105.23 kHz; pclk: 259.27 MHz
+    Modeline "1792x1344"  259.27  1792 1928 2128 2464  1344 1345 1348 1403  -HSync +Vsync
+    # 1856x1392 @ 60.00 Hz (GTF) hsync: 86.46 kHz; pclk: 218.57 MHz
+    Modeline "1856x1392"  218.57  1856 1992 2192 2528  1392 1393 1396 1441  -HSync +Vsync
+    # 1856x1392 @ 75.00 Hz (GTF) hsync: 108.97 kHz; pclk: 277.23 MHz
+    Modeline "1856x1392"  277.23  1856 2000 2200 2544  1392 1393 1396 1453  -HSync +Vsync
+    # 1920x1200 @ 60.00 Hz (GTF) hsync: 74.52 kHz; pclk: 193.16 MHz
+    Modeline "1920x1200"  193.16  1920 2048 2256 2592  1200 1201 1204 1242  -HSync +Vsync
+    # 1920x1440 @ 60.00 Hz (GTF) hsync: 89.40 kHz; pclk: 234.59 MHz
+    Modeline "1920x1440"  234.59  1920 2064 2272 2624  1440 1441 1444 1490  -HSync +Vsync
+    # 1920x1440 @ 75.00 Hz (GTF) hsync: 112.73 kHz; pclk: 297.59 MHz
+    Modeline "1920x1440"  297.59  1920 2072 2280 2640  1440 1441 1444 1503  -HSync +Vsync
+EndSection
+
+Section "Screen"
+    Identifier  "Screen 0"
+    Monitor     "Monitor 0"
+    DefaultColorDepth 24
+    SubSection "Display"
+        Depth   24
+        Modes   "1200x800"
+    EndSubSection
+EndSection
+
+Section "Extensions"
+    Option  "Composite" "off"
+</pre></div>
+        <p>
+        
+            <a href="posts/video-sis-771-671-en-ubuntu.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/un-gran-lenguaje-una-gran.html">Un gran lenguaje, una gran comunidad</a>
+        <small>  
+             <span class="timeago" title="2010-03-23 20:44:28">2010-03-23 20:44:28</span>
+        </small></h1>
+        <p>Python es un gran lenguaje de programación, y como tal se merece <a class="reference external" href="http://python.org.ar">la
+comunidad que tiene</a>, donde expertos y novatos
+se sienten parte.</p>
+        <p>
+        
+            <a href="posts/un-gran-lenguaje-una-gran.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/hemisferio-derecho.html">Hemisferio derecho</a>
+        <small>  
+             <span class="timeago" title="2009-12-11 11:44:32">2009-12-11 11:44:32</span>
+        </small></h1>
+        <div><dl class="docutils"><dt><a href="posts/hemisferio-derecho.html#id1"><span class="problematic" id="id2">*</span></a>This is perhaps the most beautiful time in human history;</dt>
+<dd><div class="first system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 1); <em><a href="posts/hemisferio-derecho.html#id2">backlink</a></em></p>
+Inline emphasis start-string without end-string.</div>
+<p class="last">it is really pregnant with all kinds of creative possibilities made</p>
+</dd>
+<dt>possible</dt>
+<dd>by science and technology which now constitute the slave of man,</dd>
+</dl><div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 5)</p>
+Definition list ends without a blank line; unexpected unindent.</div>
+<p>if man is not enslaved by it.*
+<a class="reference external" href="http://es.wikipedia.org/wiki/Jonas_Salk">Jonas Salk</a>
+No sólo de la técnica vive el hombre.</p></div>
+        <p>
+        
+            <a href="posts/hemisferio-derecho.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+    <div>
+<ul class="pager"><li class="previous">
+        <a href="index-2.html">← Posts posteriores</a>
+    </li>
+  
+  
+    <li class="next">
+        <a href="index-4.html">Posts anteriores  →</a>
+    </li>
+  
+</ul></div>
+    
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

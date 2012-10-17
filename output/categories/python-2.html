@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Posts sobre Python | tin_nqn"><meta name="description" content="&gt;&gt;&gt; self.geek_side.post()"><meta name="author" content="Martín Gaitán"><title>Posts sobre Python | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag Python (es)" href="python.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    
+        <div class="postbox">
+        <h1><a href="../posts/learning-python-4th-edition.html">Learning Python, 4th Edition</a>
+        <small>  
+             <span class="timeago" title="2009-09-29 10:19:41">2009-09-29 10:19:41</span>
+        </small></h1>
+        <div><p><img alt="image0" src="../posts/local/cache-vignettes/L250xH326/Pantallazo-3-7c37a.png"><a class="reference external" href="http://oreilly.com/catalog/9780596158071/">Learning Python</a>
+de <a class="reference external" href="http://www.rmi.net/~lutz/">Mark Lutz</a>, ha sido, desde su primera
+versión en 1999, uno de los libros de cabecera para aprender Python.</p>
+<p>Hace unos días salió la 4ta edición, adaptada a las versiones 2.6 y 3.1
+de Python y ampliada en varios capítulos.</p>
+<p>Lamentablemente, tardará mucho en llegar a la librerías argentinas, pero
+podés ir leyendo la versión en PDF.</p></div>
+        <p>
+        
+            <a href="../posts/learning-python-4th-edition.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/project-euler-problema-2.html">Project Euler, Problema #2</a>
+        <small>  
+             <span class="timeago" title="2009-09-20 16:37:47">2009-09-20 16:37:47</span>
+        </small></h1>
+        <div><p>El <a class="reference external" href="http://projecteuler.net/index.php?section=problems&amp;id=2">problema nº
+2</a> pide
+obtener la suma de todos los números impares pertenencientes a la
+<a class="reference external" href="http://es.wikipedia.org/wiki/sucesi%C3%B3n_de_Fibonacci">sucesión de
+Fibonacci</a> menores
+a 4 millones.</p>
+<p>El código con el que lo resolví es este:</p>
+<pre class="literal-block">
+def fibo(max):
+        a, b = 0, 1
+           n = a + b
+           while n &lt; max:
+                yield n
+                a, b = b, n
+                n = a + b
+
+sum([i for i in fibo(4000000) if i%2 == 0])
+</pre>
+<p>El resultado es 4613732.</p>
+<div class="section" id="explicacion">
+<h2>Explicación</h2>
+<p>Fibonacci es el "hola mundo matemático" y Python luce su elegancia con
+este problema.</p>
+<p>El aspecto interesante de la función <strong>fibo()</strong> definida en el código de
+arriba es que no se trata de una función común sino de un generador.
+Sintácticamente la diferencia está en que no utiliza la sentencia
+<strong>return</strong> sino
+<strong>`yield &lt;http://docs.python.org/reference/simple_stmts.html#the-yield-statement&gt;`_</strong>
+.</p>
+<p>La definición de
+<em>`yield &lt;http://www.wordreference.com/definition/yield&gt;`_</em>. en su
+acepción de verbo, dice «end resistance, especially under pressure or
+force;». Ceder, no oponer resistencia.</p>
+<p>La diferencia sustancial entre un yield y un return es que el yield
+devuelve el resultado parcial de cada iteración y hace una "marca de
+entrada" desde donde se comenzará a ejecutar la próxima vez que la
+función (el generador) sea invocado.</p>
+<p>Esto permite una recursividad con "<a class="reference external" href="http://en.wikipedia.org/wiki/Lazy_evaluation">evaluación
+perezosa</a>", mucho más
+eficiente en términos computacionales.</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/project-euler-problema-2.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/resolviendo-project-euler-con.html">Resolviendo Project Euler con Python</a>
+        <small>  
+             <span class="timeago" title="2009-09-18 01:48:15">2009-09-18 01:48:15</span>
+        </small></h1>
+        <div><p>A través del blog de <a class="reference external" href="http://www.juanjoconti.com.ar">Juanjo Conti</a>
+descubrí <a class="reference external" href="http://projecteuler.net">Project Euler</a>, una serie de
+desafíos matemáticos de enunciación sencilla para resolver con
+computadoras.</p>
+<p>Juanjo estuvo resolviendo los primeros problemas, y yo quise hacer mi
+intento. <a class="reference external" href="http://projecteuler.net/index.php?section=problems&amp;id=1">El
+primero</a>
+plantea obtener la suma de todos los multiplos de 3 o de 5 menores a
+1000.</p>
+<p>Lo resolví con esta pythonica (lo es?) línea:</p>
+<pre class="literal-block">
+sum([i for i in range(1000) if (i % 3 == 0 or i % 5==0)])
+</pre>
+<p>El resultado es 233168.</p>
+<div class="section" id="breve-explicacion">
+<h2>Breve explicación</h2>
+<p>Se basa en el uso de <a class="reference external" href="http://docs.python.org/tutorial/datastructures.html#list-comprehensions">list
+comprehensions</a>,
+una de las "joyas de la corona" de las características de Python.</p>
+<p>Es una manera de generar listas de una manera concisa, compuesta por una
+expresión seguida de uno a más <strong>for</strong> y una condicionalidad al final</p>
+<p>La lista ** [i for i in range(1000) if (i % 3 == 0 or i % 5==0)]** se
+lee así: crear una lista con todos los elementos (expresión i) en el
+rango de 0 a 999 (for) cuyo resto de dividirlo por 3 o 5 sea 0 (if).</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/resolviendo-project-euler-con.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/el-numero-mi-primer-juego.html">El Número, mi primer juego</a>
+        <small>  
+             <span class="timeago" title="2009-04-24 18:37:28">2009-04-24 18:37:28</span>
+        </small></h1>
+        <div><p>Para suscribirse a la lista de
+<a class="reference external" href="http://python.org.ar/pyar/ListaDeCorreo">Pyar</a>, una de las tareas
+(opcional, pero muy bienvenida) es enviar tu "Hola Mundo".</p>
+<p>El 17 de enero de 2007 yo me suscribí y mandé el siguiente mensaje.</p>
+<blockquote>
+<p>Estimada gente:</p>
+<p>Cumpliendo solemnemente con el paso 2 de las indicaciones de
+suscripción a la lista, haciendo alarde de mi nerdismo, les dejo mi
+"hola mundo" (mi primero programa en python!). Se trata de humilde
+juego via consola que implemento en cada lenguaje en el que intento
+incursionar. Hete aqui:</p>
+<p>Dicha sea la verdad: vengo con muchas ganas de aprender, y por ahora
+muy poco que aportar (pago solidaridad con sinceridad).</p>
+<p>Decidir aprender un nuevo lenguaje es una gran decisión y creo que
+no me he equivocado con mi elección. Es que son mis primeros pinitos
+en la programación orientada a objetos, y aunque la facu exige Java
+(pero no enseña Java), creo que Python es una herramienta mucho mas
+versatil, accesible y apropiada para el nivel de software que tengo
+intención/necesidad de desarrollar.</p>
+<p>Ahora la parte aburrida. Me llamo Martin, soy de Neuquen y estudio
+Ingenieria en computacion en Cordoba. Soy programador PHP (uno del
+montón, que bah) y en particular laburo con un CMS/framework llamado
+<a class="reference external" href="http://www.spip.net">SPIP</a>, que me da de comer y beber. Tengo un
+weblog, aunque no sobre cuestiones técnicas.
+<a class="reference external" href="http://www.textosypretextos.com.ar">www.textosypretextos.com.ar</a>
+. Y lo más importante: soy hincha de boca.</p>
+<p>saludos desde Neuquén a 32ºC. (quien dijo que en el sur hace frio?)</p>
+<p>Martín</p>
+</blockquote>
+<p>Mi "Hola Mundo" fue <strong>El Número</strong>.</p>
+<div class="section" id="mi-primer-juego">
+<h2>Mi primer juego</h2>
+<p>El Número es un juego de lógica y habilidad mental. Consiste en
+encontrar el número escondido (generado aleatoriamente) a través de la
+información</p>
+<p>que brinda la máquina en cada intento. El número escondido tiene 4
+cifras no repetidas.</p>
+<p><img alt="-" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un digito <em>’bien’</em> significa que el hay un acierto en número y
+posición.</p>
+<p><img alt="image1" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un digito <em>’regular’</em> significa que el digito existe en el
+número incógnita, pero no está en la posición correcta.</p>
+<p>Por ejemplo si el numero incógnita fuese el 1234 y se arriesga el 2031
+el resultado será de dos dígitos regulares (el 2 y el 1) y 1 dígito bien
+(el 3).</p>
+</div>
+<div class="section" id="descarga-e-instrucciones">
+<h2>Descarga e instrucciones</h2>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/elnumero.py-3.zip">|image3|</a></td>
+</tr><tr><td>El Número Martín Gaitán - Enero de 2007</td>
+</tr></tbody></table><p>Sobre Linux podés copiar y pegar este listado de comandos en la consola:</p>
+<pre class="literal-block">
+wget http://nqnwebs.com/IMG/zip/elnumero.py-3.zip
+unzip elnumero.py-3.zip
+chmod +x ./elnumero.py
+./elnumero.py
+</pre>
+<p>Sobre Windows, asegurate tener instalado Python (cualquier versión
+elnumero.py</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/el-numero-mi-primer-juego.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/una-introduccion-a-python.html">Una introducción a Python</a>
+        <small>  
+             <span class="timeago" title="2009-03-09 21:56:54">2009-03-09 21:56:54</span>
+        </small></h1>
+        <div><p><a class="reference external" href="http://python.org/">Python</a> es un lenguaje de programación
+interpretado, interactivo y multiplataforma, que con su facilidad y
+potencia hace las delicias de miles de programadores (y sin saberlo,
+también de los usuarios de los programas que estos desarrollan)
+alrededor del mundo.</p>
+<p>La comunidad de <a class="reference external" href="http://www.python.com.ar">Python Argentina</a> es
+particularmente activa, solidaria y muy capaz técnicamente.</p>
+<p>Esta charla fue dada por <a class="reference external" href="http://www.taniquetil.com.ar/plog/">Facundo
+Batista</a>, uno de los fundadores de
+PyAr, en las <a class="reference external" href="http://jornadas.grulic.org.ar/7/">7mas Jornada Regionales de Software
+Libre</a> realizadas en Córdoba,
+Argentina, en 2007.</p>
+<p>Aquí la presentación</p></div>
+        <p>
+        
+            <a href="../posts/una-introduccion-a-python.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+    <div>
+<ul class="pager"><li class="previous">
+        <a href="python-1.html">← Posts posteriores</a>
+    </li>
+  
+  
+</ul></div>
+    
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

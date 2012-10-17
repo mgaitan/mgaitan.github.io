@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>tin_nqn (Desarrollo web)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:24:12 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>¡Basta de IE6!</title><link>/posts/basta-de-ie6.html</link><description>&lt;p&gt;El trabajo de un desarrollador web cuesta mechones de cabello a la hora
+de enfrentar al inmundo, malnacido e infeliz Internet Explorer 6. Horas
+y nervios perdemos intentando que nuestros sitios se vean decentemente
+en este navegador, que pese a tener casi 8 a&amp;#241;os de anitg&amp;#252;edad, aun tiene
+cuota de mercado. &amp;#161;Es hora de decir basta! Tomemos las armas y
+declaremosle la guerra a Internet explorer.&lt;/p&gt;
+&lt;div class="section" id="cuales-son-nuestras-armas"&gt;
+&lt;h2&gt;&amp;#191;Cu&amp;#225;les son nuestras armas?&lt;/h2&gt;
+&lt;p&gt;Te propongo dos, faciles y potentes:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El script modificado por m&amp;#237; de la campa&amp;#241;a &lt;a class="reference external" href="http://www.end6.org/esp/home/"&gt;End
+6!&lt;/a&gt;. S&amp;#243;lo debes copiar este c&amp;#243;digo y
+pegarlo en el header de cada p&amp;#225;gina de tu sitio, o sea entre &lt;tt class="docutils literal"&gt;&amp;lt;head&amp;gt;&lt;/tt&gt;
+y &lt;tt class="docutils literal"&gt;&amp;lt;/head&amp;gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 20)&lt;/p&gt;
+Literal block expected; none found.&lt;/div&gt;
+&lt;p&gt;Si un visitante llega usando el vetusto y abominable navegador, ver&amp;#225; un
+cartelito como este:&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="/posts/local/cache-vignettes/L510xH372/textosypretextos-289a7.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 26)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;&lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El plugin para spip &lt;em&gt;`Cambia el
+navegador! &amp;lt;http://www.spip-contrib.net/Changez-de-navigateur&amp;gt;`_&lt;/em&gt; que al
+instalarlo y activarlo, muestra un mensaje en la cabecera de todo el
+sitio p&amp;#250;blico si el visitante usa IE6 (o m&amp;#225;s viejo!)&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="/posts/local/cache-vignettes/L510xH372/image.php-ef244.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 34)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/noie.zip"&gt;|image3|&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Cambia el Navegador!&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Puedes bajar este plugin (multiling&amp;#252;e) desde aqu&amp;#237;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="basta-de-caldo-gordo"&gt;
+&lt;h2&gt;Basta de &amp;#8217;caldo gordo&amp;#8217;&lt;/h2&gt;
+&lt;p&gt;Como desarrolladores, tenemos cosas mejores que hacer que continuar
+garantizando la compatibilidad con lo arcaico, perdiendo el tiempo en
+torno a errores ajenos a nuestros desarrollos. Todo el tiempo dispensado
+all&amp;#237; deber&amp;#237;a ser concentrada en conquistar los nuevos horizontes que
+requieren nuestra atenci&amp;#243;n como, por ejemplo, la web m&amp;#243;vil.&lt;/p&gt;
+&lt;p&gt;Y en gran parte, esta situaci&amp;#243;n es nuestra responsabilidad. Todos los
+que trabajamos en internet (y los que la usamos con pasi&amp;#243;n) conocemos y
+odiamos con fundamentos el Internet Explorer 6. Pero justamente
+nosotros, por tener razones, somos responsables de difundirlas tanto
+como podamos para educar tecnol&amp;#243;gicamente a los usuarios m&amp;#225;s
+inexperimentados.&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/basta-de-ie6.html</guid><pubDate>Sat, 21 Feb 2009 17:23:07 GMT</pubDate></item></channel></rss>

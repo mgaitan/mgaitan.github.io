@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Deja que el servidor trabaje por tí con GNU Screen | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Deja que el servidor trabaje por tí con GNU Screen | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Deja que el servidor trabaje por tí con GNU Screen</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-10-19 20:33:31">2009-10-19 20:33:31</span>   |  
+
+        
+
+        <a href="deja-que-el-servidor-trabaje-por.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/linux.html">Linux</a>
+                
+            
+        
+    </small>
+    <div><p>Ya somos avispados usuarios de la línea de comandos y hacemos nuestros
+pinitos administrando un servidor: movemos, bajamos y hasta compilamos
+directamente en una maquina remota, muchas veces más potente y con más
+ancho de banda que la nuestra.</p>
+<p>Nuestra terminal cliente sólo ejecuta
+<a class="reference external" href="http://www.openssh.com/">OpenSSH</a> (o
+<a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a>
+en Windows)</p>
+<p>Pero cuando se trata de ejecutar un proceso largo y de nula
+interactividad no tiene mucho sentido seguir conectados ¿Para qué gastar
+tiempo y recursos (dejar la PC cliente prendida, por ejemplo) si el
+trabajo sólo se hace en el servidor?</p>
+<p>Este caso se da muchas veces, sobre todo (y aquí lo que me interesa)
+cuando bajamos archivos muy pesados o hacer un mirror de un repositorio
+completo.</p>
+<p>Y aquí cómo resolverlo: usa <a class="reference external" href="http://es.wikipedia.org/wiki/GNU_Screen">GNU
+Screen</a>.</p>
+<p>Screen es un multiplexor/virtualizador de terminales, y entre sus muchas
+e interesantes características incluye el desacople de su proceso padre.</p>
+<p>Esto significa que se puede ejecutar una terminal virtual con screen (en
+una terminal remota por ssh, por ejemplo), ejecutar cualquier proceso en
+ese entorno y desacoplarlo, pudiendo entonces desloguearse y cerrar la
+conexión remota dejando el proceso en curso.</p>
+<p><strong>Receta paso a paso</strong></p>
+<ul><li><p class="first">ejecuta una consola virtual con screen</p>
+<pre class="literal-block">
+$ screen
+</pre>
+</li>
+<li><p class="first">Ejecuta tu proceso largo. Por ejemplo, bajar la beta de Ubuntu Karmic
+Koala en DVD</p>
+<pre class="literal-block">
+$ wget http://mirror.mcs.anl.gov/pub/ubuntu-iso/DVDs/ubuntu/9.10/beta/ubuntu-9.10-beta-dvd-i386.iso
+</pre>
+</li>
+<li><p class="first">Desacoplar el proceso con la combinación de teclas <strong>Control+A D</strong></p>
+</li>
+<li><p class="first">Desconectarse, tomar unos mates y volver cuando quieras</p>
+</li>
+</ul><p>Para retomar el proceso</p>
+<ul><li><p class="first">Conectarnos de nuevo al servidor mediante SSH</p>
+</li>
+<li><p class="first">Listar las consolas virtuales para averiguar el PID</p>
+<pre class="literal-block">
+$ screen -list
+</pre>
+</li>
+<li><p class="first">Traer a primer plano el proceso en cuestión con</p>
+<pre class="literal-block">
+$ screen -r PID
+</pre>
+</li>
+</ul><p>y allí estará el proceso que dejamos corriendo (o al menos los rastros
+que dejó en su paso).</p></div>
+    <ul class="pager"><li class="previous">
+            <a href="digitalizando-recuerdos-con.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="monetizar-pagos-virtuales-en.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/deja-que-el-servidor-trabaje-por.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Resolviendo Project Euler con Python | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Resolviendo Project Euler con Python | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Resolviendo Project Euler con Python</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-09-18 01:48:15">2009-09-18 01:48:15</span>   |  
+
+        
+
+        <a href="resolviendo-project-euler-con.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/python.html">Python</a>
+                
+            
+        
+    </small>
+    <div><p>A través del blog de <a class="reference external" href="http://www.juanjoconti.com.ar">Juanjo Conti</a>
+descubrí <a class="reference external" href="http://projecteuler.net">Project Euler</a>, una serie de
+desafíos matemáticos de enunciación sencilla para resolver con
+computadoras.</p>
+<p>Juanjo estuvo resolviendo los primeros problemas, y yo quise hacer mi
+intento. <a class="reference external" href="http://projecteuler.net/index.php?section=problems&amp;id=1">El
+primero</a>
+plantea obtener la suma de todos los multiplos de 3 o de 5 menores a
+1000.</p>
+<p>Lo resolví con esta pythonica (lo es?) línea:</p>
+<pre class="literal-block">
+sum([i for i in range(1000) if (i % 3 == 0 or i % 5==0)])
+</pre>
+<p>El resultado es 233168.</p>
+<div class="section" id="breve-explicacion">
+<h2>Breve explicación</h2>
+<p>Se basa en el uso de <a class="reference external" href="http://docs.python.org/tutorial/datastructures.html#list-comprehensions">list
+comprehensions</a>,
+una de las "joyas de la corona" de las características de Python.</p>
+<p>Es una manera de generar listas de una manera concisa, compuesta por una
+expresión seguida de uno a más <strong>for</strong> y una condicionalidad al final</p>
+<p>La lista ** [i for i in range(1000) if (i % 3 == 0 or i % 5==0)]** se
+lee así: crear una lista con todos los elementos (expresión i) en el
+rango de 0 a 999 (for) cuyo resto de dividirlo por 3 o 5 sea 0 (if).</p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="principios-para-un-freelancear.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="project-euler-problema-2.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/resolviendo-project-euler-con.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

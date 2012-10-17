@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Digitalizando recuerdos con mencoder | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Digitalizando recuerdos con mencoder | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Digitalizando recuerdos con mencoder</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-09-30 14:56:40">2009-09-30 14:56:40</span>   |  
+
+        
+
+        <a href="digitalizando-recuerdos-con.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/linux.html">Linux</a>
+                
+            
+        
+    </small>
+    <div><p>Para el Mundial del 2006, compré, como tantos otros que no tenían
+televisor pero sí computadora, una plaquita sintonizadora de TV: una
+Kozumi con el chip sintonizador BT878, uno de los más genéricos y
+bastante bien soportado en linux.</p>
+<p>Tuvo poca utilidad en aquel 2006, primero porque argentina no duró
+demasiado y segundo y principal porque un vecino reclamó potestad sobre
+la señal del cable coaxil que alimentaba mi chip y mis ilusiones
+mundialistas.</p>
+<p>Quedó cajoneada en algun rincón, hasta que rescaté del olvido la
+videofilmadora de la familia, una vieja y noble JVC , con un montón de
+casetitos Compact VHS (que es el formato con el que funciona).</p>
+<p>Así que después de mucho patear la tarea, decidí conectar los cables y
+encontrar la forma de convertir en bytes los recuerdos archivados en
+esos casettes polvorientos.</p>
+<div class="section" id="lo-que-hice">
+<h2>Lo que hice</h2>
+<p>Primero, configurar la placa. El chip bt878 se usa en muchísimas
+sintonizadoras que tienen configuraciones diferentes. Para asignarle los
+correctos, se pasa un código <tt class="docutils literal">card</tt> que se obtiene de <a class="reference external" href="http://www.mjmwired.net/kernel/Documentation/video4linux/CARDLIST.bttv">esta
+lista</a>.
+En mi caso, para una Kozumi ktv-01c, el código es 151. El comando
+completo con el que configuro el módulo es:</p>
+<pre class="literal-block">
+sudo modprobe bttv card=151 pll=1 tuner=38 radio=1 bttv_verbose=1 gbuffers=4
+</pre>
+<p>Luego, el supercomando mencoder:</p>
+<pre class="literal-block">
+mencoder tv:// -tv driver=v4l2:device=/dev/video0:input=1:width=480:height=360:norm=ntsc:alsa:adevice=hw.0:amode=1:audiorate=44100:forceaudio:forcechan=1:buffersize=300 -oac mp3lame -lameopts cbr:br=96:mode=3 -af volume=-6:0,channels=1 -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=5000:keyint=125:mbd=2 -vf yadif,crop=464:352:8:2  -o salida.avi
+</pre>
+<p>Algunos detalles:</p>
+<p><img alt="-" src="local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="tv://">tv://</a> indica que se va a capturar video, y se le pasan paramétros
+luego del flag -tv: driver <strong>v4l2</strong>, un tamaño de 480x360 (aunque
+después se recorta), preconfigurado para ntsc (29.97 fps).
+<img alt="image1" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Un aspecto importante son los flags referidos al audio: se
+captura el audio <strong>alsa</strong>, indicando la placa de sonido, el modo y la
+calidad (mono a 44100hz de ancho de banda)
+<img alt="image2" src="local/cache-vignettes/L8xH11/puce-32883.gif"> El audio se comprime con <strong>lame</strong> a mp3 de 96kps constante.
+<img alt="image3" src="local/cache-vignettes/L8xH11/puce-32883.gif"> con <strong>-af volume</strong> le bajo el volumen 6db, porque de otra
+manera me salía saturado (estoy capturando desde el microfono). El
+parametro <strong>forceraudio</strong> fuerza la captura aunque la entrada esté
+silenciada en la mezcladora. También se fuerza a grabar un solo canal
+con <strong>forcechan=1</strong>.
+<img alt="image4" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Con -ovc lavc se usa <strong>libavcodec</strong> (ffmpeg), comprimiendo en
+mpeg4 a un bitrate de 5000.
+<img alt="image5" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Se aplican 2 filtros de video al vuelo: <strong>yadif</strong> que es el
+mejor filtro desentralazador (necesario para captura analógica) y un
+<strong>crop</strong> que recorta 8 pixeles de los costados, 2 de arriba y 6 de
+abajo, para evitar la distorción que producen los cabezales con las
+cintas viejas.</p>
+<p>El resultado es un video de unos 250kb/s de calidad más que aceptable.</p>
+<p>Por ejemplo, el casamiento de mi hermano Juan, en 1998:</p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="learning-python-4th-edition.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="deja-que-el-servidor-trabaje-por.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/digitalizando-recuerdos-con.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

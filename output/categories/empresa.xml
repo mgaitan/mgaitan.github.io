@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>tin_nqn (Empresa)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:24:12 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Voto electrónico e ingenieros analógicos</title><link>/posts/voto-electronico-e-ingenieros.html</link><description>&lt;p&gt;Con mucho esfuerzo propio y ajeno, estoy terminando la carrera
+&lt;a class="reference external" href="http://computacion.efn.uncor.edu"&gt;Ingenier&amp;#237;a en Computaci&amp;#243;n&lt;/a&gt; en la
+Universidad Nacional de C&amp;#243;rdoba.&lt;/p&gt;
+&lt;p&gt;Una particularidad de mi carrera, entre varias, es que hay mucha
+discusi&amp;#243;n y participaci&amp;#243;n estudiantil. Una herramienta estrat&amp;#233;gica para
+esto ha sido un &lt;a class="reference external" href="http://www.ceicin.org.ar/Grupo-de-Correo-de-Ingenieria-en"&gt;grupo de
+correo&lt;/a&gt; en
+el que participan estudiantes, profesores y graduados.&lt;/p&gt;
+&lt;p&gt;All&amp;#237; he mantenido &lt;a class="reference external" href="http://www.textosypretextos.com.ar/spip.php?page=recherche&amp;amp;recherche=limando+cantos"&gt;algunas
+discusiones&lt;/a&gt;
+con compa&amp;#241;eros y/o profesores sobre temas diferentes. Los m&amp;#225;s
+interesantes, para m&amp;#237;, son los que evidencian concepciones filos&amp;#243;ficos,
+ideol&amp;#243;gicas y pol&amp;#237;ticas de cada uno.&lt;/p&gt;
+&lt;p&gt;La &amp;#250;ltima, que empez&amp;#243; el lunes, comenz&amp;#243; con una discusi&amp;#243;n sobre le &lt;a class="reference external" href="http://www.vialibre.org.ar/category/activismo/voto-electronico/"&gt;voto
+electr&amp;#243;nico&lt;/a&gt;
+(a raiz de la charla rel&amp;#225;mpago de &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Federico_Heinz"&gt;Federico
+Heinz&lt;/a&gt; en la
+&lt;a class="reference external" href="/posts/blog/article/pyconar-2010-el-orgullo-de"&gt;PyConAr&lt;/a&gt; ) que fue derivando
+a una m&amp;#225;s de fondo, sobre la concepci&amp;#243;n de ingeniero que yo quiero ser y
+la que los profesores con los que discuto en el hilo (y casi todos los
+otros) me ense&amp;#241;an.&lt;/p&gt;
+&lt;p&gt;Como ya casi tiene telara&amp;#241;as, y adem&amp;#225;s porque all&amp;#237; est&amp;#225;n todas las
+discusiones previas (las que me parecieron interesantes, bah), lo
+publiqu&amp;#233; en &lt;a class="reference external" href="http://www.textosypretextos.com.ar"&gt;mi otro blog&lt;/a&gt;.&lt;/p&gt;</description><guid>/posts/voto-electronico-e-ingenieros.html</guid><pubDate>Tue, 19 Oct 2010 21:54:20 GMT</pubDate></item><item><title>Me cago en vos, AFIP</title><link>/posts/me-cago-en-vos-afip.html</link><description>&lt;p&gt;El lunes a las 8am empec&amp;#233; mis tr&amp;#225;mites de (re)empadronamiento al
+Monotributo. Reci&amp;#233;n a las 12hs pude saber que ese d&amp;#237;a fracasar&amp;#237;a, porque
+las "pruebas" de mi domicilio fiscal no eran v&amp;#225;lidas.&lt;/p&gt;
+&lt;p&gt;El martes, flamantemente concubinado con Nati para que me sirvan las
+facturas a su nombre, despu&amp;#233;s de esperar que el bur&amp;#243;crata que te saca la
+fotito y te hace firmar en el sensor (datos "biom&amp;#233;tricos", le llaman,
+pomposos) se parara cada 5 minutos, jugara con el aire acondicionado a
+su espalda y mandara mensajitos por celular mientras la gente de la cola
+(yo inclu&amp;#237;do) se inflaba de rabia, pude obtener la inscripci&amp;#243;n y la
+clave, la rebuscada combinaci&amp;#243;n alfanum&amp;#233;rica &lt;em&gt;"hola1234"&lt;/em&gt;, que es igual
+para todos (podr&amp;#237;an, ya que est&amp;#225;n, imprimirla en el formulario,
+cierto?).&lt;/p&gt;
+&lt;p&gt;Se supon&amp;#237;a que con ese tr&amp;#225;mite de s&amp;#243;lo 2 ma&amp;#241;anas, al otro d&amp;#237;a (porque la
+era digital lleva su tiempo) podr&amp;#237;a terminar los tr&amp;#225;mites via web. Pero
+se supon&amp;#237;a nom&amp;#225;s, porque la plataforma virtual-&amp;gt; de &lt;strong&gt;AFIP no funciona
+con navegadores que no sean Internet Explorer&lt;/strong&gt;. En Firefox (o
+cualquiera de los navegadores libres) uno hace click y el formulario
+nunca se env&amp;#237;a.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="/posts/local/cache-vignettes/L450xH425/2010-10-08-171708_608x574_scrot-e0f53.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 25)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;Esto es, por supuesto, porque est&amp;#225; programada fuera de est&amp;#225;ndares. Vean
+qu&amp;#233; boludez:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Element referenced by ID/NAME in the global scope. Use W3C standard document.getElementById() instead.
+&lt;/pre&gt;
+&lt;p&gt;Este chorizo tira Firebug:&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="/posts/local/cache-vignettes/L510xH377/2010-10-08-172527_522x385_scrot-71784.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 37)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;Es un doble esfuerzo indignarse con los bur&amp;#243;cratas (que llenan
+formularios de papel o scripts javascript err&amp;#243;neos) y tambi&amp;#233;n con los
+que en la cola, indignados, bociferan en voz alta frases noventistas
+como &lt;em&gt;"esto no va a mejorar hasta que lo privaticen"&lt;/em&gt;, buscando alguna
+complicidad, imagino.&lt;/p&gt;
+&lt;p&gt;Pero me niego a naturalizar que las cosas del Estado deban andar mal. No
+s&amp;#243;lo porque las pagamos entre todos (mucha veces, m&amp;#225;s de lo que valen)
+sino porque necesitamos un Estado que funcione para que todas las dem&amp;#225;s
+cosas funcionen bien.&lt;/p&gt;
+&lt;p&gt;El discurso (y el avance) privatizador, comprobadamente perjudicial para
+el pueblo, ya no tiene tanta cancha como antes. Pero es hora de que
+empecemos, como
+&lt;a class="reference external" href="http://www1.hcdn.gov.ar/proyxml/expediente.asp?fundamentos=si&amp;amp;numexp=5914-D-2010"&gt;Estado&lt;/a&gt;,
+pero sobre todo como ciudadanos concientes de que lo necesitamos, a
+sanarlo, quererlo, exigirlo y fortalecerlo.&lt;/p&gt;</description><guid>/posts/me-cago-en-vos-afip.html</guid><pubDate>Fri, 08 Oct 2010 13:46:54 GMT</pubDate></item><item><title>Modelos de negocio FLOSS, la universidad, el sector privado y el Estado</title><link>/posts/modelos-de-negocio-floss-la.html</link><description>&lt;p&gt;Distintos laboratorios de investigaci&amp;#243;n y vinculaci&amp;#243;n de mi facultad del
+&amp;#225;rea qu&amp;#237;mica y del &amp;#225;rea computaci&amp;#243;n, junto a algunas empresas de
+software locales (&lt;a class="reference external" href="http://www.vates.com"&gt;VATES&lt;/a&gt; y otra) y del sector
+petroqu&amp;#237;mico (&lt;a class="reference external" href="http://www.pr3.com.ar/"&gt;Petroqu&amp;#237;mica Rio Tercero&lt;/a&gt;)
+est&amp;#225;n conformando un &lt;em&gt;"Consorcio Asociativo P&amp;#250;blico Privado (CAPP)"&lt;/em&gt; en
+el marco del programa
+&lt;a class="reference external" href="http://www.agencia.gov.ar/spip.php?page=convocatorias_articulo&amp;amp;mostrar=1104"&gt;FSTICS&lt;/a&gt;
+del Ministerio de Ciencia y Tecnolog&amp;#237;a de la Naci&amp;#243;n, con el fin de
+desarrollar una plataforma de desarrollo I+D de software para la
+industria. Para que contextualicemos de que hablamos: el programa
+estipula un aporte estatal de hasta el 60% para un proyecto de hasta 38
+millones de pesos.&lt;/p&gt;
+&lt;p&gt;Mi participaci&amp;#243;n es min&amp;#250;scula y aleda&amp;#241;a: el impulsor de este proyecto es
+el Dr. Mart&amp;#237;n Cismondi, director de mi proyecto integrador que se trata
+de un prototipo del (tipo de) software que se desarrollar&amp;#237;a desde esta
+plataforma.&lt;/p&gt;
+&lt;p&gt;Cismondi es Phd en ingenieria quimica y sus investigaciones en el campo
+del equilibrio de fases tienen mucha aplicaci&amp;#243;n en la industria. En
+particular en el petr&amp;#243;leo, donde el impacto que puede tener mejorar el
+rendimiento de un proceso (por ejemplo de destilaci&amp;#243;n) se mide en
+millones de morlacos.&lt;/p&gt;
+&lt;p&gt;Ayer tuve oportunidad de participar de una reuni&amp;#243;n, sirviendo de una
+especie de "traductor" entre los quimicos y los inform&amp;#225;ticos.&lt;/p&gt;
+&lt;p&gt;Si bien, repito, no tengo voz (mucho menos voto) en nada de lo que all&amp;#237;
+se resuelva, tengo inter&amp;#233;s en investigar y transmitir de la manera m&amp;#225;s
+clara posible otros modelos de negocio que, por lo que presenci&amp;#233; ayer,
+est&amp;#225;n lejos de ser tenidos en cuenta. Me refiero, claro, a que, sobre
+todo (no muy incre&amp;#237;blemente) desde la facultad, no se ve m&amp;#225;s all&amp;#225; de un
+modelo de negocio de software cerrado de venta por licencia.&lt;/p&gt;
+&lt;p&gt;Apunto algunas cuestiones sin orden:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El nicho de mercado es bastante acotado: industrias de gran escala
+mayormente transnacionales. Separadamente tiene mucha utilidad y
+aceptaci&amp;#243;n en centros de investigaci&amp;#243;n acad&amp;#233;micos.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Desde el grupo conformado, no existe conocimiento cabal de las
+soluciones de software espec&amp;#237;ficas que ese mercado, el industrial,
+demanda. S&amp;#237; se sabe que el -*expertise-* y el -*know how-* que el
+grupo de investigaci&amp;#243;n de Cismondi tiene son el valor diferencial.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image2" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; No existe hoy peso espec&amp;#237;fico suficiente, desde el punto de
+vista del producto existente, para competir con las empresas de software
+proveedoras de este nicho, sobre todo en los mercados de USA y Europa.
+Por ejemplo &lt;a class="reference external" href="http://www.aspentech.com"&gt;Aspen Tech&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image3" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Es dif&amp;#237;cil, a priori inimaginable, desarrollar un producto
+gen&amp;#233;rico que satisfaga necesidades de diversos clientes potenciales. La
+especifidad de los problemas de cada industria se supone grande.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image4" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Preguntas para hacerse &amp;#191;cuantos clientes reales existen en el
+mercado? &amp;#191;qu&amp;#233; "llegada" se tiene con ellos? &amp;#191;que posibilidades reales de
+venderle un software cerrado existen, teniendo en cuenta que no se sabe
+cabalmente cuales son sus demandas? Supongiendo que se conoce un
+problema espec&amp;#237;fico &amp;#191;cuanto sale desarrollar una soluci&amp;#243;n ? &amp;#191;se puede
+correr el riesgo de desarrollarla sin tener asegurada su
+comercializaci&amp;#243;n?&lt;/p&gt;
+&lt;p&gt;Soy un novato en el &amp;#225;rea negocios con FLOSS (y en negocios, a secas,
+tambi&amp;#233;n) pero lo que se me ocurre viene m&amp;#225;s o menos por este lado:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; Generar una estrategia para una fuerte inserci&amp;#243;n en el &amp;#225;mbito
+acad&amp;#233;mico internacional&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Para esto es indispensable la libre disponibilidad del c&amp;#243;digo fuente
+de manera que los m&amp;#233;todos num&amp;#233;rico-cient&amp;#237;ficos sean transparentes,
+reproducibles y verificables. Ver &lt;a class="reference external" href="http://www.openscience.org/blog/?p=312"&gt;este
+post&lt;/a&gt; en OpenScience
+Project.&lt;/li&gt;
+&lt;li&gt;Para evitar practicas predatorias sobre este trabajo, que alguien
+cierre y comercialice, hay que orientar a una licencia FLOSS v&amp;#237;rica,
+donde los trabajos derivados mantengan la condicion libre.&lt;/li&gt;
+&lt;li&gt;De esta manera se apunta a constituir una comunidad
+tecnologico-cient&amp;#237;fica donde el nucleo de desarrollo se mantendr&amp;#225; en
+los autores originales pero permitiendo y aprovechando c&amp;#243;digo y
+feedback de los usuarios.&lt;/li&gt;
+&lt;li&gt;En esta etapa el beneficio no es a priori monetario y en cambio s&amp;#237; en
+cuanto a calidad del software, inserci&amp;#243;n y difusi&amp;#243;n del/los
+producto/s, fidelizaci&amp;#243;n de usuarios y prestigio del equipo de
+desarrollo.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; La repercusi&amp;#243;n de la masa cr&amp;#237;tica generada abre la puerta al
+mercado por las siguientes razones:&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Muchos de los acad&amp;#233;micos que utilicen y formen parte de un
+"comunidad" alrededor del sofware FLOSS desde las universidades o
+llevaran su conocimiento a la industria.&lt;/li&gt;
+&lt;li&gt;Tambien los investigadores dentro de la industria tienen v&amp;#237;nculos
+fluidos con la comunidad cient&amp;#237;fica, sobre todo en estas &amp;#225;reas de
+investigaci&amp;#243;n de vanguardia de directa aplicabilidad.&lt;/li&gt;
+&lt;li&gt;El mercado a priori imposible de acceder se puede hacer m&amp;#225;s
+permeable: los responsables de investigaci&amp;#243;n demandan la utilizaci&amp;#243;n
+del software en los procesos de la industria o sus labores
+particulares.&lt;/li&gt;
+&lt;li&gt;Si el costo para la industria es nulo o bajo y de calidad, hay muchas
+probabilidades de que sea aceptado.&lt;/li&gt;
+&lt;li&gt;La ventaja diferencial del cliente es evitar el &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Vendor_lock-in"&gt;vendor
+lock-in&lt;/a&gt;. Sin embargo,
+la ventaja competitiva del equipo de desarrollo original, por su
+-*know how-* adquirido es insuperable para cualquier potencial
+competidor.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; Insertado en el mercado se generan posibilidades de lucro en dos
+&amp;#225;reas&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Customizaci&amp;#243;n y extensi&amp;#243;n del software bajo requerimientos
+espec&amp;#237;ficos. Entra en el marco de
+&lt;a class="reference external" href="http://es.wikipedia.org/wiki/SaaS"&gt;SaaS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Capacitaci&amp;#243;n y entrenamiento a equipos t&amp;#233;cnicos de la industria y la
+academia, tanto en el &amp;#225;rea de aplicaci&amp;#243;n (quimicos) como de
+desarrollodo de software.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Much&amp;#237;simo material para leer sobre el t&amp;#243;pico hay en &lt;a class="reference external" href="http://www.opensourcestrategies.org/"&gt;este
+sitio&lt;/a&gt;. Yo empezar&amp;#233; en cuanto
+tenga tiempo. Invito tambi&amp;#233;n, de manera enf&amp;#225;tica, a leer &lt;a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/contexto_de_trabajo.html#software-libre"&gt;la
+justificaci&amp;#243;n&lt;/a&gt;
+de que el software desarrollado en el marco de mi proyecto integrador lo
+libero como Software Libre&lt;/p&gt;
+&lt;div class="section" id="mas-alla-del-negocio"&gt;
+&lt;h2&gt;M&amp;#225;s all&amp;#225; del negocio&lt;/h2&gt;
+&lt;p&gt;Adem&amp;#225;s de lo expuesto se me cruzan cuestionamientos sobre el rol de la
+universidad y el estado en este escenario.&lt;/p&gt;
+&lt;p&gt;Como ciudadano y futuro profesional festejo la inversi&amp;#243;n que en los
+&amp;#250;ltimos a&amp;#241;os el Estado ha realizado para ciencia y tecnolog&amp;#237;a. Apostar a
+generar valor en &amp;#225;reas tan estrategicas como el software es necesario, y
+plantearlo desde el punto de vista de fortalecer la industria nacional
+(pymes) es entonces doblemente valioso.&lt;/p&gt;
+&lt;p&gt;Pero...&lt;/p&gt;
+&lt;p&gt;&amp;#191;son los laboratorios de investigaci&amp;#243;n de las universidades actores que
+deben generar recursos por s&amp;#237; mismos? &amp;#191;A quien pertenece el conocimiento
+que se produce en la universidad? &amp;#191;A qui&amp;#233;n debe pertenecer? &amp;#191;La
+universidad actual responde a un proyecto de pa&amp;#237;s ? &amp;#191;Existe tal cosa?
+&amp;#191;No debiera el Estado, formar parte societaria en los consorcios para
+los cuales est&amp;#225; aportando grandes recursos, adem&amp;#225;s de ser agente
+regulador? &amp;#191;qui&amp;#233;n y c&amp;#243;mo regula la relaci&amp;#243;n e intereses existentes entre
+los grupos de investigaci&amp;#243;n y el sector privado? &amp;#191;no se puede prestar a
+malversaciones y abuso del &lt;em&gt;sello&lt;/em&gt; de la universidad?&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/modelos-de-negocio-floss-la.html</guid><pubDate>Thu, 26 Aug 2010 13:19:19 GMT</pubDate></item><item><title>Monetizar pagos virtuales en Argentina sin costo</title><link>/posts/monetizar-pagos-virtuales-en.html</link><description>&lt;p&gt;Para los trabajadores online freelance (programadores, dise&amp;#241;adores,
+traductores, etc) trabajar para el exterior es un objetivo primordial.
+Aunque en algunos sectores la competencia es leonina y se pauperizan los
+honorarios, el tipo de cambio del peso respecto a otra monedas fuertes
+hace que siga siendo muy provechoso.&lt;/p&gt;
+&lt;p&gt;En traducci&amp;#243;n, que tiene un sistema de presupuesto lineal basado en
+cantidad de palabras del texto del idioma origen, es f&amp;#225;cil cuantificar
+la diferencia. En Argentina se cobra entre $0,10 y $0,15 (pesos
+argentinos) por palabra, mientras que en europa se cobra entre 0.05 &amp;#8364; y
+0.07&amp;#8364;. O sea, se gana hasta el triple por realizar el mismo trabajo.&lt;/p&gt;
+&lt;p&gt;El problema, al menos desde Argentina, es cobrar. Aqu&amp;#237; comparto mi
+experiencia esperando ayudar a otros.&lt;/p&gt;
+&lt;div class="section" id="de-adsense-a-la-billetera"&gt;
+&lt;h2&gt;De Adsense a la billetera&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image0" src="/images/google-adsenf60e-93be1.jpg"&gt;
+Una forma simple y r&amp;#225;pida pero bastante onerosa es &lt;a class="reference external" href="http://www.westernunion.com"&gt;Western
+Union&lt;/a&gt;. Es un servicio de transferencias
+de dinero persona a persona (f&amp;#237;sica o jur&amp;#237;dica), con sedes en casi todo
+el mundo. Tiene dos tipos de servicio: Quick Cash y 24 horas.&lt;/p&gt;
+&lt;p&gt;Western Union tiene multiples instancias de lucro, que lo vuelven un
+ser. Se le cobra entre el 2.5 y 5% al emisor (desde Europa a Argentina
+el l&amp;#237;mite de transferencia es 500&amp;#8364;) y adem&amp;#225;s, el receptor cobra en
+moneda local a un tipo de cambio definido por WU que siempre est&amp;#225; entre
+un 3 y 6% por debajo del tipo de cambio del dia. Sobre todo los d&amp;#237;as que
+hay corridas en suba, el tipo de cambio queda desfasado (tiene una
+actualizaci&amp;#243;n muy lenta) y es un mal momento para cobrar.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image1" src="/images/Western-Unioa5aa-91e5e.jpg"&gt;
+Existe una forma de salvar este cargo solapado para el receptor: si el
+env&amp;#237;o es tipo Quick Cash y en d&amp;#243;lares estadounidenses, se puede retirar
+en d&amp;#243;lares en los locales Western Union de los supermercados &lt;strong&gt;Walmart&lt;/strong&gt;
+(que es el representante oficial de WU en Argentina). Este servicio no
+tiene costo para el receptor.&lt;/p&gt;
+&lt;p&gt;Esto es muy &amp;#250;til para quienes utilizan &lt;strong&gt;Google Adsense&lt;/strong&gt; en sus sitios
+web, ya que Google ofrece este servicio de pago. Basta anotar el n&amp;#250;mero
+de transferencia (MCU) y documento en mano aclarar en Wester Union de
+Walmart que queremos cobrar en d&amp;#243;lares.&lt;/p&gt;
+&lt;p&gt;Mucho m&amp;#225;s f&amp;#225;cil, r&amp;#225;pido y sin perder un sope que pedir el cheque y
+venderlo en una financiera.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cobrar-del-extranjero"&gt;
+&lt;h2&gt;Cobrar del extranjero&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image2" src="/images/paypal_logog8b6f-21423.gif"&gt;
+Internacionalmente est&amp;#225; casi estandarizado el uso de
+&lt;a class="reference external" href="http://www.paypal.com"&gt;Paypal&lt;/a&gt; como medio de pago de honorarios (y
+casi cualquier otro tipo de transacci&amp;#243;n en internet) pero este sistema
+no tiene integraci&amp;#243;n con el sistema bancario argentino lo cual complica
+la tarea de monetizar los fondos.&lt;/p&gt;
+&lt;p&gt;Adem&amp;#225;s, un usuario no puede cargar cr&amp;#233;dito a su cuenta paypal con una
+tarjeta de cr&amp;#233;dito, aunque esta sea v&amp;#225;lida internacionalmente. Un
+detalle que complica a quienes quieren comprar o donar en el extranjero.&lt;/p&gt;
+&lt;p&gt;Sin embargo, Paypal sigue siendo interesante para todos los que
+necesitamos cobrar desde el extranjero. Adem&amp;#225;s de facilitarle la vida al
+emisor (cliente) que seguramente ya est&amp;#225; acostumbrado a este sistema,
+&lt;strong&gt;la transferencia entre cuentas paypal personales no tiene costo&lt;/strong&gt;.
+Esto significa que si el cliente tiene una cuenta paypal con fondos (que
+en la mayor&amp;#237;a de los paises pudo haber cargado con tarjeta o desde su
+cuenta bancaria sin costo) la transacci&amp;#243;n total es gratuita. Adem&amp;#225;s, la
+operaci&amp;#243;n es instant&amp;#225;nea.&lt;/p&gt;
+&lt;p&gt;Si el cliente envia el dinero a trav&amp;#233;s de paypal pero habiendolo cargado
+desde una cuenta bancaria o tarjeta de cr&amp;#233;dito espec&amp;#237;ficamente para
+dicha transacci&amp;#243;n, el costo de la operanci&amp;#243;n es 3,4% + 0,30 USD. El
+emisor decide quien abona este cargo.&lt;/p&gt;
+&lt;p&gt;Una observaci&amp;#243;n importante es que predeterminadamente las cuentas PayPal
+son en una moneda principal (en d&amp;#243;lares estadounidenses para Argentina)
+y al recibir un pago en otra moneda (euros, por ejemplo) la conversi&amp;#243;n
+de divisa se realiza al tipo de cambio del d&amp;#237;a con una retenci&amp;#243;n del
+2.5%. El tipo de cambio es actualizado 2 veces por d&amp;#237;a.&lt;/p&gt;
+&lt;p&gt;Una s&amp;#243;luci&amp;#243;n es abrir cuentas en distintas monedas. En vez de convertir
+el pago a la divisa principal, se mantiene en nuestra cuenta en la
+moneda en que se recibi&amp;#243;. Cuando necesitamos realizar un pago o
+transferencia en esta moneda, nos ahorraremos tener que reconvertirla
+nuevamente (ahorrando un 5% en total). Claro que a la hora de monetizar
+los fondos se deber&amp;#225;n convertir, pero esto se puede hacer en cualquier
+momento que creamos conveniente.&lt;/p&gt;
+&lt;p&gt;Paypal aclara que ofrece este servicio (Multiples divisas) para
+facilitar el comercio electr&amp;#243;nico internacional y no debe utilizarse con
+fines especulativos. Pero los timberos decidir&amp;#225;n.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="de-paypal-a-la-billetera"&gt;
+&lt;h2&gt;De Paypal a la billetera&lt;/h2&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/images/logo_xoomgif23e5.gif"&gt;|image4|&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Pero, como dec&amp;#237;a un amigo, la plata no es plata hasta que no sirve para
+comprar fernet en la despensa.&lt;/p&gt;
+&lt;p&gt;Como dije m&amp;#225;s arriba, no se puede asociar una cuenta bancaria argentina
+una cuenta Paypal (ni para a&amp;#241;adir ni para retirar fondos). Esto deja
+como &amp;#250;nica alternativa oficial para retirar fondos el envio de un
+cheque.&lt;/p&gt;
+&lt;p&gt;Paypal envia un cheque via correo postal certificado por el monto que
+solicitemos con un costo de u$s 15 fijo, independientemente del monto
+retirado. El env&amp;#237;o para Argentina se realiza a trav&amp;#233;s de Ocasa, y tiene
+una demora aproximada de 10 d&amp;#237;as h&amp;#225;biles.&lt;/p&gt;
+&lt;p&gt;El problema es que este cheque tampoco se puede cobrar en ning&amp;#250;n banco,
+por lo que hay que venderlo en una financiera o agencia de viajes, que
+cobran una comisi&amp;#243;n de entre el 2 y el 5%.&lt;/p&gt;
+&lt;p&gt;Por suerte existe &lt;a class="reference external" href="http://www.xoom.com"&gt;xoom.com&lt;/a&gt;. Es un servicio de
+transferencia de dinero que intenta competir con Western Union, pero a
+diferencia de este, la operaci&amp;#243;n se realiza &amp;#250;nicamente online, el
+destino puede ser una cuenta bancaria argentina o efectivo en pesos o
+d&amp;#243;lares, y, hete aqu&amp;#237; la clave, &lt;a href="/posts/monetizar-pagos-virtuales-en.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;**&lt;/span&gt;&lt;/a&gt;el origen de los fondos puede ser una
+cuenta Paypal. **&lt;/p&gt;
+&lt;div class="system-message" id="id1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 118); &lt;em&gt;&lt;a href="/posts/monetizar-pagos-virtuales-en.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline strong start-string without end-string.&lt;/div&gt;
+&lt;p&gt;Problema solucionado: nos hacemos una transferencia a nosotros mismos,
+retirando fondos de Paypal y enviandolos a nuestra cuenta bancaria, o
+mejor, en d&amp;#243;lares que se cobran en cualquier sucursal de Banco Franc&amp;#233;s.&lt;/p&gt;
+&lt;p&gt;A diferencia de Wester Union, los cargos de servicio no son porcentuales
+fijos sino que &lt;a class="reference external" href="https://www.xoom.com/sendmoneynow/money-transfer-fees"&gt;est&amp;#225;n tabulados en
+rangos&lt;/a&gt; del
+monto enviado lo que significa un ahorro considerable en montos grandes.
+Para cifras montos menores a u$s500, el costo de servicio ronda le 4.5%&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image5" src="/images/Banco-Francecef9-62220.jpg"&gt;
+Adem&amp;#225;s hay que considerar que al cobrar en pesos, Xoom realiza una
+conversi&amp;#243;n de divisa a un tipo de cambio que, al igual que Wester Union,
+est&amp;#225; un par de puntos por debajo de la cotizaci&amp;#243;n de mercado. La opci&amp;#243;n
+de cobrar en dolares evita esta p&amp;#233;rdida, pero tiene un cargo de servicio
+un 40% mayor, lo que significa un costo de operaci&amp;#243;n real del m&amp;#225;s de 6%.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image6" src="/images/RMNlogopng-33050-8dd22.jpg"&gt;
+Pero hay una forma de salvar esta plata, que convertida a pesos
+seguramente significar&amp;#225;n varios fern&amp;#233;s: &lt;strong&gt;conseguir un c&amp;#243;digo de
+descuento&lt;/strong&gt;. &lt;a class="reference external" href="http://www.retailmenot.com/view/xoom.com"&gt;Retailmenot&lt;/a&gt;
+suele tener cupones v&amp;#225;lidos, &amp;#161;de hasta el 100%!&lt;/p&gt;
+&lt;p&gt;Conclusi&amp;#243;n: si cobramos desde Paypal (entre cuentas personales) y
+retiramos los fondos a trav&amp;#233;s de Xoom.com en d&amp;#243;lares consiguiendo un
+cup&amp;#243;n del 100%, tendremos toda nuestra platita en el bolsillo, en
+d&amp;#243;lares y sin perder nada en el camino.&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/monetizar-pagos-virtuales-en.html</guid><pubDate>Wed, 02 Dec 2009 15:34:05 GMT</pubDate></item><item><title>Charla "Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa"</title><link>/posts/charla-ser-freelance-como-trabajar.html</link><description>&lt;p&gt;El mi&amp;#233;rcoles 15 de abril de 2009 particip&amp;#233; como disertante en las &lt;a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-Abril-2009"&gt;3&amp;#186;
+Jornadas Abiertas de Ingenier&amp;#237;a en
+Computaci&amp;#243;n&lt;/a&gt;
+que reune a estudiantes, profesores y profesionales invitados para dar
+charlas t&amp;#233;cnicas o de inter&amp;#233;s para la comunidad de la carrera.&lt;/p&gt;
+&lt;p&gt;En la anterior edici&amp;#243;n, disert&amp;#233; sobre &lt;a class="reference external" href="/posts/blog/Control-de-Versiones-con"&gt;Control de Versiones con
+Subversion&lt;/a&gt;. En esta oportunidad
+pretend&amp;#237; un tema menos t&amp;#233;cnico pero de inter&amp;#233;s para un vasto sector de
+mis compa&amp;#241;eros: c&amp;#243;mo animarse a dar los primeros pasos profesionalmente
+sin ser empleado.&lt;/p&gt;
+&lt;p&gt;La charla se bas&amp;#243; en una presentaci&amp;#243;n de &lt;a class="reference external" href="http://www.desimone.com.ar/"&gt;Sebasti&amp;#225;n
+Desimone&lt;/a&gt;, publicada bajo &lt;a class="reference external" href="http://creativecommons.org/licenses/by-nc/2.5/ar/"&gt;Creative
+Commons by-nc-ar&lt;/a&gt;
+que escuch&amp;#233; en las &lt;a class="reference external" href="http://jornadas.grulic.org.ar/7/"&gt;7mas Jornadas Regionales de Software
+Libre&lt;/a&gt;, realizadas en C&amp;#243;rdoba, en
+2007.&lt;/p&gt;
+&lt;p&gt;Como corresponde &amp;#233;tica y legalmente, este trabajo est&amp;#225; bajo la misma
+licencia.&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/ojotas_copia_.odp"&gt;|image1|&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ser Freelance: C&amp;#243;mo trabajar en ojotas desde el living de tu casa Mart&amp;#237;n Gait&amp;#225;n, abril de 2009&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;El documento ODP incluye notas y comentarios.&lt;/p&gt;
+&lt;div class="section" id="slidecast"&gt;
+&lt;h2&gt;Slidecast&lt;/h2&gt;
+&lt;p&gt;Lamentablemente, la calidad del audio es paup&amp;#233;rrima.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="video"&gt;
+&lt;h2&gt;Video&lt;/h2&gt;
+&lt;/div&gt;</description><guid>/posts/charla-ser-freelance-como-trabajar.html</guid><pubDate>Wed, 22 Apr 2009 12:58:20 GMT</pubDate></item></channel></rss>

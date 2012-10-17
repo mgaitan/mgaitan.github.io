@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Una mejor manera de controlar los atributos en SPIP | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Una mejor manera de controlar los atributos en SPIP | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Una mejor manera de controlar los atributos en SPIP</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-03-12 06:29:35">2009-03-12 06:29:35</span>   |  
+
+        
+
+        <a href="una-mejor-manera-de-controlar-los.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/spip.html">SPIP</a>
+                , 
+            
+                <a href="../categories/jquery.html">jQuery</a>
+                
+            
+        
+    </small>
+    <div><p>Muchas balizas SPIP generan código HTML como salida (las balizas
+#LOGO_* y los filtros |image_* son los más notorios) y
+frecuentemente necesitamos o queremos modificar este código autogenerado
+en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
+(<a class="reference external" href="http://www.spip.net/en_article2465.html#inserer_attribut">inserer_attribut</a>
+para insertar atributos y
+<a class="reference external" href="http://www.spip.net/en_article2465.html#extraire_attribut">extraire_attribut</a>
+para extraer el valor de uno generado) pero son particularmente largos y
+tediosos de tipear.</p>
+<p>Más allá de eso, aunque uso estos filtros bastantes seguido para
+implementar cosas como galerías de imágenes, todavía pienso lo difícil
+que es escribir las palabras en francés sin equivocarme. Por suerte, un
+pequeño wrapper, puede suavizar este inconveniente.</p>
+<p>Cuando se trata de acceder y modificar atributos de valores de atributos
+nada, en mi opinión, llega tan lejos como <a class="reference external" href="http://docs.jquery.com/Attributes">la API de atributos de
+jQuery</a>. El <a class="reference external" href="http://docs.jquery.com/Attributes/attr">método de jQuery
+*attr*</a> por sí solo, permite
+leer y escribir el valor de cualquier atributo en cualquier nodo. Recibe
+uno o dos parámetros, el nombre del atributo, y opcionalmente, el valor.</p>
+<p>Si sólo se especifica el nombre, entonces <em>attr</em> extrae y devuelve el
+valor de ese atributo. Si ambos parámetros son pasados al método,
+entonces attr modifica el objeto configurando el atributo en cuestión
+con el valor dado. Es jerga de Programación Orientada a Objetos, es un
+estilo de interfaz "polimórfica" — cuando un solo método tiene dos
+comportamientos complementarios que son distinguidos por el número y/o
+el tipo de los argumentos dados — que está por todos lados en jQuery y
+es una de las razones por las que este framework es tan conciso y
+productivo.</p>
+<p>Considerandola como la mejor estructura para este tipo de interfaces que
+conozco (y también, que uso diariamente), decidí ue mi wrapper tendría
+que copiarlo. Así fue como el <em>attr</em> nació.</p>
+<p>Como el método de jQuery, el filtro <em>attr</em> de SPIP toma uno o dos
+parámetros (y un objeto "implícito", pero lo ignoraremos por el
+momento). Si sólo pasamos uno, este lo remite como entrada a
+<em>extraire_attribut</em> para obtener el valor correspondiente. Si se lo
+llama con dos parámetros, entonces llama a <em>inserer_attribut</em> para
+modificar el objeto.</p>
+<p>Como la idea, el código es razonablemente sencillo; la únca</p>
+<p>Like the idea, the code is reasonably straightforward; quizas lo único
+un poco inusual el uso de
+<a class="reference external" href="http://php.net/func_get_args">func_get_args</a> para obtener el
+conjunto de los argumentos pasados a la función llamada. Con ese array
+podermos usar <a class="reference external" href="http://php.net/count">count</a> para saber cuantos
+argumentos se pasaron y decidir qué se debe hacer. Esto es más seguro
+que especificar y evaluar valores por defecto (FALSE o NULL, por
+ejemplo) porque algunos usuarios genuinamente podrían querer usar esos
+valores (supongamos que NULL signifique eliminar el atributo en una
+futura versión).</p>
+<pre class="literal-block">
+include_spip("inc/filtres");
+
+/**
+ * The `attr` function allows the user to get and set the attributes of an HTML tag.
+ * It is intended to be used as a SPIP filter and depends on existing SPIP functionality.
+ *
+ * @param $tag
+ *     The HTML code.
+ * @param $name
+ *     The name of the attribute.
+ * @param $val...
+ *     The new value for the attribute $nom. Optional.
+ * @return
+ *     If $val was given, the code for tag with $name=$val
+ *     Otherwise, the value for the $name attribute in $tag.
+ */
+function attr($tag, $name){
+        $args = func_get_args();
+
+        if (count($args) &gt; 2) {
+                // SET
+                return  inserer_attribut($tag, $name, $args[2]);
+        } else {
+                // GET
+                return extraire_attribut($tag, $name);
+        }
+}
+</pre>
+<p>Simplemente copia el código en mes_fonctions.php (Mira "Agregar
+funciones propias" en la documentación sobre <a class="reference external" href="Agregar%20funciones%20propias">filtros de
+spip</a>) y luego usa el filtro attr en
+tus esqueletos:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 94)</p>
+Literal block expected; none found.</div>
+<p>Hay algunos cambios que se puede hacer a esta función: pasar $args
+directamente a inserer_attribut y extraire_attribut en vez de las
+variables individuales, agregar un parámetro $value=FALSE que sólo sirva
+para la claridad de la documentación , y el mencionado, eliminar
+atributos cuando se pase por ejemplo NULL como parámetro.</p></div>
+    <ul class="pager"><li class="previous">
+            <a href="personalizar-el-texto-de.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="variar-o-no-variar-esa-es-la.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

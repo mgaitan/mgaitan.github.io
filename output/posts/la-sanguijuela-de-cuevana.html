@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="La sanguijuela de cuevana | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>La sanguijuela de cuevana | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">La sanguijuela de cuevana</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2011-04-09 14:22:27">2011-04-09 14:22:27</span>   |  
+
+        
+
+        <a href="la-sanguijuela-de-cuevana.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/python.html">Python</a>
+                
+            
+        
+    </small>
+    <div><blockquote>
+<strong>UPDATE</strong> Hay una nueva versión con interfaz gráfica
+<a class="reference external" href="blog/article/cuevanalinks-ahora-para-seres">acá</a></blockquote>
+<p>Parece que se me hizo hobby <a class="reference external" href="blog/article/yendo-a-las-fuentes-de-cuevana-tv">chupar links de
+cuevana.tv</a> y el
+experimento ahora tiene su versión pythonica:
+<a class="reference external" href="http://pypi.python.org/pypi/CuevanaLinks">Cuevanalinks</a> .</p>
+<p>Es un pequeño proyecto que permite "conseguir links" de contenidos
+ofrecidos en cuevana, sirviendo estos como fuentes a manejadores de
+descargas como <a class="reference external" href="http://www.tucaneando.com/">Tucan</a> o
+<a class="reference external" href="http://jdownloader.org/">JDownloader</a>.</p>
+<p>Más allá de los resultados, me ha tenido entretenido algunas horas y me
+permitió aprender (o al menos resolver) algunas cosas: cómo se usa
+mercurial (y en particular un merge conflictivo con Meld), cómo se
+escribe un setup.py, como se distribuye via PyPi, etc.</p>
+<p>También, por supuesto, me permitió usar dos utilidades que me gustan
+mucho: <a class="reference external" href="http://pyquery.org">PyQuery</a> y
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
+<p>La aplicación tiene dos módulos/componentes:</p>
+<ol class="arabic simple"><li>Una <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/src/943b329f3da5/cuevanalinks/cuevanaapi.py">biblioteca que intenta funcionar como
+API</a>
+de <a class="reference external" href="http://www.cuevana.tv">Cuevana</a> y es la encargada de
+<em>scrappear</em> la web en busca de la info interesante.</li>
+<li>Una <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/src/943b329f3da5/cuevanalinks/cuevanacli.py">interfaz de línea de
+comandos</a>
+que permite buscar links y bajar subtitulos de contenidos específicos</li>
+</ol><div class="figure align-center">
+<img alt="" src="local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 37)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<div class="section" id="para-que-sirve">
+<h2>Para qué sirve</h2>
+<p>Por ejemplo, para bajar la temporada 4 completa de Mad Men, con
+subtitulos, se podría hacer esto:</p>
+<pre class="literal-block">
+$ cuevanalinks 'mad men' s04 -s &gt; madmen.txt &amp;&amp; tucan -d -i madmen.txt
+</pre>
+</div>
+<div class="section" id="instalacion">
+<h2>Instalación</h2>
+<p>Para instalarlo, basta con usar <a class="reference external" href="http://www.pip-installer.org">pip</a></p>
+<pre class="literal-block">
+$ sudo pip install cuevanalinks
+</pre>
+<p>O con
+<a class="reference external" href="http://packages.python.org/distribute/easy_install.html">easy_install</a>:</p>
+<pre class="literal-block">
+$ sudo easy_install cuevanalinks
+</pre>
+<p>O bien, bajar <a class="reference external" href="http://pypi.python.org/pypi/CuevanaLinks#downloads">el
+paquete</a> y
+ejecutar :</p>
+<pre class="literal-block">
+$ tar xvfz CuevanaLinks-0.1.tar.gz
+$ cd CuevanaLinks-0.1
+$ sudo python setup.py install
+</pre>
+</div>
+<div class="section" id="algunas-posibilidades-de-la-api">
+<h2>Algunas posibilidades de la API</h2>
+<p>El CLI por ahora sólo expone una parte pequeña de la API, pero hay
+varias posibilidades. Por ejemplo:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; from cuevanalinks import cuevanaapi
+&gt;&gt;&gt; api = cuevanaapi.CuevanaAPI ()
+&gt;&gt;&gt; house = api.get_show ('house')
+&gt;&gt;&gt; house.plot
+u'El doctor Gregory House, especialista en el tratamiento de enfermedades infecciosas, trabaja en un hospital universitario de Princetown, donde dirige una unidad especial encargada de pacientes afectados por dolencias extrañas y en la que colabora con un selecto grupo de aventajados ayudantes.'
+&gt;&gt;&gt; house7x1 = house.get_episode (7, 1)
+&gt;&gt;&gt; house7x1.title
+'Now What?'
+&gt;&gt;&gt; house7x1.cast
+['Hugh Laurie',
+ 'Lisa Edelstein',
+ 'Omar Epps',
+ 'Jesse Spencer',
+ 'Jennifer Morrison',
+ 'Robert Sean Leonard',
+ 'Olivia Wilde',
+ 'Peter Jacobson']
+&gt;&gt;&gt; house7x1.sources
+['http://www.megaupload.com/?d=DM58TA0J',
+ 'http://www.filesonic.com/file/36841721/?',
+ 'http://bitshare.com/?f=67z435xm',
+ 'http://www.filefactory.com/file/caf85b9']
+&gt;&gt;&gt; house7x1.subs
+{'ES': 'http://www.cuevana.tv/download_sub?file=s/sub/7888_ES.srt'}
+</pre>
+</div>
+<div class="section" id="lo-que-falta">
+<h2>Lo que falta</h2>
+<p>Si bien es lo más prolijito que he hecho, todavía está lejos de ser un
+trabajo completo, tanto en funcionalidades como en
+<a class="reference external" href="http://en.wikipedia.org/wiki/Software_Quality_Assurance">SQA</a></p>
+<p>Un aspecto esencial es hacer test (perdón Nati Bidart ;-) ), para lo
+cual tengo que aprender a usar
+<a class="reference external" href="http://code.google.com/p/python-nose/">nose</a> y
+<a class="reference external" href="http://blog.ianbicking.org/minimock.html">minimock</a>.</p>
+<p>Respecto a funciones, algo importante es definir cómo resuelve el CLI el
+manejo de múltiples resultados para una búsqueda. Actualmente devuelve
+el resultado "más relevante" sin anoticiar al usuario de otras opciones.</p>
+<p>También falta documentación! Veremos la próxima.</p>
+</div>
+<div class="section" id="comentarios-sugerencias-bugs">
+<h2>Comentarios, sugerencias, bugs</h2>
+<p>Todo aporte (ideas, código, etc.) es bienvenido. Si encuentran
+problemas,
+<a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/issues">reportenlos</a>.</p>
+<p>No estoy seguro cuánto puede durar esto funcionando, ya que depende de
+que el funcionamiento del sitio no cambie o yo tenga mucho tiempo y
+ganas de andar parchando detrás. Por eso, si hay más interesados y
+usuarios, seguramente podremos hacerlo durar más.</p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="veinteanero.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="compartiendo-documentacion-de.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/la-sanguijuela-de-cuevana.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

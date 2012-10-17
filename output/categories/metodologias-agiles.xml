@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>tin_nqn (Metodologías ágiles)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:24:12 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes Python</title><link>/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+documentaci&amp;#243;n est&amp;#225; incompleto
+[&lt;a class="reference external" href="/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;Si bien el manifiesto &amp;#225;gil
+&lt;a class="reference external" href="http://agilemanifesto.org/iso/es/"&gt;proclama&lt;/a&gt; &lt;em&gt;"Software funcionando
+sobre documentaci&amp;#243;n extensiva"&lt;/em&gt;, yo subrayar&amp;#237;a extensiva como eufemismo
+de documentaci&amp;#243;n burocr&amp;#225;tica e in&amp;#250;til (opin&amp;#233; de esto
+&lt;a class="reference external" href="/posts/blog/article/veinteanero"&gt;ac&amp;#225;&lt;/a&gt;) que evidentemente no es la que hace
+falta. Pero la documentaci&amp;#243;n (sobre todo la buena) es indispensable y
+para &lt;a class="reference external" href="http://jacobian.org/writing/great-documentation/"&gt;algunos&lt;/a&gt;, la
+parte que m&amp;#225;s los enorgullece del proyecto (y con raz&amp;#243;n).&lt;/p&gt;
+&lt;p&gt;Desde el punto de vista t&amp;#233;cnico, escribir documentaci&amp;#243;n (no &lt;a class="reference external" href="http://sphinx.pocoo.org/examples.html"&gt;s&amp;#243;lo para
+Python&lt;/a&gt;!) es bastante f&amp;#225;cil con
+&lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;restructuredText&lt;/a&gt; (qu&amp;#233; feo
+el sitio de docutils, che!) que es &lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0287/"&gt;el markup est&amp;#225;ndar de los
+pythonistas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Sobre este markup funciona &lt;a class="reference external" href="http://sphinx.pocoo.org/"&gt;Sphinx&lt;/a&gt;, el
+generador de documentaci&amp;#243;n m&amp;#225;s utilizado (por lejos) en el ecosistema de
+Python. Es lo que usa la documentaci&amp;#243;n de Python misma, la de Django y
+casi todo proyecto conocido o por conocer.&lt;/p&gt;
+&lt;p&gt;Entonces usamos restructuredText, usamos Sphinx, pero para &lt;a class="reference external" href="/posts/blog/article/la-sanguijuela-de-cuevana"&gt;nuestro
+proyectito de morondanga&lt;/a&gt; que
+no tiene web propia ni nada, &amp;#191;d&amp;#243;nde subimos la documentaci&amp;#243;n generada?
+Veamos.&lt;/p&gt;
+&lt;div class="section" id="usando-readthedocs-org"&gt;
+&lt;h2&gt;Usando Readthedocs.org&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/"&gt;Read the docs&lt;/a&gt;
+es un sitio para hospedar documentaci&amp;#243;n realizada con Sphinx. S&amp;#243;lo se
+necesita indicarle el repositorio p&amp;#250;blico del proyecto (svn, git,
+mercurial, bazaar), subir los fuentes .rst y contenido est&amp;#225;tico
+(im&amp;#225;genes) aptos para Sphinx en una carpeta /doc o /docs y el sitio se
+encarga de bajar los fuentes de documentaci&amp;#243;n y renderizarlos a HTML a
+trav&amp;#233;s de Sphinx.&lt;/p&gt;
+&lt;p&gt;Estrictamente, usando rtfd.org (como le dicen &lt;a class="reference external" href="http://www.urbandictionary.com/define.php?term=RTFD&amp;amp;defid=2281638"&gt;los
+amigos&lt;/a&gt;)
+ni siquiera hace falta tener Sphinx instalado localmente.&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 31); &lt;em&gt;&lt;a href="/posts/compartiendo-documentacion-de.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Duplicate explicit target name: "ac&amp;#225;".&lt;/div&gt;
+&lt;p&gt;M&amp;#225;s aun, por defecto actualiza diariamente, pero se puede utilizar un
+"hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
+al repo, de manera de tener la documentaci&amp;#243;n actualizada al instante.
+Para usuarios de GitHub la activaci&amp;#243;n del "web hook" se explica
+&lt;a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/webhooks.html#github"&gt;ac&amp;#225;&lt;/a&gt;
+. Para &lt;a class="reference external" href="http://bitbucket.org"&gt;BitBucket.org&lt;/a&gt; es parecido:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;&lt;li&gt;Vas a tu proyecto , click en Admin -&amp;gt; Services&lt;/li&gt;
+&lt;li&gt;Agreg&amp;#225;s el servicio "POST"&lt;/li&gt;
+&lt;li&gt;Complet&amp;#225;s el campo de texto con la URL que te da ReadTheDocs en la
+p&amp;#225;gina de descripci&amp;#243;n de tu proyecto (est&amp;#225;ndo logueado). Por ejemplo:&lt;/li&gt;
+&lt;/ol&gt;&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="/posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 60)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;Y listo. Tu docu al instante.&lt;/p&gt;
+&lt;p&gt;Como el sitio genera el html en vez de servir una versi&amp;#243;n generada
+previamente, la documentaci&amp;#243;n que requiere introspecci&amp;#243;n del c&amp;#243;digo (
+todas las directivas `` .. auto* :: `` de Sphinx) este debe poder
+ejecutarse. Para eso el paquete debe ser instalable via &lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt; y
+hay marcar desde la p&amp;#225;gina de configuraci&amp;#243;n del proyecto en RTFD.org,
+que instale en un virtualenv.&lt;/p&gt;
+&lt;p&gt;Para ver si hubo alg&amp;#250;n problema en la generaci&amp;#243;n, pod&amp;#233;s fijarte en
+"build" donde te muestra el stdout y el stderr de la corrida de Sphinx.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="subir-la-docu-a-pypi"&gt;
+&lt;h2&gt;Subir la docu a PyPi&lt;/h2&gt;
+&lt;p&gt;Una forma buen&amp;#237;sima de compartir tu trabajo pyth&amp;#243;nico es a trav&amp;#233;s del
+Python Package Index, &lt;a class="reference external" href="http://pypi.python.org/pypi"&gt;pypi&lt;/a&gt;, que es el
+&amp;#237;ndice que usan las herramientas &lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt; e
+easy_install. Si bien no necesarimente los paquetes deben estar
+hospedados all&amp;#237; (indicando en el setup.py la URL de descarga) es muy
+com&amp;#250;n y f&amp;#225;cil hacerlo con el comando &lt;tt class="docutils literal"&gt;upload&lt;/tt&gt; del setup.py.&lt;/p&gt;
+&lt;p&gt;Lo que muchos no
+&lt;a class="reference external" href="http://packages.python.org/an_example_pypi_project/buildanduploadsphinx.html"&gt;saben&lt;/a&gt;
+es que PyPi tambi&amp;#233;n ofrece &lt;a class="reference external" href="http://packages.python.org/"&gt;hostear la
+documentaci&amp;#243;n&lt;/a&gt;. La forma can&amp;#243;nica es ir a
+la p&amp;#225;gina de administraci&amp;#243;n de tu proyecto en PyPi y adjuntar un .zip
+con la documentaci&amp;#243;n (que no necesariamente tiene que ser hecha con
+Sphinx)&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="/posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 93)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;Pero si usamos Sphinx hay una manera m&amp;#225;s f&amp;#225;cil, manteniendos&amp;#233; en el
+"ecosistema" de desarrollo: usar esta &lt;a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload/"&gt;extension de
+setuptools&lt;/a&gt; que
+permite generar el html a trav&amp;#233;s Sphinx y subirlo autom&amp;#225;ticamente. Se
+instala, obviamente, v&amp;#237;a pypi:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ easy_install sphinx-pypi-upload
+&lt;/pre&gt;
+&lt;p&gt;Hay que condigurar un &lt;tt class="docutils literal"&gt;setup.cfg&lt;/tt&gt; (ubicado al nivel raiz, junto con
+&lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt;) indicandole d&amp;#243;nde est&amp;#225; la docu fuente y d&amp;#243;nde el
+resultado. M&amp;#225;s o menos as&amp;#237;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[build_sphinx]
+source-dir = doc/source
+build-dir  = doc/build
+all_files  = 1
+
+[upload_sphinx]
+upload-dir = doc/build/html
+&lt;/pre&gt;
+&lt;p&gt;Luego se usa:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ python setup.py build_sphinx
+$ python setup.py upload_sphinx
+&lt;/pre&gt;
+&lt;p&gt;Y docu subida a la dire
+&lt;em&gt;`http://packages.python.org/tu-proyecto &amp;lt;http://packages.python.org/tu-proyecto&amp;gt;`_&lt;/em&gt;
+. &amp;#161;&lt;a class="reference external" href="http://packages.python.org/CuevanaLinks/"&gt;Charaa&amp;#225;n&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="usando-tu-repositorio-svn"&gt;
+&lt;h2&gt;Usando tu repositorio SVN&lt;/h2&gt;
+&lt;p&gt;Si usas SVN y tu servidor lo permite, pod&amp;#233;s servir contenido est&amp;#225;tico
+(html y todo lo que produce y necesita Sphinx) directamente desde el
+repositorio.&lt;/p&gt;
+&lt;p&gt;Para que el servidor Subversion muestre el html renderizado en vez del
+c&amp;#243;digo (como texto plano) hay que indicarle el tipo &lt;tt class="docutils literal"&gt;mime&lt;/tt&gt; de cada
+archivo.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ svn propset svn:mime-type 'text/html' FILENAME
+$ svn propset svn:mime-type 'image/jpeg' FILENAME
+&lt;/pre&gt;
+&lt;p&gt;Para que esto se haga autom&amp;#225;tico, se puede modificar el archivo de
+configuraci&amp;#243;n &lt;a href="/posts/compartiendo-documentacion-de.html#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
+&lt;div class="system-message" id="id3"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 144); &lt;em&gt;&lt;a href="/posts/compartiendo-documentacion-de.html#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;pre class="literal-block"&gt;
+[miscellany]
+enable-auto-props = yes
+
+[auto-props]
+*.html = svn:mime-type=text/html
+*.css = svn:mime-type=text/css
+*.js = svn:mime-type=text/javascript
+*.png = svn:mime-type=image/png
+*.jpg = svn:mime-type=image/jpeg
+*.gif = svn:mime-type=image/gif
+&lt;/pre&gt;
+&lt;p&gt;Un ejemplo de esto es el &lt;a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html"&gt;reporte de mi proyecto
+integrador&lt;/a&gt;
+que est&amp;#225; hospedado en Google Code&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="aprovechandote-de-github"&gt;
+&lt;h2&gt;Aprovech&amp;#225;ndote de GitHub&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://github.com"&gt;GitHub&lt;/a&gt; hospeda &lt;a class="reference external" href="http://pages.github.com/"&gt;p&amp;#225;ginas
+est&amp;#225;ticas&lt;/a&gt;, tanto del desarrollador/a como
+de tus proyectos. Bien sirve eso para subir la documentaci&amp;#243;n y eso hacen
+mas o menos autom&amp;#225;ticamente estas opciones que no he probado pero las
+dejo como referencia:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/"&gt;Hosting sphinx doc in
+github&lt;/a&gt;
+de Luca Sbardella.
+&lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
+github-tools&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>/posts/la-academia-las-practicas-agiles-y.html</link><description>&lt;p&gt;La manera m&amp;#225;s f&amp;#225;cil para aprobar una tesis de ingenier&amp;#237;a es mentir.
+Llenar p&amp;#225;ginas y p&amp;#225;ginas, preferentemente con tablas y vi&amp;#241;etas, de
+contenidos vacuos y tediosos que seguramente nadie, mucho menos los
+evaluadores, leer&amp;#225;n. S&amp;#243;lo hay que prestar atenci&amp;#243;n a que sean muchas
+p&amp;#225;ginas y lo m&amp;#225;s sim&amp;#233;tricas posibles.&lt;/p&gt;
+&lt;p&gt;El ejemplo paradigm&amp;#225;tico de esto son las &lt;a class="reference external" href="http://www.google.com/search?q=plantilla+caso+de+uso"&gt;especificaciones formales de
+casos de uso&lt;/a&gt;,
+pasi&amp;#243;n de bur&amp;#243;cratas que tienen cabida donde no hace falta demostrar
+mucho.&lt;/p&gt;
+&lt;p&gt;Pero tambi&amp;#233;n el UML, me atrevo a decir, en su mayor parte y nivel de
+detalle es secuaz de esta ignominia que pauperiza el nivel del software
+acad&amp;#233;mico: en vez de saber programar y poder leer c&amp;#243;digo, se presta
+atenci&amp;#243;n a los dibujitos, poniendo el grito en el cielo si la flechita
+es negra en vez de blanca, como dice
+&lt;a class="reference external" href="http://www.comp.lancs.ac.uk/computing/resources/IanS/"&gt;Sommerville&lt;/a&gt;
+que debe ser.&lt;/p&gt;
+&lt;p&gt;Como no me gusta mentir, la facilidad no me seduce de m&amp;#225;s (tampoco la
+dificultad) y estoy bastante conforme con &lt;a class="reference external" href="http://code.google.com/p/gpec2010/"&gt;lo que
+hice&lt;/a&gt; me anim&amp;#233; a ser sensato en
+expresar c&amp;#243;mo hice mi trabajo.&lt;/p&gt;
+&lt;p&gt;No me encerr&amp;#233; 6 meses a hacer dibujitos que resultar&amp;#237;an perfectos,
+inescrutables y luego har&amp;#237;an la programaci&amp;#243;n trivial. Eso, al menos en
+mi experiencia, no existe (sospecho que ellos todos lo saben, lo que
+exacerba la hipocres&amp;#237;a). S&amp;#237;, en cambio, hice algunos dibujitos que me
+ayudaran a entender (y dar a entender) c&amp;#243;mo iba la cosa, mientras iba
+programando y evaluando si estaba bien encaminado.&lt;/p&gt;
+&lt;p&gt;Este esp&amp;#237;ritu es el que cobijan las &lt;a class="reference external" href="http://agilemanifesto.org/iso/es/"&gt;pr&amp;#225;cticas
+&amp;#225;giles&lt;/a&gt;, que es el marco conceptual
+(metodol&amp;#243;gico) que adopt&amp;#233;.&lt;/p&gt;
+&lt;p&gt;La cuesti&amp;#243;n es que, para ganarle al &lt;em&gt;unknow how&lt;/em&gt; de los hombres de
+corbata, hay que justificar con nombres que les suenen admirables. Hay
+que mencionar mucho IBM, Microsoft, C#, Intel. Esas son las voces que
+respetan, aunque sean pura
+&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Argumento_de_autoridad"&gt;falacia&lt;/a&gt;&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="/posts/local/cache-vignettes/L510xH603/anti-bullying-charity-school-tie-small-59832-3938a.jpg"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 45)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;Yo justifiqu&amp;#233;
+&lt;a class="reference external" href="http://code.google.com/p/gpec2010/source/browse/trunk/docs/metodologia.rst?spec=svn232&amp;amp;r=232#92"&gt;as&amp;#237;&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Seg&amp;#250;n afirma Terry Quatrani, evangelizadora de las metodolog&amp;#237;as
+&amp;#225;giles de IBM, en &lt;a class="reference external" href="http://agilescout.com/agile-modeling-and-uml/"&gt;The Truth About Agile
+Modeling&lt;/a&gt; :&lt;/p&gt;
+&lt;blockquote&gt;
+Aunque sigas un proceso &amp;#225;gil, estar&amp;#225;s realizando cierto grado de
+modelado &amp;#8211; s&amp;#243;lo que no lo realizar&amp;#225;s tanto como si utilizaras un
+proceso tradicional. La falta de formalidad en el modelado &amp;#225;gil
+no significa que no est&amp;#225;s modelando, sino que te pones el foco
+en los beneficios de este sin las desventajas y confusiones de
+documentos extra&amp;#241;os y burocr&amp;#225;ticos.&lt;/blockquote&gt;
+&lt;p&gt;Por su parte, Robert Martin sostiene en &lt;a class="reference external" href="http://stackoverflow.com/questions/61487/do-you-use-uml-in-agile-development-practices"&gt;*Agile Principles,
+Patterns, and Practices in
+C#*&lt;/a&gt;
+que el modelado basado en UML en el desarrollo &amp;#225;gil es &amp;#250;til como
+instrumento de comunicaci&amp;#243;n, pero su detalle no aporta valor
+significativo:&lt;/p&gt;
+&lt;blockquote&gt;
+No gastes mucho tiempo en esta tarea, no necesitas tanto
+detalle. Los modelos y los planos son necesarios en la
+arquitectura y la construcci&amp;#243;n civil porque es caro construir
+una casa para demostrar que su dise&amp;#241;o funciona. El software no
+es as&amp;#237; &amp;#8211; puedes validar tu idea con s&amp;#243;lo codificarla, en igual
+tiempo que el que insume hacer un modelo UML que nada prueba por
+s&amp;#237; mismo.&lt;/blockquote&gt;
+&lt;p&gt;Aun m&amp;#225;s esc&amp;#233;ptico, Alans Stevens, reconocido ingeniero en software
+[&lt;a class="reference external" href="/blog/article/la-academia-las-practicas-agiles-y#nb1"&gt;1&lt;/a&gt;] y
+conferencista, opina &lt;a class="reference external" href="http://halanstevens.com/uml-sucks-really/"&gt;en un
+art&amp;#237;culo&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;No uso UML y noto que ninguno de mis colegas lo usa. Tengo
+sensaciones mezcladas acerca de su necesidad. Parece
+perfectamente razonable que debamos acordar como industria un
+conjunto de s&amp;#237;mbolos comunes para representar la programaci&amp;#243;n
+orientada a objetos, pero UML tiene la t&amp;#237;pica apariencia de
+"dise&amp;#241;ado por un comit&amp;#233;".&lt;/p&gt;
+&lt;p&gt;(...) El aspecto m&amp;#225;s cr&amp;#237;tico en un dise&amp;#241;o inicial, en mi
+experiencia, es la interfaz entre la UI y el modelo de objetos.
+Lamentablemente UML no aborda este problema y en cambio parece
+obsesionado por las minucias en una parodia de distracci&amp;#243;n
+acad&amp;#233;mica.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;</description><guid>/posts/la-academia-las-practicas-agiles-y.html</guid><pubDate>Wed, 06 Apr 2011 06:21:23 GMT</pubDate></item></channel></rss>

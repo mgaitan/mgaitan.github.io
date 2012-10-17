@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>tin_nqn (jQuery)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:24:12 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Yendo a las fuentes de cuevana.tv</title><link>/posts/yendo-a-las-fuentes-de-cuevana-tv.html</link><description>&lt;p&gt;** UPDATE ** : la ultima version funciona con el nuevo sitio de cuevana.&lt;/p&gt;
+&lt;p&gt;Dos cosas me gustan mucho &amp;#250;ltimamente:
+&lt;a class="reference external" href="http://www.cuevana.tv"&gt;cuevana.tv&lt;/a&gt; y
+&lt;a class="reference external" href="http://www.greasespot.net/"&gt;GreaseMonkey&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Cuevana es un sitio para ver series y pel&amp;#237;culas online, en streaming de
+alta calidad, con subtitulos y todo. El truco est&amp;#225; en un plugincito que
+hace instalar en el navegador que permite reproducir (en un reproductor
+basado en flash comunacho) un archivo que se descarga de megaupload,
+filefactory o sitios por el estilo. El ancho de banda lo ponen otros, la
+alegr&amp;#237;a es toda de cuevana (y nuestra). Todos unos pillos.&lt;/p&gt;
+&lt;p&gt;Lamentablemente, mi conexi&amp;#243;n no se banca un streaming de alta calidad
+(como los videos de cuevana) sin bufferear (?) y entonces pierde sentido
+(o gana mala sangre) intentar ver directamente "online".&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 21); &lt;em&gt;&lt;a href="/posts/yendo-a-las-fuentes-de-cuevana-tv.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Duplicate explicit target name: "greasemonkey".&lt;/div&gt;
+&lt;p&gt;Y ac&amp;#225; entra &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Greasemonkey"&gt;Greasemonkey&lt;/a&gt;,
+que es una extensi&amp;#243;n para Firefox (y otros navegadores) que permite
+agregar scripts (en javascript) para modificar localmente las p&amp;#225;ginas
+que indiquemos.&lt;/p&gt;
+&lt;p&gt;Con esta herramienta, programadores voluntarios crean &lt;a class="reference external" href="http://userscripts.org/"&gt;cientos de
+scripts&lt;/a&gt; para mejorar la est&amp;#233;tica o
+funcionalidad de muchos sitios, conocidos o no.&lt;/p&gt;
+&lt;p&gt;Mi &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;primer aporte&lt;/a&gt; a la
+"comunidad Greasemonkera" (y cuevanera) intenta subsanar la
+discriminaci&amp;#243;n que el streaming de alta calidad tiene con los que
+tenemos un ancho de banda no muy ancho.&lt;/p&gt;
+&lt;p&gt;Una vez
+&lt;a class="reference external" href="http://userscripts.org/scripts/source/98017.user.js"&gt;instalado&lt;/a&gt; el
+script muestra links a la fuente original de descarga, justo abajo de
+los iconos de selecci&amp;#243;n.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="/posts/local/cache-vignettes/L510xH298/2011-02-28-011028_584x341_scrot-37636.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 40)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;As&amp;#237; podemos bajar los videos y verlos offline.&lt;/p&gt;
+&lt;p&gt;Como complemento, se pueden copiar y pegar los links en un gestor de
+descargas como &lt;a class="reference external" href="http://www.tucaneando.com/"&gt;Tucan&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[STRIKEOUT:Respecto a los subt&amp;#237;tulos, todav&amp;#237;a soy principiante con
+javascript, pero espero poder obtener el link a los subtitulos en
+futuras versiones. ]&lt;/p&gt;</description><guid>/posts/yendo-a-las-fuentes-de-cuevana-tv.html</guid><pubDate>Mon, 28 Feb 2011 12:24:40 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
+art&amp;#237;culos podr&amp;#237;an tener 200, &amp;#191;no?&lt;/p&gt;
+&lt;p&gt;Hay una forma f&amp;#225;cil de limitar el largo permitido en un campo de texto
+mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
+caracteres restantes.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, esto limita el tama&amp;#241;o de un comentario en SPIP.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ $(document).ready(function () {
+
+     $("#texte").before("&amp;lt;div id='chars' style='float:right;font-weigth:strong;margin-right:5px;'&amp;gt;&amp;lt;/div&amp;gt;");
+
+$(function(){
+    $('#texte').keyup(function(){
+        limitChars('texte', 200, 'chars');
+    })
+    });
+ });
+
+function limitChars(textid, limit, infodiv) {
+     var text = $('#'+textid).val();
+     var textlength = text.length;
+     if(textlength &amp;gt; limit) {
+         $('#' + infodiv).html('No puede ingresar m&amp;amp;aacute;s de '+limit+' caracteres');
+         $('#'+textid).val(text.substr(0,limit));
+         return false;
+     } else {
+         $('#' + infodiv).html('Restan '+ (limit - textlength) +' caracteres.');
+         return true;
+     }
+}
+&lt;/pre&gt;
+&lt;div class="section" id="intrucciones-para-spip"&gt;
+&lt;h2&gt;Intrucciones para SPIP&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;&lt;li&gt;Copiar el c&amp;#243;digo&lt;/li&gt;
+&lt;li&gt;Pegarlo luego de la baliza #INSERT_HEAD de tu cabecera&lt;/li&gt;
+&lt;li&gt;(opcional) Cambiarle el l&amp;#237;mite (el n&amp;#250;mero 200),&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;&amp;#161;Listo!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="intrucciones-generales"&gt;
+&lt;h2&gt;Intrucciones generales&lt;/h2&gt;
+&lt;p&gt;Es igual al anterior, s&amp;#243;lo debes asegurarte que tiene en jquery en la
+p&amp;#225;gina. Luego cambia el selector &lt;tt class="docutils literal"&gt;#texte&lt;/tt&gt; por el que corresponda al
+campo que quer&amp;#233;s limitar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ejemplo"&gt;
+&lt;h2&gt;Ejemplo&lt;/h2&gt;
+&lt;/div&gt;</description><guid>/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>/posts/lorem-ipsum-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
+que se usa habitualmente en dise&amp;#241;o gr&amp;#225;fico en demostraciones de
+tipograf&amp;#237;as o de borradores de dise&amp;#241;o para probar el dise&amp;#241;o visual antes
+de insertar el texto final.&lt;/p&gt;
+&lt;p&gt;Cuando estamos desarrollando necesitamos ver c&amp;#243;mo quedar&amp;#225; el contenido,
+y debemos recurrir a un &lt;em&gt;copy &amp;amp; paste&lt;/em&gt; de caulquier cosa que tengamos a
+mano.&lt;/p&gt;
+&lt;p&gt;La ventaja de un &lt;em&gt;Lorem Ipsum&lt;/em&gt; sobre otros textos, es que este tiene una
+distribuci&amp;#243;n del largo de las palabras bastante natural de las palabras
+lo que en textos largos queda mucho mejor que repetir un mismo fragmento
+una y otra vez.&lt;/p&gt;
+&lt;p&gt;Hay muchos &lt;a class="reference external" href="http://www.lipsum.com/"&gt;generadores de texto Lorem Ipsum&lt;/a&gt;
+en internet, pero lo podemos hacer a&amp;#250;n m&amp;#225;s f&amp;#225;cil.&lt;/p&gt;
+&lt;div class="section" id="un-lorem-ipsum-automatico"&gt;
+&lt;h2&gt;Un Lorem Ipsum autom&amp;#225;tico&lt;/h2&gt;
+&lt;p&gt;Con la ayuda del plugin &lt;a class="reference external" href="http://sanderkorvemaker.nl/jquery/jLorem.php"&gt;jQuery Lorem
+Ipsum&lt;/a&gt; de Sander Korve
+hice un modelo (instalable como plugin) que permite insertar un texto
+del tama&amp;#241;o que queramos (por omisi&amp;#243;n, de 4 p&amp;#225;rrafos).&lt;/p&gt;
+&lt;p&gt;Pod&amp;#233;s bajarlo desde ac&amp;#225;:&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/loremipsum.zip"&gt;|image1|&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Lorem Ipsum Plugin version 0.2&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;O por SVN:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn checkout svn://zone.spip.org/spip-zone/_plugins_/_test_/loremipsum
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="instalacion"&gt;
+&lt;h2&gt;Instalaci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;La instalaci&amp;#243;n es igual que con la de cualquier plugin: descomprimirlo
+en la carpeta &lt;em&gt;/plugins&lt;/em&gt; y activarlo.&lt;/p&gt;
+&lt;p&gt;Requiere adem&amp;#225;s que los esqueletos tengan la baliza &lt;tt class="docutils literal"&gt;#INSERT_HEAD&lt;/tt&gt;
+dentro del header, ya que all&amp;#237; se incluir&amp;#225; el javascript necesario para
+su funcionamiento.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="funcionamiento-basico"&gt;
+&lt;h2&gt;Funcionamiento b&amp;#225;sico&lt;/h2&gt;
+&lt;p&gt;La inclusi&amp;#243;n de un &lt;em&gt;Lorem Ipsum&lt;/em&gt; se basa en el modelo &lt;em&gt;lorem.html&lt;/em&gt;
+inclu&amp;#237;do con el plugin, por lo que hay dos maneras de llamarlo:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; En el cuerpo (texto, descripci&amp;#243;n, etc) de un art&amp;#237;culo: &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image3" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Predefinido en un esqueleto: &lt;tt class="docutils literal"&gt;#MODELE{lorem}&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#161;y listo!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="parametros"&gt;
+&lt;h2&gt;Par&amp;#225;metros&lt;/h2&gt;
+&lt;p&gt;El modelo acepta algunos par&amp;#225;metros para configurar la longitud del
+texto. Por ejemplo &lt;tt class="docutils literal"&gt;&amp;lt;lorem5&amp;gt;&lt;/tt&gt; crear&amp;#225; 5 p&amp;#225;rrafos.&lt;/p&gt;
+&lt;p&gt;Pero tambi&amp;#233;n se puede especificar m&amp;#225;s datos:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image4" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;type&lt;/strong&gt;: permite especificar que tipo de resultado se quiere.
+Las opciones v&amp;#225;lidas son &lt;strong&gt;paragraphs&lt;/strong&gt;, &lt;strong&gt;words&lt;/strong&gt; o &lt;strong&gt;characters&lt;/strong&gt; para
+p&amp;#225;rrafos, palabras o characteres. As&amp;#237;: crear&amp;#225; un texto de 25 palabras.
+El valor por omisi&amp;#243;n es &lt;strong&gt;paragraphs&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image5" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;amount&lt;/strong&gt;: Es lo mismo que el ID pasado al modelo: es lo mismo
+que . Por ejemplo &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;[(#MODELE{lorem}{amount=5})]&lt;/span&gt;&lt;/tt&gt;
+[&lt;a class="reference external" href="/blog/article/lorem-ipsum-para-spip#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image6" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;ptags&lt;/strong&gt;: Permite agregar las etiquetas &amp;lt;code&amp;lt;&amp;gt;P&amp;lt;&amp;gt;/code&amp;gt;
+alrededor de cada p&amp;#225;rrafo. Los valores aceptados son &lt;strong&gt;true&lt;/strong&gt; o
+&lt;strong&gt;false&lt;/strong&gt;. Por omisi&amp;#243;n es &lt;strong&gt;true&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="una-astucia"&gt;
+&lt;h2&gt;Una astucia&lt;/h2&gt;
+&lt;p&gt;Una forma de mostrar contenido en un art&amp;#237;culo (o cualquier elemento) sin
+tener que editar cada art&amp;#237;culo s&amp;#243;lo para poner &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt; es invocar el
+modelo siempre y cuando no exista contenido en la baliza&lt;/p&gt;
+&lt;p&gt;Por ejemplo [&lt;a class="reference external" href="/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en SPIP</title><link>/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;p&gt;Muchas balizas SPIP generan c&amp;#243;digo HTML como salida (las balizas
+#LOGO_* y los filtros |image_* son los m&amp;#225;s notorios) y
+frecuentemente necesitamos o queremos modificar este c&amp;#243;digo autogenerado
+en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
+(&lt;a class="reference external" href="http://www.spip.net/en_article2465.html#inserer_attribut"&gt;inserer_attribut&lt;/a&gt;
+para insertar atributos y
+&lt;a class="reference external" href="http://www.spip.net/en_article2465.html#extraire_attribut"&gt;extraire_attribut&lt;/a&gt;
+para extraer el valor de uno generado) pero son particularmente largos y
+tediosos de tipear.&lt;/p&gt;
+&lt;p&gt;M&amp;#225;s all&amp;#225; de eso, aunque uso estos filtros bastantes seguido para
+implementar cosas como galer&amp;#237;as de im&amp;#225;genes, todav&amp;#237;a pienso lo dif&amp;#237;cil
+que es escribir las palabras en franc&amp;#233;s sin equivocarme. Por suerte, un
+peque&amp;#241;o wrapper, puede suavizar este inconveniente.&lt;/p&gt;
+&lt;p&gt;Cuando se trata de acceder y modificar atributos de valores de atributos
+nada, en mi opini&amp;#243;n, llega tan lejos como &lt;a class="reference external" href="http://docs.jquery.com/Attributes"&gt;la API de atributos de
+jQuery&lt;/a&gt;. El &lt;a class="reference external" href="http://docs.jquery.com/Attributes/attr"&gt;m&amp;#233;todo de jQuery
+*attr*&lt;/a&gt; por s&amp;#237; solo, permite
+leer y escribir el valor de cualquier atributo en cualquier nodo. Recibe
+uno o dos par&amp;#225;metros, el nombre del atributo, y opcionalmente, el valor.&lt;/p&gt;
+&lt;p&gt;Si s&amp;#243;lo se especifica el nombre, entonces &lt;em&gt;attr&lt;/em&gt; extrae y devuelve el
+valor de ese atributo. Si ambos par&amp;#225;metros son pasados al m&amp;#233;todo,
+entonces attr modifica el objeto configurando el atributo en cuesti&amp;#243;n
+con el valor dado. Es jerga de Programaci&amp;#243;n Orientada a Objetos, es un
+estilo de interfaz "polim&amp;#243;rfica" &amp;#8212; cuando un solo m&amp;#233;todo tiene dos
+comportamientos complementarios que son distinguidos por el n&amp;#250;mero y/o
+el tipo de los argumentos dados &amp;#8212; que est&amp;#225; por todos lados en jQuery y
+es una de las razones por las que este framework es tan conciso y
+productivo.&lt;/p&gt;
+&lt;p&gt;Considerandola como la mejor estructura para este tipo de interfaces que
+conozco (y tambi&amp;#233;n, que uso diariamente), decid&amp;#237; ue mi wrapper tendr&amp;#237;a
+que copiarlo. As&amp;#237; fue como el &lt;em&gt;attr&lt;/em&gt; naci&amp;#243;.&lt;/p&gt;
+&lt;p&gt;Como el m&amp;#233;todo de jQuery, el filtro &lt;em&gt;attr&lt;/em&gt; de SPIP toma uno o dos
+par&amp;#225;metros (y un objeto "impl&amp;#237;cito", pero lo ignoraremos por el
+momento). Si s&amp;#243;lo pasamos uno, este lo remite como entrada a
+&lt;em&gt;extraire_attribut&lt;/em&gt; para obtener el valor correspondiente. Si se lo
+llama con dos par&amp;#225;metros, entonces llama a &lt;em&gt;inserer_attribut&lt;/em&gt; para
+modificar el objeto.&lt;/p&gt;
+&lt;p&gt;Como la idea, el c&amp;#243;digo es razonablemente sencillo; la &amp;#250;nca&lt;/p&gt;
+&lt;p&gt;Like the idea, the code is reasonably straightforward; quizas lo &amp;#250;nico
+un poco inusual el uso de
+&lt;a class="reference external" href="http://php.net/func_get_args"&gt;func_get_args&lt;/a&gt; para obtener el
+conjunto de los argumentos pasados a la funci&amp;#243;n llamada. Con ese array
+podermos usar &lt;a class="reference external" href="http://php.net/count"&gt;count&lt;/a&gt; para saber cuantos
+argumentos se pasaron y decidir qu&amp;#233; se debe hacer. Esto es m&amp;#225;s seguro
+que especificar y evaluar valores por defecto (FALSE o NULL, por
+ejemplo) porque algunos usuarios genuinamente podr&amp;#237;an querer usar esos
+valores (supongamos que NULL signifique eliminar el atributo en una
+futura versi&amp;#243;n).&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+include_spip("inc/filtres");
+
+/**
+ * The `attr` function allows the user to get and set the attributes of an HTML tag.
+ * It is intended to be used as a SPIP filter and depends on existing SPIP functionality.
+ *
+ * @param $tag
+ * &amp;#160; &amp;#160; The HTML code.
+ * @param $name
+ * &amp;#160; &amp;#160; The name of the attribute.
+ * @param $val...
+ * &amp;#160; &amp;#160; The new value for the attribute $nom. Optional.
+ * @return
+ * &amp;#160; &amp;#160; If $val was given, the code for tag with $name=$val
+ * &amp;#160; &amp;#160; Otherwise, the value for the $name attribute in $tag.
+ */
+function attr($tag, $name){
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160;$args = func_get_args();
+
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160;if (count($args) &amp;gt; 2) {
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160;// SET
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160;return &amp;#160;inserer_attribut($tag, $name, $args[2]);
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160;} else {
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160;// GET
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160;return extraire_attribut($tag, $name);
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160;}
+}
+&lt;/pre&gt;
+&lt;p&gt;Simplemente copia el c&amp;#243;digo en mes_fonctions.php (Mira "Agregar
+funciones propias" en la documentaci&amp;#243;n sobre &lt;a class="reference external" href="/posts/Agregar%20funciones%20propias"&gt;filtros de
+spip&lt;/a&gt;) y luego usa el filtro attr en
+tus esqueletos:&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 94)&lt;/p&gt;
+Literal block expected; none found.&lt;/div&gt;
+&lt;p&gt;Hay algunos cambios que se puede hacer a esta funci&amp;#243;n: pasar $args
+directamente a inserer_attribut y extraire_attribut en vez de las
+variables individuales, agregar un par&amp;#225;metro $value=FALSE que s&amp;#243;lo sirva
+para la claridad de la documentaci&amp;#243;n , y el mencionado, eliminar
+atributos cuando se pase por ejemplo NULL como par&amp;#225;metro.&lt;/p&gt;</description><guid>/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Mostrar u ocultar contenido, fácil</title><link>/posts/mostrar-u-ocultar-contenido-facil.html</link><description>&lt;p&gt;Adrian Le&amp;#243;n consult&amp;#243; en la lista
+&lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;spip-es&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Estoy intentado poner balizas de este tipo:&lt;/p&gt;
+&lt;p&gt;#BOUTON_BLOCK&lt;/p&gt;
+&lt;p&gt;#DEBUT_BLOCK&lt;/p&gt;
+&lt;p&gt;Desde el editor del sitio privado en el texto de un art&amp;#237;culo. No
+conozco la forma de que funcione desde ah&amp;#237; (sale escrito como texto
+en la p&amp;#225;gina resultante. &amp;#191;Hay alguna manera de hacerlo?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Estaba intentando, me enter&amp;#233; despu&amp;#233;s, usar &lt;a class="reference external" href="http://www.spip-contrib.net/Block-deplier-replier"&gt;este
+plugin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Al otro d&amp;#237;a yo contest&amp;#233;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hola Adri&amp;#225;n. Desconoc&amp;#237;a de qu&amp;#233; hablabas hasta que Marina mand&amp;#243; el
+link. Me parece que en el algunas ocasiones los plugins est&amp;#225;n
+opacando las soluciones m&amp;#225;s eficientes e ingeniosas, esas que
+buscabamos antes de que todo fuese "enchufable". &lt;strong&gt;&amp;#161;Spip se est&amp;#225;
+wordpressisando!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Lo que quiero decir es que me parece que hay formas mejores de hacer
+eso. Yo tengo &lt;a class="reference external" href="http://www.lavozdelanzarote.com/Carlos-Espino-cree-que-los"&gt;un ejemplo para
+darte&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And&amp;#225; al pie del art&amp;#237;culo, y hac&amp;#233; click en Opinar: despliega (u
+oculta, depende del estado) el formulario de comentarios.&lt;/p&gt;
+&lt;p&gt;Es, sin balizas ni plugins, lo que parece que hace esa contrib.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Y el c&amp;#243;digo es de risa: un pel&amp;#237;n de jQuery (con su efecto
+&lt;a class="reference external" href="http://docs.jquery.com/Effects/toggle"&gt;toggle()&lt;/a&gt; )&lt;/p&gt;
+&lt;p&gt;El &lt;a class="reference external" href="http://www.lavozdelanzarote.com/squelettes/inc_article.html"&gt;esqueleto del ejemplo que
+propongo&lt;/a&gt;
+es bien sencillo. El formulario aparece encerrado en una &lt;tt class="docutils literal"&gt;div&lt;/tt&gt; y
+escondido con la propiedad CSS &lt;tt class="docutils literal"&gt;display:none&lt;/tt&gt;. De manera simplificada
+[&lt;a class="reference external" href="/blog/article/mostrar-u-ocultar-contenido-facil#nb1"&gt;1&lt;/a&gt;] :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[(#FORMULAIRE_FORUM)]
+&lt;/pre&gt;
+&lt;p&gt;Y el link que produce el efecto mostrar/ocultar (en este caso &amp;#171;opinar&amp;#187;
+)tiene este c&amp;#243;digo.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Opinar
+&lt;/pre&gt;
+&lt;p&gt;En perfecto argentino se dir&amp;#237;a: &amp;#161;una papa!&lt;/p&gt;
+&lt;p&gt;Breve explicaci&amp;#243;n: Al hacer click sobre el link, se ejecuta el evento
+Onclick, que mendiante jQuery (que ya se encuentra en todo sitio SPIP si
+existe la baliza #INSERT_HEAD en el &lt;tt class="docutils literal"&gt;&amp;lt;head&amp;gt;&lt;/tt&gt; de los esqueletos), se
+busca la el bloque con ID &amp;#171;form-comment&amp;#187; (o sea, el &lt;tt class="docutils literal"&gt;div&lt;/tt&gt; contenedor
+del formulario), y se aplica &lt;tt class="docutils literal"&gt;toggle()&lt;/tt&gt;, que es una funcion que si el
+bloque est&amp;#225; oculto, lo muestra, y se est&amp;#225; visible lo oculta. Simple y
+efectivo.&lt;/p&gt;
+&lt;div class="section" id="permitiendo-el-uso-desde-la-redaccion"&gt;
+&lt;h2&gt;Permitiendo el uso desde la redacci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;Hasta aqu&amp;#237; el reemplazo al plugin, que no da una soluci&amp;#243;n completa a la
+consulta de Adr&amp;#237;an, porque esta soluci&amp;#243;n tambi&amp;#233;n est&amp;#225; programado en los
+esqueletos del sitio. Pero, con simples modificaciones, se puede usar
+dentro del texto de los art&amp;#237;culos.&lt;/p&gt;
+&lt;p&gt;El truco es este: la balizas no se pueden usar en el texto, pero &lt;strong&gt;los
+modelos&lt;/strong&gt; s&amp;#237;. Y como spip respeta el HTML, tenemos soluci&amp;#243;n: generamo el
+link interruptor a trav&amp;#233;s de &lt;a class="reference external" href="http://www.spip.net/es_article3609.html"&gt;un
+modelo&lt;/a&gt;
+[&lt;a class="reference external" href="/blog/article/mostrar-u-ocultar-contenido-facil#nb2"&gt;2&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;Creamos un modelo dentro de &lt;em&gt;modeles/toggle.html&lt;/em&gt; (dentro de la carpeta
+de nuestros esqueletos) con el siguiente c&amp;#243;digo:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+#ENV{texto}
+&lt;/pre&gt;
+&lt;p&gt;&amp;#161;Y listo!&lt;/p&gt;
+&lt;p&gt;Para usarlo, en el cuerpo del art&amp;#237;culo se invocar&amp;#237;a al modelo con dos
+par&amp;#225;metros: el identificador del contenedor, y el texto de link
+controlador.&lt;/p&gt;
+&lt;p&gt;Donde se quiera mostrar el link escribimos:&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 95)&lt;/p&gt;
+Literal block expected; none found.&lt;/div&gt;
+&lt;p&gt;y donde queramos que vaya el contenido oculto:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Hola amigos, esto es una astucia para el compa&amp;#241;ero Adrian!
+&amp;lt;/div&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;S&amp;#243;lo hay que asegurarse de que el ID del contenedor sea el mismo que el
+parametro &lt;em&gt;div&lt;/em&gt; que pasamos a nuestro modelo. Por supuesto, esto permite
+tener m&amp;#250;ltiples bloques ocultos y link controladores.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="el-resultado"&gt;
+&lt;h2&gt;El resultado&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="/blog/article/mostrar-u-ocultar-contenido-facil#oculto"&gt;esto
+funciona?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#161;Hola amigos, esto es una astucia para el compa&amp;#241;ero Adrian!&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/mostrar-u-ocultar-contenido-facil.html</guid><pubDate>Thu, 26 Feb 2009 06:12:34 GMT</pubDate></item></channel></rss>

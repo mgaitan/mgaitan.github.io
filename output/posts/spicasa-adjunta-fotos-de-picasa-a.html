@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Spicasa: adjuntá fotos de picasa a un artículo | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Spicasa: adjuntá fotos de picasa a un artículo | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Spicasa: adjuntá fotos de picasa a un artículo</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-02-12 01:48:46">2009-02-12 01:48:46</span>   |  
+
+        
+
+        <a href="spicasa-adjunta-fotos-de-picasa-a.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/spip.html">SPIP</a>
+                
+            
+        
+    </small>
+    <div><p>Con un poco de coca-cola en la sangre, retomé esta madrugada un
+proyectito que tenía: adjuntar fotos de un album de
+<a class="reference external" href="http://picasaweb.google.com">Picasa</a> a un artículo.</p>
+<p>El caso de uso, basado en mi propia necesidad, es el siguiente:</p>
+<p><img alt="-" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Uso PicasaWeb para subir mis fotos. A veces son albumes públicos, a
+veces no.
+<img alt="image1" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Al subir fotos, generalmente le pongo una descripción.
+<img alt="image2" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Algunas fotos las subo también a mi blog personal.</p>
+<p>La complicación es que tengo que subir las fotos a picasa y tambien a mi
+web (por ftp si son muchas). Obviamente es ineficiente, y además pierdo
+los comentarios que hice en Picasa.</p>
+<div class="section" id="con-ustedes-spicasa">
+<h2>Con ustedes, Spicasa</h2>
+<p>Spicasa intenta solucionar esto. Está basado en el plugin
+<a class="reference external" href="http://plugins.spip.net/Flickr-CC">Flickr_cc</a> pero utilizando la
+excelente biblioteca <a class="reference external" href="http://cameronhinkle.com/blog/id/8585148182656068438">Lightweight PHP Picasa
+API</a> de Cameron
+Hinkle, para interactura con la <a class="reference external" href="http://code.google.com/intl/es-AR/apis/picasaweb/overview.html">API de
+Picasa</a></p>
+<p>Permite buscar fotos públicas en Picasa y asociarlas a un artículo, al
+igual que Flickr_cc lo hace con <a class="reference external" href="http://flickr.com">Flickr</a>. Pero
+además, permite ingresar a tu cuenta y adjuntar uno de tus albumes al
+artículo. Todo con mucho AJAX y dulce de leche.</p>
+<p><img alt="image3" src="../images/Pantallazo-1-3e61d.png">
+Por supuesto, aunque cumple sus función básica, es un desarrollo
+totalmente inacabado que necesita desarrollo y depuración.</p>
+</div>
+<div class="section" id="requerimientos">
+<h2>Requerimientos</h2>
+<p><img alt="image4" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Requiere SPIP 2.0 o superior
+<img alt="image5" src="local/cache-vignettes/L8xH11/puce-32883.gif"> La biblioteca Lightweight PHP Picasa API está incluída. Sólo
+requiere PHP5.</p>
+</div>
+<div class="section" id="todo-y-bugs-conocidos">
+<h2>TODO y bugs conocidos</h2>
+<p><img alt="image6" src="local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:El tamaño máximo de las fotos descargadas es 800px]
+<img alt="image7" src="local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:No hace búsquedas de más de una palabra]
+<img alt="image8" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Hay que loguearse cada vez que se quiere adjuntar un álbum
+nuevo
+<img alt="image9" src="local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:La ventana modal queda inaccesible si el scroll
+vertical no está arriba. (bug heredado de Flickr_cc)]</p>
+</div>
+<div class="section" id="descarga-e-instalacion">
+<h2>Descarga e instalación</h2>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/spicasa0.13.zip">|image11|</a></td>
+</tr><tr><td>Spicasa 0.13</td>
+</tr></tbody></table><p><img alt="image12" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Descromprimilo en la carpeta <em>/plugins</em> de tu sitio spip
+<img alt="image13" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Activalo desde el panel de administración
+<img alt="image14" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Al editar un artículo, te aparecerá un link con el logo de
+Spicasa para adjuntar fotos.</p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="jQuery-una-introduccion.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="Control-de-Versiones-con.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/spicasa-adjunta-fotos-de-picasa-a.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

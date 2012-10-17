@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Un SPIP para muchos sitios | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Un SPIP para muchos sitios | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Un SPIP para muchos sitios</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2009-08-10 08:40:55">2009-08-10 08:40:55</span>   |  
+
+        
+
+        <a href="un-spip-para-muchos-sitios.txt">Código</a>
+        
+    </small>
+    <div><p>Administrar muchos sitios SPIP tiene sus bemoles. Yo administro, fácil,
+unos 30. Cuando hay que actualizar la versión (por cuestiones de
+funcionalidad, o bien, como la semana pasada, por cuestiones de
+seguridad), es un trabajo engorroso y aburrido hacer 30 veces lo mismo.
+Y el trabajo se vuelve exponencial si hay que actualizar los plugins
+para cada uno</p>
+<p>Para evitar eso existe la
+<a class="reference external" href="http://www.spip-contrib.net/La-mutualisation-facile">Mutualización</a>,
+que desde la versión 2 es realmente muy fácil.</p>
+<p>El concepto es simple: un sólo núcleo de SPIP (/ecrire, /prive,
+/squelettes-dist, /plugins) se comparte para motorizar diferentes
+sitios, que tendrán los directorios con contenido propio (/squelettes,
+/config , /IMG, etc), separado del resto</p>
+<p>Así, a la hora de actualizar SPIP sólo tenemos que actualizar una sola
+instalación, tarea que se vuelve trivial si además usamos
+<a class="reference external" href="blog/article/ultima-version-de-spip-por-svn">svn</a>.</p>
+<div class="section" id="requisito">
+<h2>Requisito</h2>
+<p>En general, la mutualización funciona sin muchos pormenores en un
+servidor LAMP, pero nuestro servidor de hospedaje debe permitir apuntar
+diferentes dominios a un mismo directorio publico.</p>
+<p>Por ejemplo, mi sitio <strong>textosypretextos.com.ar</strong> apunta a
+<em>/home/tin/public_html/spip</em> y <strong>nqnwebs.com</strong> apunta también a
+<em>/home/tin/public_html/spip</em>.</p>
+<p>Es una configuración simple, pero no todos los servicios de hosting lo
+permiten.</p>
+</div>
+<div class="section" id="puesta-en-marcha">
+<h2>Puesta en marcha</h2>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/mutualisation.zip">|image1|</a></td>
+</tr><tr><td>plugin mutualisation</td>
+</tr></tbody></table><p>La "mutualización fácil" funciona a través de este plugin, pero que
+particularmente <strong>debe ser instalado en la raiz del sitio</strong> y no en la
+carpeta /plugins</p>
+<p>Al descomprimirlo crea una nueva carpeta, <em>/mutualisation</em>, en la raiz
+de nuestro SPIP mutualizado</p>
+<p>Además, incluye un archivo <em>mes_options.php</em> de ejemplo, pero yo te
+propongo este, que debe ser instalado en <em>/config</em></p>
+<pre class="literal-block">
+ true
+     */
+    # define ('_INSTALL_USER_DB_ROOT', 'mon_root');
+    # define ('_INSTALL_PASS_DB_ROOT', '********');
+
+    /*
+     * Crear las bases de dato via un ping a una URL (metodo AlternC)
+     *
+     * Il suffit de renseigner l'option url_creer_base, en lui passant les bons parametres :
+     * 'url_creer_base' =&gt; 'https://bureau.tld/admin/sql_doadd.php?username=USER&amp;password=PASS&amp;dbn='.prefixe_mutualisation($site)
+     */
+
+
+    /*
+     * Transformar en las paginas publicas las URL de imagenes
+     * /sites/mon_site/IMG/* -&gt; /IMG/*
+     * /sites/mon_site/local/* -&gt; /local/*
+     *
+     * - Necesita el mod_rewrite (reescritura de url) de apache
+     * - Sólo funciona con nombres de dominio mutualización
+     * ('http_host' : http://mi_sitio_mutualizado.com)
+     * (por lo tanto, no funciona con un subdirectorio - http://mi_sitio_mutualizado.com/misitio/)
+     *
+     * y añadir en la opción
+     * 'url_img_courtes' =&gt; true
+     *
+     * Es posible generar los  .htaccess
+     * automaticamente en /IMG y /local
+     * gracias a ?var_mode=creer_htaccess_img
+     *
+     */
+
+    /*
+     * Indique aqui el nombre del sitio de administración de esta mutualización
+     * (o varios, separados por oma)
+     * (dpor ejemplo, 'scriibe.net' es el dominio de nivel maximo)
+     * para autorizar todos los sitios no definir la constante ;
+     * Si el propietario del sitio no se encuentra en los sites/ sino en la razi,
+     * escriba '' y agregue 'mutualisation' en $dossier_squelettes
+     */
+    define ('_SITES_ADMIN_MUTUALISATION', 'nqnwebs.com');
+
+
+    demarrer_site($site,
+        array(
+            'creer_site' =&gt; true,        // Creer ou non le site s'il n'existe pas (defaut: false)
+            'creer_base' =&gt; false,        // Creer ou non la base de donnee si elle n'existe pas (false)
+            'creer_user_base' =&gt; false,  // Creer ou non un utilisateur pour la nouvelle base de donnee (false)
+            'mail' =&gt; '',                // Adresse mail pour recevoir un mail lors d'une creation de site mutualise ('')
+            'code' =&gt; 'miclave',  // Code d'activation ('ecureuil')
+            'table_prefix' =&gt; true,     // Definir automatiquement le prefixe de table (false) ... mettre true si tous les sites dans la meme base
+            'cookie_prefix' =&gt; true,     // Definir automatiquement le prefixe de cookie (false)
+            'repertoire' =&gt; 'sites',     // Nom du repertoire contenant les sites mutualises ('sites')
+            'url_img_courtes' =&gt; true,   // Utiliser la redirection des URL d'images courtes dans la partie publique (false)
+            # 'utiliser_panel' =&gt; false, // Utiliser une table externe pour recuperer des identifiants ... (code, user, pass) permettant a un utilisateur d'installer le site (false)
+            'url_creer_base' =&gt; ''       // Creer la base de donnees via une URL (methode AlternC)
+        )
+    );
+
+
+?&gt;
+</pre>
+<p>Este mes_options.php (retocado por mi) permite que los sitios funcionen
+con o sin ’www’. También apunta a una única base de datos, donde se
+encargará de crear las tablas necesarias para cada sitio, diferenciadas
+por un prefijo.</p>
+<p>Sólo resta crear la carpeta <em>/sites</em> en la raiz del sitio, donde irán
+nuestros diferentes sitios mutualizados.</p>
+<p>Al acceder via web a un dominio de un sitio sobre esta mutualización, lo
+primero que aparecerá es una solicitud de contraseña, definida en array
+de configuración de mes_options.php (en el ejemplo, la contraseña es
+<em>miclave</em>)</p>
+<div class="figure align-center">
+<img alt="" src="local/cache-vignettes/L510xH303/Pantallazo-2-d2b75.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 134)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Luego siguen dos etapas que nos crean la estructura de directorios para
+este sitio dentro de <em>/sites</em> y las tablas para este sitio en la base de
+datos compartida. Lo que sigue es el proceso de instalación estándar de
+SPIP.</p>
+<p><strong>¡Listo!</strong></p>
+<p>Hay que tener en cuenta que ahora los archivos para nuestro sitio
+estarán dentro de <em>/sites/dominio/</em> y es allí donde deberán subirse los
+esqueletos y demás.</p>
+</div>
+<div class="section" id="mutualizar-un-sitio-en-produccion">
+<h2>Mutualizar un sitio en producción</h2>
+<p>¿Qué pasa si el sitio que quiero mutualizar ya está funcionando sobre un
+spip propio? No problem.</p>
+<p>Basta indicar (desde el panel, o solicitando al administrador del
+hosting) que nuestro dominio debe apuntar ahora a la carpeta donde
+tenemos el spip mutualizado (en mi ejemplo <em>/home/tin/public_html/spip</em>
+), crear el directorio <strong>/sites/dominio</strong> (donde dominio es la url del
+sitio que queremos migrar) y mover alli las carpetas /config, /IMG,
+/squelettes, /local y /tmp (o crear una /tmp nueva) del SPIP en uso al
+nuevo directorio. [[Estas carpetas, bien podrian ser link simbólicos].
+Magia!</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusión</h2>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="limitar-la-cantidad-de-caracteres.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="principios-para-un-freelancear.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/un-spip-para-muchos-sitios.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

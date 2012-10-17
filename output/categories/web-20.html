@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Posts sobre Web 2.0 | tin_nqn"><meta name="description" content="&gt;&gt;&gt; self.geek_side.post()"><meta name="author" content="Martín Gaitán"><title>Posts sobre Web 2.0 | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag Web 2.0 (es)" href="web-20.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    
+        <div class="postbox">
+        <h1><a href="../posts/como-volver-a-compartir-desde.html">Cómo volver a compartir desde Google Reader</a>
+        <small>  
+             <span class="timeago" title="2012-01-11 21:37:21">2012-01-11 21:37:21</span>
+        </small></h1>
+        <div><p>Desde hace muchísimo tengo en <a class="reference external" href="http://www.textospretextos.com.ar">mi otro
+blog</a> una sección que se llama <em>"De
+por ahí, cosas que me parecieron interesantes"</em>. Es un feed de links a
+contenidos de toda índole (política, literatura, cine, fotografía,
+deportes, programación: intereses anchos) con un brevisimo extracto como
+descripción que fui alimentando de diversas formas a lo largo del
+tiempo: usé
+<a class="reference external" href="http://delicious.com/nqnwebs,%20use%20%20%5Besto%20%20-%3Ehttp://sourceforge.net/projects/linkwalla/">delicious</a>,
+usé mi
+<a class="reference external" href="http://twitter.com/nqnwebs).%20Pero%20cuando%20%5BGoogle%20Reader-%3Ehttp://reader.google.com">twitter</a>
+incorporó la opción de "Compartir" se convirtió en la manera por
+defecto: si algo me gustaba, un click en compartir y listo. Eso permitia
+que otros usuarios de Reader que me "seguian" pudieran ver mis posts
+compartidos pero a la vez generaba un feed rss que alimentaba la sección
+de mi blog.</p>
+<p>Con la aparición de Google+ aquella simple y muy usada funcionalidad se
+vió desplazada por el botón "+1" y por un "compartir" engañoso que sólo
+permite compartir en Google+</p>
+<p>Para colmo, cuando uno hace "+1" en algun contenido (dentro de Google
+Reader o en cualquier lado donde esté el botón) se lista en una <a class="reference external" href="https://plus.google.com/102449284377784435533/plusones/p/pub">página
+publica</a>
+pero que <strong>no tiene feed RSS</strong>! . Larry Page,
+(<a class="reference external" href="https://twitter.com/#!/nqnwebs/status/154772127139102720">doblemente</a>)
+te odio.</p>
+<div class="section" id="frustracion-colectiva">
+<h2>Frustración colectiva</h2>
+<p>La bronca por los cambios en Reader no es sólo mia, sino que generó una
+<a class="reference external" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&amp;formkey=dE16SFVla3JFZ1lwTkxGRWN2SkZtb2c6MA#gid=0">petición</a>
+firmada por más de
+<a class="reference external" href="http://www.bdkeller.com/2011/10/save-google-reader/">13000</a> usuarios
+que manifiestan que "algunos ven estos cambios como un intento errado
+para forzarnos a usar Google Plus, pero nosotros amamos la utilidad,
+simplicidad y funcionalidades sociales limitadas que ofrece Google
+Reader".</p>
+<p>Mientras tanto, muchos
+(<a class="reference external" href="http://www.theatlanticwire.com/technology/2011/10/how-survive-switch-google-reader-google/44069/">1</a>,
+<a class="reference external" href="https://github.com/jtwebman/GooglePlusToRSSFeed">2</a>,
+<a class="reference external" href="http://plus-one-feed-generator.appspot.com/">3</a>) intentan parchar el
+atropello.</p>
+</div>
+<div class="section" id="mi-solucion">
+<h2>Mi solución</h2>
+<p>"¿Así que no me dejás compartir donde yo quiera, el algoritmo de tu
+madre!?" vociferé, y no sin premeditación agarré <a class="reference external" href="../posts/blog/article/yahoo-pipes-como-por-un-tubo">Yahoo!
+Pipes</a> (una genialidad, hay
+que decirlo) para scrappearlos a puro golpe de mouse y sin salir del
+navegador. El resultado fue <a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.info?_id=770fc166fd07a0f6e67fe63f513b05dc">este
+pipe</a>
+del que se puede obtener, por ejemplo, un <a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;_render=rss&amp;google_plus_id=102449284377784435533">feed RSS 2.0 de mis
++1s</a>
+. Podés obtener el feed de otros usuarios así:</p>
+<p><tt class="docutils literal"><span class="pre">http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;_render=rss&amp;google_plus_id=[GOOGLE_PLUS_ID]</span> ``
+donde <span class="pre">``[GOOGLE_PLUS_ID]</span></tt> es el numero de identificación del usuario en
+cuestión.</p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"></div>
+</div></div>
+        <p>
+        
+            <a href="../posts/como-volver-a-compartir-desde.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/disqus-para-spip.html">Disqus para SPIP</a>
+        <small>  
+             <span class="timeago" title="2011-07-07 01:45:06">2011-07-07 01:45:06</span>
+        </small></h1>
+        <div><p><img alt="image0" src="../images/disqus-newlod23a-8b781.gif">
+Hace tiempo me interesa el servicio
+<a class="reference external" href="http://www.disqus.com">disqus.com</a> que provee una plataforma de
+comentarios muy poderosa y fácil de usar.</p>
+<p>Comencé un <a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus">pequeño
+plugin</a>
+para integrar Disqus a <a class="reference external" href="http://www.spip.net">Spip</a>.</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/disqus.zip">|image2|</a></td>
+</tr><tr><td>Plugin Disqus para SPIP version 0.1</td>
+</tr></tbody></table><p>Por ahora tiene dos componentes básicos:</p>
+<ol class="arabic simple"><li>Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
+SPIP (y su formulario) por Disqus</li>
+<li>Un esqueleto para exportar comentarios existentes (genera un XML
+importable a traves del panel de disqus)</li>
+</ol><p>La configuración se realiza a través de una página (requiere el <a class="reference external" href="http://plugins.spip.net/CFG">plugin
+CFG</a>) donde se define el <em>"Disqus
+shortname"</em> (la identificación unica que asignamos al sitio donde
+usaremos Diqus).</p>
+<p>Para generar el XML con la exportación de comentarios preexistentes,
+basta acceder a `` /?page=export_comments_to_disqus `` y luego importar
+ese archivo desde el panel de Disqus (Tools -&gt; Import/Export )</p></div>
+        <p>
+        
+            <a href="../posts/disqus-para-spip.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/yahoo-pipes-como-por-un-tubo.html">Yahoo! Pipes como por un tubo</a>
+        <small>  
+             <span class="timeago" title="2009-02-23 20:23:40">2009-02-23 20:23:40</span>
+        </small></h1>
+        <div><p><a class="reference external" href="http://pipes.yahoo.com">Yahoo! Pipes</a> es una una herramienta web
+interactiva para agregar y manipular feeds RSS (y otras fuentes de
+datos) a nuestro antojo de forma sencilla y asequible para cualquiera.</p>
+<p>Es un entorno de programación visual online. La programación visual es
+común para los ingenieros
+(<a class="reference external" href="http://en.wikipedia.org/wiki/Simulink">Simulink</a> o
+<a class="reference external" href="http://es.wikipedia.org/wiki/LabVIEW">LabVIEW</a>) y también para los
+viejos gamers (el glorioso <a class="reference external" href="http://en.wikipedia.org/wiki/The_Incredible_Machine">The incredible
+Machine</a>.</p>
+<p>El concepto es simple: se conectan distintos módulos ("tubos", con una o
+más salidas y entradas) según las necesidades, y se va probando el
+resultado en una salida final.</p>
+<p>En Y! Pipes, luego de toda nuestra manipulación, el resultado es un feed
+personalizado que contiene únicamente lo que se quiera tener, por
+ejemplo el resultado de mezclar y flitrar dos o más fuentes de
+información.</p>
+<div class="section" id="aplicandolo-a-spip">
+<h2>Aplicandolo a SPIP</h2>
+<p>Frecuentemente queremos ofrecer un canal RSS que provea tanto las breves
+como los artículos. SPIP maneja estos objetos independientemente y es
+muy dificil hacer un esqueleto que los mezcle (hay que trabajar con
+pilas en PHP). Con Yahoo! Pipes es tan sencillo como mezclar los dos (o
+más) feeds.</p>
+<p>Esto lo hice en el sitio <a class="reference external" href="http://www.agrupacionmazamorra.com.ar">Agrupación
+Mazamorra</a>:</p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L510xH321/Pantallazo-90218.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 36)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>El resultado puede verse (y clonarse) <a class="reference external" href="http://pipes.yahoo.com/mazamorra/rss_todo">desde
+aquí</a></p>
+</div>
+<div class="section" id="mas-ejemplos">
+<h2>Más ejemplos</h2>
+<p>Pero mezclar feeds no es la única posibilidad. De hecho, Pipes es tan
+potente que permite obtener datos parseando un sitio web que no tenga un
+canal RSS o Atom disponible (pero eso es un uso muy avanzado y lo
+dejamos para otra oportunidad).</p>
+<p>Un caso que sí está al alcance de esta breve introducción es filtrar el
+contenido de un feed. Doy mi ejemplo en uso: me gusta leer a <a class="reference external" href="http://nqnwebs.com">Hernán
+Casciari</a> que además de su blog, escribe una
+columna en el diario argentino La Nación. Es un diario asquerosamente
+oligarca y de derecha (¿redundante?) así que prefieron no leer nada más
+que a este autor,</p>
+<p>Fácil: Busco el feed de la sección donde se publican sus columnas,
+filtro con la palabra clave ’Casciari’, y me libro de todo lo que no
+quiero. <a class="reference external" href="http://pipes.yahoo.com/mazamorra/casciari">Aquí el resultado</a></p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L465xH360/pipes2-4a406.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 61)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+</div>
+<div class="section" id="ejemplo-en-video">
+<h2>Ejemplo en video</h2>
+<p>Un screencast de <a class="reference external" href="http://obm.corcoles.net">otro blog más</a></p>
+<blockquote>
+Un cierto blog no ofrece los RSS filtrados por categorías. O por
+autores. O por ‘tags’. O queremos el RSS de un sitio, eliminando,
+por ejemplo, todas las entradas que hablen de petanca o del chucho
+del autor. Vamos, que nos gustaría filtrar el RSS de acuerdo con
+algún criterio propio. Para eso (y para bastantes más cosas, pero
+centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
+pequeño ’screencast’ que explica cómo recuperar las categorías (la
+de desarrollo web, en particular) que se ha cargado Feedburner…</blockquote>
+</div></div>
+        <p>
+        
+            <a href="../posts/yahoo-pipes-como-por-un-tubo.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+    <div>
+<ul class="pager"></ul></div>
+    
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

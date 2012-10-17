@@ -1,0 +1,507 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Posts sobre Software Libre | tin_nqn"><meta name="description" content="&gt;&gt;&gt; self.geek_side.post()"><meta name="author" content="Martín Gaitán"><title>Posts sobre Software Libre | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag Software Libre (es)" href="software-libre.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    
+        <div class="postbox">
+        <h1><a href="../posts/disqus-para-spip.html">Disqus para SPIP</a>
+        <small>  
+             <span class="timeago" title="2011-07-07 01:45:06">2011-07-07 01:45:06</span>
+        </small></h1>
+        <div><p><img alt="image0" src="../images/disqus-newlod23a-8b781.gif">
+Hace tiempo me interesa el servicio
+<a class="reference external" href="http://www.disqus.com">disqus.com</a> que provee una plataforma de
+comentarios muy poderosa y fácil de usar.</p>
+<p>Comencé un <a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus">pequeño
+plugin</a>
+para integrar Disqus a <a class="reference external" href="http://www.spip.net">Spip</a>.</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/disqus.zip">|image2|</a></td>
+</tr><tr><td>Plugin Disqus para SPIP version 0.1</td>
+</tr></tbody></table><p>Por ahora tiene dos componentes básicos:</p>
+<ol class="arabic simple"><li>Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
+SPIP (y su formulario) por Disqus</li>
+<li>Un esqueleto para exportar comentarios existentes (genera un XML
+importable a traves del panel de disqus)</li>
+</ol><p>La configuración se realiza a través de una página (requiere el <a class="reference external" href="http://plugins.spip.net/CFG">plugin
+CFG</a>) donde se define el <em>"Disqus
+shortname"</em> (la identificación unica que asignamos al sitio donde
+usaremos Diqus).</p>
+<p>Para generar el XML con la exportación de comentarios preexistentes,
+basta acceder a `` /?page=export_comments_to_disqus `` y luego importar
+ese archivo desde el panel de Disqus (Tools -&gt; Import/Export )</p></div>
+        <p>
+        
+            <a href="../posts/disqus-para-spip.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/compartiendo-documentacion-de.html">Compartiendo documentación de paquetes Python</a>
+        <small>  
+             <span class="timeago" title="2011-04-10 19:16:38">2011-04-10 19:16:38</span>
+        </small></h1>
+        <div><p>Sabido es, aunque muchas veces se ignora, que un software sin
+documentación está incompleto
+[<a class="reference external" href="../blog/article/compartiendo-documentacion-de#nb1">1</a>].</p>
+<p>Si bien el manifiesto ágil
+<a class="reference external" href="http://agilemanifesto.org/iso/es/">proclama</a> <em>"Software funcionando
+sobre documentación extensiva"</em>, yo subrayaría extensiva como eufemismo
+de documentación burocrática e inútil (opiné de esto
+<a class="reference external" href="../posts/blog/article/veinteanero">acá</a>) que evidentemente no es la que hace
+falta. Pero la documentación (sobre todo la buena) es indispensable y
+para <a class="reference external" href="http://jacobian.org/writing/great-documentation/">algunos</a>, la
+parte que más los enorgullece del proyecto (y con razón).</p>
+<p>Desde el punto de vista técnico, escribir documentación (no <a class="reference external" href="http://sphinx.pocoo.org/examples.html">sólo para
+Python</a>!) es bastante fácil con
+<a class="reference external" href="http://docutils.sourceforge.net/rst.html">restructuredText</a> (qué feo
+el sitio de docutils, che!) que es <a class="reference external" href="http://www.python.org/dev/peps/pep-0287/">el markup estándar de los
+pythonistas</a>.</p>
+<p>Sobre este markup funciona <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>, el
+generador de documentación más utilizado (por lejos) en el ecosistema de
+Python. Es lo que usa la documentación de Python misma, la de Django y
+casi todo proyecto conocido o por conocer.</p>
+<p>Entonces usamos restructuredText, usamos Sphinx, pero para <a class="reference external" href="../posts/blog/article/la-sanguijuela-de-cuevana">nuestro
+proyectito de morondanga</a> que
+no tiene web propia ni nada, ¿dónde subimos la documentación generada?
+Veamos.</p>
+<div class="section" id="usando-readthedocs-org">
+<h2>Usando Readthedocs.org</h2>
+<p><a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/">Read the docs</a>
+es un sitio para hospedar documentación realizada con Sphinx. Sólo se
+necesita indicarle el repositorio público del proyecto (svn, git,
+mercurial, bazaar), subir los fuentes .rst y contenido estático
+(imágenes) aptos para Sphinx en una carpeta /doc o /docs y el sitio se
+encarga de bajar los fuentes de documentación y renderizarlos a HTML a
+través de Sphinx.</p>
+<p>Estrictamente, usando rtfd.org (como le dicen <a class="reference external" href="http://www.urbandictionary.com/define.php?term=RTFD&amp;defid=2281638">los
+amigos</a>)
+ni siquiera hace falta tener Sphinx instalado localmente.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 31); <em><a href="../posts/compartiendo-documentacion-de.html#id2">backlink</a></em></p>
+Duplicate explicit target name: "acá".</div>
+<p>Más aun, por defecto actualiza diariamente, pero se puede utilizar un
+"hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
+al repo, de manera de tener la documentación actualizada al instante.
+Para usuarios de GitHub la activación del "web hook" se explica
+<a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/webhooks.html#github">acá</a>
+. Para <a class="reference external" href="http://bitbucket.org">BitBucket.org</a> es parecido:</p>
+<ol class="arabic simple"><li>Vas a tu proyecto , click en Admin -&gt; Services</li>
+<li>Agregás el servicio "POST"</li>
+<li>Completás el campo de texto con la URL que te da ReadTheDocs en la
+página de descripción de tu proyecto (estándo logueado). Por ejemplo:</li>
+</ol><div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 60)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Y listo. Tu docu al instante.</p>
+<p>Como el sitio genera el html en vez de servir una versión generada
+previamente, la documentación que requiere introspección del código (
+todas las directivas `` .. auto* :: `` de Sphinx) este debe poder
+ejecutarse. Para eso el paquete debe ser instalable via <tt class="docutils literal">setup.py</tt> y
+hay marcar desde la página de configuración del proyecto en RTFD.org,
+que instale en un virtualenv.</p>
+<p>Para ver si hubo algún problema en la generación, podés fijarte en
+"build" donde te muestra el stdout y el stderr de la corrida de Sphinx.</p>
+</div>
+<div class="section" id="subir-la-docu-a-pypi">
+<h2>Subir la docu a PyPi</h2>
+<p>Una forma buenísima de compartir tu trabajo pythónico es a través del
+Python Package Index, <a class="reference external" href="http://pypi.python.org/pypi">pypi</a>, que es el
+índice que usan las herramientas <a class="reference external" href="http://www.pip-installer.org">pip</a> e
+easy_install. Si bien no necesarimente los paquetes deben estar
+hospedados allí (indicando en el setup.py la URL de descarga) es muy
+común y fácil hacerlo con el comando <tt class="docutils literal">upload</tt> del setup.py.</p>
+<p>Lo que muchos no
+<a class="reference external" href="http://packages.python.org/an_example_pypi_project/buildanduploadsphinx.html">saben</a>
+es que PyPi también ofrece <a class="reference external" href="http://packages.python.org/">hostear la
+documentación</a>. La forma canónica es ir a
+la página de administración de tu proyecto en PyPi y adjuntar un .zip
+con la documentación (que no necesariamente tiene que ser hecha con
+Sphinx)</p>
+<div class="figure align-center">
+<img alt="" src="../posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 93)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Pero si usamos Sphinx hay una manera más fácil, manteniendosé en el
+"ecosistema" de desarrollo: usar esta <a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload/">extension de
+setuptools</a> que
+permite generar el html a través Sphinx y subirlo automáticamente. Se
+instala, obviamente, vía pypi:</p>
+<pre class="literal-block">
+$ easy_install sphinx-pypi-upload
+</pre>
+<p>Hay que condigurar un <tt class="docutils literal">setup.cfg</tt> (ubicado al nivel raiz, junto con
+<tt class="docutils literal">setup.py</tt>) indicandole dónde está la docu fuente y dónde el
+resultado. Más o menos así:</p>
+<pre class="literal-block">
+[build_sphinx]
+source-dir = doc/source
+build-dir  = doc/build
+all_files  = 1
+
+[upload_sphinx]
+upload-dir = doc/build/html
+</pre>
+<p>Luego se usa:</p>
+<pre class="literal-block">
+$ python setup.py build_sphinx
+$ python setup.py upload_sphinx
+</pre>
+<p>Y docu subida a la dire
+<em>`http://packages.python.org/tu-proyecto &lt;http://packages.python.org/tu-proyecto&gt;`_</em>
+. ¡<a class="reference external" href="http://packages.python.org/CuevanaLinks/">Charaaán</a>!</p>
+</div>
+<div class="section" id="usando-tu-repositorio-svn">
+<h2>Usando tu repositorio SVN</h2>
+<p>Si usas SVN y tu servidor lo permite, podés servir contenido estático
+(html y todo lo que produce y necesita Sphinx) directamente desde el
+repositorio.</p>
+<p>Para que el servidor Subversion muestre el html renderizado en vez del
+código (como texto plano) hay que indicarle el tipo <tt class="docutils literal">mime</tt> de cada
+archivo.</p>
+<pre class="literal-block">
+$ svn propset svn:mime-type 'text/html' FILENAME
+$ svn propset svn:mime-type 'image/jpeg' FILENAME
+</pre>
+<p>Para que esto se haga automático, se puede modificar el archivo de
+configuración <a href="../posts/compartiendo-documentacion-de.html#id3"><span class="problematic" id="id4">``</span></a>~/.subversion/config ``</p>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 144); <em><a href="../posts/compartiendo-documentacion-de.html#id4">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<pre class="literal-block">
+[miscellany]
+enable-auto-props = yes
+
+[auto-props]
+*.html = svn:mime-type=text/html
+*.css = svn:mime-type=text/css
+*.js = svn:mime-type=text/javascript
+*.png = svn:mime-type=image/png
+*.jpg = svn:mime-type=image/jpeg
+*.gif = svn:mime-type=image/gif
+</pre>
+<p>Un ejemplo de esto es el <a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">reporte de mi proyecto
+integrador</a>
+que está hospedado en Google Code</p>
+</div>
+<div class="section" id="aprovechandote-de-github">
+<h2>Aprovechándote de GitHub</h2>
+<p><a class="reference external" href="http://github.com">GitHub</a> hospeda <a class="reference external" href="http://pages.github.com/">páginas
+estáticas</a>, tanto del desarrollador/a como
+de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
+mas o menos automáticamente estas opciones que no he probado pero las
+dejo como referencia:</p>
+<p><img alt="-" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/">Hosting sphinx doc in
+github</a>
+de Luca Sbardella.
+<img alt="image1" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting">Usando
+github-tools</a>.</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/compartiendo-documentacion-de.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/apuntes-del-pycamp-2011.html">Apuntes del PyCamp 2011</a>
+        <small>  
+             <span class="timeago" title="2011-03-30 19:50:40">2011-03-30 19:50:40</span>
+        </small></h1>
+        <div><p>Casi se hizo jueves y todavía no escribí nada sobre el
+<a class="reference external" href="http://python.org.ar/pyar/PyCamp/2011">PyCamp</a>. <a class="reference external" href="http://lateral.netmanagers.com.ar/">Roberto
+Alsina</a> se va a enojar.</p>
+<p>La excusa, vaga como yo, es que la devolución de uno de mis directores
+de <a class="reference external" href="../posts/blog/article/preparados-listos-en-un-rato">tesis</a> fue más
+[STRIKEOUT:hinchapelotas] minuciosa que lo esperado. Así que para
+cumplir el
+<a class="reference external" href="http://twitter.com/#!/nqnwebs/status/48955773732134912">objetivo</a>
+tuve un amansador refactoring de 5pm a 6am cuyo resultado me permitió
+conseguir un lacónico:</p>
+<blockquote>
+Recibido, pero recién lo puedo ver el viernes</blockquote>
+<p>Inmediatamente demostré que el lenguaje soez en arameo es un
+conocimiento latente.</p>
+<div class="section" id="a-modo-de-intro">
+<h2>A modo de intro</h2>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 19); <em><a href="../posts/apuntes-del-pycamp-2011.html#id1">backlink</a></em></p>
+Duplicate explicit target name: "pycamp".</div>
+<p>El <a class="reference external" href="http://python.org.ar/pyar/PyCamp/">PyCamp</a> es un encuentro de la
+comunidad <a class="reference external" href="http://www.python.org.ar">Python Argentina</a>. Monos (y
+pronto monas) con laptops afiladas se juntan en el algun rincón del país
+con internet, preferentemente lejos de las grandes urbes (para darle
+énfasis a eso de <em>camp</em>) a programar software libre, hackear de lo
+lindo, jugar jueguitos electrónicos y de los otros, tomar y beber en
+bucle continuo y hacer cuanto le plazca a cada uno, en un ambiente
+totalmente inclusivo, distendido y buena onda.</p>
+<p><img alt="image0" src="../images/5575373677_34553-e5833.jpg">
+Python Argentina abarca el amplio espectro que va desde programadores
+reconocidos internacionalmente (gran parte de ese Ubuntu que seguro
+estas usando — o deberías — lo hacen pythonistas argentinos) hasta
+"newbies" que se anotaron en la lista con el único y nada despreciable
+objetivo de callar al amigo que ya sabe un poco más y no para de
+hincharle para que use Python (resulta que a los pocos dias, el
+(ex)newbie ya está molestando a un tercero).</p>
+<p>Esa población tiene fiel reflejo en el PyCamp, pero grosos y finitos
+tienen las mismas posibilidades de proponer, opinar y divertirse. Por
+supuesto, es impagable lo que se aprende y son increíbles las cosas que
+hacen los geeks cuando están divertidos.</p>
+<p>De estos encuentro salieron proyectos como
+<a class="reference external" href="http://www.cocos2d.org/">Cocos2d</a>, la
+<a class="reference external" href="http://python.org.ar/pyar/Proyectos/CDPedia">CDPedia</a> y
+<a class="reference external" href="http://www.taniquetil.com.ar/lalita/index.html">lalita</a>.</p>
+</div>
+<div class="section" id="mi-experiencia">
+<h2>Mi experiencia</h2>
+<p>El PyCamp 2011, el cuarto consecutivo, se realizó en La Falda y fue el
+primero en el que participo. Sabía, por referencias, fotos y
+repositorios, de qué se trataba, pero como dice el adagio... <em>del dicho
+al hecho ...</em>.</p>
+<p><img alt="image1" src="../images/5575974174_116c8-4028d.jpg">
+Nati tenía un congreso de germanística en Buenos Aires y después se iba
+a La Plata a visitar a una amiga, así que las opciones eran ir a la
+marcha el jueves (24 de marzo) y
+<a class="reference external" href="../posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv">cuevanear</a> el resto
+del finde o sumarme a la movida.
+<a class="reference external" href="http://www.perrito666.com.ar">Perrito</a> ofreció movilidad así que lo
+tuve servido.</p>
+<p>Salimos el jueves a la mañana y con nosotros venía
+<a class="reference external" href="http://blog.malev.com.ar/">Malev</a> y el organizador del evento, de pie
+señores, Nueces.</p>
+<p>A lo largo de los 4 días de PyCamp, participé en la CDpedia (mejoré la
+funcionalidad de "artículo al azar" y estuve haciendo unos benchmarks de
+optimización en el peso de las imágenes), amagué con un filtro para
+<a class="reference external" href="https://bitbucket.org/edvm/pep8fy">Pep8fy</a> que dejé medio inconcluso,
+comí al menos el doble de lo que venía comiendo (bien la comida, che!),
+jugué mi primer sesión de rol guiado por <a class="reference external" href="http://protocultura.net/">el señor
+ordenador</a> (Alecu, un maestro!), malabareé
+con las bolas (las de malabares) de
+<a class="reference external" href="http://humitos.wordpress.com/">Humitos</a>, presencié en vivo la
+gestación de un delirio mágico de <a class="reference external" href="http://lateral.netmanagers.com.ar/">Roberto
+Alsina</a>, me metí a la pileta y
+tomé sombra, perdí 0-5 0-5 los dos partidos de metegol y me cagué de
+risa igual con mi <a class="reference external" href="https://twitter.com/#!/edvm">coequiper</a> (¡fiesta!),
+escribí "puto" (con onda, <a class="reference external" href="http://www.felipelerena.com.ar/">Lipe</a>)
+desde un android con un <a class="reference external" href="https://launchpad.net/faldatouch">librería para
+multitouching</a> que estos bestias
+hicieron en una tarde, quedé pasmado con el vuelo de la discusión sobre
+los motivos (y posibles acciones correctoras) de la baja participación
+femenina en Python y el Software Libre en general, bebí vino, fernet,
+cerveza y mistela (me colé en un contingente más adelantado que el
+nuestro en la excursión del Hotel Edén, y después me volví con Flecox a
+ver el partido de Argentina), jugué con Tato (el pythonista más peque
+del encuentro, hijo de Roberto Alsina) y me enternecí viendo a otros
+geeks (Huguito — <a class="reference external" href="http://www.pilas-engine.com.ar">Pilas</a> rulez! —,
+John, Achuni, todos) jugar como niños.</p>
+<p><img alt="image2" src="../images/5575353897_b47ee-6529e.jpg">
+Detalles faltan pero estos someros recuerdos sobran para afirmar que el
+balance es positivísimo.</p>
+</div>
+<div class="section" id="una-reflexion-final">
+<h2>Una reflexión final</h2>
+<p>PyCamp contrasta totalmente con los grises, aburridos y mediocres
+congresos académicos que en el ámbito universitario se difunden y en los
+que alguna vez he participado, donde los papelitos cuentan y donde
+(casi) todo se vuelve una ficción impulsada por la inercia y la
+necesidad de "publicar" (no importa mucho que), para mantener la beca,
+el statu quo y el viático.</p>
+<p>En PyCamp no se piden papeles ni se aplauden corbatas, la gente se llama
+por el sobrenombre y no por el título, se admira el conocimiento pero
+más se festeja su colectivización, y eso lo saben (y lo disfrutan) los
+picantes y los tiernitos.</p>
+<p>Cuanta falta le hace a la universidad visiones y experiencias como esta.</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/apuntes-del-pycamp-2011.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="../posts/Control-de-Versiones-con.html">Control de Versiones con Subversion</a>
+        <small>  
+             <span class="timeago" title="2009-02-14 11:23:41">2009-02-14 11:23:41</span>
+        </small></h1>
+        <div><p>Xab, compañero de la lista
+<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">spip-es</a> me propone
+un trato:</p>
+<blockquote>
+abro una cuenta con magoya en picasa y testeo el
+<a class="reference external" href="../posts/blog/article/spicasa-adjunta-fotos-de-picasa-a">plugin</a>, y a
+cambio vos "hacés (o recomendás)" un how-to subversion aplicado a
+spip</blockquote>
+<p>Como tenía unos materiales de una charla que dí en la facu, lo comparto
+con el pueblo spipero.</p>
+<div class="section" id="subversion-un-software-de-control-de-versiones">
+<h2>Subversion, un software de control de versiones</h2>
+<p><a class="reference external" href="http://subversion.tigris.org/">Subversion</a> es el software de control
+de versiones más popular de la actualidad. Es robusto, fácil de usar,
+multiplataforma, libre y gratuito.</p>
+<p>Aquí las diapositivas (un tanto frías sin nuestra explicación) que
+presentamos.</p>
+<p>La pregunta del novato: <strong>¿Para qué sirve?</strong>. Bueno, para llevar total
+control del desarrollo de un software (u otros contenidos). Muchos lo
+hemos hecho manualmente:</p>
+<p>— Bueno, hasta aqui funciona. Hago una carpeta nueva, copio los
+archivos, y sigo.</p>
+<p>Así, al cabo de una semana de trabajo, tenemos 10 carpetas con versiones
+distintas, archivos repetidos, y no sabemos realmente cual es la version
+en curso. Más complicado aun, si se trabaja desde distintos equipos (por
+ejemplo, la notebook y la PC de escritorio).</p>
+<p>Pero además, sumemos la complicación de trabajar con colegas.</p>
+<p>— Ey, Martín, acá te mando la última versión del esqueleto de portada.
+— ¡Pero cómo! si te avisé que había modificado la portada completamente!</p>
+<p>Trabajar en equipo es casi inviable a la vieja usanza. Imaginen
+proyectos de software grandes, como SPIP. Imposible. Hace falta ayuda:
+Subversion.</p>
+</div>
+<div class="section" id="como-funciona">
+<h2>¿Cómo funciona?</h2>
+<p>Es una aplicación cliente-servidor. El cliente se instala en nuestra/s
+computadoras y el servidor está, generalmente, online. A este servidor
+online se le denomina <strong>repositorio</strong>. A la copia local de los archivos,
+<strong>copia de trabajo</strong>. A cada cambio que el repositorio recibe se le
+llama <strong>revisión</strong>.</p>
+<p><img alt="-" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Para Windows, el mejor cliente es
+<a class="reference external" href="http://tortoisesvn.tigris.org/">TortoiseSVN</a>
+<img alt="image1" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Para GNU/Linux, basta <strong>subversion</strong>, la versión para línea de
+comandos, o <strong>RapidSVN</strong>, una versión gráfica para entornos GTK.</p>
+<p>El proceso de trabajo es más o menos así:</p>
+<p><img alt="image2" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Si no existe en el repositorio nuestro código, hacemos un
+<strong>import</strong> (enviar por primera vez nuestro código al repositorio.
+<img alt="image3" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Para empezar a trabajar, necesitamos hace un <strong>checkout</strong>, es
+decir, decirle a Subversion que convierta nuestra carpeta de código (o
+la cree si no existe) en copia de trabajo.
+<img alt="image4" src="../posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Ya preparados, el trabajo cotidiano: lo comandos más frecuentes
+son tres. <strong>update</strong>, para actualizar la copia local con las ultimas
+revisiones; <strong>commit</strong> para enviar nuestras modificaciones locales al
+repositorio y crear una nueva revisión y <strong>add</strong> para agregar un archivo
+que hemos creado, y aun no existe en el repositorio.</p>
+</div>
+<div class="section" id="un-ejemplo-con-spip-zone">
+<h2>Un ejemplo con SPIP-Zone</h2>
+<p><a class="reference external" href="http://zone.spip.org">Spip-zone</a> tiene un servidor subversion
+(asociado al software <a class="reference external" href="http://trac.edgewall.org/">Trac</a> que es un
+gestor integral de proyectos de software) donde se puede alojar
+cualquier contenido libre que tenga que ver con SPIP. Es abierto para
+lectura (podés hacer checkouts y updates anonimamente) pero necesitás
+ser usuario para hacer commits. Podés pedirle un user y pass a
+<a class="reference external" href="mailto:fil@nospam--.rezo.net">Fil</a>.</p>
+<p><strong>Paso 0</strong></p>
+<p>Suponiendo que sos usuario con clave y password y querés compartir el
+desarrollo de tus squeletos, los <em>squelettes_maslindos</em> que están en la
+carpeta squelettes local (por poner un ejemplo).</p>
+<p>La dirección del repositorio, arbitraria pero recomendada, sería esta</p>
+<pre class="literal-block">
+svn://zone.spip.org/spip-zone/_squelettes_/maslindos
+</pre>
+<p>Desde <strong>Tortoise</strong>, con el boton derecho sobre la carpeta de esqueletos,
+le damos a la opción <strong>Import</strong> y ponemos la dire del repo donde la
+pide.</p>
+<p>Desde línea de comandos sería</p>
+<pre class="literal-block">
+$ svn import ./squelettes  svn://zone.spip.org/spip-zone/_squelettes_/maslindos -m "importacion de los squeletos más lindos"
+</pre>
+<p>Si la importación salió bien, debería poder ver tus archivos en la
+siguiente dirección
+<a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos">http://zone.spip.org/trac/spip-zone...</a></p>
+<p><strong>Paso 1</strong> Este es el paso inicial para aquellos que quieren probar algo
+que está en el repositorio, pero sin intenciones de enviar
+modificaciones (sólo lectura). Tambien deben hacerlo aquellos que sí lo
+van a hacer, porque la importación no implica que se haya creado una
+copia de trabajo.</p>
+<p>Así que hay que hacer el <strong>checkout</strong>. Si hiciste el paso anterior, para
+evitar complicaciones, lo mejor es borrar la carpeta que importaste.</p>
+<p>Entonces sí, sobre la carpeta raiz (donde queremos que se cree la otra),
+hacemo checkout a la dire del repo, definiendo que la copia local será
+<tt class="docutils literal">./squelettes</tt> (si no, nos creará una que se llamará <em>maslindos</em>)</p>
+<p>La dire del repo es la siempre:</p>
+<pre class="literal-block">
+svn://zone.spip.org/spip-zone/_squelettes_/maslindos
+</pre>
+<p>Por línea de comandos sería así:</p>
+<pre class="literal-block">
+$ svn checkout svn://zone.spip.org/spip-zone/_squelettes_/maslindos ./squelettes
+</pre>
+<p><a href="../posts/Control-de-Versiones-con.html#id1"><span class="problematic" id="id2">**</span></a>Pasos 2 y 3 **</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 133); <em><a href="../posts/Control-de-Versiones-con.html#id2">backlink</a></em></p>
+Inline strong start-string without end-string.</div>
+<p>Listo, tenemos nuetra copia de trabajo. Cada vez que queramos actualizar
+a la ultima versión, parados sobre la carpeta, hacemos <strong>update</strong></p>
+<pre class="literal-block">
+$ svn  update
+</pre>
+<p>Si somos desarrolladores, y queremos enviar nuestras modificaciones, hay
+que hacer <strong>commit</strong></p>
+<pre class="literal-block">
+$ svn  update
+</pre>
+<p>En caso de agregar archivos, hay que indicarselo a Subversion.</p>
+<pre class="literal-block">
+$ svn  add archivo1 archivo2 *jpg
+</pre>
+</div>
+<div class="section" id="un-video-vale-mas-que-mil-palabras">
+<h2>Un video vale más que mil palabras</h2>
+<p>Un ejemplo de flujo de trabajo por línea de comandos</p>
+<p>Y otro ejemplo usando TortoiseSVN sobre Windows.</p>
+</div></div>
+        <p>
+        
+            <a href="../posts/Control-de-Versiones-con.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+    <div>
+<ul class="pager"></ul></div>
+    
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

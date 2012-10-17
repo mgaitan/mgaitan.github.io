@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="IPython, la interactividad al poder | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>IPython, la interactividad al poder | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">IPython, la interactividad al poder</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2010-10-18 04:43:24">2010-10-18 04:43:24</span>   |  
+
+        
+
+        <a href="ipython-la-interactividad-al-poder.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/python.html">Python</a>
+                
+            
+        
+    </small>
+    <div><p>A lo largo de esta vida he amado, he llorado y reído, me han salido
+canas y dí algunas charlas y talleres.</p>
+<p>Me gusta la docencia, probable herencia de <a class="reference external" href="blog/article/grosa">una
+grosa</a>. Me gusta compartir lo que sé, instarme a
+aprender para compartir con otros y aprender cuando enseño. Educación
+horizontal, educación popular.</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../images/chino-garce.jpg">|image1|</a></td>
+</tr></tbody></table><p>El viernes pasado, en la
+<a class="reference external" href="blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> debía dar una de
+las primeras charlas, <em>`IPython, la interactividad al
+poder &lt;http://ar.pycon.org/2010/conference/schedule/event/91/&gt;`_</em> .
+Entró al cronograma en una segunda tanda de selección, con más sorpresa
+que el chino Garcé a Sudáfrica 2010. El problema es que para cuando me
+invitaron yo ya había descartado mi participación en PyCon y aceptado
+dar <a class="reference external" href="blog/article/charla-python-a-los-bifes">una en mi facu</a>, también
+sobre Python pero otra. Ergo, ¡tenía que preparar 2 charlas!</p>
+<p>En el medio, solucionar horribles bugs de
+<a class="reference external" href="http://code.google.com/p/gpec2010/">GPEC</a> para la release de la
+semana que viene, un casamiento a 1500 km de mi casa (por suerte no
+mío), aprender a <a class="reference external" href="http://article.gmane.org/gmane.comp.python.myhdl/1536/">diseñar
+hardware</a>,
+malabarear estres con las <a class="reference external" href="http://python.org.ar/pyar/RemerasV3">remeras de
+PyAr</a> y terminar el
+<a class="reference external" href="blog/article/gpec-2010-el-poster">poster</a> que se me ocurrió
+presentar.</p>
+<p>El contexto no favoreció a preparar la charla con anticipación. De
+hecho, pude hacerme lugar el jueves de 0:05 a 4 am para leer el manual y
+escribir lo poco que escribí. Mucha audacia teniendo en cuenta que
+algunas de las cosas que quería (de alguna manera debía) mostrar, no las
+uso/aba realmente (eso de <em>instarme a aprender</em> es posta) y más aun,
+considerando que las presentaciones con "demo" incluída son una fiesta
+orgiástica para <a class="reference external" href="http://en.wikipedia.org/wiki/Murphy's_law">Murphy</a></p>
+<p>Por eso, para descompimir la ansiedad y la casi certeza de que algo
+podía salir mal, lo primero que hice fue echarle la culpa a John Lenton,
+que fue el que
+<a class="reference external" href="http://permalink.gmane.org/gmane.org.user-groups.python.argentina/38170">incitó</a>
+a la vergüenza. La charla comienza con este disclaimer:</p>
+<pre class="literal-block">
+Disclaimer
+-----------------
+
+Todo lo que sigue es culpa de John Lenton:
+
+
+    2010/7/28 John Rowland Lenton :
+    &gt; Hola!
+    &gt;
+    &gt; Estamos organizando PyConAr. Viste? La conferencia de Python en
+    &gt; Argentina (...) te vas a dar cuenta cuando
+    &gt; estés acá en Córdoba que podrías haber presentado tu charla, y te vas
+    &gt; a sentir muy zonzo.
+</pre>
+<p>Para colmo de riesgos, descubrí algo que supongo que es un bug (TODO:
+check and report this) con la utilidad <tt class="docutils literal">Demo</tt> de IPython que usé, en
+la versión estable (0.10) y la que está en desarrollo (0.11). Por eso
+tuve que hacer un downgrade a la 0.9, que no tiene algunas cosas
+interesantes que quería mostrar (%paste, por ejemplo).</p>
+<p>Por supuesto, Murphy vino y se divirtió, pero no se burló
+sarcasticamente. Hasta que alguien me muestre un video y me ponga rojo
+de vergüenza voy a quedarme con la idea de que no estuvo tan mal. Alguno
+seguro no descrubrió nada nuevo, pero <a class="reference external" href="http://twitter.com/#!/martinvol/status/27447006335">otros parecieron
+satisfechos</a> y
+probablemente jueguen un ratito con IPython.</p>
+<div class="section" id="archivos-descarga">
+<h2>Archivos / Descarga</h2>
+<p>Como es una presentación interactiva, no hay "diapositivas". O sí, pero
+es un módulo python.</p>
+<p>Todo lo que usé (con nimios retoques respecto a lo mostrado el viernes)
+se puede bajar (o forkear) de
+<a class="reference external" href="http://github.com/nqnwebs/IPython-interactive-talk">GitHub</a> .</p>
+<pre class="literal-block">
+git clone git@github.com:nqnwebs/IPython-interactive-talk.git
+</pre>
+<p>O desde este Zip</p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="pyconar-2010-el-orgullo-de.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="gpec-2010-el-poster.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/ipython-la-interactividad-al-poder.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Referenciar figuras por número en Sphinx / Latex | tin_nqn"><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>Referenciar figuras por número en Sphinx / Latex | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Referenciar figuras por número en Sphinx / Latex</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2011-03-19 23:13:01">2011-03-19 23:13:01</span>   |  
+
+        
+
+        <a href="referenciar-figuras-por-numero-en.txt">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/python.html">Python</a>
+                
+            
+        
+    </small>
+    <div><p>El viernes presenté el draft para la revisión final de mi <a class="reference external" href="blog/article/preparados-listos-en-un-rato">proyecto
+integrador</a> (a.k.a. tesis).
+Tentativamente (¡a esta altura y todavía no es seguro!) se titula
+<em>"Software para graficación de digramas termodinámicos"</em> y se puede
+chusmear
+<a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">acá</a>.</p>
+<p>Como verán, lo hice con <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>, generando
+LaTeX y compilando luego a PDF. Estoy más que satisfecho del resultado.</p>
+<p>Sin embargo, un problema de Sphinx/Docsutils (y esto viene a ser el
+verdadero tema de este post) es es que si bien están llenos de pulentez
+y se la bancan mil, no están "pensados" para escribir tesis sino
+documentación/manuales de software. Esto se nota, sobre todo, en la
+subutilización de recursos de LaTeX a los que "no se accede" desde
+restructuredText.</p>
+<p>El caso paradigmático es la referenciación de figuras. En las versiones
+"imprimibles" que se generan con LaTeX suele pasar que una figura no
+quepa en una página y el compilador, al medir y darse cuenta, la manda a
+una página siguiente. Esto hace indispensable ser preciso en la
+referencia ya que un mensaje como <em>"en la siguiente figura"</em> puede estar
+seguido de toda una página sin figuras.</p>
+<p>Para hacer una referenciar una figura en Sphinx hay que declarar un
+target</p>
+<pre class="literal-block">
+.. _ok:
+
+.. figure:: ok.png
+
+   Una imágen
+</pre>
+<p>y luego usar el rol <tt class="docutils literal">:ref:</tt>. Por ejemplo:</p>
+<pre class="literal-block">
+Referenciando la figura :ref:`ok` se evidencia el problema.
+</pre>
+<p>El problema es que el LaTeX generado por Sphinx no hace exáctamente una
+referencia a la figura, sino un hipervínculo (hyperref). Como texto de
+ese hipevinculo usa el epígrafe de la figura, lo cual es horrible e
+inútil para textos cientificos/académicos. El issue, <a class="reference external" href="https://bitbucket.org/birkenfeld/sphinx/issue/76/proper-references-to-figures-code-tables">está reportado
+hace más de 2
+años</a>.</p>
+<p>Con el estilo gronchohacker que se me está volviendo costumbre, hice
+unos cambiecitos para que funcaran las referencias como tienen que ser,
+por número. La directiva es particularmente fácil en LaTeX: <tt class="docutils literal">~\ref{}</tt>.
+En concreto, el "gronchohackeo" se trata de cambiar
+<tt class="docutils literal"><span class="pre">{\hyperref[label]{\emph{epigrafe}}}</span></tt> por <tt class="docutils literal">~\ref{label}</tt>.</p>
+<p>Para garantizar compatibilidad con los que les gusta que el título de la
+referencia sea el epígrafe y no el número, lo hice opcional: toda
+referencia a un destino con sufijo <tt class="docutils literal"><span class="pre">-num</span></tt> usa una referencia númerica
+en vez de un hipervinculo con texto.</p>
+<p>Acá el patch (para la versión 1.1 —en desarrollo— )</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/sphinx-issue76.txt">|image1|</a></td>
+</tr><tr><td>Diff Parche para el Issue #76 de Sphinx</td>
+</tr></tbody></table><p>Y acá un ejemplo del problema y la gronchosolución</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="../downloads/prueba.pdf">|image3|</a></td>
+</tr></tbody></table><p>El código del ejemplo es este:</p>
+<pre class="literal-block">
+Ejemplo
+*******
+
+Referenciando la figura :ref:`ok` se evidencia el problema. Aplicando mi
+rústico parche en cambio, se puede referenciar a la Figura :ref:`ok-num`.
+
+.. _ok:
+
+.. figure:: ok.png
+
+   Una imágen
+
+.. _ok-num:
+
+.. figure:: ok.png
+</pre></div>
+    <ul class="pager"><li class="previous">
+            <a href="yendo-a-las-fuentes-de-cuevana-tv.html">← Post anterior</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="el-quijote-del-software-libre.html">Siguiente post  →</a>
+        </li>
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/referenciar-figuras-por-numero-en.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>
