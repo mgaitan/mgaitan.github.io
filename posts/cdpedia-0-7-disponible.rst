@@ -14,8 +14,7 @@ La imágen de CD (.iso) se puede descargar desde acá:
   `CDPedia 0.7 </downloads/cdpedia-CD-0.7.iso>`_              
   CD 701Mb - 93500 artículos, 10% de imágenes   			  
 
-
- `CDPedia 0.7 </downloads/cdpedia-DVD5-0.7.iso>`_           
+ `CDPedia 0.7 DVD </downloads/cdpedia-DVD5-0.7.iso>`_           
   DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.   			 
 
 

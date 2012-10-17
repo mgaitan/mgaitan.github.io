@@ -105,12 +105,12 @@ extremadamente fácil usando
 
    $ git clone git://repo.or.cz/fast-export.git
 
-2. Convertir!::
+2. Convertir! ::
 
-  $ mkdir repo_git
-  $ cd repo_git
-  $ git init 
-  $ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
+   $ mkdir repo_git
+   $ cd repo_git
+   $ git init 
+   $ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
 
 ¡Charánnnn...!
 
@@ -122,7 +122,7 @@ exaclty one head each..."*.
 El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
 original que sin perder la historia útil.
 
-Parafraseando a Lito, *si la historia la escriben los que ganan ...
+Parafraseando a Lito, *si la historia la escriben los que ganan* ...
 ¿ganamos ? 
 
 .. youtube:: 3mkhn6oiqCM

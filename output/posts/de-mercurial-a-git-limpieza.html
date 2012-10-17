@@ -129,29 +129,23 @@ extremadamente fácil usando
 $ git clone git://repo.or.cz/fast-export.git
 </pre>
 </li>
-<li><p class="first">Convertir!:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 110)</p>
-<p>Literal block expected; none found.</p>
-</div>
-</li>
-</ol><blockquote>
+<li><p class="first">Convertir!</p>
+<pre class="literal-block">
 $ mkdir repo_git
 $ cd repo_git
 $ git init
-$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force</blockquote>
-<p>¡Charánnnn...!</p>
+$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
+</pre>
+</li>
+</ol><p>¡Charánnnn...!</p>
 <p>El flag <tt class="docutils literal"><span class="pre">--force</span></tt> era necesario en mi caso porque, como explica el
 <a class="reference external" href="http://repo.or.cz/w/fast-export.git/blob_plain/master:/hg-fast-export.txt">readme.txt</a>
 <em>"hg-fast-export supports multiple branches but only named branches with
 exaclty one head each..."</em>.</p>
 <p>El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
 original que sin perder la historia útil.</p>
-<p>Parafraseando a Lito, <a href="de-mercurial-a-git-limpieza.html#id1"><span class="problematic" id="id2">*</span></a>si la historia la escriben los que ganan ...
+<p>Parafraseando a Lito, <em>si la historia la escriben los que ganan</em> ...
 ¿ganamos ?</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 125); <em><a href="de-mercurial-a-git-limpieza.html#id2">backlink</a></em></p>
-Inline emphasis start-string without end-string.</div>
 <iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;hd=1&amp;wmode=transparent">
 </iframe>
 </div></div>

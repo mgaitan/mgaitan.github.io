@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Wed, 17 Oct 2012 11:18:54 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
+<rss version="2.0"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Wed, 17 Oct 2012 11:56:14 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
 &lt;p class="last"&gt;El pipe tiene un problema con las fechas y qued&amp;#243; deactualizado
 cuando cambi&amp;#243; en el html de G+. En su defecto hice este peque&amp;#241;o
@@ -57,11 +57,11 @@ pipe&lt;/a&gt;
 del que se puede obtener, por ejemplo, un &lt;a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;amp;_render=rss&amp;amp;google_plus_id=102449284377784435533"&gt;feed RSS 2.0 de mis
 +1s&lt;/a&gt;
 . Pod&amp;#233;s obtener el feed de otros usuarios as&amp;#237;:&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;amp;_render=rss&amp;amp;google_plus_id=[GOOGLE_PLUS_ID]&lt;/span&gt; ``
-donde &lt;span class="pre"&gt;``[GOOGLE_PLUS_ID]&lt;/span&gt;&lt;/tt&gt; es el numero de identificaci&amp;#243;n del usuario en
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;amp;_render=rss&amp;amp;google_plus_id=[GOOGLE_PLUS_ID]&lt;/span&gt;&lt;/tt&gt;
+donde &lt;tt class="docutils literal"&gt;[GOOGLE_PLUS_ID]&lt;/tt&gt; es el numero de identificaci&amp;#243;n del usuario en
 cuesti&amp;#243;n.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="/posts/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;&lt;/div&gt;
+&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;&lt;/div&gt;
 &lt;/div&gt;</description><guid>/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y f&amp;#225;cil de usar.&lt;/p&gt;
