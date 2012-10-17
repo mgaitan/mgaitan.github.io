@@ -63,11 +63,11 @@ del que se puede obtener, por ejemplo, un `feed RSS 2.0 de mis
 +1s <http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&_render=rss&google_plus_id=102449284377784435533>`_
 . Podés obtener el feed de otros usuarios así:
 
-``http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&_render=rss&google_plus_id=[GOOGLE_PLUS_ID] ``
+``http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&_render=rss&google_plus_id=[GOOGLE_PLUS_ID]``
 donde ``[GOOGLE_PLUS_ID]`` es el numero de identificación del usuario en
 cuestión.
 
-.. figure:: local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png
+.. figure:: http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png
    :align: center
-   :alt: 
+   
 

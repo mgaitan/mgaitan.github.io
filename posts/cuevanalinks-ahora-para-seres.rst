@@ -1,4 +1,4 @@
-.. warning:: 
+.. important:: 
 
 	Cuevanlinks está desmantenido y con los cambios en cuevana.tv ya no 
 	funciona. No es complicado actualizarlo, pero yo no tengo tiempo. 
@@ -23,11 +23,13 @@ que no resolvemos del todo) pero ya ofrece ciertas ventajas sobre la
 versión para línea de comandos:
 
 * Permite elegir qué se descarga cuando se hace una búsqueda de
-películas
+  películas
+
 * Te deja armar una cola de descargas de muchas cosas distintas
-haciendo muchas busquedas
+  haciendo muchas busquedas
+
 * Y, lo más importante, lo puede instalar y usar un ser humano
-normal. :D
+  normal. :D
 
 Para Windows, hay un instalador de la versión 0.5dev (el dev denota que
 está en desarrollo, se entiende) que se puede descargar desde acá:
