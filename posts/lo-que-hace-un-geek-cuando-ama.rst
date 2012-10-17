@@ -4,7 +4,10 @@ placa madre `Asus
 K8N <http://www.asus.com/Motherboards/AMD_Socket_754/K8N>`_ que se la
 sigue bancando.
 
-|image0|
+.. image:: /images/1110133923_20ebd-30987.jpg
+   :align: center
+
+
 Aquel año me enamoré, no por primera vez, pero sí mucho. Aunque resultó
 una `historia
 complicada <http://www.textosypretextos.com.ar/Hurgando-en-el-Gmail>`_,
@@ -17,7 +20,7 @@ El tatuaje digital
 Hay `gestos de amor <http://www.ascodevida.com/amor/42152>`_ que no
 miden consecuencias y son dificiles de comprender. Yo, por ejemplo,
 decidí "hackear" la BIOS de mi maquina recién comprada y poner una foto
-de aquella mujer amada omo pantalla de splash, esa que se muestra apenas
+de aquella mujer amada como pantalla de splash, esa que se muestra apenas
 se enciende la computadora, mucho antes de cargar cualquier sistema
 operativo.
 
@@ -54,7 +57,7 @@ La
 `solución <http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html>`_
 es usar `FreeDOS <http://www.freedos.org/>`_
 
-::
+.. code-block:: bash
 
     # obtener una imagen booteable de freeDOS y montarla en un directorio
     wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
@@ -78,10 +81,7 @@ es usar `FreeDOS <http://www.freedos.org/>`_
     mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
     cdrecord -v bootcd.iso
 
-Reinciar, bootear el CD de FreeDOS y ejecutar
-
-::
+Reinciar, bootear el CD de FreeDOS y ejecutar::
 
     afudos /i1011.rom
 
-.. |image0| image:: /images/1110133923_20ebd-30987.jpg

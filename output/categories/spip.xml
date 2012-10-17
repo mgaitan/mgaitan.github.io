@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (spip)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:37:26 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
+<rss version="2.0"><channel><title>tin_nqn (spip)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Wed, 17 Oct 2012 11:18:54 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco m&amp;#225;s bonito. Como es un proceso iterativo,&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;div class="section" id="github-nikola"&gt;
@@ -10,17 +10,18 @@ el servicio de hosting gratuito de contenido est&amp;#225;tico que ofrece Github
 el contenido del branch &lt;em&gt;gh-page&lt;/em&gt; del proyecto en cuesti&amp;#243;n,
 para usar gh-pages por usuario hay que crear
 un repo llamado &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt;.github.com (donde &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt; es el tuyo)
-y lo que sirve en &lt;a class="reference external" href="http:/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch &lt;em&gt;master&lt;/em&gt;&lt;/p&gt;
+y lo que sirve en &lt;a class="reference external" href="http:/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch
+&lt;em&gt;master&lt;/em&gt; (&lt;a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages"&gt;referencia&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;Por este motivo cre&amp;#233; otro branch (que sin mucha imaginaci&amp;#243;n denomin&amp;#233;
 &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing"&gt;writing&lt;/a&gt; )
 donde tengo todo el mi "proyecto" hecho con Nikola&lt;/p&gt;
 &lt;p&gt;All&amp;#237; escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;El branch master es el de deploy, y sirve todo lo que haya en la carpeta
-&lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que a master,
+&lt;p&gt;El branch master es el de deploy y sirve todo lo que haya en la carpeta
+&lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que ir a &lt;em&gt;master&lt;/em&gt;,
 borrar todo y leer desde el &amp;#225;rbol del otro branch con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 git checkout master
-git rm *
+git rm *    # s&amp;#243;lo la primera vez
 git read-tree writing:output
 git commit -m 'deploying last build'
 git push
@@ -37,17 +38,18 @@ Esto es {{negrita}} y este [mi twitter-&amp;gt;http://twitter.com/tin_nqn_]
 &lt;/pre&gt;
 &lt;p&gt;Hasta ah&amp;#237; no se ve tan mal, pero es muy limitado cuando se trata de mostrar
 c&amp;#243;digo, necesario en todo blog mas o menos t&amp;#233;cnico.&lt;/p&gt;
-&lt;p&gt;Para migrar esquive la idea de convertir el markup de spip y opt&amp;#233; por un
+&lt;p&gt;Para migrar esquiv&amp;#233; la idea de convertir el markup de spip y opt&amp;#233; por un
 scrapping, limpieza y conversi&amp;#243;n a restructuredText usando el m&amp;#225;gico
-&lt;a class="reference external" href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;El script que hice est&amp;#225; &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;ac&amp;#225;&lt;/a&gt;
+&lt;a class="reference external" href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt; (y la ayuda de PyQuery)&lt;/p&gt;
+&lt;p&gt;El script que hice est&amp;#225;
+&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;ac&amp;#225;&lt;/a&gt;
 . No es perfecto, pero est&amp;#225; lo importante: contenidos, im&amp;#225;genes, adjuntos,
 convertido a restructuredText bastante decente que mejorar&amp;#233; poco a poco
 a mano.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="estilos"&gt;
 &lt;h2&gt;Estilos&lt;/h2&gt;
-&lt;p&gt;Es mentira que a los &amp;#241;o&amp;#241;os no nos gustan las cosas (los blogs, entre otras )
+&lt;p&gt;Es mentira que a los &amp;#241;o&amp;#241;os no nos gustan las cosas (los blogs, entre otras)
 que se ven bonitos. Sucede, en realidad, que la mayor&amp;#237;a de las veces no
 venimos con &lt;em&gt;esa&lt;/em&gt; habilidad y el esfuerzo que nos implica intentarlo
 preferimos ponerlo en otra cosa. No gusta, pero no es lo m&amp;#225;s importante.&lt;/p&gt;
@@ -62,7 +64,7 @@ de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask
 &lt;h2&gt;Disqus&lt;/h2&gt;
 &lt;p&gt;El blog viejo usaba &lt;a class="reference external" href="http://disqus.com"&gt;Disqus&lt;/a&gt;, con un &lt;a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html"&gt;plugin&lt;/a&gt; que hice hace algun tiempo.
 Para migrar los comentarios utilic&amp;#233; el m&amp;#233;todo de subir un CSV con
-el formato:&lt;/p&gt;
+el formato que genera el mismo script de migraci&amp;#243;n:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 URL_POST_X_OLD, URL_POST_X_NEW
 URL_POST_Y_OLD, URL_POST_Y_NEW

@@ -58,17 +58,18 @@ el servicio de hosting gratuito de contenido estático que ofrece Github.</p>
 el contenido del branch <em>gh-page</em> del proyecto en cuestión,
 para usar gh-pages por usuario hay que crear
 un repo llamado <em>&lt;username&gt;</em>.github.com (donde <em>&lt;username&gt;</em> es el tuyo)
-y lo que sirve en <a class="reference external" href="../">http:/</a>/&lt;username&gt;.github.com es directamente el branch <em>master</em></p>
+y lo que sirve en <a class="reference external" href="../">http:/</a>/&lt;username&gt;.github.com es directamente el branch
+<em>master</em> (<a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages">referencia</a>)</p>
 <p>Por este motivo creé otro branch (que sin mucha imaginación denominé
 <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing">writing</a> )
 donde tengo todo el mi "proyecto" hecho con Nikola</p>
 <p>Allí escribo, intento mejorar mi <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom">theme</a>, y corro <tt class="docutils literal">nikola build</tt>.</p>
-<p>El branch master es el de deploy, y sirve todo lo que haya en la carpeta
-<tt class="docutils literal">output/</tt> del branch <tt class="docutils literal">writing</tt>. Para hacer <a class="reference external" href="http://stackoverflow.com/a/10591668">esto</a> hay que a master,
+<p>El branch master es el de deploy y sirve todo lo que haya en la carpeta
+<tt class="docutils literal">output/</tt> del branch <tt class="docutils literal">writing</tt>. Para hacer <a class="reference external" href="http://stackoverflow.com/a/10591668">esto</a> hay que ir a <em>master</em>,
 borrar todo y leer desde el árbol del otro branch con <tt class="docutils literal"><span class="pre">read-tree</span></tt></p>
 <pre class="literal-block">
 git checkout master
-git rm *
+git rm *    # sólo la primera vez
 git read-tree writing:output
 git commit -m 'deploying last build'
 git push
@@ -85,17 +86,18 @@ Esto es {{negrita}} y este [mi twitter-&gt;http://twitter.com/tin_nqn_]
 </pre>
 <p>Hasta ahí no se ve tan mal, pero es muy limitado cuando se trata de mostrar
 código, necesario en todo blog mas o menos técnico.</p>
-<p>Para migrar esquive la idea de convertir el markup de spip y opté por un
+<p>Para migrar esquivé la idea de convertir el markup de spip y opté por un
 scrapping, limpieza y conversión a restructuredText usando el mágico
-<a class="reference external" href="http://johnmacfarlane.net/pandoc">Pandoc</a>.</p>
-<p>El script que hice está <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py">acá</a>
+<a class="reference external" href="http://johnmacfarlane.net/pandoc">Pandoc</a> (y la ayuda de PyQuery)</p>
+<p>El script que hice está
+<a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py">acá</a>
 . No es perfecto, pero está lo importante: contenidos, imágenes, adjuntos,
 convertido a restructuredText bastante decente que mejoraré poco a poco
 a mano.</p>
 </div>
 <div class="section" id="estilos">
 <h2>Estilos</h2>
-<p>Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras )
+<p>Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras)
 que se ven bonitos. Sucede, en realidad, que la mayoría de las veces no
 venimos con <em>esa</em> habilidad y el esfuerzo que nos implica intentarlo
 preferimos ponerlo en otra cosa. No gusta, pero no es lo más importante.</p>
@@ -110,7 +112,7 @@ de <a class="reference external" href="http://flask.pocoo.org/docs/">Flask</a> <
 <h2>Disqus</h2>
 <p>El blog viejo usaba <a class="reference external" href="http://disqus.com">Disqus</a>, con un <a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html">plugin</a> que hice hace algun tiempo.
 Para migrar los comentarios utilicé el método de subir un CSV con
-el formato:</p>
+el formato que genera el mismo script de migración:</p>
 <pre class="literal-block">
 URL_POST_X_OLD, URL_POST_X_NEW
 URL_POST_Y_OLD, URL_POST_Y_NEW

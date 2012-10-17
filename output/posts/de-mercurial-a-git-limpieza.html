@@ -37,7 +37,7 @@
     </small>
     <div><p>Cuando decidí dar el salto desde Subversion a un DVCS estuve leyendo
 muchos posts comparativos entre las dos opciones más relevantes, Git y
-mercurial. Había que elegir entre <a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/">Mc Gyver o James
+Mercurial. Había que elegir entre <a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/">Mc Gyver o James
 Bond</a>
 decía uno, entre <a class="reference external" href="http://www.ericsink.com/entries/hg_denzel.html">Denzel Washington y Wesley
 Snipes</a> y la
@@ -103,16 +103,18 @@ punta</a>
 usando la extensión <a class="reference external" href="http://mercurial.selenic.com/wiki/ConvertExtension#Converting_from_Mercurial">hg convert para obtener un subconjunto de repo
 original</a>,
 por ejemplo, partiendo de un determinado cambio.</p>
-<p><img alt="-" src="local/cache-vignettes/L8xH11/puce-32883.gif"> 1. Primero, activar la extensión editando <tt class="docutils literal"><span class="pre">~/.hgrc</span></tt></p>
+<ol class="arabic"><li><p class="first">Primero, activar la extensión editando <tt class="docutils literal"><span class="pre">~/.hgrc</span></tt>:</p>
 <pre class="literal-block">
 [extensions]
 convert =
 </pre>
-<p><img alt="image1" src="local/cache-vignettes/L8xH11/puce-32883.gif"> 2. ¡Tirar las cajas del placard!</p>
+</li>
+<li><p class="first">¡Tirar las cajas del placard!</p>
 <pre class="literal-block">
 $ hg convert --config convert.hg.startrev=1 repo_hg_orig/ repo_hg_liviano/
 </pre>
-<p>En mi caso yo queria todo desde la revision 1. <strong>Atenti</strong>: como explica,
+</li>
+</ol><p>En mi caso yo queria todo desde la revision 1. <strong>Atenti</strong>: como explica,
 esto genera un repo totalmente nuevo, con ids distintos para los
 changesets, de modo que no se puede mantener "sincronizados" ambos con
 el mismo cambio (al menos no de manera directa).</p>
@@ -122,17 +124,22 @@ el mismo cambio (al menos no de manera directa).</p>
 <p>Contra todo pronóstico fruto de mi prejuicio y desidia, migrar a git fue
 extremadamente fácil usando
 <a class="reference external" href="http://repo.or.cz/w/fast-export.git">hg-fast-export</a>.</p>
-<p><img alt="image2" src="local/cache-vignettes/L8xH11/puce-32883.gif"> 1. Obtener los scripts</p>
+<ol class="arabic"><li><p class="first">Obtener los scripts</p>
 <pre class="literal-block">
 $ git clone git://repo.or.cz/fast-export.git
 </pre>
-<p><img alt="image3" src="local/cache-vignettes/L8xH11/puce-32883.gif"> 2. Convertir!</p>
-<pre class="literal-block">
+</li>
+<li><p class="first">Convertir!:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 110)</p>
+<p>Literal block expected; none found.</p>
+</div>
+</li>
+</ol><blockquote>
 $ mkdir repo_git
 $ cd repo_git
 $ git init
-$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
-</pre>
+$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force</blockquote>
 <p>¡Charánnnn...!</p>
 <p>El flag <tt class="docutils literal"><span class="pre">--force</span></tt> era necesario en mi caso porque, como explica el
 <a class="reference external" href="http://repo.or.cz/w/fast-export.git/blob_plain/master:/hg-fast-export.txt">readme.txt</a>
@@ -140,8 +147,13 @@ $ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
 exaclty one head each..."</em>.</p>
 <p>El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
 original que sin perder la historia útil.</p>
-<p>Parafraseando a Lito, <em>si la historia la escriben los que ganan ...
-¿ganamos ?</em></p>
+<p>Parafraseando a Lito, <a href="de-mercurial-a-git-limpieza.html#id1"><span class="problematic" id="id2">*</span></a>si la historia la escriben los que ganan ...
+¿ganamos ?</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 125); <em><a href="de-mercurial-a-git-limpieza.html#id2">backlink</a></em></p>
+Inline emphasis start-string without end-string.</div>
+<iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;hd=1&amp;wmode=transparent">
+</iframe>
 </div></div>
     <ul class="pager"><li class="previous">
             <a href="como-volver-a-compartir-desde.html">← Post anterior</a>

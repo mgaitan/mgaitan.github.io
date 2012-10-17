@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:37:26 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Wed, 17 Oct 2012 11:18:54 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco m&amp;#225;s bonito. Como es un proceso iterativo,&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;div class="section" id="github-nikola"&gt;
@@ -10,17 +10,18 @@ el servicio de hosting gratuito de contenido est&amp;#225;tico que ofrece Github
 el contenido del branch &lt;em&gt;gh-page&lt;/em&gt; del proyecto en cuesti&amp;#243;n,
 para usar gh-pages por usuario hay que crear
 un repo llamado &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt;.github.com (donde &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt; es el tuyo)
-y lo que sirve en &lt;a class="reference external" href="http:/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch &lt;em&gt;master&lt;/em&gt;&lt;/p&gt;
+y lo que sirve en &lt;a class="reference external" href="http:/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch
+&lt;em&gt;master&lt;/em&gt; (&lt;a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages"&gt;referencia&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;Por este motivo cre&amp;#233; otro branch (que sin mucha imaginaci&amp;#243;n denomin&amp;#233;
 &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing"&gt;writing&lt;/a&gt; )
 donde tengo todo el mi "proyecto" hecho con Nikola&lt;/p&gt;
 &lt;p&gt;All&amp;#237; escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;El branch master es el de deploy, y sirve todo lo que haya en la carpeta
-&lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que a master,
+&lt;p&gt;El branch master es el de deploy y sirve todo lo que haya en la carpeta
+&lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que ir a &lt;em&gt;master&lt;/em&gt;,
 borrar todo y leer desde el &amp;#225;rbol del otro branch con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 git checkout master
-git rm *
+git rm *    # s&amp;#243;lo la primera vez
 git read-tree writing:output
 git commit -m 'deploying last build'
 git push
@@ -37,17 +38,18 @@ Esto es {{negrita}} y este [mi twitter-&amp;gt;http://twitter.com/tin_nqn_]
 &lt;/pre&gt;
 &lt;p&gt;Hasta ah&amp;#237; no se ve tan mal, pero es muy limitado cuando se trata de mostrar
 c&amp;#243;digo, necesario en todo blog mas o menos t&amp;#233;cnico.&lt;/p&gt;
-&lt;p&gt;Para migrar esquive la idea de convertir el markup de spip y opt&amp;#233; por un
+&lt;p&gt;Para migrar esquiv&amp;#233; la idea de convertir el markup de spip y opt&amp;#233; por un
 scrapping, limpieza y conversi&amp;#243;n a restructuredText usando el m&amp;#225;gico
-&lt;a class="reference external" href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;El script que hice est&amp;#225; &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;ac&amp;#225;&lt;/a&gt;
+&lt;a class="reference external" href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt; (y la ayuda de PyQuery)&lt;/p&gt;
+&lt;p&gt;El script que hice est&amp;#225;
+&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;ac&amp;#225;&lt;/a&gt;
 . No es perfecto, pero est&amp;#225; lo importante: contenidos, im&amp;#225;genes, adjuntos,
 convertido a restructuredText bastante decente que mejorar&amp;#233; poco a poco
 a mano.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="estilos"&gt;
 &lt;h2&gt;Estilos&lt;/h2&gt;
-&lt;p&gt;Es mentira que a los &amp;#241;o&amp;#241;os no nos gustan las cosas (los blogs, entre otras )
+&lt;p&gt;Es mentira que a los &amp;#241;o&amp;#241;os no nos gustan las cosas (los blogs, entre otras)
 que se ven bonitos. Sucede, en realidad, que la mayor&amp;#237;a de las veces no
 venimos con &lt;em&gt;esa&lt;/em&gt; habilidad y el esfuerzo que nos implica intentarlo
 preferimos ponerlo en otra cosa. No gusta, pero no es lo m&amp;#225;s importante.&lt;/p&gt;
@@ -62,7 +64,7 @@ de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask
 &lt;h2&gt;Disqus&lt;/h2&gt;
 &lt;p&gt;El blog viejo usaba &lt;a class="reference external" href="http://disqus.com"&gt;Disqus&lt;/a&gt;, con un &lt;a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html"&gt;plugin&lt;/a&gt; que hice hace algun tiempo.
 Para migrar los comentarios utilic&amp;#233; el m&amp;#233;todo de subir un CSV con
-el formato:&lt;/p&gt;
+el formato que genera el mismo script de migraci&amp;#243;n:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 URL_POST_X_OLD, URL_POST_X_NEW
 URL_POST_Y_OLD, URL_POST_Y_NEW
@@ -88,7 +90,7 @@ que explicar&amp;#233; m&amp;#225;s adelante, estoy migrandolo a &lt;a class="re
 &lt;p&gt;Espero que pronto esto est&amp;#233; m&amp;#225;s bonito y con contenido. Tambi&amp;#233;n que la
 mudanza y el cambio de herramienta (y paradigma) me ayude a escribir m&amp;#225;s.&lt;/p&gt;</description><guid>/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>De mercurial a git, limpieza mediante</title><link>/posts/de-mercurial-a-git-limpieza.html</link><description>&lt;p&gt;Cuando decid&amp;#237; dar el salto desde Subversion a un DVCS estuve leyendo
 muchos posts comparativos entre las dos opciones m&amp;#225;s relevantes, Git y
-mercurial. Hab&amp;#237;a que elegir entre &lt;a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/"&gt;Mc Gyver o James
+Mercurial. Hab&amp;#237;a que elegir entre &lt;a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/"&gt;Mc Gyver o James
 Bond&lt;/a&gt;
 dec&amp;#237;a uno, entre &lt;a class="reference external" href="http://www.ericsink.com/entries/hg_denzel.html"&gt;Denzel Washington y Wesley
 Snipes&lt;/a&gt; y la
@@ -154,16 +156,18 @@ punta&lt;/a&gt;
 usando la extensi&amp;#243;n &lt;a class="reference external" href="http://mercurial.selenic.com/wiki/ConvertExtension#Converting_from_Mercurial"&gt;hg convert para obtener un subconjunto de repo
 original&lt;/a&gt;,
 por ejemplo, partiendo de un determinado cambio.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; 1. Primero, activar la extensi&amp;#243;n editando &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.hgrc&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Primero, activar la extensi&amp;#243;n editando &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.hgrc&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 [extensions]
 convert =
 &lt;/pre&gt;
-&lt;p&gt;&lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; 2. &amp;#161;Tirar las cajas del placard!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&amp;#161;Tirar las cajas del placard!&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ hg convert --config convert.hg.startrev=1 repo_hg_orig/ repo_hg_liviano/
 &lt;/pre&gt;
-&lt;p&gt;En mi caso yo queria todo desde la revision 1. &lt;strong&gt;Atenti&lt;/strong&gt;: como explica,
+&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;En mi caso yo queria todo desde la revision 1. &lt;strong&gt;Atenti&lt;/strong&gt;: como explica,
 esto genera un repo totalmente nuevo, con ids distintos para los
 changesets, de modo que no se puede mantener "sincronizados" ambos con
 el mismo cambio (al menos no de manera directa).&lt;/p&gt;
@@ -173,17 +177,22 @@ el mismo cambio (al menos no de manera directa).&lt;/p&gt;
 &lt;p&gt;Contra todo pron&amp;#243;stico fruto de mi prejuicio y desidia, migrar a git fue
 extremadamente f&amp;#225;cil usando
 &lt;a class="reference external" href="http://repo.or.cz/w/fast-export.git"&gt;hg-fast-export&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image2" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; 1. Obtener los scripts&lt;/p&gt;
+&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Obtener los scripts&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ git clone git://repo.or.cz/fast-export.git
 &lt;/pre&gt;
-&lt;p&gt;&lt;img alt="image3" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; 2. Convertir!&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Convertir!:&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 110)&lt;/p&gt;
+&lt;p&gt;Literal block expected; none found.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;blockquote&gt;
 $ mkdir repo_git
 $ cd repo_git
 $ git init
-$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
-&lt;/pre&gt;
+$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force&lt;/blockquote&gt;
 &lt;p&gt;&amp;#161;Char&amp;#225;nnnn...!&lt;/p&gt;
 &lt;p&gt;El flag &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--force&lt;/span&gt;&lt;/tt&gt; era necesario en mi caso porque, como explica el
 &lt;a class="reference external" href="http://repo.or.cz/w/fast-export.git/blob_plain/master:/hg-fast-export.txt"&gt;readme.txt&lt;/a&gt;
@@ -191,9 +200,21 @@ $ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
 exaclty one head each..."&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
 original que sin perder la historia &amp;#250;til.&lt;/p&gt;
-&lt;p&gt;Parafraseando a Lito, &lt;em&gt;si la historia la escriben los que ganan ...
-&amp;#191;ganamos ?&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;</description><guid>/posts/de-mercurial-a-git-limpieza.html</guid><pubDate>Mon, 02 Jul 2012 17:39:11 GMT</pubDate></item><item><title>Cómo volver a compartir desde Google Reader</title><link>/posts/como-volver-a-compartir-desde.html</link><description>&lt;p&gt;Desde hace much&amp;#237;simo tengo en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;mi otro
+&lt;p&gt;Parafraseando a Lito, &lt;a href="/posts/de-mercurial-a-git-limpieza.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;*&lt;/span&gt;&lt;/a&gt;si la historia la escriben los que ganan ...
+&amp;#191;ganamos ?&lt;/p&gt;
+&lt;div class="system-message" id="id1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 125); &lt;em&gt;&lt;a href="/posts/de-mercurial-a-git-limpieza.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline emphasis start-string without end-string.&lt;/div&gt;
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description><guid>/posts/de-mercurial-a-git-limpieza.html</guid><pubDate>Mon, 02 Jul 2012 17:39:11 GMT</pubDate></item><item><title>Cómo volver a compartir desde Google Reader</title><link>/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
+&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
+&lt;p class="last"&gt;El pipe tiene un problema con las fechas y qued&amp;#243; deactualizado
+cuando cambi&amp;#243; en el html de G+. En su defecto hice este peque&amp;#241;o
+&lt;a class="reference external" href="https://gist.github.com/2886591"&gt;scrapper&lt;/a&gt; que es lo que uso
+en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;Textos y Pretextos&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Desde hace much&amp;#237;simo tengo en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;mi otro
 blog&lt;/a&gt; una secci&amp;#243;n que se llama &lt;em&gt;"De
 por ah&amp;#237;, cosas que me parecieron interesantes"&lt;/em&gt;. Es un feed de links a
 contenidos de toda &amp;#237;ndole (pol&amp;#237;tica, literatura, cine, fotograf&amp;#237;a,
@@ -254,8 +275,7 @@ desarrollador de software, es del 2005. La "morocha", una AMD64 con
 placa madre &lt;a class="reference external" href="http://www.asus.com/Motherboards/AMD_Socket_754/K8N"&gt;Asus
 K8N&lt;/a&gt; que se la
 sigue bancando.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image0" src="/images/1110133923_20ebd-30987.jpg"&gt;
-Aquel a&amp;#241;o me enamor&amp;#233;, no por primera vez, pero s&amp;#237; mucho. Aunque result&amp;#243;
+&lt;img alt="/images/1110133923_20ebd-30987.jpg" class="align-center" src="/images/1110133923_20ebd-30987.jpg"&gt;&lt;p&gt;Aquel a&amp;#241;o me enamor&amp;#233;, no por primera vez, pero s&amp;#237; mucho. Aunque result&amp;#243;
 una &lt;a class="reference external" href="http://www.textosypretextos.com.ar/Hurgando-en-el-Gmail"&gt;historia
 complicada&lt;/a&gt;,
 es lindo recordar cuanto uno es capaz de amar y ser amado. Y reirse,
@@ -265,7 +285,7 @@ tambi&amp;#233;n, de cu&amp;#225;n est&amp;#250;pido se puede ser en ese estado.
 &lt;p&gt;Hay &lt;a class="reference external" href="http://www.ascodevida.com/amor/42152"&gt;gestos de amor&lt;/a&gt; que no
 miden consecuencias y son dificiles de comprender. Yo, por ejemplo,
 decid&amp;#237; "hackear" la BIOS de mi maquina reci&amp;#233;n comprada y poner una foto
-de aquella mujer amada omo pantalla de splash, esa que se muestra apenas
+de aquella mujer amada como pantalla de splash, esa que se muestra apenas
 se enciende la computadora, mucho antes de cargar cualquier sistema
 operativo.&lt;/p&gt;
 &lt;p&gt;Si bien por entonces ya usaba linux, para hacer esto us&amp;#233; una aplicaci&amp;#243;n
@@ -294,34 +314,41 @@ D.O.S.. WTF!&lt;/p&gt;
 &lt;p&gt;La
 &lt;a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html"&gt;soluci&amp;#243;n&lt;/a&gt;
 es usar &lt;a class="reference external" href="http://www.freedos.org/"&gt;FreeDOS&lt;/a&gt;&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-# obtener una imagen booteable de freeDOS y montarla en un directorio
-wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="c"&gt;# obtener una imagen booteable de freeDOS y montarla en un directorio
+&lt;/span&gt;wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
 gunzip FDOEM.144.gz
 mkdir /tmp/floppy
 mount -t vfat -o loop FDOEM.144 /tmp/floppy
 
-# obtener la herramienta para actualizar el bios y la imagen, y moverlos
-wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
+&lt;span class="c"&gt;# obtener la herramienta para actualizar el bios y la imagen, y moverlos
+&lt;/span&gt;wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
 unzip AFUDOS211.zip
 mv AFUDOS.exe /tmp/floppy
 wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
 unzip K8n1011.zip
 mv 1011.rom /tmp/floppy
 
-# desmontar
-umount /tmp/floppy
+&lt;span class="c"&gt;# desmontar
+&lt;/span&gt;umount /tmp/floppy
 
-# crear una ISO y grabar a un disco virgen
+&lt;span class="c"&gt;# crear una ISO y grabar a un disco virgen
 # (tambien se podr&amp;#237;a grabar a un pendrive)
-mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
+&lt;/span&gt;mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
 cdrecord -v bootcd.iso
+
 &lt;/pre&gt;
-&lt;p&gt;Reinciar, bootear el CD de FreeDOS y ejecutar&lt;/p&gt;
+&lt;p&gt;Reinciar, bootear el CD de FreeDOS y ejecutar:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 afudos /i1011.rom
 &lt;/pre&gt;
-&lt;/div&gt;</description><guid>/posts/lo-que-hace-un-geek-cuando-ama.html</guid><pubDate>Fri, 11 Nov 2011 20:43:47 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>/posts/cuevanalinks-ahora-para-seres.html</link><description>&lt;p&gt;Un colega al que no conozco personalmente, &lt;a class="reference external" href="http://mguillech.blogspot.com/"&gt;Mart&amp;#237;n
+&lt;/div&gt;</description><guid>/posts/lo-que-hace-un-geek-cuando-ama.html</guid><pubDate>Fri, 11 Nov 2011 20:43:47 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>/posts/cuevanalinks-ahora-para-seres.html</link><description>&lt;div class="warning"&gt;
+&lt;p class="first admonition-title"&gt;Warning&lt;/p&gt;
+&lt;p class="last"&gt;Cuevanlinks est&amp;#225; desmantenido y con los cambios en cuevana.tv ya no
+funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
+&amp;#191;Quer&amp;#233;s revivir el proyecto? &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/fork"&gt;Forkealo&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Un colega al que no conozco personalmente, &lt;a class="reference external" href="http://mguillech.blogspot.com/"&gt;Mart&amp;#237;n
 Chikilian&lt;/a&gt;, se ofreci&amp;#243; a desarrollar
 una interfaz gr&amp;#225;fica para
 &lt;a class="reference external" href="/posts/blog/article/la-sanguijuela-de-cuevana"&gt;Cuevanalinks&lt;/a&gt;.&lt;/p&gt;
@@ -329,34 +356,35 @@ una interfaz gr&amp;#225;fica para
 siempre nuevos requerimientos de mi parte, obtuvo una versi&amp;#243;n de
 Cuevanalinks-GUI, basado en &lt;a class="reference external" href="http://es.wikipedia.org/wiki/PyQt"&gt;PyQt&lt;/a&gt;&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="/posts/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png"&gt;&lt;/div&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 13)&lt;/p&gt;
-Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png"&gt;&lt;/div&gt;
 &lt;p&gt;Todav&amp;#237;a est&amp;#225; en desarrollo (hay algunos bugcitos y decisiones de dise&amp;#241;o
 que no resolvemos del todo) pero ya ofrece ciertas ventajas sobre la
 versi&amp;#243;n para l&amp;#237;nea de comandos:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Permite elegir qu&amp;#233; se descarga cuando se hace una b&amp;#250;squeda de
-pel&amp;#237;culas
-&lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Te deja armar una cola de descargas de muchas cosas distintas
+&lt;ul class="simple"&gt;&lt;li&gt;Permite elegir qu&amp;#233; se descarga cuando se hace una b&amp;#250;squeda de&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 26)&lt;/p&gt;
+Bullet list ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;pel&amp;#237;culas
+* Te deja armar una cola de descargas de muchas cosas distintas
 haciendo muchas busquedas
-&lt;img alt="image2" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Y, lo m&amp;#225;s importante, lo puede instalar y usar un ser humano
+* Y, lo m&amp;#225;s importante, lo puede instalar y usar un ser humano
 normal. :D&lt;/p&gt;
 &lt;p&gt;Para Windows, hay un instalador de la versi&amp;#243;n 0.5dev (el dev denota que
 est&amp;#225; en desarrollo, se entiende) que se puede descargar desde ac&amp;#225;:&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/cuevanalinks-0.5dev-installer.exe"&gt;|image4|&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;cuevanalinks-0.5dev-installer.exe para Windows XP o superior&lt;/td&gt;
-&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Para los linuxeros, Mart&amp;#237;n puso &lt;a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html"&gt;algunas
+&lt;div class="important"&gt;
+&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="/downloads/cuevanalinks-0.5dev-installer.exe"&gt;cuevanalinks-0.5dev-installer.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p class="last"&gt;para Windows XP o superior&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Para los linuxeros, Mart&amp;#237;n puso &lt;a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html"&gt;algunas
 instrucciones&lt;/a&gt;
-para hacerlo andar desde los fuentes.&lt;/p&gt;</description><guid>/posts/cuevanalinks-ahora-para-seres.html</guid><pubDate>Wed, 03 Aug 2011 08:51:21 GMT</pubDate></item><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;p&gt;&lt;img alt="image0" src="/images/disqus-newlod23a-8b781.gif"&gt;
-Hace tiempo me interesa el servicio
+para hacerlo andar desde los fuentes.&lt;/p&gt;</description><guid>/posts/cuevanalinks-ahora-para-seres.html</guid><pubDate>Wed, 03 Aug 2011 08:51:21 GMT</pubDate></item><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y f&amp;#225;cil de usar.&lt;/p&gt;
 &lt;p&gt;Comenc&amp;#233; un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;peque&amp;#241;o
 plugin&lt;/a&gt;
 para integrar Disqus a &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt;.&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/disqus.zip"&gt;|image2|&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Plugin Disqus para SPIP version 0.1&lt;/td&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Por ahora tiene dos componentes b&amp;#225;sicos:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;&lt;li&gt;Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
 SPIP (y su formulario) por Disqus&lt;/li&gt;
@@ -367,19 +395,25 @@ CFG&lt;/a&gt;) donde se define el &lt;em&gt;"Disqus
 shortname"&lt;/em&gt; (la identificaci&amp;#243;n unica que asignamos al sitio donde
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportaci&amp;#243;n de comentarios preexistentes,
-basta acceder a `` /?page=export_comments_to_disqus `` y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>CDPedia 0.7 disponible</title><link>/posts/cdpedia-0-7-disponible.html</link><description>&lt;p&gt;&lt;a class="reference external" href="/posts/IMG/jpg/CDPediaactiob9e9.jpg"&gt;|JPEG|&lt;/a&gt; &lt;a class="reference external" href="http://www.python.org.ar"&gt;Python
-Argentina&lt;/a&gt; se complace en informar que est&amp;#225;
+basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>CDPedia 0.7 disponible</title><link>/posts/cdpedia-0-7-disponible.html</link><description>&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg" class="align-left" src="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg"&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.python.org.ar"&gt;Python Argentina&lt;/a&gt; se complace en informar que est&amp;#225;
 disponible la &lt;a class="reference external" href="http://cdpedia.python.org.ar/"&gt;versi&amp;#243;n 0.7 de CDPedia&lt;/a&gt;
 , un proyecto de la comunidad para disponer de los contenidos de
 &lt;a class="reference external" href="http://es.wikipedia.org"&gt;Wikipedia en espa&amp;#241;ol&lt;/a&gt; sin acceso a internet,
 usando un CD o DVD como soporte de la informaci&amp;#243;n.&lt;/p&gt;
 &lt;p&gt;La im&amp;#225;gen de CD (.iso) se puede descargar desde ac&amp;#225;:&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/cdpedia-CD-0.7.iso"&gt;|image2|&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CDPedia 0.7 - CD 701Mb - 93500 art&amp;#237;culos, 10% de im&amp;#225;genes&lt;/td&gt;
-&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/cdpedia-DVD5-0.7.iso"&gt;|image4|&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CDPedia 0.7 - DVD 4.4gb - Todos los art&amp;#237;culos (886 mil), 45% de im&amp;#225;genes.&lt;/td&gt;
-&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;M&amp;#225;s informaci&amp;#243;n en
+&lt;div class="important"&gt;
+&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="/downloads/cdpedia-CD-0.7.iso"&gt;CDPedia 0.7&lt;/a&gt;
+CD 701Mb - 93500 art&amp;#237;culos, 10% de im&amp;#225;genes&lt;/blockquote&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 21); &lt;em&gt;&lt;a href="/posts/cdpedia-0-7-disponible.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Duplicate explicit target name: "cdpedia 0.7".&lt;/div&gt;
+&lt;dl class="last docutils"&gt;&lt;dt&gt;&lt;a class="reference external" href="/downloads/cdpedia-DVD5-0.7.iso"&gt;CDPedia 0.7&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;DVD 4.4gb - Todos los art&amp;#237;culos (886 mil), 45% de im&amp;#225;genes.&lt;/dd&gt;
+&lt;/dl&gt;&lt;/div&gt;
+&lt;p&gt;M&amp;#225;s informaci&amp;#243;n en
 &lt;a class="reference external" href="http://cdpedia.python.org.ar/"&gt;http://cdpedia.python.org.ar/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Esta versi&amp;#243;n de CDPedia es la que se distribuir&amp;#225; a todas las escuelas de
 Argentina a trav&amp;#233;s de &lt;a class="reference external" href="http://wikipediaenelaula.educ.ar/"&gt;Educ.ar&lt;/a&gt;
@@ -393,7 +427,7 @@ por este logro de la comunidad. En especial, a
 &lt;a class="reference external" href="http://protocultura.net/"&gt;Alecu&lt;/a&gt; que son los principales&lt;/p&gt;</description><guid>/posts/cdpedia-0-7-disponible.html</guid><pubDate>Fri, 01 Jul 2011 11:00:00 GMT</pubDate></item><item><title>Revista Orsai Nº 3 en Córdoba</title><link>/posts/revista-orsai-no-3-en-cordoba.html</link><description>&lt;p&gt;De nuevo soy distribuidor de la &lt;a class="reference external" href="http://orsai.es"&gt;Orsai&lt;/a&gt; en la ciudad
 de C&amp;#243;rdoba. Si est&amp;#225;s interesado date una vuelta por &lt;a class="reference external" href="http://textosypretextos.com.ar/Reserva-Orsai-3-en-Cordoba"&gt;esta
 p&amp;#225;gina&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://textosypretextos.com.%0A%3Cquote%3Ear/Reserva-Orsai-3-en-Cordoba"&gt;|image0|&lt;/a&gt;&lt;/p&gt;</description><guid>/posts/revista-orsai-no-3-en-cordoba.html</guid><pubDate>Fri, 10 Jun 2011 15:18:13 GMT</pubDate></item><item><title>Charla: MyHDL, de Python al silicio</title><link>/posts/charla-myhdl-de-python-al-siliicio.html</link><description>&lt;p&gt;[Sigo &lt;a class="reference external" href="/posts/blog/article/me-recibi-el-mes-pasado"&gt;publicando cosas&lt;/a&gt; con
+&lt;img alt="image::local/cache-vignettes/L450xH267/orsai3-145d6.jpg" class="align-center" src="image::local/cache-vignettes/L450xH267/orsai3-145d6.jpg"&gt;</description><guid>/posts/revista-orsai-no-3-en-cordoba.html</guid><pubDate>Fri, 10 Jun 2011 15:18:13 GMT</pubDate></item><item><title>Charla: MyHDL, de Python al silicio</title><link>/posts/charla-myhdl-de-python-al-siliicio.html</link><description>&lt;p&gt;[Sigo &lt;a class="reference external" href="/posts/me-recibi-el-mes-pasado.html"&gt;publicando cosas&lt;/a&gt; con
 delay de meses]&lt;/p&gt;
 &lt;p&gt;El s&amp;#225;bado 30 de mayo se realiz&amp;#243; el &lt;a class="reference external" href="http://www.pyday.com.ar/cordoba2011"&gt;PyDay C&amp;#243;rdoba
 2011&lt;/a&gt; con la participaci&amp;#243;n de m&amp;#225;s
@@ -406,14 +440,14 @@ gran equipo de colaboradores/as . Felicitaciones.&lt;/p&gt;
 que convierte Python en un &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Hardware_description_language"&gt;lenguaje para describir
 hardware&lt;/a&gt;
 (HDL).&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;Las diapositivas &lt;a class="reference external" href="http://nqnwebs.github.com/myhdl-talk/"&gt;se pueden ver
+&lt;ul class="simple"&gt;&lt;li&gt;Las diapositivas &lt;a class="reference external" href="http://mgaitan.github.com/myhdl-talk/"&gt;se pueden ver
 ac&amp;#225;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/nqnwebs/myhdl-talk"&gt;Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/mgaitan/myhdl-talk"&gt;Repo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;p&gt;Us&amp;#233; MyHDL para hacer
-&lt;a class="reference external" href="https://github.com/nqnwebs/pymips/tree/pipeline"&gt;pymips&lt;/a&gt;, una
+&lt;a class="reference external" href="https://github.com/mgaitan/pymips/tree/pipeline"&gt;pymips&lt;/a&gt;, una
 implementaci&amp;#243;n
-[&lt;a class="reference external" href="/blog/article/charla-myhdl-de-python-al-siliicio#nb1"&gt;1&lt;/a&gt;] de un
+[&lt;a class="reference external" href="/posts/charla-myhdl-de-python-al-siliicio#nb1"&gt;1&lt;/a&gt;] de un
 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/DLX"&gt;procesador DLX&lt;/a&gt; completo. Pueden
-leer un poco m&amp;#225;s sobre el trabajo en &lt;a class="reference external" href="https://github.com/nqnwebs/pymips/raw/pipeline/docs/informe.pdf"&gt;el
+leer un poco m&amp;#225;s sobre el trabajo en &lt;a class="reference external" href="https://github.com/mgaitan/pymips/raw/pipeline/docs/informe.pdf"&gt;el
 informe&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;</description><guid>/posts/charla-myhdl-de-python-al-siliicio.html</guid><pubDate>Mon, 06 Jun 2011 12:27:44 GMT</pubDate></item></channel></rss>

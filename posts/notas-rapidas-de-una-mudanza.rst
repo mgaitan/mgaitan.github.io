@@ -20,7 +20,8 @@ A diferencia de cuando se usa Gh-pages para proyectos, donde se sirve
 el contenido del branch *gh-page* del proyecto en cuestión, 
 para usar gh-pages por usuario hay que crear
 un repo llamado *<username>*.github.com (donde *<username>* es el tuyo)
-y lo que sirve en http://<username>.github.com es directamente el branch *master*
+y lo que sirve en http://<username>.github.com es directamente el branch 
+*master* (`referencia <https://help.github.com/articles/user-organization-and-project-pages>`_)
 
 Por este motivo creé otro branch (que sin mucha imaginación denominé
 `writing <https://github.com/mgaitan/mgaitan.github.com/tree/writing>`_ )
@@ -28,12 +29,12 @@ donde tengo todo el mi "proyecto" hecho con Nikola
 
 Allí escribo, intento mejorar mi theme_, y corro ``nikola build``. 
 
-El branch master es el de deploy, y sirve todo lo que haya en la carpeta
-``output/`` del branch ``writing``. Para hacer esto_ hay que a master,
+El branch master es el de deploy y sirve todo lo que haya en la carpeta
+``output/`` del branch ``writing``. Para hacer esto_ hay que ir a *master*,
 borrar todo y leer desde el árbol del otro branch con ``read-tree`` ::
 
     git checkout master
-    git rm *    
+    git rm *    # sólo la primera vez
     git read-tree writing:output
     git commit -m 'deploying last build'
     git push
@@ -51,11 +52,12 @@ que usa es *ad hoc* y muy feo. Algo así ::
 Hasta ahí no se ve tan mal, pero es muy limitado cuando se trata de mostrar
 código, necesario en todo blog mas o menos técnico.
 
-Para migrar esquive la idea de convertir el markup de spip y opté por un
+Para migrar esquivé la idea de convertir el markup de spip y opté por un
 scrapping, limpieza y conversión a restructuredText usando el mágico
-Pandoc_.
+Pandoc_ (y la ayuda de PyQuery)
 
-El script que hice está `acá <https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py>`_
+El script que hice está 
+`acá <https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py>`_
 . No es perfecto, pero está lo importante: contenidos, imágenes, adjuntos,
 convertido a restructuredText bastante decente que mejoraré poco a poco
 a mano.
@@ -63,7 +65,7 @@ a mano.
 Estilos
 --------
 
-Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras )
+Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras)
 que se ven bonitos. Sucede, en realidad, que la mayoría de las veces no
 venimos con *esa* habilidad y el esfuerzo que nos implica intentarlo
 preferimos ponerlo en otra cosa. No gusta, pero no es lo más importante.
@@ -81,7 +83,7 @@ Disqus
 
 El blog viejo usaba Disqus_, con un plugin_ que hice hace algun tiempo.
 Para migrar los comentarios utilicé el método de subir un CSV con
-el formato:: 
+el formato que genera el mismo script de migración:: 
 
     URL_POST_X_OLD, URL_POST_X_NEW
     URL_POST_Y_OLD, URL_POST_Y_NEW
@@ -119,7 +121,7 @@ via .htaccess redirige del viejo blog al nuevo::
 .. _theme: https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom
 .. _Spip: http://www.spip.net
 .. _bootstrap: http://twitter.github.com/bootstrap 
-
+.. _PyQuery: http://pypi.python.org/pypi/pyquery
 
 
 

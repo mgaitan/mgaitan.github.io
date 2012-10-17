@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Sun, 14 Oct 2012 20:24:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>/posts/como-volver-a-compartir-desde.html</link><description>&lt;p&gt;Desde hace much&amp;#237;simo tengo en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;mi otro
+<rss version="2.0"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Wed, 17 Oct 2012 11:18:54 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
+&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
+&lt;p class="last"&gt;El pipe tiene un problema con las fechas y qued&amp;#243; deactualizado
+cuando cambi&amp;#243; en el html de G+. En su defecto hice este peque&amp;#241;o
+&lt;a class="reference external" href="https://gist.github.com/2886591"&gt;scrapper&lt;/a&gt; que es lo que uso
+en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;Textos y Pretextos&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Desde hace much&amp;#237;simo tengo en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;mi otro
 blog&lt;/a&gt; una secci&amp;#243;n que se llama &lt;em&gt;"De
 por ah&amp;#237;, cosas que me parecieron interesantes"&lt;/em&gt;. Es un feed de links a
 contenidos de toda &amp;#237;ndole (pol&amp;#237;tica, literatura, cine, fotograf&amp;#237;a,
@@ -55,15 +62,13 @@ donde &lt;span class="pre"&gt;``[GOOGLE_PLUS_ID]&lt;/span&gt;&lt;/tt&gt; es el n
 cuesti&amp;#243;n.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
 &lt;img alt="" src="/posts/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;&lt;/div&gt;
-&lt;/div&gt;</description><guid>/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;p&gt;&lt;img alt="image0" src="/images/disqus-newlod23a-8b781.gif"&gt;
-Hace tiempo me interesa el servicio
+&lt;/div&gt;</description><guid>/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y f&amp;#225;cil de usar.&lt;/p&gt;
 &lt;p&gt;Comenc&amp;#233; un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;peque&amp;#241;o
 plugin&lt;/a&gt;
 para integrar Disqus a &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt;.&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/disqus.zip"&gt;|image2|&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Plugin Disqus para SPIP version 0.1&lt;/td&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Por ahora tiene dos componentes b&amp;#225;sicos:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;&lt;li&gt;Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
 SPIP (y su formulario) por Disqus&lt;/li&gt;
@@ -74,7 +79,7 @@ CFG&lt;/a&gt;) donde se define el &lt;em&gt;"Disqus
 shortname"&lt;/em&gt; (la identificaci&amp;#243;n unica que asignamos al sitio donde
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportaci&amp;#243;n de comentarios preexistentes,
-basta acceder a `` /?page=export_comments_to_disqus `` y luego importar
+basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
 ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>/posts/yahoo-pipes-como-por-un-tubo.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
 interactiva para agregar y manipular feeds RSS (y otras fuentes de
 datos) a nuestro antojo de forma sencilla y asequible para cualquiera.&lt;/p&gt;

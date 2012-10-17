@@ -40,8 +40,7 @@ desarrollador de software, es del 2005. La "morocha", una AMD64 con
 placa madre <a class="reference external" href="http://www.asus.com/Motherboards/AMD_Socket_754/K8N">Asus
 K8N</a> que se la
 sigue bancando.</p>
-<p><img alt="image0" src="../images/1110133923_20ebd-30987.jpg">
-Aquel año me enamoré, no por primera vez, pero sí mucho. Aunque resultó
+<img alt="/images/1110133923_20ebd-30987.jpg" class="align-center" src="../images/1110133923_20ebd-30987.jpg"><p>Aquel año me enamoré, no por primera vez, pero sí mucho. Aunque resultó
 una <a class="reference external" href="http://www.textosypretextos.com.ar/Hurgando-en-el-Gmail">historia
 complicada</a>,
 es lindo recordar cuanto uno es capaz de amar y ser amado. Y reirse,
@@ -51,7 +50,7 @@ también, de cuán estúpido se puede ser en ese estado.</p>
 <p>Hay <a class="reference external" href="http://www.ascodevida.com/amor/42152">gestos de amor</a> que no
 miden consecuencias y son dificiles de comprender. Yo, por ejemplo,
 decidí "hackear" la BIOS de mi maquina recién comprada y poner una foto
-de aquella mujer amada omo pantalla de splash, esa que se muestra apenas
+de aquella mujer amada como pantalla de splash, esa que se muestra apenas
 se enciende la computadora, mucho antes de cargar cualquier sistema
 operativo.</p>
 <p>Si bien por entonces ya usaba linux, para hacer esto usé una aplicación
@@ -80,30 +79,31 @@ D.O.S.. WTF!</p>
 <p>La
 <a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html">solución</a>
 es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a></p>
-<pre class="literal-block">
-# obtener una imagen booteable de freeDOS y montarla en un directorio
-wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
+<pre class="code bash literal-block">
+<span class="c"># obtener una imagen booteable de freeDOS y montarla en un directorio
+</span>wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
 gunzip FDOEM.144.gz
 mkdir /tmp/floppy
 mount -t vfat -o loop FDOEM.144 /tmp/floppy
 
-# obtener la herramienta para actualizar el bios y la imagen, y moverlos
-wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
+<span class="c"># obtener la herramienta para actualizar el bios y la imagen, y moverlos
+</span>wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
 unzip AFUDOS211.zip
 mv AFUDOS.exe /tmp/floppy
 wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
 unzip K8n1011.zip
 mv 1011.rom /tmp/floppy
 
-# desmontar
-umount /tmp/floppy
+<span class="c"># desmontar
+</span>umount /tmp/floppy
 
-# crear una ISO y grabar a un disco virgen
+<span class="c"># crear una ISO y grabar a un disco virgen
 # (tambien se podría grabar a un pendrive)
-mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
+</span>mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
 cdrecord -v bootcd.iso
+
 </pre>
-<p>Reinciar, bootear el CD de FreeDOS y ejecutar</p>
+<p>Reinciar, bootear el CD de FreeDOS y ejecutar:</p>
 <pre class="literal-block">
 afudos /i1011.rom
 </pre>

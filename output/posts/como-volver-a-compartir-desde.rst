@@ -1,3 +1,10 @@
+.. important:: 
+
+	El pipe tiene un problema con las fechas y quedó deactualizado
+	cuando cambió en el html de G+. En su defecto hice este pequeño
+	`scrapper <https://gist.github.com/2886591>`_ que es lo que uso
+	en `Textos y Pretextos <http://www.textospretextos.com.ar>`_
+
 Desde hace muchísimo tengo en `mi otro
 blog <http://www.textospretextos.com.ar>`_ una sección que se llama *"De
 por ahí, cosas que me parecieron interesantes"*. Es un feed de links a
