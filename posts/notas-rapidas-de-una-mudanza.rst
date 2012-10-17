@@ -6,7 +6,7 @@
 .. description:
 
 Hace unos días abría este espacio prometiendo migrar contenidos y 
-tratar de que se vea un poco más bonito. Como es un proceso iterativo,
+tratar de que se vea un poco más bonito. 
 
 Este post incluye algunas notas sobre lo que he hecho hasta el momento.
 
