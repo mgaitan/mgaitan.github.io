@@ -1,5 +1,7 @@
-`|JPEG| <IMG/jpg/CDPediaactiob9e9.jpg>`_ `Python
-Argentina <http://www.python.org.ar>`_ se complace en informar que está
+.. image:: http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg
+   :align: left	
+
+`Python Argentina <http://www.python.org.ar>`_ se complace en informar que está
 disponible la `versión 0.7 de CDPedia <http://cdpedia.python.org.ar/>`_
 , un proyecto de la comunidad para disponer de los contenidos de
 `Wikipedia en español <http://es.wikipedia.org>`_ sin acceso a internet,
@@ -7,17 +9,15 @@ usando un CD o DVD como soporte de la información.
 
 La imágen de CD (.iso) se puede descargar desde acá:
 
-+-------------------------------------------------------------+
-| `|image2| </downloads/cdpedia-CD-0.7.iso>`_                 |
-+-------------------------------------------------------------+
-| CDPedia 0.7 - CD 701Mb - 93500 artículos, 10% de imágenes   |
-+-------------------------------------------------------------+
+.. important:: 
+ 
+  `CDPedia 0.7 </downloads/cdpedia-CD-0.7.iso>`_              
+  CD 701Mb - 93500 artículos, 10% de imágenes   			  
 
-+-----------------------------------------------------------------------------+
-| `|image4| </downloads/cdpedia-DVD5-0.7.iso>`_                               |
-+-----------------------------------------------------------------------------+
-| CDPedia 0.7 - DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.   |
-+-----------------------------------------------------------------------------+
+
+ `CDPedia 0.7 </downloads/cdpedia-DVD5-0.7.iso>`_           
+  DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.   			 
+
 
 Más información en
 `http://cdpedia.python.org.ar/ <http://cdpedia.python.org.ar/>`_

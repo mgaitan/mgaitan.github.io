@@ -1,6 +1,6 @@
 Cuando decidí dar el salto desde Subversion a un DVCS estuve leyendo
 muchos posts comparativos entre las dos opciones más relevantes, Git y
-mercurial. Había que elegir entre `Mc Gyver o James
+Mercurial. Había que elegir entre `Mc Gyver o James
 Bond <http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/>`_
 decía uno, entre `Denzel Washington y Wesley
 Snipes <http://www.ericsink.com/entries/hg_denzel.html>`_ y la
@@ -80,16 +80,12 @@ usando la extensión `hg convert para obtener un subconjunto de repo
 original <http://mercurial.selenic.com/wiki/ConvertExtension#Converting_from_Mercurial>`_,
 por ejemplo, partiendo de un determinado cambio.
 
-|-| 1. Primero, activar la extensión editando ``~/.hgrc``
-
-::
+1. Primero, activar la extensión editando ``~/.hgrc``::
 
     [extensions]
     convert =
 
-|image1| 2. ¡Tirar las cajas del placard!
-
-::
+2. ¡Tirar las cajas del placard! ::
 
     $ hg convert --config convert.hg.startrev=1 repo_hg_orig/ repo_hg_liviano/
 
@@ -105,20 +101,16 @@ Contra todo pronóstico fruto de mi prejuicio y desidia, migrar a git fue
 extremadamente fácil usando
 `hg-fast-export <http://repo.or.cz/w/fast-export.git>`_.
 
-|image2| 1. Obtener los scripts
+1. Obtener los scripts ::
 
-::
+   $ git clone git://repo.or.cz/fast-export.git
 
-      $ git clone git://repo.or.cz/fast-export.git
+2. Convertir!::
 
-|image3| 2. Convertir!
-
-::
-
-      $ mkdir repo_git
-      $ cd repo_git
-      $ git init 
-      $ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
+  $ mkdir repo_git
+  $ cd repo_git
+  $ git init 
+  $ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
 
 ¡Charánnnn...!
 
@@ -131,9 +123,6 @@ El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
 original que sin perder la historia útil.
 
 Parafraseando a Lito, *si la historia la escriben los que ganan ...
-¿ganamos ?*
+¿ganamos ? 
 
-.. |-| image:: local/cache-vignettes/L8xH11/puce-32883.gif
-.. |image1| image:: local/cache-vignettes/L8xH11/puce-32883.gif
-.. |image2| image:: local/cache-vignettes/L8xH11/puce-32883.gif
-.. |image3| image:: local/cache-vignettes/L8xH11/puce-32883.gif
+.. youtube:: 3mkhn6oiqCM
