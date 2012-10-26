@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Ext4 superblock failure y la cola del Diablo | tin_nqn"><meta name="description" content="e"><meta name="author" content="Martín Gaitán"><title>Ext4 superblock failure y la cola del Diablo | tin_nqn</title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox">
+        <h1 id="blog-title">
+            <a href="../" title="tin_nqn">tin_nqn</a>
+        </h1>
+        
+        
+        
+        </div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Ext4 superblock failure y la cola del Diablo</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2012-10-26 02:24:46">2012-10-26 02:24:46</span>   |  
+
+        
+
+        <a href="ext4-superblock-failure-y-la-cola-del-diablo.txt">Código</a>
+        
+    </small>
+    <div><p>Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+conocer una ciudad que en las guías de viaje suena intererante y bonita.
+Se me ocurre prender la compu para ver si ese email que mandé la noche
+anterior, recién llegado después de 14 horas de viaje
+(5 de espera en el aeropuerto de Santiago) y deseando únicamente
+ducha y colchón, había sido contestado.</p>
+<p><em>"No pusheé"</em>, fué lo primero que pensé, o me lo dije, en voz inaudible,
+como eufemismo de un gran insulto y síntesis de <em>"Martincito querido,
+ya sabés que el booteo está tardando mucho, el material para el taller_ que
+tenés que dar mañana está en esa computadora y tiene al menos 10 horas
+de trabajo offline que está en la última versión online: no podés ser tan
+pelotudo y tener tan mal orto a la vez</em>". Mi voz interior sí que sabe
+resumir.</p>
+<p>Por suerte, no perdí la calma. Apreté el 1 en el teléfono: <em>"sí señor",  el
+Bussiness Center queda en el 4 piso"</em>. Ahí fui y habia computadoras con
+las que pude contactarme con Houston.</p>
+<p>Grulic, <a class="reference external" href="https://twitter.com/perrito666">Perrito</a>,
+<a class="reference external" href="http://verdumariano.com.ar/">Mariano</a>, Rudi, y especialmente
+<a class="reference external" href="http://blog.ontrackdatarecovery.es/conoce-al-ingeniero-ernesto-lobo/">mi cuñado que trabaja en Ontrack</a>
+y era algo así como un Messi sentado en mi banco de suplentes
+para este partido que yo no hubiese querido jugar, fueron los primeros
+con quienes me comuniqué.</p>
+<p>Mandé este mensaje:</p>
+<blockquote>
+<p>Gente, les mando una de Murphy y el diablo y toda la mala leche junta.
+Estoy en Ecuador invitado a dar un curso-taller de Python y Django.</p>
+<p>Rodo venía fantastico , hasta que hoy enciendo la laptop y no y no entra el sistema operativo!.</p>
+<p>Entro en modo recuperacion (ubuntu 11.10) y se clava en el <tt class="docutils literal">fsck</tt>
+hasta que me aparece un menucito que me deja entrar a una consola root.
+Lo peor sucedió <tt class="docutils literal">/home/</tt> no monta , pero el <tt class="docutils literal">/</tt>
+parece estar sano. Ambas son una particion <tt class="docutils literal">ext4</tt></p>
+<p>Si intento montar a mano o un fsck, el output dice muchas cosas que
+suenan mal pero no tengo puta idea qué significan:</p>
+<pre class="literal-block">
+STATUS { DRDY }
+ERROR { UNC }
+configured for UDMA/133
+failed command READ DMA
+exception Emask 0x0 Sact 0x0 Serr 0x0 action 0x0
+res 51/40... Emask 0x9 (media error)
+</pre>
+<p>Por favor, iluminenmé sobre cómo proceder.</p>
+</blockquote>
+<p>Ernesto contestó. Primero intentar hacer un un live-usb con algunas
+herramientas de diagnostico: <a class="reference external" href="http://ubuntu-rescue-remix.org/">Ubuntu-rescue-remix</a>
+podría funcionar, pero las maquinas del Bussiness center no me dejan
+instalar algun <a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/">programita</a>
+para pasar la ISO al pendrive.</p>
+<p>Empiezo a deseperar ya pensar si no conviene aprovechar el tiempo que me llevará
+intentar un salvataje con alta probabilidad de fracaso para rehacer el
+trabajo inaccesible.</p>
+<p>Desactivar journal, no. Forzar montado, no. No se qué otra cosa, no.</p>
+<p>Ernesto pregunta si me animo a ir por el camino duro.</p>
+<blockquote>
+Cómo estás de fresco ara leer hexadecimal ? <tt class="docutils literal">hexdump</tt> y <tt class="docutils literal">dd</tt>, la navaja suiza.
+que necesitamos</blockquote>
+<p>Intentamos algunas cosas, calculadora en mano,
+pero la mayoría de los intentos de acceso al disco
+caen en el mismo bucle de errores horribles. Mucho calor en Guayaquil.</p>
+<p>Le digo a Ernesto (domingo, dia de descanso) que no se preocupe, que intentemos
+eso último que se le ocurrió pero que si no funciona voy a ponerme a trabajar
+de nuevo. Mientras tanto, el Dios en el que no creo me pone
+<a class="reference external" href="http://linuxexpresso.wordpress.com/2010/03/31/repair-a-broken-ext4-superblock-in-ubuntu/">este link</a>
+en el camino de resultados de Google.</p>
+<p>"Ernesto, prabamos esto?" y no alcanzó a contestar
+antes de que esté poniendo los primeros comandos</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>sudo mke2fs -n /dev/sda3
+
+Superblock backups stored on blocks:
+32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
+
+</pre>
+<p>Me la juego con el primer backup:</p>
+<pre class="code bash literal-block">
+sudo e2fsck -b 32768 /dev/sda3
+
+</pre>
+<p>Cientos de  <tt class="docutils literal">Y</tt> <tt class="docutils literal">Enter</tt> para mensajes estilo <em>"está roto, desea repararlo?"</em>
+(no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
+a mitad de camino)</p>
+<p>Anduvo. Uff. Dos simples comandos.
+El Ingeniero Lobo festeja desde Londres, Skype mediante,
+que podía volver a limpiar su moto sin quedar mal con su cuñado con mala
+pata. Me dijo antes:</p>
+<blockquote>
+Si no hubiese sido una situadion del tipo <em>mañana
+ya no me sirven los datos</em> yo te hubiera  recomendado en contra
+de herramienta como <tt class="docutils literal">e2fsck</tt>. Esos programas sólo se encargan
+de asegurar que el filesystem esté íntegro, pero si para eso tienen
+que cortarlo a la mitad lo hacen sin dudar.
+Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
+brazo.</blockquote>
+<p>Querido Guayaquil: prometo visitar tu Malecón la próxima,
+<strong>push</strong> por adelantado.</p></div>
+    <ul class="pager"><li class="previous">
+            <a href="notas-rapidas-de-una-mudanza.html">← Post anterior</a>
+        </li>
+    
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                /
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                /
+            
+                </li><li><a href="http://www.textosypretextos.com.ar">Textos y pretextos</a>
+                /
+            
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>
