@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; self.geek_side.post()</description><lastBuildDate>Wed, 17 Oct 2012 12:03:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Fri, 02 Nov 2012 02:13:45 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ext4 superblock failure y la cola del Diablo</title><link>/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+conocer una ciudad que en las gu&amp;#237;as de viaje suena intererante y bonita.
+Se me ocurre prender la compu para ver si ese email que mand&amp;#233; la noche
+anterior, reci&amp;#233;n llegado despu&amp;#233;s de 14 horas de viaje
+(5 de espera en el aeropuerto de Santiago) y deseando &amp;#250;nicamente
+ducha y colch&amp;#243;n, hab&amp;#237;a sido contestado.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;"No pushe&amp;#233;"&lt;/em&gt;, fu&amp;#233; lo primero que pens&amp;#233;, o me lo dije, en voz inaudible,
+como eufemismo de un gran insulto y s&amp;#237;ntesis de &lt;em&gt;"Martincito querido,
+ya sab&amp;#233;s que el booteo est&amp;#225; tardando mucho, el material para el taller_ que
+ten&amp;#233;s que dar ma&amp;#241;ana est&amp;#225; en esa computadora y tiene al menos 10 horas
+de trabajo offline que est&amp;#225; en la &amp;#250;ltima versi&amp;#243;n online: no pod&amp;#233;s ser tan
+pelotudo y tener tan mal orto a la vez&lt;/em&gt;". Mi voz interior s&amp;#237; que sabe
+resumir.&lt;/p&gt;
+&lt;p&gt;Por suerte, no perd&amp;#237; la calma. Apret&amp;#233; el 1 en el tel&amp;#233;fono: &lt;em&gt;"s&amp;#237; se&amp;#241;or",  el
+Bussiness Center queda en el 4 piso"&lt;/em&gt;. Ah&amp;#237; fui y habia computadoras con
+las que pude contactarme con Houston.&lt;/p&gt;
+&lt;p&gt;Grulic, &lt;a class="reference external" href="https://twitter.com/perrito666"&gt;Perrito&lt;/a&gt;,
+&lt;a class="reference external" href="http://verdumariano.com.ar/"&gt;Mariano&lt;/a&gt;, Rudi, y especialmente
+&lt;a class="reference external" href="http://blog.ontrackdatarecovery.es/conoce-al-ingeniero-ernesto-lobo/"&gt;mi cu&amp;#241;ado que trabaja en Ontrack&lt;/a&gt;
+y era algo as&amp;#237; como un Messi sentado en mi banco de suplentes
+para este partido que yo no hubiese querido jugar, fueron los primeros
+con quienes me comuniqu&amp;#233;.&lt;/p&gt;
+&lt;p&gt;Mand&amp;#233; este mensaje:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Gente, les mando una de Murphy y el diablo y toda la mala leche junta.
+Estoy en Ecuador invitado a dar un curso-taller de Python y Django.&lt;/p&gt;
+&lt;p&gt;Rodo ven&amp;#237;a fantastico , hasta que hoy enciendo la laptop y no y no entra el sistema operativo!.&lt;/p&gt;
+&lt;p&gt;Entro en modo recuperacion (ubuntu 11.10) y se clava en el &lt;tt class="docutils literal"&gt;fsck&lt;/tt&gt;
+hasta que me aparece un menucito que me deja entrar a una consola root.
+Lo peor sucedi&amp;#243; &lt;tt class="docutils literal"&gt;/home/&lt;/tt&gt; no monta , pero el &lt;tt class="docutils literal"&gt;/&lt;/tt&gt;
+parece estar sano. Ambas son una particion &lt;tt class="docutils literal"&gt;ext4&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Si intento montar a mano o un fsck, el output dice muchas cosas que
+suenan mal pero no tengo puta idea qu&amp;#233; significan:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+STATUS { DRDY }
+ERROR { UNC }
+configured for UDMA/133
+failed command READ DMA
+exception Emask 0x0 Sact 0x0 Serr 0x0 action 0x0
+res 51/40... Emask 0x9 (media error)
+&lt;/pre&gt;
+&lt;p&gt;Por favor, iluminenm&amp;#233; sobre c&amp;#243;mo proceder.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ernesto contest&amp;#243;. Primero intentar hacer un un live-usb con algunas
+herramientas de diagnostico: &lt;a class="reference external" href="http://ubuntu-rescue-remix.org/"&gt;Ubuntu-rescue-remix&lt;/a&gt;
+podr&amp;#237;a funcionar, pero las maquinas del Bussiness center no me dejan
+instalar algun &lt;a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/"&gt;programita&lt;/a&gt;
+para pasar la ISO al pendrive.&lt;/p&gt;
+&lt;p&gt;Empiezo a deseperar ya pensar si no conviene aprovechar el tiempo que me llevar&amp;#225;
+intentar un salvataje con alta probabilidad de fracaso para rehacer el
+trabajo inaccesible.&lt;/p&gt;
+&lt;p&gt;Desactivar journal, no. Forzar montado, no. No se qu&amp;#233; otra cosa, no.&lt;/p&gt;
+&lt;p&gt;Ernesto pregunta si me animo a ir por el camino duro.&lt;/p&gt;
+&lt;blockquote&gt;
+C&amp;#243;mo est&amp;#225;s de fresco ara leer hexadecimal ? &lt;tt class="docutils literal"&gt;hexdump&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;dd&lt;/tt&gt;, la navaja suiza.
+que necesitamos&lt;/blockquote&gt;
+&lt;p&gt;Intentamos algunas cosas, calculadora en mano,
+pero la mayor&amp;#237;a de los intentos de acceso al disco
+caen en el mismo bucle de errores horribles. Mucho calor en Guayaquil.&lt;/p&gt;
+&lt;p&gt;Le digo a Ernesto (domingo, dia de descanso) que no se preocupe, que intentemos
+eso &amp;#250;ltimo que se le ocurri&amp;#243; pero que si no funciona voy a ponerme a trabajar
+de nuevo. Mientras tanto, el Dios en el que no creo me pone
+&lt;a class="reference external" href="http://linuxexpresso.wordpress.com/2010/03/31/repair-a-broken-ext4-superblock-in-ubuntu/"&gt;este link&lt;/a&gt;
+en el camino de resultados de Google.&lt;/p&gt;
+&lt;p&gt;"Ernesto, prabamos esto?" y no alcanz&amp;#243; a contestar
+antes de que est&amp;#233; poniendo los primeros comandos&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo mke2fs -n /dev/sda3
+
+Superblock backups stored on blocks:
+32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
+
+&lt;/pre&gt;
+&lt;p&gt;Me la juego con el primer backup:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+sudo e2fsck -b 32768 /dev/sda3
+
+&lt;/pre&gt;
+&lt;p&gt;Cientos de  &lt;tt class="docutils literal"&gt;Y&lt;/tt&gt; &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; para mensajes estilo &lt;em&gt;"est&amp;#225; roto, desea repararlo?"&lt;/em&gt;
+(no hab&amp;#237;a una opci&amp;#243;n "S&amp;#237; a todo", como si uno fuese capaz de arrepentirse
+a mitad de camino)&lt;/p&gt;
+&lt;p&gt;Anduvo. Uff. Dos simples comandos.
+El Ingeniero Lobo festeja desde Londres, Skype mediante,
+que pod&amp;#237;a volver a limpiar su moto sin quedar mal con su cu&amp;#241;ado con mala
+pata. Me dijo antes:&lt;/p&gt;
+&lt;blockquote&gt;
+Si no hubiese sido una situadion del tipo &lt;em&gt;ma&amp;#241;ana
+ya no me sirven los datos&lt;/em&gt; yo te hubiera  recomendado en contra
+de herramienta como &lt;tt class="docutils literal"&gt;e2fsck&lt;/tt&gt;. Esos programas s&amp;#243;lo se encargan
+de asegurar que el filesystem est&amp;#233; &amp;#237;ntegro, pero si para eso tienen
+que cortarlo a la mitad lo hacen sin dudar.
+Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
+brazo.&lt;/blockquote&gt;
+&lt;p&gt;Querido Guayaquil: prometo visitar tu Malec&amp;#243;n la pr&amp;#243;xima,
+&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;</description><guid>/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco m&amp;#225;s bonito.&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;div class="section" id="github-nikola"&gt;
@@ -415,27 +509,4 @@ por este logro de la comunidad. En especial, a
 &lt;a class="reference external" href="http://protocultura.net/"&gt;Alecu&lt;/a&gt; que son los principales&lt;/p&gt;</description><guid>/posts/cdpedia-0-7-disponible.html</guid><pubDate>Fri, 01 Jul 2011 11:00:00 GMT</pubDate></item><item><title>Revista Orsai Nº 3 en Córdoba</title><link>/posts/revista-orsai-no-3-en-cordoba.html</link><description>&lt;p&gt;De nuevo soy distribuidor de la &lt;a class="reference external" href="http://orsai.es"&gt;Orsai&lt;/a&gt; en la ciudad
 de C&amp;#243;rdoba. Si est&amp;#225;s interesado date una vuelta por &lt;a class="reference external" href="http://textosypretextos.com.ar/Reserva-Orsai-3-en-Cordoba"&gt;esta
 p&amp;#225;gina&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg" class="align-center" src="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg"&gt;</description><guid>/posts/revista-orsai-no-3-en-cordoba.html</guid><pubDate>Fri, 10 Jun 2011 15:18:13 GMT</pubDate></item><item><title>Charla: MyHDL, de Python al silicio</title><link>/posts/charla-myhdl-de-python-al-siliicio.html</link><description>&lt;p&gt;[Sigo &lt;a class="reference external" href="/posts/me-recibi-el-mes-pasado.html"&gt;publicando cosas&lt;/a&gt; con
-delay de meses]&lt;/p&gt;
-&lt;p&gt;El s&amp;#225;bado 30 de mayo se realiz&amp;#243; el &lt;a class="reference external" href="http://www.pyday.com.ar/cordoba2011"&gt;PyDay C&amp;#243;rdoba
-2011&lt;/a&gt; con la participaci&amp;#243;n de m&amp;#225;s
-de 200 personas y casi 20 charlas en dos salas simult&amp;#225;neas. Un &amp;#233;xito
-rotundo organizado por &lt;a class="reference external" href="http://jbcabral.wordpress.com/"&gt;Juan&lt;/a&gt; y un
-gran equipo de colaboradores/as . Felicitaciones.&lt;/p&gt;
-&lt;div class="section" id="mi-participacion"&gt;
-&lt;h2&gt;Mi participaci&amp;#243;n&lt;/h2&gt;
-&lt;p&gt;Particip&amp;#233; dando una charla sobre &lt;a class="reference external" href="http://myhdl.org"&gt;MyHDL&lt;/a&gt;, un paquete
-que convierte Python en un &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Hardware_description_language"&gt;lenguaje para describir
-hardware&lt;/a&gt;
-(HDL).&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;Las diapositivas &lt;a class="reference external" href="http://mgaitan.github.com/myhdl-talk/"&gt;se pueden ver
-ac&amp;#225;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/mgaitan/myhdl-talk"&gt;Repo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Us&amp;#233; MyHDL para hacer
-&lt;a class="reference external" href="https://github.com/mgaitan/pymips/tree/pipeline"&gt;pymips&lt;/a&gt;, una
-implementaci&amp;#243;n
-[&lt;a class="reference external" href="/posts/charla-myhdl-de-python-al-siliicio#nb1"&gt;1&lt;/a&gt;] de un
-&lt;a class="reference external" href="http://en.wikipedia.org/wiki/DLX"&gt;procesador DLX&lt;/a&gt; completo. Pueden
-leer un poco m&amp;#225;s sobre el trabajo en &lt;a class="reference external" href="https://github.com/mgaitan/pymips/raw/pipeline/docs/informe.pdf"&gt;el
-informe&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</description><guid>/posts/charla-myhdl-de-python-al-siliicio.html</guid><pubDate>Mon, 06 Jun 2011 12:27:44 GMT</pubDate></item></channel></rss>
+&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg" class="align-center" src="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg"&gt;</description><guid>/posts/revista-orsai-no-3-en-cordoba.html</guid><pubDate>Fri, 10 Jun 2011 15:18:13 GMT</pubDate></item></channel></rss>

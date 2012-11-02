@@ -11,7 +11,7 @@ BLOG_AUTHOR = u'Martín Gaitán'
 BLOG_TITLE = "tin_nqn"
 BLOG_URL = "http://mgaitan.github.com"
 BLOG_EMAIL = "gaitan@gmail.com"
-BLOG_DESCRIPTION = u'>>> self.geek_side.post()'
+BLOG_DESCRIPTION = u'>>> me.geek.post()'
 
 # post_pages contains (wildcard, destination, template, use_in_feed) tuples.
 #
@@ -36,7 +36,7 @@ BLOG_DESCRIPTION = u'>>> self.geek_side.post()'
 
 post_pages = (
     ("posts/*.rst", "posts", "post.tmpl", True),
-    ("stories/*.rst", "stories", "story.tmpl", False),
+    ("stories/*.rst", "", "story.tmpl", False),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -133,12 +133,12 @@ REDIRECTIONS = []
 # "rsync -rav output/* joe@my.site:/srv/www/site"
 # And then do a backup, or ping pingomatic.
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = ["git checkout master", 
-				   "git read-tree writing:output",
-				   "git commit -m 'deploy'",
-				   "git push",
-				   "git reset --hard",
-				   "git checkout writing"]
+DEPLOY_COMMANDS = ["git checkout master",
+                   "git read-tree writing:output",
+                   "git commit -m 'deploy'",
+                   "git push",
+                   "git reset --hard",
+                   "git checkout writing"]
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
@@ -272,8 +272,8 @@ GLOBAL_CONTEXT = {
         DEFAULT_LANG: (
             ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), 'Archivos'),
             ('/categories/index.html', u'Categorías'),
-            ('http://www.textosypretextos.com.ar', u'Textos y pretextos'),
-            ('http://nikola.ralsina.com.ar', 'Powered by Nikola'),
+            ('/about.html', u'Sobre mí'),
+            ('/charlas.html', u'Charlas'),
             ),
         }
     }
