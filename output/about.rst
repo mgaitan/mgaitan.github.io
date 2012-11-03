@@ -21,15 +21,18 @@ Tengo una obsesión por recordar los nombres de los actores de
 reparto de peliculas desconocidas que nunca vi. Estoy convencido de que
 el pomo de la pasta de dientes nunca se acaba: siempre se puede sacar un
 poco más, siempre. Y también que lo que se siente por una mujer sólo se
-define cuando la ves durmiendo al lado tuyo. Escribo y leo. Séptimo
-grado completo. También saco fotos. Cuando era chico y feliz — que no
-fue el único tiempo en el que fui feliz, ni todo el tiempo en el que fui
-chico— supe algunas poesias de memoria, pero luego tuve que ocupar esas
+define cuando la ves durmiendo al lado tuyo.
+`Escribo <http://textosypretextos.com.ar>_` y
+`leo <http://textosypretextos.com.ar/De-otros>`_.
+Séptimo grado completo. También `saco fotos <textosypretextos.com.ar/fotos>`_.
+Cuando era chico y feliz — que no fue el único tiempo en el que fui feliz,
+ni todo el tiempo en el que fui
+chico — supe algunas poesias de memoria, pero luego tuve que ocupar esas
 neuronas en recordar formulas de integrales.
 
 Tengo `un blog literario <http://textosypretextos.com.ar>`_ y uno
-`geek <http://mgaitan.github.com>`_. A ambos abandoné, resucité desde las
-cenizas del spam y el olvido y luego volví a abandonar.
+`geek <http://mgaitan.github.com>`_. A ambos abandoné, resucité desde
+las cenizas del spam  y luego volví a abandonar.
 
 Aunque lo disimulo, soy un nerd. `Trabajo <http://phasety.com>`_ con computadoras.
 Ingeniero en Computación dice el papel. Creo en esas cosas (no en los
@@ -37,6 +40,29 @@ papeles, sino en las computadoras) y en internet. Son herramientas
 revolucionarias, e intento luchar por su democratización. Mi compu se
 llama "Morocha". También mi bicicleta tiene nombre, pero no quiero que
 pienses que no tengo amigos y por eso converso con las cosas.
+
+Contacto
+---------
+
+.. raw:: html
+
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <style>
+    ul.icons {
+        list-style-type: none;
+        margin-left: 2em;
+        text-indent: -0.8em;
+        line-height: 25px;
+    }
+    </style>
+    <ul class="icons">
+        <li><i class="icon-envelope-alt"></i> Email: <a href="mailto:gaitan@gmail.com">gaitan@gmail.com</a></li>
+        <li><i class="icon-twitter"></i> Twitter: <a href="http://twitter.com/tin_nqn_">@tin_nqn_</a></li>
+        <li><i class="icon-github"></i> Github: <a href="http://github.com/mgaitan">mgaitan</a></li>
+        <li><i class="icon-linkedin"></i> LinkedIn: <a href="http://www.linkedin.com/in/martingaitan">Mi profile</a></li>
+        <li><i class="icon-link"></i> Blog (otro): <a href="http://textosypretextos.com.ar">Textos y Pretextos</a></li>
+    </ul>
+
 
 .. raw:: html
 
