@@ -7,9 +7,9 @@
 
 Hace un tiempo conté `como migré un repositorio Mercurial a Git`_ .
 Se trataba de un proyecto hospedado en Bitbucket_ y para cambiar
-de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos en 
+de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos 
 allí porque somos pobretones y nos da repos privados gratis. 
-En la mudanza se me quedaronvarios *issues* que necesitaba migrar. Y `no era el único`_.
+En la mudanza se me quedaron varios *issues* que necesitaba migrar. Y `no era el único`_.
 
 Buscando un rato encontré scriptcitos para migrar desde_ o hacia_ GitHub 
 pero no había para migrar entre proyectos de Bitbucket, algo bastante común 

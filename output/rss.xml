@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Fri, 09 Nov 2012 23:12:20 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Migrando issues entre proyectos de Bitbucket</title><link>/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;p&gt;Hace un tiempo cont&amp;#233; &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migr&amp;#233; un repositorio Mercurial a Git&lt;/a&gt; .
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Fri, 09 Nov 2012 23:33:51 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Migrando issues entre proyectos de Bitbucket</title><link>/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;p&gt;Hace un tiempo cont&amp;#233; &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migr&amp;#233; un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
-de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos en
+de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 all&amp;#237; porque somos pobretones y nos da repos privados gratis.
-En la mudanza se me quedaronvarios &lt;em&gt;issues&lt;/em&gt; que necesitaba migrar. Y &lt;a class="reference external" href="https://bitbucket.org/site/master/issue/1642/allow-moving-tickets-over-to-another"&gt;no era el &amp;#250;nico&lt;/a&gt;.&lt;/p&gt;
+En la mudanza se me quedaron varios &lt;em&gt;issues&lt;/em&gt; que necesitaba migrar. Y &lt;a class="reference external" href="https://bitbucket.org/site/master/issue/1642/allow-moving-tickets-over-to-another"&gt;no era el &amp;#250;nico&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Buscando un rato encontr&amp;#233; scriptcitos para migrar &lt;a class="reference external" href="https://github.com/sorich87/github-to-bitbucket-issues-migration"&gt;desde&lt;/a&gt; o &lt;a class="reference external" href="https://gist.github.com/3778347"&gt;hacia&lt;/a&gt; GitHub
 pero no hab&amp;#237;a para migrar entre proyectos de Bitbucket, algo bastante com&amp;#250;n
 desde que empezaron a ofrecer soporte Git.&lt;/p&gt;
