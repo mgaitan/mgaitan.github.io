@@ -43,6 +43,21 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/revista-orsai-no-3-en-cordoba.html">Revista Orsai Nº 3 en Córdoba</a>
+        <small>  
+             <span class="timeago" title="2011-06-10 15:18:13">2011-06-10 15:18:13</span>
+        </small></h1>
+        <div><p>De nuevo soy distribuidor de la <a class="reference external" href="http://orsai.es">Orsai</a> en la ciudad
+de Córdoba. Si estás interesado date una vuelta por <a class="reference external" href="http://textosypretextos.com.ar/Reserva-Orsai-3-en-Cordoba">esta
+página</a></p>
+<img alt="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg" class="align-center" src="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg"></div>
+        <p>
+        
+            <a href="posts/revista-orsai-no-3-en-cordoba.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/charla-myhdl-de-python-al-siliicio.html">Charla: MyHDL, de Python al silicio</a>
         <small>  
              <span class="timeago" title="2011-06-06 12:27:44">2011-06-06 12:27:44</span>
@@ -703,88 +718,6 @@ hombres."</p>
         <p>
         
             <a href="posts/el-quijote-del-software-libre.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/referenciar-figuras-por-numero-en.html">Referenciar figuras por número en Sphinx / Latex</a>
-        <small>  
-             <span class="timeago" title="2011-03-19 23:13:01">2011-03-19 23:13:01</span>
-        </small></h1>
-        <div><p>El viernes presenté el draft para la revisión final de mi <a class="reference external" href="posts/blog/article/preparados-listos-en-un-rato">proyecto
-integrador</a> (a.k.a. tesis).
-Tentativamente (¡a esta altura y todavía no es seguro!) se titula
-<em>"Software para graficación de digramas termodinámicos"</em> y se puede
-chusmear
-<a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">acá</a>.</p>
-<p>Como verán, lo hice con <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>, generando
-LaTeX y compilando luego a PDF. Estoy más que satisfecho del resultado.</p>
-<p>Sin embargo, un problema de Sphinx/Docsutils (y esto viene a ser el
-verdadero tema de este post) es es que si bien están llenos de pulentez
-y se la bancan mil, no están "pensados" para escribir tesis sino
-documentación/manuales de software. Esto se nota, sobre todo, en la
-subutilización de recursos de LaTeX a los que "no se accede" desde
-restructuredText.</p>
-<p>El caso paradigmático es la referenciación de figuras. En las versiones
-"imprimibles" que se generan con LaTeX suele pasar que una figura no
-quepa en una página y el compilador, al medir y darse cuenta, la manda a
-una página siguiente. Esto hace indispensable ser preciso en la
-referencia ya que un mensaje como <em>"en la siguiente figura"</em> puede estar
-seguido de toda una página sin figuras.</p>
-<p>Para hacer una referenciar una figura en Sphinx hay que declarar un
-target</p>
-<pre class="literal-block">
-.. _ok:
-
-.. figure:: ok.png
-
-   Una imágen
-</pre>
-<p>y luego usar el rol <tt class="docutils literal">:ref:</tt>. Por ejemplo:</p>
-<pre class="literal-block">
-Referenciando la figura :ref:`ok` se evidencia el problema.
-</pre>
-<p>El problema es que el LaTeX generado por Sphinx no hace exáctamente una
-referencia a la figura, sino un hipervínculo (hyperref). Como texto de
-ese hipevinculo usa el epígrafe de la figura, lo cual es horrible e
-inútil para textos cientificos/académicos. El issue, <a class="reference external" href="https://bitbucket.org/birkenfeld/sphinx/issue/76/proper-references-to-figures-code-tables">está reportado
-hace más de 2
-años</a>.</p>
-<p>Con el estilo gronchohacker que se me está volviendo costumbre, hice
-unos cambiecitos para que funcaran las referencias como tienen que ser,
-por número. La directiva es particularmente fácil en LaTeX: <tt class="docutils literal">~\ref{}</tt>.
-En concreto, el "gronchohackeo" se trata de cambiar
-<tt class="docutils literal"><span class="pre">{\hyperref[label]{\emph{epigrafe}}}</span></tt> por <tt class="docutils literal">~\ref{label}</tt>.</p>
-<p>Para garantizar compatibilidad con los que les gusta que el título de la
-referencia sea el epígrafe y no el número, lo hice opcional: toda
-referencia a un destino con sufijo <tt class="docutils literal"><span class="pre">-num</span></tt> usa una referencia númerica
-en vez de un hipervinculo con texto.</p>
-<p>Acá el patch (para la versión 1.1 —en desarrollo— )</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/sphinx-issue76.txt">|image1|</a></td>
-</tr><tr><td>Diff Parche para el Issue #76 de Sphinx</td>
-</tr></tbody></table><p>Y acá un ejemplo del problema y la gronchosolución</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/prueba.pdf">|image3|</a></td>
-</tr></tbody></table><p>El código del ejemplo es este:</p>
-<pre class="literal-block">
-Ejemplo
-*******
-
-Referenciando la figura :ref:`ok` se evidencia el problema. Aplicando mi
-rústico parche en cambio, se puede referenciar a la Figura :ref:`ok-num`.
-
-.. _ok:
-
-.. figure:: ok.png
-
-   Una imágen
-
-.. _ok-num:
-
-.. figure:: ok.png
-</pre></div>
-        <p>
-        
-            <a href="posts/referenciar-figuras-por-numero-en.html#disqus_thread">Comments</a>
         
         </p></div>
     

@@ -43,6 +43,83 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/migrando-issues-entre-proyectos-de-bitbucket.html">Migrando issues entre proyectos de Bitbucket</a>
+        <small>  
+             <span class="timeago" title="2012-11-10 00:09:24">2012-11-10 00:09:24</span>
+        </small></h1>
+        <div><p>Hace un tiempo conté <a class="reference external" href="posts/de-mercurial-a-git-limpieza.html">como migré un repositorio Mercurial a Git</a> .
+Se trataba de un proyecto hospedado en <a class="reference external" href="http://bitbucket.org">Bitbucket</a> y para cambiar
+de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos en
+allí porque somos pobretones y nos da repos privados gratis.
+En la mudanza se me quedaronvarios <em>issues</em> que necesitaba migrar. Y <a class="reference external" href="https://bitbucket.org/site/master/issue/1642/allow-moving-tickets-over-to-another">no era el único</a>.</p>
+<p>Buscando un rato encontré scriptcitos para migrar <a class="reference external" href="https://github.com/sorich87/github-to-bitbucket-issues-migration">desde</a> o <a class="reference external" href="https://gist.github.com/3778347">hacia</a> GitHub
+pero no había para migrar entre proyectos de Bitbucket, algo bastante común
+desde que empezaron a ofrecer soporte Git.</p>
+<p>Decidí entonces que debía hacer mi propio scriptcito migrador. La cosa se
+complicaba porque <a class="reference external" href="https://github.com/Sheeprider/BitBucket-api">el</a>
+<a class="reference external" href="https://github.com/ericof/python-bitbucket">par</a> de bibliotecas python
+que interactuan con la API de Bitbucket no tenian, hasta el momento, soporte
+para "postear" <em>issues</em></p>
+<p>Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
+proyecto y encontré <a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc">justo lo que estaba buscando</a>.</p>
+<p>Entonces bastó con instalar el fork de David Paz Reyes</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>pip install git+https://github.com/davidmpaz/BitBucket-api.git
+
+</pre>
+<p>he hice un script que migra todo los issues en estado <em>new</em>
+del repo original (<tt class="docutils literal">gpec</tt>) al nuevo (<tt class="docutils literal">gpec</tt>) y los potenciales comentarios que tenga.
+Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
+agrego un comentario avisando que es un <em>issue migrado</em>.</p>
+<pre class="code python literal-block">
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">bitbucket</span> <span class="kn">import</span> <span class="n">bitbucket</span>
+
+<span class="n">gpec</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s">'tin_nqn'</span><span class="p">,</span> <span class="s">'***'</span><span class="p">,</span> <span class="s">'gpec'</span><span class="p">)</span>
+<span class="n">gpec3</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s">'tin_nqn'</span><span class="p">,</span> <span class="s">'***'</span><span class="p">,</span> <span class="s">'gpec3'</span><span class="p">)</span>
+
+<span class="c"># request original ISSUES</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issues</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s">'issues'</span><span class="p">][:]:</span>
+    <span class="n">original_id</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s">'local_id'</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s">'status'</span><span class="p">]</span> <span class="o">!=</span> <span class="s">'new'</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="c"># and post to the new repo</span>
+    <span class="n">ok</span><span class="p">,</span> <span class="n">new_issue</span> <span class="o">=</span> <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue</span><span class="p">(</span><span class="o">**</span><span class="n">issue</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">'Fail migrating #</span><span class="si">%d</span><span class="s">'</span> <span class="o">%</span> <span class="n">original_id</span>
+        <span class="k">continue</span>
+
+    <span class="n">new_id</span> <span class="o">=</span> <span class="n">new_issue</span><span class="p">[</span><span class="s">'local_id'</span><span class="p">]</span>
+
+    <span class="k">print</span> <span class="s">'Migrated #</span><span class="si">%d</span><span class="s"> as #</span><span class="si">%d</span><span class="s"> in the new project'</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
+
+    <span class="c"># add a comment to mark the migration</span>
+    <span class="n">who</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'reported_by'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">who</span> <span class="o">=</span> <span class="n">who</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span> <span class="k">if</span> <span class="n">who</span> <span class="k">else</span> <span class="s">'anonymous'</span>
+    <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s">"Issue migrated from the original repo. "</span>
+            <span class="s">"Was #</span><span class="si">%d</span><span class="s"> reported by </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">who</span><span class="p">))</span>
+
+    <span class="c"># migrate comments</span>
+    <span class="n">result</span><span class="p">,</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issue_comments</span><span class="p">(</span><span class="n">original_id</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s">'content'</span><span class="p">]:</span>
+            <span class="k">continue</span>
+        <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
+</pre>
+<p>¡Disfruten!</p></div>
+        <p>
+        
+            <a href="posts/migrando-issues-entre-proyectos-de-bitbucket.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/ext4-superblock-failure-y-la-cola-del-diablo.html">Ext4 superblock failure y la cola del Diablo</a>
         <small>  
              <span class="timeago" title="2012-10-26 02:24:46">2012-10-26 02:24:46</span>
@@ -654,21 +731,6 @@ por este logro de la comunidad. En especial, a
         <p>
         
             <a href="posts/cdpedia-0-7-disponible.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/revista-orsai-no-3-en-cordoba.html">Revista Orsai Nº 3 en Córdoba</a>
-        <small>  
-             <span class="timeago" title="2011-06-10 15:18:13">2011-06-10 15:18:13</span>
-        </small></h1>
-        <div><p>De nuevo soy distribuidor de la <a class="reference external" href="http://orsai.es">Orsai</a> en la ciudad
-de Córdoba. Si estás interesado date una vuelta por <a class="reference external" href="http://textosypretextos.com.ar/Reserva-Orsai-3-en-Cordoba">esta
-página</a></p>
-<img alt="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg" class="align-center" src="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg"></div>
-        <p>
-        
-            <a href="posts/revista-orsai-no-3-en-cordoba.html#disqus_thread">Comments</a>
         
         </p></div>
     

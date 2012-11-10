@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Fri, 02 Nov 2012 02:13:45 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ext4 superblock failure y la cola del Diablo</title><link>/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Fri, 09 Nov 2012 23:12:20 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Migrando issues entre proyectos de Bitbucket</title><link>/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;p&gt;Hace un tiempo cont&amp;#233; &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migr&amp;#233; un repositorio Mercurial a Git&lt;/a&gt; .
+Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
+de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos en
+all&amp;#237; porque somos pobretones y nos da repos privados gratis.
+En la mudanza se me quedaronvarios &lt;em&gt;issues&lt;/em&gt; que necesitaba migrar. Y &lt;a class="reference external" href="https://bitbucket.org/site/master/issue/1642/allow-moving-tickets-over-to-another"&gt;no era el &amp;#250;nico&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Buscando un rato encontr&amp;#233; scriptcitos para migrar &lt;a class="reference external" href="https://github.com/sorich87/github-to-bitbucket-issues-migration"&gt;desde&lt;/a&gt; o &lt;a class="reference external" href="https://gist.github.com/3778347"&gt;hacia&lt;/a&gt; GitHub
+pero no hab&amp;#237;a para migrar entre proyectos de Bitbucket, algo bastante com&amp;#250;n
+desde que empezaron a ofrecer soporte Git.&lt;/p&gt;
+&lt;p&gt;Decid&amp;#237; entonces que deb&amp;#237;a hacer mi propio scriptcito migrador. La cosa se
+complicaba porque &lt;a class="reference external" href="https://github.com/Sheeprider/BitBucket-api"&gt;el&lt;/a&gt;
+&lt;a class="reference external" href="https://github.com/ericof/python-bitbucket"&gt;par&lt;/a&gt; de bibliotecas python
+que interactuan con la API de Bitbucket no tenian, hasta el momento, soporte
+para "postear" &lt;em&gt;issues&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Pero no hay darse por vencido: se me ocurri&amp;#243; mirar el par de forks de cada
+proyecto y encontr&amp;#233; &lt;a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc"&gt;justo lo que estaba buscando&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Entonces bast&amp;#243; con instalar el fork de David Paz Reyes&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install git+https://github.com/davidmpaz/BitBucket-api.git
+
+&lt;/pre&gt;
+&lt;p&gt;he hice un script que migra todo los issues en estado &lt;em&gt;new&lt;/em&gt;
+del repo original (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) al nuevo (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) y los potenciales comentarios que tenga.
+Como el autor  se pierde (dado que el nuevo quedar&amp;#225; publicado con mi usuario)
+agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bitbucket&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;
+
+&lt;span class="n"&gt;gpec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'gpec'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;gpec3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'gpec3'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# request original ISSUES&lt;/span&gt;
+&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issues&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'issues'&lt;/span&gt;&lt;span class="p"&gt;][:]:&lt;/span&gt;
+    &lt;span class="n"&gt;original_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'status'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s"&gt;'new'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;continue&lt;/span&gt;
+
+    &lt;span class="c"&gt;# and post to the new repo&lt;/span&gt;
+    &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'Fail migrating #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;original_id&lt;/span&gt;
+        &lt;span class="k"&gt;continue&lt;/span&gt;
+
+    &lt;span class="n"&gt;new_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'Migrated #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt; as #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt; in the new project'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c"&gt;# add a comment to mark the migration&lt;/span&gt;
+    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'reported_by'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'username'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s"&gt;'anonymous'&lt;/span&gt;
+    &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Issue migrated from the original repo. "&lt;/span&gt;
+            &lt;span class="s"&gt;"Was #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt; reported by &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="c"&gt;# migrate comments&lt;/span&gt;
+    &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issue_comments&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'content'&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+            &lt;span class="k"&gt;continue&lt;/span&gt;
+        &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;&amp;#161;Disfruten!&lt;/p&gt;</description><guid>/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
 conocer una ciudad que en las gu&amp;#237;as de viaje suena intererante y bonita.
 Se me ocurre prender la compu para ver si ese email que mand&amp;#233; la noche
 anterior, reci&amp;#233;n llegado despu&amp;#233;s de 14 horas de viaje
@@ -506,7 +571,4 @@ por este logro de la comunidad. En especial, a
 &lt;a class="reference external" href="http://twitter.com/#!/dmascialino"&gt;Diego&lt;/a&gt;,
 &lt;a class="reference external" href="http://twitter.com/#!/spiccinini"&gt;SAn&lt;/a&gt;,
 &lt;a class="reference external" href="http://www.taniquetil.com.ar/plog/"&gt;Facu&lt;/a&gt; y
-&lt;a class="reference external" href="http://protocultura.net/"&gt;Alecu&lt;/a&gt; que son los principales&lt;/p&gt;</description><guid>/posts/cdpedia-0-7-disponible.html</guid><pubDate>Fri, 01 Jul 2011 11:00:00 GMT</pubDate></item><item><title>Revista Orsai Nº 3 en Córdoba</title><link>/posts/revista-orsai-no-3-en-cordoba.html</link><description>&lt;p&gt;De nuevo soy distribuidor de la &lt;a class="reference external" href="http://orsai.es"&gt;Orsai&lt;/a&gt; en la ciudad
-de C&amp;#243;rdoba. Si est&amp;#225;s interesado date una vuelta por &lt;a class="reference external" href="http://textosypretextos.com.ar/Reserva-Orsai-3-en-Cordoba"&gt;esta
-p&amp;#225;gina&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg" class="align-center" src="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg"&gt;</description><guid>/posts/revista-orsai-no-3-en-cordoba.html</guid><pubDate>Fri, 10 Jun 2011 15:18:13 GMT</pubDate></item></channel></rss>
+&lt;a class="reference external" href="http://protocultura.net/"&gt;Alecu&lt;/a&gt; que son los principales&lt;/p&gt;</description><guid>/posts/cdpedia-0-7-disponible.html</guid><pubDate>Fri, 01 Jul 2011 11:00:00 GMT</pubDate></item></channel></rss>

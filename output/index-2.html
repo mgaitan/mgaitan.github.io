@@ -43,6 +43,88 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/referenciar-figuras-por-numero-en.html">Referenciar figuras por número en Sphinx / Latex</a>
+        <small>  
+             <span class="timeago" title="2011-03-19 23:13:01">2011-03-19 23:13:01</span>
+        </small></h1>
+        <div><p>El viernes presenté el draft para la revisión final de mi <a class="reference external" href="posts/blog/article/preparados-listos-en-un-rato">proyecto
+integrador</a> (a.k.a. tesis).
+Tentativamente (¡a esta altura y todavía no es seguro!) se titula
+<em>"Software para graficación de digramas termodinámicos"</em> y se puede
+chusmear
+<a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">acá</a>.</p>
+<p>Como verán, lo hice con <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>, generando
+LaTeX y compilando luego a PDF. Estoy más que satisfecho del resultado.</p>
+<p>Sin embargo, un problema de Sphinx/Docsutils (y esto viene a ser el
+verdadero tema de este post) es es que si bien están llenos de pulentez
+y se la bancan mil, no están "pensados" para escribir tesis sino
+documentación/manuales de software. Esto se nota, sobre todo, en la
+subutilización de recursos de LaTeX a los que "no se accede" desde
+restructuredText.</p>
+<p>El caso paradigmático es la referenciación de figuras. En las versiones
+"imprimibles" que se generan con LaTeX suele pasar que una figura no
+quepa en una página y el compilador, al medir y darse cuenta, la manda a
+una página siguiente. Esto hace indispensable ser preciso en la
+referencia ya que un mensaje como <em>"en la siguiente figura"</em> puede estar
+seguido de toda una página sin figuras.</p>
+<p>Para hacer una referenciar una figura en Sphinx hay que declarar un
+target</p>
+<pre class="literal-block">
+.. _ok:
+
+.. figure:: ok.png
+
+   Una imágen
+</pre>
+<p>y luego usar el rol <tt class="docutils literal">:ref:</tt>. Por ejemplo:</p>
+<pre class="literal-block">
+Referenciando la figura :ref:`ok` se evidencia el problema.
+</pre>
+<p>El problema es que el LaTeX generado por Sphinx no hace exáctamente una
+referencia a la figura, sino un hipervínculo (hyperref). Como texto de
+ese hipevinculo usa el epígrafe de la figura, lo cual es horrible e
+inútil para textos cientificos/académicos. El issue, <a class="reference external" href="https://bitbucket.org/birkenfeld/sphinx/issue/76/proper-references-to-figures-code-tables">está reportado
+hace más de 2
+años</a>.</p>
+<p>Con el estilo gronchohacker que se me está volviendo costumbre, hice
+unos cambiecitos para que funcaran las referencias como tienen que ser,
+por número. La directiva es particularmente fácil en LaTeX: <tt class="docutils literal">~\ref{}</tt>.
+En concreto, el "gronchohackeo" se trata de cambiar
+<tt class="docutils literal"><span class="pre">{\hyperref[label]{\emph{epigrafe}}}</span></tt> por <tt class="docutils literal">~\ref{label}</tt>.</p>
+<p>Para garantizar compatibilidad con los que les gusta que el título de la
+referencia sea el epígrafe y no el número, lo hice opcional: toda
+referencia a un destino con sufijo <tt class="docutils literal"><span class="pre">-num</span></tt> usa una referencia númerica
+en vez de un hipervinculo con texto.</p>
+<p>Acá el patch (para la versión 1.1 —en desarrollo— )</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/sphinx-issue76.txt">|image1|</a></td>
+</tr><tr><td>Diff Parche para el Issue #76 de Sphinx</td>
+</tr></tbody></table><p>Y acá un ejemplo del problema y la gronchosolución</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/prueba.pdf">|image3|</a></td>
+</tr></tbody></table><p>El código del ejemplo es este:</p>
+<pre class="literal-block">
+Ejemplo
+*******
+
+Referenciando la figura :ref:`ok` se evidencia el problema. Aplicando mi
+rústico parche en cambio, se puede referenciar a la Figura :ref:`ok-num`.
+
+.. _ok:
+
+.. figure:: ok.png
+
+   Una imágen
+
+.. _ok-num:
+
+.. figure:: ok.png
+</pre></div>
+        <p>
+        
+            <a href="posts/referenciar-figuras-por-numero-en.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/yendo-a-las-fuentes-de-cuevana-tv.html">Yendo a las fuentes de cuevana.tv</a>
         <small>  
              <span class="timeago" title="2011-02-28 12:24:40">2011-02-28 12:24:40</span>
@@ -454,54 +536,6 @@ sanarlo, quererlo, exigirlo y fortalecerlo.</p></div>
         <p>
         
             <a href="posts/me-cago-en-vos-afip.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/charla-python-a-los-bifes.html">Charla: Python a los bifes</a>
-        <small>  
-             <span class="timeago" title="2010-10-07 17:52:24">2010-10-07 17:52:24</span>
-        </small></h1>
-        <div><p>Víctima de la ausencia de tiempo y la mala costumbre, a ultísimo momento
-terminé de preparar <a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html">las
-diapositivas</a>
-para la charla que dí hoy en el marco de las <a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-2010">Conferencias de Ingeniería
-en Computación, Electrónica y Biomédica
-2010</a> de <a class="reference external" href="http://www.efn.uncor.edu/">mi
-facu</a>.</p>
-<p>La charla se tituló <strong>Python a los bifes: casos reales de aplicación en
-Ingeniería</strong>. Las <a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html">diapositivas se pueden ver
-acá</a>.</p>
-<p><a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html">|image0|</a></p>
-<p><em>(F11 para ver a pantalla completa)</em></p>
-<p>El resúmen de dos líneas decía:</p>
-<blockquote>
-Basta de hablar y hablar: en la cancha se ven los pingos. Mostraré
-problemas reales de la carrera resueltos con este poderoso (y
-simple) lenguaje. Trabajos de Sistemas de Computación, Sistemas
-Operativos II, Paradigmas de programación y mi proyecto integrador
-en curso"</blockquote>
-<p>Hubo unas 40 personas, y estuvo, creo, bastante bien. Como no practiqué
-(me siento estúpido hablando solo, y mi novia me mira desorbitada —
-aburrida — cuando le hablo de computadoras) no calculé bien el tiempo y
-los ejemplos, que era el quid de la cuestión, fueron a paso raudo. Pero
-creo que a la gente le gustó y ojalá alguno se sienta motivado para leer
-el <a class="reference external" href="http://tutorialpython.com.ar">tutorial de python</a> y sumarse a
-<a class="reference external" href="http://python.org.ar">PyAr</a>.</p>
-<div class="section" id="fuentes">
-<h2>Fuentes</h2>
-<p>La presentación fue <a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.rst">escrita en
-RST</a>
-y procesada con la herramienta
-<a class="reference external" href="http://docutils.sourceforge.net/docs/user/slide-shows.html">rst2s5</a>.</p>
-<p>Tiene una licencia
-<a class="reference external" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">cc-By-NC-SA</a>.
-Podés descargar todos los fuentes con las imágenes y algunos ejemplos de
-este tar:</p>
-</div></div>
-        <p>
-        
-            <a href="posts/charla-python-a-los-bifes.html#disqus_thread">Comments</a>
         
         </p></div>
     
