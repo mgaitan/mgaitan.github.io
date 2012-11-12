@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>tin_nqn (tutorial)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Mon, 12 Nov 2012 01:03:59 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Creando un nuevo proyecto Python</title><link>/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;p&gt;&amp;#191;As&amp;#237; que quer&amp;#233;s comenzar un nuevo proyecto usando Python?
+&amp;#161;Felicitaciones! &amp;#191;Quer&amp;#233;s que tenga la estructura recomendada para
+proyectos modernos? &amp;#191;Quer&amp;#233;s que sea instalable f&amp;#225;cilmente? &amp;#191;Quer&amp;#233;s que
+no se te arme lio de dependencias que colisionan con las de otros
+proyectos ? Bien, te propongo esta receta.&lt;/p&gt;
+&lt;div class="section" id="las-herramientas"&gt;
+&lt;h2&gt;Las herramientas&lt;/h2&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://www.virtualenv.org"&gt;Virtualenv&lt;/a&gt;:  es una herramienta para aislar tu entorno de
+desarrollo python. Es muy pero muy &amp;#250;til para evitar conflictos entre las
+dependencias de tus distintos proyectos.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/"&gt;virtualenvwrapper&lt;/a&gt;: es un conjunto de extensiones que
+hacen la vida del usuario &lt;em&gt;virtualenv&lt;/em&gt; aun m&amp;#225;s feliz, permitiendo crear
+y borrar entornos virtuales, asociarlos a un proyecto, automatizar
+tareas al activar o desactivar uno, etc.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt;: es la herramienta moderna, correcta y recomendada
+para administrar los paquetes python instalados en tu
+sistema/virtualenv. Es un reemplazo de &lt;em&gt;easy_install&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://packages.python.org/distribute/"&gt;Distribute&lt;/a&gt;: es la herramienta moderna y recomendada para
+distribuir tu paquete python. Es un fork de &lt;em&gt;setuptools&lt;/em&gt; (que es, a su
+vez, una mejora sobre el m&amp;#243;dulo est&amp;#225;ndar &lt;em&gt;distutils&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/stumitchell/skeleton"&gt;skeleton&lt;/a&gt; es una herramienta que define &lt;em&gt;plantillas&lt;/em&gt;
+para iniciar un proyecto, generando la estructura b&amp;#225;sica necesaria. Es
+similar a &lt;a class="reference external" href="http://python.org.ar/pyar/PasteScript"&gt;PasteScript&lt;/a&gt; pero enfocado en esta
+tarea concreta, sin dependencias y compatible con Python 3.x&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;div class="section" id="la-receta"&gt;
+&lt;h2&gt;La receta&lt;/h2&gt;
+&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Instal&amp;#225; pip:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo apt-get install python-pip
+&lt;/pre&gt;
+&lt;p&gt;o bien directamente:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Instal&amp;#225; virtualenwrapper y skeleton:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pip install virtualenwrapper
+$ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;div class="note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;Notar que &lt;em&gt;skeleton&lt;/em&gt; se est&amp;#225; instalando desde un &lt;em&gt;fork&lt;/em&gt; del proyecto
+original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol class="arabic" start="3"&gt;&lt;li&gt;&lt;p class="first"&gt;Configur&amp;#225; virtualenvwrapper&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.virtualenvs           &lt;span class="c"&gt;# ac&amp;#225; se van a guardar tus entornos virtuales
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/proyectos              &lt;span class="c"&gt;# ac&amp;#225; se van a guardar tus proyectos
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.pip_download_cache     &lt;span class="c"&gt;# para no bajar paquetes cada vez
+&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Luego edit&amp;#225; tu &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/tt&gt; agregando las siguientes l&amp;#237;neas&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true
+export &lt;/span&gt;&lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
+&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
+
+&lt;/pre&gt;
+&lt;p&gt;y recarg&amp;#225; tus cambios:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ source ~/.bashrc
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Inicializ&amp;#225; tu proyecto. Por ejemplo el proyecto &lt;em&gt;zaraza&lt;/em&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$&amp;#160;mkproject&amp;#160;-t&amp;#160;package&amp;#160;zaraza
+&lt;/pre&gt;
+&lt;p&gt;Se te solicitar&amp;#225;n algunos datos (nombre del proyecto, autor,
+licencia, etc.) y &amp;#161;(casi) listo! Estar&amp;#225;s trabajando en tu proyecto
+&lt;em&gt;zaraza&lt;/em&gt;. Tu prompt se ver&amp;#225; as&amp;#237;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+(zaraza)tin@morocha:~/proyectos/zaraza$
+&lt;/pre&gt;
+&lt;p&gt;&amp;#191;Qu&amp;#233; sucedi&amp;#243;? Se cre&amp;#243; un directorio &lt;tt class="docutils literal"&gt;~/proyectos/zaraza&lt;/tt&gt; para tu
+proyecto, asociado a un virtualenv ubicado en &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.virtualenvs/zaraza&lt;/span&gt;&lt;/tt&gt;.
+&lt;strong&gt;skeleton&lt;/strong&gt; autom&amp;#225;ticamente cre&amp;#243; una estructura b&amp;#225;sica de
+paquete python en &lt;tt class="docutils literal"&gt;~/proyectos/zaraza/src&lt;/tt&gt; incluyendo un &lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt;
+basado en &lt;em&gt;distribute&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Instal&amp;#225; tu paquete en el virtualenv, para poder importarlo desde
+cualquier lado:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+(zaraza)&amp;#160;$&amp;#160;cd&amp;#160;&amp;#160;~/proyectos/zaraza/src
+(zaraza)&amp;#160;$&amp;#160;pip&amp;#160;install&amp;#160;-e&amp;#160;.
+&lt;/pre&gt;
+&lt;p&gt;Esto agrega el directorio de desarrollo de tu proyecto al PYTHONPATH
+del virtualenv, de modo que puedes importar &lt;em&gt;zaraza&lt;/em&gt; desde cualquier
+lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
+&lt;em&gt;src/test&lt;/em&gt; al nivel de '/src/zaraza'&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;div class="section" id="y-ahora"&gt;
+&lt;h2&gt;&amp;#191;Y ahora?&lt;/h2&gt;
+&lt;p&gt;Cada vez que quieras trabajar en tu proyecto &lt;em&gt;zaraza&lt;/em&gt; ejecut&amp;#225;s:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ workon zaraza
+&lt;/pre&gt;
+&lt;p&gt;Para salir del virtualenv:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+(zaraza) $ deactivate
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="algunos-tips-mas-a-modo-de-despedida"&gt;
+&lt;h2&gt;Algunos tips m&amp;#225;s a modo de despedida&lt;/h2&gt;
+&lt;p&gt;Virtualenwrapper es totalmente hookeable y extensible. Esta receta
+propone usar &lt;em&gt;skeleton&lt;/em&gt; (que funciona como plugin de
+&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/"&gt;virtualenvwrapper.project&lt;/a&gt;)
+para crear una estructura de paquete est&amp;#225;ndar b&amp;#225;sica, pero hay plugins
+para proyectos m&amp;#225;s espec&amp;#237;ficos. Por ejemplo
+&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.django/"&gt;virtualenwrapper.django&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;El comando &lt;tt class="docutils literal"&gt;mkproject&lt;/tt&gt; es un wrapper sobre el
+comando principal de virtualenvwrapper &lt;tt class="docutils literal"&gt;mkvirtualenv&lt;/tt&gt;, que acepta muchos
+par&amp;#225;metros opcionales. Ejecut&amp;#225; &lt;tt class="docutils literal"&gt;mkproject_help&lt;/tt&gt; o &lt;tt class="docutils literal"&gt;mkvirtualenv &lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/tt&gt;
+para saber m&amp;#225;s.&lt;/p&gt;
+&lt;p&gt;Y ya sab&amp;#233;s ...&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;&lt;/div&gt;
+&lt;hr class="docutils"&gt;&lt;blockquote&gt;
+Este art&amp;#237;culo lo escrib&amp;#237; originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;</description><guid>/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Creando un nuevo proyecto Python | "><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>  Creando un nuevo proyecto Python | tin_nqn  </title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox span3">
+        <h1 id="blog-title">
+            <a href="../">tin_nqn</a>
+        </h1>
+        <h6 id="blog-description">&gt;&gt;&gt; me.geek.post()</h6>
+
+        
+        
+        
+        </div>
+    <div id="menu" class="span7 offset1">
+      <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                 / 
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                 / 
+            
+                </li><li><a href="../about.html">Sobre mí</a>
+                 / 
+            
+                </li><li><a href="../charlas.html">Charlas</a>
+                
+            
+        </li></ul></div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Creando un nuevo proyecto Python</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2012-11-12 00:34:23">2012-11-12 00:34:23</span>   |  
+
+        
+
+        <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/creando-un-nuevo-proyecto-python.rst">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/python.html">python</a>
+                , 
+            
+                <a href="../categories/tutorial.html">tutorial</a>
+                
+            
+        
+    </small>
+    <div><p>¿Así que querés comenzar un nuevo proyecto usando Python?
+¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
+proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
+no se te arme lio de dependencias que colisionan con las de otros
+proyectos ? Bien, te propongo esta receta.</p>
+<div class="section" id="las-herramientas">
+<h2>Las herramientas</h2>
+<ul class="simple"><li><a class="reference external" href="http://www.virtualenv.org">Virtualenv</a>:  es una herramienta para aislar tu entorno de
+desarrollo python. Es muy pero muy útil para evitar conflictos entre las
+dependencias de tus distintos proyectos.</li>
+<li><a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/">virtualenvwrapper</a>: es un conjunto de extensiones que
+hacen la vida del usuario <em>virtualenv</em> aun más feliz, permitiendo crear
+y borrar entornos virtuales, asociarlos a un proyecto, automatizar
+tareas al activar o desactivar uno, etc.</li>
+<li><a class="reference external" href="http://www.pip-installer.org">pip</a>: es la herramienta moderna, correcta y recomendada
+para administrar los paquetes python instalados en tu
+sistema/virtualenv. Es un reemplazo de <em>easy_install</em></li>
+<li><a class="reference external" href="http://packages.python.org/distribute/">Distribute</a>: es la herramienta moderna y recomendada para
+distribuir tu paquete python. Es un fork de <em>setuptools</em> (que es, a su
+vez, una mejora sobre el módulo estándar <em>distutils</em>)</li>
+<li><a class="reference external" href="https://github.com/stumitchell/skeleton">skeleton</a> es una herramienta que define <em>plantillas</em>
+para iniciar un proyecto, generando la estructura básica necesaria. Es
+similar a <a class="reference external" href="http://python.org.ar/pyar/PasteScript">PasteScript</a> pero enfocado en esta
+tarea concreta, sin dependencias y compatible con Python 3.x</li>
+</ul></div>
+<div class="section" id="la-receta">
+<h2>La receta</h2>
+<ol class="arabic"><li><p class="first">Instalá pip:</p>
+<pre class="literal-block">
+$ sudo apt-get install python-pip
+</pre>
+<p>o bien directamente:</p>
+<pre class="literal-block">
+$ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+</pre>
+</li>
+<li><p class="first">Instalá virtualenwrapper y skeleton:</p>
+<pre class="literal-block">
+$ sudo pip install virtualenwrapper
+$ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton
+</pre>
+</li>
+</ol><div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">Notar que <em>skeleton</em> se está instalando desde un <em>fork</em> del proyecto
+original (aparentemente desmantenida), que resuelve bugs importantes</p>
+</div>
+<ol class="arabic" start="3"><li><p class="first">Configurá virtualenvwrapper</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>mkdir ~/.virtualenvs           <span class="c"># acá se van a guardar tus entornos virtuales
+</span><span class="nv">$ </span>mkdir ~/proyectos              <span class="c"># acá se van a guardar tus proyectos
+</span><span class="nv">$ </span>mkdir ~/.pip_download_cache     <span class="c"># para no bajar paquetes cada vez
+</span>
+</pre>
+<p>Luego editá tu <tt class="docutils literal"><span class="pre">~/.bashrc</span></tt> agregando las siguientes líneas</p>
+<pre class="code bash literal-block">
+<span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<span class="nb">export </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<span class="nb">export </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true
+export </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+
+</pre>
+<p>y recargá tus cambios:</p>
+<pre class="literal-block">
+$ source ~/.bashrc
+</pre>
+</li>
+<li><p class="first">Inicializá tu proyecto. Por ejemplo el proyecto <em>zaraza</em></p>
+<pre class="literal-block">
+$ mkproject -t package zaraza
+</pre>
+<p>Se te solicitarán algunos datos (nombre del proyecto, autor,
+licencia, etc.) y ¡(casi) listo! Estarás trabajando en tu proyecto
+<em>zaraza</em>. Tu prompt se verá así</p>
+<pre class="literal-block">
+(zaraza)tin@morocha:~/proyectos/zaraza$
+</pre>
+<p>¿Qué sucedió? Se creó un directorio <tt class="docutils literal">~/proyectos/zaraza</tt> para tu
+proyecto, asociado a un virtualenv ubicado en <tt class="docutils literal"><span class="pre">~/.virtualenvs/zaraza</span></tt>.
+<strong>skeleton</strong> automáticamente creó una estructura básica de
+paquete python en <tt class="docutils literal">~/proyectos/zaraza/src</tt> incluyendo un <tt class="docutils literal">setup.py</tt>
+basado en <em>distribute</em>.</p>
+</li>
+<li><p class="first">Instalá tu paquete en el virtualenv, para poder importarlo desde
+cualquier lado:</p>
+<pre class="literal-block">
+(zaraza) $ cd  ~/proyectos/zaraza/src
+(zaraza) $ pip install -e .
+</pre>
+<p>Esto agrega el directorio de desarrollo de tu proyecto al PYTHONPATH
+del virtualenv, de modo que puedes importar <em>zaraza</em> desde cualquier
+lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
+<em>src/test</em> al nivel de '/src/zaraza'</p>
+</li>
+</ol></div>
+<div class="section" id="y-ahora">
+<h2>¿Y ahora?</h2>
+<p>Cada vez que quieras trabajar en tu proyecto <em>zaraza</em> ejecutás:</p>
+<pre class="literal-block">
+$ workon zaraza
+</pre>
+<p>Para salir del virtualenv:</p>
+<pre class="literal-block">
+(zaraza) $ deactivate
+</pre>
+</div>
+<div class="section" id="algunos-tips-mas-a-modo-de-despedida">
+<h2>Algunos tips más a modo de despedida</h2>
+<p>Virtualenwrapper es totalmente hookeable y extensible. Esta receta
+propone usar <em>skeleton</em> (que funciona como plugin de
+<a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/">virtualenvwrapper.project</a>)
+para crear una estructura de paquete estándar básica, pero hay plugins
+para proyectos más específicos. Por ejemplo
+<a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.django/">virtualenwrapper.django</a></p>
+<p>El comando <tt class="docutils literal">mkproject</tt> es un wrapper sobre el
+comando principal de virtualenvwrapper <tt class="docutils literal">mkvirtualenv</tt>, que acepta muchos
+parámetros opcionales. Ejecutá <tt class="docutils literal">mkproject_help</tt> o <tt class="docutils literal">mkvirtualenv <span class="pre">--help</span></tt>
+para saber más.</p>
+<p>Y ya sabés ...</p>
+<div class="figure align-center">
+<img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"></div>
+<hr class="docutils"><blockquote>
+Este artículo lo escribí originalmente para el <a class="reference external" href="http://python.org.ar/pyar/Recetario">Recetario de PyAr</a></blockquote>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="migrando-issues-entre-proyectos-de-bitbucket.html">← Post anterior</a>
+        </li>
+    
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="http://www.textosypretextos.com.ar" title="Mi otro blog">Textos y pretextos</a>
+                    /
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>
