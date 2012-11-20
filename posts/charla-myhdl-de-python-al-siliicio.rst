@@ -21,8 +21,8 @@ hardware <http://en.wikipedia.org/wiki/Hardware_description_language>`_
 
 Usé MyHDL para hacer
 `pymips <https://github.com/mgaitan/pymips/tree/pipeline>`_, una
-implementación
-[`1 </posts/charla-myhdl-de-python-al-siliicio#nb1>`_] de un
-`procesador DLX <http://en.wikipedia.org/wiki/DLX>`_ completo. Pueden
-leer un poco más sobre el trabajo en `el
+implementación de un `procesador DLX <http://en.wikipedia.org/wiki/DLX>`_ 
+completo como trabajo final de la asignatura Arquitectura de Computadoras. 
+Pueden leer un poco más sobre el trabajo en `el 
 informe <https://github.com/mgaitan/pymips/raw/pipeline/docs/informe.pdf>`_
+que presenté. 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (Software Libre)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Mon, 12 Nov 2012 00:55:43 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
+<rss version="2.0"><channel><title>tin_nqn (Software Libre)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:20:07 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y f&amp;#225;cil de usar.&lt;/p&gt;
 &lt;p&gt;Comenc&amp;#233; un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;peque&amp;#241;o
@@ -279,13 +279,13 @@ m&amp;#225;s se festeja su colectivizaci&amp;#243;n, y eso lo saben (y lo disfru
 picantes y los tiernitos.&lt;/p&gt;
 &lt;p&gt;Cuanta falta le hace a la universidad visiones y experiencias como esta.&lt;/p&gt;
 &lt;/div&gt;</description><guid>/posts/apuntes-del-pycamp-2011.html</guid><pubDate>Wed, 30 Mar 2011 19:50:40 GMT</pubDate></item><item><title>Control de Versiones con Subversion</title><link>/posts/Control-de-Versiones-con.html</link><description>&lt;p&gt;Xab, compa&amp;#241;ero de la lista
-&lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;spip-es&lt;/a&gt; me propone
+&lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;Spip-es&lt;/a&gt; me propone
 un trato:&lt;/p&gt;
 &lt;blockquote&gt;
-abro una cuenta con magoya en picasa y testeo el
-&lt;a class="reference external" href="/posts/blog/article/spicasa-adjunta-fotos-de-picasa-a"&gt;plugin&lt;/a&gt;, y a
+Abro una cuenta con magoya en picasa y testeo el
+&lt;a class="reference external" href="/posts/spicasa-adjunta-fotos-de-picasa-a"&gt;plugin&lt;/a&gt;, y a
 cambio vos "hac&amp;#233;s (o recomend&amp;#225;s)" un how-to subversion aplicado a
-spip&lt;/blockquote&gt;
+Spip&lt;/blockquote&gt;
 &lt;p&gt;Como ten&amp;#237;a unos materiales de una charla que d&amp;#237; en la facu, lo comparto
 con el pueblo spipero.&lt;/p&gt;
 &lt;div class="section" id="subversion-un-software-de-control-de-versiones"&gt;
@@ -318,22 +318,22 @@ computadoras y el servidor est&amp;#225;, generalmente, online. A este servidor
 online se le denomina &lt;strong&gt;repositorio&lt;/strong&gt;. A la copia local de los archivos,
 &lt;strong&gt;copia de trabajo&lt;/strong&gt;. A cada cambio que el repositorio recibe se le
 llama &lt;strong&gt;revisi&amp;#243;n&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Para Windows, el mejor cliente es
-&lt;a class="reference external" href="http://tortoisesvn.tigris.org/"&gt;TortoiseSVN&lt;/a&gt;
-&lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Para GNU/Linux, basta &lt;strong&gt;subversion&lt;/strong&gt;, la versi&amp;#243;n para l&amp;#237;nea de
-comandos, o &lt;strong&gt;RapidSVN&lt;/strong&gt;, una versi&amp;#243;n gr&amp;#225;fica para entornos GTK.&lt;/p&gt;
-&lt;p&gt;El proceso de trabajo es m&amp;#225;s o menos as&amp;#237;:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image2" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Si no existe en el repositorio nuestro c&amp;#243;digo, hacemos un
-&lt;strong&gt;import&lt;/strong&gt; (enviar por primera vez nuestro c&amp;#243;digo al repositorio.
-&lt;img alt="image3" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Para empezar a trabajar, necesitamos hace un &lt;strong&gt;checkout&lt;/strong&gt;, es
+&lt;ul class="simple"&gt;&lt;li&gt;Para Windows, el mejor cliente es
+&lt;a class="reference external" href="http://tortoisesvn.tigris.org/"&gt;TortoiseSVN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Para GNU/Linux, basta &lt;tt class="docutils literal"&gt;subversion&lt;/tt&gt;, la versi&amp;#243;n para l&amp;#237;nea de
+comandos, o &lt;strong&gt;RapidSVN&lt;/strong&gt;, una versi&amp;#243;n gr&amp;#225;fica para entornos GTK.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;El proceso de trabajo es m&amp;#225;s o menos as&amp;#237;:&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Si no existe en el repositorio nuestro c&amp;#243;digo, hacemos un
+&lt;tt class="docutils literal"&gt;import&lt;/tt&gt; (enviar por primera vez nuestro c&amp;#243;digo al repositorio.&lt;/li&gt;
+&lt;li&gt;Para empezar a trabajar, necesitamos hace un &lt;tt class="docutils literal"&gt;checkout&lt;/tt&gt;, es
 decir, decirle a Subversion que convierta nuestra carpeta de c&amp;#243;digo (o
-la cree si no existe) en copia de trabajo.
-&lt;img alt="image4" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Ya preparados, el trabajo cotidiano: lo comandos m&amp;#225;s frecuentes
-son tres. &lt;strong&gt;update&lt;/strong&gt;, para actualizar la copia local con las ultimas
-revisiones; &lt;strong&gt;commit&lt;/strong&gt; para enviar nuestras modificaciones locales al
-repositorio y crear una nueva revisi&amp;#243;n y &lt;strong&gt;add&lt;/strong&gt; para agregar un archivo
-que hemos creado, y aun no existe en el repositorio.&lt;/p&gt;
-&lt;/div&gt;
+la cree si no existe) en copia de trabajo.&lt;/li&gt;
+&lt;li&gt;Ya preparados, el trabajo cotidiano: lo comandos m&amp;#225;s frecuentes
+son tres. &lt;tt class="docutils literal"&gt;update&lt;/tt&gt;, para actualizar la copia local con las ultimas
+revisiones; &lt;tt class="docutils literal"&gt;commit&lt;/tt&gt; para enviar nuestras modificaciones locales al
+repositorio y crear una nueva revisi&amp;#243;n y &lt;tt class="docutils literal"&gt;add&lt;/tt&gt; para agregar un archivo
+que hemos creado, y aun no existe en el repositorio.&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
 &lt;div class="section" id="un-ejemplo-con-spip-zone"&gt;
 &lt;h2&gt;Un ejemplo con SPIP-Zone&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://zone.spip.org"&gt;Spip-zone&lt;/a&gt; tiene un servidor subversion
@@ -343,25 +343,26 @@ cualquier contenido libre que tenga que ver con SPIP. Es abierto para
 lectura (pod&amp;#233;s hacer checkouts y updates anonimamente) pero necesit&amp;#225;s
 ser usuario para hacer commits. Pod&amp;#233;s pedirle un user y pass a
 &lt;a class="reference external" href="mailto:fil@nospam--.rezo.net"&gt;Fil&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Paso 0&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="section" id="paso-0"&gt;
+&lt;h3&gt;Paso 0&lt;/h3&gt;
 &lt;p&gt;Suponiendo que sos usuario con clave y password y quer&amp;#233;s compartir el
 desarrollo de tus squeletos, los &lt;em&gt;squelettes_maslindos&lt;/em&gt; que est&amp;#225;n en la
 carpeta squelettes local (por poner un ejemplo).&lt;/p&gt;
-&lt;p&gt;La direcci&amp;#243;n del repositorio, arbitraria pero recomendada, ser&amp;#237;a esta&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-svn://zone.spip.org/spip-zone/_squelettes_/maslindos
-&lt;/pre&gt;
+&lt;p&gt;La direcci&amp;#243;n del repositorio, arbitraria pero recomendada,
+ser&amp;#237;a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;svn://zone.spip.org/spip-zone/_squelettes_/maslindos&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;Desde &lt;strong&gt;Tortoise&lt;/strong&gt;, con el boton derecho sobre la carpeta de esqueletos,
-le damos a la opci&amp;#243;n &lt;strong&gt;Import&lt;/strong&gt; y ponemos la dire del repo donde la
+le damos a la opci&amp;#243;n &lt;tt class="docutils literal"&gt;Import&lt;/tt&gt; y ponemos la dire del repo donde la
 pide.&lt;/p&gt;
 &lt;p&gt;Desde l&amp;#237;nea de comandos ser&amp;#237;a&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ svn import ./squelettes &amp;#160;svn://zone.spip.org/spip-zone/_squelettes_/maslindos -m "importacion de los squeletos m&amp;#225;s lindos"
 &lt;/pre&gt;
 &lt;p&gt;Si la importaci&amp;#243;n sali&amp;#243; bien, deber&amp;#237;a poder ver tus archivos en la
-siguiente direcci&amp;#243;n
-&lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos"&gt;http://zone.spip.org/trac/spip-zone...&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Paso 1&lt;/strong&gt; Este es el paso inicial para aquellos que quieren probar algo
+direcci&amp;#243;n &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos"&gt;http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="paso-1"&gt;
+&lt;h3&gt;Paso 1&lt;/h3&gt;
+&lt;p&gt;Este es el paso inicial para aquellos que quieren probar algo
 que est&amp;#225; en el repositorio, pero sin intenciones de enviar
 modificaciones (s&amp;#243;lo lectura). Tambien deben hacerlo aquellos que s&amp;#237; lo
 van a hacer, porque la importaci&amp;#243;n no implica que se haya creado una
@@ -379,10 +380,9 @@ svn://zone.spip.org/spip-zone/_squelettes_/maslindos
 &lt;pre class="literal-block"&gt;
 $ svn checkout svn://zone.spip.org/spip-zone/_squelettes_/maslindos ./squelettes
 &lt;/pre&gt;
-&lt;p&gt;&lt;a href="/posts/Control-de-Versiones-con.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;**&lt;/span&gt;&lt;/a&gt;Pasos 2 y 3 **&lt;/p&gt;
-&lt;div class="system-message" id="id1"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 133); &lt;em&gt;&lt;a href="/posts/Control-de-Versiones-con.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-Inline strong start-string without end-string.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pasos-2-y-3"&gt;
+&lt;h3&gt;Pasos 2 y 3&lt;/h3&gt;
 &lt;p&gt;Listo, tenemos nuetra copia de trabajo. Cada vez que queramos actualizar
 a la ultima versi&amp;#243;n, parados sobre la carpeta, hacemos &lt;strong&gt;update&lt;/strong&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -398,8 +398,13 @@ $ svn &amp;#160;update
 $ svn &amp;#160;add archivo1 archivo2 *jpg
 &lt;/pre&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="un-video-vale-mas-que-mil-palabras"&gt;
 &lt;h2&gt;Un video vale m&amp;#225;s que mil palabras&lt;/h2&gt;
 &lt;p&gt;Un ejemplo de flujo de trabajo por l&amp;#237;nea de comandos&lt;/p&gt;
-&lt;p&gt;Y otro ejemplo usando TortoiseSVN sobre Windows.&lt;/p&gt;
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/P0XIj1w21YU?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;
+&lt;/iframe&gt;
+&lt;p&gt;Y otro ejemplo usando una interfaz gr&amp;#225;fica.&lt;/p&gt;
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/U3qVh9F6fv0?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;
+&lt;/iframe&gt;
 &lt;/div&gt;</description><guid>/posts/Control-de-Versiones-con.html</guid><pubDate>Sat, 14 Feb 2009 11:23:41 GMT</pubDate></item></channel></rss>

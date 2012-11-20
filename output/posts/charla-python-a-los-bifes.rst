@@ -10,17 +10,16 @@ La charla se tituló **Python a los bifes: casos reales de aplicación en
 Ingeniería**. Las `diapositivas se pueden ver
 acá <http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html>`_.
 
-`|image0| <http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html>`_
-
 *(F11 para ver a pantalla completa)*
 
 El resúmen de dos líneas decía:
 
-    Basta de hablar y hablar: en la cancha se ven los pingos. Mostraré
+    Basta de hablar y hablar de lo bueno que está Python: 
+    en la cancha se ven los pingos. Mostraré
     problemas reales de la carrera resueltos con este poderoso (y
     simple) lenguaje. Trabajos de Sistemas de Computación, Sistemas
     Operativos II, Paradigmas de programación y mi proyecto integrador
-    en curso"
+    en curso
 
 Hubo unas 40 personas, y estuvo, creo, bastante bien. Como no practiqué
 (me siento estúpido hablando solo, y mi novia me mira desorbitada —
@@ -43,4 +42,3 @@ Tiene una licencia
 Podés descargar todos los fuentes con las imágenes y algunos ejemplos de
 este tar:
 
-.. |image0| image:: local/cache-vignettes/L510xH317/intro-49669.png

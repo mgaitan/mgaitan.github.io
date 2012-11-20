@@ -1,91 +1,567 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (spip)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Mon, 12 Nov 2012 00:55:41 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
-tratar de que se vea un poco m&amp;#225;s bonito.&lt;/p&gt;
-&lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
-&lt;div class="section" id="github-nikola"&gt;
-&lt;h2&gt;Github &amp;#9829; Nikola&lt;/h2&gt;
-&lt;p&gt;Este blog que est&amp;#225;s leyendo est&amp;#225; hospedado en &lt;a class="reference external" href="http://pages.github.com"&gt;Github Pages&lt;/a&gt; ,
-el servicio de hosting gratuito de contenido est&amp;#225;tico que ofrece Github.&lt;/p&gt;
-&lt;p&gt;A diferencia de cuando se usa Gh-pages para proyectos, donde se sirve
-el contenido del branch &lt;em&gt;gh-page&lt;/em&gt; del proyecto en cuesti&amp;#243;n,
-para usar gh-pages por usuario hay que crear
-un repo llamado &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt;.github.com (donde &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt; es el tuyo)
-y lo que sirve en &lt;a class="reference external" href="http:/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch
-&lt;em&gt;master&lt;/em&gt; (&lt;a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages"&gt;referencia&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Por este motivo cre&amp;#233; otro branch (que sin mucha imaginaci&amp;#243;n denomin&amp;#233;
-&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing"&gt;writing&lt;/a&gt; )
-donde tengo todo el mi "proyecto" hecho con Nikola&lt;/p&gt;
-&lt;p&gt;All&amp;#237; escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;El branch master es el de deploy y sirve todo lo que haya en la carpeta
-&lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que ir a &lt;em&gt;master&lt;/em&gt;,
-borrar todo y leer desde el &amp;#225;rbol del otro branch con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>tin_nqn (SPIP)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:20:07 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
+&lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
+comentarios muy poderosa y f&amp;#225;cil de usar.&lt;/p&gt;
+&lt;p&gt;Comenc&amp;#233; un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;peque&amp;#241;o
+plugin&lt;/a&gt;
+para integrar Disqus a &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt;.&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Por ahora tiene dos componentes b&amp;#225;sicos:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;&lt;li&gt;Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
+SPIP (y su formulario) por Disqus&lt;/li&gt;
+&lt;li&gt;Un esqueleto para exportar comentarios existentes (genera un XML
+importable a traves del panel de disqus)&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;La configuraci&amp;#243;n se realiza a trav&amp;#233;s de una p&amp;#225;gina (requiere el &lt;a class="reference external" href="http://plugins.spip.net/CFG"&gt;plugin
+CFG&lt;/a&gt;) donde se define el &lt;em&gt;"Disqus
+shortname"&lt;/em&gt; (la identificaci&amp;#243;n unica que asignamos al sitio donde
+usaremos Diqus).&lt;/p&gt;
+&lt;p&gt;Para generar el XML con la exportaci&amp;#243;n de comentarios preexistentes,
+basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>SimpleCart(js) para SPIP</title><link>/posts/simplecart-js-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
+muy sencillo &amp;#237;ntegramente desarrollado en javascript. Permite realizar
+ventas mediante PayPal o Google Checkout y es muy extensible para
+implementar otros sistemas.&lt;/p&gt;
+&lt;p&gt;En este domingo de procrastinaci&amp;#243;n, decid&amp;#237; integrarlo a SPIP
+[&lt;a class="reference external" href="/blog/article/simplecart-js-para-spip#nb1"&gt;1&lt;/a&gt;]. Lo usar&amp;#233;, espero que
+pronto, para vender los productos del &lt;a class="reference external" href="http://www.agrupacionmazamorra.org.ar/taller-de-serigrafia-30"&gt;taller de ser&amp;#237;graf&amp;#237;a de
+Mazamorra&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="como-funciona"&gt;
+&lt;h2&gt;C&amp;#243;mo funciona&lt;/h2&gt;
+&lt;p&gt;Se instala como un plugin com&amp;#250;n y se configura mediante el plugin CFG.
+Por ahora s&amp;#243;lo soporta PayPal como medio de pago, pero incluir&amp;#233; otros.&lt;/p&gt;
+&lt;p&gt;SimpleCart usa simples se&amp;#241;aladores html, que yo he convertido en
+balizas.&lt;/p&gt;
+&lt;p&gt;Baliza
+Descripci&amp;#243;n
+#SIMPLECART_QUANTITY
+Indica la cantidad de productos
+#SIMPLECART_ITEMS
+Muestra los items en el carrito seg&amp;#250;n las cabeceras definidas en la
+p&amp;#225;gina de configuraci&amp;#243;n
+#SIMPLECART_TAX_RATE
+Indica la tasa impositiva indicada en la configuraci&amp;#243;n
+#SIMPLECART_TAX_COST
+Indica el total de impuestos
+#SIMPLECART_SHIPPING_COST
+Indica el costo de env&amp;#237;o en funci&amp;#243;n de la configuraci&amp;#243;n definida
+#SIMPLECART_TOTAL
+La suma del precio de los productos en el carrito (Subtotal)
+#SIMPLECART_FINAL_TOTAL
+Total considerando impuestos y env&amp;#237;o
+#SIMPLECART_CHECKOUT
+Genera el bot&amp;#243;n para finalizar compra (redirige al sistema de pago)
+#SIMPLECART_EMPTY
+Genera el bot&amp;#243;n para vaciar el carrito
+Con estas balizas puedes armar el carrito en cualquier lado. Los datos
+del carritos son persistentes usando cookies (incluso se conservan
+durante un tiempo aunque se abandone la p&amp;#225;gina).&lt;/p&gt;
+&lt;p&gt;Por ejemplo, este puede ser tu carrito .&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-git checkout master
-git rm *    # s&amp;#243;lo la primera vez
-git read-tree writing:output
-git commit -m 'deploying last build'
-git push
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="migrando-desde-spip"&gt;
-&lt;h2&gt;Migrando desde Spip&lt;/h2&gt;
-&lt;p&gt;Uno de los motivos que me llevaron a migrar desde &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt; es que el markup
-que usa es &lt;em&gt;ad hoc&lt;/em&gt; y muy feo. Algo as&amp;#237;&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-{{{ Un intert&amp;#237;tulo }}}
+&amp;lt;:simplecart:your_cart:&amp;gt; (#SIMPLECART_QUANTITY items)
 
-Esto es {{negrita}} y este [mi twitter-&amp;gt;http://twitter.com/tin_nqn_]
+#SIMPLECART_ITEMS
+
+
+&amp;lt;:simplecart:subtotal:&amp;gt;: #SIMPLECART_TOTAL&amp;lt;:simplecart:tax_cost:&amp;gt; (#SIMPLECART_TAX_RATE): #SIMPLECART_TAX_COST &amp;lt;:simplecart:shipping_cost:&amp;gt;:  #SIMPLECART_SHIPPING_COST &amp;lt;:simplecart:final_total:&amp;gt;: #SIMPLECART_FINAL_TOTAL
+
+#SIMPLECART_CHECKOUT
+#SIMPLECART_EMPTY
 &lt;/pre&gt;
-&lt;p&gt;Hasta ah&amp;#237; no se ve tan mal, pero es muy limitado cuando se trata de mostrar
-c&amp;#243;digo, necesario en todo blog mas o menos t&amp;#233;cnico.&lt;/p&gt;
-&lt;p&gt;Para migrar esquiv&amp;#233; la idea de convertir el markup de spip y opt&amp;#233; por un
-scrapping, limpieza y conversi&amp;#243;n a restructuredText usando el m&amp;#225;gico
-&lt;a class="reference external" href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt; (y la ayuda de PyQuery)&lt;/p&gt;
-&lt;p&gt;El script que hice est&amp;#225;
-&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;ac&amp;#225;&lt;/a&gt;
-. No es perfecto, pero est&amp;#225; lo importante: contenidos, im&amp;#225;genes, adjuntos,
-convertido a restructuredText bastante decente que mejorar&amp;#233; poco a poco
-a mano.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="estilos"&gt;
-&lt;h2&gt;Estilos&lt;/h2&gt;
-&lt;p&gt;Es mentira que a los &amp;#241;o&amp;#241;os no nos gustan las cosas (los blogs, entre otras)
-que se ven bonitos. Sucede, en realidad, que la mayor&amp;#237;a de las veces no
-venimos con &lt;em&gt;esa&lt;/em&gt; habilidad y el esfuerzo que nos implica intentarlo
-preferimos ponerlo en otra cosa. No gusta, pero no es lo m&amp;#225;s importante.&lt;/p&gt;
-&lt;p&gt;No obstante, yo quiero que este espacio sea lindo y legible. Y como hay
-muchos otros &amp;#241;o&amp;#241;os con sitios lindos y legibles que son tan amables de
-compartir sus estilos (y existe &lt;a class="reference external" href="http://twitter.github.com/bootstrap"&gt;bootstrap&lt;/a&gt;, claro) voy a ir intent&amp;#225;ndolo,
-incrementalmente.&lt;/p&gt;
-&lt;p&gt;Por ahora tom&amp;#233; ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id3" id="id1"&gt;[1]&lt;/a&gt; y de la documentaci&amp;#243;n
-de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id4" id="id2"&gt;[2]&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="como-agregar-productos"&gt;
+&lt;h2&gt;C&amp;#243;mo agregar productos&lt;/h2&gt;
+&lt;p&gt;Muy simple. Se sube una im&amp;#225;gen como documento definiendo su t&amp;#237;tulo y
+descripci&amp;#243;n y se la incrusta con el modelo &lt;em&gt;item&lt;/em&gt;. El precio se indica
+con el par&amp;#225;metro &lt;em&gt;price&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, el documento 111 se vuelve un item si se lo incluye as&amp;#237;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&amp;lt;item111|price=23.4&amp;gt;&lt;/tt&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="disqus"&gt;
-&lt;h2&gt;Disqus&lt;/h2&gt;
-&lt;p&gt;El blog viejo usaba &lt;a class="reference external" href="http://disqus.com"&gt;Disqus&lt;/a&gt;, con un &lt;a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html"&gt;plugin&lt;/a&gt; que hice hace algun tiempo.
-Para migrar los comentarios utilic&amp;#233; el m&amp;#233;todo de subir un CSV con
-el formato que genera el mismo script de migraci&amp;#243;n:&lt;/p&gt;
+&lt;div class="section" id="un-atajo-mas"&gt;
+&lt;h2&gt;Un atajo m&amp;#225;s&lt;/h2&gt;
+&lt;p&gt;El c&amp;#243;digo para el carrito de arriba lo inclu&amp;#237; como un modelo para poder
+incrustarlo directamente desde la redacci&amp;#243;n de un art&amp;#237;culo con
+&lt;a href="/posts/simplecart-js-para-spip.html#id2"&gt;&lt;span class="problematic" id="id3"&gt;``&lt;/span&gt;&lt;/a&gt;&amp;lt;cart1&amp;gt; &lt;a href="/posts/simplecart-js-para-spip.html#id4"&gt;&lt;span class="problematic" id="id5"&gt;``&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="system-message" id="id2"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 73); &lt;em&gt;&lt;a href="/posts/simplecart-js-para-spip.html#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;div class="system-message" id="id4"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 73); &lt;em&gt;&lt;a href="/posts/simplecart-js-para-spip.html#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="demostracion"&gt;
+&lt;h2&gt;Demostraci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;Si alguien completa la transacci&amp;#243;n, lo interpretar&amp;#233; como una donaci&amp;#243;n
+:D.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="descarga"&gt;
+&lt;h2&gt;Descarga&lt;/h2&gt;
+&lt;p&gt;El plugin est&amp;#225; en desarrollo sobre
+&lt;a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart"&gt;spip-zone&lt;/a&gt;.
+Pod&amp;#233;s hacer un ckeckout SVN&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/simplecart-js-para-spip.html</guid><pubDate>Sun, 12 Sep 2010 13:34:44 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
+art&amp;#237;culos podr&amp;#237;an tener 200, &amp;#191;no?&lt;/p&gt;
+&lt;p&gt;Hay una forma f&amp;#225;cil de limitar el largo permitido en un campo de texto
+mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
+caracteres restantes.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, esto limita el tama&amp;#241;o de un comentario en SPIP.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-URL_POST_X_OLD, URL_POST_X_NEW
-URL_POST_Y_OLD, URL_POST_Y_NEW
+ $(document).ready(function () {
+
+     $("#texte").before("&amp;lt;div id='chars' style='float:right;font-weigth:strong;margin-right:5px;'&amp;gt;&amp;lt;/div&amp;gt;");
+
+$(function(){
+    $('#texte').keyup(function(){
+        limitChars('texte', 200, 'chars');
+    })
+    });
+ });
+
+function limitChars(textid, limit, infodiv) {
+     var text = $('#'+textid).val();
+     var textlength = text.length;
+     if(textlength &amp;gt; limit) {
+         $('#' + infodiv).html('No puede ingresar m&amp;amp;aacute;s de '+limit+' caracteres');
+         $('#'+textid).val(text.substr(0,limit));
+         return false;
+     } else {
+         $('#' + infodiv).html('Restan '+ (limit - textlength) +' caracteres.');
+         return true;
+     }
+}
 &lt;/pre&gt;
-&lt;p&gt;En cuesti&amp;#243;n de minutos los (pocos) comentarios estaban migrados.&lt;/p&gt;
+&lt;div class="section" id="intrucciones-para-spip"&gt;
+&lt;h2&gt;Intrucciones para SPIP&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;&lt;li&gt;Copiar el c&amp;#243;digo&lt;/li&gt;
+&lt;li&gt;Pegarlo luego de la baliza #INSERT_HEAD de tu cabecera&lt;/li&gt;
+&lt;li&gt;(opcional) Cambiarle el l&amp;#237;mite (el n&amp;#250;mero 200),&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;&amp;#161;Listo!&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="redireccion"&gt;
-&lt;h2&gt;Redirecci&amp;#243;n&lt;/h2&gt;
-&lt;p&gt;Como mantuve el slug de los viejos art&amp;#237;culos, una redirecci&amp;#243;n 301
-via .htaccess redirige del viejo blog al nuevo:&lt;/p&gt;
+&lt;div class="section" id="intrucciones-generales"&gt;
+&lt;h2&gt;Intrucciones generales&lt;/h2&gt;
+&lt;p&gt;Es igual al anterior, s&amp;#243;lo debes asegurarte que tiene en jquery en la
+p&amp;#225;gina. Luego cambia el selector &lt;tt class="docutils literal"&gt;#texte&lt;/tt&gt; por el que corresponda al
+campo que quer&amp;#233;s limitar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ejemplo"&gt;
+&lt;h2&gt;Ejemplo&lt;/h2&gt;
+&lt;/div&gt;</description><guid>/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>/posts/ultima-version-de-spip-por-svn.html</link><description>&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a trav&amp;#233;s del sistema de
+control de versiones Subversion.&lt;/p&gt;
+&lt;p&gt;A trav&amp;#233;s de Subversion, podemos obtener la ultima version de desarrollo
+considerada estable&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-# nqnwebs.com blog rules
-RewriteCond %{HTTP_HOST} ^nqnwebs [nc]
-RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
-RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
+svn checkout svn://trac.rezo.net/spip/branches/spip-2.0/  carpeta_destino
 &lt;/pre&gt;
-&lt;p&gt;&amp;#191;C&amp;#243;mo se va viendo?&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><guid>/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
-&lt;p&gt;Este blog est&amp;#225; en pleno proceso de mudanza y metamorfosis. Antes estaba
-en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
-que explicar&amp;#233; m&amp;#225;s adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
-&lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
-&lt;p&gt;Espero que pronto esto est&amp;#233; m&amp;#225;s bonito y con contenido. Tambi&amp;#233;n que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir m&amp;#225;s.&lt;/p&gt;</description><guid>/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Una de las ventajas de obtener SPIP a trav&amp;#233;s de SVN, es que luego es muy
+f&amp;#225;cil de actualizar.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cd  carpeta_destino
+svn update
+&lt;/pre&gt;
+&lt;p&gt;Subversion asigna un numero de revision a cada cambio realizado al
+conjunto de archivos. As&amp;#237;, cuando los desarrolladores lo evaluan
+pertinente, en un determinado momento del desarrollo se empaqueta una
+nueva version "oficial"&lt;/p&gt;
+&lt;p&gt;Por ejemplo, la revisi&amp;#243;n
+&lt;a class="reference external" href="http://trac.rezo.net/trac/spip/browser/branches/spip-2.0?rev=13982"&gt;13982&lt;/a&gt;
+es la version 2.08 de Spip.&lt;/p&gt;
+&lt;p&gt;Podemos obtener una revision espec&amp;#237;fica con el par&amp;#225;metro -r. Por
+ejemplo, el siguiente comando obtendr&amp;#237;a una copia de SPIP 2.08&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn -r 13982 checkout svn://trac.rezo.net/spip/branches/spip-2.0/  carpeta_destino
+&lt;/pre&gt;
+&lt;p&gt;Genial, pero para para asegurarnos estar en una revision que se
+corresponda con una "version oficial" tenemos que saber el n&amp;#250;mero de ID.&lt;/p&gt;
+&lt;p&gt;En el &lt;a class="reference external" href="http://trac.rezo.net/trac/spip/wiki"&gt;Trac de Spip&lt;/a&gt; se mantiene
+una tabla donde se especifica esta correspondencia para cada nueva
+version, pero a decir verdad, es un engorro tener que ingresar s&amp;#243;lo para
+averiguar un n&amp;#250;mero. Mejor hag&amp;#225;moslo autom&amp;#225;tico!&lt;/p&gt;
+&lt;div class="section" id="automatizando-la-obtencion-de-un-spip-oficial-por-svn"&gt;
+&lt;h2&gt;Automatizando la obtenci&amp;#243;n de un SPIP oficial por SVN&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+#!/bin/bash
+#script para una instalacion de spip a traves de svn
+
+if [ $# -lt 1 ]
+then
+echo "Debe indicar al menos un parametro:"
+echo "$0 destino [rev]"
+echo
+exit 1
+fi
+
+
+if [ $# -eq 2 ]
+then
+REV=$2
+else
+echo "Averiguando revision de la ultima release..."
+REV=$(svn info svn://trac.rezo.net/spip/archivelist.txt | sed -n '9p' | cut -d' ' -f5)
+fi
+
+
+echo "Recuperando la version $REV de SPIP"
+svn checkout -r `echo $REV` svn://trac.rezo.net/spip/branches/spip-2.0/ $1 1&amp;gt;/dev/null
+echo "Configurando permisos..."
+cd $1
+chmod 657 IMG local tmp config
+echo "Lanzando el navegador para continuar la instalacion..."
+firefox http://localhost/~tin/$1/ecrire
+&lt;/pre&gt;
+&lt;p&gt;Este script hace el trabajo aburrido por nosotros. Averigua cu&amp;#225;l fue la
+&amp;#250;ltima modificaci&amp;#243;n de &lt;em&gt;archivelist.txt&lt;/em&gt; que es un archivo que se
+modifica en cada nuevo lanzamiento de paquete. &amp;#161;Es el dato que nos hac&amp;#237;a
+falta!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="una-solucion-mas-genuina"&gt;
+&lt;h2&gt;Una soluci&amp;#243;n m&amp;#225;s genuina&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Atenci&amp;#243;n&lt;/strong&gt;: Ya me hicieron caso. &lt;a class="reference external" href="/blog/article/ultima-version-de-spip-por-svn#update"&gt;Ver
+actualizaci&amp;#243;n&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Aunque el hacking (como este) es sano y divertido (y a veces tambi&amp;#233;n
+&amp;#250;til), la soluci&amp;#243;n m&amp;#225;s genuina ser&amp;#237;a que los desarrolladores de SPIP
+mantengan un &lt;strong&gt;tag&lt;/strong&gt; por cada nuevo empaquetamiento y uno que apunte
+siempre al &amp;#250;ltimo.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, con el siguiente comando deberiamos obtener la version 2.05
+(sin saber a qu&amp;#233; numero de revision corresponde)&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn checkout svn://trac.rezo.net/spip/tags/2.05
+&lt;/pre&gt;
+&lt;p&gt;y con este otro obtener la &lt;strong&gt;&amp;#250;ltima&lt;/strong&gt; versi&amp;#243;n&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn checkout svn://trac.rezo.net/spip/tags/lastest-version
+&lt;/pre&gt;
+&lt;p&gt;Esto, por ahora, no est&amp;#225; implementado, pero ya hice llegar mi propuesta
+a &lt;em&gt;l&amp;#8217;equipe&lt;/em&gt; de SPIP, y &lt;a class="reference external" href="http://article.gmane.org/gmane.comp.web.spip.devel/53503"&gt;lo est&amp;#225;n
+discutiendo&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="actualizacion"&gt;
+&lt;h2&gt;Actualizaci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;Gracias a &lt;a class="reference external" href="http://my.opera.com/tech-nova/blog/"&gt;Gilles&lt;/a&gt; el Dev Team
+adopt&amp;#243; mi propuesta y ahora existen Tags en el arbol SVN de spip. En
+particular,&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn co svn://trac.rezo.net/spip/tags/spip-2-stable
+&lt;/pre&gt;
+&lt;/div&gt;</description><guid>/posts/ultima-version-de-spip-por-svn.html</guid><pubDate>Fri, 22 May 2009 00:19:54 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>/posts/lorem-ipsum-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
+que se usa habitualmente en dise&amp;#241;o gr&amp;#225;fico en demostraciones de
+tipograf&amp;#237;as o de borradores de dise&amp;#241;o para probar el dise&amp;#241;o visual antes
+de insertar el texto final.&lt;/p&gt;
+&lt;p&gt;Cuando estamos desarrollando necesitamos ver c&amp;#243;mo quedar&amp;#225; el contenido,
+y debemos recurrir a un &lt;em&gt;copy &amp;amp; paste&lt;/em&gt; de caulquier cosa que tengamos a
+mano.&lt;/p&gt;
+&lt;p&gt;La ventaja de un &lt;em&gt;Lorem Ipsum&lt;/em&gt; sobre otros textos, es que este tiene una
+distribuci&amp;#243;n del largo de las palabras bastante natural de las palabras
+lo que en textos largos queda mucho mejor que repetir un mismo fragmento
+una y otra vez.&lt;/p&gt;
+&lt;p&gt;Hay muchos &lt;a class="reference external" href="http://www.lipsum.com/"&gt;generadores de texto Lorem Ipsum&lt;/a&gt;
+en internet, pero lo podemos hacer a&amp;#250;n m&amp;#225;s f&amp;#225;cil.&lt;/p&gt;
+&lt;div class="section" id="un-lorem-ipsum-automatico"&gt;
+&lt;h2&gt;Un Lorem Ipsum autom&amp;#225;tico&lt;/h2&gt;
+&lt;p&gt;Con la ayuda del plugin &lt;a class="reference external" href="http://sanderkorvemaker.nl/jquery/jLorem.php"&gt;jQuery Lorem
+Ipsum&lt;/a&gt; de Sander Korve
+hice un modelo (instalable como plugin) que permite insertar un texto
+del tama&amp;#241;o que queramos (por omisi&amp;#243;n, de 4 p&amp;#225;rrafos).&lt;/p&gt;
+&lt;p&gt;Pod&amp;#233;s bajarlo desde ac&amp;#225;:&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/loremipsum.zip"&gt;|image1|&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Lorem Ipsum Plugin version 0.2&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;O por SVN:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn checkout svn://zone.spip.org/spip-zone/_plugins_/_test_/loremipsum
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="instalacion"&gt;
+&lt;h2&gt;Instalaci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;La instalaci&amp;#243;n es igual que con la de cualquier plugin: descomprimirlo
+en la carpeta &lt;em&gt;/plugins&lt;/em&gt; y activarlo.&lt;/p&gt;
+&lt;p&gt;Requiere adem&amp;#225;s que los esqueletos tengan la baliza &lt;tt class="docutils literal"&gt;#INSERT_HEAD&lt;/tt&gt;
+dentro del header, ya que all&amp;#237; se incluir&amp;#225; el javascript necesario para
+su funcionamiento.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="funcionamiento-basico"&gt;
+&lt;h2&gt;Funcionamiento b&amp;#225;sico&lt;/h2&gt;
+&lt;p&gt;La inclusi&amp;#243;n de un &lt;em&gt;Lorem Ipsum&lt;/em&gt; se basa en el modelo &lt;em&gt;lorem.html&lt;/em&gt;
+inclu&amp;#237;do con el plugin, por lo que hay dos maneras de llamarlo:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; En el cuerpo (texto, descripci&amp;#243;n, etc) de un art&amp;#237;culo: &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image3" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Predefinido en un esqueleto: &lt;tt class="docutils literal"&gt;#MODELE{lorem}&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#161;y listo!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="parametros"&gt;
+&lt;h2&gt;Par&amp;#225;metros&lt;/h2&gt;
+&lt;p&gt;El modelo acepta algunos par&amp;#225;metros para configurar la longitud del
+texto. Por ejemplo &lt;tt class="docutils literal"&gt;&amp;lt;lorem5&amp;gt;&lt;/tt&gt; crear&amp;#225; 5 p&amp;#225;rrafos.&lt;/p&gt;
+&lt;p&gt;Pero tambi&amp;#233;n se puede especificar m&amp;#225;s datos:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image4" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;type&lt;/strong&gt;: permite especificar que tipo de resultado se quiere.
+Las opciones v&amp;#225;lidas son &lt;strong&gt;paragraphs&lt;/strong&gt;, &lt;strong&gt;words&lt;/strong&gt; o &lt;strong&gt;characters&lt;/strong&gt; para
+p&amp;#225;rrafos, palabras o characteres. As&amp;#237;: crear&amp;#225; un texto de 25 palabras.
+El valor por omisi&amp;#243;n es &lt;strong&gt;paragraphs&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image5" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;amount&lt;/strong&gt;: Es lo mismo que el ID pasado al modelo: es lo mismo
+que . Por ejemplo &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;[(#MODELE{lorem}{amount=5})]&lt;/span&gt;&lt;/tt&gt;
+[&lt;a class="reference external" href="/blog/article/lorem-ipsum-para-spip#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image6" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;ptags&lt;/strong&gt;: Permite agregar las etiquetas &amp;lt;code&amp;lt;&amp;gt;P&amp;lt;&amp;gt;/code&amp;gt;
+alrededor de cada p&amp;#225;rrafo. Los valores aceptados son &lt;strong&gt;true&lt;/strong&gt; o
+&lt;strong&gt;false&lt;/strong&gt;. Por omisi&amp;#243;n es &lt;strong&gt;true&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="una-astucia"&gt;
+&lt;h2&gt;Una astucia&lt;/h2&gt;
+&lt;p&gt;Una forma de mostrar contenido en un art&amp;#237;culo (o cualquier elemento) sin
+tener que editar cada art&amp;#237;culo s&amp;#243;lo para poner &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt; es invocar el
+modelo siempre y cuando no exista contenido en la baliza&lt;/p&gt;
+&lt;p&gt;Por ejemplo [&lt;a class="reference external" href="/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Variar o no variar, esa es la cuestión</title><link>/posts/variar-o-no-variar-esa-es-la.html</link><description>&lt;p&gt;Hace algunos d&amp;#237;as, en
+&lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;spip-es&lt;/a&gt; se plante&amp;#243;
+la duda de c&amp;#243;mo controlar una cabecera diferente para algunas secciones
+en particular.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C29008.88.7.114.173.1236164746.squirrel@correo.nodo50.org%3E"&gt;Xabi
+aport&amp;#243;&lt;/a&gt;
+la soluci&amp;#243;n can&amp;#243;nica, que es crear esqueletos ad-hoc para cada secci&amp;#243;n
+difente, valiendose de los esqueletos con forma &lt;em&gt;rubrique-X.html&lt;/em&gt; (donde
+X es el ID de la secci&amp;#243;n).&lt;/p&gt;
+&lt;p&gt;Esto se describe en el apartado "&lt;a class="reference external" href="http://www.spip.net/es_article2257.html"&gt;Para ir m&amp;#225;s
+lejos&lt;/a&gt;" de la documentaci&amp;#243;n.&lt;/p&gt;
+&lt;p&gt;En este caso particular, s&amp;#243;lo se quer&amp;#237;a mostrar el logo en la cabecera
+para algunas secciones. El problema es que las secciones "diferentes"
+ser&amp;#237;an iguales entre s&amp;#237;, pero invocando distintos esqueletos. Esto
+contradice el &lt;a class="reference external" href="http://es.wikipedia.org/wiki/DRY"&gt;principio DRY&lt;/a&gt;
+siempre deseable en todo desarrollo de software.&lt;/p&gt;
+&lt;p&gt;Una forma sencilla, pero a la vez parcial de resolver esto, es hacer un
+&lt;a class="reference external" href="http://es.wikipedia.org/wiki/enlace_duro"&gt;enlace duro&lt;/a&gt; entre los
+esqueletos que son iguales.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, la secci&amp;#243;n 2, la 4 y la 6, tendr&amp;#225;n el mismo esqueleto.
+Entonces creamos el rubrique-2.html y definimos rubrique-4.html y
+rubrique-6.html como enlaces duros al primero. Desde la l&amp;#237;nea de
+comandos:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ ln rubrique-2.html rubrique-4.html
+$ ln rubrique-2.html rubrique-6.html
+&lt;/pre&gt;
+&lt;p&gt;Esta soluci&amp;#243;n funciona, pero es s&amp;#243;lo para servidores &lt;em&gt;*nix&lt;/em&gt; y teniendo
+acceso a la consola (por &lt;a class="reference external" href="http://es.wikipedia.org/wiki/SSH"&gt;SSH&lt;/a&gt;, por
+ejemplo). Adem&amp;#225;s, hay que documentar bien qu&amp;#233; se est&amp;#225; haciendo, porque
+da lugar a errores cuando dos esqueletos "linkeados" intentan ser
+iguales.&lt;/p&gt;
+&lt;p&gt;Por suerte, hay varias otras maneras de resolver esto,&lt;/p&gt;
+&lt;div class="section" id="filtros-de-condicion-o-filtro-match"&gt;
+&lt;h2&gt;Filtros de condici&amp;#243;n o filtro match&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C516299.21618.qm@web90607.mail.mud.yahoo.com%3E"&gt;Esta
+soluci&amp;#243;n&lt;/a&gt;,
+es la que aport&amp;#243; &lt;a class="reference external" href="http://www.graciasdenada.com.ar/"&gt;Juan Pablo
+Portugau&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Lo que plantea, es usar la baliza #ID_RUBRIQUE (que obviamente,
+devuelve el n&amp;#250;mero de la secci&amp;#243;n) con filtros de comparaci&amp;#243;n. Es,
+hablando en geek, un simple &lt;strong&gt;if&lt;/strong&gt;: &lt;em&gt;Si es la secci&amp;#243;n 2, mostrar el
+logo. Sino, nada&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;En c&amp;#243;digo SPIP:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[(#ID_RUBRIQUE|=={2}|?{'#LOGO_RUBRIQUE',''})]
+&lt;/pre&gt;
+&lt;p&gt;La limitaci&amp;#243;n de esta soluci&amp;#243;n se da cuando son m&amp;#250;ltiples los valores
+posibles. En nuestro caso, se debe mostrar el logo cuando se trata de la
+secci&amp;#243;n 2, de la 4 o de la 6. Juan Pablo propone anidar esta estructura.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[(#ID_RUBRIQUE|=={2}|?{'#LOGO_RUBRIQUE',[(#ID_RUBRIQUE|=={4}|?{'#LOGO_RUBRIQUE',[(#ID_RUBRIQUE|=={6}|?{'#LOGO_RUBRIQUE',''})]})]})]
+&lt;/pre&gt;
+&lt;p&gt;Aunque es sint&amp;#225;cticamente correcto, el c&amp;#243;digo resultante es bastante
+inmantenible para un ser humano con cerebro normal y el monito parseador
+de SPIP queda agitado.&lt;/p&gt;
+&lt;p&gt;Para eso existe el filtro
+&lt;a class="reference external" href="http://www.spip.net/fr_article901.html#match"&gt;match&lt;/a&gt;, que se vale de
+las &lt;a class="reference external" href="http://www.regular-expressions.info/"&gt;expresiones regulares&lt;/a&gt; para
+que hagamos nuestro fest&amp;#237;n.&lt;/p&gt;
+&lt;p&gt;Lo de arriba, puede reducirse a esto:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[(#ID_RUBRIQUE|match{^(2|4|6)$}|?{'#LOGO_RUBRIQUE',''})]
+&lt;/pre&gt;
+&lt;p&gt;El filtro devuelve &lt;strong&gt;VERDADERO&lt;/strong&gt; si el valor de #ID_RUBRIQUE empieza
+con 2, 4 o 6 y termina con nada. Que es, dicho de otra manera, lo que
+queremos.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="y-aun-mas-claro-bucles-como-filtros"&gt;
+&lt;h2&gt;Y a&amp;#250;n m&amp;#225;s claro: bucles como filtros&lt;/h2&gt;
+&lt;p&gt;Las expresiones regulares &lt;em&gt;no son moco de pavo&lt;/em&gt;, dir&amp;#237;a mi abuela. Super
+potentes, pero poco escalables en la curva complejidad-comprensibilidad.&lt;/p&gt;
+&lt;p&gt;Hay una soluci&amp;#243;n que es muy &amp;#250;til, sencilla pero no trivial: usar un
+bucle como filtro.&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 100)&lt;/p&gt;
+Literal block expected; none found.&lt;/div&gt;
+&lt;p&gt;La explicaci&amp;#243;n es de la l&amp;#243;gica de conjuntos: los criterios de un bucle
+funcionan como condiciones AND. Deben cumplirse todas. En este caso, el
+primer criterio &lt;tt class="docutils literal"&gt;{id_rubrique IN (1,2,4)}&lt;/tt&gt; exige que el id_rubrique
+sea 1, 2 o 4. En el segundo &lt;tt class="docutils literal"&gt;{id_rubrique}&lt;/tt&gt;, se exige que sea el que
+viene en contexto. Por lo tanto, este bucle s&amp;#243;lo funcionar&amp;#225; (mostrar&amp;#225; el
+logo) si el id_rubrique &lt;em&gt;del contexto&lt;/em&gt; es 1, 2 o 4. En l&amp;#243;gica, es una
+operaci&amp;#243;n &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Disyunci%C3%B3n_l%C3%B3gica"&gt;O
+exclusiva&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Funciona, es m&amp;#225;s legible que cualquiera de las otras soluciones y adem&amp;#225;s
+permite una clausula &lt;em&gt;ELSE&lt;/em&gt; mucho m&amp;#225;s accesible, simplemente usando la
+estructura completa del bucle.&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/variar-o-no-variar-esa-es-la.html</guid><pubDate>Sun, 15 Mar 2009 20:03:38 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en SPIP</title><link>/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;p&gt;Muchas balizas SPIP generan c&amp;#243;digo HTML como salida (las balizas
+#LOGO_* y los filtros |image_* son los m&amp;#225;s notorios) y
+frecuentemente necesitamos o queremos modificar este c&amp;#243;digo autogenerado
+en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
+(&lt;a class="reference external" href="http://www.spip.net/en_article2465.html#inserer_attribut"&gt;inserer_attribut&lt;/a&gt;
+para insertar atributos y
+&lt;a class="reference external" href="http://www.spip.net/en_article2465.html#extraire_attribut"&gt;extraire_attribut&lt;/a&gt;
+para extraer el valor de uno generado) pero son particularmente largos y
+tediosos de tipear.&lt;/p&gt;
+&lt;p&gt;M&amp;#225;s all&amp;#225; de eso, aunque uso estos filtros bastantes seguido para
+implementar cosas como galer&amp;#237;as de im&amp;#225;genes, todav&amp;#237;a pienso lo dif&amp;#237;cil
+que es escribir las palabras en franc&amp;#233;s sin equivocarme. Por suerte, un
+peque&amp;#241;o wrapper, puede suavizar este inconveniente.&lt;/p&gt;
+&lt;p&gt;Cuando se trata de acceder y modificar atributos de valores de atributos
+nada, en mi opini&amp;#243;n, llega tan lejos como &lt;a class="reference external" href="http://docs.jquery.com/Attributes"&gt;la API de atributos de
+jQuery&lt;/a&gt;. El &lt;a class="reference external" href="http://docs.jquery.com/Attributes/attr"&gt;m&amp;#233;todo de jQuery
+*attr*&lt;/a&gt; por s&amp;#237; solo, permite
+leer y escribir el valor de cualquier atributo en cualquier nodo. Recibe
+uno o dos par&amp;#225;metros, el nombre del atributo, y opcionalmente, el valor.&lt;/p&gt;
+&lt;p&gt;Si s&amp;#243;lo se especifica el nombre, entonces &lt;em&gt;attr&lt;/em&gt; extrae y devuelve el
+valor de ese atributo. Si ambos par&amp;#225;metros son pasados al m&amp;#233;todo,
+entonces attr modifica el objeto configurando el atributo en cuesti&amp;#243;n
+con el valor dado. Es jerga de Programaci&amp;#243;n Orientada a Objetos, es un
+estilo de interfaz "polim&amp;#243;rfica" &amp;#8212; cuando un solo m&amp;#233;todo tiene dos
+comportamientos complementarios que son distinguidos por el n&amp;#250;mero y/o
+el tipo de los argumentos dados &amp;#8212; que est&amp;#225; por todos lados en jQuery y
+es una de las razones por las que este framework es tan conciso y
+productivo.&lt;/p&gt;
+&lt;p&gt;Considerandola como la mejor estructura para este tipo de interfaces que
+conozco (y tambi&amp;#233;n, que uso diariamente), decid&amp;#237; ue mi wrapper tendr&amp;#237;a
+que copiarlo. As&amp;#237; fue como el &lt;em&gt;attr&lt;/em&gt; naci&amp;#243;.&lt;/p&gt;
+&lt;p&gt;Como el m&amp;#233;todo de jQuery, el filtro &lt;em&gt;attr&lt;/em&gt; de SPIP toma uno o dos
+par&amp;#225;metros (y un objeto "impl&amp;#237;cito", pero lo ignoraremos por el
+momento). Si s&amp;#243;lo pasamos uno, este lo remite como entrada a
+&lt;em&gt;extraire_attribut&lt;/em&gt; para obtener el valor correspondiente. Si se lo
+llama con dos par&amp;#225;metros, entonces llama a &lt;em&gt;inserer_attribut&lt;/em&gt; para
+modificar el objeto.&lt;/p&gt;
+&lt;p&gt;Como la idea, el c&amp;#243;digo es razonablemente sencillo; la &amp;#250;nca&lt;/p&gt;
+&lt;p&gt;Like the idea, the code is reasonably straightforward; quizas lo &amp;#250;nico
+un poco inusual el uso de
+&lt;a class="reference external" href="http://php.net/func_get_args"&gt;func_get_args&lt;/a&gt; para obtener el
+conjunto de los argumentos pasados a la funci&amp;#243;n llamada. Con ese array
+podermos usar &lt;a class="reference external" href="http://php.net/count"&gt;count&lt;/a&gt; para saber cuantos
+argumentos se pasaron y decidir qu&amp;#233; se debe hacer. Esto es m&amp;#225;s seguro
+que especificar y evaluar valores por defecto (FALSE o NULL, por
+ejemplo) porque algunos usuarios genuinamente podr&amp;#237;an querer usar esos
+valores (supongamos que NULL signifique eliminar el atributo en una
+futura versi&amp;#243;n).&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+include_spip("inc/filtres");
+
+/**
+ * The `attr` function allows the user to get and set the attributes of an HTML tag.
+ * It is intended to be used as a SPIP filter and depends on existing SPIP functionality.
+ *
+ * @param $tag
+ * &amp;#160; &amp;#160; The HTML code.
+ * @param $name
+ * &amp;#160; &amp;#160; The name of the attribute.
+ * @param $val...
+ * &amp;#160; &amp;#160; The new value for the attribute $nom. Optional.
+ * @return
+ * &amp;#160; &amp;#160; If $val was given, the code for tag with $name=$val
+ * &amp;#160; &amp;#160; Otherwise, the value for the $name attribute in $tag.
+ */
+function attr($tag, $name){
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160;$args = func_get_args();
+
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160;if (count($args) &amp;gt; 2) {
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160;// SET
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160;return &amp;#160;inserer_attribut($tag, $name, $args[2]);
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160;} else {
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160;// GET
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160; &amp;#160;return extraire_attribut($tag, $name);
+ &amp;#160; &amp;#160; &amp;#160; &amp;#160;}
+}
+&lt;/pre&gt;
+&lt;p&gt;Simplemente copia el c&amp;#243;digo en mes_fonctions.php (Mira "Agregar
+funciones propias" en la documentaci&amp;#243;n sobre &lt;a class="reference external" href="/posts/Agregar%20funciones%20propias"&gt;filtros de
+spip&lt;/a&gt;) y luego usa el filtro attr en
+tus esqueletos:&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 94)&lt;/p&gt;
+Literal block expected; none found.&lt;/div&gt;
+&lt;p&gt;Hay algunos cambios que se puede hacer a esta funci&amp;#243;n: pasar $args
+directamente a inserer_attribut y extraire_attribut en vez de las
+variables individuales, agregar un par&amp;#225;metro $value=FALSE que s&amp;#243;lo sirva
+para la claridad de la documentaci&amp;#243;n , y el mencionado, eliminar
+atributos cuando se pase por ejemplo NULL como par&amp;#225;metro.&lt;/p&gt;</description><guid>/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Personalizar el texto de #INTRODUCTION</title><link>/posts/personalizar-el-texto-de.html</link><description>&lt;p&gt;Desde la versi&amp;#243;n 1.4, SPIP tiene una baliza calculada &lt;tt class="docutils literal"&gt;#INTRODUCTION&lt;/tt&gt;
+que como su nombre indica, sirve para presentar una introducci&amp;#243;n al
+art&amp;#237;culo completo.&lt;/p&gt;
+&lt;p&gt;En la &lt;a class="reference external" href="http://www.spip.net/es_article116.html"&gt;documentaci&amp;#243;n explica&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+#INTRODUCTION: [SPIP 1.4] si el art&amp;#237;culo contiene una descripci&amp;#243;n,
+esta se utiliza aqu&amp;#237;; si no, SPIP muestra los 600 primeros
+caracteres del inicio del art&amp;#237;culo (del ep&amp;#237;grafe, y luego del
+texto).&lt;/blockquote&gt;
+&lt;p&gt;En la versi&amp;#243;n 1.92 se incorpor&amp;#243; otro atajo para indicar el largo del
+texto mostrado (sobrecargando los 600 caracteres por omisi&amp;#243;n).&lt;/p&gt;
+&lt;p&gt;As&amp;#237;, &lt;a href="/posts/personalizar-el-texto-de.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;``&lt;/span&gt;&lt;/a&gt;#INTRODUCTION{150} `` mostrar&amp;#225; la descripci&amp;#243;n, si existe, o los
+primeros 150 caracteres del epigrafe y/o el texto.&lt;/p&gt;
+&lt;div class="system-message" id="id1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 15); &lt;em&gt;&lt;a href="/posts/personalizar-el-texto-de.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;p&gt;Pero con la versi&amp;#243;n 2 lleg&amp;#243; por fin un control m&amp;#225;s profundo para los
+redactores. Es posible definir cual es el texto que se mostrar&amp;#225; con
+#INTRODUCTION encerrandolo entre la etiquetas &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;intro&amp;gt;...&amp;lt;/intro&amp;gt;&lt;/span&gt;&lt;/tt&gt; en
+el cuerpo del art&amp;#237;culo.
+[&lt;a class="reference external" href="/blog/article/personalizar-el-texto-de#nb1"&gt;1&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;As&amp;#237; podemos redactar nuestro art&amp;#237;culo con la siguiente estructura:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Esta oraci&amp;#243;n es la introducci&amp;#243;n al articulo. Y ac&amp;#225; sigue mi art&amp;#237;culo completo.
+&lt;/pre&gt;
+&lt;p&gt;Suponiendo que la baliza #INTRODUCTION se muestra en el esqueleto de
+seccion, all&amp;#237; se ver&amp;#237;a el texto&lt;/p&gt;
+&lt;blockquote&gt;
+Esta oraci&amp;#243;n es la introducci&amp;#243;n al articulo.&lt;/blockquote&gt;
+&lt;p&gt;Y donde est&amp;#233; la baliza #TEXTE:&lt;/p&gt;
+&lt;blockquote&gt;
+Esta oraci&amp;#243;n es la introducci&amp;#243;n al articulo. Y ac&amp;#225; sigue mi art&amp;#237;culo
+completo.&lt;/blockquote&gt;</description><guid>/posts/personalizar-el-texto-de.html</guid><pubDate>Tue, 10 Mar 2009 10:38:44 GMT</pubDate></item><item><title>© automático</title><link>/posts/c-automatico.html</link><description>&lt;p&gt;M&amp;#225;s por costumbre que utilidad solemos poner la antig&amp;#252;edad de un sitio
+web al pie de p&amp;#225;gina, asociado al s&amp;#237;mbolo &amp;#169;, o (cc) si usamos &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Creative_Commons"&gt;Creative
+Commons&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;En el 2007 hicimos el sitio, y en este 2009 todav&amp;#237;a muestra.&lt;/p&gt;
+&lt;blockquote&gt;
+&amp;#169; 2007&lt;/blockquote&gt;
+&lt;p&gt;&amp;#161;Muy feo! Aunque no hayamos actualizado el sitio desde entonces, nuestro
+deber, como buenos mentirosos, es lograr que el visitante no se entere.&lt;/p&gt;
+&lt;p&gt;As&amp;#237; que podemos hacer que el a&amp;#241;o, o el per&amp;#237;odo &lt;strong&gt;A&amp;#241;o inicio - A&amp;#241;o
+actual&lt;/strong&gt; se actualice autom&amp;#225;ticamente.&lt;/p&gt;
+&lt;p&gt;Muy simple:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;#169;
+
+   #SET{year, #DATE|annee} #GET{year}
+
+[(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]
+&lt;/pre&gt;
+&lt;div class="section" id="explicacion"&gt;
+&lt;h2&gt;Explicaci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Por convenci&amp;#243;n, asumimos que el a&amp;#241;o de inicio del sitio es el a&amp;#241;o
+del primer art&amp;#237;culo publicado, lo cual a mi me suena bastante l&amp;#243;gico.
+&lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Un bucle recupera esta informaci&amp;#243;n, la muestra y a la vez la
+guarda en una variable spip &lt;tt class="docutils literal"&gt;#SET{year, #DATE|annee}&lt;/tt&gt;.
+&lt;img alt="image2" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Fuera del bucle comparamos el a&amp;#241;o ya mostrado con el actual,
+obtenida de la baliza #DATE sin contexto. Si son iguales, no se muestra
+nada m&amp;#225;s (para que no quede algo como &amp;#169; 2009 - 2009, que quedar&amp;#237;a bien
+feo). Pero si son distintos, se muestra el a&amp;#241;o actual&lt;/p&gt;
+&lt;p&gt;El resultado, ser&amp;#225;&lt;/p&gt;
+&lt;blockquote&gt;
+&amp;#169; 2007 - 2009&lt;/blockquote&gt;
+&lt;/div&gt;</description><guid>/posts/c-automatico.html</guid><pubDate>Sat, 07 Mar 2009 17:28:08 GMT</pubDate></item><item><title>Suscribirse a los comentarios por RSS</title><link>/posts/suscribirse-a-los-comentarios-por.html</link><description>&lt;p&gt;Con SPIP 2.0, m&amp;#225;s precisamente en la revisi&amp;#243;n
+&lt;a class="reference external" href="http://trac.rezo.net/trac/spip/browser/spip/squelettes-dist/rss_forum_article.html?rev=13407"&gt;13407&lt;/a&gt;
+se agregaron algunos esqueletos al juego de esqueletos est&amp;#225;ndar.&lt;/p&gt;
+&lt;p&gt;Unos muy interesantes son los que permiten suscribirse a los
+comentarios.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+squelettes-dist/rss_forum_article.html
+squelettes-dist/rss_forum_breve.html
+squelettes-dist/rss_forum_rubrique.html
+squelettes-dist/rss_forum_syndic.html
+squelettes-dist/rss_forum_thread.html
+&lt;/pre&gt;
+&lt;p&gt;Por ejemplo, en el foro de un articulo, podriamos incluir el siguiente
+c&amp;#243;digo, antes del bucle de comentarios de un art&amp;#237;culo:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[] Suscribite a los comentarios de este art&amp;#237;culo
+&lt;/pre&gt;
+&lt;p&gt;Un c&amp;#243;digo an&amp;#225;logo, llamando al esqueleto correspondiente y pasando el
+par&amp;#225;metro correcto, sirve para las breves, las secciones, los art&amp;#237;culos
+sindicados y los hilos de discusi&amp;#243;n (en foros con comentarios anidados).&lt;/p&gt;</description><guid>/posts/suscribirse-a-los-comentarios-por.html</guid><pubDate>Fri, 27 Feb 2009 21:04:48 GMT</pubDate></item></channel></rss>

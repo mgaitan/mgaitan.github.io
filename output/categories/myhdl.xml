@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>tin_nqn (myhdl)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:19:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Charla: MyHDL, de Python al silicio</title><link>/posts/charla-myhdl-de-python-al-siliicio.html</link><description>&lt;p&gt;[Sigo &lt;a class="reference external" href="/posts/me-recibi-el-mes-pasado.html"&gt;publicando cosas&lt;/a&gt; con
+delay de meses]&lt;/p&gt;
+&lt;p&gt;El s&amp;#225;bado 30 de mayo se realiz&amp;#243; el &lt;a class="reference external" href="http://www.pyday.com.ar/cordoba2011"&gt;PyDay C&amp;#243;rdoba
+2011&lt;/a&gt; con la participaci&amp;#243;n de m&amp;#225;s
+de 200 personas y casi 20 charlas en dos salas simult&amp;#225;neas. Un &amp;#233;xito
+rotundo organizado por &lt;a class="reference external" href="http://jbcabral.wordpress.com/"&gt;Juan&lt;/a&gt; y un
+gran equipo de colaboradores/as . Felicitaciones.&lt;/p&gt;
+&lt;div class="section" id="mi-participacion"&gt;
+&lt;h2&gt;Mi participaci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;Particip&amp;#233; dando una charla sobre &lt;a class="reference external" href="http://myhdl.org"&gt;MyHDL&lt;/a&gt;, un paquete
+que convierte Python en un &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Hardware_description_language"&gt;lenguaje para describir
+hardware&lt;/a&gt;
+(HDL).&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Las diapositivas &lt;a class="reference external" href="http://mgaitan.github.com/myhdl-talk/"&gt;se pueden ver
+ac&amp;#225;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/mgaitan/myhdl-talk"&gt;Repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Us&amp;#233; MyHDL para hacer
+&lt;a class="reference external" href="https://github.com/mgaitan/pymips/tree/pipeline"&gt;pymips&lt;/a&gt;, una
+implementaci&amp;#243;n de un &lt;a class="reference external" href="http://en.wikipedia.org/wiki/DLX"&gt;procesador DLX&lt;/a&gt;
+completo como trabajo final de la asignatura Arquitectura de Computadoras.
+Pueden leer un poco m&amp;#225;s sobre el trabajo en &lt;a class="reference external" href="https://github.com/mgaitan/pymips/raw/pipeline/docs/informe.pdf"&gt;el
+informe&lt;/a&gt;
+que present&amp;#233;.&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/charla-myhdl-de-python-al-siliicio.html</guid><pubDate>Mon, 06 Jun 2011 12:27:44 GMT</pubDate></item></channel></rss>

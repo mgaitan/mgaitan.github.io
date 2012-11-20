@@ -1,11 +1,11 @@
 Xab, compañero de la lista
-`spip-es <http://listes.rezo.net/mailman/listinfo/spip-es>`_ me propone
+`Spip-es <http://listes.rezo.net/mailman/listinfo/spip-es>`_ me propone
 un trato:
 
-    abro una cuenta con magoya en picasa y testeo el
-    `plugin <blog/article/spicasa-adjunta-fotos-de-picasa-a>`_, y a
+    Abro una cuenta con magoya en picasa y testeo el
+    `plugin </posts/spicasa-adjunta-fotos-de-picasa-a>`_, y a
     cambio vos "hacés (o recomendás)" un how-to subversion aplicado a
-    spip
+    Spip
 
 Como tenía unos materiales de una charla que dí en la facu, lo comparto
 con el pueblo spipero.
@@ -50,23 +50,24 @@ online se le denomina **repositorio**. A la copia local de los archivos,
 **copia de trabajo**. A cada cambio que el repositorio recibe se le
 llama **revisión**.
 
-|-| Para Windows, el mejor cliente es
-`TortoiseSVN <http://tortoisesvn.tigris.org/>`_
-|image1| Para GNU/Linux, basta **subversion**, la versión para línea de
-comandos, o **RapidSVN**, una versión gráfica para entornos GTK.
+* Para Windows, el mejor cliente es
+  `TortoiseSVN <http://tortoisesvn.tigris.org/>`_
+
+* Para GNU/Linux, basta ``subversion``, la versión para línea de
+  comandos, o **RapidSVN**, una versión gráfica para entornos GTK.
 
 El proceso de trabajo es más o menos así:
 
-|image2| Si no existe en el repositorio nuestro código, hacemos un
-**import** (enviar por primera vez nuestro código al repositorio.
-|image3| Para empezar a trabajar, necesitamos hace un **checkout**, es
-decir, decirle a Subversion que convierta nuestra carpeta de código (o
-la cree si no existe) en copia de trabajo.
-|image4| Ya preparados, el trabajo cotidiano: lo comandos más frecuentes
-son tres. **update**, para actualizar la copia local con las ultimas
-revisiones; **commit** para enviar nuestras modificaciones locales al
-repositorio y crear una nueva revisión y **add** para agregar un archivo
-que hemos creado, y aun no existe en el repositorio.
+* Si no existe en el repositorio nuestro código, hacemos un
+  ``import`` (enviar por primera vez nuestro código al repositorio.
+* Para empezar a trabajar, necesitamos hace un ``checkout``, es
+  decir, decirle a Subversion que convierta nuestra carpeta de código (o
+  la cree si no existe) en copia de trabajo.
+* Ya preparados, el trabajo cotidiano: lo comandos más frecuentes
+  son tres. ``update``, para actualizar la copia local con las ultimas
+  revisiones; ``commit`` para enviar nuestras modificaciones locales al
+  repositorio y crear una nueva revisión y ``add`` para agregar un archivo
+  que hemos creado, y aun no existe en el repositorio.
 
 Un ejemplo con SPIP-Zone
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,20 +80,18 @@ lectura (podés hacer checkouts y updates anonimamente) pero necesitás
 ser usuario para hacer commits. Podés pedirle un user y pass a
 `Fil <mailto:fil@nospam--.rezo.net>`_.
 
-**Paso 0**
+Paso 0
+++++++
 
 Suponiendo que sos usuario con clave y password y querés compartir el
 desarrollo de tus squeletos, los *squelettes\_maslindos* que están en la
 carpeta squelettes local (por poner un ejemplo).
 
-La dirección del repositorio, arbitraria pero recomendada, sería esta
-
-::
-
-    svn://zone.spip.org/spip-zone/_squelettes_/maslindos
+La dirección del repositorio, arbitraria pero recomendada, 
+sería ``svn://zone.spip.org/spip-zone/_squelettes_/maslindos``
 
 Desde **Tortoise**, con el boton derecho sobre la carpeta de esqueletos,
-le damos a la opción **Import** y ponemos la dire del repo donde la
+le damos a la opción ``Import`` y ponemos la dire del repo donde la
 pide.
 
 Desde línea de comandos sería
@@ -102,10 +101,12 @@ Desde línea de comandos sería
     $ svn import ./squelettes  svn://zone.spip.org/spip-zone/_squelettes_/maslindos -m "importacion de los squeletos más lindos"
 
 Si la importación salió bien, debería poder ver tus archivos en la
-siguiente dirección
-`http://zone.spip.org/trac/spip-zone... <http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos>`_
+dirección http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos
 
-**Paso 1** Este es el paso inicial para aquellos que quieren probar algo
+Paso 1
+++++++
+
+Este es el paso inicial para aquellos que quieren probar algo
 que está en el repositorio, pero sin intenciones de enviar
 modificaciones (sólo lectura). Tambien deben hacerlo aquellos que sí lo
 van a hacer, porque la importación no implica que se haya creado una
@@ -130,7 +131,8 @@ Por línea de comandos sería así:
 
     $ svn checkout svn://zone.spip.org/spip-zone/_squelettes_/maslindos ./squelettes  
 
-**Pasos 2 y 3 **
+Pasos 2 y 3
++++++++++++
 
 Listo, tenemos nuetra copia de trabajo. Cada vez que queramos actualizar
 a la ultima versión, parados sobre la carpeta, hacemos **update**
@@ -157,10 +159,10 @@ Un video vale más que mil palabras
 
 Un ejemplo de flujo de trabajo por línea de comandos
 
-Y otro ejemplo usando TortoiseSVN sobre Windows.
+.. youtube:: P0XIj1w21YU
 
-.. |-| image:: local/cache-vignettes/L8xH11/puce-32883.gif
-.. |image1| image:: local/cache-vignettes/L8xH11/puce-32883.gif
-.. |image2| image:: local/cache-vignettes/L8xH11/puce-32883.gif
-.. |image3| image:: local/cache-vignettes/L8xH11/puce-32883.gif
-.. |image4| image:: local/cache-vignettes/L8xH11/puce-32883.gif
+
+Y otro ejemplo usando una interfaz gráfica.
+
+.. youtube:: U3qVh9F6fv0
+

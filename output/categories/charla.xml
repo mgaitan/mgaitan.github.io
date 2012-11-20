@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>tin_nqn (charla)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:19:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Charla: MyHDL, de Python al silicio</title><link>/posts/charla-myhdl-de-python-al-siliicio.html</link><description>&lt;p&gt;[Sigo &lt;a class="reference external" href="/posts/me-recibi-el-mes-pasado.html"&gt;publicando cosas&lt;/a&gt; con
+delay de meses]&lt;/p&gt;
+&lt;p&gt;El s&amp;#225;bado 30 de mayo se realiz&amp;#243; el &lt;a class="reference external" href="http://www.pyday.com.ar/cordoba2011"&gt;PyDay C&amp;#243;rdoba
+2011&lt;/a&gt; con la participaci&amp;#243;n de m&amp;#225;s
+de 200 personas y casi 20 charlas en dos salas simult&amp;#225;neas. Un &amp;#233;xito
+rotundo organizado por &lt;a class="reference external" href="http://jbcabral.wordpress.com/"&gt;Juan&lt;/a&gt; y un
+gran equipo de colaboradores/as . Felicitaciones.&lt;/p&gt;
+&lt;div class="section" id="mi-participacion"&gt;
+&lt;h2&gt;Mi participaci&amp;#243;n&lt;/h2&gt;
+&lt;p&gt;Particip&amp;#233; dando una charla sobre &lt;a class="reference external" href="http://myhdl.org"&gt;MyHDL&lt;/a&gt;, un paquete
+que convierte Python en un &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Hardware_description_language"&gt;lenguaje para describir
+hardware&lt;/a&gt;
+(HDL).&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Las diapositivas &lt;a class="reference external" href="http://mgaitan.github.com/myhdl-talk/"&gt;se pueden ver
+ac&amp;#225;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/mgaitan/myhdl-talk"&gt;Repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Us&amp;#233; MyHDL para hacer
+&lt;a class="reference external" href="https://github.com/mgaitan/pymips/tree/pipeline"&gt;pymips&lt;/a&gt;, una
+implementaci&amp;#243;n de un &lt;a class="reference external" href="http://en.wikipedia.org/wiki/DLX"&gt;procesador DLX&lt;/a&gt;
+completo como trabajo final de la asignatura Arquitectura de Computadoras.
+Pueden leer un poco m&amp;#225;s sobre el trabajo en &lt;a class="reference external" href="https://github.com/mgaitan/pymips/raw/pipeline/docs/informe.pdf"&gt;el
+informe&lt;/a&gt;
+que present&amp;#233;.&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/charla-myhdl-de-python-al-siliicio.html</guid><pubDate>Mon, 06 Jun 2011 12:27:44 GMT</pubDate></item><item><title>Charla: Python a los bifes</title><link>/posts/charla-python-a-los-bifes.html</link><description>&lt;p&gt;V&amp;#237;ctima de la ausencia de tiempo y la mala costumbre, a ult&amp;#237;simo momento
+termin&amp;#233; de preparar &lt;a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html"&gt;las
+diapositivas&lt;/a&gt;
+para la charla que d&amp;#237; hoy en el marco de las &lt;a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-2010"&gt;Conferencias de Ingenier&amp;#237;a
+en Computaci&amp;#243;n, Electr&amp;#243;nica y Biom&amp;#233;dica
+2010&lt;/a&gt; de &lt;a class="reference external" href="http://www.efn.uncor.edu/"&gt;mi
+facu&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La charla se titul&amp;#243; &lt;strong&gt;Python a los bifes: casos reales de aplicaci&amp;#243;n en
+Ingenier&amp;#237;a&lt;/strong&gt;. Las &lt;a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html"&gt;diapositivas se pueden ver
+ac&amp;#225;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(F11 para ver a pantalla completa)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;El res&amp;#250;men de dos l&amp;#237;neas dec&amp;#237;a:&lt;/p&gt;
+&lt;blockquote&gt;
+Basta de hablar y hablar de lo bueno que est&amp;#225; Python:
+en la cancha se ven los pingos. Mostrar&amp;#233;
+problemas reales de la carrera resueltos con este poderoso (y
+simple) lenguaje. Trabajos de Sistemas de Computaci&amp;#243;n, Sistemas
+Operativos II, Paradigmas de programaci&amp;#243;n y mi proyecto integrador
+en curso&lt;/blockquote&gt;
+&lt;p&gt;Hubo unas 40 personas, y estuvo, creo, bastante bien. Como no practiqu&amp;#233;
+(me siento est&amp;#250;pido hablando solo, y mi novia me mira desorbitada &amp;#8212;
+aburrida &amp;#8212; cuando le hablo de computadoras) no calcul&amp;#233; bien el tiempo y
+los ejemplos, que era el quid de la cuesti&amp;#243;n, fueron a paso raudo. Pero
+creo que a la gente le gust&amp;#243; y ojal&amp;#225; alguno se sienta motivado para leer
+el &lt;a class="reference external" href="http://tutorialpython.com.ar"&gt;tutorial de python&lt;/a&gt; y sumarse a
+&lt;a class="reference external" href="http://python.org.ar"&gt;PyAr&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="fuentes"&gt;
+&lt;h2&gt;Fuentes&lt;/h2&gt;
+&lt;p&gt;La presentaci&amp;#243;n fue &lt;a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.rst"&gt;escrita en
+RST&lt;/a&gt;
+y procesada con la herramienta
+&lt;a class="reference external" href="http://docutils.sourceforge.net/docs/user/slide-shows.html"&gt;rst2s5&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tiene una licencia
+&lt;a class="reference external" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;cc-By-NC-SA&lt;/a&gt;.
+Pod&amp;#233;s descargar todos los fuentes con las im&amp;#225;genes y algunos ejemplos de
+este tar:&lt;/p&gt;
+&lt;/div&gt;</description><guid>/posts/charla-python-a-los-bifes.html</guid><pubDate>Thu, 07 Oct 2010 17:52:24 GMT</pubDate></item><item><title>Charla "Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa"</title><link>/posts/charla-ser-freelance-como-trabajar.html</link><description>&lt;p&gt;El mi&amp;#233;rcoles 15 de abril de 2009 particip&amp;#233; como disertante en las &lt;a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-Abril-2009"&gt;3&amp;#186;
+Jornadas Abiertas de Ingenier&amp;#237;a en
+Computaci&amp;#243;n&lt;/a&gt;
+que reune a estudiantes, profesores y profesionales invitados para dar
+charlas t&amp;#233;cnicas o de inter&amp;#233;s para la comunidad de la carrera.&lt;/p&gt;
+&lt;p&gt;En la anterior edici&amp;#243;n, disert&amp;#233; sobre &lt;a class="reference external" href="/posts/blog/Control-de-Versiones-con"&gt;Control de Versiones con
+Subversion&lt;/a&gt;. En esta oportunidad
+pretend&amp;#237; un tema menos t&amp;#233;cnico pero de inter&amp;#233;s para un vasto sector de
+mis compa&amp;#241;eros: c&amp;#243;mo animarse a dar los primeros pasos profesionalmente
+sin ser empleado.&lt;/p&gt;
+&lt;p&gt;La charla se bas&amp;#243; en una presentaci&amp;#243;n de &lt;a class="reference external" href="http://www.desimone.com.ar/"&gt;Sebasti&amp;#225;n
+Desimone&lt;/a&gt;, publicada bajo &lt;a class="reference external" href="http://creativecommons.org/licenses/by-nc/2.5/ar/"&gt;Creative
+Commons by-nc-ar&lt;/a&gt;
+que escuch&amp;#233; en las &lt;a class="reference external" href="http://jornadas.grulic.org.ar/7/"&gt;7mas Jornadas Regionales de Software
+Libre&lt;/a&gt;, realizadas en C&amp;#243;rdoba, en
+2007.&lt;/p&gt;
+&lt;p&gt;Como corresponde &amp;#233;tica y legalmente, este trabajo est&amp;#225; bajo la misma
+licencia.&lt;/p&gt;
+&lt;blockquote&gt;
+Bajar diapositivas "&lt;a class="reference external" href="/downloads/ojotas_copia_.odp"&gt;Ser Freelance: C&amp;#243;mo trabajar en ojotas desde el living de tu casa&lt;/a&gt; "&lt;/blockquote&gt;
+&lt;p&gt;El documento ODP incluye notas y comentarios.&lt;/p&gt;
+&lt;div class="section" id="video"&gt;
+&lt;h2&gt;Video&lt;/h2&gt;
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description><guid>/posts/charla-ser-freelance-como-trabajar.html</guid><pubDate>Wed, 22 Apr 2009 12:58:20 GMT</pubDate></item></channel></rss>

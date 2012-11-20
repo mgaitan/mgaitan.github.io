@@ -20,21 +20,11 @@ Libre <http://jornadas.grulic.org.ar/7/>`_, realizadas en Córdoba, en
 Como corresponde ética y legalmente, este trabajo está bajo la misma
 licencia.
 
-+--------------------------------------------------------------------------------------------------+
-| `|image1| </downloads/ojotas_copia_.odp>`_                                                       |
-+--------------------------------------------------------------------------------------------------+
-| Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa Martín Gaitán, abril de 2009   |
-+--------------------------------------------------------------------------------------------------+
+    Bajar diapositivas "`Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa </downloads/ojotas_copia_.odp>`_ " 
 
 El documento ODP incluye notas y comentarios.
 
-Slidecast
-~~~~~~~~~
-
-Lamentablemente, la calidad del audio es paupérrima.
-
 Video
-~~~~~
+-----
 
-.. |image0| image:: /images/odp-ebb8b.png
-.. |image1| image:: /images/odp-ebb8b.png
+.. youtube:: 3pKPg11qBvM
