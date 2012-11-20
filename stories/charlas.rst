@@ -94,6 +94,20 @@ Django, el framework para perfeccionistas
 :fecha: Lunes 22 y Miércoles 24 de octubre, 2012
 :lugar: Loja, Ecuador
 
+Pyquery: (des)trozemos la web
+------------------------------
+
+    Lightning Talk (charla brevísima) presentada en PyCon Argentina 2011.
+    PyQuery_ es una biblioteca que trae la API de selectores y traversing de jQuery a Python
+
+:diapositivas: http://nqnwebs.github.com/pyquery-lightning-talk/pyquery-lt.html
+:repo: https://github.com/nqnwebs/pyquery-lightning-talk
+:evento: `PyCon Argentina 2011 <http://ar.pycon.org/2011>`_
+:fecha: Viernes 23 de septiembre de 2011
+:lugar: Universidad Nacional del Noroeste de la Provincia de Buenos Aires, 
+        Junín, Prov. de Buenos Aires
+
+
 Python ❤ Ingeniería
 -------------------
 
@@ -189,6 +203,6 @@ Charla preparada y presentada junto a Pablo Martínez
 
 .. _MyHdl: http://myhdl.org
 .. _Enaml: http://docs.enthought.com/enaml/
-
+.. _PyQuery: http://packages.python.org/pyquery/
 
 
