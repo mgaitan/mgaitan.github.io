@@ -70,25 +70,27 @@ deber, como buenos mentirosos, es lograr que el visitante no se entere.</p>
 actual</strong> se actualice automáticamente.</p>
 <p>Muy simple:</p>
 <pre class="literal-block">
-©
-
-   #SET{year, #DATE|annee} #GET{year}
-
+© &lt;BOUCLE_yearbegin(ARTICLES){par date}{0,1}&gt;
+    #SET{year, #DATE|annee} #GET{year}
+  &lt;/BOUCLE_yearbegin&gt;
 [(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]
 </pre>
 <div class="section" id="explicacion">
 <h2>Explicación</h2>
-<p><img alt="-" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Por convención, asumimos que el año de inicio del sitio es el año
-del primer artículo publicado, lo cual a mi me suena bastante lógico.
-<img alt="image1" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Un bucle recupera esta información, la muestra y a la vez la
-guarda en una variable spip <tt class="docutils literal">#SET{year, #DATE|annee}</tt>.
-<img alt="image2" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Fuera del bucle comparamos el año ya mostrado con el actual,
-obtenida de la baliza #DATE sin contexto. Si son iguales, no se muestra
-nada más (para que no quede algo como © 2009 - 2009, que quedaría bien
-feo). Pero si son distintos, se muestra el año actual</p>
-<p>El resultado, será</p>
+<ul class="simple"><li>Por convención, asumimos que el año de inicio del sitio es el año del
+primer artículo publicado, lo cual a mi me suena bastante lógico.</li>
+<li>Un bucle recupera esta información, la muestra y a la vez la
+guarda en una variable spip <tt class="docutils literal">#SET{year, #DATE|annee}</tt>.</li>
+<li>Fuera del bucle comparamos el año ya mostrado con el actual,
+obtenida de la baliza <tt class="docutils literal">#DATE</tt> sin contexto. Si son iguales,
+no se muestra nada más (para que no quede algo como
+<strong>© 2009 - 2009</strong>, que quedaría bien feo).
+Pero si son distintos, se muestra el año actual</li>
+</ul><p>El resultado, será:</p>
 <blockquote>
 © 2007 - 2009</blockquote>
+<p>Y si la lógica o el reloj del servidor no fallan, en cada año nuevo se
+incrementará el año final del período sin que toquemos una línea de código.</p>
 </div></div>
     <ul class="pager"><li class="previous">
             <a href="suscribirse-a-los-comentarios-por.html">← Post anterior</a>

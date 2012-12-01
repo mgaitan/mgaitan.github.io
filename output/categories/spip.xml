@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (SPIP)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:20:07 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
+<rss version="2.0"><channel><title>tin_nqn (SPIP)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 01 Dec 2012 13:14:29 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y f&amp;#225;cil de usar.&lt;/p&gt;
 &lt;p&gt;Comenc&amp;#233; un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;peque&amp;#241;o
@@ -526,25 +526,27 @@ deber, como buenos mentirosos, es lograr que el visitante no se entere.&lt;/p&gt
 actual&lt;/strong&gt; se actualice autom&amp;#225;ticamente.&lt;/p&gt;
 &lt;p&gt;Muy simple:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-&amp;#169;
-
-   #SET{year, #DATE|annee} #GET{year}
-
+&amp;#169; &amp;lt;BOUCLE_yearbegin(ARTICLES){par date}{0,1}&amp;gt;
+    #SET{year, #DATE|annee} #GET{year}
+  &amp;lt;/BOUCLE_yearbegin&amp;gt;
 [(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]
 &lt;/pre&gt;
 &lt;div class="section" id="explicacion"&gt;
 &lt;h2&gt;Explicaci&amp;#243;n&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Por convenci&amp;#243;n, asumimos que el a&amp;#241;o de inicio del sitio es el a&amp;#241;o
-del primer art&amp;#237;culo publicado, lo cual a mi me suena bastante l&amp;#243;gico.
-&lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Un bucle recupera esta informaci&amp;#243;n, la muestra y a la vez la
-guarda en una variable spip &lt;tt class="docutils literal"&gt;#SET{year, #DATE|annee}&lt;/tt&gt;.
-&lt;img alt="image2" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Fuera del bucle comparamos el a&amp;#241;o ya mostrado con el actual,
-obtenida de la baliza #DATE sin contexto. Si son iguales, no se muestra
-nada m&amp;#225;s (para que no quede algo como &amp;#169; 2009 - 2009, que quedar&amp;#237;a bien
-feo). Pero si son distintos, se muestra el a&amp;#241;o actual&lt;/p&gt;
-&lt;p&gt;El resultado, ser&amp;#225;&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Por convenci&amp;#243;n, asumimos que el a&amp;#241;o de inicio del sitio es el a&amp;#241;o del
+primer art&amp;#237;culo publicado, lo cual a mi me suena bastante l&amp;#243;gico.&lt;/li&gt;
+&lt;li&gt;Un bucle recupera esta informaci&amp;#243;n, la muestra y a la vez la
+guarda en una variable spip &lt;tt class="docutils literal"&gt;#SET{year, #DATE|annee}&lt;/tt&gt;.&lt;/li&gt;
+&lt;li&gt;Fuera del bucle comparamos el a&amp;#241;o ya mostrado con el actual,
+obtenida de la baliza &lt;tt class="docutils literal"&gt;#DATE&lt;/tt&gt; sin contexto. Si son iguales,
+no se muestra nada m&amp;#225;s (para que no quede algo como
+&lt;strong&gt;&amp;#169; 2009 - 2009&lt;/strong&gt;, que quedar&amp;#237;a bien feo).
+Pero si son distintos, se muestra el a&amp;#241;o actual&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;El resultado, ser&amp;#225;:&lt;/p&gt;
 &lt;blockquote&gt;
 &amp;#169; 2007 - 2009&lt;/blockquote&gt;
+&lt;p&gt;Y si la l&amp;#243;gica o el reloj del servidor no fallan, en cada a&amp;#241;o nuevo se
+incrementar&amp;#225; el a&amp;#241;o final del per&amp;#237;odo sin que toquemos una l&amp;#237;nea de c&amp;#243;digo.&lt;/p&gt;
 &lt;/div&gt;</description><guid>/posts/c-automatico.html</guid><pubDate>Sat, 07 Mar 2009 17:28:08 GMT</pubDate></item><item><title>Suscribirse a los comentarios por RSS</title><link>/posts/suscribirse-a-los-comentarios-por.html</link><description>&lt;p&gt;Con SPIP 2.0, m&amp;#225;s precisamente en la revisi&amp;#243;n
 &lt;a class="reference external" href="http://trac.rezo.net/trac/spip/browser/spip/squelettes-dist/rss_forum_article.html?rev=13407"&gt;13407&lt;/a&gt;
 se agregaron algunos esqueletos al juego de esqueletos est&amp;#225;ndar.&lt;/p&gt;

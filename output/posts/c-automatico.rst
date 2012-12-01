@@ -16,28 +16,28 @@ Muy simple:
 
 ::
 
-    © 
-    
-       #SET{year, #DATE|annee} #GET{year}
-    
-    [(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]
+    © <BOUCLE_yearbegin(ARTICLES){par date}{0,1}>
+        #SET{year, #DATE|annee} #GET{year}
+      </BOUCLE_yearbegin>
+    [(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]   
+
 
 Explicación
 ~~~~~~~~~~~
 
-|-| Por convención, asumimos que el año de inicio del sitio es el año
-del primer artículo publicado, lo cual a mi me suena bastante lógico.
-|image1| Un bucle recupera esta información, la muestra y a la vez la
-guarda en una variable spip ``#SET{year, #DATE|annee}``.
-|image2| Fuera del bucle comparamos el año ya mostrado con el actual,
-obtenida de la baliza #DATE sin contexto. Si son iguales, no se muestra
-nada más (para que no quede algo como © 2009 - 2009, que quedaría bien
-feo). Pero si son distintos, se muestra el año actual
+- Por convención, asumimos que el año de inicio del sitio es el año del 
+  primer artículo publicado, lo cual a mi me suena bastante lógico. 
+- Un bucle recupera esta información, la muestra y a la vez la 
+  guarda en una variable spip ``#SET{year, #DATE|annee}``. 
+- Fuera del bucle comparamos el año ya mostrado con el actual, 
+  obtenida de la baliza ``#DATE`` sin contexto. Si son iguales, 
+  no se muestra nada más (para que no quede algo como 
+  **© 2009 - 2009**, que quedaría bien feo). 
+  Pero si son distintos, se muestra el año actual 
 
-El resultado, será
+El resultado, será:
 
     © 2007 - 2009
 
-.. |-| image:: local/cache-vignettes/L8xH11/puce-32883.gif
-.. |image1| image:: local/cache-vignettes/L8xH11/puce-32883.gif
-.. |image2| image:: local/cache-vignettes/L8xH11/puce-32883.gif
+Y si la lógica o el reloj del servidor no fallan, en cada año nuevo se 
+incrementará el año final del período sin que toquemos una línea de código. 
