@@ -89,7 +89,7 @@ Luego define diferentes constates:
 El usuario selecciona mediante un menú donde se define ``audio``, ``quality`` y ``source``
 que se ofrencen en links con el formato :: 
 
-.. code-block:: html
+.. code-block::
 
     <a class="sel" data-type="quality" data-id="360">SD (360p)</a>
     
@@ -124,29 +124,31 @@ Descomprimirlo con unzip y abrir el archivo ``content/cuevanastream.js``
 La presencia de los parámetros ``cid``y ``ctipo`` y una url de alguno de los servicios 
 que usa Cuevana hace que se inyecte un javascript en la URL del servicio. 
 
-var loc = (window.location.href.match(/cid=/i) && window.location.href.match(/ctipo=/i));
-if (window.location.href.match(/^http:\/\/(www\.)?bayfiles\.com/i) && loc) {
-    addScript('bayfiles');
-} 
+.. code-block:: javascript
 
-    // más servicios
+    var loc = (window.location.href.match(/cid=/i) && window.location.href.match(/ctipo=/i));
+    if (window.location.href.match(/^http:\/\/(www\.)?bayfiles\.com/i) && loc) {
+        addScript('bayfiles');
+    } 
 
-  else if (window.location.href.match(/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i)) {
-    var n = document.createElement('div');
-    n.id = 'plugin_ok';
-    n.setAttribute('data-version', '5');
-    n.setAttribute('data-revision', '0');
-    document.body.appendChild(n);
-}
+        // más servicios
 
-function addScript(id) {
-    var s = document.createElement('script');
-    s.setAttribute('type', 'text/javascript');
-    s.setAttribute('src', 'http://sc.cuevana.tv/player/scripts/5/' + id + '.js');
-    document.getElementsByTagName('head')[0].appendChild(s);
-}
+      else if (window.location.href.match(/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i)) {
+        var n = document.createElement('div');
+        n.id = 'plugin_ok';
+        n.setAttribute('data-version', '5');
+        n.setAttribute('data-revision', '0');
+        document.body.appendChild(n);
+    }
 
-En ese caso se inyecta el javascript::
+    function addScript(id) {
+        var s = document.createElement('script');
+        s.setAttribute('type', 'text/javascript');
+        s.setAttribute('src', 'http://sc.cuevana.tv/player/scripts/5/' + id + '.js');
+        document.getElementsByTagName('head')[0].appendChild(s);
+    }
+
+En ese caso se inyecta el javascript:
 
     http://sc.cuevana.tv/player/scripts/5/bayfiles.js
 
