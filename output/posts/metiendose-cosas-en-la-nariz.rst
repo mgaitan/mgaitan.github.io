@@ -84,7 +84,7 @@ y los guarda en el archivito ``.noseids`` junto con su path y el
 resultado de la última corrida.
 
 Lo bueno es que pasando ``--with-id --failed`` nose usa esa información
-y ejecuta solamente los tests fallaron en la última corrida,
+y ejecuta solamente los tests que fallaron en la última corrida,
 permitiendo una rápida iteración *"falla/corrección"*.
 
 nose-selecttests
