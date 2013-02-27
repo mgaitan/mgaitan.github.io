@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 00:32:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho m&amp;#225;s
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 01:28:30 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho m&amp;#225;s
 que un &lt;em&gt;testrunner&lt;/em&gt; inteligente: tiene un conjunto de extensiones y shortcuts
-para para aserciones de &lt;tt class="docutils literal"&gt;unittest&lt;/tt&gt;, soporta fixtures y setups/teardown
+de aserciones de &lt;tt class="docutils literal"&gt;unittest&lt;/tt&gt;, soporta fixtures y setups/teardown
 por paquetes, y viene con un mont&amp;#243;n de plugins incorporados.&lt;/p&gt;
 &lt;blockquote&gt;
 "nose extends unittest to make testing easier"&lt;/blockquote&gt;

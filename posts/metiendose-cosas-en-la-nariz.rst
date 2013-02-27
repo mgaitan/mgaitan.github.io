@@ -7,7 +7,7 @@
 
 nose_ es un excelente *framework* para testing en python. Es mucho más
 que un *testrunner* inteligente: tiene un conjunto de extensiones y shortcuts
-para para aserciones de ``unittest``, soporta fixtures y setups/teardown
+de aserciones de ``unittest``, soporta fixtures y setups/teardown
 por paquetes, y viene con un montón de plugins incorporados.
 
     "nose extends unittest to make testing easier"
