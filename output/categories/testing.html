@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Posts sobre testing | &gt;&gt;&gt; me.geek.post()"><meta name="description" content="&gt;&gt;&gt; me.geek.post()"><meta name="author" content="Martín Gaitán"><title>Posts sobre testing | &gt;&gt;&gt; me.geek.post() </title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag testing (es)" href="testing.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox span3">
+        <h1 id="blog-title">
+            <a href="../">tin_nqn</a>
+        </h1>
+        <h6 id="blog-description">&gt;&gt;&gt; me.geek.post()</h6>
+
+        
+        
+        
+        </div>
+    <div id="menu" class="span7 offset1">
+      <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                 / 
+            
+                </li><li><a href="index.html">Categorías</a>
+                 / 
+            
+                </li><li><a href="../about.html">Sobre mí</a>
+                 / 
+            
+                </li><li><a href="../charlas.html">Charlas</a>
+                
+            
+        </li></ul></div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    
+        <div class="postbox">
+        <h1><a href="../posts/como-funciona-cuevana.html">Cómo funciona Cuevana</a>
+        <small>  
+             <span class="timeago" title="2013-02-26 22:17:55">2013-02-26 22:17:55</span>
+        </small></h1>
+        <div><p>Estimando cuanto trabajo significa actualizar <a class="reference external" href="http://userscripts.org/scripts/show/98017">Cuevana sources</a>
+y/o <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalib">Cuevanalib</a>
+investigué cómo funciona la nueva versión de cuevana.</p>
+<p>Estas notas son el resultado de lo que fui observando.</p>
+<p>Una vez que se elige un contenido, un iframe apunta a una URL de este formato
+<a class="reference external" href="http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula">http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula</a></p>
+<p>En código javascript inline define las fuentes disponibles para ese contenido</p>
+<pre class="code javascript literal-block">
+<span class="kd">var</span> <span class="nx">plugin_ver</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">plugin_rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">actual_ver</span><span class="p">,</span> <span class="nx">actual_rev</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">sources</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"2"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"360"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uptobox"</span><span class="p">,</span> <span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"filebox"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">,</span> <span class="s2">"zalaa"</span><span class="p">],</span>
+        <span class="s2">"720"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">},</span> <span class="nx">sel_source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre>
+<p>La primer clave (en este caso <tt class="docutils literal">2</tt>, inglés) es el idioma del audio,
+y la segunda la calidad del video</p>
+<p>Luego define diferentes constates:</p>
+<pre class="code javascript literal-block">
+<span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'360'</span><span class="o">:</span> <span class="s1">'SD (360p)'</span><span class="p">,</span>
+    <span class="s1">'480'</span><span class="o">:</span> <span class="s1">'SD (480p)'</span><span class="p">,</span>
+    <span class="s1">'720'</span><span class="o">:</span> <span class="s1">'HD (720p)'</span><span class="p">,</span>
+    <span class="s1">'1080'</span><span class="o">:</span> <span class="s1">'HD (1080p)'</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">labeli</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"1"</span><span class="o">:</span> <span class="s2">"Espa\u00f1ol"</span><span class="p">,</span>
+    <span class="s2">"2"</span><span class="o">:</span> <span class="s2">"Ingl\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"3"</span><span class="o">:</span> <span class="s2">"Portugu\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"4"</span><span class="o">:</span> <span class="s2">"Alem\u00e1n"</span><span class="p">,</span>
+    <span class="s2">"5"</span><span class="o">:</span> <span class="s2">"Franc\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"6"</span><span class="o">:</span> <span class="s2">"Coreano"</span><span class="p">,</span>
+    <span class="s2">"7"</span><span class="o">:</span> <span class="s2">"Italiano"</span><span class="p">,</span>
+    <span class="s2">"8"</span><span class="o">:</span> <span class="s2">"Tailand\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"9"</span><span class="o">:</span> <span class="s2">"Ruso"</span><span class="p">,</span>
+    <span class="s2">"10"</span><span class="o">:</span> <span class="s2">"Mongol"</span><span class="p">,</span>
+    <span class="s2">"11"</span><span class="o">:</span> <span class="s2">"Polaco"</span><span class="p">,</span>
+    <span class="s2">"12"</span><span class="o">:</span> <span class="s2">"Esloveno"</span><span class="p">,</span>
+    <span class="s2">"13"</span><span class="o">:</span> <span class="s2">"Sueco"</span><span class="p">,</span>
+    <span class="s2">"14"</span><span class="o">:</span> <span class="s2">"Griego"</span><span class="p">,</span>
+    <span class="s2">"15"</span><span class="o">:</span> <span class="s2">"Canton\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"16"</span><span class="o">:</span> <span class="s2">"Japon\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"17"</span><span class="o">:</span> <span class="s2">"Dan\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"18"</span><span class="o">:</span> <span class="s2">"Neerland\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"19"</span><span class="o">:</span> <span class="s2">"Hebreo"</span><span class="p">,</span>
+    <span class="s2">"20"</span><span class="o">:</span> <span class="s2">"Serbio"</span><span class="p">,</span>
+    <span class="s2">"21"</span><span class="o">:</span> <span class="s2">"\u00c1rabe"</span><span class="p">,</span>
+    <span class="s2">"22"</span><span class="o">:</span> <span class="s2">"Hindi"</span><span class="p">,</span>
+    <span class="s2">"23"</span><span class="o">:</span> <span class="s2">"Noruego"</span><span class="p">,</span>
+    <span class="s2">"24"</span><span class="o">:</span> <span class="s2">"Turco"</span><span class="p">,</span>
+    <span class="s2">"26"</span><span class="o">:</span> <span class="s2">"Mandar\u00edn"</span><span class="p">,</span>
+    <span class="s2">"27"</span><span class="o">:</span> <span class="s2">"Nepal\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"28"</span><span class="o">:</span> <span class="s2">"Rumano"</span><span class="p">,</span>
+    <span class="s2">"29"</span><span class="o">:</span> <span class="s2">"Iran\u00ed"</span><span class="p">,</span>
+    <span class="s2">"30"</span><span class="o">:</span> <span class="s2">"Est\u00f3n"</span><span class="p">,</span>
+    <span class="s2">"31"</span><span class="o">:</span> <span class="s2">"Bosnio"</span><span class="p">,</span>
+    <span class="s2">"32"</span><span class="o">:</span> <span class="s2">"Checo"</span><span class="p">,</span>
+    <span class="s2">"33"</span><span class="o">:</span> <span class="s2">"Croata"</span><span class="p">,</span>
+    <span class="s2">"34"</span><span class="o">:</span> <span class="s2">"Fin\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"35"</span><span class="o">:</span> <span class="s2">"H\u00fanagro"</span><span class="p">,</span>
+    <span class="s2">"36"</span><span class="o">:</span> <span class="s2">"Persa"</span><span class="p">,</span>
+    <span class="s2">"38"</span><span class="o">:</span> <span class="s2">"Indonesio"</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">labelh</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'filebox'</span><span class="o">:</span> <span class="s1">'Filebox'</span><span class="p">,</span>
+    <span class="s1">'uptobox'</span><span class="o">:</span> <span class="s1">'Uptobox (NUEVO)'</span><span class="p">,</span>
+    <span class="s1">'uploadcore'</span><span class="o">:</span> <span class="s1">'Uploadcore (NUEVO)'</span><span class="p">,</span>
+    <span class="s1">'vidbull'</span><span class="o">:</span> <span class="s1">'Vidbull (NUEVO)'</span><span class="p">,</span>
+    <span class="s1">'zalaa'</span><span class="o">:</span> <span class="s1">'Zalaa'</span><span class="p">,</span>
+    <span class="s1">'cramit'</span><span class="o">:</span> <span class="s1">'Cramit'</span><span class="p">,</span>
+    <span class="s1">'180upload'</span><span class="o">:</span> <span class="s1">'180upload'</span><span class="p">,</span>
+    <span class="s1">'bayfiles'</span><span class="o">:</span> <span class="s1">'Bayfiles'</span>
+<span class="p">};</span>
+</pre>
+<p>El usuario selecciona mediante un menú donde se define <tt class="docutils literal">audio</tt>, <tt class="docutils literal">quality</tt> y <tt class="docutils literal">source</tt>
+que se ofrencen en links con el formato</p>
+<pre class="literal-block">
+.. code-block::
+</pre>
+<blockquote>
+&lt;a class="sel" data-type="quality" data-id="360"&gt;SD (360p)&lt;/a&gt;</blockquote>
+<p>Donde <tt class="docutils literal"><span class="pre">data-type</span></tt> es el tipo de variable, <tt class="docutils literal"><span class="pre">data-id</span></tt> el valor para esa opción
+y <tt class="docutils literal"><span class="pre">class="sel"</span></tt> determina si esa es la opción seleccionada.</p>
+<p>Cuando se aprieta el botón Play se invoca la URL:</p>
+<blockquote>
+<a class="reference external" href="http://www.cuevana.tv/player/source_get?def=**quality**&amp;audio=**audio**&amp;host=**source**&amp;id=4773&amp;tipo=pelicula">http://www.cuevana.tv/player/source_get?def=**quality**&amp;audio=**audio**&amp;host=**source**&amp;id=4773&amp;tipo=pelicula</a></blockquote>
+<p>Por ejemplo:</p>
+<blockquote>
+<a class="reference external" href="http://www.cuevana.tv/player/source_get?def=360&amp;audio=2&amp;host=bayfiles&amp;id=4773&amp;tipo=pelicula">http://www.cuevana.tv/player/source_get?def=360&amp;audio=2&amp;host=bayfiles&amp;id=4773&amp;tipo=pelicula</a></blockquote>
+<p>Esta página presenta el captcha, que una vez superado redirige a la URL:</p>
+<blockquote>
+<a class="reference external" href="http://go.cuevana.tv/?*URL_DESTINO*">http://go.cuevana.tv/?*URL_DESTINO*</a></blockquote>
+<p>Por ejemplo:</p>
+<blockquote>
+<a class="reference external" href="http://go.cuevana.tv/?http%3A%2F%2Fbayfiles.com%2Ffile%2FvIsf%2FkTvfNj%2Fthe.apparition.2012.bdrip.xvid-sparks.mp4%3Fcid%3D4773%26ctipo%3Dpelicula%26cdef%3D360">http://go.cuevana.tv/?http%3A%2F%2Fbayfiles.com%2Ffile%2FvIsf%2FkTvfNj%2Fthe.apparition.2012.bdrip.xvid-sparks.mp4%3Fcid%3D4773%26ctipo%3Dpelicula%26cdef%3D360</a></blockquote>
+<p>Que a su vez redirige a <em>URL_DESTINO</em> que es la URL del servicio donde el video está hosteado
+con parámetros extra: <tt class="docutils literal"><span class="pre">?cid=4773&amp;ctipo=pelicula&amp;cdef=360</span></tt>. En el ejemplo anterior:</p>
+<blockquote>
+<a class="reference external" href="http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;ctipo=pelicula&amp;cdef=360**">http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;ctipo=pelicula&amp;cdef=360**</a></blockquote>
+<p>Aquí entra en juego el "plugin de cuevana". Se puede bajar por ejemplo
+la versión para Firefox desde <a class="reference external" href="http://www.cuevana.tv/player/plugins/cstream-5.0.xpi">http://www.cuevana.tv/player/plugins/cstream-5.0.xpi</a>
+Descomprimirlo con unzip y abrir el archivo <tt class="docutils literal">content/cuevanastream.js</tt></p>
+<p>La presencia de los parámetros <tt class="docutils literal"><span class="pre">cid``y</span> ``ctipo</tt> y una url de alguno de los servicios
+que usa Cuevana hace que se inyecte un javascript en la URL del servicio.</p>
+<pre class="code javascript literal-block">
+<span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/cid=/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ctipo=/i</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.)?bayfiles\.com/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">addScript</span><span class="p">(</span><span class="s1">'bayfiles'</span><span class="p">);</span>
+<span class="p">}</span>
+
+    <span class="c1">// más servicios
+</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+    <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'plugin_ok'</span><span class="p">;</span>
+    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-version'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">);</span>
+    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-revision'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">addScript</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/javascript'</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span> <span class="s1">'http://sc.cuevana.tv/player/scripts/5/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'.js'</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+<p>En ese caso se inyecta el javascript:</p>
+<blockquote>
+<a class="reference external" href="http://sc.cuevana.tv/player/scripts/5/bayfiles.js">http://sc.cuevana.tv/player/scripts/5/bayfiles.js</a></blockquote>
+<p>Que es el encargado de parsear html para obtener la url real de descarga,
+resolver/exponer el captcha si existiera, esperar el tiempo de guarda
+del servicio y redirigir al reproductor de cuevana:</p>
+<pre class="literal-block">
+window.location.href = 'http://www.cuevana.tv/#!/' + tipo + '/' + id + '/play/url:' + encodeURIComponent(a) + '/def:' + vars['cdef'];
+</pre>
+<p>Donde tipo es <tt class="docutils literal">series</tt> o <tt class="docutils literal">peliculas</tt>, <tt class="docutils literal">id</tt> es el identificador del contenido,
+def es <tt class="docutils literal">360</tt> o <tt class="docutils literal">720</tt> y <tt class="docutils literal">a</tt> es la url final del archivo mp4</p>
+<blockquote>
+<a class="reference external" href="http://www.cuevana.tv/#!/">http://www.cuevana.tv/#!/</a>' + tipo + '/' + id + '/play/url:' + encodeURIComponent(a) + '/def:' + vars['cdef'];</blockquote>
+<p>El reproductor carga el subtitulo desde la siguientes URL.</p>
+<p>Para series:</p>
+<blockquote>
+<a class="reference external" href="http://sc.cuevana.tv/files/s/sub/">http://sc.cuevana.tv/files/s/sub/</a><strong>ID**_**LANG</strong>.srt</blockquote>
+<p>Donde <tt class="docutils literal">ID</tt> es el identificador del contenido y <tt class="docutils literal">LANG</tt> es el código
+del idioma en 2 letras mayúsculas (ES, EN, etc.)</p>
+<p>Para contenidos HD se agrega el sufijo <em>_720</em></p>
+<blockquote>
+<p><a class="reference external" href="http://sc.cuevana.tv/files/s/sub/">http://sc.cuevana.tv/files/s/sub/</a><a href="../posts/como-funciona-cuevana.html#id1"><span class="problematic" id="id2">**</span></a>ID**_**LANG**_720.srt</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 181); <em><a href="../posts/como-funciona-cuevana.html#id2">backlink</a></em></p>
+Inline strong start-string without end-string.</div>
+</blockquote>
+<p>Para peliculas es análogo pero un nivel más arriba.</p>
+<blockquote>
+<a class="reference external" href="http://sc.cuevana.tv/files/sub/">http://sc.cuevana.tv/files/sub/</a><strong>ID**_**LANG</strong>.srt</blockquote>
+<p>Y eso es todo lo que necesitamos saber.</p></div>
+        <p>
+        
+            <a href="../posts/como-funciona-cuevana.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+    <div>
+<ul class="pager"></ul></div>
+    
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="http://www.textosypretextos.com.ar" title="Mi otro blog">Textos y pretextos</a>
+                    /
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

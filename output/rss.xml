@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 00:28:00 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho m&amp;#225;s
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 00:32:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho m&amp;#225;s
 que un &lt;em&gt;testrunner&lt;/em&gt; inteligente: tiene un conjunto de extensiones y shortcuts
 para para aserciones de &lt;tt class="docutils literal"&gt;unittest&lt;/tt&gt;, soporta fixtures y setups/teardown
 por paquetes, y viene con un mont&amp;#243;n de plugins incorporados.&lt;/p&gt;
@@ -65,9 +65,10 @@ permitiendo una r&amp;#225;pida iteraci&amp;#243;n &lt;em&gt;"falla/correcci&amp
 &lt;/div&gt;
 &lt;div class="section" id="nose-selecttests"&gt;
 &lt;h2&gt;nose-selecttests&lt;/h2&gt;
-&lt;p&gt;Frecuentemente sucede que tenemos &lt;tt class="docutils literal"&gt;TestCase&lt;/tt&gt; con muchas pruebas (m&amp;#233;todos)
-que est&amp;#225;n l&amp;#243;gicamente agrupadas porque comparten un setup, por ejemplo,
-y sin embargo s&amp;#243;lo queremos testear un subconjunto.&lt;/p&gt;
+&lt;p&gt;Frecuentemente sucede que tenemos caso (una subclase de &lt;tt class="docutils literal"&gt;TestCase&lt;/tt&gt;)
+con muchas pruebas (m&amp;#233;todos) que est&amp;#225;n l&amp;#243;gicamente agrupadas
+porque comparten un setup, por ejemplo,
+y sin embargo s&amp;#243;lo queremos correr un subconjunto.&lt;/p&gt;
 &lt;p&gt;Sabemos que como es inteligente y poco burocr&amp;#225;tico, nose no s&amp;#243;lo ejecuta
 tests definidos como subclases de &lt;tt class="docutils literal"&gt;unittest.TestCase&lt;/tt&gt; sino
 cualquier paquete, m&amp;#243;dulo, funci&amp;#243;n o clase

@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Metiéndose cosas en la nariz | "><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>  Metiéndose cosas en la nariz | tin_nqn  </title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox span3">
+        <h1 id="blog-title">
+            <a href="../">tin_nqn</a>
+        </h1>
+        <h6 id="blog-description">&gt;&gt;&gt; me.geek.post()</h6>
+
+        
+        
+        
+        </div>
+    <div id="menu" class="span7 offset1">
+      <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                 / 
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                 / 
+            
+                </li><li><a href="../about.html">Sobre mí</a>
+                 / 
+            
+                </li><li><a href="../charlas.html">Charlas</a>
+                
+            
+        </li></ul></div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Metiéndose cosas en la nariz</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2013-02-26 22:17:55">2013-02-26 22:17:55</span>   |  
+
+        
+
+        <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/metiendose-cosas-en-la-nariz.rst">Código</a>
+        
+    </small>
+    <div><p><a class="reference external" href="https://nose.readthedocs.org">nose</a> es un excelente <em>framework</em> para testing en python. Es mucho más
+que un <em>testrunner</em> inteligente: tiene un conjunto de extensiones y shortcuts
+para para aserciones de <tt class="docutils literal">unittest</tt>, soporta fixtures y setups/teardown
+por paquetes, y viene con un montón de plugins incorporados.</p>
+<blockquote>
+"nose extends unittest to make testing easier"</blockquote>
+<p>dice el eslogan y eso es lo que queremos: tests más fáciles de escribir,
+más rápidos de ejecutar.</p>
+<p>De plugins y opciones que potencian esta idea se trata este post.</p>
+<div class="section" id="nose-progressive">
+<h2>nose-progressive</h2>
+<blockquote class="epigraph">
+<p>Ah, beautiful dots</p>
+<p class="attribution">—<a class="reference external" href="http://blog.mozilla.org/webdev/2011/04/14/a-humane-python-test-runner/">Erik Rose</a></p>
+</blockquote>
+<p><em>"Puntito, puntito, puntito, puntito..."</em>, cuenta mi mente en standby
+cuando los test van pasando, como ovejitas que saltan un cerco.
+Pero, oh desdicha, una "efe", la oveja negra que falla, aparece
+en la pantalla y la ansiedad por saber cuál nos invade.</p>
+<p>El problema es que por default (con <tt class="docutils literal"><span class="pre">--verbose=1</span></tt>), nose
+pospone el detalle de errores y fallos hasta el final de la corrida.
+En suites gigantes (que demoran más de 30 minutos en completarse,
+por ejemplo) esto es un engorro.</p>
+<p><a class="reference external" href="https://pypi.python.org/pypi/nose-progressive/">nose-progressive</a> reemplaza la interfaz de usuario por una mucho más
+amigable y bonita. En vez de puntitos, una barra de progreso al pie de la
+pantalla va indicando el progreso satisfactorio, y deja el resto de la pantalla
+para mostrar errores y fallos <em>on the fly</em>.</p>
+<img alt="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png" src="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png"><p>Como si fuera poco, te da shortcuts a la línea donde se produjo un fallo
+(por ejemplo: <tt class="docutils literal">vim +258 common/tests/test_guideplan.py</tt>), simplifica los
+tracebacks a la parte útil, e incluye colores usados con criterio
+(basada en la genial biblioteca <a class="reference external" href="https://pypi.python.org/pypi/blessings">blessing</a>, del mismo autor).</p>
+<p>Para instalarlo, lo de siempre:</p>
+<pre class="code bash literal-block">
+<span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>pip install nose-progressive
+</pre>
+<p>Para usarlo, agregar <tt class="docutils literal"><span class="pre">--with-progressive</span></tt> como parámetros de <tt class="docutils literal">nosetests</tt>,
+o bien, para usarlo siempre, configurarlo en <tt class="docutils literal">.noserc</tt> o en la
+variable <tt class="docutils literal">NOSE_ARGS</tt> de <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a></p>
+</div>
+<div class="section" id="django-nose">
+<h2>django-nose</h2>
+<p>Si trabajás con Django esto quizas suene a perogrullada, pero <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a>
+es la vuelta de tuerca que faltaba para que la nariz brille en este entorno.
+Con django-nose por defecto sólo se corren los tests del proyecto y no
+los de todas las aplicaciones instaladas (que, se supone, tienen sus propios
+tests).</p>
+<p>Y entre otras opciones o, tiene  un modo de reuso de la base de datos,
+(configurando <tt class="docutils literal">REUSE_DB=1</tt> como variable de entorno), que nos evita la creación
+de tablas en cada corrida, ahorrando unos cuantos segundos de setup en aplicaciones
+como muchos modelos. Por supuesto, si la base de datos cambia (porque
+se agregó un modelo o se se migró con <a class="reference external" href="http://south.aeracode.org/">South</a>) tenés que asegurarte
+que la variable está en 0 para que cree la última version</p>
+</div>
+<div class="section" id="with-id-failed">
+<h2>with-id + failed</h2>
+<p>La opción <a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption--with-id">--with-id</a>
+(estrictamente el plugin <tt class="docutils literal">TestId</tt>, que viene en las baterías incluídas de nose)
+le asigna un número único a cada test ejecutado,
+y los guarda en el archivito <tt class="docutils literal">.noseids</tt> junto con su path y el
+resultado de la última corrida.</p>
+<p>Lo bueno es que pasando <tt class="docutils literal"><span class="pre">--with-id</span> <span class="pre">--failed</span></tt> nose usa esa información
+y ejecuta solamente los tests fallaron en la última corrida,
+permitiendo una rápida iteración <em>"falla/corrección"</em>.</p>
+</div>
+<div class="section" id="nose-selecttests">
+<h2>nose-selecttests</h2>
+<p>Frecuentemente sucede que tenemos caso (una subclase de <tt class="docutils literal">TestCase</tt>)
+con muchas pruebas (métodos) que están lógicamente agrupadas
+porque comparten un setup, por ejemplo,
+y sin embargo sólo queremos correr un subconjunto.</p>
+<p>Sabemos que como es inteligente y poco burocrático, nose no sólo ejecuta
+tests definidos como subclases de <tt class="docutils literal">unittest.TestCase</tt> sino
+cualquier paquete, módulo, función o clase
+que <em>matchee</em> una expresión regular, que por defecto es <tt class="docutils literal"><span class="pre">(?:^|[b_./-])[Tt]est</span></tt>
+Con el parámetro <a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption-m">-m</a>
+se puede redefinir este patrón, pero igualmente no aplica a nivel
+métodos.</p>
+<p>Por eso existe <a class="reference external" href="https://github.com/iElectric/nose-selecttests">nose-selecttests</a>, que permite filtrar pruebas con
+determinada subcadena en el nombre del método.</p>
+<p>Por ejemplo:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>djntest -v 2 common/tests/test_sequence_diff.py
+
+<span class="c">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+</span>
+----------------------------------------------------------------------
+Ran 4 tests in 0.375s
+</pre>
+<p>En cambio:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>djntest --select-tests<span class="o">=</span>differ -v 2 apps/common/tests/test_sequence_diff.py
+
+<span class="c">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+</span>----------------------------------------------------------------------
+Ran 2 tests in 0.088s
+</pre>
+</div>
+<div class="section" id="django-tests-autocomplete">
+<h2>django-tests-autocomplete</h2>
+<p>Esta herramienta no es estrictamente un plugin de nose, sino un helper
+que aprovecha las posibilidades de bash para
+<a class="reference external" href="http://bash-completion.alioth.debian.org/">autocompletar</a> usando la tecla
+tab.</p>
+<p>¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>nosetests path/to/test.py
+</pre>
+<p>Pero también permite afinar la puntería y "meterse" adentro del módulo:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>nosetests path/to/test.py:MyImportantTestCase
+</pre>
+<p>E incluso adentro del testcase:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>nosetests path/to/test.py:MyImportantTestCase.test_super_important
+</pre>
+<p>Desde el <tt class="docutils literal">:</tt> en adelante estamos en Python y Bash ya no sabe autocompletar,
+salvo que usemos esta herramienta que instrospecciona y "alimenta" el
+autocompleter.</p>
+<p>Lo hizo Javi Mansilla en <a class="reference external" href="http://machinalis.com">Machinalis</a> y
+<a class="reference external" href="https://github.com/machinalis/django-test-autocomplete#future-features">busca ayuda</a>
+para mejorarlo y generalizarlo.</p>
+<p>¿No sería buenísimo que esto estuviese built-in en nose? ¿Nos ayudarías?</p>
+</div>
+<div class="section" id="nose-timer">
+<h2>nose-timer</h2>
+<p>¿Cuánto tiempo insume cada test? Instalá <a class="reference external" href="https://github.com/mahmoudimus/nose-timer/">nose-timer</a> y activalo (con <tt class="docutils literal"><span class="pre">--with-timer</span></tt>)
+para saber la respuesta.</p>
+</div>
+<div class="section" id="nose-ipdb">
+<h2>nose-ipdb</h2>
+<p>nose tiene una opción <tt class="docutils literal"><span class="pre">--pdb</span></tt> (o la más estricta <tt class="docutils literal"><span class="pre">--ipdb-failures</span></tt>)
+que nos manda al debugger cuando un test falla o da error.</p>
+<p><a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb">nose-ipdb</a> lo imita, pero usando el más pulenta de los debuggers: <a class="reference external" href="https://pypi.python.org/pypi/ipdb">ipdb</a>.</p>
+<p>Suficiente por hoy. Pero ¿me estoy perdiendo alguna cosa interesante
+para meter en mi nariz?</p>
+</div></div>
+    <ul class="pager"><li class="previous">
+            <a href="creando-un-nuevo-proyecto-python.html">← Post anterior</a>
+        </li>
+    
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="http://www.textosypretextos.com.ar" title="Mi otro blog">Textos y pretextos</a>
+                    /
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>
