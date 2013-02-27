@@ -43,6 +43,156 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/metiendose-cosas-en-la-nariz.html">Metiéndose cosas en la nariz</a>
+        <small>  
+             <span class="timeago" title="2013-02-26 22:17:55">2013-02-26 22:17:55</span>
+        </small></h1>
+        <div><p><a class="reference external" href="https://nose.readthedocs.org">nose</a> es un excelente <em>framework</em> para testing en python. Es mucho más
+que un <em>testrunner</em> inteligente: tiene un conjunto de extensiones y shortcuts
+para para aserciones de <tt class="docutils literal">unittest</tt>, soporta fixtures y setups/teardown
+por paquetes, y viene con un montón de plugins incorporados.</p>
+<blockquote>
+"nose extends unittest to make testing easier"</blockquote>
+<p>dice el eslogan y eso es lo que queremos: tests más fáciles de escribir,
+más rápidos de ejecutar.</p>
+<p>De plugins y opciones que potencian esta idea se trata este post.</p>
+<div class="section" id="nose-progressive">
+<h2>nose-progressive</h2>
+<blockquote class="epigraph">
+<p>Ah, beautiful dots</p>
+<p class="attribution">—<a class="reference external" href="http://blog.mozilla.org/webdev/2011/04/14/a-humane-python-test-runner/">Erik Rose</a></p>
+</blockquote>
+<p><em>"Puntito, puntito, puntito, puntito..."</em>, cuenta mi mente en standby
+cuando los test van pasando, como ovejitas que saltan un cerco.
+Pero, oh desdicha, una "efe", la oveja negra que falla, aparece
+en la pantalla y la ansiedad por saber cuál nos invade.</p>
+<p>El problema es que por default (con <tt class="docutils literal"><span class="pre">--verbose=1</span></tt>), nose
+pospone el detalle de errores y fallos hasta el final de la corrida.
+En suites gigantes (que demoran más de 30 minutos en completarse,
+por ejemplo) esto es un engorro.</p>
+<p><a class="reference external" href="https://pypi.python.org/pypi/nose-progressive/">nose-progressive</a> reemplaza la interfaz de usuario por una mucho más
+amigable y bonita. En vez de puntitos, una barra de progreso al pie de la
+pantalla va indicando el progreso satisfactorio, y deja el resto de la pantalla
+para mostrar errores y fallos <em>on the fly</em>.</p>
+<img alt="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png" src="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png"><p>Como si fuera poco, te da shortcuts a la línea donde se produjo un fallo
+(por ejemplo: <tt class="docutils literal">vim +258 common/tests/test_guideplan.py</tt>), simplifica los
+tracebacks a la parte útil, e incluye colores usados con criterio
+(basada en la genial biblioteca <a class="reference external" href="https://pypi.python.org/pypi/blessings">blessing</a>, del mismo autor).</p>
+<p>Para instalarlo, lo de siempre:</p>
+<pre class="code bash literal-block">
+<span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>pip install nose-progressive
+</pre>
+<p>Para usarlo, agregar <tt class="docutils literal"><span class="pre">--with-progressive</span></tt> como parámetros de <tt class="docutils literal">nosetests</tt>,
+o bien, para usarlo siempre, configurarlo en <tt class="docutils literal">.noserc</tt> o en la
+variable <tt class="docutils literal">NOSE_ARGS</tt> de <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a></p>
+</div>
+<div class="section" id="django-nose">
+<h2>django-nose</h2>
+<p>Si trabajás con Django esto quizas suene a perogrullada, pero <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a>
+es la vuelta de tuerca que faltaba para que la nariz brille en este entorno.
+Con django-nose por defecto sólo se corren los tests del proyecto y no
+los de todas las aplicaciones instaladas (que, se supone, tienen sus propios
+tests).</p>
+<p>Y entre otras opciones o, tiene  un modo de reuso de la base de datos,
+(configurando <tt class="docutils literal">REUSE_DB=1</tt> como variable de entorno), que nos evita la creación
+de tablas en cada corrida, ahorrando unos cuantos segundos de setup en aplicaciones
+como muchos modelos. Por supuesto, si la base de datos cambia (porque
+se agregó un modelo o se se migró con <a class="reference external" href="http://south.aeracode.org/">South</a>) tenés que asegurarte
+que la variable está en 0 para que cree la última version</p>
+</div>
+<div class="section" id="with-id-failed">
+<h2>with-id + failed</h2>
+<p>La opción <a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption--with-id">--with-id</a>
+(estrictamente el plugin <tt class="docutils literal">TestId</tt>, que viene en las baterías incluídas de nose)
+le asigna un número único a cada test ejecutado,
+y los guarda en el archivito <tt class="docutils literal">.noseids</tt> junto con su path y el
+resultado de la última corrida.</p>
+<p>Lo bueno es que pasando <tt class="docutils literal"><span class="pre">--with-id</span> <span class="pre">--failed</span></tt> nose usa esa información
+y ejecuta solamente los tests fallaron en la última corrida,
+permitiendo una rápida iteración <em>"falla/corrección"</em>.</p>
+</div>
+<div class="section" id="nose-selecttests">
+<h2>nose-selecttests</h2>
+<p>Frecuentemente sucede que tenemos <tt class="docutils literal">TestCase</tt> con muchas pruebas (métodos)
+que están lógicamente agrupadas porque comparten un setup, por ejemplo,
+y sin embargo sólo queremos testear un subconjunto.</p>
+<p>Sabemos que como es inteligente y poco burocrático, nose no sólo ejecuta
+tests definidos como subclases de <tt class="docutils literal">unittest.TestCase</tt> sino
+cualquier paquete, módulo, función o clase
+que <em>matchee</em> una expresión regular, que por defecto es <tt class="docutils literal"><span class="pre">(?:^|[b_./-])[Tt]est</span></tt>
+Con el parámetro <a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption-m">-m</a>
+se puede redefinir este patrón, pero igualmente no aplica a nivel
+métodos.</p>
+<p>Por eso existe <a class="reference external" href="https://github.com/iElectric/nose-selecttests">nose-selecttests</a>, que permite filtrar pruebas con
+determinada subcadena en el nombre del método.</p>
+<p>Por ejemplo:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>djntest -v 2 common/tests/test_sequence_diff.py
+
+<span class="c">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+</span>
+----------------------------------------------------------------------
+Ran 4 tests in 0.375s
+</pre>
+<p>En cambio:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>djntest --select-tests<span class="o">=</span>differ -v 2 apps/common/tests/test_sequence_diff.py
+
+<span class="c">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+</span>----------------------------------------------------------------------
+Ran 2 tests in 0.088s
+</pre>
+</div>
+<div class="section" id="django-tests-autocomplete">
+<h2>django-tests-autocomplete</h2>
+<p>Esta herramienta no es estrictamente un plugin de nose, sino un helper
+que aprovecha las posibilidades de bash para
+<a class="reference external" href="http://bash-completion.alioth.debian.org/">autocompletar</a> usando la tecla
+tab.</p>
+<p>¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>nosetests path/to/test.py
+</pre>
+<p>Pero también permite afinar la puntería y "meterse" adentro del módulo:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>nosetests path/to/test.py:MyImportantTestCase
+</pre>
+<p>E incluso adentro del testcase:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>nosetests path/to/test.py:MyImportantTestCase.test_super_important
+</pre>
+<p>Desde el <tt class="docutils literal">:</tt> en adelante estamos en Python y Bash ya no sabe autocompletar,
+salvo que usemos esta herramienta que instrospecciona y "alimenta" el
+autocompleter.</p>
+<p>Lo hizo Javi Mansilla en <a class="reference external" href="http://machinalis.com">Machinalis</a> y
+<a class="reference external" href="https://github.com/machinalis/django-test-autocomplete#future-features">busca ayuda</a>
+para mejorarlo y generalizarlo.</p>
+<p>¿No sería buenísimo que esto estuviese built-in en nose? ¿Nos ayudarías?</p>
+</div>
+<div class="section" id="nose-timer">
+<h2>nose-timer</h2>
+<p>¿Cuánto tiempo insume cada test? Instalá <a class="reference external" href="https://github.com/mahmoudimus/nose-timer/">nose-timer</a> y activalo (con <tt class="docutils literal"><span class="pre">--with-timer</span></tt>)
+para saber la respuesta.</p>
+</div>
+<div class="section" id="nose-ipdb">
+<h2>nose-ipdb</h2>
+<p>nose tiene una opción <tt class="docutils literal"><span class="pre">--pdb</span></tt> (o la más estricta <tt class="docutils literal"><span class="pre">--ipdb-failures</span></tt>)
+que nos manda al debugger cuando un test falla o da error.</p>
+<p><a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb">nose-ipdb</a> lo imita, pero usando el más pulenta de los debuggers: <a class="reference external" href="https://pypi.python.org/pypi/ipdb">ipdb</a>.</p>
+<p>Suficiente por hoy. Pero ¿me estoy perdiendo alguna cosa interesante
+para meter en mi nariz?</p>
+</div></div>
+        <p>
+        
+            <a href="posts/metiendose-cosas-en-la-nariz.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/creando-un-nuevo-proyecto-python.html">Creando un nuevo proyecto Python</a>
         <small>  
              <span class="timeago" title="2012-11-12 00:34:23">2012-11-12 00:34:23</span>
@@ -98,8 +248,7 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <pre class="code bash literal-block">
 <span class="nv">$ </span>mkdir ~/.virtualenvs           <span class="c"># acá se van a guardar tus entornos virtuales
 </span><span class="nv">$ </span>mkdir ~/proyectos              <span class="c"># acá se van a guardar tus proyectos
-</span><span class="nv">$ </span>mkdir ~/.pip_download_cache     <span class="c"># para no bajar paquetes cada vez
-</span>
+</span><span class="nv">$ </span>mkdir ~/.pip_download_cache     <span class="c"># para no bajar paquetes cada vez</span>
 </pre>
 <p>Luego editá tu <tt class="docutils literal"><span class="pre">~/.bashrc</span></tt> agregando las siguientes líneas</p>
 <pre class="code bash literal-block">
@@ -108,7 +257,6 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <span class="nb">export </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true
 export </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
 <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
-
 </pre>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">
@@ -201,7 +349,6 @@ proyecto y encontré <a class="reference external" href="https://github.com/davi
 <p>Entonces bastó con instalar el fork de David Paz Reyes</p>
 <pre class="code bash literal-block">
 <span class="nv">$ </span>pip install git+https://github.com/davidmpaz/BitBucket-api.git
-
 </pre>
 <p>he hice un script que migra todo los issues en estado <em>new</em>
 del repo original (<tt class="docutils literal">gpec</tt>) al nuevo (<tt class="docutils literal">gpec</tt>) y los potenciales comentarios que tenga.
@@ -800,36 +947,6 @@ para hacerlo andar desde los fuentes.</p></div>
         <p>
         
             <a href="posts/cuevanalinks-ahora-para-seres.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/disqus-para-spip.html">Disqus para SPIP</a>
-        <small>  
-             <span class="timeago" title="2011-07-07 01:45:06">2011-07-07 01:45:06</span>
-        </small></h1>
-        <div><img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="images/disqus-newlod23a-8b781.gif"><p>Hace tiempo me interesa el servicio
-<a class="reference external" href="http://www.disqus.com">disqus.com</a> que provee una plataforma de
-comentarios muy poderosa y fácil de usar.</p>
-<p>Comencé un <a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus">pequeño
-plugin</a>
-para integrar Disqus a <a class="reference external" href="http://www.spip.net">Spip</a>.</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/disqus.zip">Plugin Disqus para SPIP version 0.1</a></td>
-</tr></tbody></table><p>Por ahora tiene dos componentes básicos:</p>
-<ol class="arabic simple"><li>Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
-SPIP (y su formulario) por Disqus</li>
-<li>Un esqueleto para exportar comentarios existentes (genera un XML
-importable a traves del panel de disqus)</li>
-</ol><p>La configuración se realiza a través de una página (requiere el <a class="reference external" href="http://plugins.spip.net/CFG">plugin
-CFG</a>) donde se define el <em>"Disqus
-shortname"</em> (la identificación unica que asignamos al sitio donde
-usaremos Diqus).</p>
-<p>Para generar el XML con la exportación de comentarios preexistentes,
-basta acceder a <tt class="docutils literal"><span class="pre">/?page=export_comments_to_disqus</span></tt> y luego importar
-ese archivo desde el panel de Disqus (Tools -&gt; Import/Export )</p></div>
-        <p>
-        
-            <a href="posts/disqus-para-spip.html#disqus_thread">Comments</a>
         
         </p></div>
     

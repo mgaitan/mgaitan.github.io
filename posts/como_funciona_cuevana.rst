@@ -1,13 +1,17 @@
-Cómo funciona Cuevana
------------------------
+.. title: Cómo funciona Cuevana
+.. slug: como-funciona-cuevana
+.. date: 2013/02/26 22:17:55
+.. tags: draft
+.. link:
+.. description:
 
-Tratando de ver cuán difícil es actualizar `Cuevana sources <http://userscripts.org/scripts/show/98017>`_ 
+Estimando cuanto trabajo significa actualizar `Cuevana sources <http://userscripts.org/scripts/show/98017>`_
 y/o `Cuevanalib <https://bitbucket.org/tin_nqn/cuevanalib>`_
-investigué cómo funciona la nueva versión de cuevana. 
+investigué cómo funciona la nueva versión de cuevana.
 
-Estas notas son lo que fui observando. 
+Estas notas son el resultado de lo que fui observando.
 
-Una vez que se elige un contenido, un iframe apunta a una URL de este formato 
+Una vez que se elige un contenido, un iframe apunta a una URL de este formato
 http://www.cuevana.tv/player/sources?id=4773&tipo=pelicula
 
 En código javascript inline define las fuentes disponibles para ese contenido
@@ -23,10 +27,10 @@ En código javascript inline define las fuentes disponibles para ese contenido
             "720": ["uploadcore", "vidbull", "bayfiles", "cramit"]
         }
     }, sel_source = 0;
-    
-La primer clave (en este caso ``2``, inglés) es el idioma del audio, 
+
+La primer clave (en este caso ``2``, inglés) es el idioma del audio,
 y la segunda la calidad del video
-    
+
 Luego define diferentes constates:
 
 .. code-block:: javascript
@@ -85,30 +89,30 @@ Luego define diferentes constates:
         '180upload': '180upload',
         'bayfiles': 'Bayfiles'
     };
-    
+
 El usuario selecciona mediante un menú donde se define ``audio``, ``quality`` y ``source``
-que se ofrencen en links con el formato :: 
+que se ofrencen en links con el formato ::
 
 .. code-block::
 
     <a class="sel" data-type="quality" data-id="360">SD (360p)</a>
-    
+
 Donde ``data-type`` es el tipo de variable, ``data-id`` el valor para esa opción
-y ``class="sel"`` determina si esa es la opción seleccionada. 
+y ``class="sel"`` determina si esa es la opción seleccionada.
 
 Cuando se aprieta el botón Play se invoca la URL:
 
     http://www.cuevana.tv/player/source_get?def=**quality**&audio=**audio**&host=**source**&id=4773&tipo=pelicula
-    
+
 Por ejemplo:
-    
+
     http://www.cuevana.tv/player/source_get?def=360&audio=2&host=bayfiles&id=4773&tipo=pelicula
 
 Esta página presenta el captcha, que una vez superado redirige a la URL:
 
     http://go.cuevana.tv/?*URL_DESTINO*
-    
-Por ejemplo: 
+
+Por ejemplo:
 
     http://go.cuevana.tv/?http%3A%2F%2Fbayfiles.com%2Ffile%2FvIsf%2FkTvfNj%2Fthe.apparition.2012.bdrip.xvid-sparks.mp4%3Fcid%3D4773%26ctipo%3Dpelicula%26cdef%3D360
 
@@ -119,17 +123,17 @@ con parámetros extra: ``?cid=4773&ctipo=pelicula&cdef=360``. En el ejemplo ante
 
 Aquí entra en juego el "plugin de cuevana". Se puede bajar por ejemplo
 la versión para Firefox desde http://www.cuevana.tv/player/plugins/cstream-5.0.xpi
-Descomprimirlo con unzip y abrir el archivo ``content/cuevanastream.js`` 
+Descomprimirlo con unzip y abrir el archivo ``content/cuevanastream.js``
 
-La presencia de los parámetros ``cid``y ``ctipo`` y una url de alguno de los servicios 
-que usa Cuevana hace que se inyecte un javascript en la URL del servicio. 
+La presencia de los parámetros ``cid``y ``ctipo`` y una url de alguno de los servicios
+que usa Cuevana hace que se inyecte un javascript en la URL del servicio.
 
 .. code-block:: javascript
 
     var loc = (window.location.href.match(/cid=/i) && window.location.href.match(/ctipo=/i));
     if (window.location.href.match(/^http:\/\/(www\.)?bayfiles\.com/i) && loc) {
         addScript('bayfiles');
-    } 
+    }
 
         // más servicios
 
@@ -152,32 +156,32 @@ En ese caso se inyecta el javascript:
 
     http://sc.cuevana.tv/player/scripts/5/bayfiles.js
 
-Que es el encargado de parsear html para obtener la url real de descarga, 
-resolver/exponer el captcha si existiera, esperar el tiempo de guarda 
-del servicio y redirigir al reproductor de cuevana:: 
+Que es el encargado de parsear html para obtener la url real de descarga,
+resolver/exponer el captcha si existiera, esperar el tiempo de guarda
+del servicio y redirigir al reproductor de cuevana::
 
     window.location.href = 'http://www.cuevana.tv/#!/' + tipo + '/' + id + '/play/url:' + encodeURIComponent(a) + '/def:' + vars['cdef'];
 
-Donde tipo es ``series`` o ``peliculas``, ``id`` es el identificador del contenido, 
+Donde tipo es ``series`` o ``peliculas``, ``id`` es el identificador del contenido,
 def es ``360`` o ``720`` y ``a`` es la url final del archivo mp4
 
     http://www.cuevana.tv/#!/' + tipo + '/' + id + '/play/url:' + encodeURIComponent(a) + '/def:' + vars['cdef'];
 
-El reproductor carga el subtitulo desde la siguientes URL. 
+El reproductor carga el subtitulo desde la siguientes URL.
 
 Para series:
 
     http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**.srt
- 
-Donde ``ID`` es el identificador del contenido y ``LANG`` es el código 
+
+Donde ``ID`` es el identificador del contenido y ``LANG`` es el código
 del idioma en 2 letras mayúsculas (ES, EN, etc.)
- 
+
 Para contenidos HD se agrega el sufijo *_720*
 
     http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
- 
-Para peliculas es análogo pero un nivel más arriba. 
+
+Para peliculas es análogo pero un nivel más arriba.
 
     http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
 
-Y eso es todo lo que necesitamos saber. 
+Y eso es todo lo que necesitamos saber.

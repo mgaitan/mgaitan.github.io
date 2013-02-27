@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (Metodologías ágiles)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:19:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes Python</title><link>/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>tin_nqn (MetodologÃ­as Ã¡giles)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 00:12:59 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentaciÃ³n de paquetes Python</title><link>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
 documentaci&amp;#243;n est&amp;#225; incompleto
 [&lt;a class="reference external" href="/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Si bien el manifiesto &amp;#225;gil
@@ -157,7 +157,7 @@ github&lt;/a&gt;
 de Luca Sbardella.
 &lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;</description><guid>/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>/posts/la-academia-las-practicas-agiles-y.html</link><description>&lt;p&gt;La manera m&amp;#225;s f&amp;#225;cil para aprobar una tesis de ingenier&amp;#237;a es mentir.
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>La academia, las prÃ¡cticas Ã¡giles y el UML</title><link>http://mgaitan.github.com/posts/la-academia-las-practicas-agiles-y.html</link><description>&lt;p&gt;La manera m&amp;#225;s f&amp;#225;cil para aprobar una tesis de ingenier&amp;#237;a es mentir.
 Llenar p&amp;#225;ginas y p&amp;#225;ginas, preferentemente con tablas y vi&amp;#241;etas, de
 contenidos vacuos y tediosos que seguramente nadie, mucho menos los
 evaluadores, leer&amp;#225;n. S&amp;#243;lo hay que prestar atenci&amp;#243;n a que sean muchas
@@ -240,4 +240,4 @@ Lamentablemente UML no aborda este problema y en cambio parece
 obsesionado por las minucias en una parodia de distracci&amp;#243;n
 acad&amp;#233;mica.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/blockquote&gt;</description><guid>/posts/la-academia-las-practicas-agiles-y.html</guid><pubDate>Wed, 06 Apr 2011 06:21:23 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;</description><guid>http://mgaitan.github.com/posts/la-academia-las-practicas-agiles-y.html</guid><pubDate>Wed, 06 Apr 2011 06:21:23 GMT</pubDate></item></channel></rss>

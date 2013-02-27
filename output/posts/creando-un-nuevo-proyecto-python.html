@@ -112,8 +112,7 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <pre class="code bash literal-block">
 <span class="nv">$ </span>mkdir ~/.virtualenvs           <span class="c"># acá se van a guardar tus entornos virtuales
 </span><span class="nv">$ </span>mkdir ~/proyectos              <span class="c"># acá se van a guardar tus proyectos
-</span><span class="nv">$ </span>mkdir ~/.pip_download_cache     <span class="c"># para no bajar paquetes cada vez
-</span>
+</span><span class="nv">$ </span>mkdir ~/.pip_download_cache     <span class="c"># para no bajar paquetes cada vez</span>
 </pre>
 <p>Luego editá tu <tt class="docutils literal"><span class="pre">~/.bashrc</span></tt> agregando las siguientes líneas</p>
 <pre class="code bash literal-block">
@@ -122,7 +121,6 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <span class="nb">export </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true
 export </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
 <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
-
 </pre>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">
@@ -190,6 +188,10 @@ Este artículo lo escribí originalmente para el <a class="reference external" h
             <a href="migrando-issues-entre-proyectos-de-bitbucket.html">← Post anterior</a>
         </li>
     
+    
+        <li class="next">
+            <a href="metiendose-cosas-en-la-nariz.html">Siguiente post  →</a>
+        </li>
     
     </ul><div id="disqus_thread"></div>
         <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

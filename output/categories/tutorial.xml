@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (tutorial)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:19:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Creando un nuevo proyecto Python</title><link>/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;p&gt;&amp;#191;As&amp;#237; que quer&amp;#233;s comenzar un nuevo proyecto usando Python?
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>tin_nqn (tutorial)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 00:12:59 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;p&gt;&amp;#191;As&amp;#237; que quer&amp;#233;s comenzar un nuevo proyecto usando Python?
 &amp;#161;Felicitaciones! &amp;#191;Quer&amp;#233;s que tenga la estructura recomendada para
 proyectos modernos? &amp;#191;Quer&amp;#233;s que sea instalable f&amp;#225;cilmente? &amp;#191;Quer&amp;#233;s que
 no se te arme lio de dependencias que colisionan con las de otros
@@ -50,8 +50,7 @@ original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.virtualenvs           &lt;span class="c"&gt;# ac&amp;#225; se van a guardar tus entornos virtuales
 &lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/proyectos              &lt;span class="c"&gt;# ac&amp;#225; se van a guardar tus proyectos
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.pip_download_cache     &lt;span class="c"&gt;# para no bajar paquetes cada vez
-&lt;/span&gt;
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.pip_download_cache     &lt;span class="c"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Luego edit&amp;#225; tu &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/tt&gt; agregando las siguientes l&amp;#237;neas&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
@@ -60,7 +59,6 @@ original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
 &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true
 export &lt;/span&gt;&lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
 &lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
-
 &lt;/pre&gt;
 &lt;p&gt;y recarg&amp;#225; tus cambios:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -123,4 +121,4 @@ para saber m&amp;#225;s.&lt;/p&gt;
 &lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;&lt;/div&gt;
 &lt;hr class="docutils"&gt;&lt;blockquote&gt;
 Este art&amp;#237;culo lo escrib&amp;#237; originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
-&lt;/div&gt;</description><guid>/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (Software Libre)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:20:07 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>tin_nqn (Software Libre)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 00:13:00 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>http://mgaitan.github.com/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y f&amp;#225;cil de usar.&lt;/p&gt;
 &lt;p&gt;Comenc&amp;#233; un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;peque&amp;#241;o
@@ -17,7 +17,7 @@ shortname"&lt;/em&gt; (la identificaci&amp;#243;n unica que asignamos al sitio d
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportaci&amp;#243;n de comentarios preexistentes,
 basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>Compartiendo documentación de paquetes Python</title><link>/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>Compartiendo documentaciÃ³n de paquetes Python</title><link>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
 documentaci&amp;#243;n est&amp;#225; incompleto
 [&lt;a class="reference external" href="/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Si bien el manifiesto &amp;#225;gil
@@ -175,7 +175,7 @@ github&lt;/a&gt;
 de Luca Sbardella.
 &lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;</description><guid>/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>Apuntes del PyCamp 2011</title><link>/posts/apuntes-del-pycamp-2011.html</link><description>&lt;p&gt;Casi se hizo jueves y todav&amp;#237;a no escrib&amp;#237; nada sobre el
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>Apuntes del PyCamp 2011</title><link>http://mgaitan.github.com/posts/apuntes-del-pycamp-2011.html</link><description>&lt;p&gt;Casi se hizo jueves y todav&amp;#237;a no escrib&amp;#237; nada sobre el
 &lt;a class="reference external" href="http://python.org.ar/pyar/PyCamp/2011"&gt;PyCamp&lt;/a&gt;. &lt;a class="reference external" href="http://lateral.netmanagers.com.ar/"&gt;Roberto
 Alsina&lt;/a&gt; se va a enojar.&lt;/p&gt;
 &lt;p&gt;La excusa, vaga como yo, es que la devoluci&amp;#243;n de uno de mis directores
@@ -278,7 +278,7 @@ por el sobrenombre y no por el t&amp;#237;tulo, se admira el conocimiento pero
 m&amp;#225;s se festeja su colectivizaci&amp;#243;n, y eso lo saben (y lo disfrutan) los
 picantes y los tiernitos.&lt;/p&gt;
 &lt;p&gt;Cuanta falta le hace a la universidad visiones y experiencias como esta.&lt;/p&gt;
-&lt;/div&gt;</description><guid>/posts/apuntes-del-pycamp-2011.html</guid><pubDate>Wed, 30 Mar 2011 19:50:40 GMT</pubDate></item><item><title>Control de Versiones con Subversion</title><link>/posts/Control-de-Versiones-con.html</link><description>&lt;p&gt;Xab, compa&amp;#241;ero de la lista
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/apuntes-del-pycamp-2011.html</guid><pubDate>Wed, 30 Mar 2011 19:50:40 GMT</pubDate></item><item><title>Control de Versiones con Subversion</title><link>http://mgaitan.github.com/posts/Control-de-Versiones-con.html</link><description>&lt;p&gt;Xab, compa&amp;#241;ero de la lista
 &lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;Spip-es&lt;/a&gt; me propone
 un trato:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -402,9 +402,5 @@ $ svn &amp;#160;add archivo1 archivo2 *jpg
 &lt;div class="section" id="un-video-vale-mas-que-mil-palabras"&gt;
 &lt;h2&gt;Un video vale m&amp;#225;s que mil palabras&lt;/h2&gt;
 &lt;p&gt;Un ejemplo de flujo de trabajo por l&amp;#237;nea de comandos&lt;/p&gt;
-&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/P0XIj1w21YU?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;
-&lt;/iframe&gt;
-&lt;p&gt;Y otro ejemplo usando una interfaz gr&amp;#225;fica.&lt;/p&gt;
-&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/U3qVh9F6fv0?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;
-&lt;/iframe&gt;
-&lt;/div&gt;</description><guid>/posts/Control-de-Versiones-con.html</guid><pubDate>Sat, 14 Feb 2009 11:23:41 GMT</pubDate></item></channel></rss>
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/P0XIj1w21YU?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;p&gt;Y otro ejemplo usando una interfaz gr&amp;#225;fica.&lt;/p&gt;
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/U3qVh9F6fv0?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/Control-de-Versiones-con.html</guid><pubDate>Sat, 14 Feb 2009 11:23:41 GMT</pubDate></item></channel></rss>

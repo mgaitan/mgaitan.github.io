@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:19:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 00:13:00 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CÃ³mo volver a compartir desde Google Reader</title><link>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
 &lt;p class="last"&gt;El pipe tiene un problema con las fechas y qued&amp;#243; deactualizado
 cuando cambi&amp;#243; en el html de G+. En su defecto hice este peque&amp;#241;o
@@ -62,7 +62,7 @@ donde &lt;tt class="docutils literal"&gt;[GOOGLE_PLUS_ID]&lt;/tt&gt; es el numer
 cuesti&amp;#243;n.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
 &lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;&lt;/div&gt;
-&lt;/div&gt;</description><guid>/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Disqus para SPIP</title><link>http://mgaitan.github.com/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y f&amp;#225;cil de usar.&lt;/p&gt;
 &lt;p&gt;Comenc&amp;#233; un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;peque&amp;#241;o
@@ -80,7 +80,7 @@ shortname"&lt;/em&gt; (la identificaci&amp;#243;n unica que asignamos al sitio d
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportaci&amp;#243;n de comentarios preexistentes,
 basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>/posts/yahoo-pipes-como-por-un-tubo.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>http://mgaitan.github.com/posts/yahoo-pipes-como-por-un-tubo.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
 interactiva para agregar y manipular feeds RSS (y otras fuentes de
 datos) a nuestro antojo de forma sencilla y asequible para cualquiera.&lt;/p&gt;
 &lt;p&gt;Es un entorno de programaci&amp;#243;n visual online. La programaci&amp;#243;n visual es
@@ -146,4 +146,4 @@ alg&amp;#250;n criterio propio. Para eso (y para bastantes m&amp;#225;s cosas, p
 centr&amp;#233;monos en esto) sirve Yahoo! Pipes. Para los interesados, un
 peque&amp;#241;o &amp;#8217;screencast&amp;#8217; que explica c&amp;#243;mo recuperar las categor&amp;#237;as (la
 de desarrollo web, en particular) que se ha cargado Feedburner&amp;#8230;&lt;/blockquote&gt;
-&lt;/div&gt;</description><guid>/posts/yahoo-pipes-como-por-un-tubo.html</guid><pubDate>Mon, 23 Feb 2009 20:23:40 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/yahoo-pipes-como-por-un-tubo.html</guid><pubDate>Mon, 23 Feb 2009 20:23:40 GMT</pubDate></item></channel></rss>

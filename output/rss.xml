@@ -1,5 +1,143 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Tue, 20 Nov 2012 12:19:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Creando un nuevo proyecto Python</title><link>/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;p&gt;&amp;#191;As&amp;#237; que quer&amp;#233;s comenzar un nuevo proyecto usando Python?
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 00:28:00 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>MetiÃ©ndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho m&amp;#225;s
+que un &lt;em&gt;testrunner&lt;/em&gt; inteligente: tiene un conjunto de extensiones y shortcuts
+para para aserciones de &lt;tt class="docutils literal"&gt;unittest&lt;/tt&gt;, soporta fixtures y setups/teardown
+por paquetes, y viene con un mont&amp;#243;n de plugins incorporados.&lt;/p&gt;
+&lt;blockquote&gt;
+"nose extends unittest to make testing easier"&lt;/blockquote&gt;
+&lt;p&gt;dice el eslogan y eso es lo que queremos: tests m&amp;#225;s f&amp;#225;ciles de escribir,
+m&amp;#225;s r&amp;#225;pidos de ejecutar.&lt;/p&gt;
+&lt;p&gt;De plugins y opciones que potencian esta idea se trata este post.&lt;/p&gt;
+&lt;div class="section" id="nose-progressive"&gt;
+&lt;h2&gt;nose-progressive&lt;/h2&gt;
+&lt;blockquote class="epigraph"&gt;
+&lt;p&gt;Ah, beautiful dots&lt;/p&gt;
+&lt;p class="attribution"&gt;&amp;#8212;&lt;a class="reference external" href="http://blog.mozilla.org/webdev/2011/04/14/a-humane-python-test-runner/"&gt;Erik Rose&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;"Puntito, puntito, puntito, puntito..."&lt;/em&gt;, cuenta mi mente en standby
+cuando los test van pasando, como ovejitas que saltan un cerco.
+Pero, oh desdicha, una "efe", la oveja negra que falla, aparece
+en la pantalla y la ansiedad por saber cu&amp;#225;l nos invade.&lt;/p&gt;
+&lt;p&gt;El problema es que por default (con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--verbose=1&lt;/span&gt;&lt;/tt&gt;), nose
+pospone el detalle de errores y fallos hasta el final de la corrida.
+En suites gigantes (que demoran m&amp;#225;s de 30 minutos en completarse,
+por ejemplo) esto es un engorro.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/nose-progressive/"&gt;nose-progressive&lt;/a&gt; reemplaza la interfaz de usuario por una mucho m&amp;#225;s
+amigable y bonita. En vez de puntitos, una barra de progreso al pie de la
+pantalla va indicando el progreso satisfactorio, y deja el resto de la pantalla
+para mostrar errores y fallos &lt;em&gt;on the fly&lt;/em&gt;.&lt;/p&gt;
+&lt;img alt="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png" src="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png"&gt;&lt;p&gt;Como si fuera poco, te da shortcuts a la l&amp;#237;nea donde se produjo un fallo
+(por ejemplo: &lt;tt class="docutils literal"&gt;vim +258 common/tests/test_guideplan.py&lt;/tt&gt;), simplifica los
+tracebacks a la parte &amp;#250;til, e incluye colores usados con criterio
+(basada en la genial biblioteca &lt;a class="reference external" href="https://pypi.python.org/pypi/blessings"&gt;blessing&lt;/a&gt;, del mismo autor).&lt;/p&gt;
+&lt;p&gt;Para instalarlo, lo de siempre:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;pip install nose-progressive
+&lt;/pre&gt;
+&lt;p&gt;Para usarlo, agregar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--with-progressive&lt;/span&gt;&lt;/tt&gt; como par&amp;#225;metros de &lt;tt class="docutils literal"&gt;nosetests&lt;/tt&gt;,
+o bien, para usarlo siempre, configurarlo en &lt;tt class="docutils literal"&gt;.noserc&lt;/tt&gt; o en la
+variable &lt;tt class="docutils literal"&gt;NOSE_ARGS&lt;/tt&gt; de &lt;a class="reference external" href="https://github.com/jbalogh/django-nose"&gt;django-nose&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="django-nose"&gt;
+&lt;h2&gt;django-nose&lt;/h2&gt;
+&lt;p&gt;Si trabaj&amp;#225;s con Django esto quizas suene a perogrullada, pero &lt;a class="reference external" href="https://github.com/jbalogh/django-nose"&gt;django-nose&lt;/a&gt;
+es la vuelta de tuerca que faltaba para que la nariz brille en este entorno.
+Con django-nose por defecto s&amp;#243;lo se corren los tests del proyecto y no
+los de todas las aplicaciones instaladas (que, se supone, tienen sus propios
+tests).&lt;/p&gt;
+&lt;p&gt;Y entre otras opciones o, tiene  un modo de reuso de la base de datos,
+(configurando &lt;tt class="docutils literal"&gt;REUSE_DB=1&lt;/tt&gt; como variable de entorno), que nos evita la creaci&amp;#243;n
+de tablas en cada corrida, ahorrando unos cuantos segundos de setup en aplicaciones
+como muchos modelos. Por supuesto, si la base de datos cambia (porque
+se agreg&amp;#243; un modelo o se se migr&amp;#243; con &lt;a class="reference external" href="http://south.aeracode.org/"&gt;South&lt;/a&gt;) ten&amp;#233;s que asegurarte
+que la variable est&amp;#225; en 0 para que cree la &amp;#250;ltima version&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="with-id-failed"&gt;
+&lt;h2&gt;with-id + failed&lt;/h2&gt;
+&lt;p&gt;La opci&amp;#243;n &lt;a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption--with-id"&gt;--with-id&lt;/a&gt;
+(estrictamente el plugin &lt;tt class="docutils literal"&gt;TestId&lt;/tt&gt;, que viene en las bater&amp;#237;as inclu&amp;#237;das de nose)
+le asigna un n&amp;#250;mero &amp;#250;nico a cada test ejecutado,
+y los guarda en el archivito &lt;tt class="docutils literal"&gt;.noseids&lt;/tt&gt; junto con su path y el
+resultado de la &amp;#250;ltima corrida.&lt;/p&gt;
+&lt;p&gt;Lo bueno es que pasando &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--with-id&lt;/span&gt; &lt;span class="pre"&gt;--failed&lt;/span&gt;&lt;/tt&gt; nose usa esa informaci&amp;#243;n
+y ejecuta solamente los tests fallaron en la &amp;#250;ltima corrida,
+permitiendo una r&amp;#225;pida iteraci&amp;#243;n &lt;em&gt;"falla/correcci&amp;#243;n"&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nose-selecttests"&gt;
+&lt;h2&gt;nose-selecttests&lt;/h2&gt;
+&lt;p&gt;Frecuentemente sucede que tenemos &lt;tt class="docutils literal"&gt;TestCase&lt;/tt&gt; con muchas pruebas (m&amp;#233;todos)
+que est&amp;#225;n l&amp;#243;gicamente agrupadas porque comparten un setup, por ejemplo,
+y sin embargo s&amp;#243;lo queremos testear un subconjunto.&lt;/p&gt;
+&lt;p&gt;Sabemos que como es inteligente y poco burocr&amp;#225;tico, nose no s&amp;#243;lo ejecuta
+tests definidos como subclases de &lt;tt class="docutils literal"&gt;unittest.TestCase&lt;/tt&gt; sino
+cualquier paquete, m&amp;#243;dulo, funci&amp;#243;n o clase
+que &lt;em&gt;matchee&lt;/em&gt; una expresi&amp;#243;n regular, que por defecto es &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;(?:^|[b_./-])[Tt]est&lt;/span&gt;&lt;/tt&gt;
+Con el par&amp;#225;metro &lt;a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption-m"&gt;-m&lt;/a&gt;
+se puede redefinir este patr&amp;#243;n, pero igualmente no aplica a nivel
+m&amp;#233;todos.&lt;/p&gt;
+&lt;p&gt;Por eso existe &lt;a class="reference external" href="https://github.com/iElectric/nose-selecttests"&gt;nose-selecttests&lt;/a&gt;, que permite filtrar pruebas con
+determinada subcadena en el nombre del m&amp;#233;todo.&lt;/p&gt;
+&lt;p&gt;Por ejemplo:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;djntest -v 2 common/tests/test_sequence_diff.py
+
+&lt;span class="c"&gt;#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+&lt;/span&gt;
+----------------------------------------------------------------------
+Ran 4 tests in 0.375s
+&lt;/pre&gt;
+&lt;p&gt;En cambio:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;djntest --select-tests&lt;span class="o"&gt;=&lt;/span&gt;differ -v 2 apps/common/tests/test_sequence_diff.py
+
+&lt;span class="c"&gt;#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+&lt;/span&gt;----------------------------------------------------------------------
+Ran 2 tests in 0.088s
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="django-tests-autocomplete"&gt;
+&lt;h2&gt;django-tests-autocomplete&lt;/h2&gt;
+&lt;p&gt;Esta herramienta no es estrictamente un plugin de nose, sino un helper
+que aprovecha las posibilidades de bash para
+&lt;a class="reference external" href="http://bash-completion.alioth.debian.org/"&gt;autocompletar&lt;/a&gt; usando la tecla
+tab.&lt;/p&gt;
+&lt;p&gt;&amp;#191;Para qu&amp;#233; sirve? nose acepta un path (o muchos) para especificar qu&amp;#233; test correr:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;nosetests path/to/test.py
+&lt;/pre&gt;
+&lt;p&gt;Pero tambi&amp;#233;n permite afinar la punter&amp;#237;a y "meterse" adentro del m&amp;#243;dulo:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;nosetests path/to/test.py:MyImportantTestCase
+&lt;/pre&gt;
+&lt;p&gt;E incluso adentro del testcase:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;nosetests path/to/test.py:MyImportantTestCase.test_super_important
+&lt;/pre&gt;
+&lt;p&gt;Desde el &lt;tt class="docutils literal"&gt;:&lt;/tt&gt; en adelante estamos en Python y Bash ya no sabe autocompletar,
+salvo que usemos esta herramienta que instrospecciona y "alimenta" el
+autocompleter.&lt;/p&gt;
+&lt;p&gt;Lo hizo Javi Mansilla en &lt;a class="reference external" href="http://machinalis.com"&gt;Machinalis&lt;/a&gt; y
+&lt;a class="reference external" href="https://github.com/machinalis/django-test-autocomplete#future-features"&gt;busca ayuda&lt;/a&gt;
+para mejorarlo y generalizarlo.&lt;/p&gt;
+&lt;p&gt;&amp;#191;No ser&amp;#237;a buen&amp;#237;simo que esto estuviese built-in en nose? &amp;#191;Nos ayudar&amp;#237;as?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nose-timer"&gt;
+&lt;h2&gt;nose-timer&lt;/h2&gt;
+&lt;p&gt;&amp;#191;Cu&amp;#225;nto tiempo insume cada test? Instal&amp;#225; &lt;a class="reference external" href="https://github.com/mahmoudimus/nose-timer/"&gt;nose-timer&lt;/a&gt; y activalo (con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--with-timer&lt;/span&gt;&lt;/tt&gt;)
+para saber la respuesta.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nose-ipdb"&gt;
+&lt;h2&gt;nose-ipdb&lt;/h2&gt;
+&lt;p&gt;nose tiene una opci&amp;#243;n &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--pdb&lt;/span&gt;&lt;/tt&gt; (o la m&amp;#225;s estricta &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--ipdb-failures&lt;/span&gt;&lt;/tt&gt;)
+que nos manda al debugger cuando un test falla o da error.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb"&gt;nose-ipdb&lt;/a&gt; lo imita, pero usando el m&amp;#225;s pulenta de los debuggers: &lt;a class="reference external" href="https://pypi.python.org/pypi/ipdb"&gt;ipdb&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Suficiente por hoy. Pero &amp;#191;me estoy perdiendo alguna cosa interesante
+para meter en mi nariz?&lt;/p&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</guid><pubDate>Tue, 26 Feb 2013 22:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;p&gt;&amp;#191;As&amp;#237; que quer&amp;#233;s comenzar un nuevo proyecto usando Python?
 &amp;#161;Felicitaciones! &amp;#191;Quer&amp;#233;s que tenga la estructura recomendada para
 proyectos modernos? &amp;#191;Quer&amp;#233;s que sea instalable f&amp;#225;cilmente? &amp;#191;Quer&amp;#233;s que
 no se te arme lio de dependencias que colisionan con las de otros
@@ -50,8 +188,7 @@ original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.virtualenvs           &lt;span class="c"&gt;# ac&amp;#225; se van a guardar tus entornos virtuales
 &lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/proyectos              &lt;span class="c"&gt;# ac&amp;#225; se van a guardar tus proyectos
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.pip_download_cache     &lt;span class="c"&gt;# para no bajar paquetes cada vez
-&lt;/span&gt;
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.pip_download_cache     &lt;span class="c"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Luego edit&amp;#225; tu &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/tt&gt; agregando las siguientes l&amp;#237;neas&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
@@ -60,7 +197,6 @@ original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
 &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true
 export &lt;/span&gt;&lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
 &lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
-
 &lt;/pre&gt;
 &lt;p&gt;y recarg&amp;#225; tus cambios:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -123,7 +259,7 @@ para saber m&amp;#225;s.&lt;/p&gt;
 &lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;&lt;/div&gt;
 &lt;hr class="docutils"&gt;&lt;blockquote&gt;
 Este art&amp;#237;culo lo escrib&amp;#237; originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
-&lt;/div&gt;</description><guid>/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;p&gt;Hace un tiempo cont&amp;#233; &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migr&amp;#233; un repositorio Mercurial a Git&lt;/a&gt; .
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;p&gt;Hace un tiempo cont&amp;#233; &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migr&amp;#233; un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 all&amp;#237; porque somos pobretones y nos da repos privados gratis.
@@ -141,7 +277,6 @@ proyecto y encontr&amp;#233; &lt;a class="reference external" href="https://gith
 &lt;p&gt;Entonces bast&amp;#243; con instalar el fork de David Paz Reyes&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;pip install git+https://github.com/davidmpaz/BitBucket-api.git
-
 &lt;/pre&gt;
 &lt;p&gt;he hice un script que migra todo los issues en estado &lt;em&gt;new&lt;/em&gt;
 del repo original (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) al nuevo (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) y los potenciales comentarios que tenga.
@@ -188,7 +323,7 @@ agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/
             &lt;span class="k"&gt;continue&lt;/span&gt;
         &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;&amp;#161;Disfruten!&lt;/p&gt;</description><guid>/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+&lt;p&gt;&amp;#161;Disfruten!&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
 conocer una ciudad que en las gu&amp;#237;as de viaje suena intererante y bonita.
 Se me ocurre prender la compu para ver si ese email que mand&amp;#233; la noche
 anterior, reci&amp;#233;n llegado despu&amp;#233;s de 14 horas de viaje
@@ -282,7 +417,7 @@ que cortarlo a la mitad lo hacen sin dudar.
 Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
 brazo.&lt;/blockquote&gt;
 &lt;p&gt;Querido Guayaquil: prometo visitar tu Malec&amp;#243;n la pr&amp;#243;xima,
-&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;</description><guid>/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rápidas de una mudanza</title><link>/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
+&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rÃ¡pidas de una mudanza</title><link>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco m&amp;#225;s bonito.&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;div class="section" id="github-nikola"&gt;
@@ -365,13 +500,13 @@ RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
 RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
 &lt;/pre&gt;
 &lt;p&gt;&amp;#191;C&amp;#243;mo se va viendo?&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><guid>/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog est&amp;#225; en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
 que explicar&amp;#233; m&amp;#225;s adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
 &lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
 &lt;p&gt;Espero que pronto esto est&amp;#233; m&amp;#225;s bonito y con contenido. Tambi&amp;#233;n que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir m&amp;#225;s.&lt;/p&gt;</description><guid>/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>De mercurial a git, limpieza mediante</title><link>/posts/de-mercurial-a-git-limpieza.html</link><description>&lt;p&gt;Cuando decid&amp;#237; dar el salto desde Subversion a un DVCS estuve leyendo
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir m&amp;#225;s.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>De mercurial a git, limpieza mediante</title><link>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</link><description>&lt;p&gt;Cuando decid&amp;#237; dar el salto desde Subversion a un DVCS estuve leyendo
 muchos posts comparativos entre las dos opciones m&amp;#225;s relevantes, Git y
 Mercurial. Hab&amp;#237;a que elegir entre &lt;a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/"&gt;Mc Gyver o James
 Bond&lt;/a&gt;
@@ -484,7 +619,7 @@ original que sin perder la historia &amp;#250;til.&lt;/p&gt;
 &amp;#191;ganamos ?&lt;/p&gt;
 &lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;
 &lt;/iframe&gt;
-&lt;/div&gt;</description><guid>/posts/de-mercurial-a-git-limpieza.html</guid><pubDate>Mon, 02 Jul 2012 17:39:11 GMT</pubDate></item><item><title>Cómo volver a compartir desde Google Reader</title><link>/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</guid><pubDate>Mon, 02 Jul 2012 17:39:11 GMT</pubDate></item><item><title>CÃ³mo volver a compartir desde Google Reader</title><link>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
 &lt;p class="last"&gt;El pipe tiene un problema con las fechas y qued&amp;#243; deactualizado
 cuando cambi&amp;#243; en el html de G+. En su defecto hice este peque&amp;#241;o
@@ -547,7 +682,7 @@ donde &lt;tt class="docutils literal"&gt;[GOOGLE_PLUS_ID]&lt;/tt&gt; es el numer
 cuesti&amp;#243;n.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
 &lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;&lt;/div&gt;
-&lt;/div&gt;</description><guid>/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Lo que hace un geek cuando ama</title><link>/posts/lo-que-hace-un-geek-cuando-ama.html</link><description>&lt;p&gt;Mi computadora de escritorio, la primera que compr&amp;#233; trabajando como
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Lo que hace un geek cuando ama</title><link>http://mgaitan.github.com/posts/lo-que-hace-un-geek-cuando-ama.html</link><description>&lt;p&gt;Mi computadora de escritorio, la primera que compr&amp;#233; trabajando como
 desarrollador de software, es del 2005. La "morocha", una AMD64 con
 placa madre &lt;a class="reference external" href="http://www.asus.com/Motherboards/AMD_Socket_754/K8N"&gt;Asus
 K8N&lt;/a&gt; que se la
@@ -619,7 +754,7 @@ cdrecord -v bootcd.iso
 &lt;pre class="literal-block"&gt;
 afudos /i1011.rom
 &lt;/pre&gt;
-&lt;/div&gt;</description><guid>/posts/lo-que-hace-un-geek-cuando-ama.html</guid><pubDate>Fri, 11 Nov 2011 20:43:47 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>/posts/cuevanalinks-ahora-para-seres.html</link><description>&lt;div class="important"&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/lo-que-hace-un-geek-cuando-ama.html</guid><pubDate>Fri, 11 Nov 2011 20:43:47 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>http://mgaitan.github.com/posts/cuevanalinks-ahora-para-seres.html</link><description>&lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
 &lt;p class="last"&gt;Cuevanlinks est&amp;#225; desmantenido y con los cambios en cuevana.tv ya no
 funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
@@ -652,22 +787,4 @@ est&amp;#225; en desarrollo, se entiende) que se puede descargar desde ac&amp;#2
 &lt;/div&gt;
 &lt;p&gt;Para los linuxeros, Mart&amp;#237;n puso &lt;a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html"&gt;algunas
 instrucciones&lt;/a&gt;
-para hacerlo andar desde los fuentes.&lt;/p&gt;</description><guid>/posts/cuevanalinks-ahora-para-seres.html</guid><pubDate>Wed, 03 Aug 2011 08:51:21 GMT</pubDate></item><item><title>Disqus para SPIP</title><link>/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
-&lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
-comentarios muy poderosa y f&amp;#225;cil de usar.&lt;/p&gt;
-&lt;p&gt;Comenc&amp;#233; un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;peque&amp;#241;o
-plugin&lt;/a&gt;
-para integrar Disqus a &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt;.&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Por ahora tiene dos componentes b&amp;#225;sicos:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;&lt;li&gt;Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
-SPIP (y su formulario) por Disqus&lt;/li&gt;
-&lt;li&gt;Un esqueleto para exportar comentarios existentes (genera un XML
-importable a traves del panel de disqus)&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;La configuraci&amp;#243;n se realiza a trav&amp;#233;s de una p&amp;#225;gina (requiere el &lt;a class="reference external" href="http://plugins.spip.net/CFG"&gt;plugin
-CFG&lt;/a&gt;) donde se define el &lt;em&gt;"Disqus
-shortname"&lt;/em&gt; (la identificaci&amp;#243;n unica que asignamos al sitio donde
-usaremos Diqus).&lt;/p&gt;
-&lt;p&gt;Para generar el XML con la exportaci&amp;#243;n de comentarios preexistentes,
-basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item></channel></rss>
+para hacerlo andar desde los fuentes.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/cuevanalinks-ahora-para-seres.html</guid><pubDate>Wed, 03 Aug 2011 08:51:21 GMT</pubDate></item></channel></rss>

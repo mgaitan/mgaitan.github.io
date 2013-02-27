@@ -98,8 +98,7 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <pre class="code bash literal-block">
 <span class="nv">$ </span>mkdir ~/.virtualenvs           <span class="c"># acá se van a guardar tus entornos virtuales
 </span><span class="nv">$ </span>mkdir ~/proyectos              <span class="c"># acá se van a guardar tus proyectos
-</span><span class="nv">$ </span>mkdir ~/.pip_download_cache     <span class="c"># para no bajar paquetes cada vez
-</span>
+</span><span class="nv">$ </span>mkdir ~/.pip_download_cache     <span class="c"># para no bajar paquetes cada vez</span>
 </pre>
 <p>Luego editá tu <tt class="docutils literal"><span class="pre">~/.bashrc</span></tt> agregando las siguientes líneas</p>
 <pre class="code bash literal-block">
@@ -108,7 +107,6 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <span class="nb">export </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true
 export </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
 <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
-
 </pre>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">
@@ -201,7 +199,6 @@ proyecto y encontré <a class="reference external" href="https://github.com/davi
 <p>Entonces bastó con instalar el fork de David Paz Reyes</p>
 <pre class="code bash literal-block">
 <span class="nv">$ </span>pip install git+https://github.com/davidmpaz/BitBucket-api.git
-
 </pre>
 <p>he hice un script que migra todo los issues en estado <em>new</em>
 del repo original (<tt class="docutils literal">gpec</tt>) al nuevo (<tt class="docutils literal">gpec</tt>) y los potenciales comentarios que tenga.

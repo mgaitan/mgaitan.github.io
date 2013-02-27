@@ -43,6 +43,30 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/principios-para-un-freelancear.html">Principios para un "freelancear" exitosamente</a>
+        <small>  
+             <span class="timeago" title="2009-09-09 15:35:30">2009-09-09 15:35:30</span>
+        </small></h1>
+        <div><p><a class="reference external" href="http://www.principlesofsuccessfulfreelancing.com/">The principle of successful
+freelancing</a>, de
+Miles Burke, es el libro (digital) que estoy leyendo.</p>
+<blockquote>
+This book is intended as a guide to approaching the decision to be
+your own boss, effecting a smooth transition into a freelance
+career, and making it a success once you’re there. The book’s
+holistic approach ensures that it not only covers how to make your
+freelancing journey a financial success, but also how to do it
+without risking your health and sanity.</blockquote>
+<p>Ser tu propio jefe. No está mal para este mundo donde ese rol tiene
+connotación negativa.</p>
+<p>Quienes quieran chusmear, acá tienen.</p></div>
+        <p>
+        
+            <a href="posts/principios-para-un-freelancear.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/un-spip-para-muchos-sitios.html">Un SPIP para muchos sitios</a>
         <small>  
              <span class="timeago" title="2009-08-10 08:40:55">2009-08-10 08:40:55</span>
@@ -459,9 +483,7 @@ Bajar diapositivas "<a class="reference external" href="downloads/ojotas_copia_.
 <p>El documento ODP incluye notas y comentarios.</p>
 <div class="section" id="video">
 <h2>Video</h2>
-<iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;hd=1&amp;wmode=transparent">
-</iframe>
-</div></div>
+<iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;hd=1&amp;wmode=transparent"></iframe></div></div>
         <p>
         
             <a href="posts/charla-ser-freelance-como-trabajar.html#disqus_thread">Comments</a>
@@ -750,106 +772,6 @@ sindicación.</p>
         <p>
         
             <a href="posts/auto-podcast.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/variar-o-no-variar-esa-es-la.html">Variar o no variar, esa es la cuestión</a>
-        <small>  
-             <span class="timeago" title="2009-03-15 20:03:38">2009-03-15 20:03:38</span>
-        </small></h1>
-        <div><p>Hace algunos días, en
-<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">spip-es</a> se planteó
-la duda de cómo controlar una cabecera diferente para algunas secciones
-en particular.</p>
-<p><a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C29008.88.7.114.173.1236164746.squirrel@correo.nodo50.org%3E">Xabi
-aportó</a>
-la solución canónica, que es crear esqueletos ad-hoc para cada sección
-difente, valiendose de los esqueletos con forma <em>rubrique-X.html</em> (donde
-X es el ID de la sección).</p>
-<p>Esto se describe en el apartado "<a class="reference external" href="http://www.spip.net/es_article2257.html">Para ir más
-lejos</a>" de la documentación.</p>
-<p>En este caso particular, sólo se quería mostrar el logo en la cabecera
-para algunas secciones. El problema es que las secciones "diferentes"
-serían iguales entre sí, pero invocando distintos esqueletos. Esto
-contradice el <a class="reference external" href="http://es.wikipedia.org/wiki/DRY">principio DRY</a>
-siempre deseable en todo desarrollo de software.</p>
-<p>Una forma sencilla, pero a la vez parcial de resolver esto, es hacer un
-<a class="reference external" href="http://es.wikipedia.org/wiki/enlace_duro">enlace duro</a> entre los
-esqueletos que son iguales.</p>
-<p>Por ejemplo, la sección 2, la 4 y la 6, tendrán el mismo esqueleto.
-Entonces creamos el rubrique-2.html y definimos rubrique-4.html y
-rubrique-6.html como enlaces duros al primero. Desde la línea de
-comandos:</p>
-<pre class="literal-block">
-$ ln rubrique-2.html rubrique-4.html
-$ ln rubrique-2.html rubrique-6.html
-</pre>
-<p>Esta solución funciona, pero es sólo para servidores <em>*nix</em> y teniendo
-acceso a la consola (por <a class="reference external" href="http://es.wikipedia.org/wiki/SSH">SSH</a>, por
-ejemplo). Además, hay que documentar bien qué se está haciendo, porque
-da lugar a errores cuando dos esqueletos "linkeados" intentan ser
-iguales.</p>
-<p>Por suerte, hay varias otras maneras de resolver esto,</p>
-<div class="section" id="filtros-de-condicion-o-filtro-match">
-<h2>Filtros de condición o filtro match</h2>
-<p><a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C516299.21618.qm@web90607.mail.mud.yahoo.com%3E">Esta
-solución</a>,
-es la que aportó <a class="reference external" href="http://www.graciasdenada.com.ar/">Juan Pablo
-Portugau</a>.</p>
-<p>Lo que plantea, es usar la baliza #ID_RUBRIQUE (que obviamente,
-devuelve el número de la sección) con filtros de comparación. Es,
-hablando en geek, un simple <strong>if</strong>: <em>Si es la sección 2, mostrar el
-logo. Sino, nada</em>:</p>
-<p>En código SPIP:</p>
-<pre class="literal-block">
-[(#ID_RUBRIQUE|=={2}|?{'#LOGO_RUBRIQUE',''})]
-</pre>
-<p>La limitación de esta solución se da cuando son múltiples los valores
-posibles. En nuestro caso, se debe mostrar el logo cuando se trata de la
-sección 2, de la 4 o de la 6. Juan Pablo propone anidar esta estructura.</p>
-<pre class="literal-block">
-[(#ID_RUBRIQUE|=={2}|?{'#LOGO_RUBRIQUE',[(#ID_RUBRIQUE|=={4}|?{'#LOGO_RUBRIQUE',[(#ID_RUBRIQUE|=={6}|?{'#LOGO_RUBRIQUE',''})]})]})]
-</pre>
-<p>Aunque es sintácticamente correcto, el código resultante es bastante
-inmantenible para un ser humano con cerebro normal y el monito parseador
-de SPIP queda agitado.</p>
-<p>Para eso existe el filtro
-<a class="reference external" href="http://www.spip.net/fr_article901.html#match">match</a>, que se vale de
-las <a class="reference external" href="http://www.regular-expressions.info/">expresiones regulares</a> para
-que hagamos nuestro festín.</p>
-<p>Lo de arriba, puede reducirse a esto:</p>
-<pre class="literal-block">
-[(#ID_RUBRIQUE|match{^(2|4|6)$}|?{'#LOGO_RUBRIQUE',''})]
-</pre>
-<p>El filtro devuelve <strong>VERDADERO</strong> si el valor de #ID_RUBRIQUE empieza
-con 2, 4 o 6 y termina con nada. Que es, dicho de otra manera, lo que
-queremos.</p>
-</div>
-<div class="section" id="y-aun-mas-claro-bucles-como-filtros">
-<h2>Y aún más claro: bucles como filtros</h2>
-<p>Las expresiones regulares <em>no son moco de pavo</em>, diría mi abuela. Super
-potentes, pero poco escalables en la curva complejidad-comprensibilidad.</p>
-<p>Hay una solución que es muy útil, sencilla pero no trivial: usar un
-bucle como filtro.</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 100)</p>
-Literal block expected; none found.</div>
-<p>La explicación es de la lógica de conjuntos: los criterios de un bucle
-funcionan como condiciones AND. Deben cumplirse todas. En este caso, el
-primer criterio <tt class="docutils literal">{id_rubrique IN (1,2,4)}</tt> exige que el id_rubrique
-sea 1, 2 o 4. En el segundo <tt class="docutils literal">{id_rubrique}</tt>, se exige que sea el que
-viene en contexto. Por lo tanto, este bucle sólo funcionará (mostrará el
-logo) si el id_rubrique <em>del contexto</em> es 1, 2 o 4. En lógica, es una
-operación <a class="reference external" href="http://es.wikipedia.org/wiki/Disyunci%C3%B3n_l%C3%B3gica">O
-exclusiva</a></p>
-<p>Funciona, es más legible que cualquiera de las otras soluciones y además
-permite una clausula <em>ELSE</em> mucho más accesible, simplemente usando la
-estructura completa del bucle.</p>
-</div></div>
-        <p>
-        
-            <a href="posts/variar-o-no-variar-esa-es-la.html#disqus_thread">Comments</a>
         
         </p></div>
     
