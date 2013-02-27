@@ -90,9 +90,10 @@ permitiendo una rápida iteración *"falla/corrección"*.
 nose-selecttests
 ----------------
 
-Frecuentemente sucede que tenemos ``TestCase`` con muchas pruebas (métodos)
-que están lógicamente agrupadas porque comparten un setup, por ejemplo,
-y sin embargo sólo queremos testear un subconjunto.
+Frecuentemente sucede que tenemos caso (una subclase de ``TestCase``)
+con muchas pruebas (métodos) que están lógicamente agrupadas
+porque comparten un setup, por ejemplo,
+y sin embargo sólo queremos correr un subconjunto.
 
 Sabemos que como es inteligente y poco burocrático, nose no sólo ejecuta
 tests definidos como subclases de ``unittest.TestCase`` sino
