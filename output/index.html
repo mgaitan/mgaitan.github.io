@@ -43,11 +43,186 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/como-funciona-cuevana.html">Cómo funciona Cuevana</a>
+        <small>  
+             <span class="timeago" title="2013-03-07 10:17:55">2013-03-07 10:17:55</span>
+        </small></h1>
+        <p>Estimando cuanto trabajo significa actualizar <a class="reference external" href="http://userscripts.org/scripts/show/98017">Cuevana sources</a>
+y/o <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalib">Cuevanalib</a>
+investigué cómo funciona la nueva versión de cuevana.</p>
+<p>Estas notas son el resultado de lo que fui observando.</p>
+<p>Una vez que se elige un contenido, un iframe apunta a una URL con este forma:</p>
+<blockquote>
+<a class="reference external" href="http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula">http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula</a></blockquote>
+<p>En código javascript inline define las fuentes disponibles para ese contenido</p>
+<pre class="code javascript literal-block">
+<span class="kd">var</span> <span class="nx">plugin_ver</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">plugin_rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">actual_ver</span><span class="p">,</span> <span class="nx">actual_rev</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">sources</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"2"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"360"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uptobox"</span><span class="p">,</span> <span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"filebox"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">,</span> <span class="s2">"zalaa"</span><span class="p">],</span>
+        <span class="s2">"720"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">},</span> <span class="nx">sel_source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre>
+<p>La primer clave (en este caso <tt class="docutils literal">2</tt>, inglés) es el idioma del audio,
+y la segunda la calidad del video</p>
+<p>Luego define diferentes constates:</p>
+<pre class="code javascript literal-block">
+<span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'360'</span><span class="o">:</span> <span class="s1">'SD (360p)'</span><span class="p">,</span>
+    <span class="s1">'480'</span><span class="o">:</span> <span class="s1">'SD (480p)'</span><span class="p">,</span>
+    <span class="s1">'720'</span><span class="o">:</span> <span class="s1">'HD (720p)'</span><span class="p">,</span>
+    <span class="s1">'1080'</span><span class="o">:</span> <span class="s1">'HD (1080p)'</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">labeli</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"1"</span><span class="o">:</span> <span class="s2">"Espa\u00f1ol"</span><span class="p">,</span>
+    <span class="s2">"2"</span><span class="o">:</span> <span class="s2">"Ingl\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"3"</span><span class="o">:</span> <span class="s2">"Portugu\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"4"</span><span class="o">:</span> <span class="s2">"Alem\u00e1n"</span><span class="p">,</span>
+    <span class="s2">"5"</span><span class="o">:</span> <span class="s2">"Franc\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"6"</span><span class="o">:</span> <span class="s2">"Coreano"</span><span class="p">,</span>
+    <span class="s2">"7"</span><span class="o">:</span> <span class="s2">"Italiano"</span><span class="p">,</span>
+    <span class="s2">"8"</span><span class="o">:</span> <span class="s2">"Tailand\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"9"</span><span class="o">:</span> <span class="s2">"Ruso"</span><span class="p">,</span>
+    <span class="s2">"10"</span><span class="o">:</span> <span class="s2">"Mongol"</span><span class="p">,</span>
+    <span class="s2">"11"</span><span class="o">:</span> <span class="s2">"Polaco"</span><span class="p">,</span>
+    <span class="s2">"12"</span><span class="o">:</span> <span class="s2">"Esloveno"</span><span class="p">,</span>
+    <span class="s2">"13"</span><span class="o">:</span> <span class="s2">"Sueco"</span><span class="p">,</span>
+    <span class="s2">"14"</span><span class="o">:</span> <span class="s2">"Griego"</span><span class="p">,</span>
+    <span class="s2">"15"</span><span class="o">:</span> <span class="s2">"Canton\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"16"</span><span class="o">:</span> <span class="s2">"Japon\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"17"</span><span class="o">:</span> <span class="s2">"Dan\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"18"</span><span class="o">:</span> <span class="s2">"Neerland\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"19"</span><span class="o">:</span> <span class="s2">"Hebreo"</span><span class="p">,</span>
+    <span class="s2">"20"</span><span class="o">:</span> <span class="s2">"Serbio"</span><span class="p">,</span>
+    <span class="s2">"21"</span><span class="o">:</span> <span class="s2">"\u00c1rabe"</span><span class="p">,</span>
+    <span class="s2">"22"</span><span class="o">:</span> <span class="s2">"Hindi"</span><span class="p">,</span>
+    <span class="s2">"23"</span><span class="o">:</span> <span class="s2">"Noruego"</span><span class="p">,</span>
+    <span class="s2">"24"</span><span class="o">:</span> <span class="s2">"Turco"</span><span class="p">,</span>
+    <span class="s2">"26"</span><span class="o">:</span> <span class="s2">"Mandar\u00edn"</span><span class="p">,</span>
+    <span class="s2">"27"</span><span class="o">:</span> <span class="s2">"Nepal\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"28"</span><span class="o">:</span> <span class="s2">"Rumano"</span><span class="p">,</span>
+    <span class="s2">"29"</span><span class="o">:</span> <span class="s2">"Iran\u00ed"</span><span class="p">,</span>
+    <span class="s2">"30"</span><span class="o">:</span> <span class="s2">"Est\u00f3n"</span><span class="p">,</span>
+    <span class="s2">"31"</span><span class="o">:</span> <span class="s2">"Bosnio"</span><span class="p">,</span>
+    <span class="s2">"32"</span><span class="o">:</span> <span class="s2">"Checo"</span><span class="p">,</span>
+    <span class="s2">"33"</span><span class="o">:</span> <span class="s2">"Croata"</span><span class="p">,</span>
+    <span class="s2">"34"</span><span class="o">:</span> <span class="s2">"Fin\u00e9s"</span><span class="p">,</span>
+    <span class="s2">"35"</span><span class="o">:</span> <span class="s2">"H\u00fanagro"</span><span class="p">,</span>
+    <span class="s2">"36"</span><span class="o">:</span> <span class="s2">"Persa"</span><span class="p">,</span>
+    <span class="s2">"38"</span><span class="o">:</span> <span class="s2">"Indonesio"</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">labelh</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'filebox'</span><span class="o">:</span> <span class="s1">'Filebox'</span><span class="p">,</span>
+    <span class="s1">'uptobox'</span><span class="o">:</span> <span class="s1">'Uptobox (NUEVO)'</span><span class="p">,</span>
+    <span class="s1">'uploadcore'</span><span class="o">:</span> <span class="s1">'Uploadcore (NUEVO)'</span><span class="p">,</span>
+    <span class="s1">'vidbull'</span><span class="o">:</span> <span class="s1">'Vidbull (NUEVO)'</span><span class="p">,</span>
+    <span class="s1">'zalaa'</span><span class="o">:</span> <span class="s1">'Zalaa'</span><span class="p">,</span>
+    <span class="s1">'cramit'</span><span class="o">:</span> <span class="s1">'Cramit'</span><span class="p">,</span>
+    <span class="s1">'180upload'</span><span class="o">:</span> <span class="s1">'180upload'</span><span class="p">,</span>
+    <span class="s1">'bayfiles'</span><span class="o">:</span> <span class="s1">'Bayfiles'</span>
+<span class="p">};</span>
+</pre>
+<p>El usuario selecciona mediante un menú donde se define <tt class="docutils literal">audio</tt>, <tt class="docutils literal">quality</tt> y <tt class="docutils literal">source</tt>
+que se configuran como atributos data del link:</p>
+<pre class="literal-block">
+.. code-block::
+</pre>
+<blockquote>
+&lt;a class="sel" data-type="quality" data-id="360"&gt;SD (360p)&lt;/a&gt;</blockquote>
+<p>Donde <tt class="docutils literal"><span class="pre">data-type</span></tt> es el tipo de variable, <tt class="docutils literal"><span class="pre">data-id</span></tt> el valor para esa opción
+y <tt class="docutils literal"><span class="pre">class="sel"</span></tt> determina si esa es la opción seleccionada.</p>
+<p>Cuando se hace click en el botón Play se invoca la URL:</p>
+<pre class="literal-block">
+http://www.cuevana.tv/player/source_get?def=**quality**&amp;audio=**audio**&amp;host=**source**&amp;id=4773&amp;tipo=pelicula
+</pre>
+<p>Por ejemplo:</p>
+<pre class="literal-block">
+http://www.cuevana.tv/player/source_get?def=360&amp;audio=2&amp;host=bayfiles&amp;id=4773&amp;tipo=pelicula
+</pre>
+<p>Esta página presenta el captcha, que una vez superado redirige a la URL:</p>
+<pre class="literal-block">
+http://go.cuevana.tv/?*URL_DESTINO*
+</pre>
+<p>Por ejemplo:</p>
+<pre class="literal-block">
+http://go.cuevana.tv/?http%3A%2F%2Fbayfiles.com%2Ffile%2FvIsf%2FkTvfNj%2Fthe.apparition.2012.bdrip.xvid-sparks.mp4%3Fcid%3D4773%26ctipo%3Dpelicula%26cdef%3D360
+</pre>
+<p>Que a su vez redirige a <em>URL_DESTINO</em> que es la URL del servicio donde el video está hosteado
+con parámetros extra: <tt class="docutils literal"><span class="pre">?cid=4773&amp;ctipo=pelicula&amp;cdef=360</span></tt>. En el ejemplo anterior:</p>
+<blockquote>
+<a class="reference external" href="http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;ctipo=pelicula&amp;cdef=360**">http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;ctipo=pelicula&amp;cdef=360**</a></blockquote>
+<p>Aquí entra en juego el "plugin de cuevana". Se puede bajar por ejemplo
+la versión para Firefox desde <a class="reference external" href="http://www.cuevana.tv/player/plugins/cstream-5.0.xpi">http://www.cuevana.tv/player/plugins/cstream-5.0.xpi</a>
+Descomprimirlo con unzip y abrir el archivo <tt class="docutils literal">content/cuevanastream.js</tt></p>
+<p>La presencia de los parámetros <tt class="docutils literal"><span class="pre">cid``y</span> ``ctipo</tt> y una url de alguno de los servicios
+que usa Cuevana hace que se inyecte un javascript en la URL del servicio.</p>
+<pre class="code javascript literal-block">
+<span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/cid=/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ctipo=/i</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.)?bayfiles\.com/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">addScript</span><span class="p">(</span><span class="s1">'bayfiles'</span><span class="p">);</span>
+<span class="p">}</span>
+
+    <span class="c1">// más servicios
+</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+    <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'plugin_ok'</span><span class="p">;</span>
+    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-version'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">);</span>
+    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-revision'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">addScript</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/javascript'</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span> <span class="s1">'http://sc.cuevana.tv/player/scripts/5/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'.js'</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+<p>En ese caso se inyecta el javascript:</p>
+<pre class="literal-block">
+http://sc.cuevana.tv/player/scripts/5/bayfiles.js
+</pre>
+<p>Que es el encargado de parsear html para obtener la url real de descarga,
+resolver/exponer el captcha si existiera, esperar el tiempo de guarda
+del servicio y redirigir al reproductor de cuevana:</p>
+<pre class="literal-block">
+window.location.href = 'http://www.cuevana.tv/#!/' + tipo + '/' + id + '/play/url:' + encodeURIComponent(a) + '/def:' + vars['cdef'];
+</pre>
+<p>Donde tipo es <tt class="docutils literal">series</tt> o <tt class="docutils literal">peliculas</tt>, <tt class="docutils literal">id</tt> es el identificador del contenido,
+def es <tt class="docutils literal">360</tt> o <tt class="docutils literal">720</tt> y <tt class="docutils literal">a</tt> es la url final del archivo mp4</p>
+<blockquote>
+<a class="reference external" href="http://www.cuevana.tv/#!/">http://www.cuevana.tv/#!/</a>' + tipo + '/' + id + '/play/url:' + encodeURIComponent(a) + '/def:' + vars['cdef'];</blockquote>
+<p>El reproductor carga el subtitulo desde la siguientes URL.</p>
+<p>Para series:</p>
+<blockquote>
+<a class="reference external" href="http://sc.cuevana.tv/files/s/sub/">http://sc.cuevana.tv/files/s/sub/</a><strong>ID**_**LANG</strong>.srt</blockquote>
+<p>Donde <tt class="docutils literal">ID</tt> es el identificador del contenido y <tt class="docutils literal">LANG</tt> es el código
+del idioma en 2 letras mayúsculas (ES, EN, etc.)</p>
+<p>Para contenidos HD se agrega el sufijo <em>_720</em>:</p>
+<pre class="literal-block">
+http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
+</pre>
+<p>Para peliculas es análogo pero un nivel más arriba:</p>
+<pre class="literal-block">
+http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
+</pre>
+<p>Y eso es todo lo que necesitamos saber.</p>
+        <p>
+        
+            <a href="posts/como-funciona-cuevana.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/metiendose-cosas-en-la-nariz.html">Metiéndose cosas en la nariz</a>
         <small>  
              <span class="timeago" title="2013-02-26 22:17:55">2013-02-26 22:17:55</span>
         </small></h1>
-        <div><p><a class="reference external" href="https://nose.readthedocs.org">nose</a> es un excelente <em>framework</em> para testing en python. Es mucho más
+        <p><a class="reference external" href="https://nose.readthedocs.org">nose</a> es un excelente <em>framework</em> para testing en python. Es mucho más
 que un <em>testrunner</em> inteligente: tiene un conjunto de extensiones y shortcuts
 de aserciones de <tt class="docutils literal">unittest</tt>, soporta fixtures y setups/teardown
 por paquetes, y viene con un montón de plugins incorporados.</p>
@@ -186,7 +361,7 @@ que nos manda al debugger cuando un test falla o da error.</p>
 <p><a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb">nose-ipdb</a> lo imita, pero usando el más pulenta de los debuggers: <a class="reference external" href="https://pypi.python.org/pypi/ipdb">ipdb</a>.</p>
 <p>Suficiente por hoy. Pero ¿me estoy perdiendo alguna cosa interesante
 para meter en mi nariz?</p>
-</div></div>
+</div>
         <p>
         
             <a href="posts/metiendose-cosas-en-la-nariz.html#disqus_thread">Comments</a>
@@ -198,7 +373,7 @@ para meter en mi nariz?</p>
         <small>  
              <span class="timeago" title="2012-11-12 00:34:23">2012-11-12 00:34:23</span>
         </small></h1>
-        <div><p>¿Así que querés comenzar un nuevo proyecto usando Python?
+        <p>¿Así que querés comenzar un nuevo proyecto usando Python?
 ¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
 proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
@@ -320,7 +495,7 @@ para saber más.</p>
 <img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"></div>
 <hr class="docutils"><blockquote>
 Este artículo lo escribí originalmente para el <a class="reference external" href="http://python.org.ar/pyar/Recetario">Recetario de PyAr</a></blockquote>
-</div></div>
+</div>
         <p>
         
             <a href="posts/creando-un-nuevo-proyecto-python.html#disqus_thread">Comments</a>
@@ -332,7 +507,7 @@ Este artículo lo escribí originalmente para el <a class="reference external" h
         <small>  
              <span class="timeago" title="2012-11-10 00:09:24">2012-11-10 00:09:24</span>
         </small></h1>
-        <div><p>Hace un tiempo conté <a class="reference external" href="posts/de-mercurial-a-git-limpieza.html">como migré un repositorio Mercurial a Git</a> .
+        <p>Hace un tiempo conté <a class="reference external" href="posts/de-mercurial-a-git-limpieza.html">como migré un repositorio Mercurial a Git</a> .
 Se trataba de un proyecto hospedado en <a class="reference external" href="http://bitbucket.org">Bitbucket</a> y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 allí porque somos pobretones y nos da repos privados gratis.
@@ -396,7 +571,7 @@ agrego un comentario avisando que es un <em>issue migrado</em>.</p>
             <span class="k">continue</span>
         <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
 </pre>
-<p>¡Disfruten!</p></div>
+<p>¡Disfruten!</p>
         <p>
         
             <a href="posts/migrando-issues-entre-proyectos-de-bitbucket.html#disqus_thread">Comments</a>
@@ -408,7 +583,7 @@ agrego un comentario avisando que es un <em>issue migrado</em>.</p>
         <small>  
              <span class="timeago" title="2012-10-26 02:24:46">2012-10-26 02:24:46</span>
         </small></h1>
-        <div><p>Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+        <p>Domingo, ciudad de Guayaquil, todo dispuesto para salir a
 conocer una ciudad que en las guías de viaje suena intererante y bonita.
 Se me ocurre prender la compu para ver si ese email que mandé la noche
 anterior, recién llegado después de 14 horas de viaje
@@ -479,12 +654,10 @@ antes de que esté poniendo los primeros comandos</p>
 
 Superblock backups stored on blocks:
 32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
-
 </pre>
 <p>Me la juego con el primer backup:</p>
 <pre class="code bash literal-block">
 sudo e2fsck -b 32768 /dev/sda3
-
 </pre>
 <p>Cientos de  <tt class="docutils literal">Y</tt> <tt class="docutils literal">Enter</tt> para mensajes estilo <em>"está roto, desea repararlo?"</em>
 (no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
@@ -502,7 +675,7 @@ que cortarlo a la mitad lo hacen sin dudar.
 Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
 brazo.</blockquote>
 <p>Querido Guayaquil: prometo visitar tu Malecón la próxima,
-<strong>push</strong> por adelantado.</p></div>
+<strong>push</strong> por adelantado.</p>
         <p>
         
             <a href="posts/ext4-superblock-failure-y-la-cola-del-diablo.html#disqus_thread">Comments</a>
@@ -514,7 +687,7 @@ brazo.</blockquote>
         <small>  
              <span class="timeago" title="2012-10-14 19:23:44">2012-10-14 19:23:44</span>
         </small></h1>
-        <div><p>Hace unos días abría este espacio prometiendo migrar contenidos y
+        <p>Hace unos días abría este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco más bonito.</p>
 <p>Este post incluye algunas notas sobre lo que he hecho hasta el momento.</p>
 <div class="section" id="github-nikola">
@@ -525,7 +698,7 @@ el servicio de hosting gratuito de contenido estático que ofrece Github.</p>
 el contenido del branch <em>gh-page</em> del proyecto en cuestión,
 para usar gh-pages por usuario hay que crear
 un repo llamado <em>&lt;username&gt;</em>.github.com (donde <em>&lt;username&gt;</em> es el tuyo)
-y lo que sirve en <a class="reference external" href=".">http:/</a>/&lt;username&gt;.github.com es directamente el branch
+y lo que sirve en <a class="reference external" href="http:/">http:/</a>/&lt;username&gt;.github.com es directamente el branch
 <em>master</em> (<a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages">referencia</a>)</p>
 <p>Por este motivo creé otro branch (que sin mucha imaginación denominé
 <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing">writing</a> )
@@ -597,7 +770,7 @@ RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
 RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
 </pre>
 <p>¿Cómo se va viendo?</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="posts/notas-rapidas-de-una-mudanza.html#id1">[1]</a></td><td><a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default">https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default</a></td></tr></tbody></table><table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="posts/notas-rapidas-de-una-mudanza.html#id2">[2]</a></td><td><a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE">https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE</a></td></tr></tbody></table></div></div>
+<table class="docutils footnote" frame="void" id="id3" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="posts/notas-rapidas-de-una-mudanza.html#id1">[1]</a></td><td><a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default">https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default</a></td></tr></tbody></table><table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="posts/notas-rapidas-de-una-mudanza.html#id2">[2]</a></td><td><a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE">https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE</a></td></tr></tbody></table></div>
         <p>
         
             <a href="posts/notas-rapidas-de-una-mudanza.html#disqus_thread">Comments</a>
@@ -609,13 +782,13 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
         <small>  
              <span class="timeago" title="2012-10-11 01:15:00">2012-10-11 01:15:00</span>
         </small></h1>
-        <div><p>Hola!</p>
+        <p>Hola!</p>
 <p>Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
 en <a class="reference external" href="http://nqnwebs.com/blog">http://nqnwebs.com/blog</a> y utilizaba <a class="reference external" href="http://www.spip.net">SPIP</a>. Por diversas razones
 que explicaré más adelante, estoy migrandolo a <a class="reference external" href="http://nikola.ralsina.com.ar">Nikola</a> utilizando
 <a class="reference external" href="http://github.com">Github</a> como plataforma de versionado y hosting.</p>
 <p>Espero que pronto esto esté más bonito y con contenido. También que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.</p></div>
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.</p>
         <p>
         
             <a href="posts/bienvenidos-al-tren.html#disqus_thread">Comments</a>
@@ -627,7 +800,7 @@ mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.</p></
         <small>  
              <span class="timeago" title="2012-07-02 17:39:11">2012-07-02 17:39:11</span>
         </small></h1>
-        <div><p>Cuando decidí dar el salto desde Subversion a un DVCS estuve leyendo
+        <p>Cuando decidí dar el salto desde Subversion a un DVCS estuve leyendo
 muchos posts comparativos entre las dos opciones más relevantes, Git y
 Mercurial. Había que elegir entre <a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/">Mc Gyver o James
 Bond</a>
@@ -738,9 +911,7 @@ exaclty one head each..."</em>.</p>
 original que sin perder la historia útil.</p>
 <p>Parafraseando a Lito, <em>si la historia la escriben los que ganan</em> ...
 ¿ganamos ?</p>
-<iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;hd=1&amp;wmode=transparent">
-</iframe>
-</div></div>
+<iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;hd=1&amp;wmode=transparent"></iframe></div>
         <p>
         
             <a href="posts/de-mercurial-a-git-limpieza.html#disqus_thread">Comments</a>
@@ -752,7 +923,7 @@ original que sin perder la historia útil.</p>
         <small>  
              <span class="timeago" title="2012-01-11 21:37:21">2012-01-11 21:37:21</span>
         </small></h1>
-        <div><div class="important">
+        <div class="important">
 <p class="first admonition-title">Important</p>
 <p class="last">El pipe tiene un problema con las fechas y quedó deactualizado
 cuando cambió en el html de G+. En su defecto hice este pequeño
@@ -815,7 +986,7 @@ donde <tt class="docutils literal">[GOOGLE_PLUS_ID]</tt> es el numero de identif
 cuestión.</p>
 <div class="figure align-center">
 <img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"></div>
-</div></div>
+</div>
         <p>
         
             <a href="posts/como-volver-a-compartir-desde.html#disqus_thread">Comments</a>
@@ -827,7 +998,7 @@ cuestión.</p>
         <small>  
              <span class="timeago" title="2011-11-11 20:43:47">2011-11-11 20:43:47</span>
         </small></h1>
-        <div><p>Mi computadora de escritorio, la primera que compré trabajando como
+        <p>Mi computadora de escritorio, la primera que compré trabajando como
 desarrollador de software, es del 2005. La "morocha", una AMD64 con
 placa madre <a class="reference external" href="http://www.asus.com/Motherboards/AMD_Socket_754/K8N">Asus
 K8N</a> que se la
@@ -893,61 +1064,15 @@ mv 1011.rom /tmp/floppy
 # (tambien se podría grabar a un pendrive)
 </span>mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
 cdrecord -v bootcd.iso
-
 </pre>
 <p>Reinciar, bootear el CD de FreeDOS y ejecutar:</p>
 <pre class="literal-block">
 afudos /i1011.rom
 </pre>
-</div></div>
+</div>
         <p>
         
             <a href="posts/lo-que-hace-un-geek-cuando-ama.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/cuevanalinks-ahora-para-seres.html">Cuevanalinks, ahora para seres humanos</a>
-        <small>  
-             <span class="timeago" title="2011-08-03 08:51:21">2011-08-03 08:51:21</span>
-        </small></h1>
-        <div><div class="important">
-<p class="first admonition-title">Important</p>
-<p class="last">Cuevanlinks está desmantenido y con los cambios en cuevana.tv ya no
-funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
-¿Querés revivir el proyecto? <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/fork">Forkealo</a>!</p>
-</div>
-<p>Un colega al que no conozco personalmente, <a class="reference external" href="http://mguillech.blogspot.com/">Martín
-Chikilian</a>, se ofreció a desarrollar
-una interfaz gráfica para
-<a class="reference external" href="posts/blog/article/la-sanguijuela-de-cuevana">Cuevanalinks</a>.</p>
-<p>Luego de algunos dias y teniendo una paciencia descomunal para soportar
-siempre nuevos requerimientos de mi parte, obtuvo una versión de
-Cuevanalinks-GUI, basado en <a class="reference external" href="http://es.wikipedia.org/wiki/PyQt">PyQt</a></p>
-<div class="figure align-center">
-<img alt="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png"></div>
-<p>Todavía está en desarrollo (hay algunos bugcitos y decisiones de diseño
-que no resolvemos del todo) pero ya ofrece ciertas ventajas sobre la
-versión para línea de comandos:</p>
-<ul class="simple"><li>Permite elegir qué se descarga cuando se hace una búsqueda de
-películas</li>
-<li>Te deja armar una cola de descargas de muchas cosas distintas
-haciendo muchas busquedas</li>
-<li>Y, lo más importante, lo puede instalar y usar un ser humano
-normal. :D</li>
-</ul><p>Para Windows, hay un instalador de la versión 0.5dev (el dev denota que
-está en desarrollo, se entiende) que se puede descargar desde acá:</p>
-<div class="important">
-<p class="first admonition-title">Important</p>
-<p><a class="reference external" href="downloads/cuevanalinks-0.5dev-installer.exe">cuevanalinks-0.5dev-installer.exe</a></p>
-<p class="last">para Windows XP o superior</p>
-</div>
-<p>Para los linuxeros, Martín puso <a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html">algunas
-instrucciones</a>
-para hacerlo andar desde los fuentes.</p></div>
-        <p>
-        
-            <a href="posts/cuevanalinks-ahora-para-seres.html#disqus_thread">Comments</a>
         
         </p></div>
     

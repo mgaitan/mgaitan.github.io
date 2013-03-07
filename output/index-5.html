@@ -43,11 +43,47 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/resolviendo-project-euler-con.html">Resolviendo Project Euler con Python</a>
+        <small>  
+             <span class="timeago" title="2009-09-18 01:48:15">2009-09-18 01:48:15</span>
+        </small></h1>
+        <p>A través del blog de <a class="reference external" href="http://www.juanjoconti.com.ar">Juanjo Conti</a>
+descubrí <a class="reference external" href="http://projecteuler.net">Project Euler</a>, una serie de
+desafíos matemáticos de enunciación sencilla para resolver con
+computadoras.</p>
+<p>Juanjo estuvo resolviendo los primeros problemas, y yo quise hacer mi
+intento. <a class="reference external" href="http://projecteuler.net/index.php?section=problems&amp;id=1">El
+primero</a>
+plantea obtener la suma de todos los multiplos de 3 o de 5 menores a
+1000.</p>
+<p>Lo resolví con esta pythonica (lo es?) línea:</p>
+<pre class="literal-block">
+sum([i for i in range(1000) if (i % 3 == 0 or i % 5==0)])
+</pre>
+<p>El resultado es 233168.</p>
+<div class="section" id="breve-explicacion">
+<h2>Breve explicación</h2>
+<p>Se basa en el uso de <a class="reference external" href="http://docs.python.org/tutorial/datastructures.html#list-comprehensions">list
+comprehensions</a>,
+una de las "joyas de la corona" de las características de Python.</p>
+<p>Es una manera de generar listas de una manera concisa, compuesta por una
+expresión seguida de uno a más <strong>for</strong> y una condicionalidad al final</p>
+<p>La lista ** [i for i in range(1000) if (i % 3 == 0 or i % 5==0)]** se
+lee así: crear una lista con todos los elementos (expresión i) en el
+rango de 0 a 999 (for) cuyo resto de dividirlo por 3 o 5 sea 0 (if).</p>
+</div>
+        <p>
+        
+            <a href="posts/resolviendo-project-euler-con.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/principios-para-un-freelancear.html">Principios para un "freelancear" exitosamente</a>
         <small>  
              <span class="timeago" title="2009-09-09 15:35:30">2009-09-09 15:35:30</span>
         </small></h1>
-        <div><p><a class="reference external" href="http://www.principlesofsuccessfulfreelancing.com/">The principle of successful
+        <p><a class="reference external" href="http://www.principlesofsuccessfulfreelancing.com/">The principle of successful
 freelancing</a>, de
 Miles Burke, es el libro (digital) que estoy leyendo.</p>
 <blockquote>
@@ -59,7 +95,7 @@ freelancing journey a financial success, but also how to do it
 without risking your health and sanity.</blockquote>
 <p>Ser tu propio jefe. No está mal para este mundo donde ese rol tiene
 connotación negativa.</p>
-<p>Quienes quieran chusmear, acá tienen.</p></div>
+<p>Quienes quieran chusmear, acá tienen.</p>
         <p>
         
             <a href="posts/principios-para-un-freelancear.html#disqus_thread">Comments</a>
@@ -71,7 +107,7 @@ connotación negativa.</p>
         <small>  
              <span class="timeago" title="2009-08-10 08:40:55">2009-08-10 08:40:55</span>
         </small></h1>
-        <div><p>Administrar muchos sitios SPIP tiene sus bemoles. Yo administro, fácil,
+        <p>Administrar muchos sitios SPIP tiene sus bemoles. Yo administro, fácil,
 unos 30. Cuando hay que actualizar la versión (por cuestiones de
 funcionalidad, o bien, como la semana pasada, por cuestiones de
 seguridad), es un trabajo engorroso y aburrido hacer 30 veces lo mismo.
@@ -211,7 +247,7 @@ Magia!</p>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusión</h2>
-</div></div>
+</div>
         <p>
         
             <a href="posts/un-spip-para-muchos-sitios.html#disqus_thread">Comments</a>
@@ -223,7 +259,7 @@ Magia!</p>
         <small>  
              <span class="timeago" title="2009-06-10 06:41:37">2009-06-10 06:41:37</span>
         </small></h1>
-        <div><p>Si Twitter funciona con 140 caracteres los comentarios a nuestros
+        <p>Si Twitter funciona con 140 caracteres los comentarios a nuestros
 artículos podrían tener 200, ¿no?</p>
 <p>Hay una forma fácil de limitar el largo permitido en un campo de texto
 mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
@@ -269,7 +305,7 @@ campo que querés limitar.</p>
 </div>
 <div class="section" id="ejemplo">
 <h2>Ejemplo</h2>
-</div></div>
+</div>
         <p>
         
             <a href="posts/limitar-la-cantidad-de-caracteres.html#disqus_thread">Comments</a>
@@ -281,7 +317,7 @@ campo que querés limitar.</p>
         <small>  
              <span class="timeago" title="2009-05-22 00:19:54">2009-05-22 00:19:54</span>
         </small></h1>
-        <div><p>Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
+        <p>Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
 control de versiones Subversion.</p>
 <p>A través de Subversion, podemos obtener la ultima version de desarrollo
 considerada estable</p>
@@ -378,7 +414,7 @@ particular,</p>
 <pre class="literal-block">
 svn co svn://trac.rezo.net/spip/tags/spip-2-stable
 </pre>
-</div></div>
+</div>
         <p>
         
             <a href="posts/ultima-version-de-spip-por-svn.html#disqus_thread">Comments</a>
@@ -390,7 +426,7 @@ svn co svn://trac.rezo.net/spip/tags/spip-2-stable
         <small>  
              <span class="timeago" title="2009-04-24 18:37:28">2009-04-24 18:37:28</span>
         </small></h1>
-        <div><p>Para suscribirse a la lista de
+        <p>Para suscribirse a la lista de
 <a class="reference external" href="http://python.org.ar/pyar/ListaDeCorreo">Pyar</a>, una de las tareas
 (opcional, pero muy bienvenida) es enviar tu "Hola Mundo".</p>
 <p>El 17 de enero de 2007 yo me suscribí y mandé el siguiente mensaje.</p>
@@ -448,7 +484,7 @@ chmod +x ./elnumero.py
 </pre>
 <p>Sobre Windows, asegurate tener instalado Python (cualquier versión
 elnumero.py</p>
-</div></div>
+</div>
         <p>
         
             <a href="posts/el-numero-mi-primer-juego.html#disqus_thread">Comments</a>
@@ -460,7 +496,7 @@ elnumero.py</p>
         <small>  
              <span class="timeago" title="2009-04-22 12:58:20">2009-04-22 12:58:20</span>
         </small></h1>
-        <div><p>El miércoles 15 de abril de 2009 participé como disertante en las <a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-Abril-2009">3º
+        <p>El miércoles 15 de abril de 2009 participé como disertante en las <a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-Abril-2009">3º
 Jornadas Abiertas de Ingeniería en
 Computación</a>
 que reune a estudiantes, profesores y profesionales invitados para dar
@@ -483,7 +519,7 @@ Bajar diapositivas "<a class="reference external" href="downloads/ojotas_copia_.
 <p>El documento ODP incluye notas y comentarios.</p>
 <div class="section" id="video">
 <h2>Video</h2>
-<iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;hd=1&amp;wmode=transparent"></iframe></div></div>
+<iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;hd=1&amp;wmode=transparent"></iframe></div>
         <p>
         
             <a href="posts/charla-ser-freelance-como-trabajar.html#disqus_thread">Comments</a>
@@ -495,7 +531,7 @@ Bajar diapositivas "<a class="reference external" href="downloads/ojotas_copia_.
         <small>  
              <span class="timeago" title="2009-04-19 14:14:39">2009-04-19 14:14:39</span>
         </small></h1>
-        <div><p><a class="reference external" href="http://code.google.com/p/radiolina/">Radiolina</a> es a mi jornada
+        <p><a class="reference external" href="http://code.google.com/p/radiolina/">Radiolina</a> es a mi jornada
 laboral lo que la Spika a la de mi abuelo, en aquellas mañanas de viñas
 mendocinas.</p>
 <p>Es un simple script <a class="reference external" href="http://es.wikipedia.org/wiki/bash">bash</a> que se
@@ -512,7 +548,7 @@ chmod +x radiolina
 bajar el programa. En vez de la primer linea (<em>wget...</em>) utilizar</p>
 <pre class="literal-block">
 svn checkout https://radiolina.googlecode.com/svn/trunk/ ./
-</pre></div>
+</pre>
         <p>
         
             <a href="posts/piccola-radiolina.html#disqus_thread">Comments</a>
@@ -524,7 +560,7 @@ svn checkout https://radiolina.googlecode.com/svn/trunk/ ./
         <small>  
              <span class="timeago" title="2009-03-31 09:37:49">2009-03-31 09:37:49</span>
         </small></h1>
-        <div><p>Un comando muy práctico para hacer backups de una base de datos MySQL es
+        <p>Un comando muy práctico para hacer backups de una base de datos MySQL es
 <em>mysqldump</em>.</p>
 <pre class="literal-block">
 mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
@@ -552,7 +588,7 @@ tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":</p>
 <pre class="literal-block">
 mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
 </pre>
-</div></div>
+</div>
         <p>
         
             <a href="posts/backup-selectivo-de-tablas-mysql.html#disqus_thread">Comments</a>
@@ -564,7 +600,7 @@ mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spi
         <small>  
              <span class="timeago" title="2009-03-26 20:39:24">2009-03-26 20:39:24</span>
         </small></h1>
-        <div><p><a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a> es el texto
+        <p><a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a> es el texto
 que se usa habitualmente en diseño gráfico en demostraciones de
 tipografías o de borradores de diseño para probar el diseño visual antes
 de insertar el texto final.</p>
@@ -629,149 +665,10 @@ alrededor de cada párrafo. Los valores aceptados son <strong>true</strong> o
 tener que editar cada artículo sólo para poner <tt class="docutils literal">&lt;lorem&gt;</tt> es invocar el
 modelo siempre y cuando no exista contenido en la baliza</p>
 <p>Por ejemplo [<a class="reference external" href="blog/article/lorem-ipsum-para-spip#nb2">2</a>]:</p>
-</div></div>
+</div>
         <p>
         
             <a href="posts/lorem-ipsum-para-spip.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/auto-podcast.html">Auto Podcast</a>
-        <small>  
-             <span class="timeago" title="2009-03-21 12:53:03">2009-03-21 12:53:03</span>
-        </small></h1>
-        <div><p><a class="reference external" href="http://www.efectotabano.com.ar">Efecto Tábano</a> es el programa radial
-de mi amigo Fernando Barraza. Objetivamente, uno de los mejores
-programas radiales de Argentina.</p>
-<p>Lamentablemente, desde que me vine a Córdoba tuve que conformarme con
-los fragmentos de entrevistas o especiales que Fernando subía a la web.
-Pero ahora que la <a class="reference external" href="http://fm1037online.com/">Radio Calf-UNC</a> está
-online, la alegría está completa.</p>
-<p>El único problema que queda es que no todos los días tengo el tiempo de
-escucharlo de 16 a 18hs, Necesitaba grabarlo para escucharlo offline.</p>
-<p>Bien podría haber hecho esto localmente pero como al sitio lo administro
-yo, dije... ¿por qué no grabar el programa directamente desde el
-servidor, y que cualquiera pueda bajarlo cuando quiera?</p>
-<p>Aquí está mi podcaster automático para Efecto Tábano.</p>
-<div class="section" id="la-idea">
-<h2>La idea</h2>
-<p>Todo se basa en el glorioso <a class="reference external" href="http://mplayerhq.hu">Mplayer</a>, Mplayer es
-capaz de reproducir casi cualquier formato en streaming.</p>
-<p>Por supuesto, no habrá sonido en esa "reproducción" sobre el servidor,
-pero lo que queremos es la info para grabarla.</p>
-<p>En vez de enviarla a la placa de sonidos, la información cruda (el
-sonido WAV) lo enviamos a un archivo fifo desde donde
-<a class="reference external" href="http://lame.sourceforge.net/">lame</a> obtendrá su fuente de datos para
-comprimir a MP3 <em>on the fly</em>.</p>
-<p>Todo esto, claro, se ejecutará al horario del programa (y durante el
-tiempo que se indique, en este caso casi 2 horas) mediante una tarea
-<a class="reference external" href="http://es.wikipedia.org/wiki/Cron_(Unix)">cron</a></p>
-</div>
-<div class="section" id="instalando-lo-necesario">
-<h2>Instalando lo necesario</h2>
-<p>Como anticipé, hace falta mplayer y lame. Estos programas en general no
-se encuentran en el servidor (por ejemplo
-<a class="reference external" href="http://www.dreamhost.com/r.cgi?150740">Dreamhost</a>) así que hay que
-instalarlos. Como tampoco somos root (la gran mayoría de las veces)
-habrá que compilarlos desde las fuentes e instalarlos a nivel usuario.</p>
-<p>primero crear, si no existiése, un directorio /bin donde irán nuestros
-programas.</p>
-<pre class="literal-block">
-mkdir bin
-chmod 775 bin
-</pre>
-<p><strong>Mplayer y mencoder</strong></p>
-<pre class="literal-block">
-wget http://www3.mplayerhq.hu/MPlayer/releases/codecs/essential-20061022.tar.bz2
-bunzip2 essential-20061022.tar.bz2
-tar -xf essential-20061022.tar
-mv essential-20061022 $HOME/lib
-wget http://www3.mplayerhq.hu/MPlayer/releases/MPlayer-1.0rc1.tar.bz2
-bunzip2 MPlayer-1.0rc1.tar.bz2
-tar -xf MPlayer-1.0rc1.tar
-cd MPlayer-1.0rc1
-./configure --prefix=$HOME --codecsdir=$HOME/lib/essential-20061022
-make
-make install
-</pre>
-<p><strong>LAME</strong></p>
-<pre class="literal-block">
-wget http://nchc.dl.sourceforge.net/sourceforge/lame/lame-3.97.tar.gz
-tar -zxvf lame-3.97.tar.gz
-cd lame-3.97
-./configure "--prefix=$HOME" "--enable-shared"
-make
-make install
-</pre>
-<p>Con eso ya tendríamos los programas necesarios en <strong>./bin</strong></p>
-</div>
-<div class="section" id="el-script-podcaster-efectotabano-sh">
-<h2>El script podcaster-efectotabano.sh</h2>
-<pre class="literal-block">
-#!/bin/sh
-#
-# recorder — wrapper to pull remote audio stream and convert contents
-# to mp3
-
-# Path and arguments to lame (mp3 encoder)
-lame="$HOME/bin/lame -S -b 32 -m m"
-
-# Path and arguments to mplayer (stream decoder)
-mplayer="$HOME/bin/mplayer -quiet"
-
-# Where to put the output files
-odir="$HOME/efectotabano.com.ar/podcast"
-
-showname="efectotabano-`date +%Y-%m-%d`"
-duration="6660"
-url="http://78.159.108.83:8690/"
-
-fifo="${showname}_fifo"
-ofile="$odir/${showname}.mp3"
-
-#- end config ----------------------------------------------------
-
-mkfifo $fifo
-$lame $fifo $ofile &amp;
-$mplayer  -vc null -vo null -ao pcm:file=$fifo $url &amp;
-
-sleep 5
-pids=`ps auxww | grep $fifo | awk '{print $duration}'`
-
-sleep `echo ${duration} | bc`
-
-kill $pids
-rm $fifo
-</pre>
-<p>La primera parte permite configurar las rutas y parámetros de los
-programas a usar, así como el formato y destino del mp3 de salida.</p>
-<p>En este caso los parámetros de lame indican que se grabará a 32kbps en
-mono.</p>
-<p>Los mp3 de salida irán a <a class="reference external" href="http://www.efectotabano.com.ar/podcast/">este
-destino</a></p>
-<p>Este script se ejecuta de lunes a viernes a las 12:09 hora del servidor
-(16:09 en argentina) y durante 6660 segundo, de modo que termina
-tentativamente junto con la finalización del programa.</p>
-<p>Para configurar la tarea en cron ejecutar <strong>crontab -e</strong>. La tarea a
-agregar luce así:</p>
-<pre class="literal-block">
-09 12 * * 1-5 ~/bin/podcaster-efectotabano.sh
-</pre>
-<p>Eso es todo. Todos los días, de lunes a viernes tendré mi programa para
-descargar.</p>
-</div>
-<div class="section" id="to-do">
-<h2>TO DO</h2>
-<p>Por supuesto, para que esto sea un
-<a class="reference external" href="http://es.wikipedia.org/wiki/podcast">podcast</a> le falta la
-sindicación. Por lo tanto, habría que agregar la tarea de injectar
-información pertinente en una base de datos del cual generar el XML de
-sindicación.</p>
-</div></div>
-        <p>
-        
-            <a href="posts/auto-podcast.html#disqus_thread">Comments</a>
         
         </p></div>
     

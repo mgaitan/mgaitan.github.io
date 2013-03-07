@@ -1,5 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 27 Feb 2013 01:29:54 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho m&amp;#225;s
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Thu, 07 Mar 2013 14:45:15 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.com/posts/como-funciona-cuevana.html</link><description>&lt;body&gt;&lt;p&gt;Estimando cuanto trabajo significa actualizar &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;Cuevana sources&lt;/a&gt;
+y/o &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalib"&gt;Cuevanalib&lt;/a&gt;
+investigu&amp;#233; c&amp;#243;mo funciona la nueva versi&amp;#243;n de cuevana.&lt;/p&gt;
+&lt;p&gt;Estas notas son el resultado de lo que fui observando.&lt;/p&gt;
+&lt;p&gt;Una vez que se elige un contenido, un iframe apunta a una URL con este forma:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://www.cuevana.tv/player/sources?id=4773&amp;amp;tipo=pelicula"&gt;http://www.cuevana.tv/player/sources?id=4773&amp;amp;tipo=pelicula&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;En c&amp;#243;digo javascript inline define las fuentes disponibles para ese contenido&lt;/p&gt;
+&lt;pre class="code javascript literal-block"&gt;
+&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;plugin_ver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;plugin_rev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;actual_ver&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;actual_rev&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;sources&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;"2"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s2"&gt;"360"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"uptobox"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"uploadcore"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"vidbull"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"bayfiles"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"filebox"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"cramit"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"zalaa"&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="s2"&gt;"720"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"uploadcore"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"vidbull"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"bayfiles"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"cramit"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="nx"&gt;sel_source&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;La primer clave (en este caso &lt;tt class="docutils literal"&gt;2&lt;/tt&gt;, ingl&amp;#233;s) es el idioma del audio,
+y la segunda la calidad del video&lt;/p&gt;
+&lt;p&gt;Luego define diferentes constates:&lt;/p&gt;
+&lt;pre class="code javascript literal-block"&gt;
+&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;label&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;'360'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'SD (360p)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'480'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'SD (480p)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'720'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'HD (720p)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'1080'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'HD (1080p)'&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;labeli&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;"1"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Espa\u00f1ol"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"2"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Ingl\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"3"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Portugu\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"4"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Alem\u00e1n"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"5"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Franc\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"6"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Coreano"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"7"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Italiano"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"8"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Tailand\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"9"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Ruso"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"10"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Mongol"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"11"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Polaco"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"12"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Esloveno"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"13"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Sueco"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"14"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Griego"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"15"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Canton\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"16"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Japon\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"17"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Dan\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"18"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Neerland\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"19"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Hebreo"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"20"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Serbio"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"21"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"\u00c1rabe"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"22"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Hindi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"23"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Noruego"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"24"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Turco"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"26"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Mandar\u00edn"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"27"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Nepal\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"28"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Rumano"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"29"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Iran\u00ed"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"30"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Est\u00f3n"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"31"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Bosnio"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"32"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Checo"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"33"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Croata"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"34"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Fin\u00e9s"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"35"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"H\u00fanagro"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"36"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Persa"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"38"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Indonesio"&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;labelh&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;'filebox'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Filebox'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'uptobox'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Uptobox (NUEVO)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'uploadcore'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Uploadcore (NUEVO)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'vidbull'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Vidbull (NUEVO)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'zalaa'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Zalaa'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'cramit'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Cramit'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'180upload'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'180upload'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;'bayfiles'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Bayfiles'&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;El usuario selecciona mediante un men&amp;#250; donde se define &lt;tt class="docutils literal"&gt;audio&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;quality&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;source&lt;/tt&gt;
+que se configuran como atributos data del link:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+.. code-block::
+&lt;/pre&gt;
+&lt;blockquote&gt;
+&amp;lt;a class="sel" data-type="quality" data-id="360"&amp;gt;SD (360p)&amp;lt;/a&amp;gt;&lt;/blockquote&gt;
+&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-type&lt;/span&gt;&lt;/tt&gt; es el tipo de variable, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-id&lt;/span&gt;&lt;/tt&gt; el valor para esa opci&amp;#243;n
+y &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;class="sel"&lt;/span&gt;&lt;/tt&gt; determina si esa es la opci&amp;#243;n seleccionada.&lt;/p&gt;
+&lt;p&gt;Cuando se hace click en el bot&amp;#243;n Play se invoca la URL:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+http://www.cuevana.tv/player/source_get?def=**quality**&amp;amp;audio=**audio**&amp;amp;host=**source**&amp;amp;id=4773&amp;amp;tipo=pelicula
+&lt;/pre&gt;
+&lt;p&gt;Por ejemplo:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+http://www.cuevana.tv/player/source_get?def=360&amp;amp;audio=2&amp;amp;host=bayfiles&amp;amp;id=4773&amp;amp;tipo=pelicula
+&lt;/pre&gt;
+&lt;p&gt;Esta p&amp;#225;gina presenta el captcha, que una vez superado redirige a la URL:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+http://go.cuevana.tv/?*URL_DESTINO*
+&lt;/pre&gt;
+&lt;p&gt;Por ejemplo:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+http://go.cuevana.tv/?http%3A%2F%2Fbayfiles.com%2Ffile%2FvIsf%2FkTvfNj%2Fthe.apparition.2012.bdrip.xvid-sparks.mp4%3Fcid%3D4773%26ctipo%3Dpelicula%26cdef%3D360
+&lt;/pre&gt;
+&lt;p&gt;Que a su vez redirige a &lt;em&gt;URL_DESTINO&lt;/em&gt; que es la URL del servicio donde el video est&amp;#225; hosteado
+con par&amp;#225;metros extra: &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360&lt;/span&gt;&lt;/tt&gt;. En el ejemplo anterior:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360**"&gt;http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360**&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;Aqu&amp;#237; entra en juego el "plugin de cuevana". Se puede bajar por ejemplo
+la versi&amp;#243;n para Firefox desde &lt;a class="reference external" href="http://www.cuevana.tv/player/plugins/cstream-5.0.xpi"&gt;http://www.cuevana.tv/player/plugins/cstream-5.0.xpi&lt;/a&gt;
+Descomprimirlo con unzip y abrir el archivo &lt;tt class="docutils literal"&gt;content/cuevanastream.js&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;La presencia de los par&amp;#225;metros &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;cid``y&lt;/span&gt; ``ctipo&lt;/tt&gt; y una url de alguno de los servicios
+que usa Cuevana hace que se inyecte un javascript en la URL del servicio.&lt;/p&gt;
+&lt;pre class="code javascript literal-block"&gt;
+&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;loc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/cid=/i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/ctipo=/i&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/^http:\/\/(www\.)?bayfiles\.com/i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;addScript&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'bayfiles'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// m&amp;#225;s servicios
+&lt;/span&gt;
+  &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'div'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'plugin_ok'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'data-version'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'5'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'data-revision'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'0'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;body&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;addScript&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'script'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'type'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'text/javascript'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'src'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'http://sc.cuevana.tv/player/scripts/5/'&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;id&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;'.js'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementsByTagName&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'head'&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;En ese caso se inyecta el javascript:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+http://sc.cuevana.tv/player/scripts/5/bayfiles.js
+&lt;/pre&gt;
+&lt;p&gt;Que es el encargado de parsear html para obtener la url real de descarga,
+resolver/exponer el captcha si existiera, esperar el tiempo de guarda
+del servicio y redirigir al reproductor de cuevana:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+window.location.href = 'http://www.cuevana.tv/#!/' + tipo + '/' + id + '/play/url:' + encodeURIComponent(a) + '/def:' + vars['cdef'];
+&lt;/pre&gt;
+&lt;p&gt;Donde tipo es &lt;tt class="docutils literal"&gt;series&lt;/tt&gt; o &lt;tt class="docutils literal"&gt;peliculas&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;id&lt;/tt&gt; es el identificador del contenido,
+def es &lt;tt class="docutils literal"&gt;360&lt;/tt&gt; o &lt;tt class="docutils literal"&gt;720&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;a&lt;/tt&gt; es la url final del archivo mp4&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://www.cuevana.tv/#!/"&gt;http://www.cuevana.tv/#!/&lt;/a&gt;' + tipo + '/' + id + '/play/url:' + encodeURIComponent(a) + '/def:' + vars['cdef'];&lt;/blockquote&gt;
+&lt;p&gt;El reproductor carga el subtitulo desde la siguientes URL.&lt;/p&gt;
+&lt;p&gt;Para series:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://sc.cuevana.tv/files/s/sub/"&gt;http://sc.cuevana.tv/files/s/sub/&lt;/a&gt;&lt;strong&gt;ID**_**LANG&lt;/strong&gt;.srt&lt;/blockquote&gt;
+&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;ID&lt;/tt&gt; es el identificador del contenido y &lt;tt class="docutils literal"&gt;LANG&lt;/tt&gt; es el c&amp;#243;digo
+del idioma en 2 letras may&amp;#250;sculas (ES, EN, etc.)&lt;/p&gt;
+&lt;p&gt;Para contenidos HD se agrega el sufijo &lt;em&gt;_720&lt;/em&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
+&lt;/pre&gt;
+&lt;p&gt;Para peliculas es an&amp;#225;logo pero un nivel m&amp;#225;s arriba:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
+&lt;/pre&gt;
+&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 10:17:55 GMT</pubDate></item><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho m&amp;#225;s
 que un &lt;em&gt;testrunner&lt;/em&gt; inteligente: tiene un conjunto de extensiones y shortcuts
 de aserciones de &lt;tt class="docutils literal"&gt;unittest&lt;/tt&gt;, soporta fixtures y setups/teardown
 por paquetes, y viene con un mont&amp;#243;n de plugins incorporados.&lt;/p&gt;
@@ -138,7 +301,7 @@ que nos manda al debugger cuando un test falla o da error.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb"&gt;nose-ipdb&lt;/a&gt; lo imita, pero usando el m&amp;#225;s pulenta de los debuggers: &lt;a class="reference external" href="https://pypi.python.org/pypi/ipdb"&gt;ipdb&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Suficiente por hoy. Pero &amp;#191;me estoy perdiendo alguna cosa interesante
 para meter en mi nariz?&lt;/p&gt;
-&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</guid><pubDate>Tue, 26 Feb 2013 22:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;p&gt;&amp;#191;As&amp;#237; que quer&amp;#233;s comenzar un nuevo proyecto usando Python?
+&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</guid><pubDate>Tue, 26 Feb 2013 22:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;body&gt;&lt;p&gt;&amp;#191;As&amp;#237; que quer&amp;#233;s comenzar un nuevo proyecto usando Python?
 &amp;#161;Felicitaciones! &amp;#191;Quer&amp;#233;s que tenga la estructura recomendada para
 proyectos modernos? &amp;#191;Quer&amp;#233;s que sea instalable f&amp;#225;cilmente? &amp;#191;Quer&amp;#233;s que
 no se te arme lio de dependencias que colisionan con las de otros
@@ -260,7 +423,7 @@ para saber m&amp;#225;s.&lt;/p&gt;
 &lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;&lt;/div&gt;
 &lt;hr class="docutils"&gt;&lt;blockquote&gt;
 Este art&amp;#237;culo lo escrib&amp;#237; originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
-&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;p&gt;Hace un tiempo cont&amp;#233; &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migr&amp;#233; un repositorio Mercurial a Git&lt;/a&gt; .
+&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;body&gt;&lt;p&gt;Hace un tiempo cont&amp;#233; &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migr&amp;#233; un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 all&amp;#237; porque somos pobretones y nos da repos privados gratis.
@@ -324,7 +487,7 @@ agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/
             &lt;span class="k"&gt;continue&lt;/span&gt;
         &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;&amp;#161;Disfruten!&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+&lt;p&gt;&amp;#161;Disfruten!&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;body&gt;&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
 conocer una ciudad que en las gu&amp;#237;as de viaje suena intererante y bonita.
 Se me ocurre prender la compu para ver si ese email que mand&amp;#233; la noche
 anterior, reci&amp;#233;n llegado despu&amp;#233;s de 14 horas de viaje
@@ -395,12 +558,10 @@ antes de que est&amp;#233; poniendo los primeros comandos&lt;/p&gt;
 
 Superblock backups stored on blocks:
 32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
-
 &lt;/pre&gt;
 &lt;p&gt;Me la juego con el primer backup:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 sudo e2fsck -b 32768 /dev/sda3
-
 &lt;/pre&gt;
 &lt;p&gt;Cientos de  &lt;tt class="docutils literal"&gt;Y&lt;/tt&gt; &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; para mensajes estilo &lt;em&gt;"est&amp;#225; roto, desea repararlo?"&lt;/em&gt;
 (no hab&amp;#237;a una opci&amp;#243;n "S&amp;#237; a todo", como si uno fuese capaz de arrepentirse
@@ -418,7 +579,7 @@ que cortarlo a la mitad lo hacen sin dudar.
 Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
 brazo.&lt;/blockquote&gt;
 &lt;p&gt;Querido Guayaquil: prometo visitar tu Malec&amp;#243;n la pr&amp;#243;xima,
-&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rápidas de una mudanza</title><link>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
+&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rápidas de una mudanza</title><link>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;body&gt;&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco m&amp;#225;s bonito.&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;div class="section" id="github-nikola"&gt;
@@ -501,13 +662,13 @@ RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
 RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
 &lt;/pre&gt;
 &lt;p&gt;&amp;#191;C&amp;#243;mo se va viendo?&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</link><description>&lt;body&gt;&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog est&amp;#225; en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
 que explicar&amp;#233; m&amp;#225;s adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
 &lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
 &lt;p&gt;Espero que pronto esto est&amp;#233; m&amp;#225;s bonito y con contenido. Tambi&amp;#233;n que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir m&amp;#225;s.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>De mercurial a git, limpieza mediante</title><link>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</link><description>&lt;p&gt;Cuando decid&amp;#237; dar el salto desde Subversion a un DVCS estuve leyendo
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir m&amp;#225;s.&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>De mercurial a git, limpieza mediante</title><link>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</link><description>&lt;body&gt;&lt;p&gt;Cuando decid&amp;#237; dar el salto desde Subversion a un DVCS estuve leyendo
 muchos posts comparativos entre las dos opciones m&amp;#225;s relevantes, Git y
 Mercurial. Hab&amp;#237;a que elegir entre &lt;a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/"&gt;Mc Gyver o James
 Bond&lt;/a&gt;
@@ -618,9 +779,7 @@ exaclty one head each..."&lt;/em&gt;.&lt;/p&gt;
 original que sin perder la historia &amp;#250;til.&lt;/p&gt;
 &lt;p&gt;Parafraseando a Lito, &lt;em&gt;si la historia la escriben los que ganan&lt;/em&gt; ...
 &amp;#191;ganamos ?&lt;/p&gt;
-&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;
-&lt;/iframe&gt;
-&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</guid><pubDate>Mon, 02 Jul 2012 17:39:11 GMT</pubDate></item><item><title>Cómo volver a compartir desde Google Reader</title><link>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</guid><pubDate>Mon, 02 Jul 2012 17:39:11 GMT</pubDate></item><item><title>Cómo volver a compartir desde Google Reader</title><link>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</link><description>&lt;body&gt;&lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
 &lt;p class="last"&gt;El pipe tiene un problema con las fechas y qued&amp;#243; deactualizado
 cuando cambi&amp;#243; en el html de G+. En su defecto hice este peque&amp;#241;o
@@ -683,7 +842,7 @@ donde &lt;tt class="docutils literal"&gt;[GOOGLE_PLUS_ID]&lt;/tt&gt; es el numer
 cuesti&amp;#243;n.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
 &lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;&lt;/div&gt;
-&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Lo que hace un geek cuando ama</title><link>http://mgaitan.github.com/posts/lo-que-hace-un-geek-cuando-ama.html</link><description>&lt;p&gt;Mi computadora de escritorio, la primera que compr&amp;#233; trabajando como
+&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Lo que hace un geek cuando ama</title><link>http://mgaitan.github.com/posts/lo-que-hace-un-geek-cuando-ama.html</link><description>&lt;body&gt;&lt;p&gt;Mi computadora de escritorio, la primera que compr&amp;#233; trabajando como
 desarrollador de software, es del 2005. La "morocha", una AMD64 con
 placa madre &lt;a class="reference external" href="http://www.asus.com/Motherboards/AMD_Socket_754/K8N"&gt;Asus
 K8N&lt;/a&gt; que se la
@@ -749,43 +908,9 @@ mv 1011.rom /tmp/floppy
 # (tambien se podr&amp;#237;a grabar a un pendrive)
 &lt;/span&gt;mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
 cdrecord -v bootcd.iso
-
 &lt;/pre&gt;
 &lt;p&gt;Reinciar, bootear el CD de FreeDOS y ejecutar:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 afudos /i1011.rom
 &lt;/pre&gt;
-&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/lo-que-hace-un-geek-cuando-ama.html</guid><pubDate>Fri, 11 Nov 2011 20:43:47 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>http://mgaitan.github.com/posts/cuevanalinks-ahora-para-seres.html</link><description>&lt;div class="important"&gt;
-&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
-&lt;p class="last"&gt;Cuevanlinks est&amp;#225; desmantenido y con los cambios en cuevana.tv ya no
-funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
-&amp;#191;Quer&amp;#233;s revivir el proyecto? &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/fork"&gt;Forkealo&lt;/a&gt;!&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Un colega al que no conozco personalmente, &lt;a class="reference external" href="http://mguillech.blogspot.com/"&gt;Mart&amp;#237;n
-Chikilian&lt;/a&gt;, se ofreci&amp;#243; a desarrollar
-una interfaz gr&amp;#225;fica para
-&lt;a class="reference external" href="/posts/blog/article/la-sanguijuela-de-cuevana"&gt;Cuevanalinks&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Luego de algunos dias y teniendo una paciencia descomunal para soportar
-siempre nuevos requerimientos de mi parte, obtuvo una versi&amp;#243;n de
-Cuevanalinks-GUI, basado en &lt;a class="reference external" href="http://es.wikipedia.org/wiki/PyQt"&gt;PyQt&lt;/a&gt;&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
-&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png"&gt;&lt;/div&gt;
-&lt;p&gt;Todav&amp;#237;a est&amp;#225; en desarrollo (hay algunos bugcitos y decisiones de dise&amp;#241;o
-que no resolvemos del todo) pero ya ofrece ciertas ventajas sobre la
-versi&amp;#243;n para l&amp;#237;nea de comandos:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;Permite elegir qu&amp;#233; se descarga cuando se hace una b&amp;#250;squeda de
-pel&amp;#237;culas&lt;/li&gt;
-&lt;li&gt;Te deja armar una cola de descargas de muchas cosas distintas
-haciendo muchas busquedas&lt;/li&gt;
-&lt;li&gt;Y, lo m&amp;#225;s importante, lo puede instalar y usar un ser humano
-normal. :D&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Para Windows, hay un instalador de la versi&amp;#243;n 0.5dev (el dev denota que
-est&amp;#225; en desarrollo, se entiende) que se puede descargar desde ac&amp;#225;:&lt;/p&gt;
-&lt;div class="important"&gt;
-&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="/downloads/cuevanalinks-0.5dev-installer.exe"&gt;cuevanalinks-0.5dev-installer.exe&lt;/a&gt;&lt;/p&gt;
-&lt;p class="last"&gt;para Windows XP o superior&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Para los linuxeros, Mart&amp;#237;n puso &lt;a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html"&gt;algunas
-instrucciones&lt;/a&gt;
-para hacerlo andar desde los fuentes.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/cuevanalinks-ahora-para-seres.html</guid><pubDate>Wed, 03 Aug 2011 08:51:21 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/lo-que-hace-un-geek-cuando-ama.html</guid><pubDate>Fri, 11 Nov 2011 20:43:47 GMT</pubDate></item></channel></rss>

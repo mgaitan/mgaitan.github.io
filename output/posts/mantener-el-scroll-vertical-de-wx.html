@@ -58,7 +58,7 @@
             
         
     </small>
-    <div><p>Un típico uso de un <tt class="docutils literal">ListCtrl</tt> es usarlo para mostrar un Log de la
+    <p>Un típico uso de un <tt class="docutils literal">ListCtrl</tt> es usarlo para mostrar un Log de la
 aplicación que muestra mensajes al usuario, similar a lo que puede hacer
 la barra de estada, pero con la ventaja (complementaria, si se quiere),
 de mantener un historial de los eventos ocurridos.</p>
@@ -93,7 +93,7 @@ def OnAppendLog(self, msg):
     self.list.SetStringItem(index, 1, time.strftime('%H:%M:%S'))
 
     self.list.EnsureVisible(index) #keep scroll at bottom
-</pre></div>
+</pre>
     <ul class="pager"><li class="previous">
             <a href="preparados-listos-en-un-rato.html">← Post anterior</a>
         </li>

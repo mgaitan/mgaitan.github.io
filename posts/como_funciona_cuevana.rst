@@ -178,11 +178,11 @@ Para series:
 Donde ``ID`` es el identificador del contenido y ``LANG`` es el código
 del idioma en 2 letras mayúsculas (ES, EN, etc.)
 
-Para contenidos HD se agrega el sufijo *_720*
+Para contenidos HD se agrega el sufijo *_720*::
 
     http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
 
-Para peliculas es análogo pero un nivel más arriba.
+Para peliculas es análogo pero un nivel más arriba::
 
     http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
 

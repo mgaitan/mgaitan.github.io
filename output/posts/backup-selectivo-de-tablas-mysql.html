@@ -58,7 +58,7 @@
             
         
     </small>
-    <div><p>Un comando muy práctico para hacer backups de una base de datos MySQL es
+    <p>Un comando muy práctico para hacer backups de una base de datos MySQL es
 <em>mysqldump</em>.</p>
 <pre class="literal-block">
 mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
@@ -86,7 +86,7 @@ tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":</p>
 <pre class="literal-block">
 mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
 </pre>
-</div></div>
+</div>
     <ul class="pager"><li class="previous">
             <a href="lorem-ipsum-para-spip.html">← Post anterior</a>
         </li>

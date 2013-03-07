@@ -1,9 +1,10 @@
 .. title: Cómo funciona Cuevana
 .. slug: como-funciona-cuevana
-.. date: 2013/02/26 22:17:55
-.. tags: draft
+.. date: 2013/03/07 10:17:55
+.. tags: cuevana, scrapping
 .. link:
 .. description:
+
 
 Estimando cuanto trabajo significa actualizar `Cuevana sources <http://userscripts.org/scripts/show/98017>`_
 y/o `Cuevanalib <https://bitbucket.org/tin_nqn/cuevanalib>`_
@@ -11,8 +12,9 @@ investigué cómo funciona la nueva versión de cuevana.
 
 Estas notas son el resultado de lo que fui observando.
 
-Una vez que se elige un contenido, un iframe apunta a una URL de este formato
-http://www.cuevana.tv/player/sources?id=4773&tipo=pelicula
+Una vez que se elige un contenido, un iframe apunta a una URL con este forma:
+
+    http://www.cuevana.tv/player/sources?id=4773&tipo=pelicula
 
 En código javascript inline define las fuentes disponibles para ese contenido
 
@@ -91,7 +93,7 @@ Luego define diferentes constates:
     };
 
 El usuario selecciona mediante un menú donde se define ``audio``, ``quality`` y ``source``
-que se ofrencen en links con el formato ::
+que se configuran como atributos data del link::
 
 .. code-block::
 
@@ -100,19 +102,19 @@ que se ofrencen en links con el formato ::
 Donde ``data-type`` es el tipo de variable, ``data-id`` el valor para esa opción
 y ``class="sel"`` determina si esa es la opción seleccionada.
 
-Cuando se aprieta el botón Play se invoca la URL:
+Cuando se hace click en el botón Play se invoca la URL::
 
     http://www.cuevana.tv/player/source_get?def=**quality**&audio=**audio**&host=**source**&id=4773&tipo=pelicula
 
-Por ejemplo:
+Por ejemplo::
 
     http://www.cuevana.tv/player/source_get?def=360&audio=2&host=bayfiles&id=4773&tipo=pelicula
 
-Esta página presenta el captcha, que una vez superado redirige a la URL:
+Esta página presenta el captcha, que una vez superado redirige a la URL::
 
     http://go.cuevana.tv/?*URL_DESTINO*
 
-Por ejemplo:
+Por ejemplo::
 
     http://go.cuevana.tv/?http%3A%2F%2Fbayfiles.com%2Ffile%2FvIsf%2FkTvfNj%2Fthe.apparition.2012.bdrip.xvid-sparks.mp4%3Fcid%3D4773%26ctipo%3Dpelicula%26cdef%3D360
 
@@ -152,7 +154,7 @@ que usa Cuevana hace que se inyecte un javascript en la URL del servicio.
         document.getElementsByTagName('head')[0].appendChild(s);
     }
 
-En ese caso se inyecta el javascript:
+En ese caso se inyecta el javascript::
 
     http://sc.cuevana.tv/player/scripts/5/bayfiles.js
 
@@ -176,11 +178,11 @@ Para series:
 Donde ``ID`` es el identificador del contenido y ``LANG`` es el código
 del idioma en 2 letras mayúsculas (ES, EN, etc.)
 
-Para contenidos HD se agrega el sufijo *_720*
+Para contenidos HD se agrega el sufijo *_720*::
 
     http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
 
-Para peliculas es análogo pero un nivel más arriba.
+Para peliculas es análogo pero un nivel más arriba::
 
     http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
 
