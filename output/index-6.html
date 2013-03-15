@@ -43,6 +43,83 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/lorem-ipsum-para-spip.html">Lorem Ipsum para Spip</a>
+        <small>  
+             <span class="timeago" title="2009-03-26 20:39:24">2009-03-26 20:39:24</span>
+        </small></h1>
+        <p><a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a> es el texto
+que se usa habitualmente en diseño gráfico en demostraciones de
+tipografías o de borradores de diseño para probar el diseño visual antes
+de insertar el texto final.</p>
+<p>Cuando estamos desarrollando necesitamos ver cómo quedará el contenido,
+y debemos recurrir a un <em>copy &amp; paste</em> de caulquier cosa que tengamos a
+mano.</p>
+<p>La ventaja de un <em>Lorem Ipsum</em> sobre otros textos, es que este tiene una
+distribución del largo de las palabras bastante natural de las palabras
+lo que en textos largos queda mucho mejor que repetir un mismo fragmento
+una y otra vez.</p>
+<p>Hay muchos <a class="reference external" href="http://www.lipsum.com/">generadores de texto Lorem Ipsum</a>
+en internet, pero lo podemos hacer aún más fácil.</p>
+<div class="section" id="un-lorem-ipsum-automatico">
+<h2>Un Lorem Ipsum automático</h2>
+<p>Con la ayuda del plugin <a class="reference external" href="http://sanderkorvemaker.nl/jquery/jLorem.php">jQuery Lorem
+Ipsum</a> de Sander Korve
+hice un modelo (instalable como plugin) que permite insertar un texto
+del tamaño que queramos (por omisión, de 4 párrafos).</p>
+<p>Podés bajarlo desde acá:</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/loremipsum.zip">|image1|</a></td>
+</tr><tr><td>Lorem Ipsum Plugin version 0.2</td>
+</tr></tbody></table><p>O por SVN:</p>
+<pre class="literal-block">
+svn checkout svn://zone.spip.org/spip-zone/_plugins_/_test_/loremipsum
+</pre>
+</div>
+<div class="section" id="instalacion">
+<h2>Instalación</h2>
+<p>La instalación es igual que con la de cualquier plugin: descomprimirlo
+en la carpeta <em>/plugins</em> y activarlo.</p>
+<p>Requiere además que los esqueletos tengan la baliza <tt class="docutils literal">#INSERT_HEAD</tt>
+dentro del header, ya que allí se incluirá el javascript necesario para
+su funcionamiento.</p>
+</div>
+<div class="section" id="funcionamiento-basico">
+<h2>Funcionamiento básico</h2>
+<p>La inclusión de un <em>Lorem Ipsum</em> se basa en el modelo <em>lorem.html</em>
+incluído con el plugin, por lo que hay dos maneras de llamarlo:</p>
+<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> En el cuerpo (texto, descripción, etc) de un artículo: <tt class="docutils literal">&lt;lorem&gt;</tt></p>
+<p><img alt="image3" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Predefinido en un esqueleto: <tt class="docutils literal">#MODELE{lorem}</tt></p>
+<p>¡y listo!</p>
+</div>
+<div class="section" id="parametros">
+<h2>Parámetros</h2>
+<p>El modelo acepta algunos parámetros para configurar la longitud del
+texto. Por ejemplo <tt class="docutils literal">&lt;lorem5&gt;</tt> creará 5 párrafos.</p>
+<p>Pero también se puede especificar más datos:</p>
+<p><img alt="image4" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>type</strong>: permite especificar que tipo de resultado se quiere.
+Las opciones válidas son <strong>paragraphs</strong>, <strong>words</strong> o <strong>characters</strong> para
+párrafos, palabras o characteres. Así: creará un texto de 25 palabras.
+El valor por omisión es <strong>paragraphs</strong>.</p>
+<p><img alt="image5" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>amount</strong>: Es lo mismo que el ID pasado al modelo: es lo mismo
+que . Por ejemplo <tt class="docutils literal"><span class="pre">[(#MODELE{lorem}{amount=5})]</span></tt>
+[<a class="reference external" href="blog/article/lorem-ipsum-para-spip#nb1">1</a>].</p>
+<p><img alt="image6" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>ptags</strong>: Permite agregar las etiquetas &lt;code&lt;&gt;P&lt;&gt;/code&gt;
+alrededor de cada párrafo. Los valores aceptados son <strong>true</strong> o
+<strong>false</strong>. Por omisión es <strong>true</strong>.</p>
+</div>
+<div class="section" id="una-astucia">
+<h2>Una astucia</h2>
+<p>Una forma de mostrar contenido en un artículo (o cualquier elemento) sin
+tener que editar cada artículo sólo para poner <tt class="docutils literal">&lt;lorem&gt;</tt> es invocar el
+modelo siempre y cuando no exista contenido en la baliza</p>
+<p>Por ejemplo [<a class="reference external" href="blog/article/lorem-ipsum-para-spip#nb2">2</a>]:</p>
+</div>
+        <p>
+        
+            <a href="posts/lorem-ipsum-para-spip.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/auto-podcast.html">Auto Podcast</a>
         <small>  
              <span class="timeago" title="2009-03-21 12:53:03">2009-03-21 12:53:03</span>
@@ -699,69 +776,6 @@ de desarrollo web, en particular) que se ha cargado Feedburner…</blockquote>
         <p>
         
             <a href="posts/yahoo-pipes-como-por-un-tubo.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/esqueletos-accion.html">Esqueletos Acción</a>
-        <small>  
-             <span class="timeago" title="2009-02-23 19:28:33">2009-02-23 19:28:33</span>
-        </small></h1>
-        <p>En septiembre de 2008 participé con un grupo de compañeros de facultad
-en el <a class="reference external" href="http://www.undec.edu.ar/Cacic2008/esp/index.html">Congreso Argentino de Ciencias de la
-Computación</a>
-realizado en la ciudad de Chilecito, La Rioja.</p>
-<p>Allí realicé un taller de 20 horas sobre <em>Accesibilidad para la web</em> a
-cargo de las licenciadas Ivana Harrari y Ana Paola Amadeo, docentes de
-la Universidad Nacional de La Plata.</p>
-<p>El taller fue de un nivel bastante bajo y con errores de implementación
-bastante groseros, partiendo de que parte del material de práctica
-estaba en formato Adobe Shockwave y todo el curso se centraba en
-software para Windows. Las docentes, de cualquier manera, fueron muy
-amables y abiertas a escuchar nuestras inquietudes.</p>
-<p>Por este motivo, con los dos compañeros que participamos de este taller,
-Lourdes Dorado y Agustín Martina, nos propusimos aprovecharlo todo lo
-que pudiésemos.</p>
-<p>Desde aquí se puede bajar los informes de los trabajos prácticos
-realizados:</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/Grupo10_Pract1.pdf">|image1|</a></td>
-</tr><tr><td>Workshop sobre Accesibilidad web TP Nº 1</td>
-</tr></tbody></table><table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/Grupo10_Pract2.pdf">|image3|</a></td>
-</tr><tr><td>Workshop sobre Accesibilidad web TP Nº 2</td>
-</tr></tbody></table><table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/Grupo10_Pract3.pdf">|image5|</a></td>
-</tr><tr><td>Workshop sobre Accesibilidad web TP Nº 3</td>
-</tr></tbody></table><p>Además, la consigna del trabajo final era evaluar las accesibilidad y
-usabilidad de un sitio web a elección, por ejemplo, el de la facultad de
-procedencia de cada grupo. Como el de <a class="reference external" href="http://efn.uncor.edu">nuestra
-facu</a> nos avergüenza, decidimos construir
-nosotros que respete las normas.</p>
-<p>Nos basamos en un <a class="reference external" href="http://sitecreative.net">diseño libre</a> y mejoramos
-aquellos aspectos que no satisfacían completamente los requerimientos.
-El resultado es el proyecto <a class="reference external" href="http://lab.nqnweb%7C%20Marso%20%7C%20Ben%20%7C%2023%20a%C3%B1os%20%7Cs.com/accion">*Accion
-Inmobiliaria*</a></p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH463/Pantallazo-6-be9ab.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 55)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>Podés ver la <a class="reference external" href="http://lab.nqnwebs.com/accion">demo online</a>.</p>
-<div class="section" id="caracteristicas">
-<h2>Características</h2>
-<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> CSS y XHTML estándar válido
-<img alt="image7" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Se estudió el contraste de colores y el tamaño de la fuente
-para facilitar la lectura.
-<img alt="image8" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Accesibilidad probada en navegadores en modo texto (Elink) y
-lectores de pantalla.
-<img alt="image9" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Licenciado bajo GPLv3</p>
-</div>
-<div class="section" id="descargar">
-<h2>Descargar</h2>
-<p>Podés bajarte los esqueletos, modificarlos y usarlos. Como se basa en
-GPL, tus trabajos derivados deben ser ofrecidos libremente.</p>
-</div>
-        <p>
-        
-            <a href="posts/esqueletos-accion.html#disqus_thread">Comments</a>
         
         </p></div>
     

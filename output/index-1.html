@@ -43,6 +43,89 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/lo-que-hace-un-geek-cuando-ama.html">Lo que hace un geek cuando ama</a>
+        <small>  
+             <span class="timeago" title="2011-11-11 20:43:47">2011-11-11 20:43:47</span>
+        </small></h1>
+        <p>Mi computadora de escritorio, la primera que compré trabajando como
+desarrollador de software, es del 2005. La "morocha", una AMD64 con
+placa madre <a class="reference external" href="http://www.asus.com/Motherboards/AMD_Socket_754/K8N">Asus
+K8N</a> que se la
+sigue bancando.</p>
+<img alt="/images/1110133923_20ebd-30987.jpg" class="align-center" src="images/1110133923_20ebd-30987.jpg"><p>Aquel año me enamoré, no por primera vez, pero sí mucho. Aunque resultó
+una <a class="reference external" href="http://www.textosypretextos.com.ar/Hurgando-en-el-Gmail">historia
+complicada</a>,
+es lindo recordar cuanto uno es capaz de amar y ser amado. Y reirse,
+también, de cuán estúpido se puede ser en ese estado.</p>
+<div class="section" id="el-tatuaje-digital">
+<h2>El tatuaje digital</h2>
+<p>Hay <a class="reference external" href="http://www.ascodevida.com/amor/42152">gestos de amor</a> que no
+miden consecuencias y son dificiles de comprender. Yo, por ejemplo,
+decidí "hackear" la BIOS de mi maquina recién comprada y poner una foto
+de aquella mujer amada como pantalla de splash, esa que se muestra apenas
+se enciende la computadora, mucho antes de cargar cualquier sistema
+operativo.</p>
+<p>Si bien por entonces ya usaba linux, para hacer esto usé una aplicación
+oficial de Asus que venía en el Windows instalado, que pronto, a falta
+de espacio en disco y necesidad, desapareció.</p>
+<p>La historia siguió, por supuesto. Aquel amor terminó pero esa imagen
+quedó allí, tatuada. Mientras vivía solo mucho no me importaba, quizas
+porque reiniciaba muy poco la computadora, quizas porque uno naturaliza
+una cicatriz hasta volverse indiferente.</p>
+<p>Cuando un amor nuevo llegó y más tarde la convivencia, encender la
+Morocha cada mañana empezó a hacerse un momento gracioso pero incómodo.
+Para colmo, aun estando dispuesto a reinstalar Windows con este único
+propósito, aquel programita de Asus se me hizo inconseguible .</p>
+<p>Hasta que hoy, seis años despues, me animé a la cirugía.</p>
+</div>
+<div class="section" id="si-no-podes-cambiar-el-tatuaje-cambia-de-piel">
+<h2>Si no podés cambiar el tatuaje, cambiá de piel</h2>
+<p>Encontré un <a class="reference external" href="http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip">firmware
+actualizado</a>
+para la BIOS. Aunque no hubiera problemas con la que tenía, actualizarlo
+traería el splash original de Asus.</p>
+<p>El problema, felación habitual a Microsoft de las fabricantes de
+hardware, es que <a class="reference external" href="http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip">la utilidad para actualizar
+BIOS</a> es para
+D.O.S.. WTF!</p>
+<p>La
+<a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html">solución</a>
+es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a></p>
+<pre class="code bash literal-block">
+<span class="c"># obtener una imagen booteable de freeDOS y montarla en un directorio
+</span>wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
+gunzip FDOEM.144.gz
+mkdir /tmp/floppy
+mount -t vfat -o loop FDOEM.144 /tmp/floppy
+
+<span class="c"># obtener la herramienta para actualizar el bios y la imagen, y moverlos
+</span>wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
+unzip AFUDOS211.zip
+mv AFUDOS.exe /tmp/floppy
+wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
+unzip K8n1011.zip
+mv 1011.rom /tmp/floppy
+
+<span class="c"># desmontar
+</span>umount /tmp/floppy
+
+<span class="c"># crear una ISO y grabar a un disco virgen
+# (tambien se podría grabar a un pendrive)
+</span>mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
+cdrecord -v bootcd.iso
+</pre>
+<p>Reinciar, bootear el CD de FreeDOS y ejecutar:</p>
+<pre class="literal-block">
+afudos /i1011.rom
+</pre>
+</div>
+        <p>
+        
+            <a href="posts/lo-que-hace-un-geek-cuando-ama.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/cuevanalinks-ahora-para-seres.html">Cuevanalinks, ahora para seres humanos</a>
         <small>  
              <span class="timeago" title="2011-08-03 08:51:21">2011-08-03 08:51:21</span>
@@ -551,21 +634,6 @@ usuarios, seguramente podremos hacerlo durar más.</p>
         <p>
         
             <a href="posts/la-sanguijuela-de-cuevana.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/veinteanero.html">Veinteañero</a>
-        <small>  
-             <span class="timeago" title="2011-04-08 08:47:13">2011-04-08 08:47:13</span>
-        </small></h1>
-        <p>Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobijó.
-Al tiempo usé Mandrake, después Debian y desde su primera versión (2004)
-Ubuntu.</p>
-<p>Un largo camino de aprendizaje... que alguna vez recorreré ;-)</p>
-        <p>
-        
-            <a href="posts/veinteanero.html#disqus_thread">Comments</a>
         
         </p></div>
     

@@ -43,6 +43,92 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/ipython-la-interactividad-al-poder.html">IPython, la interactividad al poder</a>
+        <small>  
+             <span class="timeago" title="2010-10-18 04:43:24">2010-10-18 04:43:24</span>
+        </small></h1>
+        <p>A lo largo de esta vida he amado, he llorado y reído, me han salido
+canas y dí algunas charlas y talleres.</p>
+<p>Me gusta la docencia, probable herencia de <a class="reference external" href="posts/blog/article/grosa">una
+grosa</a>. Me gusta compartir lo que sé, instarme a
+aprender para compartir con otros y aprender cuando enseño. Educación
+horizontal, educación popular.</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="images/chino-garce.jpg">|image1|</a></td>
+</tr></tbody></table><p>El viernes pasado, en la
+<a class="reference external" href="posts/blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> debía dar una de
+las primeras charlas, <em>`IPython, la interactividad al
+poder &lt;http://ar.pycon.org/2010/conference/schedule/event/91/&gt;`_</em> .
+Entró al cronograma en una segunda tanda de selección, con más sorpresa
+que el chino Garcé a Sudáfrica 2010. El problema es que para cuando me
+invitaron yo ya había descartado mi participación en PyCon y aceptado
+dar <a class="reference external" href="posts/blog/article/charla-python-a-los-bifes">una en mi facu</a>, también
+sobre Python pero otra. Ergo, ¡tenía que preparar 2 charlas!</p>
+<p>En el medio, solucionar horribles bugs de
+<a class="reference external" href="http://code.google.com/p/gpec2010/">GPEC</a> para la release de la
+semana que viene, un casamiento a 1500 km de mi casa (por suerte no
+mío), aprender a <a class="reference external" href="http://article.gmane.org/gmane.comp.python.myhdl/1536/">diseñar
+hardware</a>,
+malabarear estres con las <a class="reference external" href="http://python.org.ar/pyar/RemerasV3">remeras de
+PyAr</a> y terminar el
+<a class="reference external" href="posts/blog/article/gpec-2010-el-poster">poster</a> que se me ocurrió
+presentar.</p>
+<p>El contexto no favoreció a preparar la charla con anticipación. De
+hecho, pude hacerme lugar el jueves de 0:05 a 4 am para leer el manual y
+escribir lo poco que escribí. Mucha audacia teniendo en cuenta que
+algunas de las cosas que quería (de alguna manera debía) mostrar, no las
+uso/aba realmente (eso de <em>instarme a aprender</em> es posta) y más aun,
+considerando que las presentaciones con "demo" incluída son una fiesta
+orgiástica para <a class="reference external" href="http://en.wikipedia.org/wiki/Murphy's_law">Murphy</a></p>
+<p>Por eso, para descompimir la ansiedad y la casi certeza de que algo
+podía salir mal, lo primero que hice fue echarle la culpa a John Lenton,
+que fue el que
+<a class="reference external" href="http://permalink.gmane.org/gmane.org.user-groups.python.argentina/38170">incitó</a>
+a la vergüenza. La charla comienza con este disclaimer:</p>
+<pre class="literal-block">
+Disclaimer
+-----------------
+
+Todo lo que sigue es culpa de John Lenton:
+
+
+    2010/7/28 John Rowland Lenton :
+    &gt; Hola!
+    &gt;
+    &gt; Estamos organizando PyConAr. Viste? La conferencia de Python en
+    &gt; Argentina (...) te vas a dar cuenta cuando
+    &gt; estés acá en Córdoba que podrías haber presentado tu charla, y te vas
+    &gt; a sentir muy zonzo.
+</pre>
+<p>Para colmo de riesgos, descubrí algo que supongo que es un bug (TODO:
+check and report this) con la utilidad <tt class="docutils literal">Demo</tt> de IPython que usé, en
+la versión estable (0.10) y la que está en desarrollo (0.11). Por eso
+tuve que hacer un downgrade a la 0.9, que no tiene algunas cosas
+interesantes que quería mostrar (%paste, por ejemplo).</p>
+<p>Por supuesto, Murphy vino y se divirtió, pero no se burló
+sarcasticamente. Hasta que alguien me muestre un video y me ponga rojo
+de vergüenza voy a quedarme con la idea de que no estuvo tan mal. Alguno
+seguro no descrubrió nada nuevo, pero <a class="reference external" href="http://twitter.com/#!/martinvol/status/27447006335">otros parecieron
+satisfechos</a> y
+probablemente jueguen un ratito con IPython.</p>
+<div class="section" id="archivos-descarga">
+<h2>Archivos / Descarga</h2>
+<p>Como es una presentación interactiva, no hay "diapositivas". O sí, pero
+es un módulo python.</p>
+<p>Todo lo que usé (con nimios retoques respecto a lo mostrado el viernes)
+se puede bajar (o forkear) de
+<a class="reference external" href="http://github.com/nqnwebs/IPython-interactive-talk">GitHub</a> .</p>
+<pre class="literal-block">
+git clone git@github.com:nqnwebs/IPython-interactive-talk.git
+</pre>
+<p>O desde este Zip</p>
+</div>
+        <p>
+        
+            <a href="posts/ipython-la-interactividad-al-poder.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/pyconar-2010-el-orgullo-de.html">PyConAr 2010, el orgullo de pertenecer</a>
         <small>  
              <span class="timeago" title="2010-10-17 12:46:08">2010-10-17 12:46:08</span>
@@ -720,256 +806,6 @@ dias. ¿Será indicio de lo rápido que se programa con Django?</p>
         <p>
         
             <a href="posts/django-dash-hace-una-aplicacion.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/usando-pubsub-para-una-panel-de.html">Usando PubSub para un panel de mensajes</a>
-        <small>  
-             <span class="timeago" title="2010-08-03 12:56:55">2010-08-03 12:56:55</span>
-        </small></h1>
-        <p>La aplicación que estoy desarrollando,
-<a class="reference external" href="http://code.google.com/p/gpec2010">GPEC</a>, genera muchos mensajes que
-pueden ser útiles para el usuario.</p>
-<p>En softwares con <em>GUI’s</em> sencillas suele utilizarse la barra de estado
-para mostrar mensajes contextuales e información sobre el resultado de
-una acción. Pero si estos mensajes son muchos y de diversa índole, este
-espacio puede no bastar, sobre todo por la volatilidad de la información
-que la barra de estado muestra.</p>
-<p>Una solución posible es usar un panel con un <tt class="docutils literal">ListCtrl</tt> de manera de
-poder agregar los mensajes quedando un registro completo y cronológico;
-un <em>log</em> propiamente dicho.</p>
-<p><img alt="image0" src="images/mayavi2_logger-0f8f4.png">
-Surge acá un detalle: si los mensajes se generan desde "cualquier parte"
-del programa, todas esas "partes" deberían tener referencia de la
-instancia del panel/widget de log.</p>
-<p>Un ejemplo: todos las demostraciones de la aplicación de demo de
-<a class="reference external" href="http://wxpython.org">wxPython</a> tienen la siguiente estructura:</p>
-<pre class="literal-block">
-class TestPanel(wx.Panel):
-
-    def __init__(self, parent, log):
-        self.log = log
-        wx.Panel.__init__(self, parent, -1)
-        ...
-
-        self.log.WriteText(' message ... ')
-</pre>
-<p>Esto vuelve la aplicación muy acoplada: la instancia <tt class="docutils literal">log</tt> (que es un
-caja de texto en el demo) se pasea por distintos <em>namespaces</em> para estar
-disponible en todos lados.</p>
-<p>Denotemos la falta de flexibilidad: ¿que pasa si queremos ’loggear’
-mensajes desde un objeto donde no estaba previsto? ¿qué pasa si queremos
-cambiar el widget que muestra los mensajes y el método para anexar
-mensajes tiene otro nombre? ¿y si además de mostrarlos, con algunos los
-mensajes queremos hacer alguna otra cosa (ejecutar un simple sonido de
-alarma, por ejemplo) ?</p>
-<div class="section" id="pubsub">
-<h2>PubSub</h2>
-<p>Una manera más elegante y eficiente es utilizar
-<a class="reference external" href="http://pubsub.sourceforge.net">PubSub</a> una implentación en Python del
-paradigma de
-<a class="reference external" href="http://en.wikipedia.org/wiki/Publish/subscribe">publicación-suscripción</a>.</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH357/pubsub_concept-47f35.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 56)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>Su implementación es trivial. Incluso viene incorporado dentro de
-wxPython.</p>
-<p>El <tt class="docutils literal">Publisher</tt> (generalmente importado como <tt class="docutils literal">pub</tt>) envía mensajes
-(cualquier objeto python) asociados a un tópico (una cadena)</p>
-<pre class="literal-block">
-from wx.lib.pubsub import Publisher as pub
-
-pub.sendMessage('log', ('ok', 'Ready! You can send any message from anywhere.') )
-</pre>
-<p>En este ejemplo, el tópico, que elegí arbritrariamente, es ’log’, y el
-mensaje es la tupla
-<tt class="docutils literal">('ok', 'Ready! You can send any message from <span class="pre">anywhere.')</span></tt></p>
-<p>Del otro lado del mostrador, cualquiera puede suscribirse a los mensajes
-con determinado tópico y asociarlos a un método/función.</p>
-<pre class="literal-block">
-class LogMessagesPanel(wx.Panel):
-    def __init__(self, parent, id):
-        wx.Panel.__init__(self, parent, id)
-
-        pub.subscribe(self.OnAppendLog, 'log')
-
-    def OnAppendLog(self, msg):
-        data = msg.data&lt;img105|center&gt;
-        #do your things with the data!
-</pre>
-<p><tt class="docutils literal">pub.subscribe</tt> <em>bindea</em> los mensajes con tópico <em>’log’</em> al método
-OnAppendLog pasando un objeto <tt class="docutils literal">msg</tt>. Nuestro mensaje real, la tupla
-que enviamos, está en <tt class="docutils literal">msg.data</tt></p>
-<p>Nada impide que sean muchos los objetos que envien mensajes con tópico
-<em>’log’</em> y muchos otros estén suscriptos a él. Y esto funciona sin
-importar dónde ocurra cada cosa!
-[<a class="reference external" href="blog/article/usando-pubsub-para-una-panel-de#nb1">1</a>].</p>
-<p>Como ejemplo completo dejo el panel log. Podés probarlo creando otro
-frame independiente que envie mensajes de log.</p>
-<pre class="literal-block">
-#       Log Panel: example of PubSub implementation
-#
-#       Copyright 2010 Martin Gaitán &lt;gaitan(at)gmail.com&gt;
-#
-#       This program is free software; you can redistribute it and/or modify
-#       it under the terms of the GNU General Public License as published by
-#       the Free Software Foundation; either version 2 of the License, or
-#       (at your option) any later version.
-#
-#       This program is distributed in the hope that it will be useful,
-#       but WITHOUT ANY WARRANTY; without even the implied warranty of
-#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#       GNU General Public License for more details.
-#
-#       You should have received a copy of the GNU General Public License
-#       along with this program; if not, write to the Free Software
-#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-#       MA 02110-1301, USA.
-
-
-import wx
-from wx.lib.pubsub import Publisher as pub
-import time
-import sys
-
-from wx.lib.embeddedimage import PyEmbeddedImage
-
-icons = {}
-icons['ok'] = PyEmbeddedImage(
-    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAK5QTFRF"
-    "AAAA////2vO/+P3z+f31VJkEVJcEU5UEUpQEcc0GcMsGcMkGb8gGbcYGbcQGbMEGZLYFXKYF"
-    "UJAET48ETo0ETYwEasAGddALd9ANeNERetETe9IVfdIXfdMZftMbf9Mci9cwlNpAlttElttF"
-    "l9xHmtxLm91NnN1Pnd1Rnt5ToN9Xod9ZpuFhp+FjqOFlquJnr+RyseR0veiKwuqSy+2j4PTI"
-    "9vzv9/zxidYs3fPCGN7g1AAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAACXBIWXMAAAsT"
-    "AAALEwEAmpwYAAAAB3RJTUUH2gcMBC0Irn+MQAAAAINJREFUGNNjYCAJ6Bui8vXkpAxQ+LJa"
-    "ylx6CL6utKYGJyszkGVpAuZLaahzsYH4phYKxgwMOpJqatzsID6ThbIGt5G+hKoKDweIz8Ai"
-    "YaGtIiOnrMIrxAwxjJlXXl1VSYlPmBlmPLOAuLIivwgzwkJzQV4xUWZkJ5mzi7CgOtqMBbcH"
-    "AVouCiZO5Tf/AAAAAElFTkSuQmCC")
-
-#----------------------------------------------------------------------
-icons['error'] = PyEmbeddedImage(
-    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAAA"
-    "CXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1QsKCTIOk1O0sAAAAhpJREFUOMudk71Pk1EU"
-    "xn/3bQvlo76gxBpNoGibArYLxJREh466MmnSgRH+IjsydGYjspBAWEQHMJIWmmhj+LAkpC1N"
-    "Wyj2PcfhfUsQiRpPcnOTm/P8nuQ59xhuVA5SwDyQBsa95xKwDixlYOt6v7khfjscCi1MJpME"
-    "w2F8AwOoKp2zM87LZYqFAtVmM5uBxd8AOXg3nUy+HJmZ4XJ7G+f0FBwHVUUMWEN38U9NUt3d"
-    "5VOxuJqBVwC+rvN0Mvn6XixGe3MTbTRABFVBRUEEabboHHyjPxbDtqzoi2r1wTKsmBykhkOh"
-    "98/m5rhYW0OdDqqKKqh6YgXFhakxBFMpPm9sUGu1Zi1gfjKR4HJnB3UcEFABFXEP6oEUVMFx"
-    "uMjneTwWAZj3A+lg+D4/PnxERRkrf+dPtW/fQao1Ag8fAaT9wLjVP4iKG9jfSkRR7WB6AgDj"
-    "FnCV9r8A8PpUBQA/UOrUzyYUg6rDl5ERt0HEvVE3PDdVRN0gtdkCKFnA+vnJCcYeuiL/Iu46"
-    "iidWwRocpF2rAaxbwNL+3h6BeNwly3WRNzrtTkNQY/BHIpQODwGWrAxs1VqtbKWQp2fqqQu5"
-    "5op3qygYQ080RuPggHq7nc3Alg9gGVaeVyqzts8XHUgkcBoN5KJ99RMVMHaI3vgEjXKZwvHx"
-    "agbe3LpMdl/fwpPRUQK2jentRUVwmk069Tpfj466zou3buP/rPNPwkdmHrlYdncAAAAASUVO"
-    "RK5CYII=")
-
-#----------------------------------------------------------------------
-icons['info'] = PyEmbeddedImage(
-    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAAA"
-    "CXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1QMCBiAyOlCc9wAAADV0RVh0Q29tbWVudAAo"
-    "YykgMjAwNCBKYWt1YiBTdGVpbmVyCgpDcmVhdGVkIHdpdGggVGhlIEdJTVCQ2YtvAAACq0lE"
-    "QVQ4y5WSS0hUcRTGv//cO+O9OtdHJllqZlI+CEUiE8ShBiXUpKKQbGLKcGG0CBOyRcsQMapF"
-    "j02ii4igAgMDJcgQSXQmSkrNijSVTJ1xdJy5d6739W/loDURfqtz4Pt+nHM4BBFUXNnUTCkc"
-    "BiUpIISYiDHLEPq0/2Vr459edn1TVN6UwTCk72JtZVq5vQBxAg9VN+DxBVN7ej9cISbmLKV6"
-    "SX9X69eIAJYlb++11G/fk7ljLBBSRmd9khJaVVlF06NtJflZ6enJe1tuPXYBiF/LMGtFSdXV"
-    "2/Xnj5YVH8z5rKi6m7eYFQBEpyCqTg3vSmiWi+YQzXM7dSYlc3L8bScAmMIkhj1Xbi9AIKSO"
-    "sSxDLWbGIIRQUBiabiiUwuganOwuKswBw3Kn1nJhwKpC4wUrD1nRV1XNSDQzpguJsZxzV7Lg"
-    "yN+91QElkDrlEf08zyEgqVxtXYNpww0IIUTRdEiyajIMKiZYo+D1Sy5RCjErQUkbnpaGFUU3"
-    "qaqxFuEBiGFADM9KXl8gRpRVy4qk+jOSYzH6w/deVHQ6tyQp7m+LHsFqSfD6g4gTeLWjrVnc"
-    "sIKZ0QZ63gyDj2JzJ34tiwDw0yfqHye8/t7hmYUlUTZX7E+rGHKNwcph4q8bbBNCxzu7+uWZ"
-    "6fnstCTroWvtAzfPHM665P4yH2JYkui0Z1X7F5dy3IMjqsD6SsOrr/+DY6cbq2QqPC8rLbIU"
-    "HshGNM9B1XX4lkUMucbxzjWixXHS5SftNx5EBABAbV1DYohucQVkpDtOJDGEACwLdHXPBRnN"
-    "v6+j7c4U/qeaGrvV6bRRz2IfFWUX/T75jDqdNhrJy/6DoQLA/bsPkZ2bjempaWxaTqeNzsy+"
-    "MgLSEP00+sLY7AQAUFV98nqNIMQfWVhYeJ2XF/sokuk3Vkw2XnyKHQQAAAAASUVORK5CYII=")
-
-#----------------------------------------------------------------------
-icons['warning'] = PyEmbeddedImage(
-    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAA"
-    "CXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1gIQDictt+6SdwAAAehJREFUOMuVk8FKG2EU"
-    "hb87mc40iTODEJlK7UZDxCCGQUqaMASCSGODdBe6ECJddOcwG/EJXBt0ZcBCwEVJVgWtr1AI"
-    "PoBQXAQKhRZc1EBJMX831hLItPbAvYvL4Ttnc4UIhfDIgLcAA3jdgC/jfHoUwISjeXgOcAFH"
-    "QHWcT4tI91KwWlhY0J6kUloKVkPw7g0wYS8NemJ3l0yzSRp0E/buBQihOAXFbLksej6Pns+T"
-    "LZdlCoohFPmXdqB7AsNep6M8z1Oe56lep6NOYLgD3b82CGHFhaWM74vh+ziOg+M4GL5PxvfF"
-    "haUQViIBJuxnwUgEAaJpWJaFZVmIppEIArJgmLA/FhDC+jSk5woFjFIJEcG2bWzbRkQwSiXm"
-    "CgWmIR3C+gggBDGgsXibruk6IvKngQiarpMIAhbBMKARgsDtCuHVLLReLC8bk2dnEIuhlKLf"
-    "7wOQTCYREbi54WptjQ/n54NLqDfgnYQQewxXT8GaPz7mYbWKUgqlFLVaDYB2u42IICL8OD3l"
-    "YmODLnz/DJOawGYczJlcjnilcmcUEVzXxXXdkVu8UmEmlyMOpsCmbMPXl5CaPThgol6/S/89"
-    "wAhARLhutbjc2uI9fJNDGD4DecD/6SfwEZT+CQ4H8GYi4i+idA3DHjR/AZfefQgctOETAAAA"
-    "AElFTkSuQmCC")
-
-class LogMessagesPanel(wx.Panel):
-    def __init__(self, parent, id):
-        wx.Panel.__init__(self, parent, id)
-
-        self.list = wx.ListCtrl(self, -1,  style=  wx.LC_REPORT|wx.SUNKEN_BORDER)
-
-        self.setupList()
-
-        sizer = wx.BoxSizer()
-        sizer.Add(self.list, 1, wx.EXPAND)
-        self.SetSizerAndFit(sizer)
-
-        pub.subscribe(self.OnAppendLog, 'log')
-
-    def setupList(self):
-        """sets columns and append a imagelist """
-
-         #setup first column (which accept icons)
-        info = wx.ListItem()
-        info.m_mask = wx.LIST_MASK_TEXT | wx.LIST_MASK_IMAGE | wx.LIST_MASK_FORMAT
-        info.m_image = -1
-        info.m_format = 0
-        info.m_text = "Message"
-        self.list.InsertColumnInfo(0, info)
-        self.list.SetColumnWidth(0, 550)
-
-        #insert second column
-        self.list.InsertColumn(1, 'Time')
-        self.list.SetColumnWidth(1, 70)
-
-        #setup imagelist and an associated dict to map status-&gt;image_index
-        imgList = wx.ImageList(16, 16)
-
-
-        self.icon_map = {}
-        for key, bitmap in icons.iteritems():
-            indx = imgList.Add( bitmap.GetBitmap() )
-            self.icon_map[key] = indx
-        self.list.AssignImageList(imgList, wx.IMAGE_LIST_SMALL)
-
-    def OnAppendLog(self, msg):
-        ico = self.icon_map[msg.data[0]]
-        message = msg.data[1]
-        index = self.list.InsertImageStringItem(sys.maxint, message, ico)
-        self.list.SetStringItem(index, 1, time.strftime('%H:%M:%S'))
-
-        self.list.EnsureVisible(index) #keep scroll at bottom
-
-class TestFrame(wx.Frame):
-    def __init__(self, parent, id):
-        wx.Frame.__init__(self, parent, id, "Log Panel demo")
-        self.log = LogMessagesPanel(self, -1)
-        self.SetSize((620,150))
-        self.SetMinSize((620,150))
-
-if __name__ == "__main__":
-
-    app = wx.PySimpleApp(0)
-    wx.InitAllImageHandlers()
-    main_frame = TestFrame(None, -1)
-    app.SetTopWindow(main_frame)
-    main_frame.Show()
-
-    pub.sendMessage('log', ('ok', 'Ready! You can send any message from anywhere.') )
-    pub.sendMessage('log', ('info', "Just import pubsub.Publisher and send a 'log' message") )
-    pub.sendMessage('log', ('warning', "The message data is a tuple ('icon', 'message') ") )
-</pre>
-</div>
-        <p>
-        
-            <a href="posts/usando-pubsub-para-una-panel-de.html#disqus_thread">Comments</a>
         
         </p></div>
     

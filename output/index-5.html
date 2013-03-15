@@ -43,6 +43,58 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/project-euler-problema-2.html">Project Euler, Problema #2</a>
+        <small>  
+             <span class="timeago" title="2009-09-20 16:37:47">2009-09-20 16:37:47</span>
+        </small></h1>
+        <p>El <a class="reference external" href="http://projecteuler.net/index.php?section=problems&amp;id=2">problema nº
+2</a> pide
+obtener la suma de todos los números impares pertenencientes a la
+<a class="reference external" href="http://es.wikipedia.org/wiki/sucesi%C3%B3n_de_Fibonacci">sucesión de
+Fibonacci</a> menores
+a 4 millones.</p>
+<p>El código con el que lo resolví es este:</p>
+<pre class="literal-block">
+def fibo(max):
+        a, b = 0, 1
+           n = a + b
+           while n &lt; max:
+                yield n
+                a, b = b, n
+                n = a + b
+
+sum([i for i in fibo(4000000) if i%2 == 0])
+</pre>
+<p>El resultado es 4613732.</p>
+<div class="section" id="explicacion">
+<h2>Explicación</h2>
+<p>Fibonacci es el "hola mundo matemático" y Python luce su elegancia con
+este problema.</p>
+<p>El aspecto interesante de la función <strong>fibo()</strong> definida en el código de
+arriba es que no se trata de una función común sino de un generador.
+Sintácticamente la diferencia está en que no utiliza la sentencia
+<strong>return</strong> sino
+<strong>`yield &lt;http://docs.python.org/reference/simple_stmts.html#the-yield-statement&gt;`_</strong>
+.</p>
+<p>La definición de
+<em>`yield &lt;http://www.wordreference.com/definition/yield&gt;`_</em>. en su
+acepción de verbo, dice «end resistance, especially under pressure or
+force;». Ceder, no oponer resistencia.</p>
+<p>La diferencia sustancial entre un yield y un return es que el yield
+devuelve el resultado parcial de cada iteración y hace una "marca de
+entrada" desde donde se comenzará a ejecutar la próxima vez que la
+función (el generador) sea invocado.</p>
+<p>Esto permite una recursividad con "<a class="reference external" href="http://en.wikipedia.org/wiki/Lazy_evaluation">evaluación
+perezosa</a>", mucho más
+eficiente en términos computacionales.</p>
+</div>
+        <p>
+        
+            <a href="posts/project-euler-problema-2.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/resolviendo-project-euler-con.html">Resolviendo Project Euler con Python</a>
         <small>  
              <span class="timeago" title="2009-09-18 01:48:15">2009-09-18 01:48:15</span>
@@ -592,83 +644,6 @@ mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spi
         <p>
         
             <a href="posts/backup-selectivo-de-tablas-mysql.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/lorem-ipsum-para-spip.html">Lorem Ipsum para Spip</a>
-        <small>  
-             <span class="timeago" title="2009-03-26 20:39:24">2009-03-26 20:39:24</span>
-        </small></h1>
-        <p><a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a> es el texto
-que se usa habitualmente en diseño gráfico en demostraciones de
-tipografías o de borradores de diseño para probar el diseño visual antes
-de insertar el texto final.</p>
-<p>Cuando estamos desarrollando necesitamos ver cómo quedará el contenido,
-y debemos recurrir a un <em>copy &amp; paste</em> de caulquier cosa que tengamos a
-mano.</p>
-<p>La ventaja de un <em>Lorem Ipsum</em> sobre otros textos, es que este tiene una
-distribución del largo de las palabras bastante natural de las palabras
-lo que en textos largos queda mucho mejor que repetir un mismo fragmento
-una y otra vez.</p>
-<p>Hay muchos <a class="reference external" href="http://www.lipsum.com/">generadores de texto Lorem Ipsum</a>
-en internet, pero lo podemos hacer aún más fácil.</p>
-<div class="section" id="un-lorem-ipsum-automatico">
-<h2>Un Lorem Ipsum automático</h2>
-<p>Con la ayuda del plugin <a class="reference external" href="http://sanderkorvemaker.nl/jquery/jLorem.php">jQuery Lorem
-Ipsum</a> de Sander Korve
-hice un modelo (instalable como plugin) que permite insertar un texto
-del tamaño que queramos (por omisión, de 4 párrafos).</p>
-<p>Podés bajarlo desde acá:</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/loremipsum.zip">|image1|</a></td>
-</tr><tr><td>Lorem Ipsum Plugin version 0.2</td>
-</tr></tbody></table><p>O por SVN:</p>
-<pre class="literal-block">
-svn checkout svn://zone.spip.org/spip-zone/_plugins_/_test_/loremipsum
-</pre>
-</div>
-<div class="section" id="instalacion">
-<h2>Instalación</h2>
-<p>La instalación es igual que con la de cualquier plugin: descomprimirlo
-en la carpeta <em>/plugins</em> y activarlo.</p>
-<p>Requiere además que los esqueletos tengan la baliza <tt class="docutils literal">#INSERT_HEAD</tt>
-dentro del header, ya que allí se incluirá el javascript necesario para
-su funcionamiento.</p>
-</div>
-<div class="section" id="funcionamiento-basico">
-<h2>Funcionamiento básico</h2>
-<p>La inclusión de un <em>Lorem Ipsum</em> se basa en el modelo <em>lorem.html</em>
-incluído con el plugin, por lo que hay dos maneras de llamarlo:</p>
-<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> En el cuerpo (texto, descripción, etc) de un artículo: <tt class="docutils literal">&lt;lorem&gt;</tt></p>
-<p><img alt="image3" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Predefinido en un esqueleto: <tt class="docutils literal">#MODELE{lorem}</tt></p>
-<p>¡y listo!</p>
-</div>
-<div class="section" id="parametros">
-<h2>Parámetros</h2>
-<p>El modelo acepta algunos parámetros para configurar la longitud del
-texto. Por ejemplo <tt class="docutils literal">&lt;lorem5&gt;</tt> creará 5 párrafos.</p>
-<p>Pero también se puede especificar más datos:</p>
-<p><img alt="image4" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>type</strong>: permite especificar que tipo de resultado se quiere.
-Las opciones válidas son <strong>paragraphs</strong>, <strong>words</strong> o <strong>characters</strong> para
-párrafos, palabras o characteres. Así: creará un texto de 25 palabras.
-El valor por omisión es <strong>paragraphs</strong>.</p>
-<p><img alt="image5" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>amount</strong>: Es lo mismo que el ID pasado al modelo: es lo mismo
-que . Por ejemplo <tt class="docutils literal"><span class="pre">[(#MODELE{lorem}{amount=5})]</span></tt>
-[<a class="reference external" href="blog/article/lorem-ipsum-para-spip#nb1">1</a>].</p>
-<p><img alt="image6" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>ptags</strong>: Permite agregar las etiquetas &lt;code&lt;&gt;P&lt;&gt;/code&gt;
-alrededor de cada párrafo. Los valores aceptados son <strong>true</strong> o
-<strong>false</strong>. Por omisión es <strong>true</strong>.</p>
-</div>
-<div class="section" id="una-astucia">
-<h2>Una astucia</h2>
-<p>Una forma de mostrar contenido en un artículo (o cualquier elemento) sin
-tener que editar cada artículo sólo para poner <tt class="docutils literal">&lt;lorem&gt;</tt> es invocar el
-modelo siempre y cuando no exista contenido en la baliza</p>
-<p>Por ejemplo [<a class="reference external" href="blog/article/lorem-ipsum-para-spip#nb2">2</a>]:</p>
-</div>
-        <p>
-        
-            <a href="posts/lorem-ipsum-para-spip.html#disqus_thread">Comments</a>
         
         </p></div>
     
