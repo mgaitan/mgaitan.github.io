@@ -1,12 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Thu, 07 Mar 2013 14:45:15 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.com/posts/como-funciona-cuevana.html</link><description>&lt;body&gt;&lt;p&gt;Estimando cuanto trabajo significa actualizar &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;Cuevana sources&lt;/a&gt;
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
+para el trabajo diario de un programador python: es el manejador
+de paquetes de nuestro entorno de trabajo (¡&lt;a class="reference external" href="http://www.virtualenv.org/en/latest/"&gt;virtual&lt;/a&gt; por favor!),
+con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
+(y, recursivamente, las dependencias que estas pudieran tener).&lt;/p&gt;
+&lt;p&gt;Conceptualmente es similar a los manejadores de paquetes de sistema como &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt;&lt;/tt&gt;,
+diferenciándose en que, por defecto, &lt;em&gt;consulta cada vez&lt;/em&gt; a una &lt;a class="reference external" href="https://pypi.python.org/pypi/"&gt;base de
+datos online&lt;/a&gt; si el paquete solicitado existe y de dónde
+puede bajar la última versión o la específica que se haya pedido.&lt;/p&gt;
+&lt;p&gt;Responder "qué, cuál y de dónde" es una tarea lenta porque dicha base de datos no es
+más que una página html por cada paquete con links que funcionan como un índice (como
+&lt;a class="reference external" href="https://pypi.python.org/simple/lxml/"&gt;este&lt;/a&gt;  que pip
+&lt;a class="reference external" href="https://github.com/pypa/pip/blob/f1fb4b4fda127529e24b71a4e03bb0b5df484ef6/pip/index.py#L141"&gt;debe parsear&lt;/a&gt;
+comparar y elegir la mejor opción para bajar (a veces incluso debe parsear la homepage
+del proyecto en busca de links de descarga, puaj!).&lt;/p&gt;
+&lt;p&gt;Por eso (y porque muchas veces la infraestructura se satura) el uso estándar de pip es lento.
+Pero hay algunas maneras de que lo sea menos. Veámoslas.&lt;/p&gt;
+&lt;div class="section" id="no-bajes-dos-veces-lo-mismo"&gt;
+&lt;h2&gt;No bajes dos veces lo mismo&lt;/h2&gt;
+&lt;p&gt;El funcionamiento básico de pip es instalar un paquete con &lt;tt class="docutils literal"&gt;pip install &amp;lt;paquete&amp;gt;&lt;/tt&gt;: busca, baja e
+instala el paquete. El flag &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download_cache=&amp;lt;path&amp;gt;&lt;/span&gt;&lt;/tt&gt; evita repetir el paso del medio,
+cosa tediosa cuando tenemos que instalar frecuentemente (por ejemplo en distintos virtualenvs)
+la misma dependencia o cuando el uso de ancho de banda es limitado.&lt;/p&gt;
+&lt;p&gt;Por ejemplo instalamos por primera vez &lt;a class="reference external" href="http://lxml.de/"&gt;lxml&lt;/a&gt; y vemos cuanto tarda.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
+Downloading/unpacking lxml
+  Downloading lxml-3.1.1.tar.gz &lt;span class="o"&gt;(&lt;/span&gt;3.3MB&lt;span class="o"&gt;)&lt;/span&gt;: 3.3MB downloaded
+  Storing download in cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+  Running setup.py egg_info &lt;span class="k"&gt;for &lt;/span&gt;package lxml
+    Building lxml version 3.1.1.
+
+    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
+
+
+Successfully installed lxml
+Cleaning up...
+
+real    2m58.276s
+user    0m38.822s
+sys 0m0.676s
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;¡3 minutos! Y eso que estoy en una conexión bastante rápida.&lt;/p&gt;
+&lt;div class="tip"&gt;
+&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;p&gt;Cualquier flag que pip acepta en su linea de comando se puede configurar como una
+&lt;a class="reference external" href="http://www.pip-installer.org/en/latest/configuration.html#environment-variables"&gt;variable de entorno&lt;/a&gt;. Entonces podemos setear flag por defecto en nuestro &lt;tt class="docutils literal"&gt;.bashrc&lt;/tt&gt;,
+por ejemplo.. code-block: bash&lt;/p&gt;
+&lt;blockquote class="last"&gt;
+export PIP_DOWNLOAD_CACHE=~/.pip_download_cache&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;p&gt;Pero sigamos: una vez cacheado, las siguientes veces que queramos instalar la misma versión de lxml
+no bajará &lt;strong&gt;el archivo&lt;/strong&gt; de nuevo&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;test2&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test2&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
+
+Downloading/unpacking lxml
+  Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+  Running setup.py egg_info &lt;span class="k"&gt;for &lt;/span&gt;package lxml
+    Building lxml version 3.1.1.
+
+    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
+
+Successfully installed lxml
+Cleaning up...
+
+real    2m30.624s
+user    0m38.966s
+sys 0m0.504s
+&lt;/pre&gt;
+&lt;p&gt;Mejoró realmente poco. ¿que clase de caché es esta?
+Chusmeemos que hay en el directorio.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;ls ~/.pip_download_cache/ | grep lxml
+https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
+&lt;/pre&gt;
+&lt;p&gt;¿Caché de urls? &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-download-cache&lt;/span&gt;&lt;/tt&gt; no evita todo el laburo de averiguar de dónde bajar,
+sino simplemente no baja si la url resultante ya existe (como nombre de un archivo)
+en este directorio.&lt;/p&gt;
+&lt;p&gt;Lo explica simple &lt;a class="reference external" href="https://github.com/pypa/pip/issues/680#issuecomment-8773509"&gt;Carl Meyer&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+La función &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download-cache&lt;/span&gt;&lt;/tt&gt; no apunta a prevenir la búsqueda en la red del archivo
+correcto a bajar: todo lo que hace es guardarlo una vez que lo encontró.
+Si de verdad te interesa instalar tus depedencias desde tu compu (sin salir a la red)
+usá &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download&lt;/span&gt;&lt;/tt&gt; primero y luego &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--find-links&lt;/span&gt;&lt;/tt&gt; (apuntando al path de descarga) con
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--no-index&lt;/span&gt;&lt;/tt&gt;.&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="una-cache-sin-salir-a-la-red"&gt;
+&lt;h2&gt;Una caché sin salir a la red&lt;/h2&gt;
+&lt;p&gt;Sigamosle la corriente al bueno de &lt;a class="reference external" href="https://twitter.com/carljm"&gt;@carljm&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test3&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install --download&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
+Downloading/unpacking lxml
+  Using download cache from /home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+Saved /home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
+    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+
+Successfully downloaded lxml
+Cleaning up...
+
+real    2m8.969s
+user    0m1.008s
+sys 0m0.136s
+&lt;/pre&gt;
+&lt;p&gt;¡Uff, 2 minutos en copiar un archivo que ya tenía bajado! (evidentemente lo que demora mucho
+es &lt;em&gt;averiguar&lt;/em&gt; la versión del archivo a bajar)&lt;/p&gt;
+&lt;div class="tip"&gt;
+&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;p class="last"&gt;se puede inspeccionar el berenjenal de redirecciones y parseos que suceden hasta que pip
+da con el paquete lxml a bajar haciendo el comando más verborrágico con
+&lt;tt class="docutils literal"&gt;pip install lxml &lt;span class="pre"&gt;-vvv&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;En este caso, el caché es directamente el archivo:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;ls ~/.pip_packages/ | grep lxml
+lxml-3.1.1.tar.gz
+&lt;/pre&gt;
+&lt;p&gt;Por suerte, una vez cacheado el paquete de esta manera no tendremos
+que consultar el índice online las siguientes veces.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test3&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
+Ignoring indexes: https://pypi.python.org/simple/
+Downloading/unpacking lxml
+  Running setup.py egg_info &lt;span class="k"&gt;for &lt;/span&gt;package lxml
+    Building lxml version 3.1.1.
+
+    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+
+
+Successfully installed lxml
+Cleaning up...
+
+real    0m38.944s
+user    0m38.338s
+sys 0m0.564s
+&lt;/pre&gt;
+&lt;p&gt;Ok, ya va mejor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="haciendo-que-la-cosa-vuele-no-recompiles-la-rueda"&gt;
+&lt;h2&gt;Haciendo que la cosa vuele: no recompiles la rueda&lt;/h2&gt;
+&lt;p&gt;pip 1.4 (en desarrollo) trae &lt;a class="reference external" href="https://github.com/pypa/pip/commit/5d02b5207a305543ad6ef19d6e6596ffa45b99e5"&gt;soporte integrado&lt;/a&gt; para el nuevo formato de paquetes
+&lt;a class="reference external" href="http://wheel.rtfd.org/,"&gt;wheel&lt;/a&gt; (superador del viejo &lt;em&gt;egg&lt;/em&gt; y basado en los estándares actuales)
+que es muchísimo más rápido que instalar desde fuentes (sobre todo en casos
+que se debe compilar, como lxml)&lt;/p&gt;
+&lt;p&gt;Para usar wheel el paquete a bajar tiene que existir en dicho formato y todavía no abundan
+en PyPi asi que podemos armarlos localmente con el propio pip&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+pip wheel --wheel-dir&lt;span class="o"&gt;=&lt;/span&gt;./pip_packages lxml
+&lt;/pre&gt;
+&lt;p&gt;Eso es similar a usar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download&lt;/span&gt;&lt;/tt&gt; pero además compila y empaqueta como
+un archivo &lt;tt class="docutils literal"&gt;.whl&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Para que pip acepte instalar estos archivos hay que usar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--use-wheel&lt;/span&gt;&lt;/tt&gt;
+y para que los busque localmente haremos:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+pip install --use-wheel --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
+&lt;/pre&gt;
+&lt;p&gt;¡Lo que tardó menos de 2 decimas de segundo! Un speedup del 90mil veces respecto al primer
+y canónico &lt;tt class="docutils literal"&gt;pip install lxml&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
+Ignoring indexes: https://pypi.python.org/simple/
+Downloading/unpacking lxml
+Installing collected packages: lxml
+Successfully installed lxml
+Cleaning up...
+
+real    0m0.180s
+user    0m0.152s
+sys 0m0.024s
+&lt;/pre&gt;
+&lt;p&gt;Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
+django, whatever) me los haces rodar para que pip vuele.&lt;/p&gt;
+&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</guid><pubDate>Wed, 10 Apr 2013 01:17:55 GMT</pubDate></item><item><title>Desambiguando un hash en Git</title><link>http://mgaitan.github.com/posts/desambiguando-un-hash-en-git.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Soy vago. Por eso me llevo bien con Git, que permite reconocer un changeset con un &lt;a class="reference external" href="http://git-scm.com/book/ch6-1.html"&gt;pedacito de
+su hash sha1&lt;/a&gt; :&lt;/p&gt;
+&lt;blockquote&gt;
+Git is smart enough to figure out what commit you meant to type if you provide the first few characters, as long as your partial SHA-1 is at least four characters long and unambiguous — that is, only one object in the current repository begins with that partial SHA-1.&lt;/blockquote&gt;
+&lt;p&gt;Pero a veces soy demasiado vago, y Git deja de llevarse bien conmigo: Estaba en una rama con varios commits y quería volver al pasado, deshaciendo commits, pero llevando uno. Fácil: &lt;tt class="docutils literal"&gt;reset&lt;/tt&gt; + &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;cherry-pick&lt;/span&gt;&lt;/tt&gt;. Pero copié muy pocos caracteres del hash que quería &lt;em&gt;cherrypickear&lt;/em&gt;:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;cpi&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:~/cpi&lt;span class="nv"&gt;$ &lt;/span&gt;git reset --hard 772dad9a775
+HEAD is now at 772dad9 making aqueous migration script more robust
+&lt;span class="o"&gt;(&lt;/span&gt;cpi&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:~/cpi&lt;span class="nv"&gt;$ &lt;/span&gt;git cherry-pick c4396
+error: short SHA1 c4396 is ambiguous.
+error: short SHA1 c4396 is ambiguous
+fatal: ambiguous argument &lt;span class="s1"&gt;'c4396'&lt;/span&gt;: unknown revision or path not in the working tree.
+Use &lt;span class="s1"&gt;'--'&lt;/span&gt; to separate paths from revisions
+&lt;span class="o"&gt;(&lt;/span&gt;cpi&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@gutemberg:~/laburo/cpi/code/cpi_mrp&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Recórcholis.&lt;/p&gt;
+&lt;p&gt;Un poquito de bash y &lt;em&gt;git plumbing&lt;/em&gt; al rescate:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;cpi&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:~/cpi&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="k"&gt;for &lt;/span&gt;&lt;span class="nb"&gt;hash &lt;/span&gt;in c4396&lt;span class="o"&gt;{{&lt;/span&gt;0..9&lt;span class="o"&gt;}&lt;/span&gt;,&lt;span class="o"&gt;{&lt;/span&gt;a..f&lt;span class="o"&gt;}}&lt;/span&gt;; &lt;span class="k"&gt;do &lt;/span&gt;git cat-file -e &lt;span class="nv"&gt;$hash&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; git rev-parse &lt;span class="nv"&gt;$hash&lt;/span&gt;; &lt;span class="k"&gt;done &lt;/span&gt;2&amp;gt;/dev/nul
+c4396586273b2a9ea5eae46c4ab2d98e236e7792
+c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
+&lt;/pre&gt;
+&lt;p&gt;Ahora tenemos el conjunto de hash con igual prefijo, y podemos revisarlos para ver cual era el que queriamos:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;cpi&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:~/cpi&lt;span class="nv"&gt;$ &lt;/span&gt;git show c4396586273b2a9ea5eae46c4ab2d98e236e7792
+&lt;/pre&gt;
+&lt;p&gt;Y ese era el que quería.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/desambiguando-un-hash-en-git.html</guid><pubDate>Thu, 14 Mar 2013 18:02:01 GMT</pubDate></item><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.com/posts/como-funciona-cuevana.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Estimando cuanto trabajo significa actualizar &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;Cuevana sources&lt;/a&gt;
 y/o &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalib"&gt;Cuevanalib&lt;/a&gt;
-investigu&amp;#233; c&amp;#243;mo funciona la nueva versi&amp;#243;n de cuevana.&lt;/p&gt;
+investigué cómo funciona la nueva versión de cuevana.&lt;/p&gt;
 &lt;p&gt;Estas notas son el resultado de lo que fui observando.&lt;/p&gt;
 &lt;p&gt;Una vez que se elige un contenido, un iframe apunta a una URL con este forma:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="http://www.cuevana.tv/player/sources?id=4773&amp;amp;tipo=pelicula"&gt;http://www.cuevana.tv/player/sources?id=4773&amp;amp;tipo=pelicula&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;En c&amp;#243;digo javascript inline define las fuentes disponibles para ese contenido&lt;/p&gt;
+&lt;p&gt;En código javascript inline define las fuentes disponibles para ese contenido&lt;/p&gt;
 &lt;pre class="code javascript literal-block"&gt;
 &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;plugin_ver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;plugin_rev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;actual_ver&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;actual_rev&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -18,7 +218,7 @@ investigu&amp;#233; c&amp;#243;mo funciona la nueva versi&amp;#243;n de cuevana.
     &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="nx"&gt;sel_source&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;La primer clave (en este caso &lt;tt class="docutils literal"&gt;2&lt;/tt&gt;, ingl&amp;#233;s) es el idioma del audio,
+&lt;p&gt;La primer clave (en este caso &lt;tt class="docutils literal"&gt;2&lt;/tt&gt;, inglés) es el idioma del audio,
 y la segunda la calidad del video&lt;/p&gt;
 &lt;p&gt;Luego define diferentes constates:&lt;/p&gt;
 &lt;pre class="code javascript literal-block"&gt;
@@ -77,16 +277,16 @@ y la segunda la calidad del video&lt;/p&gt;
     &lt;span class="s1"&gt;'bayfiles'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Bayfiles'&lt;/span&gt;
 &lt;span class="p"&gt;};&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;El usuario selecciona mediante un men&amp;#250; donde se define &lt;tt class="docutils literal"&gt;audio&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;quality&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;source&lt;/tt&gt;
+&lt;p&gt;El usuario selecciona mediante un menú donde se define &lt;tt class="docutils literal"&gt;audio&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;quality&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;source&lt;/tt&gt;
 que se configuran como atributos data del link:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 .. code-block::
 &lt;/pre&gt;
 &lt;blockquote&gt;
 &amp;lt;a class="sel" data-type="quality" data-id="360"&amp;gt;SD (360p)&amp;lt;/a&amp;gt;&lt;/blockquote&gt;
-&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-type&lt;/span&gt;&lt;/tt&gt; es el tipo de variable, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-id&lt;/span&gt;&lt;/tt&gt; el valor para esa opci&amp;#243;n
-y &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;class="sel"&lt;/span&gt;&lt;/tt&gt; determina si esa es la opci&amp;#243;n seleccionada.&lt;/p&gt;
-&lt;p&gt;Cuando se hace click en el bot&amp;#243;n Play se invoca la URL:&lt;/p&gt;
+&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-type&lt;/span&gt;&lt;/tt&gt; es el tipo de variable, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-id&lt;/span&gt;&lt;/tt&gt; el valor para esa opción
+y &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;class="sel"&lt;/span&gt;&lt;/tt&gt; determina si esa es la opción seleccionada.&lt;/p&gt;
+&lt;p&gt;Cuando se hace click en el botón Play se invoca la URL:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 http://www.cuevana.tv/player/source_get?def=**quality**&amp;amp;audio=**audio**&amp;amp;host=**source**&amp;amp;id=4773&amp;amp;tipo=pelicula
 &lt;/pre&gt;
@@ -94,7 +294,7 @@ http://www.cuevana.tv/player/source_get?def=**quality**&amp;amp;audio=**audio**&
 &lt;pre class="literal-block"&gt;
 http://www.cuevana.tv/player/source_get?def=360&amp;amp;audio=2&amp;amp;host=bayfiles&amp;amp;id=4773&amp;amp;tipo=pelicula
 &lt;/pre&gt;
-&lt;p&gt;Esta p&amp;#225;gina presenta el captcha, que una vez superado redirige a la URL:&lt;/p&gt;
+&lt;p&gt;Esta página presenta el captcha, que una vez superado redirige a la URL:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 http://go.cuevana.tv/?*URL_DESTINO*
 &lt;/pre&gt;
@@ -102,14 +302,14 @@ http://go.cuevana.tv/?*URL_DESTINO*
 &lt;pre class="literal-block"&gt;
 http://go.cuevana.tv/?http%3A%2F%2Fbayfiles.com%2Ffile%2FvIsf%2FkTvfNj%2Fthe.apparition.2012.bdrip.xvid-sparks.mp4%3Fcid%3D4773%26ctipo%3Dpelicula%26cdef%3D360
 &lt;/pre&gt;
-&lt;p&gt;Que a su vez redirige a &lt;em&gt;URL_DESTINO&lt;/em&gt; que es la URL del servicio donde el video est&amp;#225; hosteado
-con par&amp;#225;metros extra: &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360&lt;/span&gt;&lt;/tt&gt;. En el ejemplo anterior:&lt;/p&gt;
+&lt;p&gt;Que a su vez redirige a &lt;em&gt;URL_DESTINO&lt;/em&gt; que es la URL del servicio donde el video está hosteado
+con parámetros extra: &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360&lt;/span&gt;&lt;/tt&gt;. En el ejemplo anterior:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360**"&gt;http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360**&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;Aqu&amp;#237; entra en juego el "plugin de cuevana". Se puede bajar por ejemplo
-la versi&amp;#243;n para Firefox desde &lt;a class="reference external" href="http://www.cuevana.tv/player/plugins/cstream-5.0.xpi"&gt;http://www.cuevana.tv/player/plugins/cstream-5.0.xpi&lt;/a&gt;
+&lt;p&gt;Aquí entra en juego el "plugin de cuevana". Se puede bajar por ejemplo
+la versión para Firefox desde &lt;a class="reference external" href="http://www.cuevana.tv/player/plugins/cstream-5.0.xpi"&gt;http://www.cuevana.tv/player/plugins/cstream-5.0.xpi&lt;/a&gt;
 Descomprimirlo con unzip y abrir el archivo &lt;tt class="docutils literal"&gt;content/cuevanastream.js&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;La presencia de los par&amp;#225;metros &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;cid``y&lt;/span&gt; ``ctipo&lt;/tt&gt; y una url de alguno de los servicios
+&lt;p&gt;La presencia de los parámetros &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;cid``y&lt;/span&gt; ``ctipo&lt;/tt&gt; y una url de alguno de los servicios
 que usa Cuevana hace que se inyecte un javascript en la URL del servicio.&lt;/p&gt;
 &lt;pre class="code javascript literal-block"&gt;
 &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;loc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/cid=/i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/ctipo=/i&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
@@ -117,7 +317,7 @@ que usa Cuevana hace que se inyecte un javascript en la URL del servicio.&lt;/p&
     &lt;span class="nx"&gt;addScript&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'bayfiles'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-    &lt;span class="c1"&gt;// m&amp;#225;s servicios
+    &lt;span class="c1"&gt;// más servicios
 &lt;/span&gt;
   &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'div'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
@@ -152,95 +352,95 @@ def es &lt;tt class="docutils literal"&gt;360&lt;/tt&gt; o &lt;tt class="docutil
 &lt;p&gt;Para series:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="http://sc.cuevana.tv/files/s/sub/"&gt;http://sc.cuevana.tv/files/s/sub/&lt;/a&gt;&lt;strong&gt;ID**_**LANG&lt;/strong&gt;.srt&lt;/blockquote&gt;
-&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;ID&lt;/tt&gt; es el identificador del contenido y &lt;tt class="docutils literal"&gt;LANG&lt;/tt&gt; es el c&amp;#243;digo
-del idioma en 2 letras may&amp;#250;sculas (ES, EN, etc.)&lt;/p&gt;
+&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;ID&lt;/tt&gt; es el identificador del contenido y &lt;tt class="docutils literal"&gt;LANG&lt;/tt&gt; es el código
+del idioma en 2 letras mayúsculas (ES, EN, etc.)&lt;/p&gt;
 &lt;p&gt;Para contenidos HD se agrega el sufijo &lt;em&gt;_720&lt;/em&gt;:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
 &lt;/pre&gt;
-&lt;p&gt;Para peliculas es an&amp;#225;logo pero un nivel m&amp;#225;s arriba:&lt;/p&gt;
+&lt;p&gt;Para peliculas es análogo pero un nivel más arriba:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
 &lt;/pre&gt;
-&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 10:17:55 GMT</pubDate></item><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho m&amp;#225;s
+&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 10:17:55 GMT</pubDate></item><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho más
 que un &lt;em&gt;testrunner&lt;/em&gt; inteligente: tiene un conjunto de extensiones y shortcuts
 de aserciones de &lt;tt class="docutils literal"&gt;unittest&lt;/tt&gt;, soporta fixtures y setups/teardown
-por paquetes, y viene con un mont&amp;#243;n de plugins incorporados.&lt;/p&gt;
+por paquetes, y viene con un montón de plugins incorporados.&lt;/p&gt;
 &lt;blockquote&gt;
 "nose extends unittest to make testing easier"&lt;/blockquote&gt;
-&lt;p&gt;dice el eslogan y eso es lo que queremos: tests m&amp;#225;s f&amp;#225;ciles de escribir,
-m&amp;#225;s r&amp;#225;pidos de ejecutar.&lt;/p&gt;
+&lt;p&gt;dice el eslogan y eso es lo que queremos: tests más fáciles de escribir,
+más rápidos de ejecutar.&lt;/p&gt;
 &lt;p&gt;De plugins y opciones que potencian esta idea se trata este post.&lt;/p&gt;
 &lt;div class="section" id="nose-progressive"&gt;
 &lt;h2&gt;nose-progressive&lt;/h2&gt;
 &lt;blockquote class="epigraph"&gt;
 &lt;p&gt;Ah, beautiful dots&lt;/p&gt;
-&lt;p class="attribution"&gt;&amp;#8212;&lt;a class="reference external" href="http://blog.mozilla.org/webdev/2011/04/14/a-humane-python-test-runner/"&gt;Erik Rose&lt;/a&gt;&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="http://blog.mozilla.org/webdev/2011/04/14/a-humane-python-test-runner/"&gt;Erik Rose&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;"Puntito, puntito, puntito, puntito..."&lt;/em&gt;, cuenta mi mente en standby
 cuando los test van pasando, como ovejitas que saltan un cerco.
 Pero, oh desdicha, una "efe", la oveja negra que falla, aparece
-en la pantalla y la ansiedad por saber cu&amp;#225;l nos invade.&lt;/p&gt;
+en la pantalla y la ansiedad por saber cuál nos invade.&lt;/p&gt;
 &lt;p&gt;El problema es que por default (con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--verbose=1&lt;/span&gt;&lt;/tt&gt;), nose
 pospone el detalle de errores y fallos hasta el final de la corrida.
-En suites gigantes (que demoran m&amp;#225;s de 30 minutos en completarse,
+En suites gigantes (que demoran más de 30 minutos en completarse,
 por ejemplo) esto es un engorro.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/nose-progressive/"&gt;nose-progressive&lt;/a&gt; reemplaza la interfaz de usuario por una mucho m&amp;#225;s
+&lt;p&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/nose-progressive/"&gt;nose-progressive&lt;/a&gt; reemplaza la interfaz de usuario por una mucho más
 amigable y bonita. En vez de puntitos, una barra de progreso al pie de la
 pantalla va indicando el progreso satisfactorio, y deja el resto de la pantalla
 para mostrar errores y fallos &lt;em&gt;on the fly&lt;/em&gt;.&lt;/p&gt;
-&lt;img alt="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png" src="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png"&gt;&lt;p&gt;Como si fuera poco, te da shortcuts a la l&amp;#237;nea donde se produjo un fallo
+&lt;img alt="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png" src="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png"&gt;&lt;p&gt;Como si fuera poco, te da shortcuts a la línea donde se produjo un fallo
 (por ejemplo: &lt;tt class="docutils literal"&gt;vim +258 common/tests/test_guideplan.py&lt;/tt&gt;), simplifica los
-tracebacks a la parte &amp;#250;til, e incluye colores usados con criterio
+tracebacks a la parte útil, e incluye colores usados con criterio
 (basada en la genial biblioteca &lt;a class="reference external" href="https://pypi.python.org/pypi/blessings"&gt;blessing&lt;/a&gt;, del mismo autor).&lt;/p&gt;
 &lt;p&gt;Para instalarlo, lo de siempre:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;pip install nose-progressive
 &lt;/pre&gt;
-&lt;p&gt;Para usarlo, agregar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--with-progressive&lt;/span&gt;&lt;/tt&gt; como par&amp;#225;metros de &lt;tt class="docutils literal"&gt;nosetests&lt;/tt&gt;,
+&lt;p&gt;Para usarlo, agregar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--with-progressive&lt;/span&gt;&lt;/tt&gt; como parámetros de &lt;tt class="docutils literal"&gt;nosetests&lt;/tt&gt;,
 o bien, para usarlo siempre, configurarlo en &lt;tt class="docutils literal"&gt;.noserc&lt;/tt&gt; o en la
 variable &lt;tt class="docutils literal"&gt;NOSE_ARGS&lt;/tt&gt; de &lt;a class="reference external" href="https://github.com/jbalogh/django-nose"&gt;django-nose&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="django-nose"&gt;
 &lt;h2&gt;django-nose&lt;/h2&gt;
-&lt;p&gt;Si trabaj&amp;#225;s con Django esto quizas suene a perogrullada, pero &lt;a class="reference external" href="https://github.com/jbalogh/django-nose"&gt;django-nose&lt;/a&gt;
+&lt;p&gt;Si trabajás con Django esto quizas suene a perogrullada, pero &lt;a class="reference external" href="https://github.com/jbalogh/django-nose"&gt;django-nose&lt;/a&gt;
 es la vuelta de tuerca que faltaba para que la nariz brille en este entorno.
-Con django-nose por defecto s&amp;#243;lo se corren los tests del proyecto y no
+Con django-nose por defecto sólo se corren los tests del proyecto y no
 los de todas las aplicaciones instaladas (que, se supone, tienen sus propios
 tests).&lt;/p&gt;
 &lt;p&gt;Y entre otras opciones o, tiene  un modo de reuso de la base de datos,
-(configurando &lt;tt class="docutils literal"&gt;REUSE_DB=1&lt;/tt&gt; como variable de entorno), que nos evita la creaci&amp;#243;n
+(configurando &lt;tt class="docutils literal"&gt;REUSE_DB=1&lt;/tt&gt; como variable de entorno), que nos evita la creación
 de tablas en cada corrida, ahorrando unos cuantos segundos de setup en aplicaciones
 como muchos modelos. Por supuesto, si la base de datos cambia (porque
-se agreg&amp;#243; un modelo o se se migr&amp;#243; con &lt;a class="reference external" href="http://south.aeracode.org/"&gt;South&lt;/a&gt;) ten&amp;#233;s que asegurarte
-que la variable est&amp;#225; en 0 para que cree la &amp;#250;ltima version&lt;/p&gt;
+se agregó un modelo o se se migró con &lt;a class="reference external" href="http://south.aeracode.org/"&gt;South&lt;/a&gt;) tenés que asegurarte
+que la variable está en 0 para que cree la última version&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="with-id-failed"&gt;
 &lt;h2&gt;with-id + failed&lt;/h2&gt;
-&lt;p&gt;La opci&amp;#243;n &lt;a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption--with-id"&gt;--with-id&lt;/a&gt;
-(estrictamente el plugin &lt;tt class="docutils literal"&gt;TestId&lt;/tt&gt;, que viene en las bater&amp;#237;as inclu&amp;#237;das de nose)
-le asigna un n&amp;#250;mero &amp;#250;nico a cada test ejecutado,
+&lt;p&gt;La opción &lt;a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption--with-id"&gt;--with-id&lt;/a&gt;
+(estrictamente el plugin &lt;tt class="docutils literal"&gt;TestId&lt;/tt&gt;, que viene en las baterías incluídas de nose)
+le asigna un número único a cada test ejecutado,
 y los guarda en el archivito &lt;tt class="docutils literal"&gt;.noseids&lt;/tt&gt; junto con su path y el
-resultado de la &amp;#250;ltima corrida.&lt;/p&gt;
-&lt;p&gt;Lo bueno es que pasando &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--with-id&lt;/span&gt; &lt;span class="pre"&gt;--failed&lt;/span&gt;&lt;/tt&gt; nose usa esa informaci&amp;#243;n
-y ejecuta solamente los tests que fallaron en la &amp;#250;ltima corrida,
-permitiendo una r&amp;#225;pida iteraci&amp;#243;n &lt;em&gt;"falla/correcci&amp;#243;n"&lt;/em&gt;.&lt;/p&gt;
+resultado de la última corrida.&lt;/p&gt;
+&lt;p&gt;Lo bueno es que pasando &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--with-id&lt;/span&gt; &lt;span class="pre"&gt;--failed&lt;/span&gt;&lt;/tt&gt; nose usa esa información
+y ejecuta solamente los tests que fallaron en la última corrida,
+permitiendo una rápida iteración &lt;em&gt;"falla/corrección"&lt;/em&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="nose-selecttests"&gt;
 &lt;h2&gt;nose-selecttests&lt;/h2&gt;
 &lt;p&gt;Frecuentemente sucede que tenemos caso (una subclase de &lt;tt class="docutils literal"&gt;TestCase&lt;/tt&gt;)
-con muchas pruebas (m&amp;#233;todos) que est&amp;#225;n l&amp;#243;gicamente agrupadas
+con muchas pruebas (métodos) que están lógicamente agrupadas
 porque comparten un setup, por ejemplo,
-y sin embargo s&amp;#243;lo queremos correr un subconjunto.&lt;/p&gt;
-&lt;p&gt;Sabemos que como es inteligente y poco burocr&amp;#225;tico, nose no s&amp;#243;lo ejecuta
+y sin embargo sólo queremos correr un subconjunto.&lt;/p&gt;
+&lt;p&gt;Sabemos que como es inteligente y poco burocrático, nose no sólo ejecuta
 tests definidos como subclases de &lt;tt class="docutils literal"&gt;unittest.TestCase&lt;/tt&gt; sino
-cualquier paquete, m&amp;#243;dulo, funci&amp;#243;n o clase
-que &lt;em&gt;matchee&lt;/em&gt; una expresi&amp;#243;n regular, que por defecto es &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;(?:^|[b_./-])[Tt]est&lt;/span&gt;&lt;/tt&gt;
-Con el par&amp;#225;metro &lt;a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption-m"&gt;-m&lt;/a&gt;
-se puede redefinir este patr&amp;#243;n, pero igualmente no aplica a nivel
-m&amp;#233;todos.&lt;/p&gt;
+cualquier paquete, módulo, función o clase
+que &lt;em&gt;matchee&lt;/em&gt; una expresión regular, que por defecto es &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;(?:^|[b_./-])[Tt]est&lt;/span&gt;&lt;/tt&gt;
+Con el parámetro &lt;a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption-m"&gt;-m&lt;/a&gt;
+se puede redefinir este patrón, pero igualmente no aplica a nivel
+métodos.&lt;/p&gt;
 &lt;p&gt;Por eso existe &lt;a class="reference external" href="https://github.com/iElectric/nose-selecttests"&gt;nose-selecttests&lt;/a&gt;, que permite filtrar pruebas con
-determinada subcadena en el nombre del m&amp;#233;todo.&lt;/p&gt;
+determinada subcadena en el nombre del método.&lt;/p&gt;
 &lt;p&gt;Por ejemplo:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;djntest -v 2 common/tests/test_sequence_diff.py
@@ -269,11 +469,11 @@ Ran 2 tests in 0.088s
 que aprovecha las posibilidades de bash para
 &lt;a class="reference external" href="http://bash-completion.alioth.debian.org/"&gt;autocompletar&lt;/a&gt; usando la tecla
 tab.&lt;/p&gt;
-&lt;p&gt;&amp;#191;Para qu&amp;#233; sirve? nose acepta un path (o muchos) para especificar qu&amp;#233; test correr:&lt;/p&gt;
+&lt;p&gt;¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;nosetests path/to/test.py
 &lt;/pre&gt;
-&lt;p&gt;Pero tambi&amp;#233;n permite afinar la punter&amp;#237;a y "meterse" adentro del m&amp;#243;dulo:&lt;/p&gt;
+&lt;p&gt;Pero también permite afinar la puntería y "meterse" adentro del módulo:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;nosetests path/to/test.py:MyImportantTestCase
 &lt;/pre&gt;
@@ -287,32 +487,32 @@ autocompleter.&lt;/p&gt;
 &lt;p&gt;Lo hizo Javi Mansilla en &lt;a class="reference external" href="http://machinalis.com"&gt;Machinalis&lt;/a&gt; y
 &lt;a class="reference external" href="https://github.com/machinalis/django-test-autocomplete#future-features"&gt;busca ayuda&lt;/a&gt;
 para mejorarlo y generalizarlo.&lt;/p&gt;
-&lt;p&gt;&amp;#191;No ser&amp;#237;a buen&amp;#237;simo que esto estuviese built-in en nose? &amp;#191;Nos ayudar&amp;#237;as?&lt;/p&gt;
+&lt;p&gt;¿No sería buenísimo que esto estuviese built-in en nose? ¿Nos ayudarías?&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="nose-timer"&gt;
 &lt;h2&gt;nose-timer&lt;/h2&gt;
-&lt;p&gt;&amp;#191;Cu&amp;#225;nto tiempo insume cada test? Instal&amp;#225; &lt;a class="reference external" href="https://github.com/mahmoudimus/nose-timer/"&gt;nose-timer&lt;/a&gt; y activalo (con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--with-timer&lt;/span&gt;&lt;/tt&gt;)
+&lt;p&gt;¿Cuánto tiempo insume cada test? Instalá &lt;a class="reference external" href="https://github.com/mahmoudimus/nose-timer/"&gt;nose-timer&lt;/a&gt; y activalo (con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--with-timer&lt;/span&gt;&lt;/tt&gt;)
 para saber la respuesta.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="nose-ipdb"&gt;
 &lt;h2&gt;nose-ipdb&lt;/h2&gt;
-&lt;p&gt;nose tiene una opci&amp;#243;n &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--pdb&lt;/span&gt;&lt;/tt&gt; (o la m&amp;#225;s estricta &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--ipdb-failures&lt;/span&gt;&lt;/tt&gt;)
+&lt;p&gt;nose tiene una opción &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--pdb&lt;/span&gt;&lt;/tt&gt; (o la más estricta &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--ipdb-failures&lt;/span&gt;&lt;/tt&gt;)
 que nos manda al debugger cuando un test falla o da error.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb"&gt;nose-ipdb&lt;/a&gt; lo imita, pero usando el m&amp;#225;s pulenta de los debuggers: &lt;a class="reference external" href="https://pypi.python.org/pypi/ipdb"&gt;ipdb&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Suficiente por hoy. Pero &amp;#191;me estoy perdiendo alguna cosa interesante
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb"&gt;nose-ipdb&lt;/a&gt; lo imita, pero usando el más pulenta de los debuggers: &lt;a class="reference external" href="https://pypi.python.org/pypi/ipdb"&gt;ipdb&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Suficiente por hoy. Pero ¿me estoy perdiendo alguna cosa interesante
 para meter en mi nariz?&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</guid><pubDate>Tue, 26 Feb 2013 22:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;body&gt;&lt;p&gt;&amp;#191;As&amp;#237; que quer&amp;#233;s comenzar un nuevo proyecto usando Python?
-&amp;#161;Felicitaciones! &amp;#191;Quer&amp;#233;s que tenga la estructura recomendada para
-proyectos modernos? &amp;#191;Quer&amp;#233;s que sea instalable f&amp;#225;cilmente? &amp;#191;Quer&amp;#233;s que
+&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</guid><pubDate>Tue, 26 Feb 2013 22:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
+¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
+proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
 proyectos ? Bien, te propongo esta receta.&lt;/p&gt;
 &lt;div class="section" id="las-herramientas"&gt;
 &lt;h2&gt;Las herramientas&lt;/h2&gt;
 &lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://www.virtualenv.org"&gt;Virtualenv&lt;/a&gt;:  es una herramienta para aislar tu entorno de
-desarrollo python. Es muy pero muy &amp;#250;til para evitar conflictos entre las
+desarrollo python. Es muy pero muy útil para evitar conflictos entre las
 dependencias de tus distintos proyectos.&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/"&gt;virtualenvwrapper&lt;/a&gt;: es un conjunto de extensiones que
-hacen la vida del usuario &lt;em&gt;virtualenv&lt;/em&gt; aun m&amp;#225;s feliz, permitiendo crear
+hacen la vida del usuario &lt;em&gt;virtualenv&lt;/em&gt; aun más feliz, permitiendo crear
 y borrar entornos virtuales, asociarlos a un proyecto, automatizar
 tareas al activar o desactivar uno, etc.&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt;: es la herramienta moderna, correcta y recomendada
@@ -320,15 +520,15 @@ para administrar los paquetes python instalados en tu
 sistema/virtualenv. Es un reemplazo de &lt;em&gt;easy_install&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://packages.python.org/distribute/"&gt;Distribute&lt;/a&gt;: es la herramienta moderna y recomendada para
 distribuir tu paquete python. Es un fork de &lt;em&gt;setuptools&lt;/em&gt; (que es, a su
-vez, una mejora sobre el m&amp;#243;dulo est&amp;#225;ndar &lt;em&gt;distutils&lt;/em&gt;)&lt;/li&gt;
+vez, una mejora sobre el módulo estándar &lt;em&gt;distutils&lt;/em&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/stumitchell/skeleton"&gt;skeleton&lt;/a&gt; es una herramienta que define &lt;em&gt;plantillas&lt;/em&gt;
-para iniciar un proyecto, generando la estructura b&amp;#225;sica necesaria. Es
+para iniciar un proyecto, generando la estructura básica necesaria. Es
 similar a &lt;a class="reference external" href="http://python.org.ar/pyar/PasteScript"&gt;PasteScript&lt;/a&gt; pero enfocado en esta
 tarea concreta, sin dependencias y compatible con Python 3.x&lt;/li&gt;
 &lt;/ul&gt;&lt;/div&gt;
 &lt;div class="section" id="la-receta"&gt;
 &lt;h2&gt;La receta&lt;/h2&gt;
-&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Instal&amp;#225; pip:&lt;/p&gt;
+&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Instalá pip:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ sudo apt-get install python-pip
 &lt;/pre&gt;
@@ -337,7 +537,7 @@ $ sudo apt-get install python-pip
 $ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
 &lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Instal&amp;#225; virtualenwrapper y skeleton:&lt;/p&gt;
+&lt;li&gt;&lt;p class="first"&gt;Instalá virtualenwrapper y skeleton:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ sudo pip install virtualenwrapper
 $ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton
@@ -345,16 +545,16 @@ $ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton
 &lt;/li&gt;
 &lt;/ol&gt;&lt;div class="note"&gt;
 &lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
-&lt;p class="last"&gt;Notar que &lt;em&gt;skeleton&lt;/em&gt; se est&amp;#225; instalando desde un &lt;em&gt;fork&lt;/em&gt; del proyecto
+&lt;p class="last"&gt;Notar que &lt;em&gt;skeleton&lt;/em&gt; se está instalando desde un &lt;em&gt;fork&lt;/em&gt; del proyecto
 original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
 &lt;/div&gt;
-&lt;ol class="arabic" start="3"&gt;&lt;li&gt;&lt;p class="first"&gt;Configur&amp;#225; virtualenvwrapper&lt;/p&gt;
+&lt;ol class="arabic" start="3"&gt;&lt;li&gt;&lt;p class="first"&gt;Configurá virtualenvwrapper&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.virtualenvs           &lt;span class="c"&gt;# ac&amp;#225; se van a guardar tus entornos virtuales
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/proyectos              &lt;span class="c"&gt;# ac&amp;#225; se van a guardar tus proyectos
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.virtualenvs           &lt;span class="c"&gt;# acá se van a guardar tus entornos virtuales
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/proyectos              &lt;span class="c"&gt;# acá se van a guardar tus proyectos
 &lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.pip_download_cache     &lt;span class="c"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Luego edit&amp;#225; tu &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/tt&gt; agregando las siguientes l&amp;#237;neas&lt;/p&gt;
+&lt;p&gt;Luego editá tu &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/tt&gt; agregando las siguientes líneas&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
 &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
@@ -362,32 +562,32 @@ original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
 export &lt;/span&gt;&lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
 &lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
 &lt;/pre&gt;
-&lt;p&gt;y recarg&amp;#225; tus cambios:&lt;/p&gt;
+&lt;p&gt;y recargá tus cambios:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ source ~/.bashrc
 &lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Inicializ&amp;#225; tu proyecto. Por ejemplo el proyecto &lt;em&gt;zaraza&lt;/em&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p class="first"&gt;Inicializá tu proyecto. Por ejemplo el proyecto &lt;em&gt;zaraza&lt;/em&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-$&amp;#160;mkproject&amp;#160;-t&amp;#160;package&amp;#160;zaraza
+$ mkproject -t package zaraza
 &lt;/pre&gt;
-&lt;p&gt;Se te solicitar&amp;#225;n algunos datos (nombre del proyecto, autor,
-licencia, etc.) y &amp;#161;(casi) listo! Estar&amp;#225;s trabajando en tu proyecto
-&lt;em&gt;zaraza&lt;/em&gt;. Tu prompt se ver&amp;#225; as&amp;#237;&lt;/p&gt;
+&lt;p&gt;Se te solicitarán algunos datos (nombre del proyecto, autor,
+licencia, etc.) y ¡(casi) listo! Estarás trabajando en tu proyecto
+&lt;em&gt;zaraza&lt;/em&gt;. Tu prompt se verá así&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 (zaraza)tin@morocha:~/proyectos/zaraza$
 &lt;/pre&gt;
-&lt;p&gt;&amp;#191;Qu&amp;#233; sucedi&amp;#243;? Se cre&amp;#243; un directorio &lt;tt class="docutils literal"&gt;~/proyectos/zaraza&lt;/tt&gt; para tu
+&lt;p&gt;¿Qué sucedió? Se creó un directorio &lt;tt class="docutils literal"&gt;~/proyectos/zaraza&lt;/tt&gt; para tu
 proyecto, asociado a un virtualenv ubicado en &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.virtualenvs/zaraza&lt;/span&gt;&lt;/tt&gt;.
-&lt;strong&gt;skeleton&lt;/strong&gt; autom&amp;#225;ticamente cre&amp;#243; una estructura b&amp;#225;sica de
+&lt;strong&gt;skeleton&lt;/strong&gt; automáticamente creó una estructura básica de
 paquete python en &lt;tt class="docutils literal"&gt;~/proyectos/zaraza/src&lt;/tt&gt; incluyendo un &lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt;
 basado en &lt;em&gt;distribute&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Instal&amp;#225; tu paquete en el virtualenv, para poder importarlo desde
+&lt;li&gt;&lt;p class="first"&gt;Instalá tu paquete en el virtualenv, para poder importarlo desde
 cualquier lado:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-(zaraza)&amp;#160;$&amp;#160;cd&amp;#160;&amp;#160;~/proyectos/zaraza/src
-(zaraza)&amp;#160;$&amp;#160;pip&amp;#160;install&amp;#160;-e&amp;#160;.
+(zaraza) $ cd  ~/proyectos/zaraza/src
+(zaraza) $ pip install -e .
 &lt;/pre&gt;
 &lt;p&gt;Esto agrega el directorio de desarrollo de tu proyecto al PYTHONPATH
 del virtualenv, de modo que puedes importar &lt;em&gt;zaraza&lt;/em&gt; desde cualquier
@@ -396,8 +596,8 @@ lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
 &lt;/li&gt;
 &lt;/ol&gt;&lt;/div&gt;
 &lt;div class="section" id="y-ahora"&gt;
-&lt;h2&gt;&amp;#191;Y ahora?&lt;/h2&gt;
-&lt;p&gt;Cada vez que quieras trabajar en tu proyecto &lt;em&gt;zaraza&lt;/em&gt; ejecut&amp;#225;s:&lt;/p&gt;
+&lt;h2&gt;¿Y ahora?&lt;/h2&gt;
+&lt;p&gt;Cada vez que quieras trabajar en tu proyecto &lt;em&gt;zaraza&lt;/em&gt; ejecutás:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ workon zaraza
 &lt;/pre&gt;
@@ -407,44 +607,44 @@ $ workon zaraza
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="algunos-tips-mas-a-modo-de-despedida"&gt;
-&lt;h2&gt;Algunos tips m&amp;#225;s a modo de despedida&lt;/h2&gt;
+&lt;h2&gt;Algunos tips más a modo de despedida&lt;/h2&gt;
 &lt;p&gt;Virtualenwrapper es totalmente hookeable y extensible. Esta receta
 propone usar &lt;em&gt;skeleton&lt;/em&gt; (que funciona como plugin de
 &lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/"&gt;virtualenvwrapper.project&lt;/a&gt;)
-para crear una estructura de paquete est&amp;#225;ndar b&amp;#225;sica, pero hay plugins
-para proyectos m&amp;#225;s espec&amp;#237;ficos. Por ejemplo
+para crear una estructura de paquete estándar básica, pero hay plugins
+para proyectos más específicos. Por ejemplo
 &lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.django/"&gt;virtualenwrapper.django&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;El comando &lt;tt class="docutils literal"&gt;mkproject&lt;/tt&gt; es un wrapper sobre el
 comando principal de virtualenvwrapper &lt;tt class="docutils literal"&gt;mkvirtualenv&lt;/tt&gt;, que acepta muchos
-par&amp;#225;metros opcionales. Ejecut&amp;#225; &lt;tt class="docutils literal"&gt;mkproject_help&lt;/tt&gt; o &lt;tt class="docutils literal"&gt;mkvirtualenv &lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/tt&gt;
-para saber m&amp;#225;s.&lt;/p&gt;
-&lt;p&gt;Y ya sab&amp;#233;s ...&lt;/p&gt;
+parámetros opcionales. Ejecutá &lt;tt class="docutils literal"&gt;mkproject_help&lt;/tt&gt; o &lt;tt class="docutils literal"&gt;mkvirtualenv &lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/tt&gt;
+para saber más.&lt;/p&gt;
+&lt;p&gt;Y ya sabés ...&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
 &lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;&lt;/div&gt;
 &lt;hr class="docutils"&gt;&lt;blockquote&gt;
-Este art&amp;#237;culo lo escrib&amp;#237; originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
-&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;body&gt;&lt;p&gt;Hace un tiempo cont&amp;#233; &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migr&amp;#233; un repositorio Mercurial a Git&lt;/a&gt; .
+Este artículo lo escribí originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
-all&amp;#237; porque somos pobretones y nos da repos privados gratis.
-En la mudanza se me quedaron varios &lt;em&gt;issues&lt;/em&gt; que necesitaba migrar. Y &lt;a class="reference external" href="https://bitbucket.org/site/master/issue/1642/allow-moving-tickets-over-to-another"&gt;no era el &amp;#250;nico&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Buscando un rato encontr&amp;#233; scriptcitos para migrar &lt;a class="reference external" href="https://github.com/sorich87/github-to-bitbucket-issues-migration"&gt;desde&lt;/a&gt; o &lt;a class="reference external" href="https://gist.github.com/3778347"&gt;hacia&lt;/a&gt; GitHub
-pero no hab&amp;#237;a para migrar entre proyectos de Bitbucket, algo bastante com&amp;#250;n
+allí porque somos pobretones y nos da repos privados gratis.
+En la mudanza se me quedaron varios &lt;em&gt;issues&lt;/em&gt; que necesitaba migrar. Y &lt;a class="reference external" href="https://bitbucket.org/site/master/issue/1642/allow-moving-tickets-over-to-another"&gt;no era el único&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Buscando un rato encontré scriptcitos para migrar &lt;a class="reference external" href="https://github.com/sorich87/github-to-bitbucket-issues-migration"&gt;desde&lt;/a&gt; o &lt;a class="reference external" href="https://gist.github.com/3778347"&gt;hacia&lt;/a&gt; GitHub
+pero no había para migrar entre proyectos de Bitbucket, algo bastante común
 desde que empezaron a ofrecer soporte Git.&lt;/p&gt;
-&lt;p&gt;Decid&amp;#237; entonces que deb&amp;#237;a hacer mi propio scriptcito migrador. La cosa se
+&lt;p&gt;Decidí entonces que debía hacer mi propio scriptcito migrador. La cosa se
 complicaba porque &lt;a class="reference external" href="https://github.com/Sheeprider/BitBucket-api"&gt;el&lt;/a&gt;
 &lt;a class="reference external" href="https://github.com/ericof/python-bitbucket"&gt;par&lt;/a&gt; de bibliotecas python
 que interactuan con la API de Bitbucket no tenian, hasta el momento, soporte
 para "postear" &lt;em&gt;issues&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Pero no hay darse por vencido: se me ocurri&amp;#243; mirar el par de forks de cada
-proyecto y encontr&amp;#233; &lt;a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc"&gt;justo lo que estaba buscando&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Entonces bast&amp;#243; con instalar el fork de David Paz Reyes&lt;/p&gt;
+&lt;p&gt;Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
+proyecto y encontré &lt;a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc"&gt;justo lo que estaba buscando&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Entonces bastó con instalar el fork de David Paz Reyes&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;pip install git+https://github.com/davidmpaz/BitBucket-api.git
 &lt;/pre&gt;
 &lt;p&gt;he hice un script que migra todo los issues en estado &lt;em&gt;new&lt;/em&gt;
 del repo original (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) al nuevo (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) y los potenciales comentarios que tenga.
-Como el autor  se pierde (dado que el nuevo quedar&amp;#225; publicado con mi usuario)
+Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
 agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
@@ -487,39 +687,39 @@ agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/
             &lt;span class="k"&gt;continue&lt;/span&gt;
         &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;&amp;#161;Disfruten!&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;body&gt;&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
-conocer una ciudad que en las gu&amp;#237;as de viaje suena intererante y bonita.
-Se me ocurre prender la compu para ver si ese email que mand&amp;#233; la noche
-anterior, reci&amp;#233;n llegado despu&amp;#233;s de 14 horas de viaje
-(5 de espera en el aeropuerto de Santiago) y deseando &amp;#250;nicamente
-ducha y colch&amp;#243;n, hab&amp;#237;a sido contestado.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;"No pushe&amp;#233;"&lt;/em&gt;, fu&amp;#233; lo primero que pens&amp;#233;, o me lo dije, en voz inaudible,
-como eufemismo de un gran insulto y s&amp;#237;ntesis de &lt;em&gt;"Martincito querido,
-ya sab&amp;#233;s que el booteo est&amp;#225; tardando mucho, el material para el taller_ que
-ten&amp;#233;s que dar ma&amp;#241;ana est&amp;#225; en esa computadora y tiene al menos 10 horas
-de trabajo offline que est&amp;#225; en la &amp;#250;ltima versi&amp;#243;n online: no pod&amp;#233;s ser tan
-pelotudo y tener tan mal orto a la vez&lt;/em&gt;". Mi voz interior s&amp;#237; que sabe
+&lt;p&gt;¡Disfruten!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+conocer una ciudad que en las guías de viaje suena intererante y bonita.
+Se me ocurre prender la compu para ver si ese email que mandé la noche
+anterior, recién llegado después de 14 horas de viaje
+(5 de espera en el aeropuerto de Santiago) y deseando únicamente
+ducha y colchón, había sido contestado.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;"No pusheé"&lt;/em&gt;, fué lo primero que pensé, o me lo dije, en voz inaudible,
+como eufemismo de un gran insulto y síntesis de &lt;em&gt;"Martincito querido,
+ya sabés que el booteo está tardando mucho, el material para el taller_ que
+tenés que dar mañana está en esa computadora y tiene al menos 10 horas
+de trabajo offline que está en la última versión online: no podés ser tan
+pelotudo y tener tan mal orto a la vez&lt;/em&gt;". Mi voz interior sí que sabe
 resumir.&lt;/p&gt;
-&lt;p&gt;Por suerte, no perd&amp;#237; la calma. Apret&amp;#233; el 1 en el tel&amp;#233;fono: &lt;em&gt;"s&amp;#237; se&amp;#241;or",  el
-Bussiness Center queda en el 4 piso"&lt;/em&gt;. Ah&amp;#237; fui y habia computadoras con
+&lt;p&gt;Por suerte, no perdí la calma. Apreté el 1 en el teléfono: &lt;em&gt;"sí señor",  el
+Bussiness Center queda en el 4 piso"&lt;/em&gt;. Ahí fui y habia computadoras con
 las que pude contactarme con Houston.&lt;/p&gt;
 &lt;p&gt;Grulic, &lt;a class="reference external" href="https://twitter.com/perrito666"&gt;Perrito&lt;/a&gt;,
 &lt;a class="reference external" href="http://verdumariano.com.ar/"&gt;Mariano&lt;/a&gt;, Rudi, y especialmente
-&lt;a class="reference external" href="http://blog.ontrackdatarecovery.es/conoce-al-ingeniero-ernesto-lobo/"&gt;mi cu&amp;#241;ado que trabaja en Ontrack&lt;/a&gt;
-y era algo as&amp;#237; como un Messi sentado en mi banco de suplentes
+&lt;a class="reference external" href="http://blog.ontrackdatarecovery.es/conoce-al-ingeniero-ernesto-lobo/"&gt;mi cuñado que trabaja en Ontrack&lt;/a&gt;
+y era algo así como un Messi sentado en mi banco de suplentes
 para este partido que yo no hubiese querido jugar, fueron los primeros
-con quienes me comuniqu&amp;#233;.&lt;/p&gt;
-&lt;p&gt;Mand&amp;#233; este mensaje:&lt;/p&gt;
+con quienes me comuniqué.&lt;/p&gt;
+&lt;p&gt;Mandé este mensaje:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Gente, les mando una de Murphy y el diablo y toda la mala leche junta.
 Estoy en Ecuador invitado a dar un curso-taller de Python y Django.&lt;/p&gt;
-&lt;p&gt;Rodo ven&amp;#237;a fantastico , hasta que hoy enciendo la laptop y no y no entra el sistema operativo!.&lt;/p&gt;
+&lt;p&gt;Rodo venía fantastico , hasta que hoy enciendo la laptop y no y no entra el sistema operativo!.&lt;/p&gt;
 &lt;p&gt;Entro en modo recuperacion (ubuntu 11.10) y se clava en el &lt;tt class="docutils literal"&gt;fsck&lt;/tt&gt;
 hasta que me aparece un menucito que me deja entrar a una consola root.
-Lo peor sucedi&amp;#243; &lt;tt class="docutils literal"&gt;/home/&lt;/tt&gt; no monta , pero el &lt;tt class="docutils literal"&gt;/&lt;/tt&gt;
+Lo peor sucedió &lt;tt class="docutils literal"&gt;/home/&lt;/tt&gt; no monta , pero el &lt;tt class="docutils literal"&gt;/&lt;/tt&gt;
 parece estar sano. Ambas son una particion &lt;tt class="docutils literal"&gt;ext4&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;Si intento montar a mano o un fsck, el output dice muchas cosas que
-suenan mal pero no tengo puta idea qu&amp;#233; significan:&lt;/p&gt;
+suenan mal pero no tengo puta idea qué significan:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 STATUS { DRDY }
 ERROR { UNC }
@@ -528,31 +728,31 @@ failed command READ DMA
 exception Emask 0x0 Sact 0x0 Serr 0x0 action 0x0
 res 51/40... Emask 0x9 (media error)
 &lt;/pre&gt;
-&lt;p&gt;Por favor, iluminenm&amp;#233; sobre c&amp;#243;mo proceder.&lt;/p&gt;
+&lt;p&gt;Por favor, iluminenmé sobre cómo proceder.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Ernesto contest&amp;#243;. Primero intentar hacer un un live-usb con algunas
+&lt;p&gt;Ernesto contestó. Primero intentar hacer un un live-usb con algunas
 herramientas de diagnostico: &lt;a class="reference external" href="http://ubuntu-rescue-remix.org/"&gt;Ubuntu-rescue-remix&lt;/a&gt;
-podr&amp;#237;a funcionar, pero las maquinas del Bussiness center no me dejan
+podría funcionar, pero las maquinas del Bussiness center no me dejan
 instalar algun &lt;a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/"&gt;programita&lt;/a&gt;
 para pasar la ISO al pendrive.&lt;/p&gt;
-&lt;p&gt;Empiezo a deseperar ya pensar si no conviene aprovechar el tiempo que me llevar&amp;#225;
+&lt;p&gt;Empiezo a deseperar ya pensar si no conviene aprovechar el tiempo que me llevará
 intentar un salvataje con alta probabilidad de fracaso para rehacer el
 trabajo inaccesible.&lt;/p&gt;
-&lt;p&gt;Desactivar journal, no. Forzar montado, no. No se qu&amp;#233; otra cosa, no.&lt;/p&gt;
+&lt;p&gt;Desactivar journal, no. Forzar montado, no. No se qué otra cosa, no.&lt;/p&gt;
 &lt;p&gt;Ernesto pregunta si me animo a ir por el camino duro.&lt;/p&gt;
 &lt;blockquote&gt;
-C&amp;#243;mo est&amp;#225;s de fresco ara leer hexadecimal ? &lt;tt class="docutils literal"&gt;hexdump&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;dd&lt;/tt&gt;, la navaja suiza.
+Cómo estás de fresco ara leer hexadecimal ? &lt;tt class="docutils literal"&gt;hexdump&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;dd&lt;/tt&gt;, la navaja suiza.
 que necesitamos&lt;/blockquote&gt;
 &lt;p&gt;Intentamos algunas cosas, calculadora en mano,
-pero la mayor&amp;#237;a de los intentos de acceso al disco
+pero la mayoría de los intentos de acceso al disco
 caen en el mismo bucle de errores horribles. Mucho calor en Guayaquil.&lt;/p&gt;
 &lt;p&gt;Le digo a Ernesto (domingo, dia de descanso) que no se preocupe, que intentemos
-eso &amp;#250;ltimo que se le ocurri&amp;#243; pero que si no funciona voy a ponerme a trabajar
+eso último que se le ocurrió pero que si no funciona voy a ponerme a trabajar
 de nuevo. Mientras tanto, el Dios en el que no creo me pone
 &lt;a class="reference external" href="http://linuxexpresso.wordpress.com/2010/03/31/repair-a-broken-ext4-superblock-in-ubuntu/"&gt;este link&lt;/a&gt;
 en el camino de resultados de Google.&lt;/p&gt;
-&lt;p&gt;"Ernesto, prabamos esto?" y no alcanz&amp;#243; a contestar
-antes de que est&amp;#233; poniendo los primeros comandos&lt;/p&gt;
+&lt;p&gt;"Ernesto, prabamos esto?" y no alcanzó a contestar
+antes de que esté poniendo los primeros comandos&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;sudo mke2fs -n /dev/sda3
 
@@ -563,45 +763,45 @@ Superblock backups stored on blocks:
 &lt;pre class="code bash literal-block"&gt;
 sudo e2fsck -b 32768 /dev/sda3
 &lt;/pre&gt;
-&lt;p&gt;Cientos de  &lt;tt class="docutils literal"&gt;Y&lt;/tt&gt; &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; para mensajes estilo &lt;em&gt;"est&amp;#225; roto, desea repararlo?"&lt;/em&gt;
-(no hab&amp;#237;a una opci&amp;#243;n "S&amp;#237; a todo", como si uno fuese capaz de arrepentirse
+&lt;p&gt;Cientos de  &lt;tt class="docutils literal"&gt;Y&lt;/tt&gt; &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; para mensajes estilo &lt;em&gt;"está roto, desea repararlo?"&lt;/em&gt;
+(no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
 a mitad de camino)&lt;/p&gt;
 &lt;p&gt;Anduvo. Uff. Dos simples comandos.
 El Ingeniero Lobo festeja desde Londres, Skype mediante,
-que pod&amp;#237;a volver a limpiar su moto sin quedar mal con su cu&amp;#241;ado con mala
+que podía volver a limpiar su moto sin quedar mal con su cuñado con mala
 pata. Me dijo antes:&lt;/p&gt;
 &lt;blockquote&gt;
-Si no hubiese sido una situadion del tipo &lt;em&gt;ma&amp;#241;ana
+Si no hubiese sido una situadion del tipo &lt;em&gt;mañana
 ya no me sirven los datos&lt;/em&gt; yo te hubiera  recomendado en contra
-de herramienta como &lt;tt class="docutils literal"&gt;e2fsck&lt;/tt&gt;. Esos programas s&amp;#243;lo se encargan
-de asegurar que el filesystem est&amp;#233; &amp;#237;ntegro, pero si para eso tienen
+de herramienta como &lt;tt class="docutils literal"&gt;e2fsck&lt;/tt&gt;. Esos programas sólo se encargan
+de asegurar que el filesystem esté íntegro, pero si para eso tienen
 que cortarlo a la mitad lo hacen sin dudar.
 Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
 brazo.&lt;/blockquote&gt;
-&lt;p&gt;Querido Guayaquil: prometo visitar tu Malec&amp;#243;n la pr&amp;#243;xima,
-&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rápidas de una mudanza</title><link>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;body&gt;&lt;p&gt;Hace unos d&amp;#237;as abr&amp;#237;a este espacio prometiendo migrar contenidos y
-tratar de que se vea un poco m&amp;#225;s bonito.&lt;/p&gt;
+&lt;p&gt;Querido Guayaquil: prometo visitar tu Malecón la próxima,
+&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rápidas de una mudanza</title><link>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
+tratar de que se vea un poco más bonito.&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;div class="section" id="github-nikola"&gt;
-&lt;h2&gt;Github &amp;#9829; Nikola&lt;/h2&gt;
-&lt;p&gt;Este blog que est&amp;#225;s leyendo est&amp;#225; hospedado en &lt;a class="reference external" href="http://pages.github.com"&gt;Github Pages&lt;/a&gt; ,
-el servicio de hosting gratuito de contenido est&amp;#225;tico que ofrece Github.&lt;/p&gt;
+&lt;h2&gt;Github ♥ Nikola&lt;/h2&gt;
+&lt;p&gt;Este blog que estás leyendo está hospedado en &lt;a class="reference external" href="http://pages.github.com"&gt;Github Pages&lt;/a&gt; ,
+el servicio de hosting gratuito de contenido estático que ofrece Github.&lt;/p&gt;
 &lt;p&gt;A diferencia de cuando se usa Gh-pages para proyectos, donde se sirve
-el contenido del branch &lt;em&gt;gh-page&lt;/em&gt; del proyecto en cuesti&amp;#243;n,
+el contenido del branch &lt;em&gt;gh-page&lt;/em&gt; del proyecto en cuestión,
 para usar gh-pages por usuario hay que crear
 un repo llamado &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt;.github.com (donde &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt; es el tuyo)
 y lo que sirve en &lt;a class="reference external" href="http:/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch
 &lt;em&gt;master&lt;/em&gt; (&lt;a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages"&gt;referencia&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Por este motivo cre&amp;#233; otro branch (que sin mucha imaginaci&amp;#243;n denomin&amp;#233;
+&lt;p&gt;Por este motivo creé otro branch (que sin mucha imaginación denominé
 &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing"&gt;writing&lt;/a&gt; )
 donde tengo todo el mi "proyecto" hecho con Nikola&lt;/p&gt;
-&lt;p&gt;All&amp;#237; escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Allí escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;El branch master es el de deploy y sirve todo lo que haya en la carpeta
 &lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que ir a &lt;em&gt;master&lt;/em&gt;,
-borrar todo y leer desde el &amp;#225;rbol del otro branch con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+borrar todo y leer desde el árbol del otro branch con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 git checkout master
-git rm *    # s&amp;#243;lo la primera vez
+git rm *    # sólo la primera vez
 git read-tree writing:output
 git commit -m 'deploying last build'
 git push
@@ -610,50 +810,50 @@ git push
 &lt;div class="section" id="migrando-desde-spip"&gt;
 &lt;h2&gt;Migrando desde Spip&lt;/h2&gt;
 &lt;p&gt;Uno de los motivos que me llevaron a migrar desde &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt; es que el markup
-que usa es &lt;em&gt;ad hoc&lt;/em&gt; y muy feo. Algo as&amp;#237;&lt;/p&gt;
+que usa es &lt;em&gt;ad hoc&lt;/em&gt; y muy feo. Algo así&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-{{{ Un intert&amp;#237;tulo }}}
+{{{ Un intertítulo }}}
 
 Esto es {{negrita}} y este [mi twitter-&amp;gt;http://twitter.com/tin_nqn_]
 &lt;/pre&gt;
-&lt;p&gt;Hasta ah&amp;#237; no se ve tan mal, pero es muy limitado cuando se trata de mostrar
-c&amp;#243;digo, necesario en todo blog mas o menos t&amp;#233;cnico.&lt;/p&gt;
-&lt;p&gt;Para migrar esquiv&amp;#233; la idea de convertir el markup de spip y opt&amp;#233; por un
-scrapping, limpieza y conversi&amp;#243;n a restructuredText usando el m&amp;#225;gico
+&lt;p&gt;Hasta ahí no se ve tan mal, pero es muy limitado cuando se trata de mostrar
+código, necesario en todo blog mas o menos técnico.&lt;/p&gt;
+&lt;p&gt;Para migrar esquivé la idea de convertir el markup de spip y opté por un
+scrapping, limpieza y conversión a restructuredText usando el mágico
 &lt;a class="reference external" href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt; (y la ayuda de PyQuery)&lt;/p&gt;
-&lt;p&gt;El script que hice est&amp;#225;
-&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;ac&amp;#225;&lt;/a&gt;
-. No es perfecto, pero est&amp;#225; lo importante: contenidos, im&amp;#225;genes, adjuntos,
-convertido a restructuredText bastante decente que mejorar&amp;#233; poco a poco
+&lt;p&gt;El script que hice está
+&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;acá&lt;/a&gt;
+. No es perfecto, pero está lo importante: contenidos, imágenes, adjuntos,
+convertido a restructuredText bastante decente que mejoraré poco a poco
 a mano.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="estilos"&gt;
 &lt;h2&gt;Estilos&lt;/h2&gt;
-&lt;p&gt;Es mentira que a los &amp;#241;o&amp;#241;os no nos gustan las cosas (los blogs, entre otras)
-que se ven bonitos. Sucede, en realidad, que la mayor&amp;#237;a de las veces no
+&lt;p&gt;Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras)
+que se ven bonitos. Sucede, en realidad, que la mayoría de las veces no
 venimos con &lt;em&gt;esa&lt;/em&gt; habilidad y el esfuerzo que nos implica intentarlo
-preferimos ponerlo en otra cosa. No gusta, pero no es lo m&amp;#225;s importante.&lt;/p&gt;
+preferimos ponerlo en otra cosa. No gusta, pero no es lo más importante.&lt;/p&gt;
 &lt;p&gt;No obstante, yo quiero que este espacio sea lindo y legible. Y como hay
-muchos otros &amp;#241;o&amp;#241;os con sitios lindos y legibles que son tan amables de
-compartir sus estilos (y existe &lt;a class="reference external" href="http://twitter.github.com/bootstrap"&gt;bootstrap&lt;/a&gt;, claro) voy a ir intent&amp;#225;ndolo,
+muchos otros ñoños con sitios lindos y legibles que son tan amables de
+compartir sus estilos (y existe &lt;a class="reference external" href="http://twitter.github.com/bootstrap"&gt;bootstrap&lt;/a&gt;, claro) voy a ir intentándolo,
 incrementalmente.&lt;/p&gt;
-&lt;p&gt;Por ahora tom&amp;#233; ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id3" id="id1"&gt;[1]&lt;/a&gt; y de la documentaci&amp;#243;n
+&lt;p&gt;Por ahora tomé ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id3" id="id1"&gt;[1]&lt;/a&gt; y de la documentación
 de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id4" id="id2"&gt;[2]&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="disqus"&gt;
 &lt;h2&gt;Disqus&lt;/h2&gt;
 &lt;p&gt;El blog viejo usaba &lt;a class="reference external" href="http://disqus.com"&gt;Disqus&lt;/a&gt;, con un &lt;a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html"&gt;plugin&lt;/a&gt; que hice hace algun tiempo.
-Para migrar los comentarios utilic&amp;#233; el m&amp;#233;todo de subir un CSV con
-el formato que genera el mismo script de migraci&amp;#243;n:&lt;/p&gt;
+Para migrar los comentarios utilicé el método de subir un CSV con
+el formato que genera el mismo script de migración:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 URL_POST_X_OLD, URL_POST_X_NEW
 URL_POST_Y_OLD, URL_POST_Y_NEW
 &lt;/pre&gt;
-&lt;p&gt;En cuesti&amp;#243;n de minutos los (pocos) comentarios estaban migrados.&lt;/p&gt;
+&lt;p&gt;En cuestión de minutos los (pocos) comentarios estaban migrados.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="redireccion"&gt;
-&lt;h2&gt;Redirecci&amp;#243;n&lt;/h2&gt;
-&lt;p&gt;Como mantuve el slug de los viejos art&amp;#237;culos, una redirecci&amp;#243;n 301
+&lt;h2&gt;Redirección&lt;/h2&gt;
+&lt;p&gt;Como mantuve el slug de los viejos artículos, una redirección 301
 via .htaccess redirige del viejo blog al nuevo:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 # nqnwebs.com blog rules
@@ -661,88 +861,88 @@ RewriteCond %{HTTP_HOST} ^nqnwebs [nc]
 RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
 RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
 &lt;/pre&gt;
-&lt;p&gt;&amp;#191;C&amp;#243;mo se va viendo?&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</link><description>&lt;body&gt;&lt;p&gt;Hola!&lt;/p&gt;
-&lt;p&gt;Este blog est&amp;#225; en pleno proceso de mudanza y metamorfosis. Antes estaba
+&lt;p&gt;¿Cómo se va viendo?&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Hola!&lt;/p&gt;
+&lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
-que explicar&amp;#233; m&amp;#225;s adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
+que explicaré más adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
 &lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
-&lt;p&gt;Espero que pronto esto est&amp;#233; m&amp;#225;s bonito y con contenido. Tambi&amp;#233;n que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir m&amp;#225;s.&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>De mercurial a git, limpieza mediante</title><link>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</link><description>&lt;body&gt;&lt;p&gt;Cuando decid&amp;#237; dar el salto desde Subversion a un DVCS estuve leyendo
-muchos posts comparativos entre las dos opciones m&amp;#225;s relevantes, Git y
-Mercurial. Hab&amp;#237;a que elegir entre &lt;a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/"&gt;Mc Gyver o James
+&lt;p&gt;Espero que pronto esto esté más bonito y con contenido. También que la
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>De mercurial a git, limpieza mediante</title><link>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Cuando decidí dar el salto desde Subversion a un DVCS estuve leyendo
+muchos posts comparativos entre las dos opciones más relevantes, Git y
+Mercurial. Había que elegir entre &lt;a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/"&gt;Mc Gyver o James
 Bond&lt;/a&gt;
-dec&amp;#237;a uno, entre &lt;a class="reference external" href="http://www.ericsink.com/entries/hg_denzel.html"&gt;Denzel Washington y Wesley
+decía uno, entre &lt;a class="reference external" href="http://www.ericsink.com/entries/hg_denzel.html"&gt;Denzel Washington y Wesley
 Snipes&lt;/a&gt; y la
-comparaci&amp;#243;n jocosa entre estos dos grandes softwares se volvi&amp;#243; una
-especie de meme t&amp;#225;cito.&lt;/p&gt;
-&lt;p&gt;Sab&amp;#237;a que, a fin de cuentas, ten&amp;#237;a que probarlos y ver cual encajaba
-mejor para mis necesidades de "solo developer". En el medio le&amp;#237; &lt;a class="reference external" href="http://hginit.com/"&gt;Hg
-Init&lt;/a&gt; del gran divulgador Joel Spolsky y, v&amp;#237;ctima
-de semejante labia, me sumerg&amp;#237; para ese lado.&lt;/p&gt;
-&lt;p&gt;Mi flujo de trabajo era bastante b&amp;#225;sico pero suficiente y superador de
-subvesion. Comparado con lo que hab&amp;#237;a probado de Git era mucho menos
-verb&amp;#243;sico (no pod&amp;#237;a entender la necesidad de Git hacer &lt;tt class="docutils literal"&gt;add&lt;/tt&gt; cada vez
-que quer&amp;#237;a commitear un archivo modificado) y
-&lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; daba no s&amp;#243;lo hospedaje gratuito para
-repositorios p&amp;#250;blicos sino tambi&amp;#233;n para potenciales desarrollos privados
-(cosa que GitHub, su equivalente &amp;#8212; siendo ben&amp;#233;volo con bitbucket &amp;#8212; para
+comparación jocosa entre estos dos grandes softwares se volvió una
+especie de meme tácito.&lt;/p&gt;
+&lt;p&gt;Sabía que, a fin de cuentas, tenía que probarlos y ver cual encajaba
+mejor para mis necesidades de "solo developer". En el medio leí &lt;a class="reference external" href="http://hginit.com/"&gt;Hg
+Init&lt;/a&gt; del gran divulgador Joel Spolsky y, víctima
+de semejante labia, me sumergí para ese lado.&lt;/p&gt;
+&lt;p&gt;Mi flujo de trabajo era bastante básico pero suficiente y superador de
+subvesion. Comparado con lo que había probado de Git era mucho menos
+verbósico (no podía entender la necesidad de Git hacer &lt;tt class="docutils literal"&gt;add&lt;/tt&gt; cada vez
+que quería commitear un archivo modificado) y
+&lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; daba no sólo hospedaje gratuito para
+repositorios públicos sino también para potenciales desarrollos privados
+(cosa que GitHub, su equivalente — siendo benévolo con bitbucket — para
 Git, no daba).&lt;/p&gt;
-&lt;p&gt;Con el tiempo empec&amp;#233; a compatir &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks"&gt;algunos
+&lt;p&gt;Con el tiempo empecé a compatir &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks"&gt;algunos
 proyectitos&lt;/a&gt; con otros
-desarrolladores y mi inexperiencia en Mercurial me empez&amp;#243; a jugar en
-contra. Y justo cuando necesitaba ponerme a aprender m&amp;#225;s profundamente
+desarrolladores y mi inexperiencia en Mercurial me empezó a jugar en
+contra. Y justo cuando necesitaba ponerme a aprender más profundamente
 Hg, entre a laburar, muy a gusto, en
-&lt;a class="reference external" href="http://machinalis.com"&gt;Machinalis&lt;/a&gt; (qu&amp;#233; vago, nunca cont&amp;#233; nada por
-ac&amp;#225;) donde usamos Git para el control de versiones de los proyectos,
-implementando &lt;a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/"&gt;esta pol&amp;#237;tica de ramificaci&amp;#243;n y
+&lt;a class="reference external" href="http://machinalis.com"&gt;Machinalis&lt;/a&gt; (qué vago, nunca conté nada por
+acá) donde usamos Git para el control de versiones de los proyectos,
+implementando &lt;a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/"&gt;esta política de ramificación y
 mezcla&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Result&amp;#243; entonces que en poquito tiempo ya sab&amp;#237;a mucho m&amp;#225;s de Git que de
+&lt;p&gt;Resultó entonces que en poquito tiempo ya sabía mucho más de Git que de
 Mercurial (con la ventaja de tenerlo a Daniel Moisset cerca para apagar
-algunos incendios que encend&amp;#237; las primeras semanas).&lt;/p&gt;
-&lt;p&gt;Para m&amp;#225;s se&amp;#241;ales, Atlassian, la empresa detras de Bitbucket y principal
-referente de Mercurial (junto con Selenic, la creadora), comenz&amp;#243; a
-ofrecer Git (sin descartar mercurial) como sistema DVCS (comi&amp;#233;ndose
-alguna que otra gastada porque alguna vez comunic&amp;#243; una noticia parecida
+algunos incendios que encendí las primeras semanas).&lt;/p&gt;
+&lt;p&gt;Para más señales, Atlassian, la empresa detras de Bitbucket y principal
+referente de Mercurial (junto con Selenic, la creadora), comenzó a
+ofrecer Git (sin descartar mercurial) como sistema DVCS (comiéndose
+alguna que otra gastada porque alguna vez comunicó una noticia parecida
 como broma del dia de los inocentes).&lt;/p&gt;
-&lt;p&gt;Asi que lleg&amp;#243; el dia que decid&amp;#237; mudar un proyecto en Mercurial a Git.
-Atenti: las razones no son t&amp;#233;cnicas. No tengo suficiente conocimiento de
+&lt;p&gt;Asi que llegó el dia que decidí mudar un proyecto en Mercurial a Git.
+Atenti: las razones no son técnicas. No tengo suficiente conocimiento de
 Mercurial (ni de Git) para decir que uno es mejor que el otro por tales
-razones. S&amp;#243;lo es *mi experiencia*, que vino un poco por obligaci&amp;#243;n. Y
-s&amp;#237;, tambi&amp;#233;n, siguiendo un poco a la manada. Proyectos de la envergadura
+razones. Sólo es *mi experiencia*, que vino un poco por obligación. Y
+sí, también, siguiendo un poco a la manada. Proyectos de la envergadura
 de Django han migrado a Git (y, particularmente, a GitHub)&lt;/p&gt;
 &lt;div class="section" id="la-limpieza"&gt;
 &lt;h2&gt;La limpieza&lt;/h2&gt;
-&lt;p&gt;Soy de esos que se mudan seguido. "&amp;#191;Asi que si te renuevo contrato me
-aumentas 30 % el alquiler e igual te tengo que pagar comisi&amp;#243;n sin que
-hagas nada? &amp;#161;And&amp;#225; a cagar!" puedo imaginarme dialogando con algun agente
+&lt;p&gt;Soy de esos que se mudan seguido. "¿Asi que si te renuevo contrato me
+aumentas 30 % el alquiler e igual te tengo que pagar comisión sin que
+hagas nada? ¡Andá a cagar!" puedo imaginarme dialogando con algun agente
 inmobiliario.&lt;/p&gt;
-&lt;p&gt;Esta no era la excepci&amp;#243;n y deb&amp;#237;a mudar un repositorio mercurial que a su
-vez hab&amp;#237;a sido mudado (en realidad, exportado desde el &amp;#250;ltimo commit, y
+&lt;p&gt;Esta no era la excepción y debía mudar un repositorio mercurial que a su
+vez había sido mudado (en realidad, exportado desde el último commit, y
 arrancando de 0) desde
 &lt;a class="reference external" href="http://code.google.com/p/gpec2010/"&gt;subversion&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;El detalle es que el repositorio original, y por ende el nuevo en
-mercurial, tenia un mont&amp;#243;n de datos de documentaci&amp;#243;n que era,
+mercurial, tenia un montón de datos de documentación que era,
 basicamente, todos los fuentes y muchos de los archivos generados del
 reporte escrito de mi tesis.&lt;/p&gt;
-&lt;p&gt;El primer changeset en el flamante mercurial consisti&amp;#243; en borrar todo
-esa informaci&amp;#243;n innecesaria, pero que segu&amp;#237;a all&amp;#237;, en el historial (uno
+&lt;p&gt;El primer changeset en el flamante mercurial consistió en borrar todo
+esa información innecesaria, pero que seguía allí, en el historial (uno
 110Mb de datos que no necesitaba).&lt;/p&gt;
-&lt;p&gt;As&amp;#237; que ya que ahora iba a mudarme de nuevo, queria tirar a la basura
-todas esas cajas de papeles que hab&amp;#237;a metido en un caja y, si bien no la
-ve&amp;#237;a, me ocupaban el placard.&lt;/p&gt;
-&lt;p&gt;Despues de darle vueltas, &lt;a class="reference external" href="http://stackoverflow.com/questions/2684898/mercurial-remove-history#8819813"&gt;encontr&amp;#233; una
+&lt;p&gt;Así que ya que ahora iba a mudarme de nuevo, queria tirar a la basura
+todas esas cajas de papeles que había metido en un caja y, si bien no la
+veía, me ocupaban el placard.&lt;/p&gt;
+&lt;p&gt;Despues de darle vueltas, &lt;a class="reference external" href="http://stackoverflow.com/questions/2684898/mercurial-remove-history#8819813"&gt;encontré una
 punta&lt;/a&gt;
-usando la extensi&amp;#243;n &lt;a class="reference external" href="http://mercurial.selenic.com/wiki/ConvertExtension#Converting_from_Mercurial"&gt;hg convert para obtener un subconjunto de repo
+usando la extensión &lt;a class="reference external" href="http://mercurial.selenic.com/wiki/ConvertExtension#Converting_from_Mercurial"&gt;hg convert para obtener un subconjunto de repo
 original&lt;/a&gt;,
 por ejemplo, partiendo de un determinado cambio.&lt;/p&gt;
-&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Primero, activar la extensi&amp;#243;n editando &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.hgrc&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
+&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Primero, activar la extensión editando &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.hgrc&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 [extensions]
 convert =
 &lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;&amp;#161;Tirar las cajas del placard!&lt;/p&gt;
+&lt;li&gt;&lt;p class="first"&gt;¡Tirar las cajas del placard!&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ hg convert --config convert.hg.startrev=1 repo_hg_orig/ repo_hg_liviano/
 &lt;/pre&gt;
@@ -754,8 +954,8 @@ el mismo cambio (al menos no de manera directa).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="la-mudanza"&gt;
 &lt;h2&gt;La mudanza&lt;/h2&gt;
-&lt;p&gt;Contra todo pron&amp;#243;stico fruto de mi prejuicio y desidia, migrar a git fue
-extremadamente f&amp;#225;cil usando
+&lt;p&gt;Contra todo pronóstico fruto de mi prejuicio y desidia, migrar a git fue
+extremadamente fácil usando
 &lt;a class="reference external" href="http://repo.or.cz/w/fast-export.git"&gt;hg-fast-export&lt;/a&gt;.&lt;/p&gt;
 &lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Obtener los scripts&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -770,147 +970,13 @@ $ git init
 $ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
 &lt;/pre&gt;
 &lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;&amp;#161;Char&amp;#225;nnnn...!&lt;/p&gt;
+&lt;/ol&gt;&lt;p&gt;¡Charánnnn...!&lt;/p&gt;
 &lt;p&gt;El flag &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--force&lt;/span&gt;&lt;/tt&gt; era necesario en mi caso porque, como explica el
 &lt;a class="reference external" href="http://repo.or.cz/w/fast-export.git/blob_plain/master:/hg-fast-export.txt"&gt;readme.txt&lt;/a&gt;
 &lt;em&gt;"hg-fast-export supports multiple branches but only named branches with
 exaclty one head each..."&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
-original que sin perder la historia &amp;#250;til.&lt;/p&gt;
+original que sin perder la historia útil.&lt;/p&gt;
 &lt;p&gt;Parafraseando a Lito, &lt;em&gt;si la historia la escriben los que ganan&lt;/em&gt; ...
-&amp;#191;ganamos ?&lt;/p&gt;
-&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</guid><pubDate>Mon, 02 Jul 2012 17:39:11 GMT</pubDate></item><item><title>Cómo volver a compartir desde Google Reader</title><link>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</link><description>&lt;body&gt;&lt;div class="important"&gt;
-&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
-&lt;p class="last"&gt;El pipe tiene un problema con las fechas y qued&amp;#243; deactualizado
-cuando cambi&amp;#243; en el html de G+. En su defecto hice este peque&amp;#241;o
-&lt;a class="reference external" href="https://gist.github.com/2886591"&gt;scrapper&lt;/a&gt; que es lo que uso
-en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;Textos y Pretextos&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Desde hace much&amp;#237;simo tengo en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;mi otro
-blog&lt;/a&gt; una secci&amp;#243;n que se llama &lt;em&gt;"De
-por ah&amp;#237;, cosas que me parecieron interesantes"&lt;/em&gt;. Es un feed de links a
-contenidos de toda &amp;#237;ndole (pol&amp;#237;tica, literatura, cine, fotograf&amp;#237;a,
-deportes, programaci&amp;#243;n: intereses anchos) con un brevisimo extracto como
-descripci&amp;#243;n que fui alimentando de diversas formas a lo largo del
-tiempo: us&amp;#233;
-&lt;a class="reference external" href="http://delicious.com/nqnwebs,%20use%20%20%5Besto%20%20-%3Ehttp://sourceforge.net/projects/linkwalla/"&gt;delicious&lt;/a&gt;,
-us&amp;#233; mi
-&lt;a class="reference external" href="http://twitter.com/nqnwebs).%20Pero%20cuando%20%5BGoogle%20Reader-%3Ehttp://reader.google.com"&gt;twitter&lt;/a&gt;
-incorpor&amp;#243; la opci&amp;#243;n de "Compartir" se convirti&amp;#243; en la manera por
-defecto: si algo me gustaba, un click en compartir y listo. Eso permitia
-que otros usuarios de Reader que me "seguian" pudieran ver mis posts
-compartidos pero a la vez generaba un feed rss que alimentaba la secci&amp;#243;n
-de mi blog.&lt;/p&gt;
-&lt;p&gt;Con la aparici&amp;#243;n de Google+ aquella simple y muy usada funcionalidad se
-vi&amp;#243; desplazada por el bot&amp;#243;n "+1" y por un "compartir" enga&amp;#241;oso que s&amp;#243;lo
-permite compartir en Google+&lt;/p&gt;
-&lt;p&gt;Para colmo, cuando uno hace "+1" en algun contenido (dentro de Google
-Reader o en cualquier lado donde est&amp;#233; el bot&amp;#243;n) se lista en una &lt;a class="reference external" href="https://plus.google.com/102449284377784435533/plusones/p/pub"&gt;p&amp;#225;gina
-publica&lt;/a&gt;
-pero que &lt;strong&gt;no tiene feed RSS&lt;/strong&gt;! . Larry Page,
-(&lt;a class="reference external" href="https://twitter.com/#!/nqnwebs/status/154772127139102720"&gt;doblemente&lt;/a&gt;)
-te odio.&lt;/p&gt;
-&lt;div class="section" id="frustracion-colectiva"&gt;
-&lt;h2&gt;Frustraci&amp;#243;n colectiva&lt;/h2&gt;
-&lt;p&gt;La bronca por los cambios en Reader no es s&amp;#243;lo mia, sino que gener&amp;#243; una
-&lt;a class="reference external" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&amp;amp;formkey=dE16SFVla3JFZ1lwTkxGRWN2SkZtb2c6MA#gid=0"&gt;petici&amp;#243;n&lt;/a&gt;
-firmada por m&amp;#225;s de
-&lt;a class="reference external" href="http://www.bdkeller.com/2011/10/save-google-reader/"&gt;13000&lt;/a&gt; usuarios
-que manifiestan que "algunos ven estos cambios como un intento errado
-para forzarnos a usar Google Plus, pero nosotros amamos la utilidad,
-simplicidad y funcionalidades sociales limitadas que ofrece Google
-Reader".&lt;/p&gt;
-&lt;p&gt;Mientras tanto, muchos
-(&lt;a class="reference external" href="http://www.theatlanticwire.com/technology/2011/10/how-survive-switch-google-reader-google/44069/"&gt;1&lt;/a&gt;,
-&lt;a class="reference external" href="https://github.com/jtwebman/GooglePlusToRSSFeed"&gt;2&lt;/a&gt;,
-&lt;a class="reference external" href="http://plus-one-feed-generator.appspot.com/"&gt;3&lt;/a&gt;) intentan parchar el
-atropello.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mi-solucion"&gt;
-&lt;h2&gt;Mi soluci&amp;#243;n&lt;/h2&gt;
-&lt;p&gt;"&amp;#191;As&amp;#237; que no me dej&amp;#225;s compartir donde yo quiera, el algoritmo de tu
-madre!?" vocifer&amp;#233;, y no sin premeditaci&amp;#243;n agarr&amp;#233; &lt;a class="reference external" href="/posts/blog/article/yahoo-pipes-como-por-un-tubo"&gt;Yahoo!
-Pipes&lt;/a&gt; (una genialidad, hay
-que decirlo) para scrappearlos a puro golpe de mouse y sin salir del
-navegador. El resultado fue &lt;a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.info?_id=770fc166fd07a0f6e67fe63f513b05dc"&gt;este
-pipe&lt;/a&gt;
-del que se puede obtener, por ejemplo, un &lt;a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;amp;_render=rss&amp;amp;google_plus_id=102449284377784435533"&gt;feed RSS 2.0 de mis
-+1s&lt;/a&gt;
-. Pod&amp;#233;s obtener el feed de otros usuarios as&amp;#237;:&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;amp;_render=rss&amp;amp;google_plus_id=[GOOGLE_PLUS_ID]&lt;/span&gt;&lt;/tt&gt;
-donde &lt;tt class="docutils literal"&gt;[GOOGLE_PLUS_ID]&lt;/tt&gt; es el numero de identificaci&amp;#243;n del usuario en
-cuesti&amp;#243;n.&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
-&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;&lt;/div&gt;
-&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Lo que hace un geek cuando ama</title><link>http://mgaitan.github.com/posts/lo-que-hace-un-geek-cuando-ama.html</link><description>&lt;body&gt;&lt;p&gt;Mi computadora de escritorio, la primera que compr&amp;#233; trabajando como
-desarrollador de software, es del 2005. La "morocha", una AMD64 con
-placa madre &lt;a class="reference external" href="http://www.asus.com/Motherboards/AMD_Socket_754/K8N"&gt;Asus
-K8N&lt;/a&gt; que se la
-sigue bancando.&lt;/p&gt;
-&lt;img alt="/images/1110133923_20ebd-30987.jpg" class="align-center" src="/images/1110133923_20ebd-30987.jpg"&gt;&lt;p&gt;Aquel a&amp;#241;o me enamor&amp;#233;, no por primera vez, pero s&amp;#237; mucho. Aunque result&amp;#243;
-una &lt;a class="reference external" href="http://www.textosypretextos.com.ar/Hurgando-en-el-Gmail"&gt;historia
-complicada&lt;/a&gt;,
-es lindo recordar cuanto uno es capaz de amar y ser amado. Y reirse,
-tambi&amp;#233;n, de cu&amp;#225;n est&amp;#250;pido se puede ser en ese estado.&lt;/p&gt;
-&lt;div class="section" id="el-tatuaje-digital"&gt;
-&lt;h2&gt;El tatuaje digital&lt;/h2&gt;
-&lt;p&gt;Hay &lt;a class="reference external" href="http://www.ascodevida.com/amor/42152"&gt;gestos de amor&lt;/a&gt; que no
-miden consecuencias y son dificiles de comprender. Yo, por ejemplo,
-decid&amp;#237; "hackear" la BIOS de mi maquina reci&amp;#233;n comprada y poner una foto
-de aquella mujer amada como pantalla de splash, esa que se muestra apenas
-se enciende la computadora, mucho antes de cargar cualquier sistema
-operativo.&lt;/p&gt;
-&lt;p&gt;Si bien por entonces ya usaba linux, para hacer esto us&amp;#233; una aplicaci&amp;#243;n
-oficial de Asus que ven&amp;#237;a en el Windows instalado, que pronto, a falta
-de espacio en disco y necesidad, desapareci&amp;#243;.&lt;/p&gt;
-&lt;p&gt;La historia sigui&amp;#243;, por supuesto. Aquel amor termin&amp;#243; pero esa imagen
-qued&amp;#243; all&amp;#237;, tatuada. Mientras viv&amp;#237;a solo mucho no me importaba, quizas
-porque reiniciaba muy poco la computadora, quizas porque uno naturaliza
-una cicatriz hasta volverse indiferente.&lt;/p&gt;
-&lt;p&gt;Cuando un amor nuevo lleg&amp;#243; y m&amp;#225;s tarde la convivencia, encender la
-Morocha cada ma&amp;#241;ana empez&amp;#243; a hacerse un momento gracioso pero inc&amp;#243;modo.
-Para colmo, aun estando dispuesto a reinstalar Windows con este &amp;#250;nico
-prop&amp;#243;sito, aquel programita de Asus se me hizo inconseguible .&lt;/p&gt;
-&lt;p&gt;Hasta que hoy, seis a&amp;#241;os despues, me anim&amp;#233; a la cirug&amp;#237;a.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="si-no-podes-cambiar-el-tatuaje-cambia-de-piel"&gt;
-&lt;h2&gt;Si no pod&amp;#233;s cambiar el tatuaje, cambi&amp;#225; de piel&lt;/h2&gt;
-&lt;p&gt;Encontr&amp;#233; un &lt;a class="reference external" href="http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip"&gt;firmware
-actualizado&lt;/a&gt;
-para la BIOS. Aunque no hubiera problemas con la que ten&amp;#237;a, actualizarlo
-traer&amp;#237;a el splash original de Asus.&lt;/p&gt;
-&lt;p&gt;El problema, felaci&amp;#243;n habitual a Microsoft de las fabricantes de
-hardware, es que &lt;a class="reference external" href="http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip"&gt;la utilidad para actualizar
-BIOS&lt;/a&gt; es para
-D.O.S.. WTF!&lt;/p&gt;
-&lt;p&gt;La
-&lt;a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html"&gt;soluci&amp;#243;n&lt;/a&gt;
-es usar &lt;a class="reference external" href="http://www.freedos.org/"&gt;FreeDOS&lt;/a&gt;&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="c"&gt;# obtener una imagen booteable de freeDOS y montarla en un directorio
-&lt;/span&gt;wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
-gunzip FDOEM.144.gz
-mkdir /tmp/floppy
-mount -t vfat -o loop FDOEM.144 /tmp/floppy
-
-&lt;span class="c"&gt;# obtener la herramienta para actualizar el bios y la imagen, y moverlos
-&lt;/span&gt;wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
-unzip AFUDOS211.zip
-mv AFUDOS.exe /tmp/floppy
-wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
-unzip K8n1011.zip
-mv 1011.rom /tmp/floppy
-
-&lt;span class="c"&gt;# desmontar
-&lt;/span&gt;umount /tmp/floppy
-
-&lt;span class="c"&gt;# crear una ISO y grabar a un disco virgen
-# (tambien se podr&amp;#237;a grabar a un pendrive)
-&lt;/span&gt;mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
-cdrecord -v bootcd.iso
-&lt;/pre&gt;
-&lt;p&gt;Reinciar, bootear el CD de FreeDOS y ejecutar:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-afudos /i1011.rom
-&lt;/pre&gt;
-&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/lo-que-hace-un-geek-cuando-ama.html</guid><pubDate>Fri, 11 Nov 2011 20:43:47 GMT</pubDate></item></channel></rss>
+¿ganamos ?&lt;/p&gt;
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</guid><pubDate>Mon, 02 Jul 2012 17:39:11 GMT</pubDate></item></channel></rss>

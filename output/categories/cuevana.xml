@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (cuevana)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Thu, 07 Mar 2013 14:45:15 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.com/posts/como-funciona-cuevana.html</link><description>&lt;body&gt;&lt;p&gt;Estimando cuanto trabajo significa actualizar &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;Cuevana sources&lt;/a&gt;
+<rss version="2.0"><channel><title>tin_nqn (cuevana)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.com/posts/como-funciona-cuevana.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Estimando cuanto trabajo significa actualizar &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;Cuevana sources&lt;/a&gt;
 y/o &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalib"&gt;Cuevanalib&lt;/a&gt;
-investigu&amp;#233; c&amp;#243;mo funciona la nueva versi&amp;#243;n de cuevana.&lt;/p&gt;
+investigué cómo funciona la nueva versión de cuevana.&lt;/p&gt;
 &lt;p&gt;Estas notas son el resultado de lo que fui observando.&lt;/p&gt;
 &lt;p&gt;Una vez que se elige un contenido, un iframe apunta a una URL con este forma:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="http://www.cuevana.tv/player/sources?id=4773&amp;amp;tipo=pelicula"&gt;http://www.cuevana.tv/player/sources?id=4773&amp;amp;tipo=pelicula&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;En c&amp;#243;digo javascript inline define las fuentes disponibles para ese contenido&lt;/p&gt;
+&lt;p&gt;En código javascript inline define las fuentes disponibles para ese contenido&lt;/p&gt;
 &lt;pre class="code javascript literal-block"&gt;
 &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;plugin_ver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;plugin_rev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;actual_ver&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;actual_rev&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -18,7 +18,7 @@ investigu&amp;#233; c&amp;#243;mo funciona la nueva versi&amp;#243;n de cuevana.
     &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="nx"&gt;sel_source&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;La primer clave (en este caso &lt;tt class="docutils literal"&gt;2&lt;/tt&gt;, ingl&amp;#233;s) es el idioma del audio,
+&lt;p&gt;La primer clave (en este caso &lt;tt class="docutils literal"&gt;2&lt;/tt&gt;, inglés) es el idioma del audio,
 y la segunda la calidad del video&lt;/p&gt;
 &lt;p&gt;Luego define diferentes constates:&lt;/p&gt;
 &lt;pre class="code javascript literal-block"&gt;
@@ -77,16 +77,16 @@ y la segunda la calidad del video&lt;/p&gt;
     &lt;span class="s1"&gt;'bayfiles'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Bayfiles'&lt;/span&gt;
 &lt;span class="p"&gt;};&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;El usuario selecciona mediante un men&amp;#250; donde se define &lt;tt class="docutils literal"&gt;audio&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;quality&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;source&lt;/tt&gt;
+&lt;p&gt;El usuario selecciona mediante un menú donde se define &lt;tt class="docutils literal"&gt;audio&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;quality&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;source&lt;/tt&gt;
 que se configuran como atributos data del link:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 .. code-block::
 &lt;/pre&gt;
 &lt;blockquote&gt;
 &amp;lt;a class="sel" data-type="quality" data-id="360"&amp;gt;SD (360p)&amp;lt;/a&amp;gt;&lt;/blockquote&gt;
-&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-type&lt;/span&gt;&lt;/tt&gt; es el tipo de variable, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-id&lt;/span&gt;&lt;/tt&gt; el valor para esa opci&amp;#243;n
-y &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;class="sel"&lt;/span&gt;&lt;/tt&gt; determina si esa es la opci&amp;#243;n seleccionada.&lt;/p&gt;
-&lt;p&gt;Cuando se hace click en el bot&amp;#243;n Play se invoca la URL:&lt;/p&gt;
+&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-type&lt;/span&gt;&lt;/tt&gt; es el tipo de variable, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-id&lt;/span&gt;&lt;/tt&gt; el valor para esa opción
+y &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;class="sel"&lt;/span&gt;&lt;/tt&gt; determina si esa es la opción seleccionada.&lt;/p&gt;
+&lt;p&gt;Cuando se hace click en el botón Play se invoca la URL:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 http://www.cuevana.tv/player/source_get?def=**quality**&amp;amp;audio=**audio**&amp;amp;host=**source**&amp;amp;id=4773&amp;amp;tipo=pelicula
 &lt;/pre&gt;
@@ -94,7 +94,7 @@ http://www.cuevana.tv/player/source_get?def=**quality**&amp;amp;audio=**audio**&
 &lt;pre class="literal-block"&gt;
 http://www.cuevana.tv/player/source_get?def=360&amp;amp;audio=2&amp;amp;host=bayfiles&amp;amp;id=4773&amp;amp;tipo=pelicula
 &lt;/pre&gt;
-&lt;p&gt;Esta p&amp;#225;gina presenta el captcha, que una vez superado redirige a la URL:&lt;/p&gt;
+&lt;p&gt;Esta página presenta el captcha, que una vez superado redirige a la URL:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 http://go.cuevana.tv/?*URL_DESTINO*
 &lt;/pre&gt;
@@ -102,14 +102,14 @@ http://go.cuevana.tv/?*URL_DESTINO*
 &lt;pre class="literal-block"&gt;
 http://go.cuevana.tv/?http%3A%2F%2Fbayfiles.com%2Ffile%2FvIsf%2FkTvfNj%2Fthe.apparition.2012.bdrip.xvid-sparks.mp4%3Fcid%3D4773%26ctipo%3Dpelicula%26cdef%3D360
 &lt;/pre&gt;
-&lt;p&gt;Que a su vez redirige a &lt;em&gt;URL_DESTINO&lt;/em&gt; que es la URL del servicio donde el video est&amp;#225; hosteado
-con par&amp;#225;metros extra: &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360&lt;/span&gt;&lt;/tt&gt;. En el ejemplo anterior:&lt;/p&gt;
+&lt;p&gt;Que a su vez redirige a &lt;em&gt;URL_DESTINO&lt;/em&gt; que es la URL del servicio donde el video está hosteado
+con parámetros extra: &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360&lt;/span&gt;&lt;/tt&gt;. En el ejemplo anterior:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360**"&gt;http://bayfiles.com/file/vIsf/kTvfNj/the.apparition.2012.bdrip.xvid-sparks.mp4**?cid=4773&amp;amp;ctipo=pelicula&amp;amp;cdef=360**&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;Aqu&amp;#237; entra en juego el "plugin de cuevana". Se puede bajar por ejemplo
-la versi&amp;#243;n para Firefox desde &lt;a class="reference external" href="http://www.cuevana.tv/player/plugins/cstream-5.0.xpi"&gt;http://www.cuevana.tv/player/plugins/cstream-5.0.xpi&lt;/a&gt;
+&lt;p&gt;Aquí entra en juego el "plugin de cuevana". Se puede bajar por ejemplo
+la versión para Firefox desde &lt;a class="reference external" href="http://www.cuevana.tv/player/plugins/cstream-5.0.xpi"&gt;http://www.cuevana.tv/player/plugins/cstream-5.0.xpi&lt;/a&gt;
 Descomprimirlo con unzip y abrir el archivo &lt;tt class="docutils literal"&gt;content/cuevanastream.js&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;La presencia de los par&amp;#225;metros &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;cid``y&lt;/span&gt; ``ctipo&lt;/tt&gt; y una url de alguno de los servicios
+&lt;p&gt;La presencia de los parámetros &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;cid``y&lt;/span&gt; ``ctipo&lt;/tt&gt; y una url de alguno de los servicios
 que usa Cuevana hace que se inyecte un javascript en la URL del servicio.&lt;/p&gt;
 &lt;pre class="code javascript literal-block"&gt;
 &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;loc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/cid=/i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/ctipo=/i&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
@@ -117,7 +117,7 @@ que usa Cuevana hace que se inyecte un javascript en la URL del servicio.&lt;/p&
     &lt;span class="nx"&gt;addScript&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'bayfiles'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-    &lt;span class="c1"&gt;// m&amp;#225;s servicios
+    &lt;span class="c1"&gt;// más servicios
 &lt;/span&gt;
   &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'div'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
@@ -152,14 +152,14 @@ def es &lt;tt class="docutils literal"&gt;360&lt;/tt&gt; o &lt;tt class="docutil
 &lt;p&gt;Para series:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="http://sc.cuevana.tv/files/s/sub/"&gt;http://sc.cuevana.tv/files/s/sub/&lt;/a&gt;&lt;strong&gt;ID**_**LANG&lt;/strong&gt;.srt&lt;/blockquote&gt;
-&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;ID&lt;/tt&gt; es el identificador del contenido y &lt;tt class="docutils literal"&gt;LANG&lt;/tt&gt; es el c&amp;#243;digo
-del idioma en 2 letras may&amp;#250;sculas (ES, EN, etc.)&lt;/p&gt;
+&lt;p&gt;Donde &lt;tt class="docutils literal"&gt;ID&lt;/tt&gt; es el identificador del contenido y &lt;tt class="docutils literal"&gt;LANG&lt;/tt&gt; es el código
+del idioma en 2 letras mayúsculas (ES, EN, etc.)&lt;/p&gt;
 &lt;p&gt;Para contenidos HD se agrega el sufijo &lt;em&gt;_720&lt;/em&gt;:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
 &lt;/pre&gt;
-&lt;p&gt;Para peliculas es an&amp;#225;logo pero un nivel m&amp;#225;s arriba:&lt;/p&gt;
+&lt;p&gt;Para peliculas es análogo pero un nivel más arriba:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
 &lt;/pre&gt;
-&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 10:17:55 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 10:17:55 GMT</pubDate></item></channel></rss>

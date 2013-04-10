@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (migraciones)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Thu, 07 Mar 2013 14:37:07 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;body&gt;&lt;p&gt;Hace un tiempo cont&amp;#233; &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migr&amp;#233; un repositorio Mercurial a Git&lt;/a&gt; .
+<rss version="2.0"><channel><title>tin_nqn (migraciones)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
-all&amp;#237; porque somos pobretones y nos da repos privados gratis.
-En la mudanza se me quedaron varios &lt;em&gt;issues&lt;/em&gt; que necesitaba migrar. Y &lt;a class="reference external" href="https://bitbucket.org/site/master/issue/1642/allow-moving-tickets-over-to-another"&gt;no era el &amp;#250;nico&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Buscando un rato encontr&amp;#233; scriptcitos para migrar &lt;a class="reference external" href="https://github.com/sorich87/github-to-bitbucket-issues-migration"&gt;desde&lt;/a&gt; o &lt;a class="reference external" href="https://gist.github.com/3778347"&gt;hacia&lt;/a&gt; GitHub
-pero no hab&amp;#237;a para migrar entre proyectos de Bitbucket, algo bastante com&amp;#250;n
+allí porque somos pobretones y nos da repos privados gratis.
+En la mudanza se me quedaron varios &lt;em&gt;issues&lt;/em&gt; que necesitaba migrar. Y &lt;a class="reference external" href="https://bitbucket.org/site/master/issue/1642/allow-moving-tickets-over-to-another"&gt;no era el único&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Buscando un rato encontré scriptcitos para migrar &lt;a class="reference external" href="https://github.com/sorich87/github-to-bitbucket-issues-migration"&gt;desde&lt;/a&gt; o &lt;a class="reference external" href="https://gist.github.com/3778347"&gt;hacia&lt;/a&gt; GitHub
+pero no había para migrar entre proyectos de Bitbucket, algo bastante común
 desde que empezaron a ofrecer soporte Git.&lt;/p&gt;
-&lt;p&gt;Decid&amp;#237; entonces que deb&amp;#237;a hacer mi propio scriptcito migrador. La cosa se
+&lt;p&gt;Decidí entonces que debía hacer mi propio scriptcito migrador. La cosa se
 complicaba porque &lt;a class="reference external" href="https://github.com/Sheeprider/BitBucket-api"&gt;el&lt;/a&gt;
 &lt;a class="reference external" href="https://github.com/ericof/python-bitbucket"&gt;par&lt;/a&gt; de bibliotecas python
 que interactuan con la API de Bitbucket no tenian, hasta el momento, soporte
 para "postear" &lt;em&gt;issues&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Pero no hay darse por vencido: se me ocurri&amp;#243; mirar el par de forks de cada
-proyecto y encontr&amp;#233; &lt;a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc"&gt;justo lo que estaba buscando&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Entonces bast&amp;#243; con instalar el fork de David Paz Reyes&lt;/p&gt;
+&lt;p&gt;Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
+proyecto y encontré &lt;a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc"&gt;justo lo que estaba buscando&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Entonces bastó con instalar el fork de David Paz Reyes&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;pip install git+https://github.com/davidmpaz/BitBucket-api.git
 &lt;/pre&gt;
 &lt;p&gt;he hice un script que migra todo los issues en estado &lt;em&gt;new&lt;/em&gt;
 del repo original (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) al nuevo (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) y los potenciales comentarios que tenga.
-Como el autor  se pierde (dado que el nuevo quedar&amp;#225; publicado con mi usuario)
+Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
 agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
@@ -63,4 +63,4 @@ agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/
             &lt;span class="k"&gt;continue&lt;/span&gt;
         &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;&amp;#161;Disfruten!&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item></channel></rss>
+&lt;p&gt;¡Disfruten!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item></channel></rss>

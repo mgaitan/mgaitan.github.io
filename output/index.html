@@ -43,6 +43,192 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/pip-apurate-por-favor.html">pip, apurate por favor</a>
+        <small>  
+             <span class="timeago" title="2013-04-10 01:17:55">2013-04-10 01:17:55</span>
+        </small></h1>
+        <p><a class="reference external" href="http://pip-installer.org/">pip</a>  es una herramienta esencial
+para el trabajo diario de un programador python: es el manejador
+de paquetes de nuestro entorno de trabajo (¡<a class="reference external" href="http://www.virtualenv.org/en/latest/">virtual</a> por favor!),
+con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
+(y, recursivamente, las dependencias que estas pudieran tener).</p>
+<p>Conceptualmente es similar a los manejadores de paquetes de sistema como <tt class="docutils literal"><span class="pre">apt-get</span></tt>,
+diferenciándose en que, por defecto, <em>consulta cada vez</em> a una <a class="reference external" href="https://pypi.python.org/pypi/">base de
+datos online</a> si el paquete solicitado existe y de dónde
+puede bajar la última versión o la específica que se haya pedido.</p>
+<p>Responder "qué, cuál y de dónde" es una tarea lenta porque dicha base de datos no es
+más que una página html por cada paquete con links que funcionan como un índice (como
+<a class="reference external" href="https://pypi.python.org/simple/lxml/">este</a>  que pip
+<a class="reference external" href="https://github.com/pypa/pip/blob/f1fb4b4fda127529e24b71a4e03bb0b5df484ef6/pip/index.py#L141">debe parsear</a>
+comparar y elegir la mejor opción para bajar (a veces incluso debe parsear la homepage
+del proyecto en busca de links de descarga, puaj!).</p>
+<p>Por eso (y porque muchas veces la infraestructura se satura) el uso estándar de pip es lento.
+Pero hay algunas maneras de que lo sea menos. Veámoslas.</p>
+<div class="section" id="no-bajes-dos-veces-lo-mismo">
+<h2>No bajes dos veces lo mismo</h2>
+<p>El funcionamiento básico de pip es instalar un paquete con <tt class="docutils literal">pip install &lt;paquete&gt;</tt>: busca, baja e
+instala el paquete. El flag <tt class="docutils literal"><span class="pre">--download_cache=&lt;path&gt;</span></tt> evita repetir el paso del medio,
+cosa tediosa cuando tenemos que instalar frecuentemente (por ejemplo en distintos virtualenvs)
+la misma dependencia o cuando el uso de ancho de banda es limitado.</p>
+<p>Por ejemplo instalamos por primera vez <a class="reference external" href="http://lxml.de/">lxml</a> y vemos cuanto tarda.</p>
+<pre class="code bash literal-block">
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test<span class="nv">$ </span><span class="nb">time </span>pip install lxml --download-cache<span class="o">=</span>~/.pip_download
+Downloading/unpacking lxml
+  Downloading lxml-3.1.1.tar.gz <span class="o">(</span>3.3MB<span class="o">)</span>: 3.3MB downloaded
+  Storing download in cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+  Running setup.py egg_info <span class="k">for </span>package lxml
+    Building lxml version 3.1.1.
+
+    <span class="o">[</span>... compilación<span class="o">]</span>
+
+
+Successfully installed lxml
+Cleaning up...
+
+real    2m58.276s
+user    0m38.822s
+sys 0m0.676s
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test<span class="err">$</span>
+</pre>
+<p>¡3 minutos! Y eso que estoy en una conexión bastante rápida.</p>
+<div class="tip">
+<p class="first admonition-title">Tip</p>
+<p>Cualquier flag que pip acepta en su linea de comando se puede configurar como una
+<a class="reference external" href="http://www.pip-installer.org/en/latest/configuration.html#environment-variables">variable de entorno</a>. Entonces podemos setear flag por defecto en nuestro <tt class="docutils literal">.bashrc</tt>,
+por ejemplo.. code-block: bash</p>
+<blockquote class="last">
+export PIP_DOWNLOAD_CACHE=~/.pip_download_cache</blockquote>
+</div>
+<p>Pero sigamos: una vez cacheado, las siguientes veces que queramos instalar la misma versión de lxml
+no bajará <strong>el archivo</strong> de nuevo</p>
+<pre class="code bash literal-block">
+<span class="o">(</span>test2<span class="o">)</span>tin@traful:~/lab/test2<span class="nv">$ </span><span class="nb">time </span>pip install lxml --download-cache<span class="o">=</span>~/.pip_download
+
+Downloading/unpacking lxml
+  Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+  Running setup.py egg_info <span class="k">for </span>package lxml
+    Building lxml version 3.1.1.
+
+    <span class="o">[</span>... compilación<span class="o">]</span>
+
+Successfully installed lxml
+Cleaning up...
+
+real    2m30.624s
+user    0m38.966s
+sys 0m0.504s
+</pre>
+<p>Mejoró realmente poco. ¿que clase de caché es esta?
+Chusmeemos que hay en el directorio.</p>
+<pre class="code bash literal-block">
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test<span class="nv">$ </span>ls ~/.pip_download_cache/ | grep lxml
+https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
+</pre>
+<p>¿Caché de urls? <tt class="docutils literal"><span class="pre">-download-cache</span></tt> no evita todo el laburo de averiguar de dónde bajar,
+sino simplemente no baja si la url resultante ya existe (como nombre de un archivo)
+en este directorio.</p>
+<p>Lo explica simple <a class="reference external" href="https://github.com/pypa/pip/issues/680#issuecomment-8773509">Carl Meyer</a>:</p>
+<blockquote>
+La función <tt class="docutils literal"><span class="pre">--download-cache</span></tt> no apunta a prevenir la búsqueda en la red del archivo
+correcto a bajar: todo lo que hace es guardarlo una vez que lo encontró.
+Si de verdad te interesa instalar tus depedencias desde tu compu (sin salir a la red)
+usá <tt class="docutils literal"><span class="pre">--download</span></tt> primero y luego <tt class="docutils literal"><span class="pre">--find-links</span></tt> (apuntando al path de descarga) con
+<tt class="docutils literal"><span class="pre">--no-index</span></tt>.</blockquote>
+</div>
+<div class="section" id="una-cache-sin-salir-a-la-red">
+<h2>Una caché sin salir a la red</h2>
+<p>Sigamosle la corriente al bueno de <a class="reference external" href="https://twitter.com/carljm">@carljm</a>:</p>
+<pre class="code bash literal-block">
+<span class="o">(</span>test3<span class="o">)</span>tin@traful:~/lab/test3<span class="nv">$ </span><span class="nb">time </span>pip install --download<span class="o">=</span>~/.pip_packages lxml
+Downloading/unpacking lxml
+  Using download cache from /home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+Saved /home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
+    <span class="o">[</span>...<span class="o">]</span>
+
+Successfully downloaded lxml
+Cleaning up...
+
+real    2m8.969s
+user    0m1.008s
+sys 0m0.136s
+</pre>
+<p>¡Uff, 2 minutos en copiar un archivo que ya tenía bajado! (evidentemente lo que demora mucho
+es <em>averiguar</em> la versión del archivo a bajar)</p>
+<div class="tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">se puede inspeccionar el berenjenal de redirecciones y parseos que suceden hasta que pip
+da con el paquete lxml a bajar haciendo el comando más verborrágico con
+<tt class="docutils literal">pip install lxml <span class="pre">-vvv</span></tt></p>
+</div>
+<p>En este caso, el caché es directamente el archivo:</p>
+<pre class="code bash literal-block">
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>mgaitan@traful:~/lab/test<span class="nv">$ </span>ls ~/.pip_packages/ | grep lxml
+lxml-3.1.1.tar.gz
+</pre>
+<p>Por suerte, una vez cacheado el paquete de esta manera no tendremos
+que consultar el índice online las siguientes veces.</p>
+<pre class="code bash literal-block">
+<span class="o">(</span>test3<span class="o">)</span>mgaitan@traful:~/lab/test3<span class="nv">$ </span><span class="nb">time </span>pip install --no-index --find-links<span class="o">=</span>~/.pip_packages lxml
+Ignoring indexes: https://pypi.python.org/simple/
+Downloading/unpacking lxml
+  Running setup.py egg_info <span class="k">for </span>package lxml
+    Building lxml version 3.1.1.
+
+    <span class="o">[</span>...<span class="o">]</span>
+
+
+Successfully installed lxml
+Cleaning up...
+
+real    0m38.944s
+user    0m38.338s
+sys 0m0.564s
+</pre>
+<p>Ok, ya va mejor.</p>
+</div>
+<div class="section" id="haciendo-que-la-cosa-vuele-no-recompiles-la-rueda">
+<h2>Haciendo que la cosa vuele: no recompiles la rueda</h2>
+<p>pip 1.4 (en desarrollo) trae <a class="reference external" href="https://github.com/pypa/pip/commit/5d02b5207a305543ad6ef19d6e6596ffa45b99e5">soporte integrado</a> para el nuevo formato de paquetes
+<a class="reference external" href="http://wheel.rtfd.org/,">wheel</a> (superador del viejo <em>egg</em> y basado en los estándares actuales)
+que es muchísimo más rápido que instalar desde fuentes (sobre todo en casos
+que se debe compilar, como lxml)</p>
+<p>Para usar wheel el paquete a bajar tiene que existir en dicho formato y todavía no abundan
+en PyPi asi que podemos armarlos localmente con el propio pip</p>
+<pre class="code bash literal-block">
+pip wheel --wheel-dir<span class="o">=</span>./pip_packages lxml
+</pre>
+<p>Eso es similar a usar <tt class="docutils literal"><span class="pre">--download</span></tt> pero además compila y empaqueta como
+un archivo <tt class="docutils literal">.whl</tt></p>
+<p>Para que pip acepte instalar estos archivos hay que usar <tt class="docutils literal"><span class="pre">--use-wheel</span></tt>
+y para que los busque localmente haremos:</p>
+<pre class="code bash literal-block">
+pip install --use-wheel --no-index --find-links<span class="o">=</span>~/.pip_packages lxml
+</pre>
+<p>¡Lo que tardó menos de 2 decimas de segundo! Un speedup del 90mil veces respecto al primer
+y canónico <tt class="docutils literal">pip install lxml</tt></p>
+<pre class="code literal-block">
+(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
+Ignoring indexes: https://pypi.python.org/simple/
+Downloading/unpacking lxml
+Installing collected packages: lxml
+Successfully installed lxml
+Cleaning up...
+
+real    0m0.180s
+user    0m0.152s
+sys 0m0.024s
+</pre>
+<p>Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
+django, whatever) me los haces rodar para que pip vuele.</p>
+</div>
+        <p>
+        
+            <a href="posts/pip-apurate-por-favor.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/desambiguando-un-hash-en-git.html">Desambiguando un hash en Git</a>
         <small>  
              <span class="timeago" title="2013-03-14 18:02:01">2013-03-14 18:02:01</span>
@@ -953,81 +1139,6 @@ original que sin perder la historia útil.</p>
         <p>
         
             <a href="posts/de-mercurial-a-git-limpieza.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/como-volver-a-compartir-desde.html">Cómo volver a compartir desde Google Reader</a>
-        <small>  
-             <span class="timeago" title="2012-01-11 21:37:21">2012-01-11 21:37:21</span>
-        </small></h1>
-        <div class="important">
-<p class="first admonition-title">Important</p>
-<p class="last">El pipe tiene un problema con las fechas y quedó deactualizado
-cuando cambió en el html de G+. En su defecto hice este pequeño
-<a class="reference external" href="https://gist.github.com/2886591">scrapper</a> que es lo que uso
-en <a class="reference external" href="http://www.textospretextos.com.ar">Textos y Pretextos</a></p>
-</div>
-<p>Desde hace muchísimo tengo en <a class="reference external" href="http://www.textospretextos.com.ar">mi otro
-blog</a> una sección que se llama <em>"De
-por ahí, cosas que me parecieron interesantes"</em>. Es un feed de links a
-contenidos de toda índole (política, literatura, cine, fotografía,
-deportes, programación: intereses anchos) con un brevisimo extracto como
-descripción que fui alimentando de diversas formas a lo largo del
-tiempo: usé
-<a class="reference external" href="http://delicious.com/nqnwebs,%20use%20%20%5Besto%20%20-%3Ehttp://sourceforge.net/projects/linkwalla/">delicious</a>,
-usé mi
-<a class="reference external" href="http://twitter.com/nqnwebs).%20Pero%20cuando%20%5BGoogle%20Reader-%3Ehttp://reader.google.com">twitter</a>
-incorporó la opción de "Compartir" se convirtió en la manera por
-defecto: si algo me gustaba, un click en compartir y listo. Eso permitia
-que otros usuarios de Reader que me "seguian" pudieran ver mis posts
-compartidos pero a la vez generaba un feed rss que alimentaba la sección
-de mi blog.</p>
-<p>Con la aparición de Google+ aquella simple y muy usada funcionalidad se
-vió desplazada por el botón "+1" y por un "compartir" engañoso que sólo
-permite compartir en Google+</p>
-<p>Para colmo, cuando uno hace "+1" en algun contenido (dentro de Google
-Reader o en cualquier lado donde esté el botón) se lista en una <a class="reference external" href="https://plus.google.com/102449284377784435533/plusones/p/pub">página
-publica</a>
-pero que <strong>no tiene feed RSS</strong>! . Larry Page,
-(<a class="reference external" href="https://twitter.com/#!/nqnwebs/status/154772127139102720">doblemente</a>)
-te odio.</p>
-<div class="section" id="frustracion-colectiva">
-<h2>Frustración colectiva</h2>
-<p>La bronca por los cambios en Reader no es sólo mia, sino que generó una
-<a class="reference external" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&amp;formkey=dE16SFVla3JFZ1lwTkxGRWN2SkZtb2c6MA#gid=0">petición</a>
-firmada por más de
-<a class="reference external" href="http://www.bdkeller.com/2011/10/save-google-reader/">13000</a> usuarios
-que manifiestan que "algunos ven estos cambios como un intento errado
-para forzarnos a usar Google Plus, pero nosotros amamos la utilidad,
-simplicidad y funcionalidades sociales limitadas que ofrece Google
-Reader".</p>
-<p>Mientras tanto, muchos
-(<a class="reference external" href="http://www.theatlanticwire.com/technology/2011/10/how-survive-switch-google-reader-google/44069/">1</a>,
-<a class="reference external" href="https://github.com/jtwebman/GooglePlusToRSSFeed">2</a>,
-<a class="reference external" href="http://plus-one-feed-generator.appspot.com/">3</a>) intentan parchar el
-atropello.</p>
-</div>
-<div class="section" id="mi-solucion">
-<h2>Mi solución</h2>
-<p>"¿Así que no me dejás compartir donde yo quiera, el algoritmo de tu
-madre!?" vociferé, y no sin premeditación agarré <a class="reference external" href="posts/blog/article/yahoo-pipes-como-por-un-tubo">Yahoo!
-Pipes</a> (una genialidad, hay
-que decirlo) para scrappearlos a puro golpe de mouse y sin salir del
-navegador. El resultado fue <a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.info?_id=770fc166fd07a0f6e67fe63f513b05dc">este
-pipe</a>
-del que se puede obtener, por ejemplo, un <a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;_render=rss&amp;google_plus_id=102449284377784435533">feed RSS 2.0 de mis
-+1s</a>
-. Podés obtener el feed de otros usuarios así:</p>
-<p><tt class="docutils literal"><span class="pre">http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;_render=rss&amp;google_plus_id=[GOOGLE_PLUS_ID]</span></tt>
-donde <tt class="docutils literal">[GOOGLE_PLUS_ID]</tt> es el numero de identificación del usuario en
-cuestión.</p>
-<div class="figure align-center">
-<img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"></div>
-</div>
-        <p>
-        
-            <a href="posts/como-volver-a-compartir-desde.html#disqus_thread">Comments</a>
         
         </p></div>
     

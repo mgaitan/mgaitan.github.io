@@ -43,6 +43,131 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/la-sanguijuela-de-cuevana.html">La sanguijuela de cuevana</a>
+        <small>  
+             <span class="timeago" title="2011-04-09 14:22:27">2011-04-09 14:22:27</span>
+        </small></h1>
+        <blockquote>
+<strong>UPDATE</strong> Hay una nueva versión con interfaz gráfica
+<a class="reference external" href="posts/blog/article/cuevanalinks-ahora-para-seres">acá</a></blockquote>
+<p>Parece que se me hizo hobby <a class="reference external" href="posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv">chupar links de
+cuevana.tv</a> y el
+experimento ahora tiene su versión pythonica:
+<a class="reference external" href="http://pypi.python.org/pypi/CuevanaLinks">Cuevanalinks</a> .</p>
+<p>Es un pequeño proyecto que permite "conseguir links" de contenidos
+ofrecidos en cuevana, sirviendo estos como fuentes a manejadores de
+descargas como <a class="reference external" href="http://www.tucaneando.com/">Tucan</a> o
+<a class="reference external" href="http://jdownloader.org/">JDownloader</a>.</p>
+<p>Más allá de los resultados, me ha tenido entretenido algunas horas y me
+permitió aprender (o al menos resolver) algunas cosas: cómo se usa
+mercurial (y en particular un merge conflictivo con Meld), cómo se
+escribe un setup.py, como se distribuye via PyPi, etc.</p>
+<p>También, por supuesto, me permitió usar dos utilidades que me gustan
+mucho: <a class="reference external" href="http://pyquery.org">PyQuery</a> y
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
+<p>La aplicación tiene dos módulos/componentes:</p>
+<ol class="arabic simple"><li>Una <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/src/943b329f3da5/cuevanalinks/cuevanaapi.py">biblioteca que intenta funcionar como
+API</a>
+de <a class="reference external" href="http://www.cuevana.tv">Cuevana</a> y es la encargada de
+<em>scrappear</em> la web en busca de la info interesante.</li>
+<li>Una <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/src/943b329f3da5/cuevanalinks/cuevanacli.py">interfaz de línea de
+comandos</a>
+que permite buscar links y bajar subtitulos de contenidos específicos</li>
+</ol><div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 37)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<div class="section" id="para-que-sirve">
+<h2>Para qué sirve</h2>
+<p>Por ejemplo, para bajar la temporada 4 completa de Mad Men, con
+subtitulos, se podría hacer esto:</p>
+<pre class="literal-block">
+$ cuevanalinks 'mad men' s04 -s &gt; madmen.txt &amp;&amp; tucan -d -i madmen.txt
+</pre>
+</div>
+<div class="section" id="instalacion">
+<h2>Instalación</h2>
+<p>Para instalarlo, basta con usar <a class="reference external" href="http://www.pip-installer.org">pip</a></p>
+<pre class="literal-block">
+$ sudo pip install cuevanalinks
+</pre>
+<p>O con
+<a class="reference external" href="http://packages.python.org/distribute/easy_install.html">easy_install</a>:</p>
+<pre class="literal-block">
+$ sudo easy_install cuevanalinks
+</pre>
+<p>O bien, bajar <a class="reference external" href="http://pypi.python.org/pypi/CuevanaLinks#downloads">el
+paquete</a> y
+ejecutar :</p>
+<pre class="literal-block">
+$ tar xvfz CuevanaLinks-0.1.tar.gz
+$ cd CuevanaLinks-0.1
+$ sudo python setup.py install
+</pre>
+</div>
+<div class="section" id="algunas-posibilidades-de-la-api">
+<h2>Algunas posibilidades de la API</h2>
+<p>El CLI por ahora sólo expone una parte pequeña de la API, pero hay
+varias posibilidades. Por ejemplo:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; from cuevanalinks import cuevanaapi
+&gt;&gt;&gt; api = cuevanaapi.CuevanaAPI ()
+&gt;&gt;&gt; house = api.get_show ('house')
+&gt;&gt;&gt; house.plot
+u'El doctor Gregory House, especialista en el tratamiento de enfermedades infecciosas, trabaja en un hospital universitario de Princetown, donde dirige una unidad especial encargada de pacientes afectados por dolencias extrañas y en la que colabora con un selecto grupo de aventajados ayudantes.'
+&gt;&gt;&gt; house7x1 = house.get_episode (7, 1)
+&gt;&gt;&gt; house7x1.title
+'Now What?'
+&gt;&gt;&gt; house7x1.cast
+['Hugh Laurie',
+ 'Lisa Edelstein',
+ 'Omar Epps',
+ 'Jesse Spencer',
+ 'Jennifer Morrison',
+ 'Robert Sean Leonard',
+ 'Olivia Wilde',
+ 'Peter Jacobson']
+&gt;&gt;&gt; house7x1.sources
+['http://www.megaupload.com/?d=DM58TA0J',
+ 'http://www.filesonic.com/file/36841721/?',
+ 'http://bitshare.com/?f=67z435xm',
+ 'http://www.filefactory.com/file/caf85b9']
+&gt;&gt;&gt; house7x1.subs
+{'ES': 'http://www.cuevana.tv/download_sub?file=s/sub/7888_ES.srt'}
+</pre>
+</div>
+<div class="section" id="lo-que-falta">
+<h2>Lo que falta</h2>
+<p>Si bien es lo más prolijito que he hecho, todavía está lejos de ser un
+trabajo completo, tanto en funcionalidades como en
+<a class="reference external" href="http://en.wikipedia.org/wiki/Software_Quality_Assurance">SQA</a></p>
+<p>Un aspecto esencial es hacer test (perdón Nati Bidart ;-) ), para lo
+cual tengo que aprender a usar
+<a class="reference external" href="http://code.google.com/p/python-nose/">nose</a> y
+<a class="reference external" href="http://blog.ianbicking.org/minimock.html">minimock</a>.</p>
+<p>Respecto a funciones, algo importante es definir cómo resuelve el CLI el
+manejo de múltiples resultados para una búsqueda. Actualmente devuelve
+el resultado "más relevante" sin anoticiar al usuario de otras opciones.</p>
+<p>También falta documentación! Veremos la próxima.</p>
+</div>
+<div class="section" id="comentarios-sugerencias-bugs">
+<h2>Comentarios, sugerencias, bugs</h2>
+<p>Todo aporte (ideas, código, etc.) es bienvenido. Si encuentran
+problemas,
+<a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/issues">reportenlos</a>.</p>
+<p>No estoy seguro cuánto puede durar esto funcionando, ya que depende de
+que el funcionamiento del sitio no cambie o yo tenga mucho tiempo y
+ganas de andar parchando detrás. Por eso, si hay más interesados y
+usuarios, seguramente podremos hacerlo durar más.</p>
+</div>
+        <p>
+        
+            <a href="posts/la-sanguijuela-de-cuevana.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/veinteanero.html">Veinteañero</a>
         <small>  
              <span class="timeago" title="2011-04-08 08:47:13">2011-04-08 08:47:13</span>
@@ -559,38 +684,6 @@ publiqué en <a class="reference external" href="http://www.textosypretextos.com
         <p>
         
             <a href="posts/voto-electronico-e-ingenieros.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/gpec-2010-el-poster.html">GPEC 2010: El poster</a>
-        <small>  
-             <span class="timeago" title="2010-10-18 13:06:48">2010-10-18 13:06:48</span>
-        </small></h1>
-        <p>Otra cosa que hice en
-<a class="reference external" href="posts/blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> fue presentar un
-poster sobre <a class="reference external" href="http://code.google.com/p/gpec2010/">GPEC 2010</a>, mi
-proyecto integrador para recibirme de ingeniero en computación,
-originalmente pensado para presentar en
-<a class="reference external" href="http://riteq.efn.uncor.edu/">Riteq</a> la semana que viene. El poster
-fue presentado en coautoría con Martín Cismondi y Gustavo Wolfmann, los
-directores del trabajo.</p>
-<p><img alt="image0" src="images/DSCF7067JPG-16c7-979e2.jpg">
-Como no tuve tiempo, la de PyCon es una versión que (espero) será
-mejorada para la semana que viene, con algunas figuras más.</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/poster-gpec-A4.pdf">|image2|</a></td>
-</tr><tr><td>Poster GPEC 2010 Formato A4 (reducido)</td>
-</tr></tbody></table><p>También un resumen extendido (2 páginas) aprobado por los revisores de
-RITEQ, que explica algún detalle más.</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/Resumen%20RITeQ%20Gaitan.pdf">|image4|</a></td>
-</tr><tr><td>Resumen aprobado Riteq 2010</td>
-</tr></tbody></table><p>Los fuentes están disponibles en en el repo:</p>
-<pre class="literal-block">
-svn checkout https://gpec2010.googlecode.com/svn/trunk/docs/poster
-</pre>
-        <p>
-        
-            <a href="posts/gpec-2010-el-poster.html#disqus_thread">Comments</a>
         
         </p></div>
     

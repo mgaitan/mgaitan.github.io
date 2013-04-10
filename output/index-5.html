@@ -43,6 +43,24 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/learning-python-4th-edition.html">Learning Python, 4th Edition</a>
+        <small>  
+             <span class="timeago" title="2009-09-29 10:19:41">2009-09-29 10:19:41</span>
+        </small></h1>
+        <p><img alt="image0" src="posts/local/cache-vignettes/L250xH326/Pantallazo-3-7c37a.png"><a class="reference external" href="http://oreilly.com/catalog/9780596158071/">Learning Python</a>
+de <a class="reference external" href="http://www.rmi.net/~lutz/">Mark Lutz</a>, ha sido, desde su primera
+versión en 1999, uno de los libros de cabecera para aprender Python.</p>
+<p>Hace unos días salió la 4ta edición, adaptada a las versiones 2.6 y 3.1
+de Python y ampliada en varios capítulos.</p>
+<p>Lamentablemente, tardará mucho en llegar a la librerías argentinas, pero
+podés ir leyendo la versión en PDF.</p>
+        <p>
+        
+            <a href="posts/learning-python-4th-edition.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/project-euler-problema-2.html">Project Euler, Problema #2</a>
         <small>  
              <span class="timeago" title="2009-09-20 16:37:47">2009-09-20 16:37:47</span>
@@ -604,46 +622,6 @@ svn checkout https://radiolina.googlecode.com/svn/trunk/ ./
         <p>
         
             <a href="posts/piccola-radiolina.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/backup-selectivo-de-tablas-mysql.html">Backup selectivo de tablas Mysql</a>
-        <small>  
-             <span class="timeago" title="2009-03-31 09:37:49">2009-03-31 09:37:49</span>
-        </small></h1>
-        <p>Un comando muy práctico para hacer backups de una base de datos MySQL es
-<em>mysqldump</em>.</p>
-<pre class="literal-block">
-mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
-</pre>
-<p>Eso hace un backup completo de la base <em>base_de_datos</em> (incluyendo la
-creación de todas las tablas.</p>
-<p>Para restaurar ese backup se hace directamente inyectando el sql al
-interprete de mysql.</p>
-<pre class="literal-block">
-mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos
-</pre>
-<div class="section" id="respaldar-solo-algunas-tablas-de-la-base">
-<h2>Respaldar sólo algunas tablas de la base</h2>
-<p>A menudo tenemos multiples sistemas instalados sobre la misma base de
-datos, Si sólo queremos respaldar algunas tablas bastaría enumerar las
-tablas luego del nombre de la base de datos</p>
-<pre class="literal-block">
-mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  tabla1 tabla2 &gt; backup.sql
-</pre>
-<p>Pero si estas tablas son muchas, es engorroso definirlas una por una.
-Por suerte, en general, un prefijo asocia todas las tablas de un
-sistema.</p>
-<p>En ese caso, se puede usar el siguiente compando que respalda todas las
-tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":</p>
-<pre class="literal-block">
-mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
-</pre>
-</div>
-        <p>
-        
-            <a href="posts/backup-selectivo-de-tablas-mysql.html#disqus_thread">Comments</a>
         
         </p></div>
     

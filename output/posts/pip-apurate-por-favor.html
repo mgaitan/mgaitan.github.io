@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="pip, apurate por favor | "><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>  pip, apurate por favor | tin_nqn  </title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox span3">
+        <h1 id="blog-title">
+            <a href="../">tin_nqn</a>
+        </h1>
+        <h6 id="blog-description">&gt;&gt;&gt; me.geek.post()</h6>
+
+        
+        
+        
+        </div>
+    <div id="menu" class="span7 offset1">
+      <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                 / 
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                 / 
+            
+                </li><li><a href="../about.html">Sobre mí</a>
+                 / 
+            
+                </li><li><a href="../charlas.html">Charlas</a>
+                
+            
+        </li></ul></div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">pip, apurate por favor</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2013-04-10 01:17:55">2013-04-10 01:17:55</span>   |  
+
+        
+
+        <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/pip-apurate-por-favor.rst">Código</a>
+        
+              |  Más posts sobre
+            
+                <a href="../categories/pip.html">pip</a>
+                , 
+            
+                <a href="../categories/python.html">python</a>
+                
+            
+        
+    </small>
+    <p><a class="reference external" href="http://pip-installer.org/">pip</a>  es una herramienta esencial
+para el trabajo diario de un programador python: es el manejador
+de paquetes de nuestro entorno de trabajo (¡<a class="reference external" href="http://www.virtualenv.org/en/latest/">virtual</a> por favor!),
+con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
+(y, recursivamente, las dependencias que estas pudieran tener).</p>
+<p>Conceptualmente es similar a los manejadores de paquetes de sistema como <tt class="docutils literal"><span class="pre">apt-get</span></tt>,
+diferenciándose en que, por defecto, <em>consulta cada vez</em> a una <a class="reference external" href="https://pypi.python.org/pypi/">base de
+datos online</a> si el paquete solicitado existe y de dónde
+puede bajar la última versión o la específica que se haya pedido.</p>
+<p>Responder "qué, cuál y de dónde" es una tarea lenta porque dicha base de datos no es
+más que una página html por cada paquete con links que funcionan como un índice (como
+<a class="reference external" href="https://pypi.python.org/simple/lxml/">este</a>  que pip
+<a class="reference external" href="https://github.com/pypa/pip/blob/f1fb4b4fda127529e24b71a4e03bb0b5df484ef6/pip/index.py#L141">debe parsear</a>
+comparar y elegir la mejor opción para bajar (a veces incluso debe parsear la homepage
+del proyecto en busca de links de descarga, puaj!).</p>
+<p>Por eso (y porque muchas veces la infraestructura se satura) el uso estándar de pip es lento.
+Pero hay algunas maneras de que lo sea menos. Veámoslas.</p>
+<div class="section" id="no-bajes-dos-veces-lo-mismo">
+<h2>No bajes dos veces lo mismo</h2>
+<p>El funcionamiento básico de pip es instalar un paquete con <tt class="docutils literal">pip install &lt;paquete&gt;</tt>: busca, baja e
+instala el paquete. El flag <tt class="docutils literal"><span class="pre">--download_cache=&lt;path&gt;</span></tt> evita repetir el paso del medio,
+cosa tediosa cuando tenemos que instalar frecuentemente (por ejemplo en distintos virtualenvs)
+la misma dependencia o cuando el uso de ancho de banda es limitado.</p>
+<p>Por ejemplo instalamos por primera vez <a class="reference external" href="http://lxml.de/">lxml</a> y vemos cuanto tarda.</p>
+<pre class="code bash literal-block">
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test<span class="nv">$ </span><span class="nb">time </span>pip install lxml --download-cache<span class="o">=</span>~/.pip_download
+Downloading/unpacking lxml
+  Downloading lxml-3.1.1.tar.gz <span class="o">(</span>3.3MB<span class="o">)</span>: 3.3MB downloaded
+  Storing download in cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+  Running setup.py egg_info <span class="k">for </span>package lxml
+    Building lxml version 3.1.1.
+
+    <span class="o">[</span>... compilación<span class="o">]</span>
+
+
+Successfully installed lxml
+Cleaning up...
+
+real    2m58.276s
+user    0m38.822s
+sys 0m0.676s
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test<span class="err">$</span>
+</pre>
+<p>¡3 minutos! Y eso que estoy en una conexión bastante rápida.</p>
+<div class="tip">
+<p class="first admonition-title">Tip</p>
+<p>Cualquier flag que pip acepta en su linea de comando se puede configurar como una
+<a class="reference external" href="http://www.pip-installer.org/en/latest/configuration.html#environment-variables">variable de entorno</a>. Entonces podemos setear flag por defecto en nuestro <tt class="docutils literal">.bashrc</tt>,
+por ejemplo.. code-block: bash</p>
+<blockquote class="last">
+export PIP_DOWNLOAD_CACHE=~/.pip_download_cache</blockquote>
+</div>
+<p>Pero sigamos: una vez cacheado, las siguientes veces que queramos instalar la misma versión de lxml
+no bajará <strong>el archivo</strong> de nuevo</p>
+<pre class="code bash literal-block">
+<span class="o">(</span>test2<span class="o">)</span>tin@traful:~/lab/test2<span class="nv">$ </span><span class="nb">time </span>pip install lxml --download-cache<span class="o">=</span>~/.pip_download
+
+Downloading/unpacking lxml
+  Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+  Running setup.py egg_info <span class="k">for </span>package lxml
+    Building lxml version 3.1.1.
+
+    <span class="o">[</span>... compilación<span class="o">]</span>
+
+Successfully installed lxml
+Cleaning up...
+
+real    2m30.624s
+user    0m38.966s
+sys 0m0.504s
+</pre>
+<p>Mejoró realmente poco. ¿que clase de caché es esta?
+Chusmeemos que hay en el directorio.</p>
+<pre class="code bash literal-block">
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test<span class="nv">$ </span>ls ~/.pip_download_cache/ | grep lxml
+https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
+</pre>
+<p>¿Caché de urls? <tt class="docutils literal"><span class="pre">-download-cache</span></tt> no evita todo el laburo de averiguar de dónde bajar,
+sino simplemente no baja si la url resultante ya existe (como nombre de un archivo)
+en este directorio.</p>
+<p>Lo explica simple <a class="reference external" href="https://github.com/pypa/pip/issues/680#issuecomment-8773509">Carl Meyer</a>:</p>
+<blockquote>
+La función <tt class="docutils literal"><span class="pre">--download-cache</span></tt> no apunta a prevenir la búsqueda en la red del archivo
+correcto a bajar: todo lo que hace es guardarlo una vez que lo encontró.
+Si de verdad te interesa instalar tus depedencias desde tu compu (sin salir a la red)
+usá <tt class="docutils literal"><span class="pre">--download</span></tt> primero y luego <tt class="docutils literal"><span class="pre">--find-links</span></tt> (apuntando al path de descarga) con
+<tt class="docutils literal"><span class="pre">--no-index</span></tt>.</blockquote>
+</div>
+<div class="section" id="una-cache-sin-salir-a-la-red">
+<h2>Una caché sin salir a la red</h2>
+<p>Sigamosle la corriente al bueno de <a class="reference external" href="https://twitter.com/carljm">@carljm</a>:</p>
+<pre class="code bash literal-block">
+<span class="o">(</span>test3<span class="o">)</span>tin@traful:~/lab/test3<span class="nv">$ </span><span class="nb">time </span>pip install --download<span class="o">=</span>~/.pip_packages lxml
+Downloading/unpacking lxml
+  Using download cache from /home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+Saved /home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
+    <span class="o">[</span>...<span class="o">]</span>
+
+Successfully downloaded lxml
+Cleaning up...
+
+real    2m8.969s
+user    0m1.008s
+sys 0m0.136s
+</pre>
+<p>¡Uff, 2 minutos en copiar un archivo que ya tenía bajado! (evidentemente lo que demora mucho
+es <em>averiguar</em> la versión del archivo a bajar)</p>
+<div class="tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">se puede inspeccionar el berenjenal de redirecciones y parseos que suceden hasta que pip
+da con el paquete lxml a bajar haciendo el comando más verborrágico con
+<tt class="docutils literal">pip install lxml <span class="pre">-vvv</span></tt></p>
+</div>
+<p>En este caso, el caché es directamente el archivo:</p>
+<pre class="code bash literal-block">
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>mgaitan@traful:~/lab/test<span class="nv">$ </span>ls ~/.pip_packages/ | grep lxml
+lxml-3.1.1.tar.gz
+</pre>
+<p>Por suerte, una vez cacheado el paquete de esta manera no tendremos
+que consultar el índice online las siguientes veces.</p>
+<pre class="code bash literal-block">
+<span class="o">(</span>test3<span class="o">)</span>mgaitan@traful:~/lab/test3<span class="nv">$ </span><span class="nb">time </span>pip install --no-index --find-links<span class="o">=</span>~/.pip_packages lxml
+Ignoring indexes: https://pypi.python.org/simple/
+Downloading/unpacking lxml
+  Running setup.py egg_info <span class="k">for </span>package lxml
+    Building lxml version 3.1.1.
+
+    <span class="o">[</span>...<span class="o">]</span>
+
+
+Successfully installed lxml
+Cleaning up...
+
+real    0m38.944s
+user    0m38.338s
+sys 0m0.564s
+</pre>
+<p>Ok, ya va mejor.</p>
+</div>
+<div class="section" id="haciendo-que-la-cosa-vuele-no-recompiles-la-rueda">
+<h2>Haciendo que la cosa vuele: no recompiles la rueda</h2>
+<p>pip 1.4 (en desarrollo) trae <a class="reference external" href="https://github.com/pypa/pip/commit/5d02b5207a305543ad6ef19d6e6596ffa45b99e5">soporte integrado</a> para el nuevo formato de paquetes
+<a class="reference external" href="http://wheel.rtfd.org/,">wheel</a> (superador del viejo <em>egg</em> y basado en los estándares actuales)
+que es muchísimo más rápido que instalar desde fuentes (sobre todo en casos
+que se debe compilar, como lxml)</p>
+<p>Para usar wheel el paquete a bajar tiene que existir en dicho formato y todavía no abundan
+en PyPi asi que podemos armarlos localmente con el propio pip</p>
+<pre class="code bash literal-block">
+pip wheel --wheel-dir<span class="o">=</span>./pip_packages lxml
+</pre>
+<p>Eso es similar a usar <tt class="docutils literal"><span class="pre">--download</span></tt> pero además compila y empaqueta como
+un archivo <tt class="docutils literal">.whl</tt></p>
+<p>Para que pip acepte instalar estos archivos hay que usar <tt class="docutils literal"><span class="pre">--use-wheel</span></tt>
+y para que los busque localmente haremos:</p>
+<pre class="code bash literal-block">
+pip install --use-wheel --no-index --find-links<span class="o">=</span>~/.pip_packages lxml
+</pre>
+<p>¡Lo que tardó menos de 2 decimas de segundo! Un speedup del 90mil veces respecto al primer
+y canónico <tt class="docutils literal">pip install lxml</tt></p>
+<pre class="code literal-block">
+(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
+Ignoring indexes: https://pypi.python.org/simple/
+Downloading/unpacking lxml
+Installing collected packages: lxml
+Successfully installed lxml
+Cleaning up...
+
+real    0m0.180s
+user    0m0.152s
+sys 0m0.024s
+</pre>
+<p>Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
+django, whatever) me los haces rodar para que pip vuele.</p>
+</div>
+    <ul class="pager"><li class="previous">
+            <a href="desambiguando-un-hash-en-git.html">← Post anterior</a>
+        </li>
+    
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/pip-apurate-por-favor.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="http://www.textosypretextos.com.ar" title="Mi otro blog">Textos y pretextos</a>
+                    /
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>

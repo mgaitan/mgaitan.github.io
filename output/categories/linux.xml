@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (Linux)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Thu, 07 Mar 2013 14:37:08 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Veinteañero</title><link>http://mgaitan.github.com/posts/veinteanero.html</link><description>&lt;body&gt;&lt;p&gt;Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobij&amp;#243;.
-Al tiempo us&amp;#233; Mandrake, despu&amp;#233;s Debian y desde su primera versi&amp;#243;n (2004)
+<rss version="2.0"><channel><title>tin_nqn (Linux)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Veinteañero</title><link>http://mgaitan.github.com/posts/veinteanero.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobijó.
+Al tiempo usé Mandrake, después Debian y desde su primera versión (2004)
 Ubuntu.&lt;/p&gt;
-&lt;p&gt;Un largo camino de aprendizaje... que alguna vez recorrer&amp;#233; ;-)&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/veinteanero.html</guid><pubDate>Fri, 08 Apr 2011 08:47:13 GMT</pubDate></item><item><title>Video SIS 771/671 en Ubuntu</title><link>http://mgaitan.github.com/posts/video-sis-771-671-en-ubuntu.html</link><description>&lt;body&gt;&lt;div class="system-message"&gt;
+&lt;p&gt;Un largo camino de aprendizaje... que alguna vez recorreré ;-)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/veinteanero.html</guid><pubDate>Fri, 08 Apr 2011 08:47:13 GMT</pubDate></item><item><title>Video SIS 771/671 en Ubuntu</title><link>http://mgaitan.github.com/posts/video-sis-771-671-en-ubuntu.html</link><description>&lt;html&gt;&lt;body&gt;&lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 5); &lt;em&gt;&lt;a href="/posts/video-sis-771-671-en-ubuntu.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Duplicate explicit target name: "este xorg.conf".&lt;/div&gt;
 &lt;p&gt;Esto es una ayuda memoria para mi yo dubitativo del futuro: para hacer
 funcionar el video de la notebook que es &lt;strong&gt;SiS 671/771&lt;/strong&gt; en &lt;strong&gt;Ubuntu&lt;/strong&gt;
-(a partir de la versi&amp;#243;n 9.10) instalar &lt;a class="reference external" href="/posts/IMG/deb/xorg-driver-sis671_0-9_i386.deb"&gt;este
+(a partir de la versión 9.10) instalar &lt;a class="reference external" href="/posts/IMG/deb/xorg-driver-sis671_0-9_i386.deb"&gt;este
 paquete&lt;/a&gt; y [STRIKEOUT:&lt;a class="reference external" href="/posts/IMG/bin/xorg.bin"&gt;este
 xorg.conf&lt;/a&gt;] &lt;a class="reference external" href="/posts/IMG/bin/xorg-2.bin"&gt;este xorg.conf&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Para pantalla dual con LCD externo a resoluci&amp;#243;n full 1280x1024&lt;/p&gt;
+&lt;p&gt;Para pantalla dual con LCD externo a resolución full 1280x1024&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 # /etc/X11/xorg.conf (Xorg X Window System server configuration file)
 #
@@ -195,29 +195,29 @@ EndSection
 
 Section "Extensions"
     Option  "Composite" "off"
-&lt;/pre&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/video-sis-771-671-en-ubuntu.html</guid><pubDate>Mon, 10 May 2010 16:10:25 GMT</pubDate></item><item><title>Deja que el servidor trabaje por tí con GNU Screen</title><link>http://mgaitan.github.com/posts/deja-que-el-servidor-trabaje-por.html</link><description>&lt;body&gt;&lt;p&gt;Ya somos avispados usuarios de la l&amp;#237;nea de comandos y hacemos nuestros
+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/video-sis-771-671-en-ubuntu.html</guid><pubDate>Mon, 10 May 2010 16:10:25 GMT</pubDate></item><item><title>Deja que el servidor trabaje por tí con GNU Screen</title><link>http://mgaitan.github.com/posts/deja-que-el-servidor-trabaje-por.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Ya somos avispados usuarios de la línea de comandos y hacemos nuestros
 pinitos administrando un servidor: movemos, bajamos y hasta compilamos
-directamente en una maquina remota, muchas veces m&amp;#225;s potente y con m&amp;#225;s
+directamente en una maquina remota, muchas veces más potente y con más
 ancho de banda que la nuestra.&lt;/p&gt;
-&lt;p&gt;Nuestra terminal cliente s&amp;#243;lo ejecuta
+&lt;p&gt;Nuestra terminal cliente sólo ejecuta
 &lt;a class="reference external" href="http://www.openssh.com/"&gt;OpenSSH&lt;/a&gt; (o
 &lt;a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"&gt;Putty&lt;/a&gt;
 en Windows)&lt;/p&gt;
 &lt;p&gt;Pero cuando se trata de ejecutar un proceso largo y de nula
-interactividad no tiene mucho sentido seguir conectados &amp;#191;Para qu&amp;#233; gastar
+interactividad no tiene mucho sentido seguir conectados ¿Para qué gastar
 tiempo y recursos (dejar la PC cliente prendida, por ejemplo) si el
-trabajo s&amp;#243;lo se hace en el servidor?&lt;/p&gt;
-&lt;p&gt;Este caso se da muchas veces, sobre todo (y aqu&amp;#237; lo que me interesa)
+trabajo sólo se hace en el servidor?&lt;/p&gt;
+&lt;p&gt;Este caso se da muchas veces, sobre todo (y aquí lo que me interesa)
 cuando bajamos archivos muy pesados o hacer un mirror de un repositorio
 completo.&lt;/p&gt;
-&lt;p&gt;Y aqu&amp;#237; c&amp;#243;mo resolverlo: usa &lt;a class="reference external" href="http://es.wikipedia.org/wiki/GNU_Screen"&gt;GNU
+&lt;p&gt;Y aquí cómo resolverlo: usa &lt;a class="reference external" href="http://es.wikipedia.org/wiki/GNU_Screen"&gt;GNU
 Screen&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Screen es un multiplexor/virtualizador de terminales, y entre sus muchas
-e interesantes caracter&amp;#237;sticas incluye el desacople de su proceso padre.&lt;/p&gt;
+e interesantes características incluye el desacople de su proceso padre.&lt;/p&gt;
 &lt;p&gt;Esto significa que se puede ejecutar una terminal virtual con screen (en
 una terminal remota por ssh, por ejemplo), ejecutar cualquier proceso en
 ese entorno y desacoplarlo, pudiendo entonces desloguearse y cerrar la
-conexi&amp;#243;n remota dejando el proceso en curso.&lt;/p&gt;
+conexión remota dejando el proceso en curso.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Receta paso a paso&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;p class="first"&gt;ejecuta una consola virtual con screen&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -230,7 +230,7 @@ Koala en DVD&lt;/p&gt;
 $ wget http://mirror.mcs.anl.gov/pub/ubuntu-iso/DVDs/ubuntu/9.10/beta/ubuntu-9.10-beta-dvd-i386.iso
 &lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Desacoplar el proceso con la combinaci&amp;#243;n de teclas &lt;strong&gt;Control+A D&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p class="first"&gt;Desacoplar el proceso con la combinación de teclas &lt;strong&gt;Control+A D&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Desconectarse, tomar unos mates y volver cuando quieras&lt;/p&gt;
 &lt;/li&gt;
@@ -242,34 +242,34 @@ $ wget http://mirror.mcs.anl.gov/pub/ubuntu-iso/DVDs/ubuntu/9.10/beta/ubuntu-9.1
 $ screen -list
 &lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Traer a primer plano el proceso en cuesti&amp;#243;n con&lt;/p&gt;
+&lt;li&gt;&lt;p class="first"&gt;Traer a primer plano el proceso en cuestión con&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ screen -r PID
 &lt;/pre&gt;
 &lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;y all&amp;#237; estar&amp;#225; el proceso que dejamos corriendo (o al menos los rastros
-que dej&amp;#243; en su paso).&lt;/p&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/deja-que-el-servidor-trabaje-por.html</guid><pubDate>Mon, 19 Oct 2009 20:33:31 GMT</pubDate></item><item><title>Digitalizando recuerdos con mencoder</title><link>http://mgaitan.github.com/posts/digitalizando-recuerdos-con.html</link><description>&lt;body&gt;&lt;p&gt;Para el Mundial del 2006, compr&amp;#233;, como tantos otros que no ten&amp;#237;an
-televisor pero s&amp;#237; computadora, una plaquita sintonizadora de TV: una
-Kozumi con el chip sintonizador BT878, uno de los m&amp;#225;s gen&amp;#233;ricos y
+&lt;/ul&gt;&lt;p&gt;y allí estará el proceso que dejamos corriendo (o al menos los rastros
+que dejó en su paso).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/deja-que-el-servidor-trabaje-por.html</guid><pubDate>Mon, 19 Oct 2009 20:33:31 GMT</pubDate></item><item><title>Digitalizando recuerdos con mencoder</title><link>http://mgaitan.github.com/posts/digitalizando-recuerdos-con.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Para el Mundial del 2006, compré, como tantos otros que no tenían
+televisor pero sí computadora, una plaquita sintonizadora de TV: una
+Kozumi con el chip sintonizador BT878, uno de los más genéricos y
 bastante bien soportado en linux.&lt;/p&gt;
-&lt;p&gt;Tuvo poca utilidad en aquel 2006, primero porque argentina no dur&amp;#243;
-demasiado y segundo y principal porque un vecino reclam&amp;#243; potestad sobre
-la se&amp;#241;al del cable coaxil que alimentaba mi chip y mis ilusiones
+&lt;p&gt;Tuvo poca utilidad en aquel 2006, primero porque argentina no duró
+demasiado y segundo y principal porque un vecino reclamó potestad sobre
+la señal del cable coaxil que alimentaba mi chip y mis ilusiones
 mundialistas.&lt;/p&gt;
-&lt;p&gt;Qued&amp;#243; cajoneada en algun rinc&amp;#243;n, hasta que rescat&amp;#233; del olvido la
-videofilmadora de la familia, una vieja y noble JVC , con un mont&amp;#243;n de
+&lt;p&gt;Quedó cajoneada en algun rincón, hasta que rescaté del olvido la
+videofilmadora de la familia, una vieja y noble JVC , con un montón de
 casetitos Compact VHS (que es el formato con el que funciona).&lt;/p&gt;
-&lt;p&gt;As&amp;#237; que despu&amp;#233;s de mucho patear la tarea, decid&amp;#237; conectar los cables y
+&lt;p&gt;Así que después de mucho patear la tarea, decidí conectar los cables y
 encontrar la forma de convertir en bytes los recuerdos archivados en
 esos casettes polvorientos.&lt;/p&gt;
 &lt;div class="section" id="lo-que-hice"&gt;
 &lt;h2&gt;Lo que hice&lt;/h2&gt;
-&lt;p&gt;Primero, configurar la placa. El chip bt878 se usa en much&amp;#237;simas
+&lt;p&gt;Primero, configurar la placa. El chip bt878 se usa en muchísimas
 sintonizadoras que tienen configuraciones diferentes. Para asignarle los
-correctos, se pasa un c&amp;#243;digo &lt;tt class="docutils literal"&gt;card&lt;/tt&gt; que se obtiene de &lt;a class="reference external" href="http://www.mjmwired.net/kernel/Documentation/video4linux/CARDLIST.bttv"&gt;esta
+correctos, se pasa un código &lt;tt class="docutils literal"&gt;card&lt;/tt&gt; que se obtiene de &lt;a class="reference external" href="http://www.mjmwired.net/kernel/Documentation/video4linux/CARDLIST.bttv"&gt;esta
 lista&lt;/a&gt;.
-En mi caso, para una Kozumi ktv-01c, el c&amp;#243;digo es 151. El comando
-completo con el que configuro el m&amp;#243;dulo es:&lt;/p&gt;
+En mi caso, para una Kozumi ktv-01c, el código es 151. El comando
+completo con el que configuro el módulo es:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 sudo modprobe bttv card=151 pll=1 tuner=38 radio=1 bttv_verbose=1 gbuffers=4
 &lt;/pre&gt;
@@ -278,60 +278,60 @@ sudo modprobe bttv card=151 pll=1 tuner=38 radio=1 bttv_verbose=1 gbuffers=4
 mencoder tv:// -tv driver=v4l2:device=/dev/video0:input=1:width=480:height=360:norm=ntsc:alsa:adevice=hw.0:amode=1:audiorate=44100:forceaudio:forcechan=1:buffersize=300 -oac mp3lame -lameopts cbr:br=96:mode=3 -af volume=-6:0,channels=1 -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=5000:keyint=125:mbd=2 -vf yadif,crop=464:352:8:2  -o salida.avi
 &lt;/pre&gt;
 &lt;p&gt;Algunos detalles:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="tv://"&gt;tv://&lt;/a&gt; indica que se va a capturar video, y se le pasan param&amp;#233;tros
-luego del flag -tv: driver &lt;strong&gt;v4l2&lt;/strong&gt;, un tama&amp;#241;o de 480x360 (aunque
-despu&amp;#233;s se recorta), preconfigurado para ntsc (29.97 fps).
+&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="tv://"&gt;tv://&lt;/a&gt; indica que se va a capturar video, y se le pasan paramétros
+luego del flag -tv: driver &lt;strong&gt;v4l2&lt;/strong&gt;, un tamaño de 480x360 (aunque
+después se recorta), preconfigurado para ntsc (29.97 fps).
 &lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Un aspecto importante son los flags referidos al audio: se
 captura el audio &lt;strong&gt;alsa&lt;/strong&gt;, indicando la placa de sonido, el modo y la
 calidad (mono a 44100hz de ancho de banda)
 &lt;img alt="image2" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El audio se comprime con &lt;strong&gt;lame&lt;/strong&gt; a mp3 de 96kps constante.
 &lt;img alt="image3" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; con &lt;strong&gt;-af volume&lt;/strong&gt; le bajo el volumen 6db, porque de otra
-manera me sal&amp;#237;a saturado (estoy capturando desde el microfono). El
-parametro &lt;strong&gt;forceraudio&lt;/strong&gt; fuerza la captura aunque la entrada est&amp;#233;
-silenciada en la mezcladora. Tambi&amp;#233;n se fuerza a grabar un solo canal
+manera me salía saturado (estoy capturando desde el microfono). El
+parametro &lt;strong&gt;forceraudio&lt;/strong&gt; fuerza la captura aunque la entrada esté
+silenciada en la mezcladora. También se fuerza a grabar un solo canal
 con &lt;strong&gt;forcechan=1&lt;/strong&gt;.
 &lt;img alt="image4" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Con -ovc lavc se usa &lt;strong&gt;libavcodec&lt;/strong&gt; (ffmpeg), comprimiendo en
 mpeg4 a un bitrate de 5000.
 &lt;img alt="image5" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Se aplican 2 filtros de video al vuelo: &lt;strong&gt;yadif&lt;/strong&gt; que es el
-mejor filtro desentralazador (necesario para captura anal&amp;#243;gica) y un
+mejor filtro desentralazador (necesario para captura analógica) y un
 &lt;strong&gt;crop&lt;/strong&gt; que recorta 8 pixeles de los costados, 2 de arriba y 6 de
-abajo, para evitar la distorci&amp;#243;n que producen los cabezales con las
+abajo, para evitar la distorción que producen los cabezales con las
 cintas viejas.&lt;/p&gt;
-&lt;p&gt;El resultado es un video de unos 250kb/s de calidad m&amp;#225;s que aceptable.&lt;/p&gt;
+&lt;p&gt;El resultado es un video de unos 250kb/s de calidad más que aceptable.&lt;/p&gt;
 &lt;p&gt;Por ejemplo, el casamiento de mi hermano Juan, en 1998:&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/digitalizando-recuerdos-con.html</guid><pubDate>Wed, 30 Sep 2009 14:56:40 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</link><description>&lt;body&gt;&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a trav&amp;#233;s del sistema de
+&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/digitalizando-recuerdos-con.html</guid><pubDate>Wed, 30 Sep 2009 14:56:40 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
 control de versiones Subversion.&lt;/p&gt;
-&lt;p&gt;A trav&amp;#233;s de Subversion, podemos obtener la ultima version de desarrollo
+&lt;p&gt;A través de Subversion, podemos obtener la ultima version de desarrollo
 considerada estable&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn checkout svn://trac.rezo.net/spip/branches/spip-2.0/  carpeta_destino
 &lt;/pre&gt;
-&lt;p&gt;Una de las ventajas de obtener SPIP a trav&amp;#233;s de SVN, es que luego es muy
-f&amp;#225;cil de actualizar.&lt;/p&gt;
+&lt;p&gt;Una de las ventajas de obtener SPIP a través de SVN, es que luego es muy
+fácil de actualizar.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 cd  carpeta_destino
 svn update
 &lt;/pre&gt;
 &lt;p&gt;Subversion asigna un numero de revision a cada cambio realizado al
-conjunto de archivos. As&amp;#237;, cuando los desarrolladores lo evaluan
+conjunto de archivos. Así, cuando los desarrolladores lo evaluan
 pertinente, en un determinado momento del desarrollo se empaqueta una
 nueva version "oficial"&lt;/p&gt;
-&lt;p&gt;Por ejemplo, la revisi&amp;#243;n
+&lt;p&gt;Por ejemplo, la revisión
 &lt;a class="reference external" href="http://trac.rezo.net/trac/spip/browser/branches/spip-2.0?rev=13982"&gt;13982&lt;/a&gt;
 es la version 2.08 de Spip.&lt;/p&gt;
-&lt;p&gt;Podemos obtener una revision espec&amp;#237;fica con el par&amp;#225;metro -r. Por
-ejemplo, el siguiente comando obtendr&amp;#237;a una copia de SPIP 2.08&lt;/p&gt;
+&lt;p&gt;Podemos obtener una revision específica con el parámetro -r. Por
+ejemplo, el siguiente comando obtendría una copia de SPIP 2.08&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn -r 13982 checkout svn://trac.rezo.net/spip/branches/spip-2.0/  carpeta_destino
 &lt;/pre&gt;
 &lt;p&gt;Genial, pero para para asegurarnos estar en una revision que se
-corresponda con una "version oficial" tenemos que saber el n&amp;#250;mero de ID.&lt;/p&gt;
+corresponda con una "version oficial" tenemos que saber el número de ID.&lt;/p&gt;
 &lt;p&gt;En el &lt;a class="reference external" href="http://trac.rezo.net/trac/spip/wiki"&gt;Trac de Spip&lt;/a&gt; se mantiene
 una tabla donde se especifica esta correspondencia para cada nueva
-version, pero a decir verdad, es un engorro tener que ingresar s&amp;#243;lo para
-averiguar un n&amp;#250;mero. Mejor hag&amp;#225;moslo autom&amp;#225;tico!&lt;/p&gt;
+version, pero a decir verdad, es un engorro tener que ingresar sólo para
+averiguar un número. Mejor hagámoslo automático!&lt;/p&gt;
 &lt;div class="section" id="automatizando-la-obtencion-de-un-spip-oficial-por-svn"&gt;
-&lt;h2&gt;Automatizando la obtenci&amp;#243;n de un SPIP oficial por SVN&lt;/h2&gt;
+&lt;h2&gt;Automatizando la obtención de un SPIP oficial por SVN&lt;/h2&gt;
 &lt;pre class="literal-block"&gt;
 #!/bin/bash
 #script para una instalacion de spip a traves de svn
@@ -362,46 +362,46 @@ chmod 657 IMG local tmp config
 echo "Lanzando el navegador para continuar la instalacion..."
 firefox http://localhost/~tin/$1/ecrire
 &lt;/pre&gt;
-&lt;p&gt;Este script hace el trabajo aburrido por nosotros. Averigua cu&amp;#225;l fue la
-&amp;#250;ltima modificaci&amp;#243;n de &lt;em&gt;archivelist.txt&lt;/em&gt; que es un archivo que se
-modifica en cada nuevo lanzamiento de paquete. &amp;#161;Es el dato que nos hac&amp;#237;a
+&lt;p&gt;Este script hace el trabajo aburrido por nosotros. Averigua cuál fue la
+última modificación de &lt;em&gt;archivelist.txt&lt;/em&gt; que es un archivo que se
+modifica en cada nuevo lanzamiento de paquete. ¡Es el dato que nos hacía
 falta!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="una-solucion-mas-genuina"&gt;
-&lt;h2&gt;Una soluci&amp;#243;n m&amp;#225;s genuina&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Atenci&amp;#243;n&lt;/strong&gt;: Ya me hicieron caso. &lt;a class="reference external" href="/blog/article/ultima-version-de-spip-por-svn#update"&gt;Ver
-actualizaci&amp;#243;n&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Aunque el hacking (como este) es sano y divertido (y a veces tambi&amp;#233;n
-&amp;#250;til), la soluci&amp;#243;n m&amp;#225;s genuina ser&amp;#237;a que los desarrolladores de SPIP
+&lt;h2&gt;Una solución más genuina&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Atención&lt;/strong&gt;: Ya me hicieron caso. &lt;a class="reference external" href="/blog/article/ultima-version-de-spip-por-svn#update"&gt;Ver
+actualización&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Aunque el hacking (como este) es sano y divertido (y a veces también
+útil), la solución más genuina sería que los desarrolladores de SPIP
 mantengan un &lt;strong&gt;tag&lt;/strong&gt; por cada nuevo empaquetamiento y uno que apunte
-siempre al &amp;#250;ltimo.&lt;/p&gt;
+siempre al último.&lt;/p&gt;
 &lt;p&gt;Por ejemplo, con el siguiente comando deberiamos obtener la version 2.05
-(sin saber a qu&amp;#233; numero de revision corresponde)&lt;/p&gt;
+(sin saber a qué numero de revision corresponde)&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn checkout svn://trac.rezo.net/spip/tags/2.05
 &lt;/pre&gt;
-&lt;p&gt;y con este otro obtener la &lt;strong&gt;&amp;#250;ltima&lt;/strong&gt; versi&amp;#243;n&lt;/p&gt;
+&lt;p&gt;y con este otro obtener la &lt;strong&gt;última&lt;/strong&gt; versión&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn checkout svn://trac.rezo.net/spip/tags/lastest-version
 &lt;/pre&gt;
-&lt;p&gt;Esto, por ahora, no est&amp;#225; implementado, pero ya hice llegar mi propuesta
-a &lt;em&gt;l&amp;#8217;equipe&lt;/em&gt; de SPIP, y &lt;a class="reference external" href="http://article.gmane.org/gmane.comp.web.spip.devel/53503"&gt;lo est&amp;#225;n
+&lt;p&gt;Esto, por ahora, no está implementado, pero ya hice llegar mi propuesta
+a &lt;em&gt;l’equipe&lt;/em&gt; de SPIP, y &lt;a class="reference external" href="http://article.gmane.org/gmane.comp.web.spip.devel/53503"&gt;lo están
 discutiendo&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="actualizacion"&gt;
-&lt;h2&gt;Actualizaci&amp;#243;n&lt;/h2&gt;
+&lt;h2&gt;Actualización&lt;/h2&gt;
 &lt;p&gt;Gracias a &lt;a class="reference external" href="http://my.opera.com/tech-nova/blog/"&gt;Gilles&lt;/a&gt; el Dev Team
-adopt&amp;#243; mi propuesta y ahora existen Tags en el arbol SVN de spip. En
+adoptó mi propuesta y ahora existen Tags en el arbol SVN de spip. En
 particular,&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn co svn://trac.rezo.net/spip/tags/spip-2-stable
 &lt;/pre&gt;
-&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</guid><pubDate>Fri, 22 May 2009 00:19:54 GMT</pubDate></item><item><title>Piccola Radiolina</title><link>http://mgaitan.github.com/posts/piccola-radiolina.html</link><description>&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/radiolina/"&gt;Radiolina&lt;/a&gt; es a mi jornada
-laboral lo que la Spika a la de mi abuelo, en aquellas ma&amp;#241;anas de vi&amp;#241;as
+&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</guid><pubDate>Fri, 22 May 2009 00:19:54 GMT</pubDate></item><item><title>Piccola Radiolina</title><link>http://mgaitan.github.com/posts/piccola-radiolina.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/radiolina/"&gt;Radiolina&lt;/a&gt; es a mi jornada
+laboral lo que la Spika a la de mi abuelo, en aquellas mañanas de viñas
 mendocinas.&lt;/p&gt;
 &lt;p&gt;Es un simple script &lt;a class="reference external" href="http://es.wikipedia.org/wiki/bash"&gt;bash&lt;/a&gt; que se
-vale del m&amp;#225;gico &lt;a class="reference external" href="http://www.mplayerhq.hu"&gt;mplayer&lt;/a&gt; para reproducir las
-radios m&amp;#225;s importantes de argentina (y otras mejores que esas).&lt;/p&gt;
+vale del mágico &lt;a class="reference external" href="http://www.mplayerhq.hu"&gt;mplayer&lt;/a&gt; para reproducir las
+radios más importantes de argentina (y otras mejores que esas).&lt;/p&gt;
 &lt;p&gt;Para bajar y empezar a disfrutar Radiolina puedes ejecutar los
 siguientes comandos desde tu consola.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -413,22 +413,22 @@ chmod +x radiolina
 bajar el programa. En vez de la primer linea (&lt;em&gt;wget...&lt;/em&gt;) utilizar&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn checkout https://radiolina.googlecode.com/svn/trunk/ ./
-&lt;/pre&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/piccola-radiolina.html</guid><pubDate>Sun, 19 Apr 2009 14:14:39 GMT</pubDate></item><item><title>Backup selectivo de tablas Mysql</title><link>http://mgaitan.github.com/posts/backup-selectivo-de-tablas-mysql.html</link><description>&lt;body&gt;&lt;p&gt;Un comando muy pr&amp;#225;ctico para hacer backups de una base de datos MySQL es
+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/piccola-radiolina.html</guid><pubDate>Sun, 19 Apr 2009 14:14:39 GMT</pubDate></item><item><title>Backup selectivo de tablas Mysql</title><link>http://mgaitan.github.com/posts/backup-selectivo-de-tablas-mysql.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Un comando muy práctico para hacer backups de una base de datos MySQL es
 &lt;em&gt;mysqldump&lt;/em&gt;.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &amp;gt; backup.sql
 &lt;/pre&gt;
 &lt;p&gt;Eso hace un backup completo de la base &lt;em&gt;base_de_datos&lt;/em&gt; (incluyendo la
-creaci&amp;#243;n de todas las tablas.&lt;/p&gt;
+creación de todas las tablas.&lt;/p&gt;
 &lt;p&gt;Para restaurar ese backup se hace directamente inyectando el sql al
 interprete de mysql.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos
 &lt;/pre&gt;
 &lt;div class="section" id="respaldar-solo-algunas-tablas-de-la-base"&gt;
-&lt;h2&gt;Respaldar s&amp;#243;lo algunas tablas de la base&lt;/h2&gt;
+&lt;h2&gt;Respaldar sólo algunas tablas de la base&lt;/h2&gt;
 &lt;p&gt;A menudo tenemos multiples sistemas instalados sobre la misma base de
-datos, Si s&amp;#243;lo queremos respaldar algunas tablas bastar&amp;#237;a enumerar las
+datos, Si sólo queremos respaldar algunas tablas bastaría enumerar las
 tablas luego del nombre de la base de datos&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  tabla1 tabla2 &amp;gt; backup.sql
@@ -441,41 +441,41 @@ tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &amp;gt; backup.sql
 &lt;/pre&gt;
-&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/backup-selectivo-de-tablas-mysql.html</guid><pubDate>Tue, 31 Mar 2009 09:37:49 GMT</pubDate></item><item><title>Auto Podcast</title><link>http://mgaitan.github.com/posts/auto-podcast.html</link><description>&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.efectotabano.com.ar"&gt;Efecto T&amp;#225;bano&lt;/a&gt; es el programa radial
+&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/backup-selectivo-de-tablas-mysql.html</guid><pubDate>Tue, 31 Mar 2009 09:37:49 GMT</pubDate></item><item><title>Auto Podcast</title><link>http://mgaitan.github.com/posts/auto-podcast.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.efectotabano.com.ar"&gt;Efecto Tábano&lt;/a&gt; es el programa radial
 de mi amigo Fernando Barraza. Objetivamente, uno de los mejores
 programas radiales de Argentina.&lt;/p&gt;
-&lt;p&gt;Lamentablemente, desde que me vine a C&amp;#243;rdoba tuve que conformarme con
-los fragmentos de entrevistas o especiales que Fernando sub&amp;#237;a a la web.
-Pero ahora que la &lt;a class="reference external" href="http://fm1037online.com/"&gt;Radio Calf-UNC&lt;/a&gt; est&amp;#225;
-online, la alegr&amp;#237;a est&amp;#225; completa.&lt;/p&gt;
-&lt;p&gt;El &amp;#250;nico problema que queda es que no todos los d&amp;#237;as tengo el tiempo de
+&lt;p&gt;Lamentablemente, desde que me vine a Córdoba tuve que conformarme con
+los fragmentos de entrevistas o especiales que Fernando subía a la web.
+Pero ahora que la &lt;a class="reference external" href="http://fm1037online.com/"&gt;Radio Calf-UNC&lt;/a&gt; está
+online, la alegría está completa.&lt;/p&gt;
+&lt;p&gt;El único problema que queda es que no todos los días tengo el tiempo de
 escucharlo de 16 a 18hs, Necesitaba grabarlo para escucharlo offline.&lt;/p&gt;
-&lt;p&gt;Bien podr&amp;#237;a haber hecho esto localmente pero como al sitio lo administro
-yo, dije... &amp;#191;por qu&amp;#233; no grabar el programa directamente desde el
+&lt;p&gt;Bien podría haber hecho esto localmente pero como al sitio lo administro
+yo, dije... ¿por qué no grabar el programa directamente desde el
 servidor, y que cualquiera pueda bajarlo cuando quiera?&lt;/p&gt;
-&lt;p&gt;Aqu&amp;#237; est&amp;#225; mi podcaster autom&amp;#225;tico para Efecto T&amp;#225;bano.&lt;/p&gt;
+&lt;p&gt;Aquí está mi podcaster automático para Efecto Tábano.&lt;/p&gt;
 &lt;div class="section" id="la-idea"&gt;
 &lt;h2&gt;La idea&lt;/h2&gt;
 &lt;p&gt;Todo se basa en el glorioso &lt;a class="reference external" href="http://mplayerhq.hu"&gt;Mplayer&lt;/a&gt;, Mplayer es
 capaz de reproducir casi cualquier formato en streaming.&lt;/p&gt;
-&lt;p&gt;Por supuesto, no habr&amp;#225; sonido en esa "reproducci&amp;#243;n" sobre el servidor,
+&lt;p&gt;Por supuesto, no habrá sonido en esa "reproducción" sobre el servidor,
 pero lo que queremos es la info para grabarla.&lt;/p&gt;
-&lt;p&gt;En vez de enviarla a la placa de sonidos, la informaci&amp;#243;n cruda (el
+&lt;p&gt;En vez de enviarla a la placa de sonidos, la información cruda (el
 sonido WAV) lo enviamos a un archivo fifo desde donde
-&lt;a class="reference external" href="http://lame.sourceforge.net/"&gt;lame&lt;/a&gt; obtendr&amp;#225; su fuente de datos para
+&lt;a class="reference external" href="http://lame.sourceforge.net/"&gt;lame&lt;/a&gt; obtendrá su fuente de datos para
 comprimir a MP3 &lt;em&gt;on the fly&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Todo esto, claro, se ejecutar&amp;#225; al horario del programa (y durante el
+&lt;p&gt;Todo esto, claro, se ejecutará al horario del programa (y durante el
 tiempo que se indique, en este caso casi 2 horas) mediante una tarea
 &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Cron_(Unix)"&gt;cron&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="instalando-lo-necesario"&gt;
 &lt;h2&gt;Instalando lo necesario&lt;/h2&gt;
-&lt;p&gt;Como anticip&amp;#233;, hace falta mplayer y lame. Estos programas en general no
+&lt;p&gt;Como anticipé, hace falta mplayer y lame. Estos programas en general no
 se encuentran en el servidor (por ejemplo
-&lt;a class="reference external" href="http://www.dreamhost.com/r.cgi?150740"&gt;Dreamhost&lt;/a&gt;) as&amp;#237; que hay que
-instalarlos. Como tampoco somos root (la gran mayor&amp;#237;a de las veces)
-habr&amp;#225; que compilarlos desde las fuentes e instalarlos a nivel usuario.&lt;/p&gt;
-&lt;p&gt;primero crear, si no existi&amp;#233;se, un directorio /bin donde ir&amp;#225;n nuestros
+&lt;a class="reference external" href="http://www.dreamhost.com/r.cgi?150740"&gt;Dreamhost&lt;/a&gt;) así que hay que
+instalarlos. Como tampoco somos root (la gran mayoría de las veces)
+habrá que compilarlos desde las fuentes e instalarlos a nivel usuario.&lt;/p&gt;
+&lt;p&gt;primero crear, si no existiése, un directorio /bin donde irán nuestros
 programas.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 mkdir bin
@@ -504,14 +504,14 @@ cd lame-3.97
 make
 make install
 &lt;/pre&gt;
-&lt;p&gt;Con eso ya tendr&amp;#237;amos los programas necesarios en &lt;strong&gt;./bin&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Con eso ya tendríamos los programas necesarios en &lt;strong&gt;./bin&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="el-script-podcaster-efectotabano-sh"&gt;
 &lt;h2&gt;El script podcaster-efectotabano.sh&lt;/h2&gt;
 &lt;pre class="literal-block"&gt;
 #!/bin/sh
 #
-# recorder &amp;#8212; wrapper to pull remote audio stream and convert contents
+# recorder — wrapper to pull remote audio stream and convert contents
 # to mp3
 
 # Path and arguments to lame (mp3 encoder)
@@ -534,7 +534,7 @@ ofile="$odir/${showname}.mp3"
 
 mkfifo $fifo
 $lame $fifo $ofile &amp;amp;
-$mplayer &amp;#160;-vc null -vo null -ao pcm:file=$fifo $url &amp;amp;
+$mplayer  -vc null -vo null -ao pcm:file=$fifo $url &amp;amp;
 
 sleep 5
 pids=`ps auxww | grep $fifo | awk '{print $duration}'`
@@ -544,28 +544,28 @@ sleep `echo ${duration} | bc`
 kill $pids
 rm $fifo
 &lt;/pre&gt;
-&lt;p&gt;La primera parte permite configurar las rutas y par&amp;#225;metros de los
-programas a usar, as&amp;#237; como el formato y destino del mp3 de salida.&lt;/p&gt;
-&lt;p&gt;En este caso los par&amp;#225;metros de lame indican que se grabar&amp;#225; a 32kbps en
+&lt;p&gt;La primera parte permite configurar las rutas y parámetros de los
+programas a usar, así como el formato y destino del mp3 de salida.&lt;/p&gt;
+&lt;p&gt;En este caso los parámetros de lame indican que se grabará a 32kbps en
 mono.&lt;/p&gt;
-&lt;p&gt;Los mp3 de salida ir&amp;#225;n a &lt;a class="reference external" href="http://www.efectotabano.com.ar/podcast/"&gt;este
+&lt;p&gt;Los mp3 de salida irán a &lt;a class="reference external" href="http://www.efectotabano.com.ar/podcast/"&gt;este
 destino&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Este script se ejecuta de lunes a viernes a las 12:09 hora del servidor
 (16:09 en argentina) y durante 6660 segundo, de modo que termina
-tentativamente junto con la finalizaci&amp;#243;n del programa.&lt;/p&gt;
+tentativamente junto con la finalización del programa.&lt;/p&gt;
 &lt;p&gt;Para configurar la tarea en cron ejecutar &lt;strong&gt;crontab -e&lt;/strong&gt;. La tarea a
-agregar luce as&amp;#237;:&lt;/p&gt;
+agregar luce así:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 09 12 * * 1-5 ~/bin/podcaster-efectotabano.sh
 &lt;/pre&gt;
-&lt;p&gt;Eso es todo. Todos los d&amp;#237;as, de lunes a viernes tendr&amp;#233; mi programa para
+&lt;p&gt;Eso es todo. Todos los días, de lunes a viernes tendré mi programa para
 descargar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="to-do"&gt;
 &lt;h2&gt;TO DO&lt;/h2&gt;
 &lt;p&gt;Por supuesto, para que esto sea un
 &lt;a class="reference external" href="http://es.wikipedia.org/wiki/podcast"&gt;podcast&lt;/a&gt; le falta la
-sindicaci&amp;#243;n. Por lo tanto, habr&amp;#237;a que agregar la tarea de injectar
-informaci&amp;#243;n pertinente en una base de datos del cual generar el XML de
-sindicaci&amp;#243;n.&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;</description><guid>http://mgaitan.github.com/posts/auto-podcast.html</guid><pubDate>Sat, 21 Mar 2009 12:53:03 GMT</pubDate></item></channel></rss>
+sindicación. Por lo tanto, habría que agregar la tarea de injectar
+información pertinente en una base de datos del cual generar el XML de
+sindicación.&lt;/p&gt;
+&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/auto-podcast.html</guid><pubDate>Sat, 21 Mar 2009 12:53:03 GMT</pubDate></item></channel></rss>
