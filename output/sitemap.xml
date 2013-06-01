@@ -6,12 +6,12 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://mgaitan.github.com</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://mgaitan.github.com/2004/</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -21,7 +21,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/2005/</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/2008/</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -41,7 +41,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/2009/</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -51,7 +51,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/2010/</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -61,7 +61,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/2011/</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -71,7 +71,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/2012/</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -81,7 +81,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/2013/</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -241,7 +241,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/categories/testing.html</loc>
-  <lastmod>2013-05-30</lastmod>
+  <lastmod>2013-06-01</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
