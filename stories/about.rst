@@ -22,23 +22,20 @@ reparto de peliculas desconocidas que nunca vi. Estoy convencido de que
 el pomo de la pasta de dientes nunca se acaba: siempre se puede sacar un
 poco más, siempre. Y también que lo que se siente por una mujer sólo se
 define cuando la ves durmiendo al lado tuyo.
-`Escribo <http://textosypretextos.com.ar>_` y
+`Escribo <http://textosypretextos.com.ar>`_ y
 `leo <http://textosypretextos.com.ar/De-otros>`_.
-Séptimo grado completo. También `saco fotos <textosypretextos.com.ar/fotos>`_.
+Séptimo grado completo. También `saco fotos <http://textosypretextos.com.ar/fotos>`_.
 Cuando era chico y feliz — que no fue el único tiempo en el que fui feliz,
 ni todo el tiempo en el que fui
-chico — supe algunas poesias de memoria, pero luego tuve que ocupar esas
-neuronas en recordar formulas de integrales.
+chico — supe algunas poesías de memoria, pero luego tuve que ocupar esas
+neuronas en recordar fórmulas de integrales.
 
-Tengo `un blog literario <http://textosypretextos.com.ar>`_ y uno
-`geek <http://mgaitan.github.com>`_. A ambos abandoné, resucité desde
-las cenizas del spam  y luego volví a abandonar.
-
-Aunque lo disimulo, soy un nerd. `Trabajo <http://phasety.com>`_ con computadoras.
-Ingeniero en Computación dice el papel. Creo en esas cosas (no en los
-papeles, sino en las computadoras) y en internet. Son herramientas
-revolucionarias, e intento luchar por su democratización. Mi compu se
-llama "Morocha". También mi bicicleta tiene nombre, pero no quiero que
+Aunque lo disimulo, soy un geek (y acá estás, leyendo mi blog que lo demuestra).
+`Trabajo <http://phasety.com>`_ con `computadoras <http://machinalis.com>`_.
+Ingeniero en Computación dice el papel. Creo en esas cosas — no en los
+papeles, sino en las computadoras —  y en internet. Son herramientas
+revolucionarias, y brego por su democratización. Mi compu se
+llama "Morochita". También mi bicicleta tiene nombre, pero no quiero que
 pienses que no tengo amigos y por eso converso con las cosas.
 
 Contacto
