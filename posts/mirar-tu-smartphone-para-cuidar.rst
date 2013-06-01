@@ -13,7 +13,7 @@ del `acuerdo de precios <http://www.preciosensusitio.gov.ar/>`_ con los supermer
    <iframe width="420" height="315" src="http://www.youtube.com/embed/I5jQZ8xQ5Pw" frameborder="0" allowfullscreen></iframe>
 
 Me parece muy bueno todo este paquete de medidas y negociaciones que,
-en vez de `negar la situación <https://www.youtube.com/watch?v=csSjZ7_7An0>`_, la
+en vez de `negar la situación <https://www.youtube.com/watch?v=tmoOnEIzU18>`_, la
 asume y la enfrenta, con medidas simples e ingeniosas. La inflación, creo yo, es el flagelo más sentido por todo el pueblo trabajador.
 
 ¿Pero será efectivo tener a tantos compañeros mirando y anotando el precio del paquete de harina
