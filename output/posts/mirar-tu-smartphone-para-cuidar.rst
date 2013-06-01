@@ -21,7 +21,7 @@ en una hoja de papel?
 
 Supongamos que está más caro de lo acordado ¿Qué va a pasar? Imagino que los voluntarios
 tendrán que informarlo a las autoridades de la Secretaria de Comercio y desde allí
-deberán enviar a alguien con poder de policia que constate, para luego multar y exijir
+deberán enviar a alguien con poder de policia que constate, para luego multar y exigir
 la adecuación del precio. ¿Cuantos días lleva eso? ¿Cuanta gente compró la harina más cara
 mientras tanto? ¿Cuánto esfuerzo de trabajo significó, no sólo de los voluntarios, sino de los funcionarios? ¿Cuántas posibilidades reales hay de implementar esto en todos los rincones
 del país?
