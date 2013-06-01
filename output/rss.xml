@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 01 Jun 2013 11:15:51 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mirar (tu smartphone) para cuidar</title><link>http://mgaitan.github.com/posts/mirar-tu-smartphone-para-cuidar.html</link><description>&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;!-- tags: ideas, android --&gt;
+&lt;!-- date: 2013/06/01 09:50:39 --&gt;
+&lt;!-- title: Mirar (tu smartphone) para cuidar --&gt;
+&lt;!-- slug: mirar-tu-smartphone-para-cuidar --&gt;
+&lt;p&gt;Leo sobre el programa &lt;a class="reference external" href="http://www.pagina12.com.ar/diario/economia/subnotas/221350-63733-2013-06-01.html"&gt;Mirar para cuidar&lt;/a&gt;, la campaña de acción voluntaria para controlar el cumplimiento
+del &lt;a class="reference external" href="http://www.preciosensusitio.gov.ar/"&gt;acuerdo de precios&lt;/a&gt; con los supermercados.&lt;/p&gt;
+&lt;iframe width="420" height="315" src="http://www.youtube.com/embed/I5jQZ8xQ5Pw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;Me parece muy bueno todo este paquete de medidas y negociaciones que,
+en vez de &lt;a class="reference external" href="https://www.youtube.com/watch?v=csSjZ7_7An0"&gt;negar la situación&lt;/a&gt;, la
+asume y la enfrenta, con medidas simples e ingeniosas. La inflación, creo yo, es el flagelo más sentido por todo el pueblo trabajador.&lt;/p&gt;
+&lt;p&gt;¿Pero será efectivo tener a tantos compañeros mirando y anotando el precio del paquete de harina
+en una hoja de papel?&lt;/p&gt;
+&lt;p&gt;Supongamos que está más caro de lo acordado ¿Qué va a pasar? Imagino que los voluntarios
+tendrán que informarlo a las autoridades de la Secretaria de Comercio y desde allí
+deberán enviar a alguien con poder de policia que constate, para luego multar y exijir
+la adecuación del precio. ¿Cuantos días lleva eso? ¿Cuanta gente compró la harina más cara
+mientras tanto? ¿Cuánto esfuerzo de trabajo significó, no sólo de los voluntarios, sino de los funcionarios? ¿Cuántas posibilidades reales hay de implementar esto en todos los rincones
+del país?&lt;/p&gt;
+&lt;p&gt;Y otra cosa ¿Qué va a pasar con todos los productos que están fuera del acuerdo y no hay
+referencia para comparar?&lt;/p&gt;
+&lt;p&gt;Entonces me acordé de una idea que tuve en la era los celulares sin chip, pero que ahora
+es muy factible.&lt;/p&gt;
+&lt;div class="section" id="una-aplicacion-popular-para-el-control-de-precios"&gt;
+&lt;h2&gt;Una aplicación "popular" para el control de precios&lt;/h2&gt;
+&lt;p&gt;Hace 1 año, el &lt;a class="reference external" href="http://www.lanacion.com.ar/1473620-el-smartphone-otra-pasion-argentina"&gt;24% de los argentinos tenía un smartphone&lt;/a&gt;  y sospecho que, como yo, muchos nos compramos uno
+hace menos tiempo. Más de 10 millones de personas que pueden controlar precios con un botón
+de su aparatito móvil:&lt;/p&gt;
+&lt;p&gt;La aplicación que imagino es una base de datos centralizada que los propios usuarios pueden ampliar.&lt;/p&gt;
+&lt;p&gt;Entran a un super, agarran el paquete de harina, le sacan una fotito con su cámara al código
+de barra (o buscan el producto por nombre, marca, etc.) y la &lt;em&gt;app&lt;/em&gt; les dice cuál es el
+precio de referencia (o del acuerdo), en qué super cercano está más barato,
+cuándo y cuánto aumentó, etc.&lt;/p&gt;
+&lt;p&gt;El usuario puede anotar el precio que está viendo y enviarlo a la base de datos (diciendo
+de qué supermercado y sucursal se trata, que podría inferirse a través de geolocalización)
+y así contribuir y actualizar los datos.&lt;/p&gt;
+&lt;p&gt;Este simple proceso de carga de datos distribuída permitiría no sólo controlar el acuerdo de
+precios (reemplazando o ayudando eficientemente a los voluntarios mirones) y habilitar a
+Moreno (te banco, sabelo) a encajar una buenas multas, sino algo mucho más efectivo: que la gente sepa &lt;strong&gt;a priori&lt;/strong&gt;, mirando su teléfono o la web, dónde comprar más barato y quién/es la están cagando.&lt;/p&gt;
+&lt;p&gt;Por otro lado, la exposición pública de los precios históricos alentaría la competencia de los super, que suelen tener esas políticas estilo &lt;em&gt;"te devolvemos la plata si encontrás un precio más barato"&lt;/em&gt; pero que resultan ser mero marketing por la dificultad de utilizarlas.&lt;/p&gt;
+&lt;p&gt;¡Imaginate la cantidad de datos para analizar! Por ejemplo, ¿cuánto aumentaron en promedio
+los productos de &lt;a class="reference external" href="http://www.taringa.net/posts/noticias/12546172/Empresa-que-manejan-casi-todos-los-productos-del-hogar.html"&gt;Unilever&lt;/a&gt; o &lt;a class="reference external" href="http://www.taringa.net/posts/info/3231784/Kraft-Terrabusi-150-despidos.html"&gt;Kraft&lt;/a&gt; ? ¿no resultará que son esas empresas (entre otras) las que tienen la batuta de los precios? ¿No podrémos, al menos, escracharlos y boicotearlos?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;"¡Subiste un 35% las sardinas desde el mes pasado, hijuepú!, ¡Minga te voy a comprar!"&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lo-hacemos"&gt;
+&lt;h2&gt;¿Lo hacemos?&lt;/h2&gt;
+&lt;p&gt;No tengo idea de cómo se hacen aplicaciones para smartphones &lt;a class="footnote-reference" href="/posts/mirar-tu-smartphone-para-cuidar.html#id2" id="id1"&gt;[1]&lt;/a&gt;, pero sí puedo ayudar en
+la API/base datos/web.&lt;/p&gt;
+&lt;p&gt;Así que busco voluntarios para el programa &lt;em&gt;"Programar para cuidar"&lt;/em&gt; ;-).&lt;/p&gt;
+&lt;blockquote&gt;
+PD: ¿No se copará la secretaria de defensa del consumidor en poner unos pesos para
+hacer esto?&lt;/blockquote&gt;
+&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/mirar-tu-smartphone-para-cuidar.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;en verdad, ideas tengo, lo que no tengo son certezas&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><category>ideas</category><category>android</category><guid>http://mgaitan.github.com/posts/mirar-tu-smartphone-para-cuidar.html</guid><pubDate>Sat, 01 Jun 2013 09:50:39 GMT</pubDate></item><item><title>pip, apurate por favor</title><link>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</link><description>&lt;!-- title: pip, apurate por favor --&gt;
+&lt;!-- slug: pip-apurate-por-favor --&gt;
+&lt;!-- date: 2013/04/10 01:17:55 --&gt;
+&lt;!-- tags: pip, python --&gt;
+&lt;!-- description: --&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
 para el trabajo diario de un programador python: es el manejador
 de paquetes de nuestro entorno de trabajo (¡&lt;a class="reference external" href="http://www.virtualenv.org/en/latest/"&gt;virtual&lt;/a&gt; por favor!),
 con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
@@ -173,7 +230,13 @@ sys 0m0.024s
 &lt;/pre&gt;
 &lt;p&gt;Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
 django, whatever) me los haces rodar para que pip vuele.&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</guid><pubDate>Wed, 10 Apr 2013 01:17:55 GMT</pubDate></item><item><title>Desambiguando un hash en Git</title><link>http://mgaitan.github.com/posts/desambiguando-un-hash-en-git.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Soy vago. Por eso me llevo bien con Git, que permite reconocer un changeset con un &lt;a class="reference external" href="http://git-scm.com/book/ch6-1.html"&gt;pedacito de
+&lt;/div&gt;</description><category>pip</category><category>python</category><guid>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</guid><pubDate>Wed, 10 Apr 2013 01:17:55 GMT</pubDate></item><item><title>Desambiguando un hash en Git</title><link>http://mgaitan.github.com/posts/desambiguando-un-hash-en-git.html</link><description>&lt;!-- title: Desambiguando un hash en Git --&gt;
+&lt;!-- slug: desambiguando-un-hash-en-git --&gt;
+&lt;!-- date: 2013/03/14 18:02:01 --&gt;
+&lt;!-- tags: --&gt;
+&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;p&gt;Soy vago. Por eso me llevo bien con Git, que permite reconocer un changeset con un &lt;a class="reference external" href="http://git-scm.com/book/ch6-1.html"&gt;pedacito de
 su hash sha1&lt;/a&gt; :&lt;/p&gt;
 &lt;blockquote&gt;
 Git is smart enough to figure out what commit you meant to type if you provide the first few characters, as long as your partial SHA-1 is at least four characters long and unambiguous — that is, only one object in the current repository begins with that partial SHA-1.&lt;/blockquote&gt;
@@ -199,7 +262,13 @@ c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;cpi&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:~/cpi&lt;span class="nv"&gt;$ &lt;/span&gt;git show c4396586273b2a9ea5eae46c4ab2d98e236e7792
 &lt;/pre&gt;
-&lt;p&gt;Y ese era el que quería.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/desambiguando-un-hash-en-git.html</guid><pubDate>Thu, 14 Mar 2013 18:02:01 GMT</pubDate></item><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.com/posts/como-funciona-cuevana.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Estimando cuanto trabajo significa actualizar &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;Cuevana sources&lt;/a&gt;
+&lt;p&gt;Y ese era el que quería.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/desambiguando-un-hash-en-git.html</guid><pubDate>Thu, 14 Mar 2013 18:02:01 GMT</pubDate></item><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.com/posts/como-funciona-cuevana.html</link><description>&lt;!-- title: Cómo funciona Cuevana --&gt;
+&lt;!-- slug: como-funciona-cuevana --&gt;
+&lt;!-- date: 2013/03/07 10:17:55 --&gt;
+&lt;!-- tags: cuevana, scrapping --&gt;
+&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;p&gt;Estimando cuanto trabajo significa actualizar &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;Cuevana sources&lt;/a&gt;
 y/o &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalib"&gt;Cuevanalib&lt;/a&gt;
 investigué cómo funciona la nueva versión de cuevana.&lt;/p&gt;
 &lt;p&gt;Estas notas son el resultado de lo que fui observando.&lt;/p&gt;
@@ -362,7 +431,13 @@ http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
 &lt;pre class="literal-block"&gt;
 http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
 &lt;/pre&gt;
-&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 10:17:55 GMT</pubDate></item><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho más
+&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;</description><category>cuevana</category><category>scrapping</category><guid>http://mgaitan.github.com/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 10:17:55 GMT</pubDate></item><item><title>Metiéndose cosas en la nariz</title><link>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</link><description>&lt;!-- title: Metiéndose cosas en la nariz --&gt;
+&lt;!-- slug: metiendose-cosas-en-la-nariz --&gt;
+&lt;!-- date: 2013/02/26 22:17:55 --&gt;
+&lt;!-- tags: --&gt;
+&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://nose.readthedocs.org"&gt;nose&lt;/a&gt; es un excelente &lt;em&gt;framework&lt;/em&gt; para testing en python. Es mucho más
 que un &lt;em&gt;testrunner&lt;/em&gt; inteligente: tiene un conjunto de extensiones y shortcuts
 de aserciones de &lt;tt class="docutils literal"&gt;unittest&lt;/tt&gt;, soporta fixtures y setups/teardown
 por paquetes, y viene con un montón de plugins incorporados.&lt;/p&gt;
@@ -501,7 +576,13 @@ que nos manda al debugger cuando un test falla o da error.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb"&gt;nose-ipdb&lt;/a&gt; lo imita, pero usando el más pulenta de los debuggers: &lt;a class="reference external" href="https://pypi.python.org/pypi/ipdb"&gt;ipdb&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Suficiente por hoy. Pero ¿me estoy perdiendo alguna cosa interesante
 para meter en mi nariz?&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</guid><pubDate>Tue, 26 Feb 2013 22:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</guid><pubDate>Tue, 26 Feb 2013 22:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;!-- title: Creando un nuevo proyecto Python --&gt;
+&lt;!-- slug: creando-un-nuevo-proyecto-python --&gt;
+&lt;!-- date: 2012/11/12 00:34:23 --&gt;
+&lt;!-- tags: python, tutorial --&gt;
+&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
 ¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
 proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
@@ -623,7 +704,13 @@ para saber más.&lt;/p&gt;
 &lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;&lt;/div&gt;
 &lt;hr class="docutils"&gt;&lt;blockquote&gt;
 Este artículo lo escribí originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
+&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;!-- title: Migrando issues entre proyectos de Bitbucket --&gt;
+&lt;!-- slug: migrando-issues-entre-proyectos-de-bitbucket --&gt;
+&lt;!-- date: 2012/11/10 0:09:24 --&gt;
+&lt;!-- tags: python, migraciones, scripts --&gt;
+&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 allí porque somos pobretones y nos da repos privados gratis.
@@ -687,7 +774,13 @@ agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/
             &lt;span class="k"&gt;continue&lt;/span&gt;
         &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;¡Disfruten!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+&lt;p&gt;¡Disfruten!&lt;/p&gt;</description><category>python</category><category>migraciones</category><category>scripts</category><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;!-- title: Ext4 superblock failure y la cola del Diablo --&gt;
+&lt;!-- slug: ext4-superblock-failure-y-la-cola-del-diablo --&gt;
+&lt;!-- date: 2012/10/26 02:24:46 --&gt;
+&lt;!-- tags: --&gt;
+&lt;!-- link: --&gt;
+&lt;!-- description: e --&gt;
+&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
 conocer una ciudad que en las guías de viaje suena intererante y bonita.
 Se me ocurre prender la compu para ver si ese email que mandé la noche
 anterior, recién llegado después de 14 horas de viaje
@@ -779,7 +872,13 @@ que cortarlo a la mitad lo hacen sin dudar.
 Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
 brazo.&lt;/blockquote&gt;
 &lt;p&gt;Querido Guayaquil: prometo visitar tu Malecón la próxima,
-&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rápidas de una mudanza</title><link>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
+&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rápidas de una mudanza</title><link>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;!-- title: Notas rápidas de una mudanza --&gt;
+&lt;!-- slug: notas-rapidas-de-una-mudanza --&gt;
+&lt;!-- date: 2012/10/14 19:23:44 --&gt;
+&lt;!-- tags: nikola, spip, migration tools --&gt;
+&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco más bonito.&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;div class="section" id="github-nikola"&gt;
@@ -862,121 +961,10 @@ RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
 RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
 &lt;/pre&gt;
 &lt;p&gt;¿Cómo se va viendo?&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Hola!&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><category>nikola</category><category>spip</category><category>migration tools</category><guid>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
 que explicaré más adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
 &lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
 &lt;p&gt;Espero que pronto esto esté más bonito y con contenido. También que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>De mercurial a git, limpieza mediante</title><link>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Cuando decidí dar el salto desde Subversion a un DVCS estuve leyendo
-muchos posts comparativos entre las dos opciones más relevantes, Git y
-Mercurial. Había que elegir entre &lt;a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/"&gt;Mc Gyver o James
-Bond&lt;/a&gt;
-decía uno, entre &lt;a class="reference external" href="http://www.ericsink.com/entries/hg_denzel.html"&gt;Denzel Washington y Wesley
-Snipes&lt;/a&gt; y la
-comparación jocosa entre estos dos grandes softwares se volvió una
-especie de meme tácito.&lt;/p&gt;
-&lt;p&gt;Sabía que, a fin de cuentas, tenía que probarlos y ver cual encajaba
-mejor para mis necesidades de "solo developer". En el medio leí &lt;a class="reference external" href="http://hginit.com/"&gt;Hg
-Init&lt;/a&gt; del gran divulgador Joel Spolsky y, víctima
-de semejante labia, me sumergí para ese lado.&lt;/p&gt;
-&lt;p&gt;Mi flujo de trabajo era bastante básico pero suficiente y superador de
-subvesion. Comparado con lo que había probado de Git era mucho menos
-verbósico (no podía entender la necesidad de Git hacer &lt;tt class="docutils literal"&gt;add&lt;/tt&gt; cada vez
-que quería commitear un archivo modificado) y
-&lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; daba no sólo hospedaje gratuito para
-repositorios públicos sino también para potenciales desarrollos privados
-(cosa que GitHub, su equivalente — siendo benévolo con bitbucket — para
-Git, no daba).&lt;/p&gt;
-&lt;p&gt;Con el tiempo empecé a compatir &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks"&gt;algunos
-proyectitos&lt;/a&gt; con otros
-desarrolladores y mi inexperiencia en Mercurial me empezó a jugar en
-contra. Y justo cuando necesitaba ponerme a aprender más profundamente
-Hg, entre a laburar, muy a gusto, en
-&lt;a class="reference external" href="http://machinalis.com"&gt;Machinalis&lt;/a&gt; (qué vago, nunca conté nada por
-acá) donde usamos Git para el control de versiones de los proyectos,
-implementando &lt;a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/"&gt;esta política de ramificación y
-mezcla&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Resultó entonces que en poquito tiempo ya sabía mucho más de Git que de
-Mercurial (con la ventaja de tenerlo a Daniel Moisset cerca para apagar
-algunos incendios que encendí las primeras semanas).&lt;/p&gt;
-&lt;p&gt;Para más señales, Atlassian, la empresa detras de Bitbucket y principal
-referente de Mercurial (junto con Selenic, la creadora), comenzó a
-ofrecer Git (sin descartar mercurial) como sistema DVCS (comiéndose
-alguna que otra gastada porque alguna vez comunicó una noticia parecida
-como broma del dia de los inocentes).&lt;/p&gt;
-&lt;p&gt;Asi que llegó el dia que decidí mudar un proyecto en Mercurial a Git.
-Atenti: las razones no son técnicas. No tengo suficiente conocimiento de
-Mercurial (ni de Git) para decir que uno es mejor que el otro por tales
-razones. Sólo es *mi experiencia*, que vino un poco por obligación. Y
-sí, también, siguiendo un poco a la manada. Proyectos de la envergadura
-de Django han migrado a Git (y, particularmente, a GitHub)&lt;/p&gt;
-&lt;div class="section" id="la-limpieza"&gt;
-&lt;h2&gt;La limpieza&lt;/h2&gt;
-&lt;p&gt;Soy de esos que se mudan seguido. "¿Asi que si te renuevo contrato me
-aumentas 30 % el alquiler e igual te tengo que pagar comisión sin que
-hagas nada? ¡Andá a cagar!" puedo imaginarme dialogando con algun agente
-inmobiliario.&lt;/p&gt;
-&lt;p&gt;Esta no era la excepción y debía mudar un repositorio mercurial que a su
-vez había sido mudado (en realidad, exportado desde el último commit, y
-arrancando de 0) desde
-&lt;a class="reference external" href="http://code.google.com/p/gpec2010/"&gt;subversion&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;El detalle es que el repositorio original, y por ende el nuevo en
-mercurial, tenia un montón de datos de documentación que era,
-basicamente, todos los fuentes y muchos de los archivos generados del
-reporte escrito de mi tesis.&lt;/p&gt;
-&lt;p&gt;El primer changeset en el flamante mercurial consistió en borrar todo
-esa información innecesaria, pero que seguía allí, en el historial (uno
-110Mb de datos que no necesitaba).&lt;/p&gt;
-&lt;p&gt;Así que ya que ahora iba a mudarme de nuevo, queria tirar a la basura
-todas esas cajas de papeles que había metido en un caja y, si bien no la
-veía, me ocupaban el placard.&lt;/p&gt;
-&lt;p&gt;Despues de darle vueltas, &lt;a class="reference external" href="http://stackoverflow.com/questions/2684898/mercurial-remove-history#8819813"&gt;encontré una
-punta&lt;/a&gt;
-usando la extensión &lt;a class="reference external" href="http://mercurial.selenic.com/wiki/ConvertExtension#Converting_from_Mercurial"&gt;hg convert para obtener un subconjunto de repo
-original&lt;/a&gt;,
-por ejemplo, partiendo de un determinado cambio.&lt;/p&gt;
-&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Primero, activar la extensión editando &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.hgrc&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-[extensions]
-convert =
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;¡Tirar las cajas del placard!&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ hg convert --config convert.hg.startrev=1 repo_hg_orig/ repo_hg_liviano/
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;En mi caso yo queria todo desde la revision 1. &lt;strong&gt;Atenti&lt;/strong&gt;: como explica,
-esto genera un repo totalmente nuevo, con ids distintos para los
-changesets, de modo que no se puede mantener "sincronizados" ambos con
-el mismo cambio (al menos no de manera directa).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="la-mudanza"&gt;
-&lt;h2&gt;La mudanza&lt;/h2&gt;
-&lt;p&gt;Contra todo pronóstico fruto de mi prejuicio y desidia, migrar a git fue
-extremadamente fácil usando
-&lt;a class="reference external" href="http://repo.or.cz/w/fast-export.git"&gt;hg-fast-export&lt;/a&gt;.&lt;/p&gt;
-&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Obtener los scripts&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ git clone git://repo.or.cz/fast-export.git
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Convertir!&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ mkdir repo_git
-$ cd repo_git
-$ git init
-$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;¡Charánnnn...!&lt;/p&gt;
-&lt;p&gt;El flag &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--force&lt;/span&gt;&lt;/tt&gt; era necesario en mi caso porque, como explica el
-&lt;a class="reference external" href="http://repo.or.cz/w/fast-export.git/blob_plain/master:/hg-fast-export.txt"&gt;readme.txt&lt;/a&gt;
-&lt;em&gt;"hg-fast-export supports multiple branches but only named branches with
-exaclty one head each..."&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
-original que sin perder la historia útil.&lt;/p&gt;
-&lt;p&gt;Parafraseando a Lito, &lt;em&gt;si la historia la escriben los que ganan&lt;/em&gt; ...
-¿ganamos ?&lt;/p&gt;
-&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html</guid><pubDate>Mon, 02 Jul 2012 17:39:11 GMT</pubDate></item></channel></rss>
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;</description><category>nikola</category><category>python</category><category>spip</category><category>blog</category><guid>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item></channel></rss>

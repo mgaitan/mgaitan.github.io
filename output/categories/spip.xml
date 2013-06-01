@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (SPIP)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>http://mgaitan.github.com/posts/disqus-para-spip.html</link><description>&lt;html&gt;&lt;body&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
+<rss version="2.0"><channel><title>tin_nqn (SPIP)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 01 Jun 2013 11:10:44 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>http://mgaitan.github.com/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y fácil de usar.&lt;/p&gt;
 &lt;p&gt;Comencé un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;pequeño
@@ -17,7 +17,7 @@ shortname"&lt;/em&gt; (la identificación unica que asignamos al sitio donde
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportación de comentarios preexistentes,
 basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>SimpleCart(js) para SPIP</title><link>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><category>Software Libre</category><category>SPIP</category><category>Web 2.0</category><guid>http://mgaitan.github.com/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>SimpleCart(js) para SPIP</title><link>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
 muy sencillo íntegramente desarrollado en javascript. Permite realizar
 ventas mediante PayPal o Google Checkout y es muy extensible para
 implementar otros sistemas.&lt;/p&gt;
@@ -98,7 +98,7 @@ Inline literal start-string without end-string.&lt;/div&gt;
 &lt;p&gt;El plugin está en desarrollo sobre
 &lt;a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart"&gt;spip-zone&lt;/a&gt;.
 Podés hacer un ckeckout SVN&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</guid><pubDate>Sun, 12 Sep 2010 13:34:44 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
+&lt;/div&gt;</description><category>SPIP</category><category>E-Commerce</category><category>Javascript</category><guid>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</guid><pubDate>Sun, 12 Sep 2010 13:34:44 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
 artículos podrían tener 200, ¿no?&lt;/p&gt;
 &lt;p&gt;Hay una forma fácil de limitar el largo permitido en un campo de texto
 mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
@@ -144,7 +144,7 @@ campo que querés limitar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="ejemplo"&gt;
 &lt;h2&gt;Ejemplo&lt;/h2&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
+&lt;/div&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</link><description>&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
 control de versiones Subversion.&lt;/p&gt;
 &lt;p&gt;A través de Subversion, podemos obtener la ultima version de desarrollo
 considerada estable&lt;/p&gt;
@@ -241,7 +241,7 @@ particular,&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn co svn://trac.rezo.net/spip/tags/spip-2-stable
 &lt;/pre&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</guid><pubDate>Fri, 22 May 2009 00:19:54 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
+&lt;/div&gt;</description><category>SPIP</category><category>Linux</category><guid>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</guid><pubDate>Fri, 22 May 2009 00:19:54 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
 que se usa habitualmente en diseño gráfico en demostraciones de
 tipografías o de borradores de diseño para probar el diseño visual antes
 de insertar el texto final.&lt;/p&gt;
@@ -306,7 +306,7 @@ alrededor de cada párrafo. Los valores aceptados son &lt;strong&gt;true&lt;/str
 tener que editar cada artículo sólo para poner &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt; es invocar el
 modelo siempre y cuando no exista contenido en la baliza&lt;/p&gt;
 &lt;p&gt;Por ejemplo [&lt;a class="reference external" href="/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Variar o no variar, esa es la cuestión</title><link>http://mgaitan.github.com/posts/variar-o-no-variar-esa-es-la.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Hace algunos días, en
+&lt;/div&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Variar o no variar, esa es la cuestión</title><link>http://mgaitan.github.com/posts/variar-o-no-variar-esa-es-la.html</link><description>&lt;p&gt;Hace algunos días, en
 &lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;spip-es&lt;/a&gt; se planteó
 la duda de cómo controlar una cabecera diferente para algunas secciones
 en particular.&lt;/p&gt;
@@ -394,7 +394,7 @@ exclusiva&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Funciona, es más legible que cualquiera de las otras soluciones y además
 permite una clausula &lt;em&gt;ELSE&lt;/em&gt; mucho más accesible, simplemente usando la
 estructura completa del bucle.&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/variar-o-no-variar-esa-es-la.html</guid><pubDate>Sun, 15 Mar 2009 20:03:38 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en SPIP</title><link>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
+&lt;/div&gt;</description><category>SPIP</category><guid>http://mgaitan.github.com/posts/variar-o-no-variar-esa-es-la.html</guid><pubDate>Sun, 15 Mar 2009 20:03:38 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en SPIP</title><link>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
 #LOGO_* y los filtros |image_* son los más notorios) y
 frecuentemente necesitamos o queremos modificar este código autogenerado
 en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
@@ -482,7 +482,7 @@ Literal block expected; none found.&lt;/div&gt;
 directamente a inserer_attribut y extraire_attribut en vez de las
 variables individuales, agregar un parámetro $value=FALSE que sólo sirva
 para la claridad de la documentación , y el mencionado, eliminar
-atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Personalizar el texto de #INTRODUCTION</title><link>http://mgaitan.github.com/posts/personalizar-el-texto-de.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Desde la versión 1.4, SPIP tiene una baliza calculada &lt;tt class="docutils literal"&gt;#INTRODUCTION&lt;/tt&gt;
+atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Personalizar el texto de #INTRODUCTION</title><link>http://mgaitan.github.com/posts/personalizar-el-texto-de.html</link><description>&lt;p&gt;Desde la versión 1.4, SPIP tiene una baliza calculada &lt;tt class="docutils literal"&gt;#INTRODUCTION&lt;/tt&gt;
 que como su nombre indica, sirve para presentar una introducción al
 artículo completo.&lt;/p&gt;
 &lt;p&gt;En la &lt;a class="reference external" href="http://www.spip.net/es_article116.html"&gt;documentación explica&lt;/a&gt;&lt;/p&gt;
@@ -514,7 +514,7 @@ Esta oración es la introducción al articulo.&lt;/blockquote&gt;
 &lt;p&gt;Y donde esté la baliza #TEXTE:&lt;/p&gt;
 &lt;blockquote&gt;
 Esta oración es la introducción al articulo. Y acá sigue mi artículo
-completo.&lt;/blockquote&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/personalizar-el-texto-de.html</guid><pubDate>Tue, 10 Mar 2009 10:38:44 GMT</pubDate></item><item><title>© automático</title><link>http://mgaitan.github.com/posts/c-automatico.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Más por costumbre que utilidad solemos poner la antigüedad de un sitio
+completo.&lt;/blockquote&gt;</description><category>SPIP</category><guid>http://mgaitan.github.com/posts/personalizar-el-texto-de.html</guid><pubDate>Tue, 10 Mar 2009 10:38:44 GMT</pubDate></item><item><title>© automático</title><link>http://mgaitan.github.com/posts/c-automatico.html</link><description>&lt;p&gt;Más por costumbre que utilidad solemos poner la antigüedad de un sitio
 web al pie de página, asociado al símbolo ©, o (cc) si usamos &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Creative_Commons"&gt;Creative
 Commons&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;En el 2007 hicimos el sitio, y en este 2009 todavía muestra.&lt;/p&gt;
@@ -547,7 +547,7 @@ Pero si son distintos, se muestra el año actual&lt;/li&gt;
 © 2007 - 2009&lt;/blockquote&gt;
 &lt;p&gt;Y si la lógica o el reloj del servidor no fallan, en cada año nuevo se
 incrementará el año final del período sin que toquemos una línea de código.&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/c-automatico.html</guid><pubDate>Sat, 07 Mar 2009 17:28:08 GMT</pubDate></item><item><title>Suscribirse a los comentarios por RSS</title><link>http://mgaitan.github.com/posts/suscribirse-a-los-comentarios-por.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Con SPIP 2.0, más precisamente en la revisión
+&lt;/div&gt;</description><category>SPIP</category><guid>http://mgaitan.github.com/posts/c-automatico.html</guid><pubDate>Sat, 07 Mar 2009 17:28:08 GMT</pubDate></item><item><title>Suscribirse a los comentarios por RSS</title><link>http://mgaitan.github.com/posts/suscribirse-a-los-comentarios-por.html</link><description>&lt;p&gt;Con SPIP 2.0, más precisamente en la revisión
 &lt;a class="reference external" href="http://trac.rezo.net/trac/spip/browser/spip/squelettes-dist/rss_forum_article.html?rev=13407"&gt;13407&lt;/a&gt;
 se agregaron algunos esqueletos al juego de esqueletos estándar.&lt;/p&gt;
 &lt;p&gt;Unos muy interesantes son los que permiten suscribirse a los
@@ -566,4 +566,4 @@ código, antes del bucle de comentarios de un artículo:&lt;/p&gt;
 &lt;/pre&gt;
 &lt;p&gt;Un código análogo, llamando al esqueleto correspondiente y pasando el
 parámetro correcto, sirve para las breves, las secciones, los artículos
-sindicados y los hilos de discusión (en foros con comentarios anidados).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/suscribirse-a-los-comentarios-por.html</guid><pubDate>Fri, 27 Feb 2009 21:04:48 GMT</pubDate></item></channel></rss>
+sindicados y los hilos de discusión (en foros con comentarios anidados).&lt;/p&gt;</description><category>SPIP</category><guid>http://mgaitan.github.com/posts/suscribirse-a-los-comentarios-por.html</guid><pubDate>Fri, 27 Feb 2009 21:04:48 GMT</pubDate></item></channel></rss>

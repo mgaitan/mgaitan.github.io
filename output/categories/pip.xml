@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (pip)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
+<rss version="2.0"><channel><title>tin_nqn (pip)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 01 Jun 2013 11:10:44 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</link><description>&lt;!-- title: pip, apurate por favor --&gt;
+&lt;!-- slug: pip-apurate-por-favor --&gt;
+&lt;!-- date: 2013/04/10 01:17:55 --&gt;
+&lt;!-- tags: pip, python --&gt;
+&lt;!-- description: --&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
 para el trabajo diario de un programador python: es el manejador
 de paquetes de nuestro entorno de trabajo (¡&lt;a class="reference external" href="http://www.virtualenv.org/en/latest/"&gt;virtual&lt;/a&gt; por favor!),
 con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
@@ -173,4 +178,4 @@ sys 0m0.024s
 &lt;/pre&gt;
 &lt;p&gt;Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
 django, whatever) me los haces rodar para que pip vuele.&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</guid><pubDate>Wed, 10 Apr 2013 01:17:55 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>pip</category><category>python</category><guid>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</guid><pubDate>Wed, 10 Apr 2013 01:17:55 GMT</pubDate></item></channel></rss>

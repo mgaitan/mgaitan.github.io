@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (E-Commerce)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Integración de DineroMail en SimpleCart (js)</title><link>http://mgaitan.github.com/posts/integracion-de-dineromail-en.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Continuando con el &lt;a class="reference external" href="/posts/blog/article/simplecart-js-para-spip"&gt;artículo
+<rss version="2.0"><channel><title>tin_nqn (E-Commerce)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 01 Jun 2013 11:10:45 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Integración de DineroMail en SimpleCart (js)</title><link>http://mgaitan.github.com/posts/integracion-de-dineromail-en.html</link><description>&lt;p&gt;Continuando con el &lt;a class="reference external" href="/posts/blog/article/simplecart-js-para-spip"&gt;artículo
 anterior&lt;/a&gt; hay tener en cuenta
 que cuando decimos "sistema de e-commerce &lt;strong&gt;simple&lt;/strong&gt;" implica que tiene
 que ser simple también para el comprador.&lt;/p&gt;
@@ -102,7 +102,7 @@ Un ejemplo de uso podría ser:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 Elija su método de pago
 &lt;/pre&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/integracion-de-dineromail-en.html</guid><pubDate>Tue, 14 Sep 2010 17:31:00 GMT</pubDate></item><item><title>SimpleCart(js) para SPIP</title><link>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
+&lt;/div&gt;</description><category>E-Commerce</category><category>Javascript</category><guid>http://mgaitan.github.com/posts/integracion-de-dineromail-en.html</guid><pubDate>Tue, 14 Sep 2010 17:31:00 GMT</pubDate></item><item><title>SimpleCart(js) para SPIP</title><link>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
 muy sencillo íntegramente desarrollado en javascript. Permite realizar
 ventas mediante PayPal o Google Checkout y es muy extensible para
 implementar otros sistemas.&lt;/p&gt;
@@ -183,4 +183,4 @@ Inline literal start-string without end-string.&lt;/div&gt;
 &lt;p&gt;El plugin está en desarrollo sobre
 &lt;a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart"&gt;spip-zone&lt;/a&gt;.
 Podés hacer un ckeckout SVN&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</guid><pubDate>Sun, 12 Sep 2010 13:34:44 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>SPIP</category><category>E-Commerce</category><category>Javascript</category><guid>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</guid><pubDate>Sun, 12 Sep 2010 13:34:44 GMT</pubDate></item></channel></rss>

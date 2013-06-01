@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (charla)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Charla: MyHDL, de Python al silicio</title><link>http://mgaitan.github.com/posts/charla-myhdl-de-python-al-siliicio.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;[Sigo &lt;a class="reference external" href="/posts/me-recibi-el-mes-pasado.html"&gt;publicando cosas&lt;/a&gt; con
+<rss version="2.0"><channel><title>tin_nqn (charla)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 01 Jun 2013 11:10:44 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Charla: MyHDL, de Python al silicio</title><link>http://mgaitan.github.com/posts/charla-myhdl-de-python-al-siliicio.html</link><description>&lt;p&gt;[Sigo &lt;a class="reference external" href="/posts/me-recibi-el-mes-pasado.html"&gt;publicando cosas&lt;/a&gt; con
 delay de meses]&lt;/p&gt;
 &lt;p&gt;El sábado 30 de mayo se realizó el &lt;a class="reference external" href="http://www.pyday.com.ar/cordoba2011"&gt;PyDay Córdoba
 2011&lt;/a&gt; con la participación de más
@@ -22,7 +22,7 @@ completo como trabajo final de la asignatura Arquitectura de Computadoras.
 Pueden leer un poco más sobre el trabajo en &lt;a class="reference external" href="https://github.com/mgaitan/pymips/raw/pipeline/docs/informe.pdf"&gt;el
 informe&lt;/a&gt;
 que presenté.&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/charla-myhdl-de-python-al-siliicio.html</guid><pubDate>Mon, 06 Jun 2011 12:27:44 GMT</pubDate></item><item><title>Charla: Python a los bifes</title><link>http://mgaitan.github.com/posts/charla-python-a-los-bifes.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Víctima de la ausencia de tiempo y la mala costumbre, a ultísimo momento
+&lt;/div&gt;</description><category>charla</category><category>myhdl</category><category>hardware</category><guid>http://mgaitan.github.com/posts/charla-myhdl-de-python-al-siliicio.html</guid><pubDate>Mon, 06 Jun 2011 12:27:44 GMT</pubDate></item><item><title>Charla: Python a los bifes</title><link>http://mgaitan.github.com/posts/charla-python-a-los-bifes.html</link><description>&lt;p&gt;Víctima de la ausencia de tiempo y la mala costumbre, a ultísimo momento
 terminé de preparar &lt;a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html"&gt;las
 diapositivas&lt;/a&gt;
 para la charla que dí hoy en el marco de las &lt;a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-2010"&gt;Conferencias de Ingeniería
@@ -58,7 +58,7 @@ y procesada con la herramienta
 &lt;a class="reference external" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;cc-By-NC-SA&lt;/a&gt;.
 Podés descargar todos los fuentes con las imágenes y algunos ejemplos de
 este tar:&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/charla-python-a-los-bifes.html</guid><pubDate>Thu, 07 Oct 2010 17:52:24 GMT</pubDate></item><item><title>Charla "Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa"</title><link>http://mgaitan.github.com/posts/charla-ser-freelance-como-trabajar.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;El miércoles 15 de abril de 2009 participé como disertante en las &lt;a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-Abril-2009"&gt;3º
+&lt;/div&gt;</description><category>Python</category><category>charla</category><guid>http://mgaitan.github.com/posts/charla-python-a-los-bifes.html</guid><pubDate>Thu, 07 Oct 2010 17:52:24 GMT</pubDate></item><item><title>Charla "Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa"</title><link>http://mgaitan.github.com/posts/charla-ser-freelance-como-trabajar.html</link><description>&lt;p&gt;El miércoles 15 de abril de 2009 participé como disertante en las &lt;a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-Abril-2009"&gt;3º
 Jornadas Abiertas de Ingeniería en
 Computación&lt;/a&gt;
 que reune a estudiantes, profesores y profesionales invitados para dar
@@ -81,4 +81,4 @@ Bajar diapositivas "&lt;a class="reference external" href="/downloads/ojotas_cop
 &lt;p&gt;El documento ODP incluye notas y comentarios.&lt;/p&gt;
 &lt;div class="section" id="video"&gt;
 &lt;h2&gt;Video&lt;/h2&gt;
-&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/charla-ser-freelance-como-trabajar.html</guid><pubDate>Wed, 22 Apr 2009 12:58:20 GMT</pubDate></item></channel></rss>
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;/div&gt;</description><category>Empresa</category><category>charla</category><guid>http://mgaitan.github.com/posts/charla-ser-freelance-como-trabajar.html</guid><pubDate>Wed, 22 Apr 2009 12:58:20 GMT</pubDate></item></channel></rss>

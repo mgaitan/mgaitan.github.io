@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (Linux)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Veinteañero</title><link>http://mgaitan.github.com/posts/veinteanero.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobijó.
+<rss version="2.0"><channel><title>tin_nqn (Linux)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 01 Jun 2013 11:10:44 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Veinteañero</title><link>http://mgaitan.github.com/posts/veinteanero.html</link><description>&lt;p&gt;Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobijó.
 Al tiempo usé Mandrake, después Debian y desde su primera versión (2004)
 Ubuntu.&lt;/p&gt;
-&lt;p&gt;Un largo camino de aprendizaje... que alguna vez recorreré ;-)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/veinteanero.html</guid><pubDate>Fri, 08 Apr 2011 08:47:13 GMT</pubDate></item><item><title>Video SIS 771/671 en Ubuntu</title><link>http://mgaitan.github.com/posts/video-sis-771-671-en-ubuntu.html</link><description>&lt;html&gt;&lt;body&gt;&lt;div class="system-message"&gt;
+&lt;p&gt;Un largo camino de aprendizaje... que alguna vez recorreré ;-)&lt;/p&gt;</description><category>Linux</category><guid>http://mgaitan.github.com/posts/veinteanero.html</guid><pubDate>Fri, 08 Apr 2011 08:47:13 GMT</pubDate></item><item><title>Video SIS 771/671 en Ubuntu</title><link>http://mgaitan.github.com/posts/video-sis-771-671-en-ubuntu.html</link><description>&lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 5); &lt;em&gt;&lt;a href="/posts/video-sis-771-671-en-ubuntu.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Duplicate explicit target name: "este xorg.conf".&lt;/div&gt;
 &lt;p&gt;Esto es una ayuda memoria para mi yo dubitativo del futuro: para hacer
@@ -195,7 +195,7 @@ EndSection
 
 Section "Extensions"
     Option  "Composite" "off"
-&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/video-sis-771-671-en-ubuntu.html</guid><pubDate>Mon, 10 May 2010 16:10:25 GMT</pubDate></item><item><title>Deja que el servidor trabaje por tí con GNU Screen</title><link>http://mgaitan.github.com/posts/deja-que-el-servidor-trabaje-por.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Ya somos avispados usuarios de la línea de comandos y hacemos nuestros
+&lt;/pre&gt;</description><category>Linux</category><guid>http://mgaitan.github.com/posts/video-sis-771-671-en-ubuntu.html</guid><pubDate>Mon, 10 May 2010 16:10:25 GMT</pubDate></item><item><title>Deja que el servidor trabaje por tí con GNU Screen</title><link>http://mgaitan.github.com/posts/deja-que-el-servidor-trabaje-por.html</link><description>&lt;p&gt;Ya somos avispados usuarios de la línea de comandos y hacemos nuestros
 pinitos administrando un servidor: movemos, bajamos y hasta compilamos
 directamente en una maquina remota, muchas veces más potente y con más
 ancho de banda que la nuestra.&lt;/p&gt;
@@ -248,7 +248,7 @@ $ screen -r PID
 &lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;&lt;p&gt;y allí estará el proceso que dejamos corriendo (o al menos los rastros
-que dejó en su paso).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/deja-que-el-servidor-trabaje-por.html</guid><pubDate>Mon, 19 Oct 2009 20:33:31 GMT</pubDate></item><item><title>Digitalizando recuerdos con mencoder</title><link>http://mgaitan.github.com/posts/digitalizando-recuerdos-con.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Para el Mundial del 2006, compré, como tantos otros que no tenían
+que dejó en su paso).&lt;/p&gt;</description><category>Linux</category><guid>http://mgaitan.github.com/posts/deja-que-el-servidor-trabaje-por.html</guid><pubDate>Mon, 19 Oct 2009 20:33:31 GMT</pubDate></item><item><title>Digitalizando recuerdos con mencoder</title><link>http://mgaitan.github.com/posts/digitalizando-recuerdos-con.html</link><description>&lt;p&gt;Para el Mundial del 2006, compré, como tantos otros que no tenían
 televisor pero sí computadora, una plaquita sintonizadora de TV: una
 Kozumi con el chip sintonizador BT878, uno de los más genéricos y
 bastante bien soportado en linux.&lt;/p&gt;
@@ -299,7 +299,7 @@ abajo, para evitar la distorción que producen los cabezales con las
 cintas viejas.&lt;/p&gt;
 &lt;p&gt;El resultado es un video de unos 250kb/s de calidad más que aceptable.&lt;/p&gt;
 &lt;p&gt;Por ejemplo, el casamiento de mi hermano Juan, en 1998:&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/digitalizando-recuerdos-con.html</guid><pubDate>Wed, 30 Sep 2009 14:56:40 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
+&lt;/div&gt;</description><category>Linux</category><guid>http://mgaitan.github.com/posts/digitalizando-recuerdos-con.html</guid><pubDate>Wed, 30 Sep 2009 14:56:40 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</link><description>&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
 control de versiones Subversion.&lt;/p&gt;
 &lt;p&gt;A través de Subversion, podemos obtener la ultima version de desarrollo
 considerada estable&lt;/p&gt;
@@ -396,7 +396,7 @@ particular,&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn co svn://trac.rezo.net/spip/tags/spip-2-stable
 &lt;/pre&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</guid><pubDate>Fri, 22 May 2009 00:19:54 GMT</pubDate></item><item><title>Piccola Radiolina</title><link>http://mgaitan.github.com/posts/piccola-radiolina.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/radiolina/"&gt;Radiolina&lt;/a&gt; es a mi jornada
+&lt;/div&gt;</description><category>SPIP</category><category>Linux</category><guid>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</guid><pubDate>Fri, 22 May 2009 00:19:54 GMT</pubDate></item><item><title>Piccola Radiolina</title><link>http://mgaitan.github.com/posts/piccola-radiolina.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/radiolina/"&gt;Radiolina&lt;/a&gt; es a mi jornada
 laboral lo que la Spika a la de mi abuelo, en aquellas mañanas de viñas
 mendocinas.&lt;/p&gt;
 &lt;p&gt;Es un simple script &lt;a class="reference external" href="http://es.wikipedia.org/wiki/bash"&gt;bash&lt;/a&gt; que se
@@ -413,7 +413,7 @@ chmod +x radiolina
 bajar el programa. En vez de la primer linea (&lt;em&gt;wget...&lt;/em&gt;) utilizar&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn checkout https://radiolina.googlecode.com/svn/trunk/ ./
-&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/piccola-radiolina.html</guid><pubDate>Sun, 19 Apr 2009 14:14:39 GMT</pubDate></item><item><title>Backup selectivo de tablas Mysql</title><link>http://mgaitan.github.com/posts/backup-selectivo-de-tablas-mysql.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Un comando muy práctico para hacer backups de una base de datos MySQL es
+&lt;/pre&gt;</description><category>Linux</category><guid>http://mgaitan.github.com/posts/piccola-radiolina.html</guid><pubDate>Sun, 19 Apr 2009 14:14:39 GMT</pubDate></item><item><title>Backup selectivo de tablas Mysql</title><link>http://mgaitan.github.com/posts/backup-selectivo-de-tablas-mysql.html</link><description>&lt;p&gt;Un comando muy práctico para hacer backups de una base de datos MySQL es
 &lt;em&gt;mysqldump&lt;/em&gt;.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &amp;gt; backup.sql
@@ -441,7 +441,7 @@ tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &amp;gt; backup.sql
 &lt;/pre&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/backup-selectivo-de-tablas-mysql.html</guid><pubDate>Tue, 31 Mar 2009 09:37:49 GMT</pubDate></item><item><title>Auto Podcast</title><link>http://mgaitan.github.com/posts/auto-podcast.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.efectotabano.com.ar"&gt;Efecto Tábano&lt;/a&gt; es el programa radial
+&lt;/div&gt;</description><category>Linux</category><guid>http://mgaitan.github.com/posts/backup-selectivo-de-tablas-mysql.html</guid><pubDate>Tue, 31 Mar 2009 09:37:49 GMT</pubDate></item><item><title>Auto Podcast</title><link>http://mgaitan.github.com/posts/auto-podcast.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://www.efectotabano.com.ar"&gt;Efecto Tábano&lt;/a&gt; es el programa radial
 de mi amigo Fernando Barraza. Objetivamente, uno de los mejores
 programas radiales de Argentina.&lt;/p&gt;
 &lt;p&gt;Lamentablemente, desde que me vine a Córdoba tuve que conformarme con
@@ -568,4 +568,4 @@ descargar.&lt;/p&gt;
 sindicación. Por lo tanto, habría que agregar la tarea de injectar
 información pertinente en una base de datos del cual generar el XML de
 sindicación.&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/auto-podcast.html</guid><pubDate>Sat, 21 Mar 2009 12:53:03 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>Linux</category><guid>http://mgaitan.github.com/posts/auto-podcast.html</guid><pubDate>Sat, 21 Mar 2009 12:53:03 GMT</pubDate></item></channel></rss>

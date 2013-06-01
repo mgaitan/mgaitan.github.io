@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (jQuery)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Yendo a las fuentes de cuevana.tv</title><link>http://mgaitan.github.com/posts/yendo-a-las-fuentes-de-cuevana-tv.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;** UPDATE ** : la ultima version funciona con el nuevo sitio de cuevana.&lt;/p&gt;
+<rss version="2.0"><channel><title>tin_nqn (jQuery)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 01 Jun 2013 11:10:45 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Yendo a las fuentes de cuevana.tv</title><link>http://mgaitan.github.com/posts/yendo-a-las-fuentes-de-cuevana-tv.html</link><description>&lt;p&gt;** UPDATE ** : la ultima version funciona con el nuevo sitio de cuevana.&lt;/p&gt;
 &lt;p&gt;Dos cosas me gustan mucho últimamente:
 &lt;a class="reference external" href="http://www.cuevana.tv"&gt;cuevana.tv&lt;/a&gt; y
 &lt;a class="reference external" href="http://www.greasespot.net/"&gt;GreaseMonkey&lt;/a&gt;&lt;/p&gt;
@@ -40,7 +40,7 @@ Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
 descargas como &lt;a class="reference external" href="http://www.tucaneando.com/"&gt;Tucan&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[STRIKEOUT:Respecto a los subtítulos, todavía soy principiante con
 javascript, pero espero poder obtener el link a los subtitulos en
-futuras versiones. ]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/yendo-a-las-fuentes-de-cuevana-tv.html</guid><pubDate>Mon, 28 Feb 2011 12:24:40 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
+futuras versiones. ]&lt;/p&gt;</description><category>jQuery</category><category>Javascript</category><guid>http://mgaitan.github.com/posts/yendo-a-las-fuentes-de-cuevana-tv.html</guid><pubDate>Mon, 28 Feb 2011 12:24:40 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
 artículos podrían tener 200, ¿no?&lt;/p&gt;
 &lt;p&gt;Hay una forma fácil de limitar el largo permitido en un campo de texto
 mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
@@ -86,7 +86,7 @@ campo que querés limitar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="ejemplo"&gt;
 &lt;h2&gt;Ejemplo&lt;/h2&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
+&lt;/div&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
 que se usa habitualmente en diseño gráfico en demostraciones de
 tipografías o de borradores de diseño para probar el diseño visual antes
 de insertar el texto final.&lt;/p&gt;
@@ -151,7 +151,7 @@ alrededor de cada párrafo. Los valores aceptados son &lt;strong&gt;true&lt;/str
 tener que editar cada artículo sólo para poner &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt; es invocar el
 modelo siempre y cuando no exista contenido en la baliza&lt;/p&gt;
 &lt;p&gt;Por ejemplo [&lt;a class="reference external" href="/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en SPIP</title><link>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
+&lt;/div&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en SPIP</title><link>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
 #LOGO_* y los filtros |image_* son los más notorios) y
 frecuentemente necesitamos o queremos modificar este código autogenerado
 en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
@@ -239,7 +239,7 @@ Literal block expected; none found.&lt;/div&gt;
 directamente a inserer_attribut y extraire_attribut en vez de las
 variables individuales, agregar un parámetro $value=FALSE que sólo sirva
 para la claridad de la documentación , y el mencionado, eliminar
-atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Mostrar u ocultar contenido, fácil</title><link>http://mgaitan.github.com/posts/mostrar-u-ocultar-contenido-facil.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Adrian León consultó en la lista
+atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Mostrar u ocultar contenido, fácil</title><link>http://mgaitan.github.com/posts/mostrar-u-ocultar-contenido-facil.html</link><description>&lt;p&gt;Adrian León consultó en la lista
 &lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;spip-es&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Estoy intentado poner balizas de este tipo:&lt;/p&gt;
@@ -326,4 +326,4 @@ tener múltiples bloques ocultos y link controladores.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="/blog/article/mostrar-u-ocultar-contenido-facil#oculto"&gt;esto
 funciona?&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;¡Hola amigos, esto es una astucia para el compañero Adrian!&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/mostrar-u-ocultar-contenido-facil.html</guid><pubDate>Thu, 26 Feb 2009 06:12:34 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/mostrar-u-ocultar-contenido-facil.html</guid><pubDate>Thu, 26 Feb 2009 06:12:34 GMT</pubDate></item></channel></rss>

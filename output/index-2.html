@@ -43,6 +43,176 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/compartiendo-documentacion-de.html">Compartiendo documentación de paquetes Python</a>
+        <small>  
+             <span class="timeago" title="2011-04-10 19:16:38">2011-04-10 19:16:38</span>
+        </small></h1>
+        <p>Sabido es, aunque muchas veces se ignora, que un software sin
+documentación está incompleto
+[<a class="reference external" href="blog/article/compartiendo-documentacion-de#nb1">1</a>].</p>
+<p>Si bien el manifiesto ágil
+<a class="reference external" href="http://agilemanifesto.org/iso/es/">proclama</a> <em>"Software funcionando
+sobre documentación extensiva"</em>, yo subrayaría extensiva como eufemismo
+de documentación burocrática e inútil (opiné de esto
+<a class="reference external" href="posts/blog/article/veinteanero">acá</a>) que evidentemente no es la que hace
+falta. Pero la documentación (sobre todo la buena) es indispensable y
+para <a class="reference external" href="http://jacobian.org/writing/great-documentation/">algunos</a>, la
+parte que más los enorgullece del proyecto (y con razón).</p>
+<p>Desde el punto de vista técnico, escribir documentación (no <a class="reference external" href="http://sphinx.pocoo.org/examples.html">sólo para
+Python</a>!) es bastante fácil con
+<a class="reference external" href="http://docutils.sourceforge.net/rst.html">restructuredText</a> (qué feo
+el sitio de docutils, che!) que es <a class="reference external" href="http://www.python.org/dev/peps/pep-0287/">el markup estándar de los
+pythonistas</a>.</p>
+<p>Sobre este markup funciona <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>, el
+generador de documentación más utilizado (por lejos) en el ecosistema de
+Python. Es lo que usa la documentación de Python misma, la de Django y
+casi todo proyecto conocido o por conocer.</p>
+<p>Entonces usamos restructuredText, usamos Sphinx, pero para <a class="reference external" href="posts/blog/article/la-sanguijuela-de-cuevana">nuestro
+proyectito de morondanga</a> que
+no tiene web propia ni nada, ¿dónde subimos la documentación generada?
+Veamos.</p>
+<div class="section" id="usando-readthedocs-org">
+<h2>Usando Readthedocs.org</h2>
+<p><a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/">Read the docs</a>
+es un sitio para hospedar documentación realizada con Sphinx. Sólo se
+necesita indicarle el repositorio público del proyecto (svn, git,
+mercurial, bazaar), subir los fuentes .rst y contenido estático
+(imágenes) aptos para Sphinx en una carpeta /doc o /docs y el sitio se
+encarga de bajar los fuentes de documentación y renderizarlos a HTML a
+través de Sphinx.</p>
+<p>Estrictamente, usando rtfd.org (como le dicen <a class="reference external" href="http://www.urbandictionary.com/define.php?term=RTFD&amp;defid=2281638">los
+amigos</a>)
+ni siquiera hace falta tener Sphinx instalado localmente.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 31); <em><a href="posts/compartiendo-documentacion-de.html#id2">backlink</a></em></p>
+Duplicate explicit target name: "acá".</div>
+<p>Más aun, por defecto actualiza diariamente, pero se puede utilizar un
+"hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
+al repo, de manera de tener la documentación actualizada al instante.
+Para usuarios de GitHub la activación del "web hook" se explica
+<a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/webhooks.html#github">acá</a>
+. Para <a class="reference external" href="http://bitbucket.org">BitBucket.org</a> es parecido:</p>
+<ol class="arabic simple"><li>Vas a tu proyecto , click en Admin -&gt; Services</li>
+<li>Agregás el servicio "POST"</li>
+<li>Completás el campo de texto con la URL que te da ReadTheDocs en la
+página de descripción de tu proyecto (estándo logueado). Por ejemplo:</li>
+</ol><div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 60)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Y listo. Tu docu al instante.</p>
+<p>Como el sitio genera el html en vez de servir una versión generada
+previamente, la documentación que requiere introspección del código (
+todas las directivas `` .. auto* :: `` de Sphinx) este debe poder
+ejecutarse. Para eso el paquete debe ser instalable via <tt class="docutils literal">setup.py</tt> y
+hay marcar desde la página de configuración del proyecto en RTFD.org,
+que instale en un virtualenv.</p>
+<p>Para ver si hubo algún problema en la generación, podés fijarte en
+"build" donde te muestra el stdout y el stderr de la corrida de Sphinx.</p>
+</div>
+<div class="section" id="subir-la-docu-a-pypi">
+<h2>Subir la docu a PyPi</h2>
+<p>Una forma buenísima de compartir tu trabajo pythónico es a través del
+Python Package Index, <a class="reference external" href="http://pypi.python.org/pypi">pypi</a>, que es el
+índice que usan las herramientas <a class="reference external" href="http://www.pip-installer.org">pip</a> e
+easy_install. Si bien no necesarimente los paquetes deben estar
+hospedados allí (indicando en el setup.py la URL de descarga) es muy
+común y fácil hacerlo con el comando <tt class="docutils literal">upload</tt> del setup.py.</p>
+<p>Lo que muchos no
+<a class="reference external" href="http://packages.python.org/an_example_pypi_project/buildanduploadsphinx.html">saben</a>
+es que PyPi también ofrece <a class="reference external" href="http://packages.python.org/">hostear la
+documentación</a>. La forma canónica es ir a
+la página de administración de tu proyecto en PyPi y adjuntar un .zip
+con la documentación (que no necesariamente tiene que ser hecha con
+Sphinx)</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 93)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Pero si usamos Sphinx hay una manera más fácil, manteniendosé en el
+"ecosistema" de desarrollo: usar esta <a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload/">extension de
+setuptools</a> que
+permite generar el html a través Sphinx y subirlo automáticamente. Se
+instala, obviamente, vía pypi:</p>
+<pre class="literal-block">
+$ easy_install sphinx-pypi-upload
+</pre>
+<p>Hay que condigurar un <tt class="docutils literal">setup.cfg</tt> (ubicado al nivel raiz, junto con
+<tt class="docutils literal">setup.py</tt>) indicandole dónde está la docu fuente y dónde el
+resultado. Más o menos así:</p>
+<pre class="literal-block">
+[build_sphinx]
+source-dir = doc/source
+build-dir  = doc/build
+all_files  = 1
+
+[upload_sphinx]
+upload-dir = doc/build/html
+</pre>
+<p>Luego se usa:</p>
+<pre class="literal-block">
+$ python setup.py build_sphinx
+$ python setup.py upload_sphinx
+</pre>
+<p>Y docu subida a la dire
+<em>`http://packages.python.org/tu-proyecto &lt;http://packages.python.org/tu-proyecto&gt;`_</em>
+. ¡<a class="reference external" href="http://packages.python.org/CuevanaLinks/">Charaaán</a>!</p>
+</div>
+<div class="section" id="usando-tu-repositorio-svn">
+<h2>Usando tu repositorio SVN</h2>
+<p>Si usas SVN y tu servidor lo permite, podés servir contenido estático
+(html y todo lo que produce y necesita Sphinx) directamente desde el
+repositorio.</p>
+<p>Para que el servidor Subversion muestre el html renderizado en vez del
+código (como texto plano) hay que indicarle el tipo <tt class="docutils literal">mime</tt> de cada
+archivo.</p>
+<pre class="literal-block">
+$ svn propset svn:mime-type 'text/html' FILENAME
+$ svn propset svn:mime-type 'image/jpeg' FILENAME
+</pre>
+<p>Para que esto se haga automático, se puede modificar el archivo de
+configuración <a href="posts/compartiendo-documentacion-de.html#id3"><span class="problematic" id="id4">``</span></a>~/.subversion/config ``</p>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 144); <em><a href="posts/compartiendo-documentacion-de.html#id4">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<pre class="literal-block">
+[miscellany]
+enable-auto-props = yes
+
+[auto-props]
+*.html = svn:mime-type=text/html
+*.css = svn:mime-type=text/css
+*.js = svn:mime-type=text/javascript
+*.png = svn:mime-type=image/png
+*.jpg = svn:mime-type=image/jpeg
+*.gif = svn:mime-type=image/gif
+</pre>
+<p>Un ejemplo de esto es el <a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">reporte de mi proyecto
+integrador</a>
+que está hospedado en Google Code</p>
+</div>
+<div class="section" id="aprovechandote-de-github">
+<h2>Aprovechándote de GitHub</h2>
+<p><a class="reference external" href="http://github.com">GitHub</a> hospeda <a class="reference external" href="http://pages.github.com/">páginas
+estáticas</a>, tanto del desarrollador/a como
+de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
+mas o menos automáticamente estas opciones que no he probado pero las
+dejo como referencia:</p>
+<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/">Hosting sphinx doc in
+github</a>
+de Luca Sbardella.
+<img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting">Usando
+github-tools</a>.</p>
+</div>
+        <p>
+        
+            <a href="posts/compartiendo-documentacion-de.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/la-sanguijuela-de-cuevana.html">La sanguijuela de cuevana</a>
         <small>  
              <span class="timeago" title="2011-04-09 14:22:27">2011-04-09 14:22:27</span>
@@ -649,41 +819,6 @@ plt.imshow (data.clip(0,255) )
         <p>
         
             <a href="posts/de-otra-galaxia.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/voto-electronico-e-ingenieros.html">Voto electrónico e ingenieros analógicos</a>
-        <small>  
-             <span class="timeago" title="2010-10-19 21:54:20">2010-10-19 21:54:20</span>
-        </small></h1>
-        <p>Con mucho esfuerzo propio y ajeno, estoy terminando la carrera
-<a class="reference external" href="http://computacion.efn.uncor.edu">Ingeniería en Computación</a> en la
-Universidad Nacional de Córdoba.</p>
-<p>Una particularidad de mi carrera, entre varias, es que hay mucha
-discusión y participación estudiantil. Una herramienta estratégica para
-esto ha sido un <a class="reference external" href="http://www.ceicin.org.ar/Grupo-de-Correo-de-Ingenieria-en">grupo de
-correo</a> en
-el que participan estudiantes, profesores y graduados.</p>
-<p>Allí he mantenido <a class="reference external" href="http://www.textosypretextos.com.ar/spip.php?page=recherche&amp;recherche=limando+cantos">algunas
-discusiones</a>
-con compañeros y/o profesores sobre temas diferentes. Los más
-interesantes, para mí, son los que evidencian concepciones filosóficos,
-ideológicas y políticas de cada uno.</p>
-<p>La última, que empezó el lunes, comenzó con una discusión sobre le <a class="reference external" href="http://www.vialibre.org.ar/category/activismo/voto-electronico/">voto
-electrónico</a>
-(a raiz de la charla relámpago de <a class="reference external" href="http://en.wikipedia.org/wiki/Federico_Heinz">Federico
-Heinz</a> en la
-<a class="reference external" href="posts/blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> ) que fue derivando
-a una más de fondo, sobre la concepción de ingeniero que yo quiero ser y
-la que los profesores con los que discuto en el hilo (y casi todos los
-otros) me enseñan.</p>
-<p>Como ya casi tiene telarañas, y además porque allí están todas las
-discusiones previas (las que me parecieron interesantes, bah), lo
-publiqué en <a class="reference external" href="http://www.textosypretextos.com.ar">mi otro blog</a>.</p>
-        <p>
-        
-            <a href="posts/voto-electronico-e-ingenieros.html#disqus_thread">Comments</a>
         
         </p></div>
     

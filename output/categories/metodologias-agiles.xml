@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (Metodologías ágiles)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 10 Apr 2013 01:43:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes Python</title><link>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+<rss version="2.0"><channel><title>tin_nqn (Metodologías ágiles)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 01 Jun 2013 11:10:44 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes Python</title><link>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
 documentación está incompleto
 [&lt;a class="reference external" href="/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Si bien el manifiesto ágil
@@ -157,7 +157,7 @@ github&lt;/a&gt;
 de Luca Sbardella.
 &lt;img alt="image1" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>http://mgaitan.github.com/posts/la-academia-las-practicas-agiles-y.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;La manera más fácil para aprobar una tesis de ingeniería es mentir.
+&lt;/div&gt;</description><category>Software Libre</category><category>Python</category><category>Metodologías ágiles</category><guid>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>http://mgaitan.github.com/posts/la-academia-las-practicas-agiles-y.html</link><description>&lt;p&gt;La manera más fácil para aprobar una tesis de ingeniería es mentir.
 Llenar páginas y páginas, preferentemente con tablas y viñetas, de
 contenidos vacuos y tediosos que seguramente nadie, mucho menos los
 evaluadores, leerán. Sólo hay que prestar atención a que sean muchas
@@ -240,4 +240,4 @@ Lamentablemente UML no aborda este problema y en cambio parece
 obsesionado por las minucias en una parodia de distracción
 académica.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/blockquote&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://mgaitan.github.com/posts/la-academia-las-practicas-agiles-y.html</guid><pubDate>Wed, 06 Apr 2011 06:21:23 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;</description><category>Metodologías ágiles</category><guid>http://mgaitan.github.com/posts/la-academia-las-practicas-agiles-y.html</guid><pubDate>Wed, 06 Apr 2011 06:21:23 GMT</pubDate></item></channel></rss>

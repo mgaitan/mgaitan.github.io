@@ -43,6 +43,137 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/bonito-feito-pero-efectivo.html">Bonito, feito pero efectivo</a>
+        <small>  
+             <span class="timeago" title="2010-08-19 11:07:16">2010-08-19 11:07:16</span>
+        </small></h1>
+        <p>Hace 5 años que laburo en <a class="reference external" href="http://www.agrupacionmazamorra.com.ar">una
+organización</a> de trabajo
+barrial. Como no recibimos aportes privados y rara vez del Estado (a
+veces presentamos proyectos a programas) siempre andamos buscando formas
+de sostener económicamente nuestras actividades.</p>
+<p>Un recurso, no por viejo en desuso, es el del <em>"bono contribución"</em>, que
+muchas veces incluye un sorteo con algún premio.</p>
+<p>Además de la algo ingrata tarea de venderlos, hay que hacerlos. Alguno
+tiene uno de esos sellos numeradores (un mecanimismo que va
+incrementando el contador automáticamente ) pero igual cualquiera se
+vuelve un burócrata (más cuando hay que sellar dos veces - el bono y
+talón -).</p>
+<p>Así que ayer, en 20 minutos hice <em>Bonito</em>, un programa feo pero
+efectivo.</p>
+<p>Primero hice una plantilla en <a class="reference external" href="http://inkscape.org">Inkscape</a> donde
+entran 6 de estos bonitos en un A4.</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L500xH117/bonito2-ccc74.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 25)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Como el SVG es XML que es TEXTO, la marca XXXX se puede reemplazar
+fácilmente por el número que corresponda. Yo quería que me quedaran así:</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L400xH436/bonito-8305a.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 31)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>De esta manera, simplemente tengo que meter 6 broches a la izquierda y
+recortar, ya quedan ordenados para repartir entre los compañeros y
+compañeras.</p>
+<p>Para algunas cosas, Inkscape se puede usar por línea de comandos, por
+ejemplo para convertir entre los formatos que soporta. Así paso el SVG
+con los números reemplazados a un PDF. Después concateno todos los PDF
+de una tanda (por ejemplo agrupados de a 10, como en el dibujo) con
+Ghostscript.</p>
+<p>Acá el código:</p>
+<pre class="literal-block">
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+#       bonito.py
+#
+#       Copyright 2010 Martin Gaitán &lt;gaitan(at)gmail.com&gt;
+#
+#       This program is free software; you can redistribute it and/or modify
+#       it under the terms of the GNU General Public License as published by
+#       the Free Software Foundation; either version 2 of the License, or
+#       (at your option) any later version.
+#
+#       This program is distributed in the hope that it will be useful,
+#       but WITHOUT ANY WARRANTY; without even the implied warranty of
+#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#       GNU General Public License for more details.
+#
+#       You should have received a copy of the GNU General Public License
+#       along with this program; if not, write to the Free Software
+#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#       MA 02110-1301, USA.
+
+import sys, os
+import subprocess
+import glob
+
+def markToNum(content, num, mark='XXXX'):
+    num_as_string = '0' * (4 - len(str(num))) + str(num)
+    return content.replace(mark, num_as_string, 2)
+
+def main():
+
+    if len(sys.argv) &lt;= 1:
+        print "Modo de uso:"
+        print sys.argv[0] + " archivo.svg"
+        sys.exit(1)
+    else:
+        with open(sys.argv[1]) as input:
+            svg_content = input.read()
+
+        index_from = int(raw_input('Desde [0]') or 0)
+        number_by_page = int(raw_input('Num por pagina [6]') or 6)
+        grouped_by =  int(raw_input('agrupar de a [20]') or 20)
+        planchas = int(raw_input('Planchas [1]') or 1)
+
+
+        for plancha in range(planchas):
+            counter_from = index_from + plancha*number_by_page*grouped_by
+
+            for pagina in range(grouped_by):
+                page_content = svg_content
+                for bono in range(number_by_page):
+                    num_remplazo = counter_from + bono*grouped_by + pagina
+                    page_content = markToNum(page_content, num_remplazo)
+
+                with open('temp.svg', 'w') as output_svg:
+
+                    output_svg.write(page_content)
+
+                subprocess.call(["inkscape", "-f", 'temp.svg', '--export-dpi=150', '-A', 'temp%s.pdf' % ("0"*(4 - len(str(pagina))) + str(pagina)) ])
+
+            generator = ['gs',
+                         '-q',
+                         '-sPAPERSIZE=a4',
+                         '-dNOPAUSE',
+                         '-dBATCH',
+                         '-sDEVICE=pdfwrite',
+                         '-sOutputFile=%s-%i-%i.pdf' % (sys.argv[1][:-4], counter_from, num_remplazo),] + \
+                        ['temp%s.pdf' % ("0"*(4 - len(str(pagina))) + \
+                            str(pagina)) for pagina in range(grouped_by)]
+
+            subprocess.call(generator)
+
+            for temp in glob.glob('temp*'):
+                os.remove(temp)
+
+if __name__ == '__main__':
+    main()
+</pre>
+<p>Nada que no se pueda hacer con Bash, cierto, pero mucho más fácil de
+escribir (y de leer).</p>
+<p>De paso, acá está la plantilla, por si a alguno le sirve.</p>
+        <p>
+        
+            <a href="posts/bonito-feito-pero-efectivo.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/django-dash-hace-una-aplicacion.html">Django Dash: hacé una aplicación web en 2 dias</a>
         <small>  
              <span class="timeago" title="2010-08-06 07:38:38">2010-08-06 07:38:38</span>
@@ -837,69 +968,6 @@ que dejó en su paso).</p>
         <p>
         
             <a href="posts/deja-que-el-servidor-trabaje-por.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/digitalizando-recuerdos-con.html">Digitalizando recuerdos con mencoder</a>
-        <small>  
-             <span class="timeago" title="2009-09-30 14:56:40">2009-09-30 14:56:40</span>
-        </small></h1>
-        <p>Para el Mundial del 2006, compré, como tantos otros que no tenían
-televisor pero sí computadora, una plaquita sintonizadora de TV: una
-Kozumi con el chip sintonizador BT878, uno de los más genéricos y
-bastante bien soportado en linux.</p>
-<p>Tuvo poca utilidad en aquel 2006, primero porque argentina no duró
-demasiado y segundo y principal porque un vecino reclamó potestad sobre
-la señal del cable coaxil que alimentaba mi chip y mis ilusiones
-mundialistas.</p>
-<p>Quedó cajoneada en algun rincón, hasta que rescaté del olvido la
-videofilmadora de la familia, una vieja y noble JVC , con un montón de
-casetitos Compact VHS (que es el formato con el que funciona).</p>
-<p>Así que después de mucho patear la tarea, decidí conectar los cables y
-encontrar la forma de convertir en bytes los recuerdos archivados en
-esos casettes polvorientos.</p>
-<div class="section" id="lo-que-hice">
-<h2>Lo que hice</h2>
-<p>Primero, configurar la placa. El chip bt878 se usa en muchísimas
-sintonizadoras que tienen configuraciones diferentes. Para asignarle los
-correctos, se pasa un código <tt class="docutils literal">card</tt> que se obtiene de <a class="reference external" href="http://www.mjmwired.net/kernel/Documentation/video4linux/CARDLIST.bttv">esta
-lista</a>.
-En mi caso, para una Kozumi ktv-01c, el código es 151. El comando
-completo con el que configuro el módulo es:</p>
-<pre class="literal-block">
-sudo modprobe bttv card=151 pll=1 tuner=38 radio=1 bttv_verbose=1 gbuffers=4
-</pre>
-<p>Luego, el supercomando mencoder:</p>
-<pre class="literal-block">
-mencoder tv:// -tv driver=v4l2:device=/dev/video0:input=1:width=480:height=360:norm=ntsc:alsa:adevice=hw.0:amode=1:audiorate=44100:forceaudio:forcechan=1:buffersize=300 -oac mp3lame -lameopts cbr:br=96:mode=3 -af volume=-6:0,channels=1 -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=5000:keyint=125:mbd=2 -vf yadif,crop=464:352:8:2  -o salida.avi
-</pre>
-<p>Algunos detalles:</p>
-<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="tv://">tv://</a> indica que se va a capturar video, y se le pasan paramétros
-luego del flag -tv: driver <strong>v4l2</strong>, un tamaño de 480x360 (aunque
-después se recorta), preconfigurado para ntsc (29.97 fps).
-<img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un aspecto importante son los flags referidos al audio: se
-captura el audio <strong>alsa</strong>, indicando la placa de sonido, el modo y la
-calidad (mono a 44100hz de ancho de banda)
-<img alt="image2" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> El audio se comprime con <strong>lame</strong> a mp3 de 96kps constante.
-<img alt="image3" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> con <strong>-af volume</strong> le bajo el volumen 6db, porque de otra
-manera me salía saturado (estoy capturando desde el microfono). El
-parametro <strong>forceraudio</strong> fuerza la captura aunque la entrada esté
-silenciada en la mezcladora. También se fuerza a grabar un solo canal
-con <strong>forcechan=1</strong>.
-<img alt="image4" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Con -ovc lavc se usa <strong>libavcodec</strong> (ffmpeg), comprimiendo en
-mpeg4 a un bitrate de 5000.
-<img alt="image5" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Se aplican 2 filtros de video al vuelo: <strong>yadif</strong> que es el
-mejor filtro desentralazador (necesario para captura analógica) y un
-<strong>crop</strong> que recorta 8 pixeles de los costados, 2 de arriba y 6 de
-abajo, para evitar la distorción que producen los cabezales con las
-cintas viejas.</p>
-<p>El resultado es un video de unos 250kb/s de calidad más que aceptable.</p>
-<p>Por ejemplo, el casamiento de mi hermano Juan, en 1998:</p>
-</div>
-        <p>
-        
-            <a href="posts/digitalizando-recuerdos-con.html#disqus_thread">Comments</a>
         
         </p></div>
     
