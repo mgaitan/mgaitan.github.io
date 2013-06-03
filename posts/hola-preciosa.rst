@@ -6,13 +6,12 @@
 .. slug: hola-preciosa
 
 Mi propuesta_ sobre una aplicación para teléfonos inteligentes que facilite el relevamiento
-de precios y ayude a encontrar mejores ofertas generó muchísimo debate en PyAr_ y en la
+de precios y ayude a encontrar mejores ofertas generó muchísimo debate en PyAr_, en la
 `lista de Ingeniería`_  y en Twitter_ .
-
 
 Hubo quienes desmerecieron la idea por "politizada_", otros que me `invitaron a no generar polémica`_ y llevar la discusión a otro lado [1]_, un par que no les gustó porque le quita *"la responsabilidad al gobierno que es el que genera inflación por su irresponsable emisión monetaria"*  y otros que directamente se `ofendieron feo`_ y me dijeron fascista.
 
-.. raw: html
+.. raw:: html
 
     <blockquote class="twitter-tweet" lang="es"><p>@<a href="https://twitter.com/tin_nqn_">tin_nqn_</a> @<a href="https://twitter.com/damian_avila">damian_avila</a> por dios.eso es programar al gran hermano. Facismo en código</p>&mdash; JuanB. Cabral (@JuanBCabral) <a href="https://twitter.com/JuanBCabral/status/340955059607187457">1 de junio de 2013</a></blockquote>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
