@@ -43,6 +43,58 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/de-otra-galaxia.html">De otra galaxia</a>
+        <small>  
+             <span class="timeago" title="2010-11-27 20:19:38">2010-11-27 20:19:38</span>
+        </small></h1>
+        <p>Si el sábado a la noche antes de rendir tu última materia en vez de
+estar estudiando estás emborranchandote por ahí, sos un inconciente y/o
+la tenés muy clara. Si en cambio no estás estudiando ni emborrachando,
+pero te ponés a pensar ejercicios para el <a class="reference external" href="https://github.com/nqnwebs/python-ingenieria">curso de
+python</a> que estás dando,
+sos un nerd. Mereces un brindis de chocolatada a tu salud de todos los
+de <a class="reference external" href="http://www.whatthefolk.net/forum/viewtopic.php?f=13&amp;t=338">este
+foro</a>.</p>
+<p>Si encima blogueas al respecto, sos un nerd intergaláctico. Te explico
+por qué.</p>
+<p>Resulta que tenés este <a class="reference external" href="https://github.com/nqnwebs/python-ingenieria/raw/master/data/data.txt">archivo de
+datos</a>.
+Cada número representa la intensidad de luz de un punto y te informan
+que la imágen es cuadrada. Se supone que son datos que te dió un
+profesor una vez, para que resuelvas este mismo problema en
+¡ensamblador!</p>
+<p>Hacerlo en Python, con Numpy y Matplotlib, significa estas líneas</p>
+<pre class="literal-block">
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.fromfile ('data.txt', sep=' ')
+SIZE = int(len(data) ** .5)
+data.shape = SIZE, SIZE
+plt.imshow (data)
+plt.show ()
+</pre>
+<p>Y se obtiene este resultado:</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH385/galaxy-efc45.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 38)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Se puede limitar los valores de luz a un valor entre 0 y 255 (truncando
+valores de saturación extrema), haciendo :</p>
+<pre class="literal-block">
+plt.imshow (data.clip(0,255) )
+</pre>
+<p>Obtenemos este resultado:</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH385/galaxy-2-e0bc7.png"></div>
+        <p>
+        
+            <a href="posts/de-otra-galaxia.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/voto-electronico-e-ingenieros.html">Voto electrónico e ingenieros analógicos</a>
         <small>  
              <span class="timeago" title="2010-10-19 21:54:20">2010-10-19 21:54:20</span>
@@ -585,141 +637,6 @@ Podés hacer un ckeckout SVN</p>
         <p>
         
             <a href="posts/simplecart-js-para-spip.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/modelos-de-negocio-floss-la.html">Modelos de negocio FLOSS, la universidad, el sector privado y el Estado</a>
-        <small>  
-             <span class="timeago" title="2010-08-26 13:19:19">2010-08-26 13:19:19</span>
-        </small></h1>
-        <p>Distintos laboratorios de investigación y vinculación de mi facultad del
-área química y del área computación, junto a algunas empresas de
-software locales (<a class="reference external" href="http://www.vates.com">VATES</a> y otra) y del sector
-petroquímico (<a class="reference external" href="http://www.pr3.com.ar/">Petroquímica Rio Tercero</a>)
-están conformando un <em>"Consorcio Asociativo Público Privado (CAPP)"</em> en
-el marco del programa
-<a class="reference external" href="http://www.agencia.gov.ar/spip.php?page=convocatorias_articulo&amp;mostrar=1104">FSTICS</a>
-del Ministerio de Ciencia y Tecnología de la Nación, con el fin de
-desarrollar una plataforma de desarrollo I+D de software para la
-industria. Para que contextualicemos de que hablamos: el programa
-estipula un aporte estatal de hasta el 60% para un proyecto de hasta 38
-millones de pesos.</p>
-<p>Mi participación es minúscula y aledaña: el impulsor de este proyecto es
-el Dr. Martín Cismondi, director de mi proyecto integrador que se trata
-de un prototipo del (tipo de) software que se desarrollaría desde esta
-plataforma.</p>
-<p>Cismondi es Phd en ingenieria quimica y sus investigaciones en el campo
-del equilibrio de fases tienen mucha aplicación en la industria. En
-particular en el petróleo, donde el impacto que puede tener mejorar el
-rendimiento de un proceso (por ejemplo de destilación) se mide en
-millones de morlacos.</p>
-<p>Ayer tuve oportunidad de participar de una reunión, sirviendo de una
-especie de "traductor" entre los quimicos y los informáticos.</p>
-<p>Si bien, repito, no tengo voz (mucho menos voto) en nada de lo que allí
-se resuelva, tengo interés en investigar y transmitir de la manera más
-clara posible otros modelos de negocio que, por lo que presencié ayer,
-están lejos de ser tenidos en cuenta. Me refiero, claro, a que, sobre
-todo (no muy increíblemente) desde la facultad, no se ve más allá de un
-modelo de negocio de software cerrado de venta por licencia.</p>
-<p>Apunto algunas cuestiones sin orden:</p>
-<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> El nicho de mercado es bastante acotado: industrias de gran escala
-mayormente transnacionales. Separadamente tiene mucha utilidad y
-aceptación en centros de investigación académicos.</p>
-<p><img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Desde el grupo conformado, no existe conocimiento cabal de las
-soluciones de software específicas que ese mercado, el industrial,
-demanda. Sí se sabe que el -*expertise-* y el -*know how-* que el
-grupo de investigación de Cismondi tiene son el valor diferencial.</p>
-<p><img alt="image2" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> No existe hoy peso específico suficiente, desde el punto de
-vista del producto existente, para competir con las empresas de software
-proveedoras de este nicho, sobre todo en los mercados de USA y Europa.
-Por ejemplo <a class="reference external" href="http://www.aspentech.com">Aspen Tech</a>.</p>
-<p><img alt="image3" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Es difícil, a priori inimaginable, desarrollar un producto
-genérico que satisfaga necesidades de diversos clientes potenciales. La
-especifidad de los problemas de cada industria se supone grande.</p>
-<p><img alt="image4" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Preguntas para hacerse ¿cuantos clientes reales existen en el
-mercado? ¿qué "llegada" se tiene con ellos? ¿que posibilidades reales de
-venderle un software cerrado existen, teniendo en cuenta que no se sabe
-cabalmente cuales son sus demandas? Supongiendo que se conoce un
-problema específico ¿cuanto sale desarrollar una solución ? ¿se puede
-correr el riesgo de desarrollarla sin tener asegurada su
-comercialización?</p>
-<p>Soy un novato en el área negocios con FLOSS (y en negocios, a secas,
-también) pero lo que se me ocurre viene más o menos por este lado:</p>
-<p><strong>1.</strong> Generar una estrategia para una fuerte inserción en el ámbito
-académico internacional</p>
-<ul class="simple"><li>Para esto es indispensable la libre disponibilidad del código fuente
-de manera que los métodos numérico-científicos sean transparentes,
-reproducibles y verificables. Ver <a class="reference external" href="http://www.openscience.org/blog/?p=312">este
-post</a> en OpenScience
-Project.</li>
-<li>Para evitar practicas predatorias sobre este trabajo, que alguien
-cierre y comercialice, hay que orientar a una licencia FLOSS vírica,
-donde los trabajos derivados mantengan la condicion libre.</li>
-<li>De esta manera se apunta a constituir una comunidad
-tecnologico-científica donde el nucleo de desarrollo se mantendrá en
-los autores originales pero permitiendo y aprovechando código y
-feedback de los usuarios.</li>
-<li>En esta etapa el beneficio no es a priori monetario y en cambio sí en
-cuanto a calidad del software, inserción y difusión del/los
-producto/s, fidelización de usuarios y prestigio del equipo de
-desarrollo.</li>
-</ul><p><strong>2.</strong> La repercusión de la masa crítica generada abre la puerta al
-mercado por las siguientes razones:</p>
-<ul class="simple"><li>Muchos de los académicos que utilicen y formen parte de un
-"comunidad" alrededor del sofware FLOSS desde las universidades o
-llevaran su conocimiento a la industria.</li>
-<li>Tambien los investigadores dentro de la industria tienen vínculos
-fluidos con la comunidad científica, sobre todo en estas áreas de
-investigación de vanguardia de directa aplicabilidad.</li>
-<li>El mercado a priori imposible de acceder se puede hacer más
-permeable: los responsables de investigación demandan la utilización
-del software en los procesos de la industria o sus labores
-particulares.</li>
-<li>Si el costo para la industria es nulo o bajo y de calidad, hay muchas
-probabilidades de que sea aceptado.</li>
-<li>La ventaja diferencial del cliente es evitar el <a class="reference external" href="http://en.wikipedia.org/wiki/Vendor_lock-in">vendor
-lock-in</a>. Sin embargo,
-la ventaja competitiva del equipo de desarrollo original, por su
--*know how-* adquirido es insuperable para cualquier potencial
-competidor.</li>
-</ul><p><strong>3.</strong> Insertado en el mercado se generan posibilidades de lucro en dos
-áreas</p>
-<ul class="simple"><li>Customización y extensión del software bajo requerimientos
-específicos. Entra en el marco de
-<a class="reference external" href="http://es.wikipedia.org/wiki/SaaS">SaaS</a></li>
-<li>Capacitación y entrenamiento a equipos técnicos de la industria y la
-academia, tanto en el área de aplicación (quimicos) como de
-desarrollodo de software.</li>
-</ul><p>Muchísimo material para leer sobre el tópico hay en <a class="reference external" href="http://www.opensourcestrategies.org/">este
-sitio</a>. Yo empezaré en cuanto
-tenga tiempo. Invito también, de manera enfática, a leer <a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/contexto_de_trabajo.html#software-libre">la
-justificación</a>
-de que el software desarrollado en el marco de mi proyecto integrador lo
-libero como Software Libre</p>
-<div class="section" id="mas-alla-del-negocio">
-<h2>Más allá del negocio</h2>
-<p>Además de lo expuesto se me cruzan cuestionamientos sobre el rol de la
-universidad y el estado en este escenario.</p>
-<p>Como ciudadano y futuro profesional festejo la inversión que en los
-últimos años el Estado ha realizado para ciencia y tecnología. Apostar a
-generar valor en áreas tan estrategicas como el software es necesario, y
-plantearlo desde el punto de vista de fortalecer la industria nacional
-(pymes) es entonces doblemente valioso.</p>
-<p>Pero...</p>
-<p>¿son los laboratorios de investigación de las universidades actores que
-deben generar recursos por sí mismos? ¿A quien pertenece el conocimiento
-que se produce en la universidad? ¿A quién debe pertenecer? ¿La
-universidad actual responde a un proyecto de país ? ¿Existe tal cosa?
-¿No debiera el Estado, formar parte societaria en los consorcios para
-los cuales está aportando grandes recursos, además de ser agente
-regulador? ¿quién y cómo regula la relación e intereses existentes entre
-los grupos de investigación y el sector privado? ¿no se puede prestar a
-malversaciones y abuso del <em>sello</em> de la universidad?</p>
-</div>
-        <p>
-        
-            <a href="posts/modelos-de-negocio-floss-la.html#disqus_thread">Comments</a>
         
         </p></div>
     

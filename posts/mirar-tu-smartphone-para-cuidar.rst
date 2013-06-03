@@ -1,6 +1,6 @@
 .. link:
 .. description:
-.. tags: ideas, android
+.. tags: ideas, android, preciosa
 .. date: 2013/06/01 09:50:39
 .. title: Mirar (tu smartphone) para cuidar
 .. slug: mirar-tu-smartphone-para-cuidar

@@ -43,6 +43,45 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/pep-20-el-zen-del-barca.html">Pep 20: El Zen del Barça</a>
+        <small>  
+             <span class="timeago" title="2011-04-27 16:22:47">2011-04-27 16:22:47</span>
+        </small></h1>
+        <p><img alt="image0" src="images/messi_guardib9bf-5b102.jpg">
+El <a class="reference external" href="http://www.python.org/dev/peps/pep-0020/">Zen de Python</a> es
+también el Zen del Barça, el de Pep Guardiola. La "Pep" 20
+[<a class="reference external" href="blog/article/pep-20-el-zen-del-barca#nb1">1</a>]:</p>
+<blockquote>
+Bello es mejor que feo.
+Explícito es mejor que implícito.
+Simple es mejor que complejo.
+Complejo es mejor que complicado.
+Plano es mejor que anidado.
+Disperso es mejor que denso.
+La legibilidad cuenta.
+Los casos especiales no son tan especiales como para quebrantar las
+reglas.
+Aunque lo práctico gana a la pureza.
+Los errores nunca deberían dejarse pasar silenciosamente.
+A menos que hayan sido silenciados explícitamente.
+Frente a la ambigüedad, rechaza la tentación de adivinar.
+Debería haber una —y preferiblemente sólo una— manera obvia de
+hacerlo.
+Aunque esa manera puede no ser obvia al principio a menos que usted
+sea Messi, Xavi o Iniesta.
+Ahora es mejor que nunca.
+Aunque nunca es a menudo mejor que ya mismo.
+Si la implementación es difícil de explicar, es una mala idea.
+Si la implementación es fácil de explicar, puede que sea una buena
+idea.
+Los espacios son una gran idea ¡Hagamos más de esas cosas!</blockquote>
+        <p>
+        
+            <a href="posts/pep-20-el-zen-del-barca.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/compartiendo-documentacion-de.html">Compartiendo documentación de paquetes Python</a>
         <small>  
              <span class="timeago" title="2011-04-10 19:16:38">2011-04-10 19:16:38</span>
@@ -767,58 +806,6 @@ la burbuja .com ?</p>
         <p>
         
             <a href="posts/covertura-de-los-oscars-2011.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/de-otra-galaxia.html">De otra galaxia</a>
-        <small>  
-             <span class="timeago" title="2010-11-27 20:19:38">2010-11-27 20:19:38</span>
-        </small></h1>
-        <p>Si el sábado a la noche antes de rendir tu última materia en vez de
-estar estudiando estás emborranchandote por ahí, sos un inconciente y/o
-la tenés muy clara. Si en cambio no estás estudiando ni emborrachando,
-pero te ponés a pensar ejercicios para el <a class="reference external" href="https://github.com/nqnwebs/python-ingenieria">curso de
-python</a> que estás dando,
-sos un nerd. Mereces un brindis de chocolatada a tu salud de todos los
-de <a class="reference external" href="http://www.whatthefolk.net/forum/viewtopic.php?f=13&amp;t=338">este
-foro</a>.</p>
-<p>Si encima blogueas al respecto, sos un nerd intergaláctico. Te explico
-por qué.</p>
-<p>Resulta que tenés este <a class="reference external" href="https://github.com/nqnwebs/python-ingenieria/raw/master/data/data.txt">archivo de
-datos</a>.
-Cada número representa la intensidad de luz de un punto y te informan
-que la imágen es cuadrada. Se supone que son datos que te dió un
-profesor una vez, para que resuelvas este mismo problema en
-¡ensamblador!</p>
-<p>Hacerlo en Python, con Numpy y Matplotlib, significa estas líneas</p>
-<pre class="literal-block">
-import numpy as np
-import matplotlib.pyplot as plt
-
-data = np.fromfile ('data.txt', sep=' ')
-SIZE = int(len(data) ** .5)
-data.shape = SIZE, SIZE
-plt.imshow (data)
-plt.show ()
-</pre>
-<p>Y se obtiene este resultado:</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH385/galaxy-efc45.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 38)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>Se puede limitar los valores de luz a un valor entre 0 y 255 (truncando
-valores de saturación extrema), haciendo :</p>
-<pre class="literal-block">
-plt.imshow (data.clip(0,255) )
-</pre>
-<p>Obtenemos este resultado:</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH385/galaxy-2-e0bc7.png"></div>
-        <p>
-        
-            <a href="posts/de-otra-galaxia.html#disqus_thread">Comments</a>
         
         </p></div>
     
