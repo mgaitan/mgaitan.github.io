@@ -9,7 +9,7 @@ Mi propuesta_ sobre una aplicación para teléfonos inteligentes que facilite el
 de precios y ayude a encontrar mejores ofertas generó muchísimo debate en PyAr_, en la
 `lista de Ingeniería`_  y en Twitter_ .
 
-Hubo quienes desmerecieron la idea por "politizada_", otros que me `invitaron a no generar polémica`_ y llevar la discusión a otro lado [1]_, un par que no les gustó porque le quita *"la responsabilidad al gobierno que es el que genera inflación por su irresponsable emisión monetaria"*  y otros que directamente se `ofendieron feo`_ y me dijeron fascista.
+Hubo quienes desmerecieron la idea por "politizada_", otros que me `invitaron a no generar polémica`_ y llevar la discusión a otro lado [1]_, un par que no les gustó porque le quita *"la responsabilidad al gobierno que es el que genera inflación por su irresponsable emisión monetaria"*  y otros que directamente se `ofendieron feo`_ y dijeron que era fascista.
 
 .. raw:: html
 
