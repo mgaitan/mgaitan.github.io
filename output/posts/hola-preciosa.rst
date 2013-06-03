@@ -13,7 +13,8 @@ Hubo quienes desmerecieron la idea por "politizada_", otros que me `invitaron a 
 
 .. raw:: html
 
-    <blockquote class="twitter-tweet" lang="es"><p>@<a href="https://twitter.com/tin_nqn_">tin_nqn_</a> @<a href="https://twitter.com/damian_avila">damian_avila</a> por dios.eso es programar al gran hermano. Facismo en código</p>&mdash; JuanB. Cabral (@JuanBCabral) <a href="https://twitter.com/JuanBCabral/status/340955059607187457">1 de junio de 2013</a></blockquote>
+    <blockquote class="twitter-tweet" data-conversation="none" lang="es"><p>@<a href="https://twitter.com/tin_nqn_">tin_nqn_</a> @<a href="https://twitter.com/damian_avila">damian_avila</a> por dios.eso es programar al gran hermano. Facismo en código</p>&mdash; JuanB. Cabral (@JuanBCabral) <a href="https://twitter.com/JuanBCabral/status/340955059607187457">1 de junio de 2013</a></blockquote>
+
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Pero a la gran mayoría le pareció buena, de difundió bastante en facebook, muchos aportaron nuevas ideas para mejorarla y otros muchos se entusiasmaron en colaborar.
