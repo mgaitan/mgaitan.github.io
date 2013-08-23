@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Fortran + Windows = pesadilla^2 | "><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>  Fortran + Windows = pesadilla^2 | tin_nqn  </title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox span3">
+        <h1 id="blog-title">
+            <a href="../">tin_nqn</a>
+        </h1>
+        <h6 id="blog-description">&gt;&gt;&gt; me.geek.post()</h6>
+
+        
+        
+        
+        </div>
+    <div id="menu" class="span7 offset1">
+      <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                 / 
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                 / 
+            
+                </li><li><a href="../about.html">Sobre mí</a>
+                 / 
+            
+                </li><li><a href="../charlas.html">Charlas</a>
+                
+            
+        </li></ul></div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Fortran + Windows = pesadilla^2</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2013-08-22 20:11:45">2013-08-22 20:11:45</span>   |  
+
+        
+
+        <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/fortran-windows-pesadilla2.rst">Código</a>
+        
+    </small>
+    <!-- link: -->
+<!-- description: -->
+<!-- tags: draft -->
+<!-- date: 2013/08/22 20:11:45 -->
+<!-- title: Fortran + Windows = pesadilla^2 -->
+<!-- slug: fortran-windows-pesadilla2 -->
+<p>Hace muchísimo que no escribo en este blog y no es porque tengo <a class="reference external" href="http://www.textosypretextos.com.ar">otro</a>, sino, principalmente, porque estoy con muchísimo trabajo.</p>
+<p>Hace casi un mes dejé <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id3" id="id1">[1]</a> de trabajar en <a class="reference external" href="http://machinalis.com">Machinalis</a>, una de las empresas más pythónicamente grosas del mundo mundial <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id4" id="id2">[2]</a>, en la que inenvitablemente aprendí muchísimo
+(y eso que me esforcé ;-)), hice amigos y laburé en proyectos de una escala y complejidad a la que nunca podría haber aspirado como un "freelance <em>che pibe</em> programador".</p>
+<p>Ahora laburo fulltime (o sea: el triple) en <a class="reference external" href="http://phasety.com">Phasety</a>, el proyecto que estamos creando junto a Martín Cismondi, director de mi proyecto integrador de grado hace algunos años ("ingeniero en computación", dice el pelpa) y hoy socio. Cismondi es doctor en ingeniería
+química y uno de los especialistas más reputados en el área "equilibro de fases",
+que es, básicamente, modelar el comportamiento termodinámico de un fluido mediante algoritmos numéricos.</p>
+<p>Un poco por cierta "inercia cultural" del mundo científico (en particular en las área de química computacional) y otro poco porque sigue siendo increíblemente eficiente para rutinas de cálculo, Fortran es el lenguaje predominante en el que los tipos
+como Cismondi programan. A lo que si le sumás Windows, las bibliotecas privativas y un flujo de trabajo atado al IDE que aprendieron a "clickear" (en general, Visual Studio),
+es todo un problema.</p>
+<p>Así que parte de mi laburo es sumergirme en este escabrozo mundo y meter ingeniería de software allí donde nunca la hubo.</p>
+<p>Por suerte existe Python, pisando cada vez más fuerte en el mundo de la ciencia y la ingeniería (<a class="reference external" href="http://scipycon.com.ar/">http://scipycon.com.ar/</a>, como ejemplo). Pero, mientras seguimos minimizando
+la <a class="reference external" href="http://es.wikipedia.org/wiki/Deuda_t%C3%A9cnica">deuda técnica</a> <a class="reference external" href="http://phasety.com/1/blog/article/curso-taller-python-para-ciencia-e-ingenieria">fomentando</a> esta tecnología, hay que hacerlas convivir.</p>
+<div class="section" id="f2py-gfortran-y-lapack-en-windows">
+<h2>f2py, gfortran y lapack en Windows</h2>
+<p>Estas son notas de lo que he ido logrando hasta el momento, para armar un entorno
+de desarrollo y empaquetamiento (en lo posible, libre) de software multiplataforma basado en python y fortran.</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">work in progress.</p>
+</div>
+<table class="docutils footnote" frame="void" id="id3" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id1">[1]</a></td><td>o "terminé de dejar", porque estaba part-time desde septiembre de 2012.</td></tr></tbody></table><table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id2">[2]</a></td><td>lo de "empresa pythónica", no</td></tr></tbody></table></div>
+    <ul class="pager"></ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="http://www.textosypretextos.com.ar" title="Mi otro blog">Textos y pretextos</a>
+                    /
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>
