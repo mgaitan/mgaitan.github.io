@@ -59,7 +59,7 @@
 <!-- title: Fortran + Windows = pesadilla^2 -->
 <!-- slug: fortran-windows-pesadilla2 -->
 <p>Hace muchísimo que no escribo en este blog y no es porque tengo <a class="reference external" href="http://www.textosypretextos.com.ar">otro</a>, sino, principalmente, porque estoy con muchísimo trabajo.</p>
-<p>Hace casi un mes dejé <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id3" id="id1">[1]</a> de trabajar en <a class="reference external" href="http://machinalis.com">Machinalis</a>, una de las empresas más pythónicamente grosas del mundo mundial <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id4" id="id2">[2]</a>, en la que inenvitablemente aprendí muchísimo
+<p>Hace casi un mes dejé <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id4" id="id1">[1]</a> de trabajar en <a class="reference external" href="http://machinalis.com">Machinalis</a>, una de las empresas más pythónicamente grosas del mundo mundial <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id5" id="id2">[2]</a>, en la que inenvitablemente aprendí muchísimo
 (y eso que me esforcé ;-)), hice amigos y laburé en proyectos de una escala y complejidad a la que nunca podría haber aspirado como un "freelance <em>che pibe</em> programador".</p>
 <p>Ahora laburo fulltime (o sea: el triple) en <a class="reference external" href="http://phasety.com">Phasety</a>, el proyecto que estamos creando junto a Martín Cismondi, director de mi proyecto integrador de grado hace algunos años ("ingeniero en computación", dice el pelpa) y hoy socio. Cismondi es doctor en ingeniería
 química y uno de los especialistas más reputados en el área "equilibro de fases",
@@ -72,13 +72,79 @@ es todo un problema.</p>
 la <a class="reference external" href="http://es.wikipedia.org/wiki/Deuda_t%C3%A9cnica">deuda técnica</a> <a class="reference external" href="http://phasety.com/1/blog/article/curso-taller-python-para-ciencia-e-ingenieria">fomentando</a> esta tecnología, hay que hacerlas convivir.</p>
 <div class="section" id="f2py-gfortran-y-lapack-en-windows">
 <h2>f2py, gfortran y lapack en Windows</h2>
-<p>Estas son notas de lo que he ido logrando hasta el momento, para armar un entorno
-de desarrollo y empaquetamiento (en lo posible, libre) de software multiplataforma basado en python y fortran.</p>
-<div class="note">
-<p class="first admonition-title">Note</p>
-<p class="last">work in progress.</p>
+<div class="attention">
+<p class="first admonition-title">Attention!</p>
+<p class="last">articulo en borrador</p>
 </div>
-<table class="docutils footnote" frame="void" id="id3" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id1">[1]</a></td><td>o "terminé de dejar", porque estaba part-time desde septiembre de 2012.</td></tr></tbody></table><table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id2">[2]</a></td><td>lo de "empresa pythónica", no</td></tr></tbody></table></div>
+<p>Estas son notas de lo que he ido logrando hasta el momento, para armar un entorno
+de desarrollo y empaquetamiento (en lo posible, libre) de software multiplataforma basado en Python y Fortran.</p>
+<p>El "San Valentín" de esta pareja es <a class="reference external" href="http://www.f2py.com">f2py</a>, una biblioteca que genera los wrappers
+necesarios para convertir subrutinas (o funciones) de Fortran en módulos binarios (bibliotecas) importables desde Python.</p>
+<p>No abordo acá cómo usar f2py (aunque <a class="reference external" href="http://websrv.cs.umt.edu/isis/index.php/F2py_example">este</a> es un buen ejemplo), sino como conseguir instalarlo y usarlo para un caso no trivial.</p>
+<ol class="arabic"><li><p class="first">Instalar <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Anaconda</a>, de Continuum Analytics.</p>
+<p>Anaconda es una distribución de Python y una amplia colección de paquetes
+y bibliotecas para computación científica, que se pueden instalar con el gestor
+<tt class="docutils literal">conda</tt> (análogo a <tt class="docutils literal">pip + virtualenv</tt>) que viene incluído.</p>
+<p>Este <em>framework</em> grautuito simplifica muchísimo la instalación de un entorno
+de computación científica en Windows.</p>
+<p>La versión <a class="reference external" href="http://repo.continuum.io/miniconda/index.html">Miniconda</a> instala sólo Python y conda. Luego podemos instalar paquetes
+desde la consola (<tt class="docutils literal">cmd.exe</tt>). Por ejemplo:</p>
+<pre class="literal-block">
+$ conda install ipython numpy mingw32
+</pre>
+</li>
+<li><p class="first">Configurar gfortran</p>
+<p>A través de <tt class="docutils literal">conda</tt> puede instalarse MinGW, el conjunto herramientas GNU
+para tener un entorno de compilación basado en GCC en Windows. Esto incluye, entre otros, <a class="reference external" href="http://en.wikipedia.org/wiki/Gfortran">gfortran</a>.</p>
+<p>Anaconda wrappea <tt class="docutils literal">gfortran.exe</tt> con el archivo batch <tt class="docutils literal"><span class="pre">c:/Anaconda/Scripts/gfortran.bat</span></tt>.
+Modificarlo para que linkee estáticamente con <em>libgcc</em> y <em>libgfortran</em>. Quedaría así:</p>
+<pre class="literal-block">
+@echo off
+%~f0\..\..\MinGW\bin\gfortran.exe -static-libgcc -static-libgfortran %*
+</pre>
+</li>
+<li><p class="first">Instalar lapack y blas</p>
+<p>Aun cuando la única virtud de Fortran es ser rápido para operaciones basadas en arrays,
+<a class="reference external" href="http://www.nsc.liu.se/~boein/f77to90/a5.html">no trae</a> una biblioteca estándar incorporada de "alto nivel".</p>
+<p>Para no tener que reinventar (<em>copypastear</em>) subrutinas todo el tiempo, se linkea con bibliotecas de terceros que, en general, utilizan una API común. <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id6" id="id3">[3]</a></p>
+<p><a class="reference external" href="http://netlib.org/lapack">Lapack</a> es la más completa y mantenida biblioteca libre para algebra lineal, incluyendo rutinas de resolución de sistemas de ecuaciones lineales, factorización de matrices,
+etc. Esta se basa a su vez en BLAS
+que implementa las rutinas de más bajo nivel como rotación y producto de matrices.</p>
+<p>Todo código numérico no trivial utiliza alguna subrutina de Lapack/BLAS.</p>
+<p>Compilarlas en Windows es un lio, pero por suerte ya
+<a class="reference external" href="http://icl.cs.utk.edu/lapack-for-windows/lapack/index.html#libraries">lo hicieron otros</a>.</p>
+<p>Hay que bajar <tt class="docutils literal">libblas.dll</tt> y <tt class="docutils literal">liblapack.dll</tt> (las que correspondan para tu arquitectura) y copiarlas en
+<tt class="docutils literal"><span class="pre">c:\Anaconda\MinGW\i686-w64-mingw32\lib</span></tt> y <tt class="docutils literal"><span class="pre">c:/windows/system32</span></tt></p>
+<p>Tambien bajar <tt class="docutils literal">libblas.lib</tt> y <tt class="docutils literal">liblapack.lib</tt> y ponerlas en
+<tt class="docutils literal"><span class="pre">c:\Anaconda\libs</span></tt></p>
+</li>
+<li><p class="first">dlls en <tt class="docutils literal"><span class="pre">c:/windows/system32</span></tt></p>
+<p>Además de las bajadas, para que el programa se pueda ejecutar hace falta que Lapack encuentre las librerias de las que depende (ya que no está compilado de manera estática)</p>
+<p>Hace falta bajar <a class="reference external" href="http://sourceforge.net/projects/mingw/files/MinGW/Base/gcc/Version4/Previous%20Release%20gcc-4.4.0/gcc-core-4.4.0-mingw32-dll.tar.gz/download">gcc-core-4.4.0-mingw32-dll.tar.gz</a>, descomprimirlo y copiar <tt class="docutils literal"><span class="pre">libgcc_s_dw2-1.dll</span></tt>
+a <tt class="docutils literal"><span class="pre">c:/windows/system32</span></tt>.</p>
+<p>También habrá que copiar allí algunas dll que ya vienen
+en la instación de MinGW (buscarlas en <tt class="docutils literal"><span class="pre">c:\Anaconda\MinGW\i686-w64-mingw32\lib</span></tt>):</p>
+<pre class="literal-block">
+libgcc_s_sjlj-1.dll
+libgfortran-3.dll
+libquadmath-0.dll
+</pre>
+</li>
+<li><p class="first">Bajar libmsvcr90.a</p>
+<p>Desde <a class="reference external" href="https://github.com/enthought/vendor-mingw/blob/master/msvcrt/libmsvcr90.a?raw=true">acá</a> y ponerlo en la carpeta <tt class="docutils literal"><span class="pre">c:/Anaconda/libs/</span></tt></p>
+</li>
+<li><p class="first">Compilar</p>
+<blockquote>
+<p>$ f2py --compiler=mingw32 -llapack -m hello -c hello.f90</p>
+</blockquote>
+</li>
+<li><p class="first">Importar desde python y usar</p>
+</li>
+<li><p class="first">Brindar.</p>
+</li>
+</ol><table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id1">[1]</a></td><td>o "terminé de dejar", porque estaba part-time desde septiembre de 2012.</td></tr></tbody></table><table class="docutils footnote" frame="void" id="id5" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id2">[2]</a></td><td>lo de "empresa pythónica", no</td></tr></tbody></table><table class="docutils footnote" frame="void" id="id6" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id3">[3]</a></td><td>La <a class="reference external" href="http://software.intel.com/en-us/intel-mkl">MLK</a> de Intel es una biblioteca matemática optimizada para procesadores
+de esta firma. En la parte de algebra lineal utiliza la misma API de Lapack, pero
+no es libre y sale 500 verdes :).</td></tr></tbody></table></div>
     <ul class="pager"></ul><div id="disqus_thread"></div>
         <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>

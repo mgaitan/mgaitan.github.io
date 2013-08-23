@@ -5,6 +5,7 @@
 .. title: Fortran + Windows = pesadilla^2
 .. slug: fortran-windows-pesadilla2
 
+
 Hace muchísimo que no escribo en este blog y no es porque tengo otro_, sino, principalmente, porque estoy con muchísimo trabajo.
 
 Hace casi un mes dejé [1]_ de trabajar en Machinalis_, una de las empresas más pythónicamente grosas del mundo mundial [2]_, en la que inenvitablemente aprendí muchísimo
@@ -25,6 +26,8 @@ la `deuda técnica`_ fomentando_ esta tecnología, hay que hacerlas convivir.
 
 f2py, gfortran y lapack en Windows
 ----------------------------------
+
+.. attention:: articulo en borrador
 
 Estas son notas de lo que he ido logrando hasta el momento, para armar un entorno
 de desarrollo y empaquetamiento (en lo posible, libre) de software multiplataforma basado en Python y Fortran.
@@ -52,7 +55,7 @@ No abordo acá cómo usar f2py (aunque `este <http://websrv.cs.umt.edu/isis/inde
 2. Configurar gfortran
 
    A través de ``conda`` puede instalarse MinGW, el conjunto herramientas GNU
-   para tener un entorno de compilación basado en GCC en Windows. Esto incluye, entre otros, gfortan_.
+   para tener un entorno de compilación basado en GCC en Windows. Esto incluye, entre otros, gfortran_.
 
    Anaconda wrappea ``gfortran.exe`` con el archivo batch ``c:/Anaconda/Scripts/gfortran.bat``.
    Modificarlo para que linkee estáticamente con *libgcc* y *libgfortran*. Quedaría así::
@@ -65,10 +68,10 @@ No abordo acá cómo usar f2py (aunque `este <http://websrv.cs.umt.edu/isis/inde
    Aun cuando la única virtud de Fortran es ser rápido para operaciones basadas en arrays,
    `no trae`_ una biblioteca estándar incorporada de "alto nivel".
 
-   Para no tener que reinventar (*copypastear*) subrutinas todo el tiempo, se linkea con bibliotecas de terceros que, en general, utilizan la misma API [3]_
+   Para no tener que reinventar (*copypastear*) subrutinas todo el tiempo, se linkea con bibliotecas de terceros que, en general, utilizan una API común. [3]_
 
    Lapack_ es la más completa y mantenida biblioteca libre para algebra lineal, incluyendo rutinas de resolución de sistemas de ecuaciones lineales, factorización de matrices,
-   etc. Esta se basa a su vez en rutinas de BLAS
+   etc. Esta se basa a su vez en BLAS
    que implementa las rutinas de más bajo nivel como rotación y producto de matrices.
 
    Todo código numérico no trivial utiliza alguna subrutina de Lapack/BLAS.
@@ -89,7 +92,9 @@ No abordo acá cómo usar f2py (aunque `este <http://websrv.cs.umt.edu/isis/inde
    Además de las bajadas, para que el programa se pueda ejecutar hace falta que Lapack encuentre las librerias de las que depende (ya que no está compilado de manera estática)
 
    Hace falta bajar `gcc-core-4.4.0-mingw32-dll.tar.gz <http://sourceforge.net/projects/mingw/files/MinGW/Base/gcc/Version4/Previous%20Release%20gcc-4.4.0/gcc-core-4.4.0-mingw32-dll.tar.gz/download>`_, descomprimirlo y copiar ``libgcc_s_dw2-1.dll``
-   a ``c:/windows/system32``. También habrá que copiar allí algunas dll que ya vienen
+   a ``c:/windows/system32``.
+
+   También habrá que copiar allí algunas dll que ya vienen
    en la instación de MinGW (buscarlas en ``c:\Anaconda\MinGW\i686-w64-mingw32\lib``)::
 
      libgcc_s_sjlj-1.dll
@@ -105,10 +110,12 @@ No abordo acá cómo usar f2py (aunque `este <http://websrv.cs.umt.edu/isis/inde
 
     $ f2py --compiler=mingw32 -llapack -m hello -c hello.f90
 
-7. Probar.
+7. Importar desde python y usar
+8. Brindar.
 
-
+.. _f2py: http://www.f2py.com
 .. _no trae: http://www.nsc.liu.se/~boein/f77to90/a5.html
+.. _Anaconda: https://store.continuum.io/cshop/anaconda/
 .. _Miniconda: http://repo.continuum.io/miniconda/index.html
 .. _gfortran: http://en.wikipedia.org/wiki/Gfortran
 .. _Lapack: http://netlib.org/lapack
