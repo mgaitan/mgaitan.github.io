@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 24 Aug 2013 12:12:15 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fortran + Windows = pesadilla^2</title><link>http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html</link><description>&lt;!-- link: --&gt;
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 24 Aug 2013 12:15:21 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fortran + Windows = pesadilla^2</title><link>http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html</link><description>&lt;!-- link: --&gt;
 &lt;!-- description: --&gt;
 &lt;!-- tags: --&gt;
 &lt;!-- date: 2013/08/24 11:11:45 --&gt;
 &lt;!-- title: Fortran + Windows = pesadilla^2 --&gt;
 &lt;!-- slug: fortran-windows-pesadilla2 --&gt;
-&lt;p&gt;Hace muchísimo que no escribo en este blog y no es porque tengo &lt;a class="reference external" href="http://www.textosypretextos.com.ar"&gt;otro&lt;/a&gt;, sino, principalmente, porque estoy con muchísimo trabajo.&lt;/p&gt;
+&lt;p&gt;Hace bastante que no escribo en este blog y no es porque tengo &lt;a class="reference external" href="http://www.textosypretextos.com.ar"&gt;otro&lt;/a&gt;, sino, principalmente, porque estoy con muchísimo trabajo.&lt;/p&gt;
 &lt;p&gt;Hace casi un mes dejé &lt;a class="footnote-reference" href="/posts/fortran-windows-pesadilla2.html#id4" id="id1"&gt;[1]&lt;/a&gt; de trabajar en &lt;a class="reference external" href="http://machinalis.com"&gt;Machinalis&lt;/a&gt;, una de las empresas más pythónicamente grosas del mundo mundial &lt;a class="footnote-reference" href="/posts/fortran-windows-pesadilla2.html#id5" id="id2"&gt;[2]&lt;/a&gt;, en la que inevitablemente aprendí muchísimo
 (y eso que me esforcé ;-)), hice amigos y laburé en proyectos de una escala y complejidad a la que nunca podría haber aspirado como un "freelance &lt;em&gt;che pibe&lt;/em&gt; programador".&lt;/p&gt;
 &lt;p&gt;Ahora laburo fulltime (o sea: el triple) en &lt;a class="reference external" href="http://phasety.com"&gt;Phasety&lt;/a&gt;, el proyecto que estamos creando junto a Martín Cismondi, director de mi proyecto integrador de grado hace algunos años ("ingeniero en computación", dice el pelpa) y hoy socio. Cismondi es doctor en ingeniería
