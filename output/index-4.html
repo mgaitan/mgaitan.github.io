@@ -43,6 +43,99 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/simplecart-js-para-spip.html">SimpleCart(js) para SPIP</a>
+        <small>  
+             <span class="timeago" title="2010-09-12 13:34:44">2010-09-12 13:34:44</span>
+        </small></h1>
+        <p><a class="reference external" href="http://simplecartjs.com/">SimpleCart</a> es un sistema para e-commerce
+muy sencillo íntegramente desarrollado en javascript. Permite realizar
+ventas mediante PayPal o Google Checkout y es muy extensible para
+implementar otros sistemas.</p>
+<p>En este domingo de procrastinación, decidí integrarlo a SPIP
+[<a class="reference external" href="blog/article/simplecart-js-para-spip#nb1">1</a>]. Lo usaré, espero que
+pronto, para vender los productos del <a class="reference external" href="http://www.agrupacionmazamorra.org.ar/taller-de-serigrafia-30">taller de serígrafía de
+Mazamorra</a>.</p>
+<div class="section" id="como-funciona">
+<h2>Cómo funciona</h2>
+<p>Se instala como un plugin común y se configura mediante el plugin CFG.
+Por ahora sólo soporta PayPal como medio de pago, pero incluiré otros.</p>
+<p>SimpleCart usa simples señaladores html, que yo he convertido en
+balizas.</p>
+<p>Baliza
+Descripción
+#SIMPLECART_QUANTITY
+Indica la cantidad de productos
+#SIMPLECART_ITEMS
+Muestra los items en el carrito según las cabeceras definidas en la
+página de configuración
+#SIMPLECART_TAX_RATE
+Indica la tasa impositiva indicada en la configuración
+#SIMPLECART_TAX_COST
+Indica el total de impuestos
+#SIMPLECART_SHIPPING_COST
+Indica el costo de envío en función de la configuración definida
+#SIMPLECART_TOTAL
+La suma del precio de los productos en el carrito (Subtotal)
+#SIMPLECART_FINAL_TOTAL
+Total considerando impuestos y envío
+#SIMPLECART_CHECKOUT
+Genera el botón para finalizar compra (redirige al sistema de pago)
+#SIMPLECART_EMPTY
+Genera el botón para vaciar el carrito
+Con estas balizas puedes armar el carrito en cualquier lado. Los datos
+del carritos son persistentes usando cookies (incluso se conservan
+durante un tiempo aunque se abandone la página).</p>
+<p>Por ejemplo, este puede ser tu carrito .</p>
+<pre class="literal-block">
+&lt;:simplecart:your_cart:&gt; (#SIMPLECART_QUANTITY items)
+
+#SIMPLECART_ITEMS
+
+
+&lt;:simplecart:subtotal:&gt;: #SIMPLECART_TOTAL&lt;:simplecart:tax_cost:&gt; (#SIMPLECART_TAX_RATE): #SIMPLECART_TAX_COST &lt;:simplecart:shipping_cost:&gt;:  #SIMPLECART_SHIPPING_COST &lt;:simplecart:final_total:&gt;: #SIMPLECART_FINAL_TOTAL
+
+#SIMPLECART_CHECKOUT
+#SIMPLECART_EMPTY
+</pre>
+</div>
+<div class="section" id="como-agregar-productos">
+<h2>Cómo agregar productos</h2>
+<p>Muy simple. Se sube una imágen como documento definiendo su título y
+descripción y se la incrusta con el modelo <em>item</em>. El precio se indica
+con el parámetro <em>price</em>.</p>
+<p>Por ejemplo, el documento 111 se vuelve un item si se lo incluye así</p>
+<p><tt class="docutils literal">&lt;item111|price=23.4&gt;</tt></p>
+</div>
+<div class="section" id="un-atajo-mas">
+<h2>Un atajo más</h2>
+<p>El código para el carrito de arriba lo incluí como un modelo para poder
+incrustarlo directamente desde la redacción de un artículo con
+<a href="posts/simplecart-js-para-spip.html#id2"><span class="problematic" id="id3">``</span></a>&lt;cart1&gt; <a href="posts/simplecart-js-para-spip.html#id4"><span class="problematic" id="id5">``</span></a>.</p>
+<div class="system-message" id="id2">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 73); <em><a href="posts/simplecart-js-para-spip.html#id3">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<div class="system-message" id="id4">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 73); <em><a href="posts/simplecart-js-para-spip.html#id5">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+</div>
+<div class="section" id="demostracion">
+<h2>Demostración</h2>
+<p>Si alguien completa la transacción, lo interpretaré como una donación
+:D.</p>
+</div>
+<div class="section" id="descarga">
+<h2>Descarga</h2>
+<p>El plugin está en desarrollo sobre
+<a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart">spip-zone</a>.
+Podés hacer un ckeckout SVN</p>
+</div>
+        <p>
+        
+            <a href="posts/simplecart-js-para-spip.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/modelos-de-negocio-floss-la.html">Modelos de negocio FLOSS, la universidad, el sector privado y el Estado</a>
         <small>  
              <span class="timeago" title="2010-08-26 13:19:19">2010-08-26 13:19:19</span>
@@ -900,144 +993,6 @@ No sólo de la técnica vive el hombre.</p>
         <p>
         
             <a href="posts/hemisferio-derecho.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/monetizar-pagos-virtuales-en.html">Monetizar pagos virtuales en Argentina sin costo</a>
-        <small>  
-             <span class="timeago" title="2009-12-02 15:34:05">2009-12-02 15:34:05</span>
-        </small></h1>
-        <p>Para los trabajadores online freelance (programadores, diseñadores,
-traductores, etc) trabajar para el exterior es un objetivo primordial.
-Aunque en algunos sectores la competencia es leonina y se pauperizan los
-honorarios, el tipo de cambio del peso respecto a otra monedas fuertes
-hace que siga siendo muy provechoso.</p>
-<p>En traducción, que tiene un sistema de presupuesto lineal basado en
-cantidad de palabras del texto del idioma origen, es fácil cuantificar
-la diferencia. En Argentina se cobra entre $0,10 y $0,15 (pesos
-argentinos) por palabra, mientras que en europa se cobra entre 0.05 € y
-0.07€. O sea, se gana hasta el triple por realizar el mismo trabajo.</p>
-<p>El problema, al menos desde Argentina, es cobrar. Aquí comparto mi
-experiencia esperando ayudar a otros.</p>
-<div class="section" id="de-adsense-a-la-billetera">
-<h2>De Adsense a la billetera</h2>
-<p><img alt="image0" src="images/google-adsenf60e-93be1.jpg">
-Una forma simple y rápida pero bastante onerosa es <a class="reference external" href="http://www.westernunion.com">Western
-Union</a>. Es un servicio de transferencias
-de dinero persona a persona (física o jurídica), con sedes en casi todo
-el mundo. Tiene dos tipos de servicio: Quick Cash y 24 horas.</p>
-<p>Western Union tiene multiples instancias de lucro, que lo vuelven un
-ser. Se le cobra entre el 2.5 y 5% al emisor (desde Europa a Argentina
-el límite de transferencia es 500€) y además, el receptor cobra en
-moneda local a un tipo de cambio definido por WU que siempre está entre
-un 3 y 6% por debajo del tipo de cambio del dia. Sobre todo los días que
-hay corridas en suba, el tipo de cambio queda desfasado (tiene una
-actualización muy lenta) y es un mal momento para cobrar.</p>
-<p><img alt="image1" src="images/Western-Unioa5aa-91e5e.jpg">
-Existe una forma de salvar este cargo solapado para el receptor: si el
-envío es tipo Quick Cash y en dólares estadounidenses, se puede retirar
-en dólares en los locales Western Union de los supermercados <strong>Walmart</strong>
-(que es el representante oficial de WU en Argentina). Este servicio no
-tiene costo para el receptor.</p>
-<p>Esto es muy útil para quienes utilizan <strong>Google Adsense</strong> en sus sitios
-web, ya que Google ofrece este servicio de pago. Basta anotar el número
-de transferencia (MCU) y documento en mano aclarar en Wester Union de
-Walmart que queremos cobrar en dólares.</p>
-<p>Mucho más fácil, rápido y sin perder un sope que pedir el cheque y
-venderlo en una financiera.</p>
-</div>
-<div class="section" id="cobrar-del-extranjero">
-<h2>Cobrar del extranjero</h2>
-<p><img alt="image2" src="images/paypal_logog8b6f-21423.gif">
-Internacionalmente está casi estandarizado el uso de
-<a class="reference external" href="http://www.paypal.com">Paypal</a> como medio de pago de honorarios (y
-casi cualquier otro tipo de transacción en internet) pero este sistema
-no tiene integración con el sistema bancario argentino lo cual complica
-la tarea de monetizar los fondos.</p>
-<p>Además, un usuario no puede cargar crédito a su cuenta paypal con una
-tarjeta de crédito, aunque esta sea válida internacionalmente. Un
-detalle que complica a quienes quieren comprar o donar en el extranjero.</p>
-<p>Sin embargo, Paypal sigue siendo interesante para todos los que
-necesitamos cobrar desde el extranjero. Además de facilitarle la vida al
-emisor (cliente) que seguramente ya está acostumbrado a este sistema,
-<strong>la transferencia entre cuentas paypal personales no tiene costo</strong>.
-Esto significa que si el cliente tiene una cuenta paypal con fondos (que
-en la mayoría de los paises pudo haber cargado con tarjeta o desde su
-cuenta bancaria sin costo) la transacción total es gratuita. Además, la
-operación es instantánea.</p>
-<p>Si el cliente envia el dinero a través de paypal pero habiendolo cargado
-desde una cuenta bancaria o tarjeta de crédito específicamente para
-dicha transacción, el costo de la operanción es 3,4% + 0,30 USD. El
-emisor decide quien abona este cargo.</p>
-<p>Una observación importante es que predeterminadamente las cuentas PayPal
-son en una moneda principal (en dólares estadounidenses para Argentina)
-y al recibir un pago en otra moneda (euros, por ejemplo) la conversión
-de divisa se realiza al tipo de cambio del día con una retención del
-2.5%. El tipo de cambio es actualizado 2 veces por día.</p>
-<p>Una sólución es abrir cuentas en distintas monedas. En vez de convertir
-el pago a la divisa principal, se mantiene en nuestra cuenta en la
-moneda en que se recibió. Cuando necesitamos realizar un pago o
-transferencia en esta moneda, nos ahorraremos tener que reconvertirla
-nuevamente (ahorrando un 5% en total). Claro que a la hora de monetizar
-los fondos se deberán convertir, pero esto se puede hacer en cualquier
-momento que creamos conveniente.</p>
-<p>Paypal aclara que ofrece este servicio (Multiples divisas) para
-facilitar el comercio electrónico internacional y no debe utilizarse con
-fines especulativos. Pero los timberos decidirán.</p>
-</div>
-<div class="section" id="de-paypal-a-la-billetera">
-<h2>De Paypal a la billetera</h2>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="images/logo_xoomgif23e5.gif">|image4|</a></td>
-</tr></tbody></table><p>Pero, como decía un amigo, la plata no es plata hasta que no sirve para
-comprar fernet en la despensa.</p>
-<p>Como dije más arriba, no se puede asociar una cuenta bancaria argentina
-una cuenta Paypal (ni para añadir ni para retirar fondos). Esto deja
-como única alternativa oficial para retirar fondos el envio de un
-cheque.</p>
-<p>Paypal envia un cheque via correo postal certificado por el monto que
-solicitemos con un costo de u$s 15 fijo, independientemente del monto
-retirado. El envío para Argentina se realiza a través de Ocasa, y tiene
-una demora aproximada de 10 días hábiles.</p>
-<p>El problema es que este cheque tampoco se puede cobrar en ningún banco,
-por lo que hay que venderlo en una financiera o agencia de viajes, que
-cobran una comisión de entre el 2 y el 5%.</p>
-<p>Por suerte existe <a class="reference external" href="http://www.xoom.com">xoom.com</a>. Es un servicio de
-transferencia de dinero que intenta competir con Western Union, pero a
-diferencia de este, la operación se realiza únicamente online, el
-destino puede ser una cuenta bancaria argentina o efectivo en pesos o
-dólares, y, hete aquí la clave, <a href="posts/monetizar-pagos-virtuales-en.html#id1"><span class="problematic" id="id2">**</span></a>el origen de los fondos puede ser una
-cuenta Paypal. **</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 118); <em><a href="posts/monetizar-pagos-virtuales-en.html#id2">backlink</a></em></p>
-Inline strong start-string without end-string.</div>
-<p>Problema solucionado: nos hacemos una transferencia a nosotros mismos,
-retirando fondos de Paypal y enviandolos a nuestra cuenta bancaria, o
-mejor, en dólares que se cobran en cualquier sucursal de Banco Francés.</p>
-<p>A diferencia de Wester Union, los cargos de servicio no son porcentuales
-fijos sino que <a class="reference external" href="https://www.xoom.com/sendmoneynow/money-transfer-fees">están tabulados en
-rangos</a> del
-monto enviado lo que significa un ahorro considerable en montos grandes.
-Para cifras montos menores a u$s500, el costo de servicio ronda le 4.5%</p>
-<p><img alt="image5" src="images/Banco-Francecef9-62220.jpg">
-Además hay que considerar que al cobrar en pesos, Xoom realiza una
-conversión de divisa a un tipo de cambio que, al igual que Wester Union,
-está un par de puntos por debajo de la cotización de mercado. La opción
-de cobrar en dolares evita esta pérdida, pero tiene un cargo de servicio
-un 40% mayor, lo que significa un costo de operación real del más de 6%.</p>
-<p><img alt="image6" src="images/RMNlogopng-33050-8dd22.jpg">
-Pero hay una forma de salvar esta plata, que convertida a pesos
-seguramente significarán varios fernés: <strong>conseguir un código de
-descuento</strong>. <a class="reference external" href="http://www.retailmenot.com/view/xoom.com">Retailmenot</a>
-suele tener cupones válidos, ¡de hasta el 100%!</p>
-<p>Conclusión: si cobramos desde Paypal (entre cuentas personales) y
-retiramos los fondos a través de Xoom.com en dólares consiguiendo un
-cupón del 100%, tendremos toda nuestra platita en el bolsillo, en
-dólares y sin perder nada en el camino.</p>
-</div>
-        <p>
-        
-            <a href="posts/monetizar-pagos-virtuales-en.html#disqus_thread">Comments</a>
         
         </p></div>
     

@@ -43,6 +43,76 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/el-numero-mi-primer-juego.html">El Número, mi primer juego</a>
+        <small>  
+             <span class="timeago" title="2009-04-24 18:37:28">2009-04-24 18:37:28</span>
+        </small></h1>
+        <p>Para suscribirse a la lista de
+<a class="reference external" href="http://python.org.ar/pyar/ListaDeCorreo">Pyar</a>, una de las tareas
+(opcional, pero muy bienvenida) es enviar tu "Hola Mundo".</p>
+<p>El 17 de enero de 2007 yo me suscribí y mandé el siguiente mensaje.</p>
+<blockquote>
+<p>Estimada gente:</p>
+<p>Cumpliendo solemnemente con el paso 2 de las indicaciones de
+suscripción a la lista, haciendo alarde de mi nerdismo, les dejo mi
+"hola mundo" (mi primero programa en python!). Se trata de humilde
+juego via consola que implemento en cada lenguaje en el que intento
+incursionar. Hete aqui:</p>
+<p>Dicha sea la verdad: vengo con muchas ganas de aprender, y por ahora
+muy poco que aportar (pago solidaridad con sinceridad).</p>
+<p>Decidir aprender un nuevo lenguaje es una gran decisión y creo que
+no me he equivocado con mi elección. Es que son mis primeros pinitos
+en la programación orientada a objetos, y aunque la facu exige Java
+(pero no enseña Java), creo que Python es una herramienta mucho mas
+versatil, accesible y apropiada para el nivel de software que tengo
+intención/necesidad de desarrollar.</p>
+<p>Ahora la parte aburrida. Me llamo Martin, soy de Neuquen y estudio
+Ingenieria en computacion en Cordoba. Soy programador PHP (uno del
+montón, que bah) y en particular laburo con un CMS/framework llamado
+<a class="reference external" href="http://www.spip.net">SPIP</a>, que me da de comer y beber. Tengo un
+weblog, aunque no sobre cuestiones técnicas.
+<a class="reference external" href="http://www.textosypretextos.com.ar">www.textosypretextos.com.ar</a>
+. Y lo más importante: soy hincha de boca.</p>
+<p>saludos desde Neuquén a 32ºC. (quien dijo que en el sur hace frio?)</p>
+<p>Martín</p>
+</blockquote>
+<p>Mi "Hola Mundo" fue <strong>El Número</strong>.</p>
+<div class="section" id="mi-primer-juego">
+<h2>Mi primer juego</h2>
+<p>El Número es un juego de lógica y habilidad mental. Consiste en
+encontrar el número escondido (generado aleatoriamente) a través de la
+información</p>
+<p>que brinda la máquina en cada intento. El número escondido tiene 4
+cifras no repetidas.</p>
+<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un digito <em>’bien’</em> significa que el hay un acierto en número y
+posición.</p>
+<p><img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un digito <em>’regular’</em> significa que el digito existe en el
+número incógnita, pero no está en la posición correcta.</p>
+<p>Por ejemplo si el numero incógnita fuese el 1234 y se arriesga el 2031
+el resultado será de dos dígitos regulares (el 2 y el 1) y 1 dígito bien
+(el 3).</p>
+</div>
+<div class="section" id="descarga-e-instrucciones">
+<h2>Descarga e instrucciones</h2>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/elnumero.py-3.zip">|image3|</a></td>
+</tr><tr><td>El Número Martín Gaitán - Enero de 2007</td>
+</tr></tbody></table><p>Sobre Linux podés copiar y pegar este listado de comandos en la consola:</p>
+<pre class="literal-block">
+wget http://nqnwebs.com/IMG/zip/elnumero.py-3.zip
+unzip elnumero.py-3.zip
+chmod +x ./elnumero.py
+./elnumero.py
+</pre>
+<p>Sobre Windows, asegurate tener instalado Python (cualquier versión
+elnumero.py</p>
+</div>
+        <p>
+        
+            <a href="posts/el-numero-mi-primer-juego.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/charla-ser-freelance-como-trabajar.html">Charla "Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa"</a>
         <small>  
              <span class="timeago" title="2009-04-22 12:58:20">2009-04-22 12:58:20</span>
@@ -627,51 +697,6 @@ Argentina, en 2007.</p>
         <p>
         
             <a href="posts/una-introduccion-a-python.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/c-automatico.html">© automático</a>
-        <small>  
-             <span class="timeago" title="2009-03-07 17:28:08">2009-03-07 17:28:08</span>
-        </small></h1>
-        <p>Más por costumbre que utilidad solemos poner la antigüedad de un sitio
-web al pie de página, asociado al símbolo ©, o (cc) si usamos <a class="reference external" href="http://es.wikipedia.org/wiki/Creative_Commons">Creative
-Commons</a>.</p>
-<p>En el 2007 hicimos el sitio, y en este 2009 todavía muestra.</p>
-<blockquote>
-© 2007</blockquote>
-<p>¡Muy feo! Aunque no hayamos actualizado el sitio desde entonces, nuestro
-deber, como buenos mentirosos, es lograr que el visitante no se entere.</p>
-<p>Así que podemos hacer que el año, o el período <strong>Año inicio - Año
-actual</strong> se actualice automáticamente.</p>
-<p>Muy simple:</p>
-<pre class="literal-block">
-© &lt;BOUCLE_yearbegin(ARTICLES){par date}{0,1}&gt;
-    #SET{year, #DATE|annee} #GET{year}
-  &lt;/BOUCLE_yearbegin&gt;
-[(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]
-</pre>
-<div class="section" id="explicacion">
-<h2>Explicación</h2>
-<ul class="simple"><li>Por convención, asumimos que el año de inicio del sitio es el año del
-primer artículo publicado, lo cual a mi me suena bastante lógico.</li>
-<li>Un bucle recupera esta información, la muestra y a la vez la
-guarda en una variable spip <tt class="docutils literal">#SET{year, #DATE|annee}</tt>.</li>
-<li>Fuera del bucle comparamos el año ya mostrado con el actual,
-obtenida de la baliza <tt class="docutils literal">#DATE</tt> sin contexto. Si son iguales,
-no se muestra nada más (para que no quede algo como
-<strong>© 2009 - 2009</strong>, que quedaría bien feo).
-Pero si son distintos, se muestra el año actual</li>
-</ul><p>El resultado, será:</p>
-<blockquote>
-© 2007 - 2009</blockquote>
-<p>Y si la lógica o el reloj del servidor no fallan, en cada año nuevo se
-incrementará el año final del período sin que toquemos una línea de código.</p>
-</div>
-        <p>
-        
-            <a href="posts/c-automatico.html#disqus_thread">Comments</a>
         
         </p></div>
     

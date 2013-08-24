@@ -1,5 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Thu, 22 Aug 2013 22:01:48 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hola Preciosa</title><link>http://mgaitan.github.com/posts/hola-preciosa.html</link><description>&lt;!-- link: --&gt;
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 24 Aug 2013 11:53:39 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fortran + Windows = pesadilla^2</title><link>http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html</link><description>&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;!-- tags: --&gt;
+&lt;!-- date: 2013/08/24 11:11:45 --&gt;
+&lt;!-- title: Fortran + Windows = pesadilla^2 --&gt;
+&lt;!-- slug: fortran-windows-pesadilla2 --&gt;
+&lt;p&gt;Hace muchísimo que no escribo en este blog y no es porque tengo &lt;a class="reference external" href="http://www.textosypretextos.com.ar"&gt;otro&lt;/a&gt;, sino, principalmente, porque estoy con muchísimo trabajo.&lt;/p&gt;
+&lt;p&gt;Hace casi un mes dejé &lt;a class="footnote-reference" href="/posts/fortran-windows-pesadilla2.html#id4" id="id1"&gt;[1]&lt;/a&gt; de trabajar en &lt;a class="reference external" href="http://machinalis.com"&gt;Machinalis&lt;/a&gt;, una de las empresas más pythónicamente grosas del mundo mundial &lt;a class="footnote-reference" href="/posts/fortran-windows-pesadilla2.html#id5" id="id2"&gt;[2]&lt;/a&gt;, en la que inenvitablemente aprendí muchísimo
+(y eso que me esforcé ;-)), hice amigos y laburé en proyectos de una escala y complejidad a la que nunca podría haber aspirado como un "freelance &lt;em&gt;che pibe&lt;/em&gt; programador".&lt;/p&gt;
+&lt;p&gt;Ahora laburo fulltime (o sea: el triple) en &lt;a class="reference external" href="http://phasety.com"&gt;Phasety&lt;/a&gt;, el proyecto que estamos creando junto a Martín Cismondi, director de mi proyecto integrador de grado hace algunos años ("ingeniero en computación", dice el pelpa) y hoy socio. Cismondi es doctor en ingeniería
+química y uno de los especialistas más reputados a nivel mundial en el área "equilibro de fases", que es, básicamente, modelar el comportamiento termodinámico de un fluido mediante algoritmos numéricos.&lt;/p&gt;
+&lt;p&gt;Un poco por cierta "inercia cultural" del mundo científico (en particular en las área de química computacional) y otro poco porque sigue siendo increíblemente eficiente para rutinas de cálculo, Fortran es el lenguaje predominante en el que los tipos
+como Cismondi programan. A lo que si le sumás Windows, las bibliotecas privativas y un flujo de trabajo atado al IDE que aprendieron a "clickear" (en general, Visual Studio),
+es todo un problema.&lt;/p&gt;
+&lt;p&gt;Así que parte de mi laburo es sumergirme en este escabrozo mundo y meter ingeniería de software allí donde nunca la hubo.&lt;/p&gt;
+&lt;p&gt;Por suerte existe Python, pisando cada vez más fuerte en el mundo de la ciencia y la ingeniería (&lt;a class="reference external" href="http://scipycon.com.ar/"&gt;http://scipycon.com.ar/&lt;/a&gt;, como ejemplo). Pero, mientras seguimos minimizando
+la &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Deuda_t%C3%A9cnica"&gt;deuda técnica&lt;/a&gt; &lt;a class="reference external" href="http://phasety.com/1/blog/article/curso-taller-python-para-ciencia-e-ingenieria"&gt;fomentando&lt;/a&gt; esta tecnología, hay que hacerlas convivir.&lt;/p&gt;
+&lt;div class="section" id="f2py-gfortran-y-lapack-en-windows"&gt;
+&lt;h2&gt;f2py, gfortran y lapack en Windows&lt;/h2&gt;
+&lt;p&gt;Estas son notas de lo que he ido logrando hasta el momento en el intento de armar un entorno de desarrollo y empaquetamiento (en lo posible, libre) de software multiplataforma basado en Python y Fortran.&lt;/p&gt;
+&lt;p&gt;Como se sabe, el "San Valentín" de esta pareja es &lt;a class="reference external" href="http://www.f2py.com"&gt;f2py&lt;/a&gt;, una herramienta que genera los wrappers necesarios para convertir subrutinas (o funciones) de Fortran en módulos binarios (bibliotecas) importables desde Python.&lt;/p&gt;
+&lt;p&gt;No abordo acá los detalles de cómo usar f2py (aunque &lt;a class="reference external" href="http://websrv.cs.umt.edu/isis/index.php/F2py_example"&gt;este&lt;/a&gt; es un buen ejemplo), sino cómo conseguir que funcione para un ejemplo no trivial en windows, compilando con gfortran y linkeando con la biblioteca Lapack.&lt;/p&gt;
+&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Instalar &lt;a class="reference external" href="https://store.continuum.io/cshop/anaconda/"&gt;Anaconda&lt;/a&gt;, de Continuum Analytics.&lt;/p&gt;
+&lt;p&gt;Anaconda es una distribución de Python y una amplia colección de paquetes
+y bibliotecas para computación científica, que se pueden instalar con el gestor
+&lt;tt class="docutils literal"&gt;conda&lt;/tt&gt; (análogo a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt; + pip + virtualenv&lt;/tt&gt;) que viene incluído.&lt;/p&gt;
+&lt;p&gt;Este &lt;em&gt;framework&lt;/em&gt; gratuito simplifica muchísimo la instalación de un entorno
+de computación científica en Windows.&lt;/p&gt;
+&lt;p&gt;La versión &lt;a class="reference external" href="http://repo.continuum.io/miniconda/index.html"&gt;Miniconda&lt;/a&gt; instala sólo Python y conda. Luego podemos instalar paquetes
+desde la consola (&lt;tt class="docutils literal"&gt;cmd.exe&lt;/tt&gt;). Por ejemplo:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ conda install ipython numpy mingw32
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Configurar gfortran&lt;/p&gt;
+&lt;p&gt;A través de &lt;tt class="docutils literal"&gt;conda&lt;/tt&gt; puede instalarse MinGW, el conjunto herramientas GNU
+para tener un entorno de compilación basado en GCC en Windows. Esto incluye, entre otros, &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Gfortran"&gt;gfortran&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Anaconda wrappea &lt;tt class="docutils literal"&gt;gfortran.exe&lt;/tt&gt; con el archivo batch &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:/Anaconda/Scripts/gfortran.bat&lt;/span&gt;&lt;/tt&gt;.
+Modificarlo para que linkee estáticamente con &lt;em&gt;libgcc&lt;/em&gt; y &lt;em&gt;libgfortran&lt;/em&gt;. Quedaría así:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+@echo off
+%~f0\..\..\MinGW\bin\gfortran.exe -static-libgcc -static-libgfortran %*
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;div class="tip"&gt;
+&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;p class="last"&gt;podés bajar todos los archivos mencionados desde el paso 3 al 5
+(para 32bits) desde &lt;a class="reference external" href="https://docs.google.com/file/d/0Bx300vaUNYn1cDVva0FGaEFQTFE/edit?usp=sharing"&gt;este zip&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol class="arabic" start="3"&gt;&lt;li&gt;&lt;p class="first"&gt;Instalar lapack y blas&lt;/p&gt;
+&lt;p&gt;Aún cuando la única virtud de Fortran es ser eficiente para operaciones basadas en arrays, &lt;a class="reference external" href="http://www.nsc.liu.se/~boein/f77to90/a5.html"&gt;no trae&lt;/a&gt; una biblioteca estándar incorporada de "alto nivel".&lt;/p&gt;
+&lt;p&gt;Para no tener que reinventar (&lt;em&gt;"copypastear"&lt;/em&gt;) subrutinas todo el tiempo, se linkea con bibliotecas de terceros que, en general, utilizan una nomenclatura común para las
+signaturas. &lt;a class="footnote-reference" href="/posts/fortran-windows-pesadilla2.html#id6" id="id3"&gt;[3]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://netlib.org/lapack"&gt;Lapack&lt;/a&gt; es la más completa y mantenida biblioteca libre para álgebra lineal, incluyendo rutinas de resolución de sistemas de ecuaciones lineales, factorización de matrices,
+etc. Se basa a su vez en la biblioteca BLAS
+que implementa las rutinas de más bajo nivel como rotación y producto de matrices.&lt;/p&gt;
+&lt;p&gt;Todo código numérico no trivial utiliza alguna subrutina de Lapack/BLAS.&lt;/p&gt;
+&lt;p&gt;Compilarlas en Windows es un lio, pero por suerte ya
+&lt;a class="reference external" href="http://icl.cs.utk.edu/lapack-for-windows/lapack/index.html#libraries"&gt;lo hicieron otros&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Hay que bajar &lt;tt class="docutils literal"&gt;libblas.dll&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;liblapack.dll&lt;/tt&gt; (las que correspondan para tu arquitectura) y copiarlas en
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:\Anaconda\MinGW\i686-w64-mingw32\lib&lt;/span&gt;&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:/windows/system32&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Tambien bajar &lt;tt class="docutils literal"&gt;libblas.lib&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;liblapack.lib&lt;/tt&gt; y ponerlas en
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:\Anaconda\libs&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;dlls en &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:/windows/system32&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Además de las bajadas, para que el programa se pueda ejecutar hace falta que Lapack encuentre las librerias de las que depende (ya que no está compilado de manera estática)&lt;/p&gt;
+&lt;p&gt;Hace falta bajar &lt;a class="reference external" href="http://sourceforge.net/projects/mingw/files/MinGW/Base/gcc/Version4/Previous%20Release%20gcc-4.4.0/gcc-core-4.4.0-mingw32-dll.tar.gz/download"&gt;gcc-core-4.4.0-mingw32-dll.tar.gz&lt;/a&gt;, descomprimirlo y copiar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;libgcc_s_dw2-1.dll&lt;/span&gt;&lt;/tt&gt;
+a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:/windows/system32&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;También habrá que copiar allí algunas dll que ya vienen
+en la instación de MinGW (buscarlas en &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:\Anaconda\MinGW\i686-w64-mingw32\lib&lt;/span&gt;&lt;/tt&gt;):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+libgcc_s_sjlj-1.dll
+libgfortran-3.dll
+libquadmath-0.dll
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Bajar libmsvcr90.a&lt;/p&gt;
+&lt;p&gt;Desde &lt;a class="reference external" href="https://github.com/enthought/vendor-mingw/blob/master/msvcrt/libmsvcr90.a?raw=true"&gt;acá&lt;/a&gt; y ponerlo en la carpeta &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:/Anaconda/libs/&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Listo! Si todo salió bien, ya podés compilar en windows modulos python
+implementados en fortran&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;Como ejemplo,  podés probar con esta subrutina que hace lo mismo que
+&lt;tt class="docutils literal"&gt;numpy.linalg.solve&lt;/tt&gt; (resolver un sistema lineal Ax=b), basada en la rutina &lt;tt class="docutils literal"&gt;SGESV&lt;/tt&gt;
+de lapack (para simple precisión).&lt;/p&gt;
+&lt;pre class="code fortran literal-block"&gt;
+&lt;span class="k"&gt;subroutine &lt;/span&gt;&lt;span class="nv"&gt;solve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;implicit none&lt;/span&gt;
+
+    &lt;span class="c"&gt;! solving the matrix equation A*x=b using LAPACK
+&lt;/span&gt;    &lt;span class="c"&gt;! declarations, notice single precision
+&lt;/span&gt;    &lt;span class="kt"&gt;real&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;dimension&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="k"&gt;intent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;in&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kd"&gt;::&lt;/span&gt; &lt;span class="nv"&gt;A&lt;/span&gt;
+    &lt;span class="kt"&gt;real&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;dimension&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="k"&gt;intent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;in&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kd"&gt;::&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+    &lt;span class="kt"&gt;real&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;dimension&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="k"&gt;intent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;out&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kd"&gt;::&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt;
+
+    &lt;span class="kt"&gt;integer&lt;/span&gt; &lt;span class="kd"&gt;::&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;j&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;pivot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nv"&gt;ok&lt;/span&gt;
+
+    &lt;span class="kt"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;intent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;in&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kd"&gt;::&lt;/span&gt; &lt;span class="nv"&gt;n&lt;/span&gt;
+
+    &lt;span class="c"&gt;! find the solution using the LAPACK routine SGESV
+&lt;/span&gt;    &lt;span class="k"&gt;call &lt;/span&gt;&lt;span class="nv"&gt;SGESV&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;pivot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c"&gt;! copy the vector x
+&lt;/span&gt;    &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+
+&lt;span class="k"&gt;end subroutine&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Lo guardamos en un archivo llamado &lt;tt class="docutils literal"&gt;linalg.f90&lt;/tt&gt; y compilamos:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ f2py --compiler=mingw32 -llapack -m linalg -c linalg.f90
+&lt;/pre&gt;
+&lt;p&gt;Se creeará un archivo &lt;tt class="docutils literal"&gt;linalg.pyd&lt;/tt&gt; que es importable desde Python.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;linalg&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;solve&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;solve&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;
+&lt;span class="n"&gt;Type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;       &lt;span class="n"&gt;fortran&lt;/span&gt;
+&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;Form&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;fortran&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;Docstring&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;solve&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Function&lt;/span&gt; &lt;span class="n"&gt;signature&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;solve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,[&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;Required&lt;/span&gt; &lt;span class="n"&gt;arguments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt; &lt;span class="n"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'f'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;bound&lt;/span&gt;
+  &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt; &lt;span class="n"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'f'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;bound&lt;/span&gt;
+&lt;span class="n"&gt;Optional&lt;/span&gt; &lt;span class="n"&gt;arguments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;
+&lt;span class="n"&gt;Return&lt;/span&gt; &lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'f'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;bounds&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;2.5&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;2.5&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;solve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.19565217&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mf"&gt;0.47826087&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;float32&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Que es lo mismo que&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linalg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;solve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.19565217&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mf"&gt;0.47826087&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;¡Salud!&lt;/p&gt;
+&lt;div class="note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;por supuesto, queda resolver lo del IDE (especialmente el debugger)
+sin el cual los cientificosprogramadores Fortran se quedan rengos.
+Cualquier recomendación es bienvenida.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/fortran-windows-pesadilla2.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;o "terminé de dejar", porque estaba part-time desde septiembre de 2012.&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/fortran-windows-pesadilla2.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;lo de "empresa pythónica", lo digo &lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0020/"&gt;en serio&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id6" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/fortran-windows-pesadilla2.html#id3"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;La &lt;a class="reference external" href="http://software.intel.com/en-us/intel-mkl"&gt;MLK&lt;/a&gt; de Intel es una biblioteca matemática optimizada para procesadores
+de esta firma. En la parte de algebra lineal utiliza la misma API de Lapack, pero
+no es libre y sale 500 verdes :).&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html</guid><pubDate>Sat, 24 Aug 2013 11:11:45 GMT</pubDate></item><item><title>Hola Preciosa</title><link>http://mgaitan.github.com/posts/hola-preciosa.html</link><description>&lt;!-- link: --&gt;
 &lt;!-- description: --&gt;
 &lt;!-- tags: preciosa, ideas --&gt;
 &lt;!-- date: 2013/06/02 20:54:17 --&gt;
@@ -900,93 +1053,4 @@ que cortarlo a la mitad lo hacen sin dudar.
 Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
 brazo.&lt;/blockquote&gt;
 &lt;p&gt;Querido Guayaquil: prometo visitar tu Malecón la próxima,
-&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item><item><title>Notas rápidas de una mudanza</title><link>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;!-- title: Notas rápidas de una mudanza --&gt;
-&lt;!-- slug: notas-rapidas-de-una-mudanza --&gt;
-&lt;!-- date: 2012/10/14 19:23:44 --&gt;
-&lt;!-- tags: nikola, spip, migration tools --&gt;
-&lt;!-- link: --&gt;
-&lt;!-- description: --&gt;
-&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
-tratar de que se vea un poco más bonito.&lt;/p&gt;
-&lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
-&lt;div class="section" id="github-nikola"&gt;
-&lt;h2&gt;Github ♥ Nikola&lt;/h2&gt;
-&lt;p&gt;Este blog que estás leyendo está hospedado en &lt;a class="reference external" href="http://pages.github.com"&gt;Github Pages&lt;/a&gt; ,
-el servicio de hosting gratuito de contenido estático que ofrece Github.&lt;/p&gt;
-&lt;p&gt;A diferencia de cuando se usa Gh-pages para proyectos, donde se sirve
-el contenido del branch &lt;em&gt;gh-page&lt;/em&gt; del proyecto en cuestión,
-para usar gh-pages por usuario hay que crear
-un repo llamado &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt;.github.com (donde &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt; es el tuyo)
-y lo que sirve en &lt;a class="reference external" href="http:/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch
-&lt;em&gt;master&lt;/em&gt; (&lt;a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages"&gt;referencia&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Por este motivo creé otro branch (que sin mucha imaginación denominé
-&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing"&gt;writing&lt;/a&gt; )
-donde tengo todo el mi "proyecto" hecho con Nikola&lt;/p&gt;
-&lt;p&gt;Allí escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;El branch master es el de deploy y sirve todo lo que haya en la carpeta
-&lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que ir a &lt;em&gt;master&lt;/em&gt;,
-borrar todo y leer desde el árbol del otro branch con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-git checkout master
-git rm *    # sólo la primera vez
-git read-tree writing:output
-git commit -m 'deploying last build'
-git push
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="migrando-desde-spip"&gt;
-&lt;h2&gt;Migrando desde Spip&lt;/h2&gt;
-&lt;p&gt;Uno de los motivos que me llevaron a migrar desde &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt; es que el markup
-que usa es &lt;em&gt;ad hoc&lt;/em&gt; y muy feo. Algo así&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-{{{ Un intertítulo }}}
-
-Esto es {{negrita}} y este [mi twitter-&amp;gt;http://twitter.com/tin_nqn_]
-&lt;/pre&gt;
-&lt;p&gt;Hasta ahí no se ve tan mal, pero es muy limitado cuando se trata de mostrar
-código, necesario en todo blog mas o menos técnico.&lt;/p&gt;
-&lt;p&gt;Para migrar esquivé la idea de convertir el markup de spip y opté por un
-scrapping, limpieza y conversión a restructuredText usando el mágico
-&lt;a class="reference external" href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt; (y la ayuda de PyQuery)&lt;/p&gt;
-&lt;p&gt;El script que hice está
-&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;acá&lt;/a&gt;
-. No es perfecto, pero está lo importante: contenidos, imágenes, adjuntos,
-convertido a restructuredText bastante decente que mejoraré poco a poco
-a mano.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="estilos"&gt;
-&lt;h2&gt;Estilos&lt;/h2&gt;
-&lt;p&gt;Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras)
-que se ven bonitos. Sucede, en realidad, que la mayoría de las veces no
-venimos con &lt;em&gt;esa&lt;/em&gt; habilidad y el esfuerzo que nos implica intentarlo
-preferimos ponerlo en otra cosa. No gusta, pero no es lo más importante.&lt;/p&gt;
-&lt;p&gt;No obstante, yo quiero que este espacio sea lindo y legible. Y como hay
-muchos otros ñoños con sitios lindos y legibles que son tan amables de
-compartir sus estilos (y existe &lt;a class="reference external" href="http://twitter.github.com/bootstrap"&gt;bootstrap&lt;/a&gt;, claro) voy a ir intentándolo,
-incrementalmente.&lt;/p&gt;
-&lt;p&gt;Por ahora tomé ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id3" id="id1"&gt;[1]&lt;/a&gt; y de la documentación
-de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/notas-rapidas-de-una-mudanza.html#id4" id="id2"&gt;[2]&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="disqus"&gt;
-&lt;h2&gt;Disqus&lt;/h2&gt;
-&lt;p&gt;El blog viejo usaba &lt;a class="reference external" href="http://disqus.com"&gt;Disqus&lt;/a&gt;, con un &lt;a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html"&gt;plugin&lt;/a&gt; que hice hace algun tiempo.
-Para migrar los comentarios utilicé el método de subir un CSV con
-el formato que genera el mismo script de migración:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-URL_POST_X_OLD, URL_POST_X_NEW
-URL_POST_Y_OLD, URL_POST_Y_NEW
-&lt;/pre&gt;
-&lt;p&gt;En cuestión de minutos los (pocos) comentarios estaban migrados.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="redireccion"&gt;
-&lt;h2&gt;Redirección&lt;/h2&gt;
-&lt;p&gt;Como mantuve el slug de los viejos artículos, una redirección 301
-via .htaccess redirige del viejo blog al nuevo:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-# nqnwebs.com blog rules
-RewriteCond %{HTTP_HOST} ^nqnwebs [nc]
-RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
-RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
-&lt;/pre&gt;
-&lt;p&gt;¿Cómo se va viendo?&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><category>nikola</category><category>spip</category><category>migration tools</category><guid>http://mgaitan.github.com/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item></channel></rss>
+&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item></channel></rss>

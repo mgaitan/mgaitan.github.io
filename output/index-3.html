@@ -43,6 +43,26 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/covertura-de-los-oscars-2011.html">Covertura de los Oscars 2011</a>
+        <small>  
+             <span class="timeago" title="2011-02-24 15:05:21">2011-02-24 15:05:21</span>
+        </small></h1>
+        <p>Anoche, en un arrebato procrastinador, armé <a class="reference external" href="http://oscars-awards.com">Oscars
+Awards</a> y su clon <a class="reference external" href="http://oscars-winners.com">Oscars
+Winners</a> .</p>
+<p>Aprovechando una promo de
+<a class="reference external" href="http://www.netfirms.com/domain-names/">netfirms.com</a> y con un poco de
+suerte, consegui los dos dominios por u$s 9 que pagué con PayPal. Vuelve
+la burbuja .com ?</p>
+<p>El "streaming de tweets" está basado en
+<a class="reference external" href="http://juitter.com/">juitter</a>, pequeñamente hackeado.</p>
+        <p>
+        
+            <a href="posts/covertura-de-los-oscars-2011.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/de-otra-galaxia.html">De otra galaxia</a>
         <small>  
              <span class="timeago" title="2010-11-27 20:19:38">2010-11-27 20:19:38</span>
@@ -544,99 +564,6 @@ Elija su método de pago
         <p>
         
             <a href="posts/integracion-de-dineromail-en.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/simplecart-js-para-spip.html">SimpleCart(js) para SPIP</a>
-        <small>  
-             <span class="timeago" title="2010-09-12 13:34:44">2010-09-12 13:34:44</span>
-        </small></h1>
-        <p><a class="reference external" href="http://simplecartjs.com/">SimpleCart</a> es un sistema para e-commerce
-muy sencillo íntegramente desarrollado en javascript. Permite realizar
-ventas mediante PayPal o Google Checkout y es muy extensible para
-implementar otros sistemas.</p>
-<p>En este domingo de procrastinación, decidí integrarlo a SPIP
-[<a class="reference external" href="blog/article/simplecart-js-para-spip#nb1">1</a>]. Lo usaré, espero que
-pronto, para vender los productos del <a class="reference external" href="http://www.agrupacionmazamorra.org.ar/taller-de-serigrafia-30">taller de serígrafía de
-Mazamorra</a>.</p>
-<div class="section" id="como-funciona">
-<h2>Cómo funciona</h2>
-<p>Se instala como un plugin común y se configura mediante el plugin CFG.
-Por ahora sólo soporta PayPal como medio de pago, pero incluiré otros.</p>
-<p>SimpleCart usa simples señaladores html, que yo he convertido en
-balizas.</p>
-<p>Baliza
-Descripción
-#SIMPLECART_QUANTITY
-Indica la cantidad de productos
-#SIMPLECART_ITEMS
-Muestra los items en el carrito según las cabeceras definidas en la
-página de configuración
-#SIMPLECART_TAX_RATE
-Indica la tasa impositiva indicada en la configuración
-#SIMPLECART_TAX_COST
-Indica el total de impuestos
-#SIMPLECART_SHIPPING_COST
-Indica el costo de envío en función de la configuración definida
-#SIMPLECART_TOTAL
-La suma del precio de los productos en el carrito (Subtotal)
-#SIMPLECART_FINAL_TOTAL
-Total considerando impuestos y envío
-#SIMPLECART_CHECKOUT
-Genera el botón para finalizar compra (redirige al sistema de pago)
-#SIMPLECART_EMPTY
-Genera el botón para vaciar el carrito
-Con estas balizas puedes armar el carrito en cualquier lado. Los datos
-del carritos son persistentes usando cookies (incluso se conservan
-durante un tiempo aunque se abandone la página).</p>
-<p>Por ejemplo, este puede ser tu carrito .</p>
-<pre class="literal-block">
-&lt;:simplecart:your_cart:&gt; (#SIMPLECART_QUANTITY items)
-
-#SIMPLECART_ITEMS
-
-
-&lt;:simplecart:subtotal:&gt;: #SIMPLECART_TOTAL&lt;:simplecart:tax_cost:&gt; (#SIMPLECART_TAX_RATE): #SIMPLECART_TAX_COST &lt;:simplecart:shipping_cost:&gt;:  #SIMPLECART_SHIPPING_COST &lt;:simplecart:final_total:&gt;: #SIMPLECART_FINAL_TOTAL
-
-#SIMPLECART_CHECKOUT
-#SIMPLECART_EMPTY
-</pre>
-</div>
-<div class="section" id="como-agregar-productos">
-<h2>Cómo agregar productos</h2>
-<p>Muy simple. Se sube una imágen como documento definiendo su título y
-descripción y se la incrusta con el modelo <em>item</em>. El precio se indica
-con el parámetro <em>price</em>.</p>
-<p>Por ejemplo, el documento 111 se vuelve un item si se lo incluye así</p>
-<p><tt class="docutils literal">&lt;item111|price=23.4&gt;</tt></p>
-</div>
-<div class="section" id="un-atajo-mas">
-<h2>Un atajo más</h2>
-<p>El código para el carrito de arriba lo incluí como un modelo para poder
-incrustarlo directamente desde la redacción de un artículo con
-<a href="posts/simplecart-js-para-spip.html#id2"><span class="problematic" id="id3">``</span></a>&lt;cart1&gt; <a href="posts/simplecart-js-para-spip.html#id4"><span class="problematic" id="id5">``</span></a>.</p>
-<div class="system-message" id="id2">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 73); <em><a href="posts/simplecart-js-para-spip.html#id3">backlink</a></em></p>
-Inline literal start-string without end-string.</div>
-<div class="system-message" id="id4">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 73); <em><a href="posts/simplecart-js-para-spip.html#id5">backlink</a></em></p>
-Inline literal start-string without end-string.</div>
-</div>
-<div class="section" id="demostracion">
-<h2>Demostración</h2>
-<p>Si alguien completa la transacción, lo interpretaré como una donación
-:D.</p>
-</div>
-<div class="section" id="descarga">
-<h2>Descarga</h2>
-<p>El plugin está en desarrollo sobre
-<a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart">spip-zone</a>.
-Podés hacer un ckeckout SVN</p>
-</div>
-        <p>
-        
-            <a href="posts/simplecart-js-para-spip.html#disqus_thread">Comments</a>
         
         </p></div>
     

@@ -45,7 +45,7 @@
     <h1><a href="#">Fortran + Windows = pesadilla^2</a></h1>
     
     <small>
-     Publicado <span class="timeago" title="2013-08-22 20:11:45">2013-08-22 20:11:45</span>   |  
+     Publicado <span class="timeago" title="2013-08-24 11:11:45">2013-08-24 11:11:45</span>   |  
 
         
 
@@ -54,16 +54,15 @@
     </small>
     <!-- link: -->
 <!-- description: -->
-<!-- tags: draft -->
-<!-- date: 2013/08/22 20:11:45 -->
+<!-- tags: -->
+<!-- date: 2013/08/24 11:11:45 -->
 <!-- title: Fortran + Windows = pesadilla^2 -->
 <!-- slug: fortran-windows-pesadilla2 -->
 <p>Hace muchísimo que no escribo en este blog y no es porque tengo <a class="reference external" href="http://www.textosypretextos.com.ar">otro</a>, sino, principalmente, porque estoy con muchísimo trabajo.</p>
 <p>Hace casi un mes dejé <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id4" id="id1">[1]</a> de trabajar en <a class="reference external" href="http://machinalis.com">Machinalis</a>, una de las empresas más pythónicamente grosas del mundo mundial <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id5" id="id2">[2]</a>, en la que inenvitablemente aprendí muchísimo
 (y eso que me esforcé ;-)), hice amigos y laburé en proyectos de una escala y complejidad a la que nunca podría haber aspirado como un "freelance <em>che pibe</em> programador".</p>
 <p>Ahora laburo fulltime (o sea: el triple) en <a class="reference external" href="http://phasety.com">Phasety</a>, el proyecto que estamos creando junto a Martín Cismondi, director de mi proyecto integrador de grado hace algunos años ("ingeniero en computación", dice el pelpa) y hoy socio. Cismondi es doctor en ingeniería
-química y uno de los especialistas más reputados en el área "equilibro de fases",
-que es, básicamente, modelar el comportamiento termodinámico de un fluido mediante algoritmos numéricos.</p>
+química y uno de los especialistas más reputados a nivel mundial en el área "equilibro de fases", que es, básicamente, modelar el comportamiento termodinámico de un fluido mediante algoritmos numéricos.</p>
 <p>Un poco por cierta "inercia cultural" del mundo científico (en particular en las área de química computacional) y otro poco porque sigue siendo increíblemente eficiente para rutinas de cálculo, Fortran es el lenguaje predominante en el que los tipos
 como Cismondi programan. A lo que si le sumás Windows, las bibliotecas privativas y un flujo de trabajo atado al IDE que aprendieron a "clickear" (en general, Visual Studio),
 es todo un problema.</p>
@@ -72,20 +71,14 @@ es todo un problema.</p>
 la <a class="reference external" href="http://es.wikipedia.org/wiki/Deuda_t%C3%A9cnica">deuda técnica</a> <a class="reference external" href="http://phasety.com/1/blog/article/curso-taller-python-para-ciencia-e-ingenieria">fomentando</a> esta tecnología, hay que hacerlas convivir.</p>
 <div class="section" id="f2py-gfortran-y-lapack-en-windows">
 <h2>f2py, gfortran y lapack en Windows</h2>
-<div class="attention">
-<p class="first admonition-title">Attention!</p>
-<p class="last">articulo en borrador</p>
-</div>
-<p>Estas son notas de lo que he ido logrando hasta el momento, para armar un entorno
-de desarrollo y empaquetamiento (en lo posible, libre) de software multiplataforma basado en Python y Fortran.</p>
-<p>El "San Valentín" de esta pareja es <a class="reference external" href="http://www.f2py.com">f2py</a>, una biblioteca que genera los wrappers
-necesarios para convertir subrutinas (o funciones) de Fortran en módulos binarios (bibliotecas) importables desde Python.</p>
-<p>No abordo acá cómo usar f2py (aunque <a class="reference external" href="http://websrv.cs.umt.edu/isis/index.php/F2py_example">este</a> es un buen ejemplo), sino como conseguir instalarlo y usarlo para un caso no trivial.</p>
+<p>Estas son notas de lo que he ido logrando hasta el momento en el intento de armar un entorno de desarrollo y empaquetamiento (en lo posible, libre) de software multiplataforma basado en Python y Fortran.</p>
+<p>Como se sabe, el "San Valentín" de esta pareja es <a class="reference external" href="http://www.f2py.com">f2py</a>, una herramienta que genera los wrappers necesarios para convertir subrutinas (o funciones) de Fortran en módulos binarios (bibliotecas) importables desde Python.</p>
+<p>No abordo acá los detalles de cómo usar f2py (aunque <a class="reference external" href="http://websrv.cs.umt.edu/isis/index.php/F2py_example">este</a> es un buen ejemplo), sino cómo conseguir que funcione para un ejemplo no trivial en windows, compilando con gfortran y linkeando con la biblioteca Lapack.</p>
 <ol class="arabic"><li><p class="first">Instalar <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Anaconda</a>, de Continuum Analytics.</p>
 <p>Anaconda es una distribución de Python y una amplia colección de paquetes
 y bibliotecas para computación científica, que se pueden instalar con el gestor
-<tt class="docutils literal">conda</tt> (análogo a <tt class="docutils literal">pip + virtualenv</tt>) que viene incluído.</p>
-<p>Este <em>framework</em> grautuito simplifica muchísimo la instalación de un entorno
+<tt class="docutils literal">conda</tt> (análogo a <tt class="docutils literal"><span class="pre">apt-get</span> + pip + virtualenv</tt>) que viene incluído.</p>
+<p>Este <em>framework</em> gratuito simplifica muchísimo la instalación de un entorno
 de computación científica en Windows.</p>
 <p>La versión <a class="reference external" href="http://repo.continuum.io/miniconda/index.html">Miniconda</a> instala sólo Python y conda. Luego podemos instalar paquetes
 desde la consola (<tt class="docutils literal">cmd.exe</tt>). Por ejemplo:</p>
@@ -103,12 +96,17 @@ Modificarlo para que linkee estáticamente con <em>libgcc</em> y <em>libgfortran
 %~f0\..\..\MinGW\bin\gfortran.exe -static-libgcc -static-libgfortran %*
 </pre>
 </li>
-<li><p class="first">Instalar lapack y blas</p>
-<p>Aun cuando la única virtud de Fortran es ser rápido para operaciones basadas en arrays,
-<a class="reference external" href="http://www.nsc.liu.se/~boein/f77to90/a5.html">no trae</a> una biblioteca estándar incorporada de "alto nivel".</p>
-<p>Para no tener que reinventar (<em>copypastear</em>) subrutinas todo el tiempo, se linkea con bibliotecas de terceros que, en general, utilizan una API común. <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id6" id="id3">[3]</a></p>
-<p><a class="reference external" href="http://netlib.org/lapack">Lapack</a> es la más completa y mantenida biblioteca libre para algebra lineal, incluyendo rutinas de resolución de sistemas de ecuaciones lineales, factorización de matrices,
-etc. Esta se basa a su vez en BLAS
+</ol><div class="tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">podés bajar todos los archivos mencionados desde el paso 3 al 5
+(para 32bits) desde <a class="reference external" href="https://docs.google.com/file/d/0Bx300vaUNYn1cDVva0FGaEFQTFE/edit?usp=sharing">este zip</a></p>
+</div>
+<ol class="arabic" start="3"><li><p class="first">Instalar lapack y blas</p>
+<p>Aún cuando la única virtud de Fortran es ser eficiente para operaciones basadas en arrays, <a class="reference external" href="http://www.nsc.liu.se/~boein/f77to90/a5.html">no trae</a> una biblioteca estándar incorporada de "alto nivel".</p>
+<p>Para no tener que reinventar (<em>"copypastear"</em>) subrutinas todo el tiempo, se linkea con bibliotecas de terceros que, en general, utilizan una nomenclatura común para las
+signaturas. <a class="footnote-reference" href="fortran-windows-pesadilla2.html#id6" id="id3">[3]</a></p>
+<p><a class="reference external" href="http://netlib.org/lapack">Lapack</a> es la más completa y mantenida biblioteca libre para álgebra lineal, incluyendo rutinas de resolución de sistemas de ecuaciones lineales, factorización de matrices,
+etc. Se basa a su vez en la biblioteca BLAS
 que implementa las rutinas de más bajo nivel como rotación y producto de matrices.</p>
 <p>Todo código numérico no trivial utiliza alguna subrutina de Lapack/BLAS.</p>
 <p>Compilarlas en Windows es un lio, pero por suerte ya
@@ -133,19 +131,87 @@ libquadmath-0.dll
 <li><p class="first">Bajar libmsvcr90.a</p>
 <p>Desde <a class="reference external" href="https://github.com/enthought/vendor-mingw/blob/master/msvcrt/libmsvcr90.a?raw=true">acá</a> y ponerlo en la carpeta <tt class="docutils literal"><span class="pre">c:/Anaconda/libs/</span></tt></p>
 </li>
-<li><p class="first">Compilar</p>
-<blockquote>
-<p>$ f2py --compiler=mingw32 -llapack -m hello -c hello.f90</p>
-</blockquote>
+<li><p class="first">Listo! Si todo salió bien, ya podés compilar en windows modulos python
+implementados en fortran</p>
 </li>
-<li><p class="first">Importar desde python y usar</p>
-</li>
-<li><p class="first">Brindar.</p>
-</li>
-</ol><table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id1">[1]</a></td><td>o "terminé de dejar", porque estaba part-time desde septiembre de 2012.</td></tr></tbody></table><table class="docutils footnote" frame="void" id="id5" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id2">[2]</a></td><td>lo de "empresa pythónica", no</td></tr></tbody></table><table class="docutils footnote" frame="void" id="id6" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id3">[3]</a></td><td>La <a class="reference external" href="http://software.intel.com/en-us/intel-mkl">MLK</a> de Intel es una biblioteca matemática optimizada para procesadores
+</ol><p>Como ejemplo,  podés probar con esta subrutina que hace lo mismo que
+<tt class="docutils literal">numpy.linalg.solve</tt> (resolver un sistema lineal Ax=b), basada en la rutina <tt class="docutils literal">SGESV</tt>
+de lapack (para simple precisión).</p>
+<pre class="code fortran literal-block">
+<span class="k">subroutine </span><span class="nv">solve</span><span class="p">(</span><span class="nv">A</span><span class="p">,</span> <span class="nv">b</span><span class="p">,</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">n</span><span class="p">)</span>
+    <span class="k">implicit none</span>
+
+    <span class="c">! solving the matrix equation A*x=b using LAPACK
+</span>    <span class="c">! declarations, notice single precision
+</span>    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="nv">n</span><span class="p">,</span><span class="nv">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="nv">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nv">A</span>
+    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="nv">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="nv">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nv">b</span>
+    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="nv">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="nv">out</span><span class="p">)</span> <span class="kd">::</span> <span class="nv">x</span>
+
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="nv">i</span><span class="p">,</span> <span class="nv">j</span><span class="p">,</span> <span class="nv">pivot</span><span class="p">(</span><span class="nv">n</span><span class="p">),</span> <span class="nv">ok</span>
+
+    <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="nv">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nv">n</span>
+
+    <span class="c">! find the solution using the LAPACK routine SGESV
+</span>    <span class="k">call </span><span class="nv">SGESV</span><span class="p">(</span><span class="nv">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">A</span><span class="p">,</span> <span class="nv">n</span><span class="p">,</span> <span class="nv">pivot</span><span class="p">,</span> <span class="nv">b</span><span class="p">,</span> <span class="nv">n</span><span class="p">,</span> <span class="nv">ok</span><span class="p">)</span>
+
+    <span class="c">! copy the vector x
+</span>    <span class="nv">x</span> <span class="o">=</span> <span class="nv">b</span>
+
+<span class="k">end subroutine</span>
+</pre>
+<p>Lo guardamos en un archivo llamado <tt class="docutils literal">linalg.f90</tt> y compilamos:</p>
+<pre class="literal-block">
+$ f2py --compiler=mingw32 -llapack -m linalg -c linalg.f90
+</pre>
+<p>Se creeará un archivo <tt class="docutils literal">linalg.pyd</tt> que es importable desde Python.</p>
+<pre class="code python literal-block">
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">linalg</span> <span class="kn">import</span> <span class="n">solve</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">solve</span><span class="err">?</span>
+<span class="n">Type</span><span class="p">:</span>       <span class="n">fortran</span>
+<span class="n">String</span> <span class="n">Form</span><span class="p">:</span><span class="o">&lt;</span><span class="n">fortran</span> <span class="nb">object</span><span class="o">&gt;</span>
+<span class="n">Docstring</span><span class="p">:</span>
+<span class="n">solve</span> <span class="o">-</span> <span class="n">Function</span> <span class="n">signature</span><span class="p">:</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,[</span><span class="n">n</span><span class="p">])</span>
+<span class="n">Required</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="n">a</span> <span class="p">:</span> <span class="nb">input</span> <span class="n">rank</span><span class="o">-</span><span class="mi">2</span> <span class="n">array</span><span class="p">(</span><span class="s">'f'</span><span class="p">)</span> <span class="k">with</span> <span class="n">bound</span>
+  <span class="n">b</span> <span class="p">:</span> <span class="nb">input</span> <span class="n">rank</span><span class="o">-</span><span class="mi">1</span> <span class="n">array</span><span class="p">(</span><span class="s">'f'</span><span class="p">)</span> <span class="k">with</span> <span class="n">bound</span>
+<span class="n">Optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="n">n</span> <span class="p">:</span><span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="nb">input</span> <span class="nb">int</span>
+<span class="n">Return</span> <span class="n">objects</span><span class="p">:</span>
+  <span class="n">x</span> <span class="p">:</span> <span class="n">rank</span><span class="o">-</span><span class="mi">1</span> <span class="n">array</span><span class="p">(</span><span class="s">'f'</span><span class="p">)</span> <span class="k">with</span> <span class="n">bounds</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">A</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.19565217</span><span class="p">,</span>  <span class="mf">0.47826087</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">)</span>
+</pre>
+<p>Que es lo mismo que</p>
+<pre class="code python literal-block">
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.19565217</span><span class="p">,</span>  <span class="mf">0.47826087</span><span class="p">])</span>
+</pre>
+<p>¡Salud!</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">por supuesto, queda resolver lo del IDE (especialmente el debugger)
+sin el cual los cientificosprogramadores Fortran se quedan rengos.
+Cualquier recomendación es bienvenida.</p>
+</div>
+<table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id1">[1]</a></td><td>o "terminé de dejar", porque estaba part-time desde septiembre de 2012.</td></tr></tbody></table><table class="docutils footnote" frame="void" id="id5" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id2">[2]</a></td><td>lo de "empresa pythónica", lo digo <a class="reference external" href="http://www.python.org/dev/peps/pep-0020/">en serio</a></td></tr></tbody></table><table class="docutils footnote" frame="void" id="id6" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="fortran-windows-pesadilla2.html#id3">[3]</a></td><td>La <a class="reference external" href="http://software.intel.com/en-us/intel-mkl">MLK</a> de Intel es una biblioteca matemática optimizada para procesadores
 de esta firma. En la parte de algebra lineal utiliza la misma API de Lapack, pero
 no es libre y sale 500 verdes :).</td></tr></tbody></table></div>
-    <ul class="pager"></ul><div id="disqus_thread"></div>
+    <ul class="pager"><li class="previous">
+            <a href="hola-preciosa.html">← Post anterior</a>
+        </li>
+    
+    
+    </ul><div id="disqus_thread"></div>
         <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
