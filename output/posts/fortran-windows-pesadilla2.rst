@@ -8,7 +8,7 @@
 
 Hace muchísimo que no escribo en este blog y no es porque tengo otro_, sino, principalmente, porque estoy con muchísimo trabajo.
 
-Hace casi un mes dejé [1]_ de trabajar en Machinalis_, una de las empresas más pythónicamente grosas del mundo mundial [2]_, en la que inenvitablemente aprendí muchísimo
+Hace casi un mes dejé [1]_ de trabajar en Machinalis_, una de las empresas más pythónicamente grosas del mundo mundial [2]_, en la que inevitablemente aprendí muchísimo
 (y eso que me esforcé ;-)), hice amigos y laburé en proyectos de una escala y complejidad a la que nunca podría haber aspirado como un "freelance *che pibe* programador".
 
 Ahora laburo fulltime (o sea: el triple) en Phasety_, el proyecto que estamos creando junto a Martín Cismondi, director de mi proyecto integrador de grado hace algunos años ("ingeniero en computación", dice el pelpa) y hoy socio. Cismondi es doctor en ingeniería
