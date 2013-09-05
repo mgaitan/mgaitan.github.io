@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 24 Aug 2013 12:15:21 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fortran + Windows = pesadilla^2</title><link>http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html</link><description>&lt;!-- link: --&gt;
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 04 Sep 2013 22:27:02 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Un procesador de reStructuredText</title><link>http://mgaitan.github.com/posts/un-procesador-de-restructuredtext.html</link><description>&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;!-- tags: --&gt;
+&lt;!-- date: 2013/09/04 20:38:44 --&gt;
+&lt;!-- title: Un procesador de reStructuredText --&gt;
+&lt;!-- slug: un-procesador-de-restructuredtext --&gt;
+&lt;p&gt;Siempre me gustó &lt;a class="reference external" href="http://textosypretextos.com.ar"&gt;escribir&lt;/a&gt;. Pero, desde que recuerdo, casi siempre lo hice en un teclado de computadora. Salvo &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Garabato_%28dibujo%29"&gt;garabatos&lt;/a&gt; cuando tengo que pensar algo difícil o cuando me aburro en una reunión/clase, casi no escribo en papel.&lt;/p&gt;
+&lt;p&gt;En la compu escribo mucho y, sin embargo, tampoco uso procesadores de texto, ni siquiera los open source: aunque "lo que se ve" es "lo que se obtiene", (me)sucede demasiado seguido que lo que veo no es lo que quiero.&lt;/p&gt;
+&lt;p&gt;Por ese motivo (y porque casi siempre sigo los consejos de &lt;a class="reference external" href="http://ralsina.com.ar/"&gt;Roberto Alsina&lt;/a&gt;) escribo texto plano, usando el formato &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;. Y así escribo todo: este blog, las &lt;a class="reference external" href="http://mgaitan.github.io/charlas.html"&gt;charlas&lt;/a&gt;, mi &lt;a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html"&gt;tesis de grado&lt;/a&gt;, la documentación de &lt;a class="reference external" href="http://github.com/mgaitan/"&gt;mis proyectos&lt;/a&gt; , notas rápidas en una &lt;a class="reference external" href="http://waliki.nqnwebs.com"&gt;wiki&lt;/a&gt;, &lt;a class="reference external" href="http://www.textosypretextos.com.ar/Cartas-de-amor-efimero-"&gt;cartas de amor&lt;/a&gt;, etc.&lt;/p&gt;
+&lt;p&gt;reST es un lenguaje de marcado sencillo y potente, que a diferencia de LaTex fue pensado para que el contenido sea legible en formato fuente, es decir, en texto plano. Escribiendo con un simple &lt;strong&gt;editor&lt;/strong&gt; de texto nos concentramos en lo importante (el contenido) y no en luchar contra el formato de la tabla, la sangría o el tipo de letra de un encabezado. Además, es más útil cuando se usa con un sistema de control de versiones, porque se pueden visualizar los cambios claramente.&lt;/p&gt;
+&lt;p&gt;Si bien su sintaxis es algo más verborrágica &lt;a class="footnote-reference" href="/posts/un-procesador-de-restructuredtext.html#id4" id="id1"&gt;[1]&lt;/a&gt; que la de &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; (el markup liviano más difundido en la web), reST es muchísimo más potente y orientado a tener múltiples formatos de salida (html, ebooks, pdf, etc.). De hecho se han escrito libros y toda la &lt;a class="reference external" href="http://docs.python.org/"&gt;documentación oficial de Python&lt;/a&gt; de esta manera.&lt;/p&gt;
+&lt;p&gt;Pero tampoco hace falta ser un asceta: si un software nos puede ayudar a escribir y a formatear lo escrito mejor y más fácilmente, ¿por qué no usarlo?&lt;/p&gt;
+&lt;p&gt;Eso hace &lt;a class="reference external" href="https://github.com/dbousamra/sublime-rst-completion"&gt;rst-completions&lt;/a&gt; el plugin para &lt;a class="reference external" href="https://www.sublimetext.com/"&gt;SublimeText&lt;/a&gt; del que soy el principal desarrollador &lt;a class="footnote-reference" href="/posts/un-procesador-de-restructuredtext.html#id5" id="id2"&gt;[2]&lt;/a&gt;. Acá una demo de los que se puede hacer.&lt;/p&gt;
+&lt;iframe width="640" height="360" src="//www.youtube.com/embed/otM_tjIi_vY" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;Por ahora tiene:&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Atajos de directivas y formatos: links, admoniciones, código, etc.&lt;/li&gt;
+&lt;li&gt;Encabezados: autocompletado, navegación, cambio de nivel, folding&lt;/li&gt;
+&lt;li&gt;Tablas: autoformato, ajuste con ancho fijo o variable, fusión de celdas lindantes&lt;/li&gt;
+&lt;li&gt;Notas al pie: inserción automática al final del documento, salto entre referencia y nota,&lt;/li&gt;
+&lt;li&gt;Listas: detección automática del patrón, autonumeración.&lt;/li&gt;
+&lt;li&gt;Output: generación de html, pdf, etc. (usando pandoc, rst2pdf o rst2html)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Lo hice para SublimeText porque es el editor que uso y, sobre todo, porque su API de plugins está basada en Python &lt;a class="footnote-reference" href="/posts/un-procesador-de-restructuredtext.html#id5" id="id3"&gt;[2]&lt;/a&gt;. Pero tengo la idea de separarlo como una biblioteca agnóstica, permitiendo hacer plugins como wrappers delgados para cualquier editor.&lt;/p&gt;
+&lt;p&gt;¿Qué opinás? ¿Te sumás a colaborar?&lt;/p&gt;
+&lt;div class="note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;¿Por qué está en el github de &lt;a class="reference external" href="https://github.com/dbousamra"&gt;otro tipo&lt;/a&gt;? Simplemente porque él lo empezó. Luego me dió permisos de escritura y yo &lt;a class="reference external" href="https://github.com/dbousamra/sublime-rst-completion/contributors"&gt;me cebé un poco&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/un-procesador-de-restructuredtext.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;En las funcionalidades básicas
+&lt;a class="reference external" href="https://gist.github.com/dupuy/1855764"&gt;son muy parecidos&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;[2]&lt;/td&gt;&lt;td&gt;&lt;em&gt;(&lt;a class="fn-backref" href="/posts/un-procesador-de-restructuredtext.html#id2"&gt;1&lt;/a&gt;, &lt;a class="fn-backref" href="/posts/un-procesador-de-restructuredtext.html#id3"&gt;2&lt;/a&gt;)&lt;/em&gt; Aunque su documentación apesta&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description><guid>http://mgaitan.github.com/posts/un-procesador-de-restructuredtext.html</guid><pubDate>Wed, 04 Sep 2013 20:38:44 GMT</pubDate></item><item><title>Fortran + Windows = pesadilla^2</title><link>http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html</link><description>&lt;!-- link: --&gt;
 &lt;!-- description: --&gt;
 &lt;!-- tags: --&gt;
 &lt;!-- date: 2013/08/24 11:11:45 --&gt;
@@ -955,102 +982,4 @@ agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/
             &lt;span class="k"&gt;continue&lt;/span&gt;
         &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;¡Disfruten!&lt;/p&gt;</description><category>python</category><category>migraciones</category><category>scripts</category><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Ext4 superblock failure y la cola del Diablo</title><link>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</link><description>&lt;!-- title: Ext4 superblock failure y la cola del Diablo --&gt;
-&lt;!-- slug: ext4-superblock-failure-y-la-cola-del-diablo --&gt;
-&lt;!-- date: 2012/10/26 02:24:46 --&gt;
-&lt;!-- tags: --&gt;
-&lt;!-- link: --&gt;
-&lt;!-- description: e --&gt;
-&lt;p&gt;Domingo, ciudad de Guayaquil, todo dispuesto para salir a
-conocer una ciudad que en las guías de viaje suena intererante y bonita.
-Se me ocurre prender la compu para ver si ese email que mandé la noche
-anterior, recién llegado después de 14 horas de viaje
-(5 de espera en el aeropuerto de Santiago) y deseando únicamente
-ducha y colchón, había sido contestado.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;"No pusheé"&lt;/em&gt;, fué lo primero que pensé, o me lo dije, en voz inaudible,
-como eufemismo de un gran insulto y síntesis de &lt;em&gt;"Martincito querido,
-ya sabés que el booteo está tardando mucho, el material para el taller_ que
-tenés que dar mañana está en esa computadora y tiene al menos 10 horas
-de trabajo offline que está en la última versión online: no podés ser tan
-pelotudo y tener tan mal orto a la vez&lt;/em&gt;". Mi voz interior sí que sabe
-resumir.&lt;/p&gt;
-&lt;p&gt;Por suerte, no perdí la calma. Apreté el 1 en el teléfono: &lt;em&gt;"sí señor",  el
-Bussiness Center queda en el 4 piso"&lt;/em&gt;. Ahí fui y habia computadoras con
-las que pude contactarme con Houston.&lt;/p&gt;
-&lt;p&gt;Grulic, &lt;a class="reference external" href="https://twitter.com/perrito666"&gt;Perrito&lt;/a&gt;,
-&lt;a class="reference external" href="http://verdumariano.com.ar/"&gt;Mariano&lt;/a&gt;, Rudi, y especialmente
-&lt;a class="reference external" href="http://blog.ontrackdatarecovery.es/conoce-al-ingeniero-ernesto-lobo/"&gt;mi cuñado que trabaja en Ontrack&lt;/a&gt;
-y era algo así como un Messi sentado en mi banco de suplentes
-para este partido que yo no hubiese querido jugar, fueron los primeros
-con quienes me comuniqué.&lt;/p&gt;
-&lt;p&gt;Mandé este mensaje:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Gente, les mando una de Murphy y el diablo y toda la mala leche junta.
-Estoy en Ecuador invitado a dar un curso-taller de Python y Django.&lt;/p&gt;
-&lt;p&gt;Rodo venía fantastico , hasta que hoy enciendo la laptop y no y no entra el sistema operativo!.&lt;/p&gt;
-&lt;p&gt;Entro en modo recuperacion (ubuntu 11.10) y se clava en el &lt;tt class="docutils literal"&gt;fsck&lt;/tt&gt;
-hasta que me aparece un menucito que me deja entrar a una consola root.
-Lo peor sucedió &lt;tt class="docutils literal"&gt;/home/&lt;/tt&gt; no monta , pero el &lt;tt class="docutils literal"&gt;/&lt;/tt&gt;
-parece estar sano. Ambas son una particion &lt;tt class="docutils literal"&gt;ext4&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;Si intento montar a mano o un fsck, el output dice muchas cosas que
-suenan mal pero no tengo puta idea qué significan:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-STATUS { DRDY }
-ERROR { UNC }
-configured for UDMA/133
-failed command READ DMA
-exception Emask 0x0 Sact 0x0 Serr 0x0 action 0x0
-res 51/40... Emask 0x9 (media error)
-&lt;/pre&gt;
-&lt;p&gt;Por favor, iluminenmé sobre cómo proceder.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ernesto contestó. Primero intentar hacer un un live-usb con algunas
-herramientas de diagnostico: &lt;a class="reference external" href="http://ubuntu-rescue-remix.org/"&gt;Ubuntu-rescue-remix&lt;/a&gt;
-podría funcionar, pero las maquinas del Bussiness center no me dejan
-instalar algun &lt;a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/"&gt;programita&lt;/a&gt;
-para pasar la ISO al pendrive.&lt;/p&gt;
-&lt;p&gt;Empiezo a deseperar ya pensar si no conviene aprovechar el tiempo que me llevará
-intentar un salvataje con alta probabilidad de fracaso para rehacer el
-trabajo inaccesible.&lt;/p&gt;
-&lt;p&gt;Desactivar journal, no. Forzar montado, no. No se qué otra cosa, no.&lt;/p&gt;
-&lt;p&gt;Ernesto pregunta si me animo a ir por el camino duro.&lt;/p&gt;
-&lt;blockquote&gt;
-Cómo estás de fresco ara leer hexadecimal ? &lt;tt class="docutils literal"&gt;hexdump&lt;/tt&gt; y &lt;tt class="docutils literal"&gt;dd&lt;/tt&gt;, la navaja suiza.
-que necesitamos&lt;/blockquote&gt;
-&lt;p&gt;Intentamos algunas cosas, calculadora en mano,
-pero la mayoría de los intentos de acceso al disco
-caen en el mismo bucle de errores horribles. Mucho calor en Guayaquil.&lt;/p&gt;
-&lt;p&gt;Le digo a Ernesto (domingo, dia de descanso) que no se preocupe, que intentemos
-eso último que se le ocurrió pero que si no funciona voy a ponerme a trabajar
-de nuevo. Mientras tanto, el Dios en el que no creo me pone
-&lt;a class="reference external" href="http://linuxexpresso.wordpress.com/2010/03/31/repair-a-broken-ext4-superblock-in-ubuntu/"&gt;este link&lt;/a&gt;
-en el camino de resultados de Google.&lt;/p&gt;
-&lt;p&gt;"Ernesto, prabamos esto?" y no alcanzó a contestar
-antes de que esté poniendo los primeros comandos&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo mke2fs -n /dev/sda3
-
-Superblock backups stored on blocks:
-32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
-&lt;/pre&gt;
-&lt;p&gt;Me la juego con el primer backup:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo e2fsck -b 32768 /dev/sda3
-&lt;/pre&gt;
-&lt;p&gt;Cientos de  &lt;tt class="docutils literal"&gt;Y&lt;/tt&gt; &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; para mensajes estilo &lt;em&gt;"está roto, desea repararlo?"&lt;/em&gt;
-(no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
-a mitad de camino)&lt;/p&gt;
-&lt;p&gt;Anduvo. Uff. Dos simples comandos.
-El Ingeniero Lobo festeja desde Londres, Skype mediante,
-que podía volver a limpiar su moto sin quedar mal con su cuñado con mala
-pata. Me dijo antes:&lt;/p&gt;
-&lt;blockquote&gt;
-Si no hubiese sido una situadion del tipo &lt;em&gt;mañana
-ya no me sirven los datos&lt;/em&gt; yo te hubiera  recomendado en contra
-de herramienta como &lt;tt class="docutils literal"&gt;e2fsck&lt;/tt&gt;. Esos programas sólo se encargan
-de asegurar que el filesystem esté íntegro, pero si para eso tienen
-que cortarlo a la mitad lo hacen sin dudar.
-Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
-brazo.&lt;/blockquote&gt;
-&lt;p&gt;Querido Guayaquil: prometo visitar tu Malecón la próxima,
-&lt;strong&gt;push&lt;/strong&gt; por adelantado.&lt;/p&gt;</description><guid>http://mgaitan.github.com/posts/ext4-superblock-failure-y-la-cola-del-diablo.html</guid><pubDate>Fri, 26 Oct 2012 02:24:46 GMT</pubDate></item></channel></rss>
+&lt;p&gt;¡Disfruten!&lt;/p&gt;</description><category>python</category><category>migraciones</category><category>scripts</category><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item></channel></rss>

@@ -266,47 +266,47 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/index-1.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://mgaitan.github.com/index-2.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://mgaitan.github.com/index-3.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://mgaitan.github.com/index-4.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://mgaitan.github.com/index-5.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://mgaitan.github.com/index-6.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://mgaitan.github.com/index-7.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://mgaitan.github.com/index-8.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://mgaitan.github.com/index.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -466,7 +466,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.com/posts/fortran-windows-pesadilla2.html</loc>
-  <lastmod>2013-08-24</lastmod>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -662,6 +662,11 @@
  <url>
   <loc>http://mgaitan.github.com/posts/un-gran-lenguaje-una-gran.html</loc>
   <lastmod>2013-08-24</lastmod>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://mgaitan.github.com/posts/un-procesador-de-restructuredtext.html</loc>
+  <lastmod>2013-09-04</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>

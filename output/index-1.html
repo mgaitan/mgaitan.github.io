@@ -43,6 +43,116 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/ext4-superblock-failure-y-la-cola-del-diablo.html">Ext4 superblock failure y la cola del Diablo</a>
+        <small>  
+             <span class="timeago" title="2012-10-26 02:24:46">2012-10-26 02:24:46</span>
+        </small></h1>
+        <!-- title: Ext4 superblock failure y la cola del Diablo -->
+<!-- slug: ext4-superblock-failure-y-la-cola-del-diablo -->
+<!-- date: 2012/10/26 02:24:46 -->
+<!-- tags: -->
+<!-- link: -->
+<!-- description: e -->
+<p>Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+conocer una ciudad que en las guías de viaje suena intererante y bonita.
+Se me ocurre prender la compu para ver si ese email que mandé la noche
+anterior, recién llegado después de 14 horas de viaje
+(5 de espera en el aeropuerto de Santiago) y deseando únicamente
+ducha y colchón, había sido contestado.</p>
+<p><em>"No pusheé"</em>, fué lo primero que pensé, o me lo dije, en voz inaudible,
+como eufemismo de un gran insulto y síntesis de <em>"Martincito querido,
+ya sabés que el booteo está tardando mucho, el material para el taller_ que
+tenés que dar mañana está en esa computadora y tiene al menos 10 horas
+de trabajo offline que está en la última versión online: no podés ser tan
+pelotudo y tener tan mal orto a la vez</em>". Mi voz interior sí que sabe
+resumir.</p>
+<p>Por suerte, no perdí la calma. Apreté el 1 en el teléfono: <em>"sí señor",  el
+Bussiness Center queda en el 4 piso"</em>. Ahí fui y habia computadoras con
+las que pude contactarme con Houston.</p>
+<p>Grulic, <a class="reference external" href="https://twitter.com/perrito666">Perrito</a>,
+<a class="reference external" href="http://verdumariano.com.ar/">Mariano</a>, Rudi, y especialmente
+<a class="reference external" href="http://blog.ontrackdatarecovery.es/conoce-al-ingeniero-ernesto-lobo/">mi cuñado que trabaja en Ontrack</a>
+y era algo así como un Messi sentado en mi banco de suplentes
+para este partido que yo no hubiese querido jugar, fueron los primeros
+con quienes me comuniqué.</p>
+<p>Mandé este mensaje:</p>
+<blockquote>
+<p>Gente, les mando una de Murphy y el diablo y toda la mala leche junta.
+Estoy en Ecuador invitado a dar un curso-taller de Python y Django.</p>
+<p>Rodo venía fantastico , hasta que hoy enciendo la laptop y no y no entra el sistema operativo!.</p>
+<p>Entro en modo recuperacion (ubuntu 11.10) y se clava en el <tt class="docutils literal">fsck</tt>
+hasta que me aparece un menucito que me deja entrar a una consola root.
+Lo peor sucedió <tt class="docutils literal">/home/</tt> no monta , pero el <tt class="docutils literal">/</tt>
+parece estar sano. Ambas son una particion <tt class="docutils literal">ext4</tt></p>
+<p>Si intento montar a mano o un fsck, el output dice muchas cosas que
+suenan mal pero no tengo puta idea qué significan:</p>
+<pre class="literal-block">
+STATUS { DRDY }
+ERROR { UNC }
+configured for UDMA/133
+failed command READ DMA
+exception Emask 0x0 Sact 0x0 Serr 0x0 action 0x0
+res 51/40... Emask 0x9 (media error)
+</pre>
+<p>Por favor, iluminenmé sobre cómo proceder.</p>
+</blockquote>
+<p>Ernesto contestó. Primero intentar hacer un un live-usb con algunas
+herramientas de diagnostico: <a class="reference external" href="http://ubuntu-rescue-remix.org/">Ubuntu-rescue-remix</a>
+podría funcionar, pero las maquinas del Bussiness center no me dejan
+instalar algun <a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/">programita</a>
+para pasar la ISO al pendrive.</p>
+<p>Empiezo a deseperar ya pensar si no conviene aprovechar el tiempo que me llevará
+intentar un salvataje con alta probabilidad de fracaso para rehacer el
+trabajo inaccesible.</p>
+<p>Desactivar journal, no. Forzar montado, no. No se qué otra cosa, no.</p>
+<p>Ernesto pregunta si me animo a ir por el camino duro.</p>
+<blockquote>
+Cómo estás de fresco ara leer hexadecimal ? <tt class="docutils literal">hexdump</tt> y <tt class="docutils literal">dd</tt>, la navaja suiza.
+que necesitamos</blockquote>
+<p>Intentamos algunas cosas, calculadora en mano,
+pero la mayoría de los intentos de acceso al disco
+caen en el mismo bucle de errores horribles. Mucho calor en Guayaquil.</p>
+<p>Le digo a Ernesto (domingo, dia de descanso) que no se preocupe, que intentemos
+eso último que se le ocurrió pero que si no funciona voy a ponerme a trabajar
+de nuevo. Mientras tanto, el Dios en el que no creo me pone
+<a class="reference external" href="http://linuxexpresso.wordpress.com/2010/03/31/repair-a-broken-ext4-superblock-in-ubuntu/">este link</a>
+en el camino de resultados de Google.</p>
+<p>"Ernesto, prabamos esto?" y no alcanzó a contestar
+antes de que esté poniendo los primeros comandos</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>sudo mke2fs -n /dev/sda3
+
+Superblock backups stored on blocks:
+32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208
+</pre>
+<p>Me la juego con el primer backup:</p>
+<pre class="code bash literal-block">
+sudo e2fsck -b 32768 /dev/sda3
+</pre>
+<p>Cientos de  <tt class="docutils literal">Y</tt> <tt class="docutils literal">Enter</tt> para mensajes estilo <em>"está roto, desea repararlo?"</em>
+(no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
+a mitad de camino)</p>
+<p>Anduvo. Uff. Dos simples comandos.
+El Ingeniero Lobo festeja desde Londres, Skype mediante,
+que podía volver a limpiar su moto sin quedar mal con su cuñado con mala
+pata. Me dijo antes:</p>
+<blockquote>
+Si no hubiese sido una situadion del tipo <em>mañana
+ya no me sirven los datos</em> yo te hubiera  recomendado en contra
+de herramienta como <tt class="docutils literal">e2fsck</tt>. Esos programas sólo se encargan
+de asegurar que el filesystem esté íntegro, pero si para eso tienen
+que cortarlo a la mitad lo hacen sin dudar.
+Son como doctores de guerra: te dejan vivo, pero sin una pierna y un
+brazo.</blockquote>
+<p>Querido Guayaquil: prometo visitar tu Malecón la próxima,
+<strong>push</strong> por adelantado.</p>
+        <p>
+        
+            <a href="posts/ext4-superblock-failure-y-la-cola-del-diablo.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/notas-rapidas-de-una-mudanza.html">Notas rápidas de una mudanza</a>
         <small>  
              <span class="timeago" title="2012-10-14 19:23:44">2012-10-14 19:23:44</span>
@@ -565,41 +675,6 @@ página</a></p>
 <img alt="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg" class="align-center" src="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg"><p>
         
             <a href="posts/revista-orsai-no-3-en-cordoba.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/charla-myhdl-de-python-al-siliicio.html">Charla: MyHDL, de Python al silicio</a>
-        <small>  
-             <span class="timeago" title="2011-06-06 12:27:44">2011-06-06 12:27:44</span>
-        </small></h1>
-        <p>[Sigo <a class="reference external" href="posts/me-recibi-el-mes-pasado.html">publicando cosas</a> con
-delay de meses]</p>
-<p>El sábado 30 de mayo se realizó el <a class="reference external" href="http://www.pyday.com.ar/cordoba2011">PyDay Córdoba
-2011</a> con la participación de más
-de 200 personas y casi 20 charlas en dos salas simultáneas. Un éxito
-rotundo organizado por <a class="reference external" href="http://jbcabral.wordpress.com/">Juan</a> y un
-gran equipo de colaboradores/as . Felicitaciones.</p>
-<div class="section" id="mi-participacion">
-<h2>Mi participación</h2>
-<p>Participé dando una charla sobre <a class="reference external" href="http://myhdl.org">MyHDL</a>, un paquete
-que convierte Python en un <a class="reference external" href="http://en.wikipedia.org/wiki/Hardware_description_language">lenguaje para describir
-hardware</a>
-(HDL).</p>
-<ul class="simple"><li>Las diapositivas <a class="reference external" href="http://mgaitan.github.com/myhdl-talk/">se pueden ver
-acá</a></li>
-<li><a class="reference external" href="https://github.com/mgaitan/myhdl-talk">Repo</a></li>
-</ul><p>Usé MyHDL para hacer
-<a class="reference external" href="https://github.com/mgaitan/pymips/tree/pipeline">pymips</a>, una
-implementación de un <a class="reference external" href="http://en.wikipedia.org/wiki/DLX">procesador DLX</a>
-completo como trabajo final de la asignatura Arquitectura de Computadoras.
-Pueden leer un poco más sobre el trabajo en <a class="reference external" href="https://github.com/mgaitan/pymips/raw/pipeline/docs/informe.pdf">el
-informe</a>
-que presenté.</p>
-</div>
-        <p>
-        
-            <a href="posts/charla-myhdl-de-python-al-siliicio.html#disqus_thread">Comments</a>
         
         </p></div>
     

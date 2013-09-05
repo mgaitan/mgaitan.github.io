@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="title" content="Un procesador de reStructuredText | "><meta name="description" content=""><meta name="author" content="Martín Gaitán"><title>  Un procesador de reStructuredText | tin_nqn  </title><!-- Le styles --><link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet"><script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.es.js" type="text/javascript"></script><script>
+
+            jQuery(document).ready(function() {
+              jQuery("span.timeago").timeago();
+            });
+
+        </script><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml"></head><body>
+<div class="container-fluid" id="container">
+    <div class="row-fluid" id="titlerow">
+
+    <div class="span10 offset1" id="titlecolumn">
+    <!-- Banner-like substance !-->
+        <div class="titlebox span3">
+        <h1 id="blog-title">
+            <a href="../">tin_nqn</a>
+        </h1>
+        <h6 id="blog-description">&gt;&gt;&gt; me.geek.post()</h6>
+
+        
+        
+        
+        </div>
+    <div id="menu" class="span7 offset1">
+      <ul class="inline"><li><a href="../archive.html">Archivos</a>
+                 / 
+            
+                </li><li><a href="../categories/index.html">Categorías</a>
+                 / 
+            
+                </li><li><a href="../about.html">Sobre mí</a>
+                 / 
+            
+                </li><li><a href="../charlas.html">Charlas</a>
+                
+            
+        </li></ul></div>
+    <!-- End of banner-like substance !-->
+    <div class="row" id="contentrow">
+        <div class="span10 offset1" id="contentcolumn">
+            <!--Body content-->
+            
+    <div class="postbox">
+    <h1><a href="#">Un procesador de reStructuredText</a></h1>
+    
+    <small>
+     Publicado <span class="timeago" title="2013-09-04 20:38:44">2013-09-04 20:38:44</span>   |  
+
+        
+
+        <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/un-procesador-de-restructuredtext.rst">Código</a>
+        
+    </small>
+    <!-- link: -->
+<!-- description: -->
+<!-- tags: -->
+<!-- date: 2013/09/04 20:38:44 -->
+<!-- title: Un procesador de reStructuredText -->
+<!-- slug: un-procesador-de-restructuredtext -->
+<p>Siempre me gustó <a class="reference external" href="http://textosypretextos.com.ar">escribir</a>. Pero, desde que recuerdo, casi siempre lo hice en un teclado de computadora. Salvo <a class="reference external" href="http://es.wikipedia.org/wiki/Garabato_%28dibujo%29">garabatos</a> cuando tengo que pensar algo difícil o cuando me aburro en una reunión/clase, casi no escribo en papel.</p>
+<p>En la compu escribo mucho y, sin embargo, tampoco uso procesadores de texto, ni siquiera los open source: aunque "lo que se ve" es "lo que se obtiene", (me)sucede demasiado seguido que lo que veo no es lo que quiero.</p>
+<p>Por ese motivo (y porque casi siempre sigo los consejos de <a class="reference external" href="http://ralsina.com.ar/">Roberto Alsina</a>) escribo texto plano, usando el formato <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>. Y así escribo todo: este blog, las <a class="reference external" href="http://mgaitan.github.io/charlas.html">charlas</a>, mi <a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">tesis de grado</a>, la documentación de <a class="reference external" href="http://github.com/mgaitan/">mis proyectos</a> , notas rápidas en una <a class="reference external" href="http://waliki.nqnwebs.com">wiki</a>, <a class="reference external" href="http://www.textosypretextos.com.ar/Cartas-de-amor-efimero-">cartas de amor</a>, etc.</p>
+<p>reST es un lenguaje de marcado sencillo y potente, que a diferencia de LaTex fue pensado para que el contenido sea legible en formato fuente, es decir, en texto plano. Escribiendo con un simple <strong>editor</strong> de texto nos concentramos en lo importante (el contenido) y no en luchar contra el formato de la tabla, la sangría o el tipo de letra de un encabezado. Además, es más útil cuando se usa con un sistema de control de versiones, porque se pueden visualizar los cambios claramente.</p>
+<p>Si bien su sintaxis es algo más verborrágica <a class="footnote-reference" href="un-procesador-de-restructuredtext.html#id4" id="id1">[1]</a> que la de <a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> (el markup liviano más difundido en la web), reST es muchísimo más potente y orientado a tener múltiples formatos de salida (html, ebooks, pdf, etc.). De hecho se han escrito libros y toda la <a class="reference external" href="http://docs.python.org/">documentación oficial de Python</a> de esta manera.</p>
+<p>Pero tampoco hace falta ser un asceta: si un software nos puede ayudar a escribir y a formatear lo escrito mejor y más fácilmente, ¿por qué no usarlo?</p>
+<p>Eso hace <a class="reference external" href="https://github.com/dbousamra/sublime-rst-completion">rst-completions</a> el plugin para <a class="reference external" href="https://www.sublimetext.com/">SublimeText</a> del que soy el principal desarrollador <a class="footnote-reference" href="un-procesador-de-restructuredtext.html#id5" id="id2">[2]</a>. Acá una demo de los que se puede hacer.</p>
+<iframe width="640" height="360" src="//www.youtube.com/embed/otM_tjIi_vY" frameborder="0" allowfullscreen></iframe><p>Por ahora tiene:</p>
+<ul class="simple"><li>Atajos de directivas y formatos: links, admoniciones, código, etc.</li>
+<li>Encabezados: autocompletado, navegación, cambio de nivel, folding</li>
+<li>Tablas: autoformato, ajuste con ancho fijo o variable, fusión de celdas lindantes</li>
+<li>Notas al pie: inserción automática al final del documento, salto entre referencia y nota,</li>
+<li>Listas: detección automática del patrón, autonumeración.</li>
+<li>Output: generación de html, pdf, etc. (usando pandoc, rst2pdf o rst2html)</li>
+</ul><p>Lo hice para SublimeText porque es el editor que uso y, sobre todo, porque su API de plugins está basada en Python <a class="footnote-reference" href="un-procesador-de-restructuredtext.html#id5" id="id3">[2]</a>. Pero tengo la idea de separarlo como una biblioteca agnóstica, permitiendo hacer plugins como wrappers delgados para cualquier editor.</p>
+<p>¿Qué opinás? ¿Te sumás a colaborar?</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">¿Por qué está en el github de <a class="reference external" href="https://github.com/dbousamra">otro tipo</a>? Simplemente porque él lo empezó. Luego me dió permisos de escritura y yo <a class="reference external" href="https://github.com/dbousamra/sublime-rst-completion/contributors">me cebé un poco</a>.</p>
+</div>
+<table class="docutils footnote" frame="void" id="id4" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label"><a class="fn-backref" href="un-procesador-de-restructuredtext.html#id1">[1]</a></td><td>En las funcionalidades básicas
+<a class="reference external" href="https://gist.github.com/dupuy/1855764">son muy parecidos</a></td></tr></tbody></table><table class="docutils footnote" frame="void" id="id5" rules="none"><colgroup><col class="label"><col></colgroup><tbody valign="top"><tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="un-procesador-de-restructuredtext.html#id2">1</a>, <a class="fn-backref" href="un-procesador-de-restructuredtext.html#id3">2</a>)</em> Aunque su documentación apesta</td></tr></tbody></table><ul class="pager"><li class="previous">
+            <a href="fortran-windows-pesadilla2.html">← Post anterior</a>
+        </li>
+    
+    
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; var disqus_url = 'http://mgaitan.github.com/posts/un-procesador-de-restructuredtext.html'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+            <!--End of body content-->
+            <hr><small>Contents © 2012 Martín Gaitán</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1" id="sidebar">
+            <!--Sidebar content-->
+            <ul class="inline"><li><a href="http://www.textosypretextos.com.ar" title="Mi otro blog">Textos y pretextos</a>
+                    /
+                </li><li><a href="http://nikola.ralsina.com.ar">Powered by Nikola</a>
+                /
+            </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
+            </li></ul><!--End of sidebar content--></div>
+    
+    
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>
