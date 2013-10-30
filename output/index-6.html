@@ -43,6 +43,64 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/limitar-la-cantidad-de-caracteres.html">Limitar la cantidad de caracteres de los comentarios</a>
+        <small>  
+             <span class="timeago" title="2009-06-10 06:41:37">2009-06-10 06:41:37</span>
+        </small></h1>
+        <p>Si Twitter funciona con 140 caracteres los comentarios a nuestros
+artículos podrían tener 200, ¿no?</p>
+<p>Hay una forma fácil de limitar el largo permitido en un campo de texto
+mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
+caracteres restantes.</p>
+<p>Por ejemplo, esto limita el tamaño de un comentario en SPIP.</p>
+<pre class="literal-block">
+ $(document).ready(function () {
+
+     $("#texte").before("&lt;div id='chars' style='float:right;font-weigth:strong;margin-right:5px;'&gt;&lt;/div&gt;");
+
+$(function(){
+    $('#texte').keyup(function(){
+        limitChars('texte', 200, 'chars');
+    })
+    });
+ });
+
+function limitChars(textid, limit, infodiv) {
+     var text = $('#'+textid).val();
+     var textlength = text.length;
+     if(textlength &gt; limit) {
+         $('#' + infodiv).html('No puede ingresar m&amp;aacute;s de '+limit+' caracteres');
+         $('#'+textid).val(text.substr(0,limit));
+         return false;
+     } else {
+         $('#' + infodiv).html('Restan '+ (limit - textlength) +' caracteres.');
+         return true;
+     }
+}
+</pre>
+<div class="section" id="intrucciones-para-spip">
+<h2>Intrucciones para SPIP</h2>
+<ol class="arabic simple"><li>Copiar el código</li>
+<li>Pegarlo luego de la baliza #INSERT_HEAD de tu cabecera</li>
+<li>(opcional) Cambiarle el límite (el número 200),</li>
+</ol><p>¡Listo!</p>
+</div>
+<div class="section" id="intrucciones-generales">
+<h2>Intrucciones generales</h2>
+<p>Es igual al anterior, sólo debes asegurarte que tiene en jquery en la
+página. Luego cambia el selector <tt class="docutils literal">#texte</tt> por el que corresponda al
+campo que querés limitar.</p>
+</div>
+<div class="section" id="ejemplo">
+<h2>Ejemplo</h2>
+</div>
+        <p>
+        
+            <a href="posts/limitar-la-cantidad-de-caracteres.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/ultima-version-de-spip-por-svn.html">Ultima versión de Spip por SVN</a>
         <small>  
              <span class="timeago" title="2009-05-22 00:19:54">2009-05-22 00:19:54</span>
@@ -738,50 +796,6 @@ atributos cuando se pase por ejemplo NULL como parámetro.</p>
         <p>
         
             <a href="posts/una-mejor-manera-de-controlar-los.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/personalizar-el-texto-de.html">Personalizar el texto de #INTRODUCTION</a>
-        <small>  
-             <span class="timeago" title="2009-03-10 10:38:44">2009-03-10 10:38:44</span>
-        </small></h1>
-        <p>Desde la versión 1.4, SPIP tiene una baliza calculada <tt class="docutils literal">#INTRODUCTION</tt>
-que como su nombre indica, sirve para presentar una introducción al
-artículo completo.</p>
-<p>En la <a class="reference external" href="http://www.spip.net/es_article116.html">documentación explica</a></p>
-<blockquote>
-#INTRODUCTION: [SPIP 1.4] si el artículo contiene una descripción,
-esta se utiliza aquí; si no, SPIP muestra los 600 primeros
-caracteres del inicio del artículo (del epígrafe, y luego del
-texto).</blockquote>
-<p>En la versión 1.92 se incorporó otro atajo para indicar el largo del
-texto mostrado (sobrecargando los 600 caracteres por omisión).</p>
-<p>Así, <a href="posts/personalizar-el-texto-de.html#id1"><span class="problematic" id="id2">``</span></a>#INTRODUCTION{150} `` mostrará la descripción, si existe, o los
-primeros 150 caracteres del epigrafe y/o el texto.</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 15); <em><a href="posts/personalizar-el-texto-de.html#id2">backlink</a></em></p>
-Inline literal start-string without end-string.</div>
-<p>Pero con la versión 2 llegó por fin un control más profundo para los
-redactores. Es posible definir cual es el texto que se mostrará con
-#INTRODUCTION encerrandolo entre la etiquetas <tt class="docutils literal"><span class="pre">&lt;intro&gt;...&lt;/intro&gt;</span></tt> en
-el cuerpo del artículo.
-[<a class="reference external" href="blog/article/personalizar-el-texto-de#nb1">1</a>]</p>
-<p>Así podemos redactar nuestro artículo con la siguiente estructura:</p>
-<pre class="literal-block">
-Esta oración es la introducción al articulo. Y acá sigue mi artículo completo.
-</pre>
-<p>Suponiendo que la baliza #INTRODUCTION se muestra en el esqueleto de
-seccion, allí se vería el texto</p>
-<blockquote>
-Esta oración es la introducción al articulo.</blockquote>
-<p>Y donde esté la baliza #TEXTE:</p>
-<blockquote>
-Esta oración es la introducción al articulo. Y acá sigue mi artículo
-completo.</blockquote>
-        <p>
-        
-            <a href="posts/personalizar-el-texto-de.html#disqus_thread">Comments</a>
         
         </p></div>
     

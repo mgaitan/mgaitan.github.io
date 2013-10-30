@@ -43,6 +43,20 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/un-gran-lenguaje-una-gran.html">Un gran lenguaje, una gran comunidad</a>
+        <small>  
+             <span class="timeago" title="2010-03-23 20:44:28">2010-03-23 20:44:28</span>
+        </small></h1>
+        <p>Python es un gran lenguaje de programación, y como tal se merece <a class="reference external" href="http://python.org.ar">la
+comunidad que tiene</a>, donde expertos y novatos
+se sienten parte.</p>
+        <p>
+        
+            <a href="posts/un-gran-lenguaje-una-gran.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/hemisferio-derecho.html">Hemisferio derecho</a>
         <small>  
              <span class="timeago" title="2009-12-11 11:44:32">2009-12-11 11:44:32</span>
@@ -612,64 +626,6 @@ Magia!</p>
         <p>
         
             <a href="posts/un-spip-para-muchos-sitios.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/limitar-la-cantidad-de-caracteres.html">Limitar la cantidad de caracteres de los comentarios</a>
-        <small>  
-             <span class="timeago" title="2009-06-10 06:41:37">2009-06-10 06:41:37</span>
-        </small></h1>
-        <p>Si Twitter funciona con 140 caracteres los comentarios a nuestros
-artículos podrían tener 200, ¿no?</p>
-<p>Hay una forma fácil de limitar el largo permitido en un campo de texto
-mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
-caracteres restantes.</p>
-<p>Por ejemplo, esto limita el tamaño de un comentario en SPIP.</p>
-<pre class="literal-block">
- $(document).ready(function () {
-
-     $("#texte").before("&lt;div id='chars' style='float:right;font-weigth:strong;margin-right:5px;'&gt;&lt;/div&gt;");
-
-$(function(){
-    $('#texte').keyup(function(){
-        limitChars('texte', 200, 'chars');
-    })
-    });
- });
-
-function limitChars(textid, limit, infodiv) {
-     var text = $('#'+textid).val();
-     var textlength = text.length;
-     if(textlength &gt; limit) {
-         $('#' + infodiv).html('No puede ingresar m&amp;aacute;s de '+limit+' caracteres');
-         $('#'+textid).val(text.substr(0,limit));
-         return false;
-     } else {
-         $('#' + infodiv).html('Restan '+ (limit - textlength) +' caracteres.');
-         return true;
-     }
-}
-</pre>
-<div class="section" id="intrucciones-para-spip">
-<h2>Intrucciones para SPIP</h2>
-<ol class="arabic simple"><li>Copiar el código</li>
-<li>Pegarlo luego de la baliza #INSERT_HEAD de tu cabecera</li>
-<li>(opcional) Cambiarle el límite (el número 200),</li>
-</ol><p>¡Listo!</p>
-</div>
-<div class="section" id="intrucciones-generales">
-<h2>Intrucciones generales</h2>
-<p>Es igual al anterior, sólo debes asegurarte que tiene en jquery en la
-página. Luego cambia el selector <tt class="docutils literal">#texte</tt> por el que corresponda al
-campo que querés limitar.</p>
-</div>
-<div class="section" id="ejemplo">
-<h2>Ejemplo</h2>
-</div>
-        <p>
-        
-            <a href="posts/limitar-la-cantidad-de-caracteres.html#disqus_thread">Comments</a>
         
         </p></div>
     
