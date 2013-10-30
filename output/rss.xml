@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 30 Oct 2013 16:10:59 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>#NoAlFraudeEnCórdoba. Ayudanos</title><link>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-ayudanos.html</link><description>&lt;!-- title: #NoAlFraudeEnCórdoba. Ayudanos --&gt;
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 30 Oct 2013 16:12:52 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>#NoAlFraudeEnCórdoba. Ayudanos</title><link>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-ayudanos.html</link><description>&lt;!-- title: #NoAlFraudeEnCórdoba. Ayudanos --&gt;
 &lt;!-- slug: no-al-fraude-en-cordoba-ayudanos --&gt;
 &lt;!-- date: 2013/10/30 15:17:55 --&gt;
 &lt;p&gt;Mi nombre es Martín Gaitán y soy ingnieron en computación. Quienes me
@@ -33,15 +33,15 @@ de votos a los partidos, más blancos, nulos y recurridos) con los votos
 emitidos/cantidad de sobres que figura en el telgrama.&lt;/p&gt;
 &lt;p&gt;Más aun, los datos deberian estar no sólo visualizables sino en un
 formato abierto para poder procesarlos con otras herramientas.&lt;/p&gt;
-&lt;p&gt;Cómo soy informático, realicé un simple programa para extraer los datos
+&lt;p&gt;Cómo soy programa, realicé un simple programa para extraer los datos
 de los resultados electorales de Córdoba (aunque bien serviría para
 otros distritos), sistematizarlos en una base de datos y hacer una
-búsqueda de mesas "sospechosas", por ejemplo, aquellas en las que el FIT
-obtuvo 0 voto (patrón de los 2 primeros ejemplos)&lt;/p&gt;
+búsqueda de mesas "sospechosas". Por ejemplo, aquellas en las que el FIT
+obtuvo 0 voto (patrón de los 2 primeros ejemplos).&lt;/p&gt;
 &lt;p&gt;Si bien este proceso es automatizable, determinar cuándo ese dato es
 realmente erroneo es mucho más complejo (en parte por la falta de datos
 que menciono) y, dada la urgencia, es mejor hacerlo de forma manual,
-colaborativamente. Por ello &lt;strong&gt;necesito ayuda&lt;/strong&gt;: por ejemplo, para el primer listado, comparar la cantidad de votos emitios con el total computado.&lt;/p&gt;
+colaborativamente. Por ello &lt;strong&gt;necesito ayuda&lt;/strong&gt; para revisar: por ejemplo, para el primer listado, comparar la cantidad de votos emitios con el total computado.&lt;/p&gt;
 &lt;div class="tip"&gt;
 &lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
 &lt;p&gt;El software es libre (bajo licencia GPLv3), está realizado en Python
