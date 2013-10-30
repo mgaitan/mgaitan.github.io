@@ -6,7 +6,7 @@
 #NoAlFraudeEnCórdoba. Ayudanos!
 ===============================
 
-Mi nombre es Martín Gaitán y soy ingnieron en computación. Quienes me
+Mi nombre es Martín Gaitán y soy ingeniero en computación. Quienes me
 conocen saben que soy kirchnerista y fui fiscal de Carolina Scotto, pero
 antes de eso soy ciudadano y como tal, mi deber cívico es defender la
 democracia. En este caso, exigiendo un escrutinio transparente.
