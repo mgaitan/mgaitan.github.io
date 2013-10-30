@@ -6,7 +6,7 @@
 #NoAlFraudeEnCórdoba. Ayudanos!
 ===============================
 
-Mi nombre es Martín Gaitán y soy ingeniero en computación. Quienes me
+Mi nombre es Martín Gaitán y soy ingeniero  en computación. Quienes me
 conocen saben que soy kirchnerista y fui fiscal de Carolina Scotto, pero
 antes de eso soy ciudadano y como tal, mi deber cívico es defender la
 democracia. En este caso, exigiendo un escrutinio transparente.
@@ -44,7 +44,7 @@ emitidos/cantidad de sobres que figura en el telgrama.
 Más aun, los datos deberian estar no sólo visualizables sino en un
 formato abierto para poder procesarlos con otras herramientas.
 
-Cómo soy programa, realicé un simple programa para extraer los datos
+Cómo soy programador, realicé un simple programa para extraer los datos
 de los resultados electorales de Córdoba (aunque bien serviría para
 otros distritos), sistematizarlos en una base de datos y hacer una
 búsqueda de mesas "sospechosas". Por ejemplo, aquellas en las que el FIT

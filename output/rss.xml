@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 30 Oct 2013 16:16:53 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>#NoAlFraudeEnCórdoba. Ayudanos</title><link>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-ayudanos.html</link><description>&lt;!-- title: #NoAlFraudeEnCórdoba. Ayudanos --&gt;
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 30 Oct 2013 16:18:11 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>#NoAlFraudeEnCórdoba. Ayudanos</title><link>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-ayudanos.html</link><description>&lt;!-- title: #NoAlFraudeEnCórdoba. Ayudanos --&gt;
 &lt;!-- slug: no-al-fraude-en-cordoba-ayudanos --&gt;
 &lt;!-- date: 2013/10/30 15:17:55 --&gt;
-&lt;p&gt;Mi nombre es Martín Gaitán y soy ingeniero en computación. Quienes me
+&lt;p&gt;Mi nombre es Martín Gaitán y soy ingeniero  en computación. Quienes me
 conocen saben que soy kirchnerista y fui fiscal de Carolina Scotto, pero
 antes de eso soy ciudadano y como tal, mi deber cívico es defender la
 democracia. En este caso, exigiendo un escrutinio transparente.&lt;/p&gt;
@@ -33,7 +33,7 @@ de votos a los partidos, más blancos, nulos y recurridos) con los votos
 emitidos/cantidad de sobres que figura en el telgrama.&lt;/p&gt;
 &lt;p&gt;Más aun, los datos deberian estar no sólo visualizables sino en un
 formato abierto para poder procesarlos con otras herramientas.&lt;/p&gt;
-&lt;p&gt;Cómo soy programa, realicé un simple programa para extraer los datos
+&lt;p&gt;Cómo soy programador, realicé un simple programa para extraer los datos
 de los resultados electorales de Córdoba (aunque bien serviría para
 otros distritos), sistematizarlos en una base de datos y hacer una
 búsqueda de mesas "sospechosas". Por ejemplo, aquellas en las que el FIT
