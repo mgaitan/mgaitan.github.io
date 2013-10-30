@@ -44,16 +44,16 @@ emitidos/cantidad de sobres que figura en el telgrama.
 Más aun, los datos deberian estar no sólo visualizables sino en un
 formato abierto para poder procesarlos con otras herramientas.
 
-Cómo soy informático, realicé un simple programa para extraer los datos
+Cómo soy programa, realicé un simple programa para extraer los datos
 de los resultados electorales de Córdoba (aunque bien serviría para
 otros distritos), sistematizarlos en una base de datos y hacer una
-búsqueda de mesas "sospechosas", por ejemplo, aquellas en las que el FIT
-obtuvo 0 voto (patrón de los 2 primeros ejemplos)
+búsqueda de mesas "sospechosas". Por ejemplo, aquellas en las que el FIT
+obtuvo 0 voto (patrón de los 2 primeros ejemplos).
 
 Si bien este proceso es automatizable, determinar cuándo ese dato es
 realmente erroneo es mucho más complejo (en parte por la falta de datos
 que menciono) y, dada la urgencia, es mejor hacerlo de forma manual,
-colaborativamente. Por ello **necesito ayuda**: por ejemplo, para el primer listado, comparar la cantidad de votos emitios con el total computado.
+colaborativamente. Por ello **necesito ayuda** para revisar: por ejemplo, para el primer listado, comparar la cantidad de votos emitios con el total computado.
 
 .. tip::
 
