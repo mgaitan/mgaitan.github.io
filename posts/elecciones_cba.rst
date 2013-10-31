@@ -63,9 +63,16 @@ colaborativamente. Por ello **necesito ayuda** para revisar: por ejemplo, para e
 
     También se encuentra disponible la `base de datos <http://lab.nqnwebs.com/descargas/db.sqlite>`_.
 
+
 .. attention::
 
-    Por favor, dejá comentarios si encontrás algun error en las mesas
+    Si encontrás telegramas mal cargados o sospechosos, llená este formulario.
+
+
+.. raw:: html
+
+    <iframe src="https://docs.google.com/forms/d/1xdFzOXbJjW2yk0DfpMjFyUISaLmIkG5HqneVn_Rk6bQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>
+
 
 
 Mesas computadas donde el FIT sacó 0 voto
