@@ -17,9 +17,8 @@ diputada por Córdoba. Ese pronóstico se iba confirmando a lo largo del
 escrutinio hasta alrededor de las 23hs, cuando la tendencia empezó a
 cambiar en favor del tercer candidato de la UCR, Diego Mestre.
 
-Al ser el marge tan estrecho
-(`calculé <http://nbviewer.ipython.org/7206288>`_ 0.06%) el partido de
-Olivero exige el recuento de los votos y `la justicia electoral se
+Al ser el margen tan estrecho
+(`calculé <http://nbviewer.ipython.org/7206288>`_ que son menos de 1600, 0.06%) el partido de Olivero exige el recuento de los votos y `la justicia electoral se
 niega <http://www.lavoz.com.ar/politica/desestiman-pedido-del-fit-para-abrir-todas-las-urnas>`_.
 
 Aún sin el recuento voto a voto, se han encontrado mesas con votos al
@@ -66,7 +65,8 @@ colaborativamente. Por ello **necesito ayuda** para revisar: por ejemplo, para e
 
 .. attention::
 
-    Si encontrás telegramas mal cargados o sospechosos, llená este formulario.
+    Si encontrás telegramas mal cargados o sospechosos, llená este formulario
+    (o dejá un comentario al pie del artículo)
 
 
 .. raw:: html

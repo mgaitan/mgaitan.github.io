@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Wed, 30 Oct 2013 23:13:47 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>#NoAlFraudeEnCórdoba. Ayudanos</title><link>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-ayudanos.html</link><description>&lt;!-- title: #NoAlFraudeEnCórdoba. Ayudanos --&gt;
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Thu, 31 Oct 2013 11:02:21 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>#NoAlFraudeEnCórdoba. Ayudanos</title><link>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-ayudanos.html</link><description>&lt;!-- title: #NoAlFraudeEnCórdoba. Ayudanos --&gt;
 &lt;!-- slug: no-al-fraude-en-cordoba-ayudanos --&gt;
 &lt;!-- date: 2013/10/30 15:17:55 --&gt;
 &lt;p&gt;Mi nombre es Martín Gaitán y soy ingeniero  en computación. Quienes me
@@ -11,9 +11,8 @@ candidata del Frente de Izquierda y los Trabajadores (FIT), como la 9na
 diputada por Córdoba. Ese pronóstico se iba confirmando a lo largo del
 escrutinio hasta alrededor de las 23hs, cuando la tendencia empezó a
 cambiar en favor del tercer candidato de la UCR, Diego Mestre.&lt;/p&gt;
-&lt;p&gt;Al ser el marge tan estrecho
-(&lt;a class="reference external" href="http://nbviewer.ipython.org/7206288"&gt;calculé&lt;/a&gt; 0.06%) el partido de
-Olivero exige el recuento de los votos y &lt;a class="reference external" href="http://www.lavoz.com.ar/politica/desestiman-pedido-del-fit-para-abrir-todas-las-urnas"&gt;la justicia electoral se
+&lt;p&gt;Al ser el margen tan estrecho
+(&lt;a class="reference external" href="http://nbviewer.ipython.org/7206288"&gt;calculé&lt;/a&gt; que son menos de 1600, 0.06%) el partido de Olivero exige el recuento de los votos y &lt;a class="reference external" href="http://www.lavoz.com.ar/politica/desestiman-pedido-del-fit-para-abrir-todas-las-urnas"&gt;la justicia electoral se
 niega&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Aún sin el recuento voto a voto, se han encontrado mesas con votos al
 FIT mal computados. Algunos ejemplos&lt;/p&gt;
@@ -51,7 +50,8 @@ en IPython Notebook&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="attention"&gt;
 &lt;p class="first admonition-title"&gt;Attention!&lt;/p&gt;
-&lt;p class="last"&gt;Si encontrás telegramas mal cargados o sospechosos, llená este formulario.&lt;/p&gt;
+&lt;p class="last"&gt;Si encontrás telegramas mal cargados o sospechosos, llená este formulario
+(o dejá un comentario al pie del artículo)&lt;/p&gt;
 &lt;/div&gt;
 &lt;iframe src="https://docs.google.com/forms/d/1xdFzOXbJjW2yk0DfpMjFyUISaLmIkG5HqneVn_Rk6bQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0"&gt;Cargando...&lt;/iframe&gt;&lt;div class="section" id="mesas-computadas-donde-el-fit-saco-0-voto"&gt;
 &lt;h2&gt;Mesas computadas donde el FIT sacó 0 voto&lt;/h2&gt;
