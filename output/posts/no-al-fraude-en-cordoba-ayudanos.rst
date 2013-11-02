@@ -6,6 +6,10 @@
 #NoAlFraudeEnCórdoba. Ayudanos!
 ===============================
 
+.. tip::
+
+    Hay un nuevo artículo relacionado `acá </posts/no-al-fraude-en-cordoba-nuevo-analisis.html>`_
+
 Mi nombre es Martín Gaitán y soy ingeniero  en computación. Quienes me
 conocen saben que soy kirchnerista y fui fiscal de Carolina Scotto, pero
 antes de eso soy ciudadano y como tal, mi deber cívico es defender la

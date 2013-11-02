@@ -43,6 +43,106 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/una-mejor-manera-de-controlar-los.html">Una mejor manera de controlar los atributos en SPIP</a>
+        <small>  
+             <span class="timeago" title="2009-03-12 06:29:35">2009-03-12 06:29:35</span>
+        </small></h1>
+        <p>Muchas balizas SPIP generan código HTML como salida (las balizas
+#LOGO_* y los filtros |image_* son los más notorios) y
+frecuentemente necesitamos o queremos modificar este código autogenerado
+en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
+(<a class="reference external" href="http://www.spip.net/en_article2465.html#inserer_attribut">inserer_attribut</a>
+para insertar atributos y
+<a class="reference external" href="http://www.spip.net/en_article2465.html#extraire_attribut">extraire_attribut</a>
+para extraer el valor de uno generado) pero son particularmente largos y
+tediosos de tipear.</p>
+<p>Más allá de eso, aunque uso estos filtros bastantes seguido para
+implementar cosas como galerías de imágenes, todavía pienso lo difícil
+que es escribir las palabras en francés sin equivocarme. Por suerte, un
+pequeño wrapper, puede suavizar este inconveniente.</p>
+<p>Cuando se trata de acceder y modificar atributos de valores de atributos
+nada, en mi opinión, llega tan lejos como <a class="reference external" href="http://docs.jquery.com/Attributes">la API de atributos de
+jQuery</a>. El <a class="reference external" href="http://docs.jquery.com/Attributes/attr">método de jQuery
+*attr*</a> por sí solo, permite
+leer y escribir el valor de cualquier atributo en cualquier nodo. Recibe
+uno o dos parámetros, el nombre del atributo, y opcionalmente, el valor.</p>
+<p>Si sólo se especifica el nombre, entonces <em>attr</em> extrae y devuelve el
+valor de ese atributo. Si ambos parámetros son pasados al método,
+entonces attr modifica el objeto configurando el atributo en cuestión
+con el valor dado. Es jerga de Programación Orientada a Objetos, es un
+estilo de interfaz "polimórfica" — cuando un solo método tiene dos
+comportamientos complementarios que son distinguidos por el número y/o
+el tipo de los argumentos dados — que está por todos lados en jQuery y
+es una de las razones por las que este framework es tan conciso y
+productivo.</p>
+<p>Considerandola como la mejor estructura para este tipo de interfaces que
+conozco (y también, que uso diariamente), decidí ue mi wrapper tendría
+que copiarlo. Así fue como el <em>attr</em> nació.</p>
+<p>Como el método de jQuery, el filtro <em>attr</em> de SPIP toma uno o dos
+parámetros (y un objeto "implícito", pero lo ignoraremos por el
+momento). Si sólo pasamos uno, este lo remite como entrada a
+<em>extraire_attribut</em> para obtener el valor correspondiente. Si se lo
+llama con dos parámetros, entonces llama a <em>inserer_attribut</em> para
+modificar el objeto.</p>
+<p>Como la idea, el código es razonablemente sencillo; la únca</p>
+<p>Like the idea, the code is reasonably straightforward; quizas lo único
+un poco inusual el uso de
+<a class="reference external" href="http://php.net/func_get_args">func_get_args</a> para obtener el
+conjunto de los argumentos pasados a la función llamada. Con ese array
+podermos usar <a class="reference external" href="http://php.net/count">count</a> para saber cuantos
+argumentos se pasaron y decidir qué se debe hacer. Esto es más seguro
+que especificar y evaluar valores por defecto (FALSE o NULL, por
+ejemplo) porque algunos usuarios genuinamente podrían querer usar esos
+valores (supongamos que NULL signifique eliminar el atributo en una
+futura versión).</p>
+<pre class="literal-block">
+include_spip("inc/filtres");
+
+/**
+ * The `attr` function allows the user to get and set the attributes of an HTML tag.
+ * It is intended to be used as a SPIP filter and depends on existing SPIP functionality.
+ *
+ * @param $tag
+ *     The HTML code.
+ * @param $name
+ *     The name of the attribute.
+ * @param $val...
+ *     The new value for the attribute $nom. Optional.
+ * @return
+ *     If $val was given, the code for tag with $name=$val
+ *     Otherwise, the value for the $name attribute in $tag.
+ */
+function attr($tag, $name){
+        $args = func_get_args();
+
+        if (count($args) &gt; 2) {
+                // SET
+                return  inserer_attribut($tag, $name, $args[2]);
+        } else {
+                // GET
+                return extraire_attribut($tag, $name);
+        }
+}
+</pre>
+<p>Simplemente copia el código en mes_fonctions.php (Mira "Agregar
+funciones propias" en la documentación sobre <a class="reference external" href="posts/Agregar%20funciones%20propias">filtros de
+spip</a>) y luego usa el filtro attr en
+tus esqueletos:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 94)</p>
+Literal block expected; none found.</div>
+<p>Hay algunos cambios que se puede hacer a esta función: pasar $args
+directamente a inserer_attribut y extraire_attribut en vez de las
+variables individuales, agregar un parámetro $value=FALSE que sólo sirva
+para la claridad de la documentación , y el mencionado, eliminar
+atributos cuando se pase por ejemplo NULL como parámetro.</p>
+        <p>
+        
+            <a href="posts/una-mejor-manera-de-controlar-los.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/personalizar-el-texto-de.html">Personalizar el texto de #INTRODUCTION</a>
         <small>  
              <span class="timeago" title="2009-03-10 10:38:44">2009-03-10 10:38:44</span>
@@ -621,68 +721,6 @@ $ svn  add archivo1 archivo2 *jpg
         <p>
         
             <a href="posts/Control-de-Versiones-con.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/spicasa-adjunta-fotos-de-picasa-a.html">Spicasa: adjuntá fotos de picasa a un artículo</a>
-        <small>  
-             <span class="timeago" title="2009-02-12 01:48:46">2009-02-12 01:48:46</span>
-        </small></h1>
-        <p>Con un poco de coca-cola en la sangre, retomé esta madrugada un
-proyectito que tenía: adjuntar fotos de un album de
-<a class="reference external" href="http://picasaweb.google.com">Picasa</a> a un artículo.</p>
-<p>El caso de uso, basado en mi propia necesidad, es el siguiente:</p>
-<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Uso PicasaWeb para subir mis fotos. A veces son albumes públicos, a
-veces no.
-<img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Al subir fotos, generalmente le pongo una descripción.
-<img alt="image2" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Algunas fotos las subo también a mi blog personal.</p>
-<p>La complicación es que tengo que subir las fotos a picasa y tambien a mi
-web (por ftp si son muchas). Obviamente es ineficiente, y además pierdo
-los comentarios que hice en Picasa.</p>
-<div class="section" id="con-ustedes-spicasa">
-<h2>Con ustedes, Spicasa</h2>
-<p>Spicasa intenta solucionar esto. Está basado en el plugin
-<a class="reference external" href="http://plugins.spip.net/Flickr-CC">Flickr_cc</a> pero utilizando la
-excelente biblioteca <a class="reference external" href="http://cameronhinkle.com/blog/id/8585148182656068438">Lightweight PHP Picasa
-API</a> de Cameron
-Hinkle, para interactura con la <a class="reference external" href="http://code.google.com/intl/es-AR/apis/picasaweb/overview.html">API de
-Picasa</a></p>
-<p>Permite buscar fotos públicas en Picasa y asociarlas a un artículo, al
-igual que Flickr_cc lo hace con <a class="reference external" href="http://flickr.com">Flickr</a>. Pero
-además, permite ingresar a tu cuenta y adjuntar uno de tus albumes al
-artículo. Todo con mucho AJAX y dulce de leche.</p>
-<p><img alt="image3" src="images/Pantallazo-1-3e61d.png">
-Por supuesto, aunque cumple sus función básica, es un desarrollo
-totalmente inacabado que necesita desarrollo y depuración.</p>
-</div>
-<div class="section" id="requerimientos">
-<h2>Requerimientos</h2>
-<p><img alt="image4" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Requiere SPIP 2.0 o superior
-<img alt="image5" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> La biblioteca Lightweight PHP Picasa API está incluída. Sólo
-requiere PHP5.</p>
-</div>
-<div class="section" id="todo-y-bugs-conocidos">
-<h2>TODO y bugs conocidos</h2>
-<p><img alt="image6" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:El tamaño máximo de las fotos descargadas es 800px]
-<img alt="image7" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:No hace búsquedas de más de una palabra]
-<img alt="image8" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Hay que loguearse cada vez que se quiere adjuntar un álbum
-nuevo
-<img alt="image9" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:La ventana modal queda inaccesible si el scroll
-vertical no está arriba. (bug heredado de Flickr_cc)]</p>
-</div>
-<div class="section" id="descarga-e-instalacion">
-<h2>Descarga e instalación</h2>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/spicasa0.13.zip">|image11|</a></td>
-</tr><tr><td>Spicasa 0.13</td>
-</tr></tbody></table><p><img alt="image12" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Descromprimilo en la carpeta <em>/plugins</em> de tu sitio spip
-<img alt="image13" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Activalo desde el panel de administración
-<img alt="image14" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Al editar un artículo, te aparecerá un link con el logo de
-Spicasa para adjuntar fotos.</p>
-</div>
-        <p>
-        
-            <a href="posts/spicasa-adjunta-fotos-de-picasa-a.html#disqus_thread">Comments</a>
         
         </p></div>
     

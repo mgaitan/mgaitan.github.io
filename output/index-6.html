@@ -43,6 +43,158 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/un-spip-para-muchos-sitios.html">Un SPIP para muchos sitios</a>
+        <small>  
+             <span class="timeago" title="2009-08-10 08:40:55">2009-08-10 08:40:55</span>
+        </small></h1>
+        <p>Administrar muchos sitios SPIP tiene sus bemoles. Yo administro, fácil,
+unos 30. Cuando hay que actualizar la versión (por cuestiones de
+funcionalidad, o bien, como la semana pasada, por cuestiones de
+seguridad), es un trabajo engorroso y aburrido hacer 30 veces lo mismo.
+Y el trabajo se vuelve exponencial si hay que actualizar los plugins
+para cada uno</p>
+<p>Para evitar eso existe la
+<a class="reference external" href="http://www.spip-contrib.net/La-mutualisation-facile">Mutualización</a>,
+que desde la versión 2 es realmente muy fácil.</p>
+<p>El concepto es simple: un sólo núcleo de SPIP (/ecrire, /prive,
+/squelettes-dist, /plugins) se comparte para motorizar diferentes
+sitios, que tendrán los directorios con contenido propio (/squelettes,
+/config , /IMG, etc), separado del resto</p>
+<p>Así, a la hora de actualizar SPIP sólo tenemos que actualizar una sola
+instalación, tarea que se vuelve trivial si además usamos
+<a class="reference external" href="posts/blog/article/ultima-version-de-spip-por-svn">svn</a>.</p>
+<div class="section" id="requisito">
+<h2>Requisito</h2>
+<p>En general, la mutualización funciona sin muchos pormenores en un
+servidor LAMP, pero nuestro servidor de hospedaje debe permitir apuntar
+diferentes dominios a un mismo directorio publico.</p>
+<p>Por ejemplo, mi sitio <strong>textosypretextos.com.ar</strong> apunta a
+<em>/home/tin/public_html/spip</em> y <strong>nqnwebs.com</strong> apunta también a
+<em>/home/tin/public_html/spip</em>.</p>
+<p>Es una configuración simple, pero no todos los servicios de hosting lo
+permiten.</p>
+</div>
+<div class="section" id="puesta-en-marcha">
+<h2>Puesta en marcha</h2>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/mutualisation.zip">|image1|</a></td>
+</tr><tr><td>plugin mutualisation</td>
+</tr></tbody></table><p>La "mutualización fácil" funciona a través de este plugin, pero que
+particularmente <strong>debe ser instalado en la raiz del sitio</strong> y no en la
+carpeta /plugins</p>
+<p>Al descomprimirlo crea una nueva carpeta, <em>/mutualisation</em>, en la raiz
+de nuestro SPIP mutualizado</p>
+<p>Además, incluye un archivo <em>mes_options.php</em> de ejemplo, pero yo te
+propongo este, que debe ser instalado en <em>/config</em></p>
+<pre class="literal-block">
+ true
+     */
+    # define ('_INSTALL_USER_DB_ROOT', 'mon_root');
+    # define ('_INSTALL_PASS_DB_ROOT', '********');
+
+    /*
+     * Crear las bases de dato via un ping a una URL (metodo AlternC)
+     *
+     * Il suffit de renseigner l'option url_creer_base, en lui passant les bons parametres :
+     * 'url_creer_base' =&gt; 'https://bureau.tld/admin/sql_doadd.php?username=USER&amp;password=PASS&amp;dbn='.prefixe_mutualisation($site)
+     */
+
+
+    /*
+     * Transformar en las paginas publicas las URL de imagenes
+     * /sites/mon_site/IMG/* -&gt; /IMG/*
+     * /sites/mon_site/local/* -&gt; /local/*
+     *
+     * - Necesita el mod_rewrite (reescritura de url) de apache
+     * - Sólo funciona con nombres de dominio mutualización
+     * ('http_host' : http://mi_sitio_mutualizado.com)
+     * (por lo tanto, no funciona con un subdirectorio - http://mi_sitio_mutualizado.com/misitio/)
+     *
+     * y añadir en la opción
+     * 'url_img_courtes' =&gt; true
+     *
+     * Es posible generar los  .htaccess
+     * automaticamente en /IMG y /local
+     * gracias a ?var_mode=creer_htaccess_img
+     *
+     */
+
+    /*
+     * Indique aqui el nombre del sitio de administración de esta mutualización
+     * (o varios, separados por oma)
+     * (dpor ejemplo, 'scriibe.net' es el dominio de nivel maximo)
+     * para autorizar todos los sitios no definir la constante ;
+     * Si el propietario del sitio no se encuentra en los sites/ sino en la razi,
+     * escriba '' y agregue 'mutualisation' en $dossier_squelettes
+     */
+    define ('_SITES_ADMIN_MUTUALISATION', 'nqnwebs.com');
+
+
+    demarrer_site($site,
+        array(
+            'creer_site' =&gt; true,        // Creer ou non le site s'il n'existe pas (defaut: false)
+            'creer_base' =&gt; false,        // Creer ou non la base de donnee si elle n'existe pas (false)
+            'creer_user_base' =&gt; false,  // Creer ou non un utilisateur pour la nouvelle base de donnee (false)
+            'mail' =&gt; '',                // Adresse mail pour recevoir un mail lors d'une creation de site mutualise ('')
+            'code' =&gt; 'miclave',  // Code d'activation ('ecureuil')
+            'table_prefix' =&gt; true,     // Definir automatiquement le prefixe de table (false) ... mettre true si tous les sites dans la meme base
+            'cookie_prefix' =&gt; true,     // Definir automatiquement le prefixe de cookie (false)
+            'repertoire' =&gt; 'sites',     // Nom du repertoire contenant les sites mutualises ('sites')
+            'url_img_courtes' =&gt; true,   // Utiliser la redirection des URL d'images courtes dans la partie publique (false)
+            # 'utiliser_panel' =&gt; false, // Utiliser une table externe pour recuperer des identifiants ... (code, user, pass) permettant a un utilisateur d'installer le site (false)
+            'url_creer_base' =&gt; ''       // Creer la base de donnees via une URL (methode AlternC)
+        )
+    );
+
+
+?&gt;
+</pre>
+<p>Este mes_options.php (retocado por mi) permite que los sitios funcionen
+con o sin ’www’. También apunta a una única base de datos, donde se
+encargará de crear las tablas necesarias para cada sitio, diferenciadas
+por un prefijo.</p>
+<p>Sólo resta crear la carpeta <em>/sites</em> en la raiz del sitio, donde irán
+nuestros diferentes sitios mutualizados.</p>
+<p>Al acceder via web a un dominio de un sitio sobre esta mutualización, lo
+primero que aparecerá es una solicitud de contraseña, definida en array
+de configuración de mes_options.php (en el ejemplo, la contraseña es
+<em>miclave</em>)</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH303/Pantallazo-2-d2b75.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 134)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Luego siguen dos etapas que nos crean la estructura de directorios para
+este sitio dentro de <em>/sites</em> y las tablas para este sitio en la base de
+datos compartida. Lo que sigue es el proceso de instalación estándar de
+SPIP.</p>
+<p><strong>¡Listo!</strong></p>
+<p>Hay que tener en cuenta que ahora los archivos para nuestro sitio
+estarán dentro de <em>/sites/dominio/</em> y es allí donde deberán subirse los
+esqueletos y demás.</p>
+</div>
+<div class="section" id="mutualizar-un-sitio-en-produccion">
+<h2>Mutualizar un sitio en producción</h2>
+<p>¿Qué pasa si el sitio que quiero mutualizar ya está funcionando sobre un
+spip propio? No problem.</p>
+<p>Basta indicar (desde el panel, o solicitando al administrador del
+hosting) que nuestro dominio debe apuntar ahora a la carpeta donde
+tenemos el spip mutualizado (en mi ejemplo <em>/home/tin/public_html/spip</em>
+), crear el directorio <strong>/sites/dominio</strong> (donde dominio es la url del
+sitio que queremos migrar) y mover alli las carpetas /config, /IMG,
+/squelettes, /local y /tmp (o crear una /tmp nueva) del SPIP en uso al
+nuevo directorio. [[Estas carpetas, bien podrian ser link simbólicos].
+Magia!</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusión</h2>
+</div>
+        <p>
+        
+            <a href="posts/un-spip-para-muchos-sitios.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/limitar-la-cantidad-de-caracteres.html">Limitar la cantidad de caracteres de los comentarios</a>
         <small>  
              <span class="timeago" title="2009-06-10 06:41:37">2009-06-10 06:41:37</span>
@@ -696,106 +848,6 @@ estructura completa del bucle.</p>
         <p>
         
             <a href="posts/variar-o-no-variar-esa-es-la.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/una-mejor-manera-de-controlar-los.html">Una mejor manera de controlar los atributos en SPIP</a>
-        <small>  
-             <span class="timeago" title="2009-03-12 06:29:35">2009-03-12 06:29:35</span>
-        </small></h1>
-        <p>Muchas balizas SPIP generan código HTML como salida (las balizas
-#LOGO_* y los filtros |image_* son los más notorios) y
-frecuentemente necesitamos o queremos modificar este código autogenerado
-en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
-(<a class="reference external" href="http://www.spip.net/en_article2465.html#inserer_attribut">inserer_attribut</a>
-para insertar atributos y
-<a class="reference external" href="http://www.spip.net/en_article2465.html#extraire_attribut">extraire_attribut</a>
-para extraer el valor de uno generado) pero son particularmente largos y
-tediosos de tipear.</p>
-<p>Más allá de eso, aunque uso estos filtros bastantes seguido para
-implementar cosas como galerías de imágenes, todavía pienso lo difícil
-que es escribir las palabras en francés sin equivocarme. Por suerte, un
-pequeño wrapper, puede suavizar este inconveniente.</p>
-<p>Cuando se trata de acceder y modificar atributos de valores de atributos
-nada, en mi opinión, llega tan lejos como <a class="reference external" href="http://docs.jquery.com/Attributes">la API de atributos de
-jQuery</a>. El <a class="reference external" href="http://docs.jquery.com/Attributes/attr">método de jQuery
-*attr*</a> por sí solo, permite
-leer y escribir el valor de cualquier atributo en cualquier nodo. Recibe
-uno o dos parámetros, el nombre del atributo, y opcionalmente, el valor.</p>
-<p>Si sólo se especifica el nombre, entonces <em>attr</em> extrae y devuelve el
-valor de ese atributo. Si ambos parámetros son pasados al método,
-entonces attr modifica el objeto configurando el atributo en cuestión
-con el valor dado. Es jerga de Programación Orientada a Objetos, es un
-estilo de interfaz "polimórfica" — cuando un solo método tiene dos
-comportamientos complementarios que son distinguidos por el número y/o
-el tipo de los argumentos dados — que está por todos lados en jQuery y
-es una de las razones por las que este framework es tan conciso y
-productivo.</p>
-<p>Considerandola como la mejor estructura para este tipo de interfaces que
-conozco (y también, que uso diariamente), decidí ue mi wrapper tendría
-que copiarlo. Así fue como el <em>attr</em> nació.</p>
-<p>Como el método de jQuery, el filtro <em>attr</em> de SPIP toma uno o dos
-parámetros (y un objeto "implícito", pero lo ignoraremos por el
-momento). Si sólo pasamos uno, este lo remite como entrada a
-<em>extraire_attribut</em> para obtener el valor correspondiente. Si se lo
-llama con dos parámetros, entonces llama a <em>inserer_attribut</em> para
-modificar el objeto.</p>
-<p>Como la idea, el código es razonablemente sencillo; la únca</p>
-<p>Like the idea, the code is reasonably straightforward; quizas lo único
-un poco inusual el uso de
-<a class="reference external" href="http://php.net/func_get_args">func_get_args</a> para obtener el
-conjunto de los argumentos pasados a la función llamada. Con ese array
-podermos usar <a class="reference external" href="http://php.net/count">count</a> para saber cuantos
-argumentos se pasaron y decidir qué se debe hacer. Esto es más seguro
-que especificar y evaluar valores por defecto (FALSE o NULL, por
-ejemplo) porque algunos usuarios genuinamente podrían querer usar esos
-valores (supongamos que NULL signifique eliminar el atributo en una
-futura versión).</p>
-<pre class="literal-block">
-include_spip("inc/filtres");
-
-/**
- * The `attr` function allows the user to get and set the attributes of an HTML tag.
- * It is intended to be used as a SPIP filter and depends on existing SPIP functionality.
- *
- * @param $tag
- *     The HTML code.
- * @param $name
- *     The name of the attribute.
- * @param $val...
- *     The new value for the attribute $nom. Optional.
- * @return
- *     If $val was given, the code for tag with $name=$val
- *     Otherwise, the value for the $name attribute in $tag.
- */
-function attr($tag, $name){
-        $args = func_get_args();
-
-        if (count($args) &gt; 2) {
-                // SET
-                return  inserer_attribut($tag, $name, $args[2]);
-        } else {
-                // GET
-                return extraire_attribut($tag, $name);
-        }
-}
-</pre>
-<p>Simplemente copia el código en mes_fonctions.php (Mira "Agregar
-funciones propias" en la documentación sobre <a class="reference external" href="posts/Agregar%20funciones%20propias">filtros de
-spip</a>) y luego usa el filtro attr en
-tus esqueletos:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 94)</p>
-Literal block expected; none found.</div>
-<p>Hay algunos cambios que se puede hacer a esta función: pasar $args
-directamente a inserer_attribut y extraire_attribut en vez de las
-variables individuales, agregar un parámetro $value=FALSE que sólo sirva
-para la claridad de la documentación , y el mencionado, eliminar
-atributos cuando se pase por ejemplo NULL como parámetro.</p>
-        <p>
-        
-            <a href="posts/una-mejor-manera-de-controlar-los.html#disqus_thread">Comments</a>
         
         </p></div>
     

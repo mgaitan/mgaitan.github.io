@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Thu, 31 Oct 2013 17:50:33 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>#NoAlFraudeEnCórdoba. Ayudanos</title><link>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-ayudanos.html</link><description>&lt;!-- title: #NoAlFraudeEnCórdoba. Ayudanos --&gt;
+<rss version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sat, 02 Nov 2013 17:54:56 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nuevo análisis #NoAlFraudeEnCordoba</title><link>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-nuevo-analisis.html</link><description>&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;!-- tags: --&gt;
+&lt;!-- date: 2013/11/02 16:20:21 --&gt;
+&lt;!-- title: Nuevo análisis #NoAlFraudeEnCordoba --&gt;
+&lt;!-- slug: no-al-fraude-en-cordoba-nuevo-analisis --&gt;
+&lt;p&gt;La repecursión que causó el &lt;a class="reference external" href="http://mgaitan.github.io/posts/no-al-fraude-en-cordoba-ayudanos.html"&gt;análisis de datos para filtrar mesas estadísticamente sospechosas&lt;/a&gt; me sorprendió totalmente.&lt;/p&gt;
+&lt;p&gt;Se registraron más de &lt;a class="reference external" href="https://docs.google.com/spreadsheet/ccc?key=0Au9td98rqeZ0dHVqMlltQ1FzSmd0LTcxcFZwY2JYY3c&amp;amp;usp=sharing"&gt;200 reportes de irregularidades&lt;/a&gt;
+a través del formulario y otros tantos en los comentarios de los articulo previos a que pusiera ese sistema de aviso.&lt;/p&gt;
+&lt;p&gt;Además, no sólo salió en los medios (para &lt;a class="reference external" href="http://pages.citebite.com/k2l2d5g4g7qky"&gt;algunos&lt;/a&gt; con mala leche soy "kirchnerista &lt;em&gt;pero&lt;/em&gt; democrático") , sino que Liliana Olivero se comunicó conmigo para agradecerme y preguntarme si podíamos obtener más información. Hoy me reuní con integrantes del Frente de Izquierda para
+hacer &lt;a class="reference external" href="http://nbviewer.ipython.org/7281371"&gt;nuevos reportes&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="algunos-numeros-nuevos"&gt;
+&lt;h2&gt;Algunos números nuevos&lt;/h2&gt;
+&lt;p&gt;Encontré, por ejemplo, que son 201 &lt;a class="reference external" href="http://nbviewer.ipython.org/7281371#mesas-no-computadas"&gt;las mesas no computadas&lt;/a&gt; ¿qué significa eso? ¿se tienen en cuenta en el escrutinio definitivo? ¿se abrirán esas urnas?&lt;/p&gt;
+&lt;p&gt;También &lt;a class="reference external" href="http://nbviewer.ipython.org/7281371#mesas-con-mayor-cantidad-de-votos-computados"&gt;hay mesas&lt;/a&gt; que &lt;a class="reference external" href="http://www.resultados.gob.ar/telegramas/04/006/0089/040060089_4062.htm"&gt;tienen hasta 80 votos computados más que la cantidad real de votos en la urna&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Además de los errores en el escrutinio, se teme que las mesas con muchos votos nulos sean las que no consideraron boletas de las PASO, debido a que muchos presidentes de mesa no se enteraron que la Justicia Electoral decidió que serían válidas. Hay &lt;a class="reference external" href="http://nbviewer.ipython.org/7281371#mesas-con-muchos-nulos-y-pocos-al-fit"&gt;al menos 136 mesas&lt;/a&gt; con una proporción muy alta de votos nulos y muy baja para el FIT. ¿No se deberían revisar?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="a-quien-afectan-los-errores"&gt;
+&lt;h2&gt;A quién afectan los "errores"&lt;/h2&gt;
+&lt;p&gt;Por último, &lt;a class="reference external" href="http://mgaitan.github.io/posts/no-al-fraude-en-cordoba-ayudanos.html#comment-1104065602"&gt;alguien me preguntó&lt;/a&gt; si el error recurrente de mesas con "0" votos no afectaría parejo para todas las listas.&lt;/p&gt;
+&lt;p&gt;Traté de hacer &lt;a class="reference external" href="http://nbviewer.ipython.org/7281371#en-cuantas-mesas-computadas-las-distintas-opciones-tuvieron-0-voto-cuantos-votos-significarian-para-cada-una-si-se-tratase-de-un-error"&gt;una proyección&lt;/a&gt; &lt;a class="footnote-reference" href="/posts/no-al-fraude-en-cordoba-nuevo-analisis.html#id2" id="id1"&gt;[1]&lt;/a&gt;: sin considerar las 201 mesas no computadas, el FIT sacó 0 voto en 148 mesas y la UCR sólo en 11. Si multiplicamos esa cantidad de mesas por el promedio por mesa de cada partido, significarían un total de 607 votos para la UCR y 2774 para el FIT.&lt;/p&gt;
+&lt;p&gt;Es decir, aún si se tratase de un error, la UCR es el partido menos afectado y el FIT uno de los que más afectados resulta (junto con Vecinalismo Independiente y Encuentro Vecinal, es decir, los tres partidos con menos fiscales). ¿Casualidad?&lt;/p&gt;
+&lt;div class="attention"&gt;
+&lt;p class="first admonition-title"&gt;Attention!&lt;/p&gt;
+&lt;p class="last"&gt;Si encontrás telegramas mal cargados o sospechosos, llená este formulario
+(o dejá un comentario al pie del artículo)&lt;/p&gt;
+&lt;/div&gt;
+&lt;iframe src="https://docs.google.com/forms/d/1xdFzOXbJjW2yk0DfpMjFyUISaLmIkG5HqneVn_Rk6bQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0"&gt;Cargando...&lt;/iframe&gt;&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="/posts/no-al-fraude-en-cordoba-nuevo-analisis.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Por favor, revisen el cálculo y corrijanme si estoy errando.&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-nuevo-analisis.html</guid><pubDate>Sat, 02 Nov 2013 16:20:21 GMT</pubDate></item><item><title>#NoAlFraudeEnCórdoba. Ayudanos</title><link>http://mgaitan.github.com/posts/no-al-fraude-en-cordoba-ayudanos.html</link><description>&lt;!-- title: #NoAlFraudeEnCórdoba. Ayudanos --&gt;
 &lt;!-- slug: no-al-fraude-en-cordoba-ayudanos --&gt;
 &lt;!-- date: 2013/10/30 15:17:55 --&gt;
+&lt;div class="tip"&gt;
+&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;p class="last"&gt;Hay un nuevo artículo relacionado &lt;a class="reference external" href="/posts/no-al-fraude-en-cordoba-nuevo-analisis.html"&gt;acá&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;Mi nombre es Martín Gaitán y soy ingeniero  en computación. Quienes me
 conocen saben que soy kirchnerista y fui fiscal de Carolina Scotto, pero
 antes de eso soy ciudadano y como tal, mi deber cívico es defender la
@@ -43,6 +74,9 @@ que menciono) y, dada la urgencia, es mejor hacerlo de forma manual,
 colaborativamente. Por ello &lt;strong&gt;necesito ayuda&lt;/strong&gt; para revisar: por ejemplo, para el primer listado, comparar la cantidad de votos emitios con el total computado.&lt;/p&gt;
 &lt;div class="tip"&gt;
 &lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 7); &lt;em&gt;&lt;a href="/posts/no-al-fraude-en-cordoba-ayudanos.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Duplicate explicit target name: "acá".&lt;/div&gt;
 &lt;p&gt;El software es libre (bajo licencia GPLv3), está realizado en Python
 y está autocontenido en un documento utilizando el entorno &lt;a class="reference external" href="http://ipython.org/notebook.html"&gt;IPython Notebook&lt;/a&gt;. El código puede obtenerse &lt;a class="reference external" href="https://gist.github.com/mgaitan/7237956"&gt;acá&lt;/a&gt;. En nbviewer se puede ver una &lt;a class="reference external" href="http://nbviewer.ipython.org/7237956"&gt;versión estática de su ejecución
 en IPython Notebook&lt;/a&gt;.&lt;/p&gt;
@@ -847,132 +881,4 @@ que nos manda al debugger cuando un test falla o da error.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb"&gt;nose-ipdb&lt;/a&gt; lo imita, pero usando el más pulenta de los debuggers: &lt;a class="reference external" href="https://pypi.python.org/pypi/ipdb"&gt;ipdb&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Suficiente por hoy. Pero ¿me estoy perdiendo alguna cosa interesante
 para meter en mi nariz?&lt;/p&gt;
-&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</guid><pubDate>Tue, 26 Feb 2013 22:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;!-- title: Creando un nuevo proyecto Python --&gt;
-&lt;!-- slug: creando-un-nuevo-proyecto-python --&gt;
-&lt;!-- date: 2012/11/12 00:34:23 --&gt;
-&lt;!-- tags: python, tutorial --&gt;
-&lt;!-- link: --&gt;
-&lt;!-- description: --&gt;
-&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
-¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
-proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
-no se te arme lio de dependencias que colisionan con las de otros
-proyectos ? Bien, te propongo esta receta.&lt;/p&gt;
-&lt;div class="section" id="las-herramientas"&gt;
-&lt;h2&gt;Las herramientas&lt;/h2&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://www.virtualenv.org"&gt;Virtualenv&lt;/a&gt;:  es una herramienta para aislar tu entorno de
-desarrollo python. Es muy pero muy útil para evitar conflictos entre las
-dependencias de tus distintos proyectos.&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/"&gt;virtualenvwrapper&lt;/a&gt;: es un conjunto de extensiones que
-hacen la vida del usuario &lt;em&gt;virtualenv&lt;/em&gt; aun más feliz, permitiendo crear
-y borrar entornos virtuales, asociarlos a un proyecto, automatizar
-tareas al activar o desactivar uno, etc.&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt;: es la herramienta moderna, correcta y recomendada
-para administrar los paquetes python instalados en tu
-sistema/virtualenv. Es un reemplazo de &lt;em&gt;easy_install&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://packages.python.org/distribute/"&gt;Distribute&lt;/a&gt;: es la herramienta moderna y recomendada para
-distribuir tu paquete python. Es un fork de &lt;em&gt;setuptools&lt;/em&gt; (que es, a su
-vez, una mejora sobre el módulo estándar &lt;em&gt;distutils&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/stumitchell/skeleton"&gt;skeleton&lt;/a&gt; es una herramienta que define &lt;em&gt;plantillas&lt;/em&gt;
-para iniciar un proyecto, generando la estructura básica necesaria. Es
-similar a &lt;a class="reference external" href="http://python.org.ar/pyar/PasteScript"&gt;PasteScript&lt;/a&gt; pero enfocado en esta
-tarea concreta, sin dependencias y compatible con Python 3.x&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;
-&lt;div class="section" id="la-receta"&gt;
-&lt;h2&gt;La receta&lt;/h2&gt;
-&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Instalá pip:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo apt-get install python-pip
-&lt;/pre&gt;
-&lt;p&gt;o bien directamente:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Instalá virtualenwrapper y skeleton:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo pip install virtualenwrapper
-$ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;&lt;div class="note"&gt;
-&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
-&lt;p class="last"&gt;Notar que &lt;em&gt;skeleton&lt;/em&gt; se está instalando desde un &lt;em&gt;fork&lt;/em&gt; del proyecto
-original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
-&lt;/div&gt;
-&lt;ol class="arabic" start="3"&gt;&lt;li&gt;&lt;p class="first"&gt;Configurá virtualenvwrapper&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.virtualenvs           &lt;span class="c"&gt;# acá se van a guardar tus entornos virtuales
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/proyectos              &lt;span class="c"&gt;# acá se van a guardar tus proyectos
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.pip_download_cache     &lt;span class="c"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Luego editá tu &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/tt&gt; agregando las siguientes líneas&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
-&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
-&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true
-export &lt;/span&gt;&lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
-&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
-&lt;/pre&gt;
-&lt;p&gt;y recargá tus cambios:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ source ~/.bashrc
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Inicializá tu proyecto. Por ejemplo el proyecto &lt;em&gt;zaraza&lt;/em&gt;&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ mkproject -t package zaraza
-&lt;/pre&gt;
-&lt;p&gt;Se te solicitarán algunos datos (nombre del proyecto, autor,
-licencia, etc.) y ¡(casi) listo! Estarás trabajando en tu proyecto
-&lt;em&gt;zaraza&lt;/em&gt;. Tu prompt se verá así&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-(zaraza)tin@morocha:~/proyectos/zaraza$
-&lt;/pre&gt;
-&lt;p&gt;¿Qué sucedió? Se creó un directorio &lt;tt class="docutils literal"&gt;~/proyectos/zaraza&lt;/tt&gt; para tu
-proyecto, asociado a un virtualenv ubicado en &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.virtualenvs/zaraza&lt;/span&gt;&lt;/tt&gt;.
-&lt;strong&gt;skeleton&lt;/strong&gt; automáticamente creó una estructura básica de
-paquete python en &lt;tt class="docutils literal"&gt;~/proyectos/zaraza/src&lt;/tt&gt; incluyendo un &lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt;
-basado en &lt;em&gt;distribute&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Instalá tu paquete en el virtualenv, para poder importarlo desde
-cualquier lado:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-(zaraza) $ cd  ~/proyectos/zaraza/src
-(zaraza) $ pip install -e .
-&lt;/pre&gt;
-&lt;p&gt;Esto agrega el directorio de desarrollo de tu proyecto al PYTHONPATH
-del virtualenv, de modo que puedes importar &lt;em&gt;zaraza&lt;/em&gt; desde cualquier
-lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
-&lt;em&gt;src/test&lt;/em&gt; al nivel de '/src/zaraza'&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;&lt;/div&gt;
-&lt;div class="section" id="y-ahora"&gt;
-&lt;h2&gt;¿Y ahora?&lt;/h2&gt;
-&lt;p&gt;Cada vez que quieras trabajar en tu proyecto &lt;em&gt;zaraza&lt;/em&gt; ejecutás:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ workon zaraza
-&lt;/pre&gt;
-&lt;p&gt;Para salir del virtualenv:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-(zaraza) $ deactivate
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="algunos-tips-mas-a-modo-de-despedida"&gt;
-&lt;h2&gt;Algunos tips más a modo de despedida&lt;/h2&gt;
-&lt;p&gt;Virtualenwrapper es totalmente hookeable y extensible. Esta receta
-propone usar &lt;em&gt;skeleton&lt;/em&gt; (que funciona como plugin de
-&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/"&gt;virtualenvwrapper.project&lt;/a&gt;)
-para crear una estructura de paquete estándar básica, pero hay plugins
-para proyectos más específicos. Por ejemplo
-&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.django/"&gt;virtualenwrapper.django&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;El comando &lt;tt class="docutils literal"&gt;mkproject&lt;/tt&gt; es un wrapper sobre el
-comando principal de virtualenvwrapper &lt;tt class="docutils literal"&gt;mkvirtualenv&lt;/tt&gt;, que acepta muchos
-parámetros opcionales. Ejecutá &lt;tt class="docutils literal"&gt;mkproject_help&lt;/tt&gt; o &lt;tt class="docutils literal"&gt;mkvirtualenv &lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/tt&gt;
-para saber más.&lt;/p&gt;
-&lt;p&gt;Y ya sabés ...&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
-&lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;&lt;/div&gt;
-&lt;hr class="docutils"&gt;&lt;blockquote&gt;
-Este artículo lo escribí originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
-&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>http://mgaitan.github.com/posts/metiendose-cosas-en-la-nariz.html</guid><pubDate>Tue, 26 Feb 2013 22:17:55 GMT</pubDate></item></channel></rss>

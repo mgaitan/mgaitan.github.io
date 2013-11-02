@@ -43,6 +43,146 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/creando-un-nuevo-proyecto-python.html">Creando un nuevo proyecto Python</a>
+        <small>  
+             <span class="timeago" title="2012-11-12 00:34:23">2012-11-12 00:34:23</span>
+        </small></h1>
+        <!-- title: Creando un nuevo proyecto Python -->
+<!-- slug: creando-un-nuevo-proyecto-python -->
+<!-- date: 2012/11/12 00:34:23 -->
+<!-- tags: python, tutorial -->
+<!-- link: -->
+<!-- description: -->
+<p>¿Así que querés comenzar un nuevo proyecto usando Python?
+¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
+proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
+no se te arme lio de dependencias que colisionan con las de otros
+proyectos ? Bien, te propongo esta receta.</p>
+<div class="section" id="las-herramientas">
+<h2>Las herramientas</h2>
+<ul class="simple"><li><a class="reference external" href="http://www.virtualenv.org">Virtualenv</a>:  es una herramienta para aislar tu entorno de
+desarrollo python. Es muy pero muy útil para evitar conflictos entre las
+dependencias de tus distintos proyectos.</li>
+<li><a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/">virtualenvwrapper</a>: es un conjunto de extensiones que
+hacen la vida del usuario <em>virtualenv</em> aun más feliz, permitiendo crear
+y borrar entornos virtuales, asociarlos a un proyecto, automatizar
+tareas al activar o desactivar uno, etc.</li>
+<li><a class="reference external" href="http://www.pip-installer.org">pip</a>: es la herramienta moderna, correcta y recomendada
+para administrar los paquetes python instalados en tu
+sistema/virtualenv. Es un reemplazo de <em>easy_install</em></li>
+<li><a class="reference external" href="http://packages.python.org/distribute/">Distribute</a>: es la herramienta moderna y recomendada para
+distribuir tu paquete python. Es un fork de <em>setuptools</em> (que es, a su
+vez, una mejora sobre el módulo estándar <em>distutils</em>)</li>
+<li><a class="reference external" href="https://github.com/stumitchell/skeleton">skeleton</a> es una herramienta que define <em>plantillas</em>
+para iniciar un proyecto, generando la estructura básica necesaria. Es
+similar a <a class="reference external" href="http://python.org.ar/pyar/PasteScript">PasteScript</a> pero enfocado en esta
+tarea concreta, sin dependencias y compatible con Python 3.x</li>
+</ul></div>
+<div class="section" id="la-receta">
+<h2>La receta</h2>
+<ol class="arabic"><li><p class="first">Instalá pip:</p>
+<pre class="literal-block">
+$ sudo apt-get install python-pip
+</pre>
+<p>o bien directamente:</p>
+<pre class="literal-block">
+$ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+</pre>
+</li>
+<li><p class="first">Instalá virtualenwrapper y skeleton:</p>
+<pre class="literal-block">
+$ sudo pip install virtualenwrapper
+$ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton
+</pre>
+</li>
+</ol><div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">Notar que <em>skeleton</em> se está instalando desde un <em>fork</em> del proyecto
+original (aparentemente desmantenida), que resuelve bugs importantes</p>
+</div>
+<ol class="arabic" start="3"><li><p class="first">Configurá virtualenvwrapper</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>mkdir ~/.virtualenvs           <span class="c"># acá se van a guardar tus entornos virtuales
+</span><span class="nv">$ </span>mkdir ~/proyectos              <span class="c"># acá se van a guardar tus proyectos
+</span><span class="nv">$ </span>mkdir ~/.pip_download_cache     <span class="c"># para no bajar paquetes cada vez</span>
+</pre>
+<p>Luego editá tu <tt class="docutils literal"><span class="pre">~/.bashrc</span></tt> agregando las siguientes líneas</p>
+<pre class="code bash literal-block">
+<span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<span class="nb">export </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<span class="nb">export </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true
+export </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+</pre>
+<p>y recargá tus cambios:</p>
+<pre class="literal-block">
+$ source ~/.bashrc
+</pre>
+</li>
+<li><p class="first">Inicializá tu proyecto. Por ejemplo el proyecto <em>zaraza</em></p>
+<pre class="literal-block">
+$ mkproject -t package zaraza
+</pre>
+<p>Se te solicitarán algunos datos (nombre del proyecto, autor,
+licencia, etc.) y ¡(casi) listo! Estarás trabajando en tu proyecto
+<em>zaraza</em>. Tu prompt se verá así</p>
+<pre class="literal-block">
+(zaraza)tin@morocha:~/proyectos/zaraza$
+</pre>
+<p>¿Qué sucedió? Se creó un directorio <tt class="docutils literal">~/proyectos/zaraza</tt> para tu
+proyecto, asociado a un virtualenv ubicado en <tt class="docutils literal"><span class="pre">~/.virtualenvs/zaraza</span></tt>.
+<strong>skeleton</strong> automáticamente creó una estructura básica de
+paquete python en <tt class="docutils literal">~/proyectos/zaraza/src</tt> incluyendo un <tt class="docutils literal">setup.py</tt>
+basado en <em>distribute</em>.</p>
+</li>
+<li><p class="first">Instalá tu paquete en el virtualenv, para poder importarlo desde
+cualquier lado:</p>
+<pre class="literal-block">
+(zaraza) $ cd  ~/proyectos/zaraza/src
+(zaraza) $ pip install -e .
+</pre>
+<p>Esto agrega el directorio de desarrollo de tu proyecto al PYTHONPATH
+del virtualenv, de modo que puedes importar <em>zaraza</em> desde cualquier
+lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
+<em>src/test</em> al nivel de '/src/zaraza'</p>
+</li>
+</ol></div>
+<div class="section" id="y-ahora">
+<h2>¿Y ahora?</h2>
+<p>Cada vez que quieras trabajar en tu proyecto <em>zaraza</em> ejecutás:</p>
+<pre class="literal-block">
+$ workon zaraza
+</pre>
+<p>Para salir del virtualenv:</p>
+<pre class="literal-block">
+(zaraza) $ deactivate
+</pre>
+</div>
+<div class="section" id="algunos-tips-mas-a-modo-de-despedida">
+<h2>Algunos tips más a modo de despedida</h2>
+<p>Virtualenwrapper es totalmente hookeable y extensible. Esta receta
+propone usar <em>skeleton</em> (que funciona como plugin de
+<a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/">virtualenvwrapper.project</a>)
+para crear una estructura de paquete estándar básica, pero hay plugins
+para proyectos más específicos. Por ejemplo
+<a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.django/">virtualenwrapper.django</a></p>
+<p>El comando <tt class="docutils literal">mkproject</tt> es un wrapper sobre el
+comando principal de virtualenvwrapper <tt class="docutils literal">mkvirtualenv</tt>, que acepta muchos
+parámetros opcionales. Ejecutá <tt class="docutils literal">mkproject_help</tt> o <tt class="docutils literal">mkvirtualenv <span class="pre">--help</span></tt>
+para saber más.</p>
+<p>Y ya sabés ...</p>
+<div class="figure align-center">
+<img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"></div>
+<hr class="docutils"><blockquote>
+Este artículo lo escribí originalmente para el <a class="reference external" href="http://python.org.ar/pyar/Recetario">Recetario de PyAr</a></blockquote>
+</div>
+        <p>
+        
+            <a href="posts/creando-un-nuevo-proyecto-python.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/migrando-issues-entre-proyectos-de-bitbucket.html">Migrando issues entre proyectos de Bitbucket</a>
         <small>  
              <span class="timeago" title="2012-11-10 00:09:24">2012-11-10 00:09:24</span>
@@ -706,43 +846,6 @@ ese archivo desde el panel de Disqus (Tools -&gt; Import/Export )</p>
         <p>
         
             <a href="posts/disqus-para-spip.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/cdpedia-0-7-disponible.html">CDPedia 0.7 disponible</a>
-        <small>  
-             <span class="timeago" title="2011-07-01 11:00:00">2011-07-01 11:00:00</span>
-        </small></h1>
-        <img alt="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg" class="align-left" src="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg"><p><a class="reference external" href="http://www.python.org.ar">Python Argentina</a> se complace en informar que está
-disponible la <a class="reference external" href="http://cdpedia.python.org.ar/">versión 0.7 de CDPedia</a>
-, un proyecto de la comunidad para disponer de los contenidos de
-<a class="reference external" href="http://es.wikipedia.org">Wikipedia en español</a> sin acceso a internet,
-usando un CD o DVD como soporte de la información.</p>
-<p>La imágen de CD (.iso) se puede descargar desde acá:</p>
-<div class="important">
-<p class="first admonition-title">Important</p>
-<blockquote>
-<a class="reference external" href="downloads/cdpedia-CD-0.7.iso">CDPedia 0.7</a>
-CD 701Mb - 93500 artículos, 10% de imágenes</blockquote>
-<dl class="last docutils"><dt><a class="reference external" href="downloads/cdpedia-DVD5-0.7.iso">CDPedia 0.7 DVD</a></dt>
-<dd>DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.</dd>
-</dl></div>
-<p>Más información en
-<a class="reference external" href="http://cdpedia.python.org.ar/">http://cdpedia.python.org.ar/</a></p>
-<p>Esta versión de CDPedia es la que se distribuirá a todas las escuelas de
-Argentina a través de <a class="reference external" href="http://wikipediaenelaula.educ.ar/">Educ.ar</a>
-[<a class="reference external" href="blog/article/cdpedia-0-7-disponible#nb1">1</a>]</p>
-<p>Felicitaciones a todos los
-<a class="reference external" href="http://code.google.com/p/cdpedia/source/browse/trunk/resources/general_info/AUTORES.txt">colaboradores</a>
-por este logro de la comunidad. En especial, a
-<a class="reference external" href="http://twitter.com/#!/dmascialino">Diego</a>,
-<a class="reference external" href="http://twitter.com/#!/spiccinini">SAn</a>,
-<a class="reference external" href="http://www.taniquetil.com.ar/plog/">Facu</a> y
-<a class="reference external" href="http://protocultura.net/">Alecu</a> que son los principales</p>
-        <p>
-        
-            <a href="posts/cdpedia-0-7-disponible.html#disqus_thread">Comments</a>
         
         </p></div>
     
