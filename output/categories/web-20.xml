@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.io</link><description></description><atom:link href="http://mgaitan.github.io/categories/web-20.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 15:05:56 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>http://mgaitan.github.io/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.com</link><description></description><atom:link href="http://mgaitan.github.com/categories/web-20.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:14:09 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</link><description>&lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
 &lt;p class="last"&gt;El pipe tiene un problema con las fechas y quedó deactualizado
 cuando cambió en el html de G+. En su defecto hice este pequeño
@@ -49,7 +49,7 @@ atropello.&lt;/p&gt;
 &lt;div class="section" id="mi-solucion"&gt;
 &lt;h2&gt;Mi solución&lt;/h2&gt;
 &lt;p&gt;"¿Así que no me dejás compartir donde yo quiera, el algoritmo de tu
-madre!?" vociferé, y no sin premeditación agarré &lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/yahoo-pipes-como-por-un-tubo"&gt;Yahoo!
+madre!?" vociferé, y no sin premeditación agarré &lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/yahoo-pipes-como-por-un-tubo"&gt;Yahoo!
 Pipes&lt;/a&gt; (una genialidad, hay
 que decirlo) para scrappearlos a puro golpe de mouse y sin salir del
 navegador. El resultado fue &lt;a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.info?_id=770fc166fd07a0f6e67fe63f513b05dc"&gt;este
@@ -62,13 +62,13 @@ donde &lt;tt class="docutils literal"&gt;[GOOGLE_PLUS_ID]&lt;/tt&gt; es el numer
 cuestión.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
 &lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;&lt;/div&gt;
-&lt;/div&gt;</description><category>Web 2.0</category><guid>http://mgaitan.github.io/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Disqus para spip</title><link>http://mgaitan.github.io/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="http://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
+&lt;/div&gt;</description><category>Web 2.0</category><guid>http://mgaitan.github.com/posts/como-volver-a-compartir-desde.html</guid><pubDate>Wed, 11 Jan 2012 21:37:21 GMT</pubDate></item><item><title>Disqus para spip</title><link>http://mgaitan.github.com/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="http://mgaitan.github.com/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y fácil de usar.&lt;/p&gt;
 &lt;p&gt;Comencé un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;pequeño
 plugin&lt;/a&gt;
 para integrar Disqus a &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt;.&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/td&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://mgaitan.github.com/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Por ahora tiene dos componentes básicos:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;&lt;li&gt;Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
 SPIP (y su formulario) por Disqus&lt;/li&gt;
@@ -80,7 +80,7 @@ shortname"&lt;/em&gt; (la identificación unica que asignamos al sitio donde
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportación de comentarios preexistentes,
 basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><category>Software Libre</category><category>spip</category><category>Web 2.0</category><guid>http://mgaitan.github.io/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>http://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><category>Software Libre</category><category>spip</category><category>Web 2.0</category><guid>http://mgaitan.github.com/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>http://mgaitan.github.com/posts/yahoo-pipes-como-por-un-tubo.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
 interactiva para agregar y manipular feeds RSS (y otras fuentes de
 datos) a nuestro antojo de forma sencilla y asequible para cualquiera.&lt;/p&gt;
 &lt;p&gt;Es un entorno de programación visual online. La programación visual es
@@ -106,7 +106,7 @@ más) feeds.&lt;/p&gt;
 &lt;p&gt;Esto lo hice en el sitio &lt;a class="reference external" href="http://www.agrupacionmazamorra.com.ar"&gt;Agrupación
 Mazamorra&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L510xH321/Pantallazo-90218.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L510xH321/Pantallazo-90218.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 36)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -129,7 +129,7 @@ que a este autor,&lt;/p&gt;
 filtro con la palabra clave ’Casciari’, y me libro de todo lo que no
 quiero. &lt;a class="reference external" href="http://pipes.yahoo.com/mazamorra/casciari"&gt;Aquí el resultado&lt;/a&gt;&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L465xH360/pipes2-4a406.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L465xH360/pipes2-4a406.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 61)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -146,4 +146,4 @@ algún criterio propio. Para eso (y para bastantes más cosas, pero
 centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
 pequeño ’screencast’ que explica cómo recuperar las categorías (la
 de desarrollo web, en particular) que se ha cargado Feedburner…&lt;/blockquote&gt;
-&lt;/div&gt;</description><category>spip</category><category>Web 2.0</category><guid>http://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo.html</guid><pubDate>Mon, 23 Feb 2009 20:23:40 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>spip</category><category>Web 2.0</category><guid>http://mgaitan.github.com/posts/yahoo-pipes-como-por-un-tubo.html</guid><pubDate>Mon, 23 Feb 2009 20:23:40 GMT</pubDate></item></channel></rss>

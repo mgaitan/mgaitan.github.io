@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (empresa)</title><link>http://mgaitan.github.io</link><description></description><atom:link href="http://mgaitan.github.io/categories/empresa.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 15:05:56 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Voto electrónico e ingenieros analógicos</title><link>http://mgaitan.github.io/posts/voto-electronico-e-ingenieros.html</link><description>&lt;p&gt;Con mucho esfuerzo propio y ajeno, estoy terminando la carrera
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (empresa)</title><link>http://mgaitan.github.com</link><description></description><atom:link href="http://mgaitan.github.com/categories/empresa.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:14:09 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Voto electrónico e ingenieros analógicos</title><link>http://mgaitan.github.com/posts/voto-electronico-e-ingenieros.html</link><description>&lt;p&gt;Con mucho esfuerzo propio y ajeno, estoy terminando la carrera
 &lt;a class="reference external" href="http://computacion.efn.uncor.edu"&gt;Ingeniería en Computación&lt;/a&gt; en la
 Universidad Nacional de Córdoba.&lt;/p&gt;
 &lt;p&gt;Una particularidad de mi carrera, entre varias, es que hay mucha
@@ -16,13 +16,13 @@ ideológicas y políticas de cada uno.&lt;/p&gt;
 electrónico&lt;/a&gt;
 (a raiz de la charla relámpago de &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Federico_Heinz"&gt;Federico
 Heinz&lt;/a&gt; en la
-&lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/pyconar-2010-el-orgullo-de"&gt;PyConAr&lt;/a&gt; ) que fue derivando
+&lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/pyconar-2010-el-orgullo-de"&gt;PyConAr&lt;/a&gt; ) que fue derivando
 a una más de fondo, sobre la concepción de ingeniero que yo quiero ser y
 la que los profesores con los que discuto en el hilo (y casi todos los
 otros) me enseñan.&lt;/p&gt;
 &lt;p&gt;Como ya casi tiene telarañas, y además porque allí están todas las
 discusiones previas (las que me parecieron interesantes, bah), lo
-publiqué en &lt;a class="reference external" href="http://www.textosypretextos.com.ar"&gt;mi otro blog&lt;/a&gt;.&lt;/p&gt;</description><category>empresa</category><guid>http://mgaitan.github.io/posts/voto-electronico-e-ingenieros.html</guid><pubDate>Tue, 19 Oct 2010 21:54:20 GMT</pubDate></item><item><title>Me cago en vos, AFIP</title><link>http://mgaitan.github.io/posts/me-cago-en-vos-afip.html</link><description>&lt;p&gt;El lunes a las 8am empecé mis trámites de (re)empadronamiento al
+publiqué en &lt;a class="reference external" href="http://www.textosypretextos.com.ar"&gt;mi otro blog&lt;/a&gt;.&lt;/p&gt;</description><category>empresa</category><guid>http://mgaitan.github.com/posts/voto-electronico-e-ingenieros.html</guid><pubDate>Tue, 19 Oct 2010 21:54:20 GMT</pubDate></item><item><title>Me cago en vos, AFIP</title><link>http://mgaitan.github.com/posts/me-cago-en-vos-afip.html</link><description>&lt;p&gt;El lunes a las 8am empecé mis trámites de (re)empadronamiento al
 Monotributo. Recién a las 12hs pude saber que ese día fracasaría, porque
 las "pruebas" de mi domicilio fiscal no eran válidas.&lt;/p&gt;
 &lt;p&gt;El martes, flamantemente concubinado con Nati para que me sirvan las
@@ -41,7 +41,7 @@ con navegadores que no sean Internet Explorer&lt;/strong&gt;. En Firefox (o
 cualquiera de los navegadores libres) uno hace click y el formulario
 nunca se envía.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L450xH425/2010-10-08-171708_608x574_scrot-e0f53.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L450xH425/2010-10-08-171708_608x574_scrot-e0f53.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 25)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -52,7 +52,7 @@ Element referenced by ID/NAME in the global scope. Use W3C standard document.get
 &lt;/pre&gt;
 &lt;p&gt;Este chorizo tira Firebug:&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L510xH377/2010-10-08-172527_522x385_scrot-71784.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L510xH377/2010-10-08-172527_522x385_scrot-71784.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 37)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -70,7 +70,7 @@ el pueblo, ya no tiene tanta cancha como antes. Pero es hora de que
 empecemos, como
 &lt;a class="reference external" href="http://www1.hcdn.gov.ar/proyxml/expediente.asp?fundamentos=si&amp;amp;numexp=5914-D-2010"&gt;Estado&lt;/a&gt;,
 pero sobre todo como ciudadanos concientes de que lo necesitamos, a
-sanarlo, quererlo, exigirlo y fortalecerlo.&lt;/p&gt;</description><category>empresa</category><guid>http://mgaitan.github.io/posts/me-cago-en-vos-afip.html</guid><pubDate>Fri, 08 Oct 2010 13:46:54 GMT</pubDate></item><item><title>Modelos de negocio FLOSS, la universidad, el sector privado y el Estado</title><link>http://mgaitan.github.io/posts/modelos-de-negocio-floss-la.html</link><description>&lt;p&gt;Distintos laboratorios de investigación y vinculación de mi facultad del
+sanarlo, quererlo, exigirlo y fortalecerlo.&lt;/p&gt;</description><category>empresa</category><guid>http://mgaitan.github.com/posts/me-cago-en-vos-afip.html</guid><pubDate>Fri, 08 Oct 2010 13:46:54 GMT</pubDate></item><item><title>Modelos de negocio FLOSS, la universidad, el sector privado y el Estado</title><link>http://mgaitan.github.com/posts/modelos-de-negocio-floss-la.html</link><description>&lt;p&gt;Distintos laboratorios de investigación y vinculación de mi facultad del
 área química y del área computación, junto a algunas empresas de
 software locales (&lt;a class="reference external" href="http://www.vates.com"&gt;VATES&lt;/a&gt; y otra) y del sector
 petroquímico (&lt;a class="reference external" href="http://www.pr3.com.ar/"&gt;Petroquímica Rio Tercero&lt;/a&gt;)
@@ -100,21 +100,21 @@ están lejos de ser tenidos en cuenta. Me refiero, claro, a que, sobre
 todo (no muy increíblemente) desde la facultad, no se ve más allá de un
 modelo de negocio de software cerrado de venta por licencia.&lt;/p&gt;
 &lt;p&gt;Apunto algunas cuestiones sin orden:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El nicho de mercado es bastante acotado: industrias de gran escala
+&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El nicho de mercado es bastante acotado: industrias de gran escala
 mayormente transnacionales. Separadamente tiene mucha utilidad y
 aceptación en centros de investigación académicos.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image1" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Desde el grupo conformado, no existe conocimiento cabal de las
+&lt;p&gt;&lt;img alt="image1" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Desde el grupo conformado, no existe conocimiento cabal de las
 soluciones de software específicas que ese mercado, el industrial,
 demanda. Sí se sabe que el -*expertise-* y el -*know how-* que el
 grupo de investigación de Cismondi tiene son el valor diferencial.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image2" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; No existe hoy peso específico suficiente, desde el punto de
+&lt;p&gt;&lt;img alt="image2" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; No existe hoy peso específico suficiente, desde el punto de
 vista del producto existente, para competir con las empresas de software
 proveedoras de este nicho, sobre todo en los mercados de USA y Europa.
 Por ejemplo &lt;a class="reference external" href="http://www.aspentech.com"&gt;Aspen Tech&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image3" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Es difícil, a priori inimaginable, desarrollar un producto
+&lt;p&gt;&lt;img alt="image3" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Es difícil, a priori inimaginable, desarrollar un producto
 genérico que satisfaga necesidades de diversos clientes potenciales. La
 especifidad de los problemas de cada industria se supone grande.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image4" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Preguntas para hacerse ¿cuantos clientes reales existen en el
+&lt;p&gt;&lt;img alt="image4" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Preguntas para hacerse ¿cuantos clientes reales existen en el
 mercado? ¿qué "llegada" se tiene con ellos? ¿que posibilidades reales de
 venderle un software cerrado existen, teniendo en cuenta que no se sabe
 cabalmente cuales son sus demandas? Supongiendo que se conoce un
@@ -193,7 +193,7 @@ los cuales está aportando grandes recursos, además de ser agente
 regulador? ¿quién y cómo regula la relación e intereses existentes entre
 los grupos de investigación y el sector privado? ¿no se puede prestar a
 malversaciones y abuso del &lt;em&gt;sello&lt;/em&gt; de la universidad?&lt;/p&gt;
-&lt;/div&gt;</description><category>empresa</category><guid>http://mgaitan.github.io/posts/modelos-de-negocio-floss-la.html</guid><pubDate>Thu, 26 Aug 2010 13:19:19 GMT</pubDate></item><item><title>Monetizar pagos virtuales en Argentina sin costo</title><link>http://mgaitan.github.io/posts/monetizar-pagos-virtuales-en.html</link><description>&lt;p&gt;Para los trabajadores online freelance (programadores, diseñadores,
+&lt;/div&gt;</description><category>empresa</category><guid>http://mgaitan.github.com/posts/modelos-de-negocio-floss-la.html</guid><pubDate>Thu, 26 Aug 2010 13:19:19 GMT</pubDate></item><item><title>Monetizar pagos virtuales en Argentina sin costo</title><link>http://mgaitan.github.com/posts/monetizar-pagos-virtuales-en.html</link><description>&lt;p&gt;Para los trabajadores online freelance (programadores, diseñadores,
 traductores, etc) trabajar para el exterior es un objetivo primordial.
 Aunque en algunos sectores la competencia es leonina y se pauperizan los
 honorarios, el tipo de cambio del peso respecto a otra monedas fuertes
@@ -207,7 +207,7 @@ argentinos) por palabra, mientras que en europa se cobra entre 0.05 € y
 experiencia esperando ayudar a otros.&lt;/p&gt;
 &lt;div class="section" id="de-adsense-a-la-billetera"&gt;
 &lt;h2&gt;De Adsense a la billetera&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="image0" src="http://mgaitan.github.io/images/google-adsenf60e-93be1.jpg"&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://mgaitan.github.com/images/google-adsenf60e-93be1.jpg"&gt;
 Una forma simple y rápida pero bastante onerosa es &lt;a class="reference external" href="http://www.westernunion.com"&gt;Western
 Union&lt;/a&gt;. Es un servicio de transferencias
 de dinero persona a persona (física o jurídica), con sedes en casi todo
@@ -219,7 +219,7 @@ moneda local a un tipo de cambio definido por WU que siempre está entre
 un 3 y 6% por debajo del tipo de cambio del dia. Sobre todo los días que
 hay corridas en suba, el tipo de cambio queda desfasado (tiene una
 actualización muy lenta) y es un mal momento para cobrar.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image1" src="http://mgaitan.github.io/images/Western-Unioa5aa-91e5e.jpg"&gt;
+&lt;p&gt;&lt;img alt="image1" src="http://mgaitan.github.com/images/Western-Unioa5aa-91e5e.jpg"&gt;
 Existe una forma de salvar este cargo solapado para el receptor: si el
 envío es tipo Quick Cash y en dólares estadounidenses, se puede retirar
 en dólares en los locales Western Union de los supermercados &lt;strong&gt;Walmart&lt;/strong&gt;
@@ -234,7 +234,7 @@ venderlo en una financiera.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="cobrar-del-extranjero"&gt;
 &lt;h2&gt;Cobrar del extranjero&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="image2" src="http://mgaitan.github.io/images/paypal_logog8b6f-21423.gif"&gt;
+&lt;p&gt;&lt;img alt="image2" src="http://mgaitan.github.com/images/paypal_logog8b6f-21423.gif"&gt;
 Internacionalmente está casi estandarizado el uso de
 &lt;a class="reference external" href="http://www.paypal.com"&gt;Paypal&lt;/a&gt; como medio de pago de honorarios (y
 casi cualquier otro tipo de transacción en internet) pero este sistema
@@ -273,7 +273,7 @@ fines especulativos. Pero los timberos decidirán.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="de-paypal-a-la-billetera"&gt;
 &lt;h2&gt;De Paypal a la billetera&lt;/h2&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://mgaitan.github.io/images/logo_xoomgif23e5.gif"&gt;|image4|&lt;/a&gt;&lt;/td&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://mgaitan.github.com/images/logo_xoomgif23e5.gif"&gt;|image4|&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Pero, como decía un amigo, la plata no es plata hasta que no sirve para
 comprar fernet en la despensa.&lt;/p&gt;
 &lt;p&gt;Como dije más arriba, no se puede asociar una cuenta bancaria argentina
@@ -291,10 +291,10 @@ cobran una comisión de entre el 2 y el 5%.&lt;/p&gt;
 transferencia de dinero que intenta competir con Western Union, pero a
 diferencia de este, la operación se realiza únicamente online, el
 destino puede ser una cuenta bancaria argentina o efectivo en pesos o
-dólares, y, hete aquí la clave, &lt;a href="http://mgaitan.github.io/posts/monetizar-pagos-virtuales-en.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;**&lt;/span&gt;&lt;/a&gt;el origen de los fondos puede ser una
+dólares, y, hete aquí la clave, &lt;a href="http://mgaitan.github.com/posts/monetizar-pagos-virtuales-en.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;**&lt;/span&gt;&lt;/a&gt;el origen de los fondos puede ser una
 cuenta Paypal. **&lt;/p&gt;
 &lt;div class="system-message" id="id1"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 118); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/monetizar-pagos-virtuales-en.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 118); &lt;em&gt;&lt;a href="http://mgaitan.github.com/posts/monetizar-pagos-virtuales-en.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Inline strong start-string without end-string.&lt;/div&gt;
 &lt;p&gt;Problema solucionado: nos hacemos una transferencia a nosotros mismos,
 retirando fondos de Paypal y enviandolos a nuestra cuenta bancaria, o
@@ -304,13 +304,13 @@ fijos sino que &lt;a class="reference external" href="https://www.xoom.com/sendm
 rangos&lt;/a&gt; del
 monto enviado lo que significa un ahorro considerable en montos grandes.
 Para cifras montos menores a u$s500, el costo de servicio ronda le 4.5%&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image5" src="http://mgaitan.github.io/images/Banco-Francecef9-62220.jpg"&gt;
+&lt;p&gt;&lt;img alt="image5" src="http://mgaitan.github.com/images/Banco-Francecef9-62220.jpg"&gt;
 Además hay que considerar que al cobrar en pesos, Xoom realiza una
 conversión de divisa a un tipo de cambio que, al igual que Wester Union,
 está un par de puntos por debajo de la cotización de mercado. La opción
 de cobrar en dolares evita esta pérdida, pero tiene un cargo de servicio
 un 40% mayor, lo que significa un costo de operación real del más de 6%.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image6" src="http://mgaitan.github.io/images/RMNlogopng-33050-8dd22.jpg"&gt;
+&lt;p&gt;&lt;img alt="image6" src="http://mgaitan.github.com/images/RMNlogopng-33050-8dd22.jpg"&gt;
 Pero hay una forma de salvar esta plata, que convertida a pesos
 seguramente significarán varios fernés: &lt;strong&gt;conseguir un código de
 descuento&lt;/strong&gt;. &lt;a class="reference external" href="http://www.retailmenot.com/view/xoom.com"&gt;Retailmenot&lt;/a&gt;
@@ -319,12 +319,12 @@ suele tener cupones válidos, ¡de hasta el 100%!&lt;/p&gt;
 retiramos los fondos a través de Xoom.com en dólares consiguiendo un
 cupón del 100%, tendremos toda nuestra platita en el bolsillo, en
 dólares y sin perder nada en el camino.&lt;/p&gt;
-&lt;/div&gt;</description><category>python</category><category>empresa</category><guid>http://mgaitan.github.io/posts/monetizar-pagos-virtuales-en.html</guid><pubDate>Wed, 02 Dec 2009 15:34:05 GMT</pubDate></item><item><title>Charla "Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa"</title><link>http://mgaitan.github.io/posts/charla-ser-freelance-como-trabajar.html</link><description>&lt;p&gt;El miércoles 15 de abril de 2009 participé como disertante en las &lt;a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-Abril-2009"&gt;3º
+&lt;/div&gt;</description><category>python</category><category>empresa</category><guid>http://mgaitan.github.com/posts/monetizar-pagos-virtuales-en.html</guid><pubDate>Wed, 02 Dec 2009 15:34:05 GMT</pubDate></item><item><title>Charla "Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa"</title><link>http://mgaitan.github.com/posts/charla-ser-freelance-como-trabajar.html</link><description>&lt;p&gt;El miércoles 15 de abril de 2009 participé como disertante en las &lt;a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-Abril-2009"&gt;3º
 Jornadas Abiertas de Ingeniería en
 Computación&lt;/a&gt;
 que reune a estudiantes, profesores y profesionales invitados para dar
 charlas técnicas o de interés para la comunidad de la carrera.&lt;/p&gt;
-&lt;p&gt;En la anterior edición, diserté sobre &lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/Control-de-Versiones-con"&gt;Control de Versiones con
+&lt;p&gt;En la anterior edición, diserté sobre &lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/Control-de-Versiones-con"&gt;Control de Versiones con
 Subversion&lt;/a&gt;. En esta oportunidad
 pretendí un tema menos técnico pero de interés para un vasto sector de
 mis compañeros: cómo animarse a dar los primeros pasos profesionalmente
@@ -338,8 +338,8 @@ Libre&lt;/a&gt;, realizadas en Córdoba, en
 &lt;p&gt;Como corresponde ética y legalmente, este trabajo está bajo la misma
 licencia.&lt;/p&gt;
 &lt;blockquote&gt;
-Bajar diapositivas "&lt;a class="reference external" href="http://mgaitan.github.io/downloads/ojotas_copia_.odp"&gt;Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa&lt;/a&gt; "&lt;/blockquote&gt;
+Bajar diapositivas "&lt;a class="reference external" href="http://mgaitan.github.com/downloads/ojotas_copia_.odp"&gt;Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa&lt;/a&gt; "&lt;/blockquote&gt;
 &lt;p&gt;El documento ODP incluye notas y comentarios.&lt;/p&gt;
 &lt;div class="section" id="video"&gt;
 &lt;h2&gt;Video&lt;/h2&gt;
-&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;/div&gt;</description><category>empresa</category><category>charla</category><guid>http://mgaitan.github.io/posts/charla-ser-freelance-como-trabajar.html</guid><pubDate>Wed, 22 Apr 2009 12:58:20 GMT</pubDate></item></channel></rss>
+&lt;iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;amp;hd=1&amp;amp;wmode=transparent"&gt;&lt;/iframe&gt;&lt;/div&gt;</description><category>empresa</category><category>charla</category><guid>http://mgaitan.github.com/posts/charla-ser-freelance-como-trabajar.html</guid><pubDate>Wed, 22 Apr 2009 12:58:20 GMT</pubDate></item></channel></rss>
