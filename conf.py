@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
+import time
 import os
 
 ########################################
@@ -9,11 +11,78 @@ import os
 # Data about this site
 BLOG_AUTHOR = u'Martín Gaitán'
 BLOG_TITLE = "tin_nqn"
-BLOG_URL = "http://mgaitan.github.com"
+SITE_URL = "http://mgaitan.github.io"
+BASE_URL = "http://mgaitan.github.io/"
+
 BLOG_EMAIL = "gaitan@gmail.com"
 BLOG_DESCRIPTION = u'>>> me.geek.post()'
 
-# post_pages contains (wildcard, destination, template, use_in_feed) tuples.
+# Nikola is multilingual!
+#
+# Currently supported languages are:
+# bg     Bulgarian
+# ca     Catalan
+# de     German
+# el     Greek [NOT gr!]
+# en     English
+# eo     Esperanto
+# es     Spanish
+# fa     Persian
+# fi     Finnish
+# fr     French
+# hr     Croatian
+# it     Italian
+# jp     Japanese
+# nl     Dutch
+# pt_br  Portuguese (Brasil)
+# pl     Polish
+# ru     Russian
+# sl     Slovenian [NOT sl_si!]
+# tr_tr  Turkish (Turkey)
+# zh_cn  Chinese (Simplified)
+#
+# If you want to use Nikola with a non-supported language you have to provide
+# a module containing the necessary translations
+# (p.e. look at the modules at: ./nikola/data/themes/default/messages/fr.py).
+# If a specific post is not translated to a language, then the version
+# in the default language will be shown instead.
+
+# What is the default language?
+DEFAULT_LANG = "es"
+
+# What other languages do you have?
+# The format is {"translationcode" : "path/to/translation" }
+# the path will be used as a prefix for the generated pages location
+TRANSLATIONS = {
+    DEFAULT_LANG: "",
+    # Example for another language:
+    # "es": "./es",
+}
+
+# Links for the sidebar / navigation bar.
+# You should provide a key-value pair for each used language.
+NAVIGATION_LINKS = {
+    DEFAULT_LANG: (
+        ('/archive.html', 'Archives'),
+        ('/categories/index.html', 'Tags'),
+        ('/rss.xml', 'RSS'),
+    ),
+}
+
+# Below this point, everything is optional
+
+# While nikola can select a sensible locale for each language,
+# sometimes explicit control can come handy.
+# In this file we express locales in the string form that
+# python's locales will accept in your OS, by example
+# "en_US.utf8" in unix-like OS, "English_United States" in Windows.
+# LOCALES = dict mapping language --> explicit locale for the languages
+# in TRANSLATIONS. You can ommit one or more keys.
+# LOCALE_FALLBACK = locale to use when an explicit locale is unavailable
+# LOCALE_DEFAULT = locale to use for languages not mentioned in LOCALES; if
+# not set the default Nikola mapping is used.
+
+# POSTS and PAGES contains (wildcard, destination, template) tuples.
 #
 # The wildcard is used to generate a list of reSt source files
 # (whatever/thing.txt).
@@ -34,9 +103,13 @@ BLOG_DESCRIPTION = u'>>> me.geek.post()'
 # rss feeds.
 #
 
-post_pages = (
-    ("posts/*.rst", "posts", "post.tmpl", True),
-    ("stories/*.rst", "", "story.tmpl", False),
+POSTS = (
+    ("posts/*.rst", "posts", "post.tmpl"),
+    ("posts/*.txt", "posts", "post.tmpl"),
+)
+PAGES = (
+    ("stories/*.rst", "stories", "story.tmpl"),
+    ("stories/*.txt", "stories", "story.tmpl"),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -52,11 +125,20 @@ post_pages = (
 # 'rest' is reStructuredText
 # 'markdown' is MarkDown
 # 'html' assumes the file is html and just copies it
-post_compilers = {
-    "rest": ('.txt', '.rst'),
+COMPILERS = {
+    "rest": ('.rst', '.txt'),
     "markdown": ('.md', '.mdown', '.markdown'),
-    "html": ('.html', '.htm')
-    }
+    "textile": ('.textile',),
+    "txt2tags": ('.t2t',),
+    "bbcode": ('.bb',),
+    "wiki": ('.wiki',),
+    "ipynb": ('.ipynb',),
+    "html": ('.html', '.htm'),
+    # Pandoc detects the input from the source filename
+    # but is disabled by default as it would conflict
+    # with many of the others.
+    # "pandoc": ('.rst', '.md', '.txt'),
+}
 
 # Nikola is multilingual!
 #
@@ -143,8 +225,11 @@ DEPLOY_COMMANDS = ["git checkout master",
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
 # to the location of conf.py
-
 OUTPUT_FOLDER = 'output'
+
+# where the "cache" of partial generated content should be located
+# default: 'cache'
+# CACHE_FOLDER = 'cache'
 
 # Filters to apply to the output.
 # A directory where the keys are either: a file extensions, or
@@ -164,9 +249,12 @@ OUTPUT_FOLDER = 'output'
 # argument.
 #
 # By default, there are no filters.
-FILTERS = {
+#
+# Many filters are shipped with Nikola.  A list is available in the manual:
+# <http://getnikola.com/handbook.html#post-processing-filters>
+# FILTERS = {
 #    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
-}
+# }
 
 ##############################################################################
 # Image Gallery Options
@@ -187,8 +275,8 @@ USE_FILENAME_AS_TITLE = True
 INDEXES_TITLE = ""  # If this is empty, the default is BLOG_TITLE
 INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' translated
 
-# Name of the theme to use. Themes are located in themes/theme_name
-THEME = 'custom'
+# Name of the theme to use.
+THEME = "custom"
 
 USE_BUNDLES = False
 # Show only teasers in the index pages? Defaults to False.
@@ -204,16 +292,20 @@ style="border-width:0; margin-bottom:12px;"
 src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML)
-CONTENT_FOOTER = u'Contents &copy; 2012 Martín Gaitán'
+CONTENT_FOOTER = u'Contents &copy; 2013 Martín Gaitán'
 
-# To enable comments via Disqus, you need to create a forum at
-# http://disqus.com, and set DISQUS_FORUM to the short name you selected.
-# If you want to disable comments, set it to False.
-DISQUS_FORUM = "nqnwebs"
+# To use comments, you can choose between different third party comment
+# systems, one of "disqus", "livefyre", "intensedebate", "moot",
+#                 "googleplus" or "facebook"
+COMMENT_SYSTEM = "disqus"
+# And you also need to add your COMMENT_SYSTEM_ID which
+# depends on what comment system you use. The default is
+# "nikolademo" which is a test account for Disqus. More information
+# is in the manual.
+COMMENT_SYSTEM_ID = "nqnwebs"
 
-# Enable Addthis social buttons?
-# Defaults to true
-ADD_THIS_BUTTONS = False
+
+SOCIAL_BUTTONS_CODE = ""
 
 # Modify the number of Post per Index Page
 # Defaults to 10
@@ -222,7 +314,10 @@ ADD_THIS_BUTTONS = False
 # RSS_LINK is a HTML fragment to link the RSS or Atom feeds. If set to None,
 # the base.tmpl will use the feed Nikola generates. However, you may want to
 # change it for a feedburner feed or something else.
-RSS_LINK = None
+# RSS_LINK = None
+
+# Show only teasers in the RSS feed? Default to True
+RSS_TEASERS = False
 
 # A search form to search this site, for the sidebar. You can use a google
 # custom search (http://www.google.com/cse/)
@@ -248,32 +343,9 @@ SEARCH_FORM = ""
 
 # Google analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
-ANALYTICS = """
-    """
+BODY_END = ""
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {
-    'analytics': ANALYTICS,
-    'blog_author': BLOG_AUTHOR,
-    'blog_title': BLOG_TITLE,
-    'blog_url': BLOG_URL,
-    'blog_desc': BLOG_DESCRIPTION,
-    'translations': TRANSLATIONS,
-    'license': LICENSE,
-    'search_form': SEARCH_FORM,
-    'disqus_forum': DISQUS_FORUM,
-    'content_footer': CONTENT_FOOTER,
-    'rss_path': RSS_PATH,
-    'rss_link': RSS_LINK,
-    # Locale-dependent links for the sidebar
-    # You should provide a key-value pair for each used language.
-    'sidebar_links': {
-        DEFAULT_LANG: (
-            ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), 'Archivos'),
-            ('/categories/index.html', u'Categorías'),
-            ('/about.html', u'Sobre mí'),
-            ('/charlas.html', u'Charlas'),
-            ),
-        }
-    }
+
+GLOBAL_CONTEXT = {}

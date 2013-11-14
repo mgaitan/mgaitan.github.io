@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (android)</title><link>http://getnikola.com/</link><description></description><atom:link href="http://getnikola.com/categories/android.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Wed, 13 Nov 2013 21:01:07 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mirar (tu smartphone) para cuidar</title><link>http://getnikola.com/posts/mirar-tu-smartphone-para-cuidar.html</link><description>&lt;!-- link: --&gt;
-&lt;!-- description: --&gt;
-&lt;!-- tags: ideas, android, preciosa --&gt;
-&lt;!-- date: 2013/06/01 09:50:39 --&gt;
-&lt;!-- title: Mirar (tu smartphone) para cuidar --&gt;
-&lt;!-- slug: mirar-tu-smartphone-para-cuidar --&gt;
-&lt;p&gt;Leo sobre el programa &lt;a class="reference external" href="http://www.pagina12.com.ar/diario/economia/subnotas/221350-63733-2013-06-01.html"&gt;Mirar para cuidar&lt;/a&gt;, la campaña de acción voluntaria para controlar el cumplimiento
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (android)</title><link>http://mgaitan.github.io</link><description></description><atom:link href="http://mgaitan.github.io/categories/android.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 15:05:56 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mirar (tu smartphone) para cuidar</title><link>http://mgaitan.github.io/posts/mirar-tu-smartphone-para-cuidar.html</link><description>&lt;p&gt;Leo sobre el programa &lt;a class="reference external" href="http://www.pagina12.com.ar/diario/economia/subnotas/221350-63733-2013-06-01.html"&gt;Mirar para cuidar&lt;/a&gt;, la campaña de acción voluntaria para controlar el cumplimiento
 del &lt;a class="reference external" href="http://www.preciosensusitio.gov.ar/"&gt;acuerdo de precios&lt;/a&gt; con los supermercados.&lt;/p&gt;
 &lt;iframe width="420" height="315" src="http://www.youtube.com/embed/I5jQZ8xQ5Pw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;Me parece muy bueno todo este paquete de medidas y negociaciones que,
 en vez de &lt;a class="reference external" href="https://www.youtube.com/watch?v=tmoOnEIzU18"&gt;negar la situación&lt;/a&gt;, la
@@ -45,10 +39,10 @@ los productos de &lt;a class="reference external" href="http://www.taringa.net/p
 &lt;/div&gt;
 &lt;div class="section" id="lo-hacemos"&gt;
 &lt;h2&gt;¿Lo hacemos?&lt;/h2&gt;
-&lt;p&gt;No tengo idea de cómo se hacen aplicaciones para smartphones &lt;a class="footnote-reference" href="http://getnikola.com/posts/mirar-tu-smartphone-para-cuidar.html#id2" id="id1"&gt;[1]&lt;/a&gt;, pero sí puedo ayudar en
+&lt;p&gt;No tengo idea de cómo se hacen aplicaciones para smartphones &lt;a class="footnote-reference" href="http://mgaitan.github.io/posts/mirar-tu-smartphone-para-cuidar.html#id2" id="id1"&gt;[1]&lt;/a&gt;, pero sí puedo ayudar en
 la API/base datos/web.&lt;/p&gt;
 &lt;p&gt;Así que busco voluntarios para el programa &lt;em&gt;"Programar para cuidar"&lt;/em&gt; ;-).&lt;/p&gt;
 &lt;blockquote&gt;
 PD: ¿No se copará la secretaria de defensa del consumidor en poner unos pesos para
 hacer esto?&lt;/blockquote&gt;
-&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://getnikola.com/posts/mirar-tu-smartphone-para-cuidar.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;en verdad, ideas tengo, lo que no tengo son certezas&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><category>ideas</category><category>android</category><category>preciosa</category><guid>http://getnikola.com/posts/mirar-tu-smartphone-para-cuidar.html</guid><pubDate>Sat, 01 Jun 2013 09:50:39 GMT</pubDate></item></channel></rss>
+&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/posts/mirar-tu-smartphone-para-cuidar.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;en verdad, ideas tengo, lo que no tengo son certezas&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><category>ideas</category><category>android</category><category>preciosa</category><guid>http://mgaitan.github.io/posts/mirar-tu-smartphone-para-cuidar.html</guid><pubDate>Sat, 01 Jun 2013 09:50:39 GMT</pubDate></item></channel></rss>

@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (scripts)</title><link>http://getnikola.com/</link><description></description><atom:link href="http://getnikola.com/categories/scripts.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Wed, 13 Nov 2013 21:01:07 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://getnikola.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;!-- title: Migrando issues entre proyectos de Bitbucket --&gt;
-&lt;!-- slug: migrando-issues-entre-proyectos-de-bitbucket --&gt;
-&lt;!-- date: 2012/11/10 0:09:24 --&gt;
-&lt;!-- tags: python, migraciones, scripts --&gt;
-&lt;!-- link: --&gt;
-&lt;!-- description: --&gt;
-&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="http://getnikola.com/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (scripts)</title><link>http://mgaitan.github.io</link><description></description><atom:link href="http://mgaitan.github.io/categories/scripts.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 15:05:56 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="http://mgaitan.github.io/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 allí porque somos pobretones y nos da repos privados gratis.
@@ -69,4 +63,4 @@ agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/
             &lt;span class="k"&gt;continue&lt;/span&gt;
         &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;¡Disfruten!&lt;/p&gt;</description><category>python</category><category>migraciones</category><category>scripts</category><guid>http://getnikola.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item></channel></rss>
+&lt;p&gt;¡Disfruten!&lt;/p&gt;</description><category>python</category><category>migraciones</category><category>scripts</category><guid>http://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item></channel></rss>

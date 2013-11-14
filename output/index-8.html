@@ -23,16 +23,13 @@
         
         </div>
     <div id="menu" class="span7 offset1">
-      <ul class="inline"><li><a href="archive.html">Archivos</a>
+      <ul class="inline"><li><a href="archive.html">Archives</a>
                  / 
             
-                </li><li><a href="categories/index.html">Categorías</a>
+                </li><li><a href="categories/index.html">Tags</a>
                  / 
             
-                </li><li><a href="about.html">Sobre mí</a>
-                 / 
-            
-                </li><li><a href="charlas.html">Charlas</a>
+                </li><li><a href="rss.xml">RSS</a>
                 
             
         </li></ul></div>
@@ -43,17 +40,162 @@
             
     
         <div class="postbox">
+        <h1><a href="posts/metiendose-cosas-en-la-nariz.html">Metiéndose cosas en la nariz</a>
+        <small>  
+             <span class="timeago" title="2013-02-26 22:17:55+00:00">2013-02-26 22:17:55+00:00</span>
+        </small></h1>
+        <p><a class="reference external" href="https://nose.readthedocs.org">nose</a> es un excelente <em>framework</em> para testing en python. Es mucho más
+que un <em>testrunner</em> inteligente: tiene un conjunto de extensiones y shortcuts
+de aserciones de <tt class="docutils literal">unittest</tt>, soporta fixtures y setups/teardown
+por paquetes, y viene con un montón de plugins incorporados.</p>
+<blockquote>
+"nose extends unittest to make testing easier"</blockquote>
+<p>dice el eslogan y eso es lo que queremos: tests más fáciles de escribir,
+más rápidos de ejecutar.</p>
+<p>De plugins y opciones que potencian esta idea se trata este post.</p>
+<div class="section" id="nose-progressive">
+<h2>nose-progressive</h2>
+<blockquote class="epigraph">
+<p>Ah, beautiful dots</p>
+<p class="attribution">—<a class="reference external" href="http://blog.mozilla.org/webdev/2011/04/14/a-humane-python-test-runner/">Erik Rose</a></p>
+</blockquote>
+<p><em>"Puntito, puntito, puntito, puntito..."</em>, cuenta mi mente en standby
+cuando los test van pasando, como ovejitas que saltan un cerco.
+Pero, oh desdicha, una "efe", la oveja negra que falla, aparece
+en la pantalla y la ansiedad por saber cuál nos invade.</p>
+<p>El problema es que por default (con <tt class="docutils literal"><span class="pre">--verbose=1</span></tt>), nose
+pospone el detalle de errores y fallos hasta el final de la corrida.
+En suites gigantes (que demoran más de 30 minutos en completarse,
+por ejemplo) esto es un engorro.</p>
+<p><a class="reference external" href="https://pypi.python.org/pypi/nose-progressive/">nose-progressive</a> reemplaza la interfaz de usuario por una mucho más
+amigable y bonita. En vez de puntitos, una barra de progreso al pie de la
+pantalla va indicando el progreso satisfactorio, y deja el resto de la pantalla
+para mostrar errores y fallos <em>on the fly</em>.</p>
+<img alt="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png" src="https://raw.github.com/erikrose/nose-progressive/master/in_progress.png"><p>Como si fuera poco, te da shortcuts a la línea donde se produjo un fallo
+(por ejemplo: <tt class="docutils literal">vim +258 common/tests/test_guideplan.py</tt>), simplifica los
+tracebacks a la parte útil, e incluye colores usados con criterio
+(basada en la genial biblioteca <a class="reference external" href="https://pypi.python.org/pypi/blessings">blessing</a>, del mismo autor).</p>
+<p>Para instalarlo, lo de siempre:</p>
+<pre class="code bash literal-block">
+<span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>pip install nose-progressive
+</pre>
+<p>Para usarlo, agregar <tt class="docutils literal"><span class="pre">--with-progressive</span></tt> como parámetros de <tt class="docutils literal">nosetests</tt>,
+o bien, para usarlo siempre, configurarlo en <tt class="docutils literal">.noserc</tt> o en la
+variable <tt class="docutils literal">NOSE_ARGS</tt> de <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a></p>
+</div>
+<div class="section" id="django-nose">
+<h2>django-nose</h2>
+<p>Si trabajás con Django esto quizas suene a perogrullada, pero <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a>
+es la vuelta de tuerca que faltaba para que la nariz brille en este entorno.
+Con django-nose por defecto sólo se corren los tests del proyecto y no
+los de todas las aplicaciones instaladas (que, se supone, tienen sus propios
+tests).</p>
+<p>Y entre otras opciones o, tiene  un modo de reuso de la base de datos,
+(configurando <tt class="docutils literal">REUSE_DB=1</tt> como variable de entorno), que nos evita la creación
+de tablas en cada corrida, ahorrando unos cuantos segundos de setup en aplicaciones
+como muchos modelos. Por supuesto, si la base de datos cambia (porque
+se agregó un modelo o se se migró con <a class="reference external" href="http://south.aeracode.org/">South</a>) tenés que asegurarte
+que la variable está en 0 para que cree la última version</p>
+</div>
+<div class="section" id="with-id-failed">
+<h2>with-id + failed</h2>
+<p>La opción <a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption--with-id">--with-id</a>
+(estrictamente el plugin <tt class="docutils literal">TestId</tt>, que viene en las baterías incluídas de nose)
+le asigna un número único a cada test ejecutado,
+y los guarda en el archivito <tt class="docutils literal">.noseids</tt> junto con su path y el
+resultado de la última corrida.</p>
+<p>Lo bueno es que pasando <tt class="docutils literal"><span class="pre">--with-id</span> <span class="pre">--failed</span></tt> nose usa esa información
+y ejecuta solamente los tests que fallaron en la última corrida,
+permitiendo una rápida iteración <em>"falla/corrección"</em>.</p>
+</div>
+<div class="section" id="nose-selecttests">
+<h2>nose-selecttests</h2>
+<p>Frecuentemente sucede que tenemos caso (una subclase de <tt class="docutils literal">TestCase</tt>)
+con muchas pruebas (métodos) que están lógicamente agrupadas
+porque comparten un setup, por ejemplo,
+y sin embargo sólo queremos correr un subconjunto.</p>
+<p>Sabemos que como es inteligente y poco burocrático, nose no sólo ejecuta
+tests definidos como subclases de <tt class="docutils literal">unittest.TestCase</tt> sino
+cualquier paquete, módulo, función o clase
+que <em>matchee</em> una expresión regular, que por defecto es <tt class="docutils literal"><span class="pre">(?:^|[b_./-])[Tt]est</span></tt>
+Con el parámetro <a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption-m">-m</a>
+se puede redefinir este patrón, pero igualmente no aplica a nivel
+métodos.</p>
+<p>Por eso existe <a class="reference external" href="https://github.com/iElectric/nose-selecttests">nose-selecttests</a>, que permite filtrar pruebas con
+determinada subcadena en el nombre del método.</p>
+<p>Por ejemplo:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>djntest -v 2 common/tests/test_sequence_diff.py
+
+<span class="c">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+</span>
+----------------------------------------------------------------------
+Ran 4 tests in 0.375s
+</pre>
+<p>En cambio:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>djntest --select-tests<span class="o">=</span>differ -v 2 apps/common/tests/test_sequence_diff.py
+
+<span class="c">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
+</span>----------------------------------------------------------------------
+Ran 2 tests in 0.088s
+</pre>
+</div>
+<div class="section" id="django-tests-autocomplete">
+<h2>django-tests-autocomplete</h2>
+<p>Esta herramienta no es estrictamente un plugin de nose, sino un helper
+que aprovecha las posibilidades de bash para
+<a class="reference external" href="http://bash-completion.alioth.debian.org/">autocompletar</a> usando la tecla
+tab.</p>
+<p>¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>nosetests path/to/test.py
+</pre>
+<p>Pero también permite afinar la puntería y "meterse" adentro del módulo:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>nosetests path/to/test.py:MyImportantTestCase
+</pre>
+<p>E incluso adentro del testcase:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>nosetests path/to/test.py:MyImportantTestCase.test_super_important
+</pre>
+<p>Desde el <tt class="docutils literal">:</tt> en adelante estamos en Python y Bash ya no sabe autocompletar,
+salvo que usemos esta herramienta que instrospecciona y "alimenta" el
+autocompleter.</p>
+<p>Lo hizo Javi Mansilla en <a class="reference external" href="http://machinalis.com">Machinalis</a> y
+<a class="reference external" href="https://github.com/machinalis/django-test-autocomplete#future-features">busca ayuda</a>
+para mejorarlo y generalizarlo.</p>
+<p>¿No sería buenísimo que esto estuviese built-in en nose? ¿Nos ayudarías?</p>
+</div>
+<div class="section" id="nose-timer">
+<h2>nose-timer</h2>
+<p>¿Cuánto tiempo insume cada test? Instalá <a class="reference external" href="https://github.com/mahmoudimus/nose-timer/">nose-timer</a> y activalo (con <tt class="docutils literal"><span class="pre">--with-timer</span></tt>)
+para saber la respuesta.</p>
+</div>
+<div class="section" id="nose-ipdb">
+<h2>nose-ipdb</h2>
+<p>nose tiene una opción <tt class="docutils literal"><span class="pre">--pdb</span></tt> (o la más estricta <tt class="docutils literal"><span class="pre">--ipdb-failures</span></tt>)
+que nos manda al debugger cuando un test falla o da error.</p>
+<p><a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb">nose-ipdb</a> lo imita, pero usando el más pulenta de los debuggers: <a class="reference external" href="https://pypi.python.org/pypi/ipdb">ipdb</a>.</p>
+<p>Suficiente por hoy. Pero ¿me estoy perdiendo alguna cosa interesante
+para meter en mi nariz?</p>
+</div>
+        <p>
+        
+            <a href="posts/metiendose-cosas-en-la-nariz.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/creando-un-nuevo-proyecto-python.html">Creando un nuevo proyecto Python</a>
         <small>  
              <span class="timeago" title="2012-11-12 00:34:23+00:00">2012-11-12 00:34:23+00:00</span>
         </small></h1>
-        <!-- title: Creando un nuevo proyecto Python -->
-<!-- slug: creando-un-nuevo-proyecto-python -->
-<!-- date: 2012/11/12 00:34:23 -->
-<!-- tags: python, tutorial -->
-<!-- link: -->
-<!-- description: -->
-<p>¿Así que querés comenzar un nuevo proyecto usando Python?
+        <p>¿Así que querés comenzar un nuevo proyecto usando Python?
 ¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
 proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
@@ -187,13 +329,7 @@ Este artículo lo escribí originalmente para el <a class="reference external" h
         <small>  
              <span class="timeago" title="2012-11-10 00:09:24+00:00">2012-11-10 00:09:24+00:00</span>
         </small></h1>
-        <!-- title: Migrando issues entre proyectos de Bitbucket -->
-<!-- slug: migrando-issues-entre-proyectos-de-bitbucket -->
-<!-- date: 2012/11/10 0:09:24 -->
-<!-- tags: python, migraciones, scripts -->
-<!-- link: -->
-<!-- description: -->
-<p>Hace un tiempo conté <a class="reference external" href="posts/de-mercurial-a-git-limpieza.html">como migré un repositorio Mercurial a Git</a> .
+        <p>Hace un tiempo conté <a class="reference external" href="posts/de-mercurial-a-git-limpieza.html">como migré un repositorio Mercurial a Git</a> .
 Se trataba de un proyecto hospedado en <a class="reference external" href="http://bitbucket.org">Bitbucket</a> y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 allí porque somos pobretones y nos da repos privados gratis.
@@ -265,17 +401,61 @@ agrego un comentario avisando que es un <em>issue migrado</em>.</p>
         </p></div>
     
         <div class="postbox">
+        <h1><a href="posts/jquery-una-introduccion.html">Jquery, una introducción</a>
+        <small>  
+             <span class="timeago" title="2012-11-02 16:20:21+00:00">2012-11-02 16:20:21+00:00</span>
+        </small></h1>
+        <p>jQuery, una librería javascript ligera y sumamente útil, desarrollada
+por el talentoso programador <a class="reference external" href="http://ejohn.com">John Resig</a>.</p>
+<p>Como se explica en el <a class="reference external" href="http://jquery.com/">sitio web</a>:</p>
+<blockquote>
+jQuery es una biblioteca javascript ligera y concisa que simplifica
+como atraviesas tus documentos HTML, manejas eventos, realizas
+animaciones, y agregas interacción Ajax a tus páginas web. <strong>jQuery
+está diseñada para cambiar la manera en que escribes JavaScript</strong></blockquote>
+<div class="section" id="necesitamos-otra-biblioteca">
+<h2>¿Necesitamos otra biblioteca?</h2>
+<p>El <a class="reference external" href="http://dojotoolkit.org/">Toolkit Dojo</a> está maduro e incluye hasta
+el los hielos del whisky. Es ampliamente popular y muchas interfaces
+<a class="reference external" href="http://es.wikipedia.org/wiki/Interfaz_de_usuario">UI</a> fueron
+construidas sobre este toolkit, incluyendo
+<a class="reference external" href="http://script.aculo.us">script.aculo.us</a>,
+<a class="reference external" href="http://openrico.org">Rico</a>, y otros. Por supuesto, no podemos dejar
+afuera a <a class="reference external" href="http://mootools.net">mootools</a>. Su biblioteca UI,
+<a class="reference external" href="http://moofx.mad4milk.net/">moo.fx</a>, puede apoyarse sobre Prototype
+si lo deseas. Tambiñen está <a class="reference external" href="posts/developer.yahoo.com/yui/">Y!UI the Yahoo! User Interface
+library</a>. Y tenemos
+<a class="reference external" href="http://extjs.com">ExtJs</a>, un robusto framework de interfaz que se
+basa en Y!UI, Prototype, o jQuery.</p>
+</div>
+<div class="section" id="jquery">
+<h2>jQuery</h2>
+<p>Lo que nos trae a... jQuery. Sí, otro framework JavaScript. jQuery, sin
+embargo, es a mi criterio el más rápido y elegante del montón. Soporta
+CSS3, detección del navegador, encadenamiento de métodos, plugins, Ajax,
+selectores flexibles, y efectos UI basicos. Todo en menos de 30Kb.</p>
+<p>Pues bien, engolosinemos los ojos un poco. Hacé <a class="reference external" href="blog/jQuery-una-introduccion">click
+acá</a> para ver lo que jQuery puede
+hacer con un par de líneas de código.</p>
+<p>Wow! Jquery en acción. ¿Lo ves?
+Ese efecto se logra con este sencillo código:</p>
+<pre class="literal-block">
+$("a.intro").click( function() {
+    $("div.introtarget").toggle(100);return false;
+</pre>
+</div>
+        <p>
+        
+            <a href="posts/jquery-una-introduccion.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
         <h1><a href="posts/ext4-superblock-failure-y-la-cola-del-diablo.html">Ext4 superblock failure y la cola del Diablo</a>
         <small>  
              <span class="timeago" title="2012-10-26 02:24:46+00:00">2012-10-26 02:24:46+00:00</span>
         </small></h1>
-        <!-- title: Ext4 superblock failure y la cola del Diablo -->
-<!-- slug: ext4-superblock-failure-y-la-cola-del-diablo -->
-<!-- date: 2012/10/26 02:24:46 -->
-<!-- tags: -->
-<!-- link: -->
-<!-- description: e -->
-<p>Domingo, ciudad de Guayaquil, todo dispuesto para salir a
+        <p>Domingo, ciudad de Guayaquil, todo dispuesto para salir a
 conocer una ciudad que en las guías de viaje suena intererante y bonita.
 Se me ocurre prender la compu para ver si ese email que mandé la noche
 anterior, recién llegado después de 14 horas de viaje
@@ -379,13 +559,7 @@ brazo.</blockquote>
         <small>  
              <span class="timeago" title="2012-10-14 19:23:44+00:00">2012-10-14 19:23:44+00:00</span>
         </small></h1>
-        <!-- title: Notas rápidas de una mudanza -->
-<!-- slug: notas-rapidas-de-una-mudanza -->
-<!-- date: 2012/10/14 19:23:44 -->
-<!-- tags: nikola, spip, migration tools -->
-<!-- link: -->
-<!-- description: -->
-<p>Hace unos días abría este espacio prometiendo migrar contenidos y
+        <p>Hace unos días abría este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco más bonito.</p>
 <p>Este post incluye algunas notas sobre lo que he hecho hasta el momento.</p>
 <div class="section" id="github-nikola">
@@ -487,7 +661,7 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
   
 </ul></div>
     
-        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2012 Martín Gaitán</small>
+        <script type="text/javascript"> var disqus_shortname = 'nqnwebs'; (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = 'http://' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script><!--End of body content--><hr><small>Contents © 2013 Martín Gaitán</small>
         </div>
     </div>
     <div class="row">
@@ -500,6 +674,5 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
             </li><li> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
                         <img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/80x15.png"></a>
             </li></ul><!--End of sidebar content--></div>
-    
     
     <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></div></div></div></div></body></html>
