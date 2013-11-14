@@ -43,503 +43,660 @@
             
     
         <div class="postbox">
-        <h1><a href="posts/el-quijote-del-software-libre.html">El Quijote del Software Libre</a>
+        <h1><a href="posts/deja-que-el-servidor-trabaje-por.html">Deja que el servidor trabaje por tí con GNU Screen</a>
         <small>  
-             <span class="timeago" title="2011-03-21 09:04:48">2011-03-21 09:04:48</span>
+             <span class="timeago" title="2009-10-19 20:33:31+00:00">2009-10-19 20:33:31+00:00</span>
         </small></h1>
-        <p>Durante los ultimos años de facultad me he ganado ciertos apodos,
-algunos más buena leche que otros, relacionados con mi postura y
-militancia respecto al Software Libre.</p>
-<p>Esta postura se mezcla (se complementa) con otras posiciones políticas
-que he manifestado y defendido reiteradamente con profesores y
-compañeros, que son intrínsecas a la formación y el perfil de ingenier@s
-que se forma en la universidad pública, con la que suelo disentir.
-Muchas de esas discusiones, <a class="reference external" href="http://www.textosypretextos.com.ar/Universo-universitario">están publicadas en mi otro
-blog</a></p>
-<p>La semana pasada una amiga comentó un mensaje que dejé en Facebook
-avisando que había <a class="reference external" href="posts/blog/article/referenciar-figuras-por-numero-en">terminado la
-tésis</a>.</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L498xH351/2011-03-21-123747_498x351_scrot-cb8bb.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 19)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>Inspirado en ese comentario de Lu, Nati (mi novia) me pintó esta remera
-como regalo de cumpleaños (que es mañana).</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH680/193004_10150430921700058_879055057_17417662_1519731_o-2c7b4.jpg"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 25)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>Claro que yo no salgo muy favorecido (cansancio y flash no hacen buen
-equipo). Pero la remera está buenísima. Acá el detalle:</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH684/191578_10150430923120058_879055057_17417703_2608242_o-a7d8d.jpg"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 31)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>En la espalda podría ir esta
-<a class="reference external" href="http://pages.citebite.com/g4b5a9l5wwxv">cita</a> :</p>
-<blockquote>
-<p>"La libertad, Sancho, es uno de los más preciosos dones que a los
-hombres dieron los cielos; con ella no pueden igualarse los tesoros
-que encierra la tierra ni el mar encubre; por la libertad, así como
-por la honra, se puede y debe aventurar la vida, y, por el
-contrario, el cautiverio es el mayor mal que puede venir a los
-hombres."</p>
-<p><strong>Don Quijote, capítulo LVIII, segunda parte</strong></p>
-</blockquote>
+        <p>Ya somos avispados usuarios de la línea de comandos y hacemos nuestros
+pinitos administrando un servidor: movemos, bajamos y hasta compilamos
+directamente en una maquina remota, muchas veces más potente y con más
+ancho de banda que la nuestra.</p>
+<p>Nuestra terminal cliente sólo ejecuta
+<a class="reference external" href="http://www.openssh.com/">OpenSSH</a> (o
+<a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a>
+en Windows)</p>
+<p>Pero cuando se trata de ejecutar un proceso largo y de nula
+interactividad no tiene mucho sentido seguir conectados ¿Para qué gastar
+tiempo y recursos (dejar la PC cliente prendida, por ejemplo) si el
+trabajo sólo se hace en el servidor?</p>
+<p>Este caso se da muchas veces, sobre todo (y aquí lo que me interesa)
+cuando bajamos archivos muy pesados o hacer un mirror de un repositorio
+completo.</p>
+<p>Y aquí cómo resolverlo: usa <a class="reference external" href="http://es.wikipedia.org/wiki/GNU_Screen">GNU
+Screen</a>.</p>
+<p>Screen es un multiplexor/virtualizador de terminales, y entre sus muchas
+e interesantes características incluye el desacople de su proceso padre.</p>
+<p>Esto significa que se puede ejecutar una terminal virtual con screen (en
+una terminal remota por ssh, por ejemplo), ejecutar cualquier proceso en
+ese entorno y desacoplarlo, pudiendo entonces desloguearse y cerrar la
+conexión remota dejando el proceso en curso.</p>
+<p><strong>Receta paso a paso</strong></p>
+<ul><li><p class="first">ejecuta una consola virtual con screen</p>
+<pre class="literal-block">
+$ screen
+</pre>
+</li>
+<li><p class="first">Ejecuta tu proceso largo. Por ejemplo, bajar la beta de Ubuntu Karmic
+Koala en DVD</p>
+<pre class="literal-block">
+$ wget http://mirror.mcs.anl.gov/pub/ubuntu-iso/DVDs/ubuntu/9.10/beta/ubuntu-9.10-beta-dvd-i386.iso
+</pre>
+</li>
+<li><p class="first">Desacoplar el proceso con la combinación de teclas <strong>Control+A D</strong></p>
+</li>
+<li><p class="first">Desconectarse, tomar unos mates y volver cuando quieras</p>
+</li>
+</ul><p>Para retomar el proceso</p>
+<ul><li><p class="first">Conectarnos de nuevo al servidor mediante SSH</p>
+</li>
+<li><p class="first">Listar las consolas virtuales para averiguar el PID</p>
+<pre class="literal-block">
+$ screen -list
+</pre>
+</li>
+<li><p class="first">Traer a primer plano el proceso en cuestión con</p>
+<pre class="literal-block">
+$ screen -r PID
+</pre>
+</li>
+</ul><p>y allí estará el proceso que dejamos corriendo (o al menos los rastros
+que dejó en su paso).</p>
         <p>
         
-            <a href="posts/el-quijote-del-software-libre.html#disqus_thread">Comments</a>
+            <a href="posts/deja-que-el-servidor-trabaje-por.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/referenciar-figuras-por-numero-en.html">Referenciar figuras por número en Sphinx / Latex</a>
+        <h1><a href="posts/digitalizando-recuerdos-con.html">Digitalizando recuerdos con mencoder</a>
         <small>  
-             <span class="timeago" title="2011-03-19 23:13:01">2011-03-19 23:13:01</span>
+             <span class="timeago" title="2009-09-30 14:56:40+00:00">2009-09-30 14:56:40+00:00</span>
         </small></h1>
-        <p>El viernes presenté el draft para la revisión final de mi <a class="reference external" href="posts/blog/article/preparados-listos-en-un-rato">proyecto
-integrador</a> (a.k.a. tesis).
-Tentativamente (¡a esta altura y todavía no es seguro!) se titula
-<em>"Software para graficación de digramas termodinámicos"</em> y se puede
-chusmear
-<a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">acá</a>.</p>
-<p>Como verán, lo hice con <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>, generando
-LaTeX y compilando luego a PDF. Estoy más que satisfecho del resultado.</p>
-<p>Sin embargo, un problema de Sphinx/Docsutils (y esto viene a ser el
-verdadero tema de este post) es es que si bien están llenos de pulentez
-y se la bancan mil, no están "pensados" para escribir tesis sino
-documentación/manuales de software. Esto se nota, sobre todo, en la
-subutilización de recursos de LaTeX a los que "no se accede" desde
-restructuredText.</p>
-<p>El caso paradigmático es la referenciación de figuras. En las versiones
-"imprimibles" que se generan con LaTeX suele pasar que una figura no
-quepa en una página y el compilador, al medir y darse cuenta, la manda a
-una página siguiente. Esto hace indispensable ser preciso en la
-referencia ya que un mensaje como <em>"en la siguiente figura"</em> puede estar
-seguido de toda una página sin figuras.</p>
-<p>Para hacer una referenciar una figura en Sphinx hay que declarar un
-target</p>
+        <p>Para el Mundial del 2006, compré, como tantos otros que no tenían
+televisor pero sí computadora, una plaquita sintonizadora de TV: una
+Kozumi con el chip sintonizador BT878, uno de los más genéricos y
+bastante bien soportado en linux.</p>
+<p>Tuvo poca utilidad en aquel 2006, primero porque argentina no duró
+demasiado y segundo y principal porque un vecino reclamó potestad sobre
+la señal del cable coaxil que alimentaba mi chip y mis ilusiones
+mundialistas.</p>
+<p>Quedó cajoneada en algun rincón, hasta que rescaté del olvido la
+videofilmadora de la familia, una vieja y noble JVC , con un montón de
+casetitos Compact VHS (que es el formato con el que funciona).</p>
+<p>Así que después de mucho patear la tarea, decidí conectar los cables y
+encontrar la forma de convertir en bytes los recuerdos archivados en
+esos casettes polvorientos.</p>
+<div class="section" id="lo-que-hice">
+<h2>Lo que hice</h2>
+<p>Primero, configurar la placa. El chip bt878 se usa en muchísimas
+sintonizadoras que tienen configuraciones diferentes. Para asignarle los
+correctos, se pasa un código <tt class="docutils literal">card</tt> que se obtiene de <a class="reference external" href="http://www.mjmwired.net/kernel/Documentation/video4linux/CARDLIST.bttv">esta
+lista</a>.
+En mi caso, para una Kozumi ktv-01c, el código es 151. El comando
+completo con el que configuro el módulo es:</p>
 <pre class="literal-block">
-.. _ok:
-
-.. figure:: ok.png
-
-   Una imágen
+sudo modprobe bttv card=151 pll=1 tuner=38 radio=1 bttv_verbose=1 gbuffers=4
 </pre>
-<p>y luego usar el rol <tt class="docutils literal">:ref:</tt>. Por ejemplo:</p>
+<p>Luego, el supercomando mencoder:</p>
 <pre class="literal-block">
-Referenciando la figura :ref:`ok` se evidencia el problema.
+mencoder tv:// -tv driver=v4l2:device=/dev/video0:input=1:width=480:height=360:norm=ntsc:alsa:adevice=hw.0:amode=1:audiorate=44100:forceaudio:forcechan=1:buffersize=300 -oac mp3lame -lameopts cbr:br=96:mode=3 -af volume=-6:0,channels=1 -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=5000:keyint=125:mbd=2 -vf yadif,crop=464:352:8:2  -o salida.avi
 </pre>
-<p>El problema es que el LaTeX generado por Sphinx no hace exáctamente una
-referencia a la figura, sino un hipervínculo (hyperref). Como texto de
-ese hipevinculo usa el epígrafe de la figura, lo cual es horrible e
-inútil para textos cientificos/académicos. El issue, <a class="reference external" href="https://bitbucket.org/birkenfeld/sphinx/issue/76/proper-references-to-figures-code-tables">está reportado
-hace más de 2
-años</a>.</p>
-<p>Con el estilo gronchohacker que se me está volviendo costumbre, hice
-unos cambiecitos para que funcaran las referencias como tienen que ser,
-por número. La directiva es particularmente fácil en LaTeX: <tt class="docutils literal">~\ref{}</tt>.
-En concreto, el "gronchohackeo" se trata de cambiar
-<tt class="docutils literal"><span class="pre">{\hyperref[label]{\emph{epigrafe}}}</span></tt> por <tt class="docutils literal">~\ref{label}</tt>.</p>
-<p>Para garantizar compatibilidad con los que les gusta que el título de la
-referencia sea el epígrafe y no el número, lo hice opcional: toda
-referencia a un destino con sufijo <tt class="docutils literal"><span class="pre">-num</span></tt> usa una referencia númerica
-en vez de un hipervinculo con texto.</p>
-<p>Acá el patch (para la versión 1.1 —en desarrollo— )</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/sphinx-issue76.txt">|image1|</a></td>
-</tr><tr><td>Diff Parche para el Issue #76 de Sphinx</td>
-</tr></tbody></table><p>Y acá un ejemplo del problema y la gronchosolución</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/prueba.pdf">|image3|</a></td>
-</tr></tbody></table><p>El código del ejemplo es este:</p>
-<pre class="literal-block">
-Ejemplo
-*******
-
-Referenciando la figura :ref:`ok` se evidencia el problema. Aplicando mi
-rústico parche en cambio, se puede referenciar a la Figura :ref:`ok-num`.
-
-.. _ok:
-
-.. figure:: ok.png
-
-   Una imágen
-
-.. _ok-num:
-
-.. figure:: ok.png
-</pre>
-        <p>
-        
-            <a href="posts/referenciar-figuras-por-numero-en.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/yendo-a-las-fuentes-de-cuevana-tv.html">Yendo a las fuentes de cuevana.tv</a>
-        <small>  
-             <span class="timeago" title="2011-02-28 12:24:40">2011-02-28 12:24:40</span>
-        </small></h1>
-        <p>** UPDATE ** : la ultima version funciona con el nuevo sitio de cuevana.</p>
-<p>Dos cosas me gustan mucho últimamente:
-<a class="reference external" href="http://www.cuevana.tv">cuevana.tv</a> y
-<a class="reference external" href="http://www.greasespot.net/">GreaseMonkey</a></p>
-<p>Cuevana es un sitio para ver series y películas online, en streaming de
-alta calidad, con subtitulos y todo. El truco está en un plugincito que
-hace instalar en el navegador que permite reproducir (en un reproductor
-basado en flash comunacho) un archivo que se descarga de megaupload,
-filefactory o sitios por el estilo. El ancho de banda lo ponen otros, la
-alegría es toda de cuevana (y nuestra). Todos unos pillos.</p>
-<p>Lamentablemente, mi conexión no se banca un streaming de alta calidad
-(como los videos de cuevana) sin bufferear (?) y entonces pierde sentido
-(o gana mala sangre) intentar ver directamente "online".</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 21); <em><a href="posts/yendo-a-las-fuentes-de-cuevana-tv.html#id1">backlink</a></em></p>
-Duplicate explicit target name: "greasemonkey".</div>
-<p>Y acá entra <a class="reference external" href="http://es.wikipedia.org/wiki/Greasemonkey">Greasemonkey</a>,
-que es una extensión para Firefox (y otros navegadores) que permite
-agregar scripts (en javascript) para modificar localmente las páginas
-que indiquemos.</p>
-<p>Con esta herramienta, programadores voluntarios crean <a class="reference external" href="http://userscripts.org/">cientos de
-scripts</a> para mejorar la estética o
-funcionalidad de muchos sitios, conocidos o no.</p>
-<p>Mi <a class="reference external" href="http://userscripts.org/scripts/show/98017">primer aporte</a> a la
-"comunidad Greasemonkera" (y cuevanera) intenta subsanar la
-discriminación que el streaming de alta calidad tiene con los que
-tenemos un ancho de banda no muy ancho.</p>
-<p>Una vez
-<a class="reference external" href="http://userscripts.org/scripts/source/98017.user.js">instalado</a> el
-script muestra links a la fuente original de descarga, justo abajo de
-los iconos de selección.</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH298/2011-02-28-011028_584x341_scrot-37636.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 40)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>Así podemos bajar los videos y verlos offline.</p>
-<p>Como complemento, se pueden copiar y pegar los links en un gestor de
-descargas como <a class="reference external" href="http://www.tucaneando.com/">Tucan</a></p>
-<p>[STRIKEOUT:Respecto a los subtítulos, todavía soy principiante con
-javascript, pero espero poder obtener el link a los subtitulos en
-futuras versiones. ]</p>
-        <p>
-        
-            <a href="posts/yendo-a-las-fuentes-de-cuevana-tv.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/covertura-de-los-oscars-2011.html">Covertura de los Oscars 2011</a>
-        <small>  
-             <span class="timeago" title="2011-02-24 15:05:21">2011-02-24 15:05:21</span>
-        </small></h1>
-        <p>Anoche, en un arrebato procrastinador, armé <a class="reference external" href="http://oscars-awards.com">Oscars
-Awards</a> y su clon <a class="reference external" href="http://oscars-winners.com">Oscars
-Winners</a> .</p>
-<p>Aprovechando una promo de
-<a class="reference external" href="http://www.netfirms.com/domain-names/">netfirms.com</a> y con un poco de
-suerte, consegui los dos dominios por u$s 9 que pagué con PayPal. Vuelve
-la burbuja .com ?</p>
-<p>El "streaming de tweets" está basado en
-<a class="reference external" href="http://juitter.com/">juitter</a>, pequeñamente hackeado.</p>
-        <p>
-        
-            <a href="posts/covertura-de-los-oscars-2011.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/de-otra-galaxia.html">De otra galaxia</a>
-        <small>  
-             <span class="timeago" title="2010-11-27 20:19:38">2010-11-27 20:19:38</span>
-        </small></h1>
-        <p>Si el sábado a la noche antes de rendir tu última materia en vez de
-estar estudiando estás emborranchandote por ahí, sos un inconciente y/o
-la tenés muy clara. Si en cambio no estás estudiando ni emborrachando,
-pero te ponés a pensar ejercicios para el <a class="reference external" href="https://github.com/nqnwebs/python-ingenieria">curso de
-python</a> que estás dando,
-sos un nerd. Mereces un brindis de chocolatada a tu salud de todos los
-de <a class="reference external" href="http://www.whatthefolk.net/forum/viewtopic.php?f=13&amp;t=338">este
-foro</a>.</p>
-<p>Si encima blogueas al respecto, sos un nerd intergaláctico. Te explico
-por qué.</p>
-<p>Resulta que tenés este <a class="reference external" href="https://github.com/nqnwebs/python-ingenieria/raw/master/data/data.txt">archivo de
-datos</a>.
-Cada número representa la intensidad de luz de un punto y te informan
-que la imágen es cuadrada. Se supone que son datos que te dió un
-profesor una vez, para que resuelvas este mismo problema en
-¡ensamblador!</p>
-<p>Hacerlo en Python, con Numpy y Matplotlib, significa estas líneas</p>
-<pre class="literal-block">
-import numpy as np
-import matplotlib.pyplot as plt
-
-data = np.fromfile ('data.txt', sep=' ')
-SIZE = int(len(data) ** .5)
-data.shape = SIZE, SIZE
-plt.imshow (data)
-plt.show ()
-</pre>
-<p>Y se obtiene este resultado:</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH385/galaxy-efc45.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 38)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>Se puede limitar los valores de luz a un valor entre 0 y 255 (truncando
-valores de saturación extrema), haciendo :</p>
-<pre class="literal-block">
-plt.imshow (data.clip(0,255) )
-</pre>
-<p>Obtenemos este resultado:</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH385/galaxy-2-e0bc7.png"></div>
-        <p>
-        
-            <a href="posts/de-otra-galaxia.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/voto-electronico-e-ingenieros.html">Voto electrónico e ingenieros analógicos</a>
-        <small>  
-             <span class="timeago" title="2010-10-19 21:54:20">2010-10-19 21:54:20</span>
-        </small></h1>
-        <p>Con mucho esfuerzo propio y ajeno, estoy terminando la carrera
-<a class="reference external" href="http://computacion.efn.uncor.edu">Ingeniería en Computación</a> en la
-Universidad Nacional de Córdoba.</p>
-<p>Una particularidad de mi carrera, entre varias, es que hay mucha
-discusión y participación estudiantil. Una herramienta estratégica para
-esto ha sido un <a class="reference external" href="http://www.ceicin.org.ar/Grupo-de-Correo-de-Ingenieria-en">grupo de
-correo</a> en
-el que participan estudiantes, profesores y graduados.</p>
-<p>Allí he mantenido <a class="reference external" href="http://www.textosypretextos.com.ar/spip.php?page=recherche&amp;recherche=limando+cantos">algunas
-discusiones</a>
-con compañeros y/o profesores sobre temas diferentes. Los más
-interesantes, para mí, son los que evidencian concepciones filosóficos,
-ideológicas y políticas de cada uno.</p>
-<p>La última, que empezó el lunes, comenzó con una discusión sobre le <a class="reference external" href="http://www.vialibre.org.ar/category/activismo/voto-electronico/">voto
-electrónico</a>
-(a raiz de la charla relámpago de <a class="reference external" href="http://en.wikipedia.org/wiki/Federico_Heinz">Federico
-Heinz</a> en la
-<a class="reference external" href="posts/blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> ) que fue derivando
-a una más de fondo, sobre la concepción de ingeniero que yo quiero ser y
-la que los profesores con los que discuto en el hilo (y casi todos los
-otros) me enseñan.</p>
-<p>Como ya casi tiene telarañas, y además porque allí están todas las
-discusiones previas (las que me parecieron interesantes, bah), lo
-publiqué en <a class="reference external" href="http://www.textosypretextos.com.ar">mi otro blog</a>.</p>
-        <p>
-        
-            <a href="posts/voto-electronico-e-ingenieros.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/gpec-2010-el-poster.html">GPEC 2010: El poster</a>
-        <small>  
-             <span class="timeago" title="2010-10-18 13:06:48">2010-10-18 13:06:48</span>
-        </small></h1>
-        <p>Otra cosa que hice en
-<a class="reference external" href="posts/blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> fue presentar un
-poster sobre <a class="reference external" href="http://code.google.com/p/gpec2010/">GPEC 2010</a>, mi
-proyecto integrador para recibirme de ingeniero en computación,
-originalmente pensado para presentar en
-<a class="reference external" href="http://riteq.efn.uncor.edu/">Riteq</a> la semana que viene. El poster
-fue presentado en coautoría con Martín Cismondi y Gustavo Wolfmann, los
-directores del trabajo.</p>
-<p><img alt="image0" src="images/DSCF7067JPG-16c7-979e2.jpg">
-Como no tuve tiempo, la de PyCon es una versión que (espero) será
-mejorada para la semana que viene, con algunas figuras más.</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/poster-gpec-A4.pdf">|image2|</a></td>
-</tr><tr><td>Poster GPEC 2010 Formato A4 (reducido)</td>
-</tr></tbody></table><p>También un resumen extendido (2 páginas) aprobado por los revisores de
-RITEQ, que explica algún detalle más.</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/Resumen%20RITeQ%20Gaitan.pdf">|image4|</a></td>
-</tr><tr><td>Resumen aprobado Riteq 2010</td>
-</tr></tbody></table><p>Los fuentes están disponibles en en el repo:</p>
-<pre class="literal-block">
-svn checkout https://gpec2010.googlecode.com/svn/trunk/docs/poster
-</pre>
-        <p>
-        
-            <a href="posts/gpec-2010-el-poster.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/ipython-la-interactividad-al-poder.html">IPython, la interactividad al poder</a>
-        <small>  
-             <span class="timeago" title="2010-10-18 04:43:24">2010-10-18 04:43:24</span>
-        </small></h1>
-        <p>A lo largo de esta vida he amado, he llorado y reído, me han salido
-canas y dí algunas charlas y talleres.</p>
-<p>Me gusta la docencia, probable herencia de <a class="reference external" href="posts/blog/article/grosa">una
-grosa</a>. Me gusta compartir lo que sé, instarme a
-aprender para compartir con otros y aprender cuando enseño. Educación
-horizontal, educación popular.</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="images/chino-garce.jpg">|image1|</a></td>
-</tr></tbody></table><p>El viernes pasado, en la
-<a class="reference external" href="posts/blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> debía dar una de
-las primeras charlas, <em>`IPython, la interactividad al
-poder &lt;http://ar.pycon.org/2010/conference/schedule/event/91/&gt;`_</em> .
-Entró al cronograma en una segunda tanda de selección, con más sorpresa
-que el chino Garcé a Sudáfrica 2010. El problema es que para cuando me
-invitaron yo ya había descartado mi participación en PyCon y aceptado
-dar <a class="reference external" href="posts/blog/article/charla-python-a-los-bifes">una en mi facu</a>, también
-sobre Python pero otra. Ergo, ¡tenía que preparar 2 charlas!</p>
-<p>En el medio, solucionar horribles bugs de
-<a class="reference external" href="http://code.google.com/p/gpec2010/">GPEC</a> para la release de la
-semana que viene, un casamiento a 1500 km de mi casa (por suerte no
-mío), aprender a <a class="reference external" href="http://article.gmane.org/gmane.comp.python.myhdl/1536/">diseñar
-hardware</a>,
-malabarear estres con las <a class="reference external" href="http://python.org.ar/pyar/RemerasV3">remeras de
-PyAr</a> y terminar el
-<a class="reference external" href="posts/blog/article/gpec-2010-el-poster">poster</a> que se me ocurrió
-presentar.</p>
-<p>El contexto no favoreció a preparar la charla con anticipación. De
-hecho, pude hacerme lugar el jueves de 0:05 a 4 am para leer el manual y
-escribir lo poco que escribí. Mucha audacia teniendo en cuenta que
-algunas de las cosas que quería (de alguna manera debía) mostrar, no las
-uso/aba realmente (eso de <em>instarme a aprender</em> es posta) y más aun,
-considerando que las presentaciones con "demo" incluída son una fiesta
-orgiástica para <a class="reference external" href="http://en.wikipedia.org/wiki/Murphy's_law">Murphy</a></p>
-<p>Por eso, para descompimir la ansiedad y la casi certeza de que algo
-podía salir mal, lo primero que hice fue echarle la culpa a John Lenton,
-que fue el que
-<a class="reference external" href="http://permalink.gmane.org/gmane.org.user-groups.python.argentina/38170">incitó</a>
-a la vergüenza. La charla comienza con este disclaimer:</p>
-<pre class="literal-block">
-Disclaimer
------------------
-
-Todo lo que sigue es culpa de John Lenton:
-
-
-    2010/7/28 John Rowland Lenton :
-    &gt; Hola!
-    &gt;
-    &gt; Estamos organizando PyConAr. Viste? La conferencia de Python en
-    &gt; Argentina (...) te vas a dar cuenta cuando
-    &gt; estés acá en Córdoba que podrías haber presentado tu charla, y te vas
-    &gt; a sentir muy zonzo.
-</pre>
-<p>Para colmo de riesgos, descubrí algo que supongo que es un bug (TODO:
-check and report this) con la utilidad <tt class="docutils literal">Demo</tt> de IPython que usé, en
-la versión estable (0.10) y la que está en desarrollo (0.11). Por eso
-tuve que hacer un downgrade a la 0.9, que no tiene algunas cosas
-interesantes que quería mostrar (%paste, por ejemplo).</p>
-<p>Por supuesto, Murphy vino y se divirtió, pero no se burló
-sarcasticamente. Hasta que alguien me muestre un video y me ponga rojo
-de vergüenza voy a quedarme con la idea de que no estuvo tan mal. Alguno
-seguro no descrubrió nada nuevo, pero <a class="reference external" href="http://twitter.com/#!/martinvol/status/27447006335">otros parecieron
-satisfechos</a> y
-probablemente jueguen un ratito con IPython.</p>
-<div class="section" id="archivos-descarga">
-<h2>Archivos / Descarga</h2>
-<p>Como es una presentación interactiva, no hay "diapositivas". O sí, pero
-es un módulo python.</p>
-<p>Todo lo que usé (con nimios retoques respecto a lo mostrado el viernes)
-se puede bajar (o forkear) de
-<a class="reference external" href="http://github.com/nqnwebs/IPython-interactive-talk">GitHub</a> .</p>
-<pre class="literal-block">
-git clone git@github.com:nqnwebs/IPython-interactive-talk.git
-</pre>
-<p>O desde este Zip</p>
+<p>Algunos detalles:</p>
+<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="tv://">tv://</a> indica que se va a capturar video, y se le pasan paramétros
+luego del flag -tv: driver <strong>v4l2</strong>, un tamaño de 480x360 (aunque
+después se recorta), preconfigurado para ntsc (29.97 fps).
+<img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un aspecto importante son los flags referidos al audio: se
+captura el audio <strong>alsa</strong>, indicando la placa de sonido, el modo y la
+calidad (mono a 44100hz de ancho de banda)
+<img alt="image2" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> El audio se comprime con <strong>lame</strong> a mp3 de 96kps constante.
+<img alt="image3" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> con <strong>-af volume</strong> le bajo el volumen 6db, porque de otra
+manera me salía saturado (estoy capturando desde el microfono). El
+parametro <strong>forceraudio</strong> fuerza la captura aunque la entrada esté
+silenciada en la mezcladora. También se fuerza a grabar un solo canal
+con <strong>forcechan=1</strong>.
+<img alt="image4" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Con -ovc lavc se usa <strong>libavcodec</strong> (ffmpeg), comprimiendo en
+mpeg4 a un bitrate de 5000.
+<img alt="image5" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Se aplican 2 filtros de video al vuelo: <strong>yadif</strong> que es el
+mejor filtro desentralazador (necesario para captura analógica) y un
+<strong>crop</strong> que recorta 8 pixeles de los costados, 2 de arriba y 6 de
+abajo, para evitar la distorción que producen los cabezales con las
+cintas viejas.</p>
+<p>El resultado es un video de unos 250kb/s de calidad más que aceptable.</p>
+<p>Por ejemplo, el casamiento de mi hermano Juan, en 1998:</p>
 </div>
         <p>
         
-            <a href="posts/ipython-la-interactividad-al-poder.html#disqus_thread">Comments</a>
+            <a href="posts/digitalizando-recuerdos-con.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/pyconar-2010-el-orgullo-de.html">PyConAr 2010, el orgullo de pertenecer</a>
+        <h1><a href="posts/learning-python-4th-edition.html">Learning python, 4th Edition</a>
         <small>  
-             <span class="timeago" title="2010-10-17 12:46:08">2010-10-17 12:46:08</span>
+             <span class="timeago" title="2009-09-29 10:19:41+00:00">2009-09-29 10:19:41+00:00</span>
         </small></h1>
-        <p>Ya está, ya pasó. Y estoy muy feliz de <a class="reference external" href="http://ar.pycon.org/2010/">eso que
-pasó</a>.</p>
-<p>Conocí Python oliendo la pasión con la que hablaban de este lenguaje
-gente a la que admiro mucho y empujado demandas del trabajo, la academia
-y el hartazgo, de poner un pie fuera de la web, cosa que PHP permite de
-mentirita.</p>
-<p>Me acerqué al lenguaje facilmente (<em>simple is better than complex</em>) pero
-no tan fácil a la comunidad. De hecho, acabo de fijarme en gmail y
-encontré el mail de un bonito bot y <a class="reference external" href="posts/blog/article/el-numero-mi-primer-juego">mi feo hola
-mundo</a> a la lista de <a class="reference external" href="http://www.python.org.ar">Python
-Argentina</a> fechados el 17 de enero de 2007.
-Es bastante tiempo para saber tan poco de Python y para que Python sepa
-tan poco de mí.</p>
-<p>Lamentablemente nunca pude ir a los PyCamp, que parecen ser el ámbito
-ideal para encontrar y fortalecer esa cuestión humana que a mi me
-faltaba para pertenecer y disfrutar, no sólo del lenguaje sino de su
-comunidad. Así que el año pasado, despues de la PyCon 2009 en Buenos
-Aires, me propuse tomar alguna responsabilidad si se hacía de nuevo.</p>
-<p>Cumplí a medias: me anoté como revisor y ni siquiera revisé la mía. Pero
-(haciendo volar libres dos pajaros de <a class="reference external" href="http://agrupacionmazamorra.org.ar)%20organic%C3%A9%20el%20proceso%20de%20dise%C3%B1o/elecci%C3%B3n%20y%20fabricaci%C3%B3n%20de%20las%20%5Bremeras-%3Ehttp://python.org.ar/pyar/RemerasV3">un
-sueño</a>,
-<a class="reference external" href="http://anfiloquio.usla.org.ar/view/tin_nqn/">hospedé</a> a Manu,
-presenté un <a class="reference external" href="posts/blog/article/gpec-2010-el-poster">poster</a> más grandote
-que grandioso y di una
-<a class="reference external" href="posts/blog/article/ipython-la-interactividad-al-poder">charla</a> que salió no
-demasiado mal.</p>
-<p>La alegría, más allá de las poquitas charlas que logré ver, viene por el
-lado social. Conocí, conversé, me reí y casi que me emborraché con gente
-muy linda, mucha de la cual no sólo es técnicamente brillante sino
-humanamente querible.</p>
-<p>Como apasionado de la tecnología sé que no es neutral. La tecnología, en
-esta época, es parte de la ideología.</p>
-<p>Elegir una tecnología, un lenguaje de programación, y meterle tiempo,
-ingenio y muchas veces plata a su difusión y mejora, para que muchos se
-beneficien (y se tienten a meterle tiempo, ingenio ...) es un gesto de
-solidaridad que hay que aplaudir de pie.</p>
-<p>En un sistema cuyo <em>leitmotiv</em> es <em>"vos o yo"</em> hay gente que dice <em>"vos
-y yo"</em>, y mejor aún, dice <em>"nosotros"</em>.</p>
+        <p><img alt="image0" src="posts/local/cache-vignettes/L250xH326/Pantallazo-3-7c37a.png"><a class="reference external" href="http://oreilly.com/catalog/9780596158071/">Learning Python</a>
+de <a class="reference external" href="http://www.rmi.net/~lutz/">Mark Lutz</a>, ha sido, desde su primera
+versión en 1999, uno de los libros de cabecera para aprender Python.</p>
+<p>Hace unos días salió la 4ta edición, adaptada a las versiones 2.6 y 3.1
+de Python y ampliada en varios capítulos.</p>
+<p>Lamentablemente, tardará mucho en llegar a la librerías argentinas, pero
+podés ir leyendo la versión en PDF.</p>
         <p>
         
-            <a href="posts/pyconar-2010-el-orgullo-de.html#disqus_thread">Comments</a>
+            <a href="posts/learning-python-4th-edition.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/grosa.html">Grosa</a>
+        <h1><a href="posts/project-euler-problema-2.html">Project Euler, Problema #2</a>
         <small>  
-             <span class="timeago" title="2010-10-15 11:31:10">2010-10-15 11:31:10</span>
+             <span class="timeago" title="2009-09-20 16:37:47+00:00">2009-09-20 16:37:47+00:00</span>
         </small></h1>
-        <p>From: Elena Del Balzo
-Date: 2010/10/15
-Subject: Conferencia!!!
-To: Martín Gaitán</p>
+        <p>El <a class="reference external" href="http://projecteuler.net/index.php?section=problems&amp;id=2">problema nº
+2</a> pide
+obtener la suma de todos los números impares pertenencientes a la
+<a class="reference external" href="http://es.wikipedia.org/wiki/sucesi%C3%B3n_de_Fibonacci">sucesión de
+Fibonacci</a> menores
+a 4 millones.</p>
+<p>El código con el que lo resolví es este:</p>
+<pre class="literal-block">
+def fibo(max):
+        a, b = 0, 1
+           n = a + b
+           while n &lt; max:
+                yield n
+                a, b = b, n
+                n = a + b
+
+sum([i for i in fibo(4000000) if i%2 == 0])
+</pre>
+<p>El resultado es 4613732.</p>
+<div class="section" id="explicacion">
+<h2>Explicación</h2>
+<p>Fibonacci es el "hola mundo matemático" y Python luce su elegancia con
+este problema.</p>
+<p>El aspecto interesante de la función <strong>fibo()</strong> definida en el código de
+arriba es que no se trata de una función común sino de un generador.
+Sintácticamente la diferencia está en que no utiliza la sentencia
+<strong>return</strong> sino
+<strong>`yield &lt;http://docs.python.org/reference/simple_stmts.html#the-yield-statement&gt;`_</strong>
+.</p>
+<p>La definición de
+<em>`yield &lt;http://www.wordreference.com/definition/yield&gt;`_</em>. en su
+acepción de verbo, dice «end resistance, especially under pressure or
+force;». Ceder, no oponer resistencia.</p>
+<p>La diferencia sustancial entre un yield y un return es que el yield
+devuelve el resultado parcial de cada iteración y hace una "marca de
+entrada" desde donde se comenzará a ejecutar la próxima vez que la
+función (el generador) sea invocado.</p>
+<p>Esto permite una recursividad con "<a class="reference external" href="http://en.wikipedia.org/wiki/Lazy_evaluation">evaluación
+perezosa</a>", mucho más
+eficiente en términos computacionales.</p>
+</div>
+        <p>
+        
+            <a href="posts/project-euler-problema-2.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/resolviendo-project-euler-con.html">Resolviendo Project Euler con python</a>
+        <small>  
+             <span class="timeago" title="2009-09-18 01:48:15+00:00">2009-09-18 01:48:15+00:00</span>
+        </small></h1>
+        <p>A través del blog de <a class="reference external" href="http://www.juanjoconti.com.ar">Juanjo Conti</a>
+descubrí <a class="reference external" href="http://projecteuler.net">Project Euler</a>, una serie de
+desafíos matemáticos de enunciación sencilla para resolver con
+computadoras.</p>
+<p>Juanjo estuvo resolviendo los primeros problemas, y yo quise hacer mi
+intento. <a class="reference external" href="http://projecteuler.net/index.php?section=problems&amp;id=1">El
+primero</a>
+plantea obtener la suma de todos los multiplos de 3 o de 5 menores a
+1000.</p>
+<p>Lo resolví con esta pythonica (lo es?) línea:</p>
+<pre class="literal-block">
+sum([i for i in range(1000) if (i % 3 == 0 or i % 5==0)])
+</pre>
+<p>El resultado es 233168.</p>
+<div class="section" id="breve-explicacion">
+<h2>Breve explicación</h2>
+<p>Se basa en el uso de <a class="reference external" href="http://docs.python.org/tutorial/datastructures.html#list-comprehensions">list
+comprehensions</a>,
+una de las "joyas de la corona" de las características de Python.</p>
+<p>Es una manera de generar listas de una manera concisa, compuesta por una
+expresión seguida de uno a más <strong>for</strong> y una condicionalidad al final</p>
+<p>La lista ** [i for i in range(1000) if (i % 3 == 0 or i % 5==0)]** se
+lee así: crear una lista con todos los elementos (expresión i) en el
+rango de 0 a 999 (for) cuyo resto de dividirlo por 3 o 5 sea 0 (if).</p>
+</div>
+        <p>
+        
+            <a href="posts/resolviendo-project-euler-con.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/principios-para-un-freelancear.html">Principios para un "freelancear" exitosamente</a>
+        <small>  
+             <span class="timeago" title="2009-09-09 15:35:30+00:00">2009-09-09 15:35:30+00:00</span>
+        </small></h1>
+        <p><a class="reference external" href="http://www.principlesofsuccessfulfreelancing.com/">The principle of successful
+freelancing</a>, de
+Miles Burke, es el libro (digital) que estoy leyendo.</p>
 <blockquote>
-<p>Hijo Queridísimo!!!</p>
-<p>Hoy estuvimos en la universidad porque Juli recibió un título de
-postgrado. Charlando con tu padre me recordó que hoy das tu
-<a class="reference external" href="http://ar.pycon.org/2010/conference/schedule/event/91/">conferencia</a>.
-Cuántas cosas lindas nos pasan!!! Deseo que logres transmitir todo
-lo que te apasiona y defiendas siempre, en cada circunstancia de la
-vida, tus convicciones, tus valores y principios. Tenemos obligación
-de llegar a muchos con nuestros conocimientos. El saber es poder.
-Vos tenés en tu "poder" una hermosa herramienta y Sé de tu capacidad
-para socializarla.¡¡ A multiplicar, a Sumar, a Compartir!!! Abrazo.
-te amo. Ma´</p>
-</blockquote>
+This book is intended as a guide to approaching the decision to be
+your own boss, effecting a smooth transition into a freelance
+career, and making it a success once you’re there. The book’s
+holistic approach ensures that it not only covers how to make your
+freelancing journey a financial success, but also how to do it
+without risking your health and sanity.</blockquote>
+<p>Ser tu propio jefe. No está mal para este mundo donde ese rol tiene
+connotación negativa.</p>
+<p>Quienes quieran chusmear, acá tienen.</p>
         <p>
         
-            <a href="posts/grosa.html#disqus_thread">Comments</a>
+            <a href="posts/principios-para-un-freelancear.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/un-spip-para-muchos-sitios.html">Un spip para muchos sitios</a>
+        <small>  
+             <span class="timeago" title="2009-08-10 08:40:55+00:00">2009-08-10 08:40:55+00:00</span>
+        </small></h1>
+        <p>Administrar muchos sitios SPIP tiene sus bemoles. Yo administro, fácil,
+unos 30. Cuando hay que actualizar la versión (por cuestiones de
+funcionalidad, o bien, como la semana pasada, por cuestiones de
+seguridad), es un trabajo engorroso y aburrido hacer 30 veces lo mismo.
+Y el trabajo se vuelve exponencial si hay que actualizar los plugins
+para cada uno</p>
+<p>Para evitar eso existe la
+<a class="reference external" href="http://www.spip-contrib.net/La-mutualisation-facile">Mutualización</a>,
+que desde la versión 2 es realmente muy fácil.</p>
+<p>El concepto es simple: un sólo núcleo de SPIP (/ecrire, /prive,
+/squelettes-dist, /plugins) se comparte para motorizar diferentes
+sitios, que tendrán los directorios con contenido propio (/squelettes,
+/config , /IMG, etc), separado del resto</p>
+<p>Así, a la hora de actualizar SPIP sólo tenemos que actualizar una sola
+instalación, tarea que se vuelve trivial si además usamos
+<a class="reference external" href="posts/blog/article/ultima-version-de-spip-por-svn">svn</a>.</p>
+<div class="section" id="requisito">
+<h2>Requisito</h2>
+<p>En general, la mutualización funciona sin muchos pormenores en un
+servidor LAMP, pero nuestro servidor de hospedaje debe permitir apuntar
+diferentes dominios a un mismo directorio publico.</p>
+<p>Por ejemplo, mi sitio <strong>textosypretextos.com.ar</strong> apunta a
+<em>/home/tin/public_html/spip</em> y <strong>nqnwebs.com</strong> apunta también a
+<em>/home/tin/public_html/spip</em>.</p>
+<p>Es una configuración simple, pero no todos los servicios de hosting lo
+permiten.</p>
+</div>
+<div class="section" id="puesta-en-marcha">
+<h2>Puesta en marcha</h2>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/mutualisation.zip">|image1|</a></td>
+</tr><tr><td>plugin mutualisation</td>
+</tr></tbody></table><p>La "mutualización fácil" funciona a través de este plugin, pero que
+particularmente <strong>debe ser instalado en la raiz del sitio</strong> y no en la
+carpeta /plugins</p>
+<p>Al descomprimirlo crea una nueva carpeta, <em>/mutualisation</em>, en la raiz
+de nuestro SPIP mutualizado</p>
+<p>Además, incluye un archivo <em>mes_options.php</em> de ejemplo, pero yo te
+propongo este, que debe ser instalado en <em>/config</em></p>
+<pre class="literal-block">
+ true
+     */
+    # define ('_INSTALL_USER_DB_ROOT', 'mon_root');
+    # define ('_INSTALL_PASS_DB_ROOT', '********');
+
+    /*
+     * Crear las bases de dato via un ping a una URL (metodo AlternC)
+     *
+     * Il suffit de renseigner l'option url_creer_base, en lui passant les bons parametres :
+     * 'url_creer_base' =&gt; 'https://bureau.tld/admin/sql_doadd.php?username=USER&amp;password=PASS&amp;dbn='.prefixe_mutualisation($site)
+     */
+
+
+    /*
+     * Transformar en las paginas publicas las URL de imagenes
+     * /sites/mon_site/IMG/* -&gt; /IMG/*
+     * /sites/mon_site/local/* -&gt; /local/*
+     *
+     * - Necesita el mod_rewrite (reescritura de url) de apache
+     * - Sólo funciona con nombres de dominio mutualización
+     * ('http_host' : http://mi_sitio_mutualizado.com)
+     * (por lo tanto, no funciona con un subdirectorio - http://mi_sitio_mutualizado.com/misitio/)
+     *
+     * y añadir en la opción
+     * 'url_img_courtes' =&gt; true
+     *
+     * Es posible generar los  .htaccess
+     * automaticamente en /IMG y /local
+     * gracias a ?var_mode=creer_htaccess_img
+     *
+     */
+
+    /*
+     * Indique aqui el nombre del sitio de administración de esta mutualización
+     * (o varios, separados por oma)
+     * (dpor ejemplo, 'scriibe.net' es el dominio de nivel maximo)
+     * para autorizar todos los sitios no definir la constante ;
+     * Si el propietario del sitio no se encuentra en los sites/ sino en la razi,
+     * escriba '' y agregue 'mutualisation' en $dossier_squelettes
+     */
+    define ('_SITES_ADMIN_MUTUALISATION', 'nqnwebs.com');
+
+
+    demarrer_site($site,
+        array(
+            'creer_site' =&gt; true,        // Creer ou non le site s'il n'existe pas (defaut: false)
+            'creer_base' =&gt; false,        // Creer ou non la base de donnee si elle n'existe pas (false)
+            'creer_user_base' =&gt; false,  // Creer ou non un utilisateur pour la nouvelle base de donnee (false)
+            'mail' =&gt; '',                // Adresse mail pour recevoir un mail lors d'une creation de site mutualise ('')
+            'code' =&gt; 'miclave',  // Code d'activation ('ecureuil')
+            'table_prefix' =&gt; true,     // Definir automatiquement le prefixe de table (false) ... mettre true si tous les sites dans la meme base
+            'cookie_prefix' =&gt; true,     // Definir automatiquement le prefixe de cookie (false)
+            'repertoire' =&gt; 'sites',     // Nom du repertoire contenant les sites mutualises ('sites')
+            'url_img_courtes' =&gt; true,   // Utiliser la redirection des URL d'images courtes dans la partie publique (false)
+            # 'utiliser_panel' =&gt; false, // Utiliser une table externe pour recuperer des identifiants ... (code, user, pass) permettant a un utilisateur d'installer le site (false)
+            'url_creer_base' =&gt; ''       // Creer la base de donnees via une URL (methode AlternC)
+        )
+    );
+
+
+?&gt;
+</pre>
+<p>Este mes_options.php (retocado por mi) permite que los sitios funcionen
+con o sin ’www’. También apunta a una única base de datos, donde se
+encargará de crear las tablas necesarias para cada sitio, diferenciadas
+por un prefijo.</p>
+<p>Sólo resta crear la carpeta <em>/sites</em> en la raiz del sitio, donde irán
+nuestros diferentes sitios mutualizados.</p>
+<p>Al acceder via web a un dominio de un sitio sobre esta mutualización, lo
+primero que aparecerá es una solicitud de contraseña, definida en array
+de configuración de mes_options.php (en el ejemplo, la contraseña es
+<em>miclave</em>)</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH303/Pantallazo-2-d2b75.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 134)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Luego siguen dos etapas que nos crean la estructura de directorios para
+este sitio dentro de <em>/sites</em> y las tablas para este sitio en la base de
+datos compartida. Lo que sigue es el proceso de instalación estándar de
+SPIP.</p>
+<p><strong>¡Listo!</strong></p>
+<p>Hay que tener en cuenta que ahora los archivos para nuestro sitio
+estarán dentro de <em>/sites/dominio/</em> y es allí donde deberán subirse los
+esqueletos y demás.</p>
+</div>
+<div class="section" id="mutualizar-un-sitio-en-produccion">
+<h2>Mutualizar un sitio en producción</h2>
+<p>¿Qué pasa si el sitio que quiero mutualizar ya está funcionando sobre un
+spip propio? No problem.</p>
+<p>Basta indicar (desde el panel, o solicitando al administrador del
+hosting) que nuestro dominio debe apuntar ahora a la carpeta donde
+tenemos el spip mutualizado (en mi ejemplo <em>/home/tin/public_html/spip</em>
+), crear el directorio <strong>/sites/dominio</strong> (donde dominio es la url del
+sitio que queremos migrar) y mover alli las carpetas /config, /IMG,
+/squelettes, /local y /tmp (o crear una /tmp nueva) del SPIP en uso al
+nuevo directorio. [[Estas carpetas, bien podrian ser link simbólicos].
+Magia!</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusión</h2>
+</div>
+        <p>
+        
+            <a href="posts/un-spip-para-muchos-sitios.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/limitar-la-cantidad-de-caracteres.html">Limitar la cantidad de caracteres de los comentarios</a>
+        <small>  
+             <span class="timeago" title="2009-06-10 06:41:37+00:00">2009-06-10 06:41:37+00:00</span>
+        </small></h1>
+        <p>Si Twitter funciona con 140 caracteres los comentarios a nuestros
+artículos podrían tener 200, ¿no?</p>
+<p>Hay una forma fácil de limitar el largo permitido en un campo de texto
+mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
+caracteres restantes.</p>
+<p>Por ejemplo, esto limita el tamaño de un comentario en SPIP.</p>
+<pre class="literal-block">
+ $(document).ready(function () {
+
+     $("#texte").before("&lt;div id='chars' style='float:right;font-weigth:strong;margin-right:5px;'&gt;&lt;/div&gt;");
+
+$(function(){
+    $('#texte').keyup(function(){
+        limitChars('texte', 200, 'chars');
+    })
+    });
+ });
+
+function limitChars(textid, limit, infodiv) {
+     var text = $('#'+textid).val();
+     var textlength = text.length;
+     if(textlength &gt; limit) {
+         $('#' + infodiv).html('No puede ingresar m&amp;aacute;s de '+limit+' caracteres');
+         $('#'+textid).val(text.substr(0,limit));
+         return false;
+     } else {
+         $('#' + infodiv).html('Restan '+ (limit - textlength) +' caracteres.');
+         return true;
+     }
+}
+</pre>
+<div class="section" id="intrucciones-para-spip">
+<h2>Intrucciones para SPIP</h2>
+<ol class="arabic simple"><li>Copiar el código</li>
+<li>Pegarlo luego de la baliza #INSERT_HEAD de tu cabecera</li>
+<li>(opcional) Cambiarle el límite (el número 200),</li>
+</ol><p>¡Listo!</p>
+</div>
+<div class="section" id="intrucciones-generales">
+<h2>Intrucciones generales</h2>
+<p>Es igual al anterior, sólo debes asegurarte que tiene en jquery en la
+página. Luego cambia el selector <tt class="docutils literal">#texte</tt> por el que corresponda al
+campo que querés limitar.</p>
+</div>
+<div class="section" id="ejemplo">
+<h2>Ejemplo</h2>
+</div>
+        <p>
+        
+            <a href="posts/limitar-la-cantidad-de-caracteres.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/ultima-version-de-spip-por-svn.html">Ultima versión de Spip por SVN</a>
+        <small>  
+             <span class="timeago" title="2009-05-22 00:19:54+00:00">2009-05-22 00:19:54+00:00</span>
+        </small></h1>
+        <p>Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
+control de versiones Subversion.</p>
+<p>A través de Subversion, podemos obtener la ultima version de desarrollo
+considerada estable</p>
+<pre class="literal-block">
+svn checkout svn://trac.rezo.net/spip/branches/spip-2.0/  carpeta_destino
+</pre>
+<p>Una de las ventajas de obtener SPIP a través de SVN, es que luego es muy
+fácil de actualizar.</p>
+<pre class="literal-block">
+cd  carpeta_destino
+svn update
+</pre>
+<p>Subversion asigna un numero de revision a cada cambio realizado al
+conjunto de archivos. Así, cuando los desarrolladores lo evaluan
+pertinente, en un determinado momento del desarrollo se empaqueta una
+nueva version "oficial"</p>
+<p>Por ejemplo, la revisión
+<a class="reference external" href="http://trac.rezo.net/trac/spip/browser/branches/spip-2.0?rev=13982">13982</a>
+es la version 2.08 de Spip.</p>
+<p>Podemos obtener una revision específica con el parámetro -r. Por
+ejemplo, el siguiente comando obtendría una copia de SPIP 2.08</p>
+<pre class="literal-block">
+svn -r 13982 checkout svn://trac.rezo.net/spip/branches/spip-2.0/  carpeta_destino
+</pre>
+<p>Genial, pero para para asegurarnos estar en una revision que se
+corresponda con una "version oficial" tenemos que saber el número de ID.</p>
+<p>En el <a class="reference external" href="http://trac.rezo.net/trac/spip/wiki">Trac de Spip</a> se mantiene
+una tabla donde se especifica esta correspondencia para cada nueva
+version, pero a decir verdad, es un engorro tener que ingresar sólo para
+averiguar un número. Mejor hagámoslo automático!</p>
+<div class="section" id="automatizando-la-obtencion-de-un-spip-oficial-por-svn">
+<h2>Automatizando la obtención de un SPIP oficial por SVN</h2>
+<pre class="literal-block">
+#!/bin/bash
+#script para una instalacion de spip a traves de svn
+
+if [ $# -lt 1 ]
+then
+echo "Debe indicar al menos un parametro:"
+echo "$0 destino [rev]"
+echo
+exit 1
+fi
+
+
+if [ $# -eq 2 ]
+then
+REV=$2
+else
+echo "Averiguando revision de la ultima release..."
+REV=$(svn info svn://trac.rezo.net/spip/archivelist.txt | sed -n '9p' | cut -d' ' -f5)
+fi
+
+
+echo "Recuperando la version $REV de SPIP"
+svn checkout -r `echo $REV` svn://trac.rezo.net/spip/branches/spip-2.0/ $1 1&gt;/dev/null
+echo "Configurando permisos..."
+cd $1
+chmod 657 IMG local tmp config
+echo "Lanzando el navegador para continuar la instalacion..."
+firefox http://localhost/~tin/$1/ecrire
+</pre>
+<p>Este script hace el trabajo aburrido por nosotros. Averigua cuál fue la
+última modificación de <em>archivelist.txt</em> que es un archivo que se
+modifica en cada nuevo lanzamiento de paquete. ¡Es el dato que nos hacía
+falta!</p>
+</div>
+<div class="section" id="una-solucion-mas-genuina">
+<h2>Una solución más genuina</h2>
+<p><strong>Atención</strong>: Ya me hicieron caso. <a class="reference external" href="blog/article/ultima-version-de-spip-por-svn#update">Ver
+actualización</a></p>
+<p>Aunque el hacking (como este) es sano y divertido (y a veces también
+útil), la solución más genuina sería que los desarrolladores de SPIP
+mantengan un <strong>tag</strong> por cada nuevo empaquetamiento y uno que apunte
+siempre al último.</p>
+<p>Por ejemplo, con el siguiente comando deberiamos obtener la version 2.05
+(sin saber a qué numero de revision corresponde)</p>
+<pre class="literal-block">
+svn checkout svn://trac.rezo.net/spip/tags/2.05
+</pre>
+<p>y con este otro obtener la <strong>última</strong> versión</p>
+<pre class="literal-block">
+svn checkout svn://trac.rezo.net/spip/tags/lastest-version
+</pre>
+<p>Esto, por ahora, no está implementado, pero ya hice llegar mi propuesta
+a <em>l’equipe</em> de SPIP, y <a class="reference external" href="http://article.gmane.org/gmane.comp.web.spip.devel/53503">lo están
+discutiendo</a></p>
+</div>
+<div class="section" id="actualizacion">
+<h2>Actualización</h2>
+<p>Gracias a <a class="reference external" href="http://my.opera.com/tech-nova/blog/">Gilles</a> el Dev Team
+adoptó mi propuesta y ahora existen Tags en el arbol SVN de spip. En
+particular,</p>
+<pre class="literal-block">
+svn co svn://trac.rezo.net/spip/tags/spip-2-stable
+</pre>
+</div>
+        <p>
+        
+            <a href="posts/ultima-version-de-spip-por-svn.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/el-numero-mi-primer-juego.html">El Número, mi primer juego</a>
+        <small>  
+             <span class="timeago" title="2009-04-24 18:37:28+00:00">2009-04-24 18:37:28+00:00</span>
+        </small></h1>
+        <p>Para suscribirse a la lista de
+<a class="reference external" href="http://python.org.ar/pyar/ListaDeCorreo">Pyar</a>, una de las tareas
+(opcional, pero muy bienvenida) es enviar tu "Hola Mundo".</p>
+<p>El 17 de enero de 2007 yo me suscribí y mandé el siguiente mensaje.</p>
+<blockquote>
+<p>Estimada gente:</p>
+<p>Cumpliendo solemnemente con el paso 2 de las indicaciones de
+suscripción a la lista, haciendo alarde de mi nerdismo, les dejo mi
+"hola mundo" (mi primero programa en python!). Se trata de humilde
+juego via consola que implemento en cada lenguaje en el que intento
+incursionar. Hete aqui:</p>
+<p>Dicha sea la verdad: vengo con muchas ganas de aprender, y por ahora
+muy poco que aportar (pago solidaridad con sinceridad).</p>
+<p>Decidir aprender un nuevo lenguaje es una gran decisión y creo que
+no me he equivocado con mi elección. Es que son mis primeros pinitos
+en la programación orientada a objetos, y aunque la facu exige Java
+(pero no enseña Java), creo que Python es una herramienta mucho mas
+versatil, accesible y apropiada para el nivel de software que tengo
+intención/necesidad de desarrollar.</p>
+<p>Ahora la parte aburrida. Me llamo Martin, soy de Neuquen y estudio
+Ingenieria en computacion en Cordoba. Soy programador PHP (uno del
+montón, que bah) y en particular laburo con un CMS/framework llamado
+<a class="reference external" href="http://www.spip.net">SPIP</a>, que me da de comer y beber. Tengo un
+weblog, aunque no sobre cuestiones técnicas.
+<a class="reference external" href="http://www.textosypretextos.com.ar">www.textosypretextos.com.ar</a>
+. Y lo más importante: soy hincha de boca.</p>
+<p>saludos desde Neuquén a 32ºC. (quien dijo que en el sur hace frio?)</p>
+<p>Martín</p>
+</blockquote>
+<p>Mi "Hola Mundo" fue <strong>El Número</strong>.</p>
+<div class="section" id="mi-primer-juego">
+<h2>Mi primer juego</h2>
+<p>El Número es un juego de lógica y habilidad mental. Consiste en
+encontrar el número escondido (generado aleatoriamente) a través de la
+información</p>
+<p>que brinda la máquina en cada intento. El número escondido tiene 4
+cifras no repetidas.</p>
+<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un digito <em>’bien’</em> significa que el hay un acierto en número y
+posición.</p>
+<p><img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un digito <em>’regular’</em> significa que el digito existe en el
+número incógnita, pero no está en la posición correcta.</p>
+<p>Por ejemplo si el numero incógnita fuese el 1234 y se arriesga el 2031
+el resultado será de dos dígitos regulares (el 2 y el 1) y 1 dígito bien
+(el 3).</p>
+</div>
+<div class="section" id="descarga-e-instrucciones">
+<h2>Descarga e instrucciones</h2>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/elnumero.py-3.zip">|image3|</a></td>
+</tr><tr><td>El Número Martín Gaitán - Enero de 2007</td>
+</tr></tbody></table><p>Sobre Linux podés copiar y pegar este listado de comandos en la consola:</p>
+<pre class="literal-block">
+wget http://nqnwebs.com/IMG/zip/elnumero.py-3.zip
+unzip elnumero.py-3.zip
+chmod +x ./elnumero.py
+./elnumero.py
+</pre>
+<p>Sobre Windows, asegurate tener instalado Python (cualquier versión
+elnumero.py</p>
+</div>
+        <p>
+        
+            <a href="posts/el-numero-mi-primer-juego.html#disqus_thread">Comments</a>
         
         </p></div>
     
     <div>
 <ul class="pager"><li class="previous">
-        <a href="index-2.html">← Posts posteriores</a>
+        <a href="index-4.html">← Posts posteriores</a>
     </li>
   
   
     <li class="next">
-        <a href="index-4.html">Posts anteriores  →</a>
+        <a href="index-2.html">Posts anteriores  →</a>
     </li>
   
 </ul></div>

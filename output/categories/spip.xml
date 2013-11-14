@@ -1,11 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (SPIP)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sun, 02 Jun 2013 22:57:56 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para SPIP</title><link>http://mgaitan.github.com/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (spip)</title><link>http://getnikola.com/</link><description></description><atom:link href="http://getnikola.com/categories/spip.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Wed, 13 Nov 2013 21:01:07 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>http://getnikola.com/posts/notas-rapidas-de-una-mudanza.html</link><description>&lt;!-- title: Notas rápidas de una mudanza --&gt;
+&lt;!-- slug: notas-rapidas-de-una-mudanza --&gt;
+&lt;!-- date: 2012/10/14 19:23:44 --&gt;
+&lt;!-- tags: nikola, spip, migration tools --&gt;
+&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
+tratar de que se vea un poco más bonito.&lt;/p&gt;
+&lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
+&lt;div class="section" id="github-nikola"&gt;
+&lt;h2&gt;Github ♥ Nikola&lt;/h2&gt;
+&lt;p&gt;Este blog que estás leyendo está hospedado en &lt;a class="reference external" href="http://pages.github.com"&gt;Github Pages&lt;/a&gt; ,
+el servicio de hosting gratuito de contenido estático que ofrece Github.&lt;/p&gt;
+&lt;p&gt;A diferencia de cuando se usa Gh-pages para proyectos, donde se sirve
+el contenido del branch &lt;em&gt;gh-page&lt;/em&gt; del proyecto en cuestión,
+para usar gh-pages por usuario hay que crear
+un repo llamado &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt;.github.com (donde &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt; es el tuyo)
+y lo que sirve en &lt;a class="reference external" href="http://getnikola.com/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch
+&lt;em&gt;master&lt;/em&gt; (&lt;a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages"&gt;referencia&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Por este motivo creé otro branch (que sin mucha imaginación denominé
+&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing"&gt;writing&lt;/a&gt; )
+donde tengo todo el mi "proyecto" hecho con Nikola&lt;/p&gt;
+&lt;p&gt;Allí escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;El branch master es el de deploy y sirve todo lo que haya en la carpeta
+&lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que ir a &lt;em&gt;master&lt;/em&gt;,
+borrar todo y leer desde el árbol del otro branch con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git checkout master
+git rm *    # sólo la primera vez
+git read-tree writing:output
+git commit -m 'deploying last build'
+git push
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="migrando-desde-spip"&gt;
+&lt;h2&gt;Migrando desde Spip&lt;/h2&gt;
+&lt;p&gt;Uno de los motivos que me llevaron a migrar desde &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt; es que el markup
+que usa es &lt;em&gt;ad hoc&lt;/em&gt; y muy feo. Algo así&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+{{{ Un intertítulo }}}
+
+Esto es {{negrita}} y este [mi twitter-&amp;gt;http://twitter.com/tin_nqn_]
+&lt;/pre&gt;
+&lt;p&gt;Hasta ahí no se ve tan mal, pero es muy limitado cuando se trata de mostrar
+código, necesario en todo blog mas o menos técnico.&lt;/p&gt;
+&lt;p&gt;Para migrar esquivé la idea de convertir el markup de spip y opté por un
+scrapping, limpieza y conversión a restructuredText usando el mágico
+&lt;a class="reference external" href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt; (y la ayuda de PyQuery)&lt;/p&gt;
+&lt;p&gt;El script que hice está
+&lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/tools/spip_converter.py"&gt;acá&lt;/a&gt;
+. No es perfecto, pero está lo importante: contenidos, imágenes, adjuntos,
+convertido a restructuredText bastante decente que mejoraré poco a poco
+a mano.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="estilos"&gt;
+&lt;h2&gt;Estilos&lt;/h2&gt;
+&lt;p&gt;Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras)
+que se ven bonitos. Sucede, en realidad, que la mayoría de las veces no
+venimos con &lt;em&gt;esa&lt;/em&gt; habilidad y el esfuerzo que nos implica intentarlo
+preferimos ponerlo en otra cosa. No gusta, pero no es lo más importante.&lt;/p&gt;
+&lt;p&gt;No obstante, yo quiero que este espacio sea lindo y legible. Y como hay
+muchos otros ñoños con sitios lindos y legibles que son tan amables de
+compartir sus estilos (y existe &lt;a class="reference external" href="http://twitter.github.com/bootstrap"&gt;bootstrap&lt;/a&gt;, claro) voy a ir intentándolo,
+incrementalmente.&lt;/p&gt;
+&lt;p&gt;Por ahora tomé ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference" href="http://getnikola.com/posts/notas-rapidas-de-una-mudanza.html#id3" id="id1"&gt;[1]&lt;/a&gt; y de la documentación
+de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference" href="http://getnikola.com/posts/notas-rapidas-de-una-mudanza.html#id4" id="id2"&gt;[2]&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="disqus"&gt;
+&lt;h2&gt;Disqus&lt;/h2&gt;
+&lt;p&gt;El blog viejo usaba &lt;a class="reference external" href="http://disqus.com"&gt;Disqus&lt;/a&gt;, con un &lt;a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html"&gt;plugin&lt;/a&gt; que hice hace algun tiempo.
+Para migrar los comentarios utilicé el método de subir un CSV con
+el formato que genera el mismo script de migración:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+URL_POST_X_OLD, URL_POST_X_NEW
+URL_POST_Y_OLD, URL_POST_Y_NEW
+&lt;/pre&gt;
+&lt;p&gt;En cuestión de minutos los (pocos) comentarios estaban migrados.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="redireccion"&gt;
+&lt;h2&gt;Redirección&lt;/h2&gt;
+&lt;p&gt;Como mantuve el slug de los viejos artículos, una redirección 301
+via .htaccess redirige del viejo blog al nuevo:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# nqnwebs.com blog rules
+RewriteCond %{HTTP_HOST} ^nqnwebs [nc]
+RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
+RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
+&lt;/pre&gt;
+&lt;p&gt;¿Cómo se va viendo?&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://getnikola.com/posts/notas-rapidas-de-una-mudanza.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://getnikola.com/posts/notas-rapidas-de-una-mudanza.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><category>nikola</category><category>spip</category><category>migration tools</category><guid>http://getnikola.com/posts/notas-rapidas-de-una-mudanza.html</guid><pubDate>Sun, 14 Oct 2012 19:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://getnikola.com/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
+&lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
+en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
+que explicaré más adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
+&lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
+&lt;p&gt;Espero que pronto esto esté más bonito y con contenido. También que la
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;</description><category>nikola</category><category>python</category><category>spip</category><category>blog</category><guid>http://getnikola.com/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>Disqus para spip</title><link>http://getnikola.com/posts/disqus-para-spip.html</link><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="http://getnikola.com/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y fácil de usar.&lt;/p&gt;
 &lt;p&gt;Comencé un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;pequeño
 plugin&lt;/a&gt;
 para integrar Disqus a &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt;.&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/td&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://getnikola.com/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Por ahora tiene dos componentes básicos:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;&lt;li&gt;Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
 SPIP (y su formulario) por Disqus&lt;/li&gt;
@@ -17,12 +112,12 @@ shortname"&lt;/em&gt; (la identificación unica que asignamos al sitio donde
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportación de comentarios preexistentes,
 basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><category>Software Libre</category><category>SPIP</category><category>Web 2.0</category><guid>http://mgaitan.github.com/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>SimpleCart(js) para SPIP</title><link>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><category>Software Libre</category><category>spip</category><category>Web 2.0</category><guid>http://getnikola.com/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 01:45:06 GMT</pubDate></item><item><title>SimpleCart(js) para spip</title><link>http://getnikola.com/posts/simplecart-js-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
 muy sencillo íntegramente desarrollado en javascript. Permite realizar
 ventas mediante PayPal o Google Checkout y es muy extensible para
 implementar otros sistemas.&lt;/p&gt;
 &lt;p&gt;En este domingo de procrastinación, decidí integrarlo a SPIP
-[&lt;a class="reference external" href="/blog/article/simplecart-js-para-spip#nb1"&gt;1&lt;/a&gt;]. Lo usaré, espero que
+[&lt;a class="reference external" href="http://getnikola.com/blog/article/simplecart-js-para-spip#nb1"&gt;1&lt;/a&gt;]. Lo usaré, espero que
 pronto, para vender los productos del &lt;a class="reference external" href="http://www.agrupacionmazamorra.org.ar/taller-de-serigrafia-30"&gt;taller de serígrafía de
 Mazamorra&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="como-funciona"&gt;
@@ -80,12 +175,12 @@ con el parámetro &lt;em&gt;price&lt;/em&gt;.&lt;/p&gt;
 &lt;h2&gt;Un atajo más&lt;/h2&gt;
 &lt;p&gt;El código para el carrito de arriba lo incluí como un modelo para poder
 incrustarlo directamente desde la redacción de un artículo con
-&lt;a href="/posts/simplecart-js-para-spip.html#id2"&gt;&lt;span class="problematic" id="id3"&gt;``&lt;/span&gt;&lt;/a&gt;&amp;lt;cart1&amp;gt; &lt;a href="/posts/simplecart-js-para-spip.html#id4"&gt;&lt;span class="problematic" id="id5"&gt;``&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="http://getnikola.com/posts/simplecart-js-para-spip.html#id2"&gt;&lt;span class="problematic" id="id3"&gt;``&lt;/span&gt;&lt;/a&gt;&amp;lt;cart1&amp;gt; &lt;a href="http://getnikola.com/posts/simplecart-js-para-spip.html#id4"&gt;&lt;span class="problematic" id="id5"&gt;``&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="system-message" id="id2"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 73); &lt;em&gt;&lt;a href="/posts/simplecart-js-para-spip.html#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 73); &lt;em&gt;&lt;a href="http://getnikola.com/posts/simplecart-js-para-spip.html#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Inline literal start-string without end-string.&lt;/div&gt;
 &lt;div class="system-message" id="id4"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 73); &lt;em&gt;&lt;a href="/posts/simplecart-js-para-spip.html#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 73); &lt;em&gt;&lt;a href="http://getnikola.com/posts/simplecart-js-para-spip.html#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Inline literal start-string without end-string.&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="demostracion"&gt;
@@ -98,7 +193,7 @@ Inline literal start-string without end-string.&lt;/div&gt;
 &lt;p&gt;El plugin está en desarrollo sobre
 &lt;a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart"&gt;spip-zone&lt;/a&gt;.
 Podés hacer un ckeckout SVN&lt;/p&gt;
-&lt;/div&gt;</description><category>SPIP</category><category>E-Commerce</category><category>Javascript</category><guid>http://mgaitan.github.com/posts/simplecart-js-para-spip.html</guid><pubDate>Sun, 12 Sep 2010 13:34:44 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
+&lt;/div&gt;</description><category>spip</category><category>E-Commerce</category><category>Javascript</category><guid>http://getnikola.com/posts/simplecart-js-para-spip.html</guid><pubDate>Sun, 12 Sep 2010 13:34:44 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>http://getnikola.com/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
 artículos podrían tener 200, ¿no?&lt;/p&gt;
 &lt;p&gt;Hay una forma fácil de limitar el largo permitido en un campo de texto
 mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
@@ -144,7 +239,7 @@ campo que querés limitar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="ejemplo"&gt;
 &lt;h2&gt;Ejemplo&lt;/h2&gt;
-&lt;/div&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</link><description>&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
+&lt;/div&gt;</description><category>spip</category><category>jQuery</category><guid>http://getnikola.com/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>http://getnikola.com/posts/ultima-version-de-spip-por-svn.html</link><description>&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
 control de versiones Subversion.&lt;/p&gt;
 &lt;p&gt;A través de Subversion, podemos obtener la ultima version de desarrollo
 considerada estable&lt;/p&gt;
@@ -214,7 +309,7 @@ falta!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="una-solucion-mas-genuina"&gt;
 &lt;h2&gt;Una solución más genuina&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Atención&lt;/strong&gt;: Ya me hicieron caso. &lt;a class="reference external" href="/blog/article/ultima-version-de-spip-por-svn#update"&gt;Ver
+&lt;p&gt;&lt;strong&gt;Atención&lt;/strong&gt;: Ya me hicieron caso. &lt;a class="reference external" href="http://getnikola.com/blog/article/ultima-version-de-spip-por-svn#update"&gt;Ver
 actualización&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Aunque el hacking (como este) es sano y divertido (y a veces también
 útil), la solución más genuina sería que los desarrolladores de SPIP
@@ -241,7 +336,7 @@ particular,&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 svn co svn://trac.rezo.net/spip/tags/spip-2-stable
 &lt;/pre&gt;
-&lt;/div&gt;</description><category>SPIP</category><category>Linux</category><guid>http://mgaitan.github.com/posts/ultima-version-de-spip-por-svn.html</guid><pubDate>Fri, 22 May 2009 00:19:54 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
+&lt;/div&gt;</description><category>spip</category><category>Linux</category><guid>http://getnikola.com/posts/ultima-version-de-spip-por-svn.html</guid><pubDate>Fri, 22 May 2009 00:19:54 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>http://getnikola.com/posts/lorem-ipsum-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
 que se usa habitualmente en diseño gráfico en demostraciones de
 tipografías o de borradores de diseño para probar el diseño visual antes
 de insertar el texto final.&lt;/p&gt;
@@ -261,7 +356,7 @@ Ipsum&lt;/a&gt; de Sander Korve
 hice un modelo (instalable como plugin) que permite insertar un texto
 del tamaño que queramos (por omisión, de 4 párrafos).&lt;/p&gt;
 &lt;p&gt;Podés bajarlo desde acá:&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="/downloads/loremipsum.zip"&gt;|image1|&lt;/a&gt;&lt;/td&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://getnikola.com/downloads/loremipsum.zip"&gt;|image1|&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Lorem Ipsum Plugin version 0.2&lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;O por SVN:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -280,8 +375,8 @@ su funcionamiento.&lt;/p&gt;
 &lt;h2&gt;Funcionamiento básico&lt;/h2&gt;
 &lt;p&gt;La inclusión de un &lt;em&gt;Lorem Ipsum&lt;/em&gt; se basa en el modelo &lt;em&gt;lorem.html&lt;/em&gt;
 incluído con el plugin, por lo que hay dos maneras de llamarlo:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; En el cuerpo (texto, descripción, etc) de un artículo: &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image3" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Predefinido en un esqueleto: &lt;tt class="docutils literal"&gt;#MODELE{lorem}&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="-" src="http://getnikola.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; En el cuerpo (texto, descripción, etc) de un artículo: &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image3" src="http://getnikola.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Predefinido en un esqueleto: &lt;tt class="docutils literal"&gt;#MODELE{lorem}&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;¡y listo!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="parametros"&gt;
@@ -289,14 +384,14 @@ incluído con el plugin, por lo que hay dos maneras de llamarlo:&lt;/p&gt;
 &lt;p&gt;El modelo acepta algunos parámetros para configurar la longitud del
 texto. Por ejemplo &lt;tt class="docutils literal"&gt;&amp;lt;lorem5&amp;gt;&lt;/tt&gt; creará 5 párrafos.&lt;/p&gt;
 &lt;p&gt;Pero también se puede especificar más datos:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image4" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;type&lt;/strong&gt;: permite especificar que tipo de resultado se quiere.
+&lt;p&gt;&lt;img alt="image4" src="http://getnikola.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;type&lt;/strong&gt;: permite especificar que tipo de resultado se quiere.
 Las opciones válidas son &lt;strong&gt;paragraphs&lt;/strong&gt;, &lt;strong&gt;words&lt;/strong&gt; o &lt;strong&gt;characters&lt;/strong&gt; para
 párrafos, palabras o characteres. Así: creará un texto de 25 palabras.
 El valor por omisión es &lt;strong&gt;paragraphs&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image5" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;amount&lt;/strong&gt;: Es lo mismo que el ID pasado al modelo: es lo mismo
+&lt;p&gt;&lt;img alt="image5" src="http://getnikola.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;amount&lt;/strong&gt;: Es lo mismo que el ID pasado al modelo: es lo mismo
 que . Por ejemplo &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;[(#MODELE{lorem}{amount=5})]&lt;/span&gt;&lt;/tt&gt;
-[&lt;a class="reference external" href="/blog/article/lorem-ipsum-para-spip#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image6" src="/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;ptags&lt;/strong&gt;: Permite agregar las etiquetas &amp;lt;code&amp;lt;&amp;gt;P&amp;lt;&amp;gt;/code&amp;gt;
+[&lt;a class="reference external" href="http://getnikola.com/blog/article/lorem-ipsum-para-spip#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image6" src="http://getnikola.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;ptags&lt;/strong&gt;: Permite agregar las etiquetas &amp;lt;code&amp;lt;&amp;gt;P&amp;lt;&amp;gt;/code&amp;gt;
 alrededor de cada párrafo. Los valores aceptados son &lt;strong&gt;true&lt;/strong&gt; o
 &lt;strong&gt;false&lt;/strong&gt;. Por omisión es &lt;strong&gt;true&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -305,8 +400,8 @@ alrededor de cada párrafo. Los valores aceptados son &lt;strong&gt;true&lt;/str
 &lt;p&gt;Una forma de mostrar contenido en un artículo (o cualquier elemento) sin
 tener que editar cada artículo sólo para poner &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt; es invocar el
 modelo siempre y cuando no exista contenido en la baliza&lt;/p&gt;
-&lt;p&gt;Por ejemplo [&lt;a class="reference external" href="/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
-&lt;/div&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Variar o no variar, esa es la cuestión</title><link>http://mgaitan.github.com/posts/variar-o-no-variar-esa-es-la.html</link><description>&lt;p&gt;Hace algunos días, en
+&lt;p&gt;Por ejemplo [&lt;a class="reference external" href="http://getnikola.com/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
+&lt;/div&gt;</description><category>spip</category><category>jQuery</category><guid>http://getnikola.com/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Variar o no variar, esa es la cuestión</title><link>http://getnikola.com/posts/variar-o-no-variar-esa-es-la.html</link><description>&lt;p&gt;Hace algunos días, en
 &lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;spip-es&lt;/a&gt; se planteó
 la duda de cómo controlar una cabecera diferente para algunas secciones
 en particular.&lt;/p&gt;
@@ -394,7 +489,7 @@ exclusiva&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Funciona, es más legible que cualquiera de las otras soluciones y además
 permite una clausula &lt;em&gt;ELSE&lt;/em&gt; mucho más accesible, simplemente usando la
 estructura completa del bucle.&lt;/p&gt;
-&lt;/div&gt;</description><category>SPIP</category><guid>http://mgaitan.github.com/posts/variar-o-no-variar-esa-es-la.html</guid><pubDate>Sun, 15 Mar 2009 20:03:38 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en SPIP</title><link>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
+&lt;/div&gt;</description><category>spip</category><guid>http://getnikola.com/posts/variar-o-no-variar-esa-es-la.html</guid><pubDate>Sun, 15 Mar 2009 20:03:38 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en spip</title><link>http://getnikola.com/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
 #LOGO_* y los filtros |image_* son los más notorios) y
 frecuentemente necesitamos o queremos modificar este código autogenerado
 en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
@@ -472,7 +567,7 @@ function attr($tag, $name){
 }
 &lt;/pre&gt;
 &lt;p&gt;Simplemente copia el código en mes_fonctions.php (Mira "Agregar
-funciones propias" en la documentación sobre &lt;a class="reference external" href="/posts/Agregar%20funciones%20propias"&gt;filtros de
+funciones propias" en la documentación sobre &lt;a class="reference external" href="http://getnikola.com/posts/Agregar%20funciones%20propias"&gt;filtros de
 spip&lt;/a&gt;) y luego usa el filtro attr en
 tus esqueletos:&lt;/p&gt;
 &lt;div class="system-message"&gt;
@@ -482,7 +577,7 @@ Literal block expected; none found.&lt;/div&gt;
 directamente a inserer_attribut y extraire_attribut en vez de las
 variables individuales, agregar un parámetro $value=FALSE que sólo sirva
 para la claridad de la documentación , y el mencionado, eliminar
-atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;</description><category>SPIP</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Personalizar el texto de #INTRODUCTION</title><link>http://mgaitan.github.com/posts/personalizar-el-texto-de.html</link><description>&lt;p&gt;Desde la versión 1.4, SPIP tiene una baliza calculada &lt;tt class="docutils literal"&gt;#INTRODUCTION&lt;/tt&gt;
+atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;</description><category>spip</category><category>jQuery</category><guid>http://getnikola.com/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Personalizar el texto de #INTRODUCTION</title><link>http://getnikola.com/posts/personalizar-el-texto-de.html</link><description>&lt;p&gt;Desde la versión 1.4, SPIP tiene una baliza calculada &lt;tt class="docutils literal"&gt;#INTRODUCTION&lt;/tt&gt;
 que como su nombre indica, sirve para presentar una introducción al
 artículo completo.&lt;/p&gt;
 &lt;p&gt;En la &lt;a class="reference external" href="http://www.spip.net/es_article116.html"&gt;documentación explica&lt;/a&gt;&lt;/p&gt;
@@ -493,16 +588,16 @@ caracteres del inicio del artículo (del epígrafe, y luego del
 texto).&lt;/blockquote&gt;
 &lt;p&gt;En la versión 1.92 se incorporó otro atajo para indicar el largo del
 texto mostrado (sobrecargando los 600 caracteres por omisión).&lt;/p&gt;
-&lt;p&gt;Así, &lt;a href="/posts/personalizar-el-texto-de.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;``&lt;/span&gt;&lt;/a&gt;#INTRODUCTION{150} `` mostrará la descripción, si existe, o los
+&lt;p&gt;Así, &lt;a href="http://getnikola.com/posts/personalizar-el-texto-de.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;``&lt;/span&gt;&lt;/a&gt;#INTRODUCTION{150} `` mostrará la descripción, si existe, o los
 primeros 150 caracteres del epigrafe y/o el texto.&lt;/p&gt;
 &lt;div class="system-message" id="id1"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 15); &lt;em&gt;&lt;a href="/posts/personalizar-el-texto-de.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 15); &lt;em&gt;&lt;a href="http://getnikola.com/posts/personalizar-el-texto-de.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Inline literal start-string without end-string.&lt;/div&gt;
 &lt;p&gt;Pero con la versión 2 llegó por fin un control más profundo para los
 redactores. Es posible definir cual es el texto que se mostrará con
 #INTRODUCTION encerrandolo entre la etiquetas &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;intro&amp;gt;...&amp;lt;/intro&amp;gt;&lt;/span&gt;&lt;/tt&gt; en
 el cuerpo del artículo.
-[&lt;a class="reference external" href="/blog/article/personalizar-el-texto-de#nb1"&gt;1&lt;/a&gt;]&lt;/p&gt;
+[&lt;a class="reference external" href="http://getnikola.com/blog/article/personalizar-el-texto-de#nb1"&gt;1&lt;/a&gt;]&lt;/p&gt;
 &lt;p&gt;Así podemos redactar nuestro artículo con la siguiente estructura:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 Esta oración es la introducción al articulo. Y acá sigue mi artículo completo.
@@ -514,56 +609,4 @@ Esta oración es la introducción al articulo.&lt;/blockquote&gt;
 &lt;p&gt;Y donde esté la baliza #TEXTE:&lt;/p&gt;
 &lt;blockquote&gt;
 Esta oración es la introducción al articulo. Y acá sigue mi artículo
-completo.&lt;/blockquote&gt;</description><category>SPIP</category><guid>http://mgaitan.github.com/posts/personalizar-el-texto-de.html</guid><pubDate>Tue, 10 Mar 2009 10:38:44 GMT</pubDate></item><item><title>© automático</title><link>http://mgaitan.github.com/posts/c-automatico.html</link><description>&lt;p&gt;Más por costumbre que utilidad solemos poner la antigüedad de un sitio
-web al pie de página, asociado al símbolo ©, o (cc) si usamos &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Creative_Commons"&gt;Creative
-Commons&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;En el 2007 hicimos el sitio, y en este 2009 todavía muestra.&lt;/p&gt;
-&lt;blockquote&gt;
-© 2007&lt;/blockquote&gt;
-&lt;p&gt;¡Muy feo! Aunque no hayamos actualizado el sitio desde entonces, nuestro
-deber, como buenos mentirosos, es lograr que el visitante no se entere.&lt;/p&gt;
-&lt;p&gt;Así que podemos hacer que el año, o el período &lt;strong&gt;Año inicio - Año
-actual&lt;/strong&gt; se actualice automáticamente.&lt;/p&gt;
-&lt;p&gt;Muy simple:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-© &amp;lt;BOUCLE_yearbegin(ARTICLES){par date}{0,1}&amp;gt;
-    #SET{year, #DATE|annee} #GET{year}
-  &amp;lt;/BOUCLE_yearbegin&amp;gt;
-[(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]
-&lt;/pre&gt;
-&lt;div class="section" id="explicacion"&gt;
-&lt;h2&gt;Explicación&lt;/h2&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;Por convención, asumimos que el año de inicio del sitio es el año del
-primer artículo publicado, lo cual a mi me suena bastante lógico.&lt;/li&gt;
-&lt;li&gt;Un bucle recupera esta información, la muestra y a la vez la
-guarda en una variable spip &lt;tt class="docutils literal"&gt;#SET{year, #DATE|annee}&lt;/tt&gt;.&lt;/li&gt;
-&lt;li&gt;Fuera del bucle comparamos el año ya mostrado con el actual,
-obtenida de la baliza &lt;tt class="docutils literal"&gt;#DATE&lt;/tt&gt; sin contexto. Si son iguales,
-no se muestra nada más (para que no quede algo como
-&lt;strong&gt;© 2009 - 2009&lt;/strong&gt;, que quedaría bien feo).
-Pero si son distintos, se muestra el año actual&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;El resultado, será:&lt;/p&gt;
-&lt;blockquote&gt;
-© 2007 - 2009&lt;/blockquote&gt;
-&lt;p&gt;Y si la lógica o el reloj del servidor no fallan, en cada año nuevo se
-incrementará el año final del período sin que toquemos una línea de código.&lt;/p&gt;
-&lt;/div&gt;</description><category>SPIP</category><guid>http://mgaitan.github.com/posts/c-automatico.html</guid><pubDate>Sat, 07 Mar 2009 17:28:08 GMT</pubDate></item><item><title>Suscribirse a los comentarios por RSS</title><link>http://mgaitan.github.com/posts/suscribirse-a-los-comentarios-por.html</link><description>&lt;p&gt;Con SPIP 2.0, más precisamente en la revisión
-&lt;a class="reference external" href="http://trac.rezo.net/trac/spip/browser/spip/squelettes-dist/rss_forum_article.html?rev=13407"&gt;13407&lt;/a&gt;
-se agregaron algunos esqueletos al juego de esqueletos estándar.&lt;/p&gt;
-&lt;p&gt;Unos muy interesantes son los que permiten suscribirse a los
-comentarios.&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-squelettes-dist/rss_forum_article.html
-squelettes-dist/rss_forum_breve.html
-squelettes-dist/rss_forum_rubrique.html
-squelettes-dist/rss_forum_syndic.html
-squelettes-dist/rss_forum_thread.html
-&lt;/pre&gt;
-&lt;p&gt;Por ejemplo, en el foro de un articulo, podriamos incluir el siguiente
-código, antes del bucle de comentarios de un artículo:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-[] Suscribite a los comentarios de este artículo
-&lt;/pre&gt;
-&lt;p&gt;Un código análogo, llamando al esqueleto correspondiente y pasando el
-parámetro correcto, sirve para las breves, las secciones, los artículos
-sindicados y los hilos de discusión (en foros con comentarios anidados).&lt;/p&gt;</description><category>SPIP</category><guid>http://mgaitan.github.com/posts/suscribirse-a-los-comentarios-por.html</guid><pubDate>Fri, 27 Feb 2009 21:04:48 GMT</pubDate></item></channel></rss>
+completo.&lt;/blockquote&gt;</description><category>spip</category><guid>http://getnikola.com/posts/personalizar-el-texto-de.html</guid><pubDate>Tue, 10 Mar 2009 10:38:44 GMT</pubDate></item></channel></rss>

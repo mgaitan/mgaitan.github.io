@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>tin_nqn (scrapping)</title><link>http://mgaitan.github.com</link><description>&gt;&gt;&gt; me.geek.post()</description><lastBuildDate>Sun, 02 Jun 2013 22:57:57 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.com/posts/como-funciona-cuevana.html</link><description>&lt;!-- title: Cómo funciona Cuevana --&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (scrapping)</title><link>http://getnikola.com/</link><description></description><atom:link href="http://getnikola.com/categories/scrapping.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Wed, 13 Nov 2013 21:01:07 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo funciona Cuevana</title><link>http://getnikola.com/posts/como-funciona-cuevana.html</link><description>&lt;!-- title: Cómo funciona Cuevana --&gt;
 &lt;!-- slug: como-funciona-cuevana --&gt;
 &lt;!-- date: 2013/03/07 10:17:55 --&gt;
 &lt;!-- tags: cuevana, scrapping --&gt;
@@ -168,4 +168,4 @@ http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
 &lt;pre class="literal-block"&gt;
 http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
 &lt;/pre&gt;
-&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;</description><category>cuevana</category><category>scrapping</category><guid>http://mgaitan.github.com/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 10:17:55 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;</description><category>cuevana</category><category>scrapping</category><guid>http://getnikola.com/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 10:17:55 GMT</pubDate></item></channel></rss>

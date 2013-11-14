@@ -43,822 +43,780 @@
             
     
         <div class="postbox">
-        <h1><a href="posts/un-spip-para-muchos-sitios.html">Un SPIP para muchos sitios</a>
+        <h1><a href="posts/pep-20-el-zen-del-barca.html">Pep 20: El Zen del Barça</a>
         <small>  
-             <span class="timeago" title="2009-08-10 08:40:55">2009-08-10 08:40:55</span>
+             <span class="timeago" title="2011-04-27 16:22:47+00:00">2011-04-27 16:22:47+00:00</span>
         </small></h1>
-        <p>Administrar muchos sitios SPIP tiene sus bemoles. Yo administro, fácil,
-unos 30. Cuando hay que actualizar la versión (por cuestiones de
-funcionalidad, o bien, como la semana pasada, por cuestiones de
-seguridad), es un trabajo engorroso y aburrido hacer 30 veces lo mismo.
-Y el trabajo se vuelve exponencial si hay que actualizar los plugins
-para cada uno</p>
-<p>Para evitar eso existe la
-<a class="reference external" href="http://www.spip-contrib.net/La-mutualisation-facile">Mutualización</a>,
-que desde la versión 2 es realmente muy fácil.</p>
-<p>El concepto es simple: un sólo núcleo de SPIP (/ecrire, /prive,
-/squelettes-dist, /plugins) se comparte para motorizar diferentes
-sitios, que tendrán los directorios con contenido propio (/squelettes,
-/config , /IMG, etc), separado del resto</p>
-<p>Así, a la hora de actualizar SPIP sólo tenemos que actualizar una sola
-instalación, tarea que se vuelve trivial si además usamos
-<a class="reference external" href="posts/blog/article/ultima-version-de-spip-por-svn">svn</a>.</p>
-<div class="section" id="requisito">
-<h2>Requisito</h2>
-<p>En general, la mutualización funciona sin muchos pormenores en un
-servidor LAMP, pero nuestro servidor de hospedaje debe permitir apuntar
-diferentes dominios a un mismo directorio publico.</p>
-<p>Por ejemplo, mi sitio <strong>textosypretextos.com.ar</strong> apunta a
-<em>/home/tin/public_html/spip</em> y <strong>nqnwebs.com</strong> apunta también a
-<em>/home/tin/public_html/spip</em>.</p>
-<p>Es una configuración simple, pero no todos los servicios de hosting lo
-permiten.</p>
-</div>
-<div class="section" id="puesta-en-marcha">
-<h2>Puesta en marcha</h2>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/mutualisation.zip">|image1|</a></td>
-</tr><tr><td>plugin mutualisation</td>
-</tr></tbody></table><p>La "mutualización fácil" funciona a través de este plugin, pero que
-particularmente <strong>debe ser instalado en la raiz del sitio</strong> y no en la
-carpeta /plugins</p>
-<p>Al descomprimirlo crea una nueva carpeta, <em>/mutualisation</em>, en la raiz
-de nuestro SPIP mutualizado</p>
-<p>Además, incluye un archivo <em>mes_options.php</em> de ejemplo, pero yo te
-propongo este, que debe ser instalado en <em>/config</em></p>
-<pre class="literal-block">
- true
-     */
-    # define ('_INSTALL_USER_DB_ROOT', 'mon_root');
-    # define ('_INSTALL_PASS_DB_ROOT', '********');
-
-    /*
-     * Crear las bases de dato via un ping a una URL (metodo AlternC)
-     *
-     * Il suffit de renseigner l'option url_creer_base, en lui passant les bons parametres :
-     * 'url_creer_base' =&gt; 'https://bureau.tld/admin/sql_doadd.php?username=USER&amp;password=PASS&amp;dbn='.prefixe_mutualisation($site)
-     */
-
-
-    /*
-     * Transformar en las paginas publicas las URL de imagenes
-     * /sites/mon_site/IMG/* -&gt; /IMG/*
-     * /sites/mon_site/local/* -&gt; /local/*
-     *
-     * - Necesita el mod_rewrite (reescritura de url) de apache
-     * - Sólo funciona con nombres de dominio mutualización
-     * ('http_host' : http://mi_sitio_mutualizado.com)
-     * (por lo tanto, no funciona con un subdirectorio - http://mi_sitio_mutualizado.com/misitio/)
-     *
-     * y añadir en la opción
-     * 'url_img_courtes' =&gt; true
-     *
-     * Es posible generar los  .htaccess
-     * automaticamente en /IMG y /local
-     * gracias a ?var_mode=creer_htaccess_img
-     *
-     */
-
-    /*
-     * Indique aqui el nombre del sitio de administración de esta mutualización
-     * (o varios, separados por oma)
-     * (dpor ejemplo, 'scriibe.net' es el dominio de nivel maximo)
-     * para autorizar todos los sitios no definir la constante ;
-     * Si el propietario del sitio no se encuentra en los sites/ sino en la razi,
-     * escriba '' y agregue 'mutualisation' en $dossier_squelettes
-     */
-    define ('_SITES_ADMIN_MUTUALISATION', 'nqnwebs.com');
-
-
-    demarrer_site($site,
-        array(
-            'creer_site' =&gt; true,        // Creer ou non le site s'il n'existe pas (defaut: false)
-            'creer_base' =&gt; false,        // Creer ou non la base de donnee si elle n'existe pas (false)
-            'creer_user_base' =&gt; false,  // Creer ou non un utilisateur pour la nouvelle base de donnee (false)
-            'mail' =&gt; '',                // Adresse mail pour recevoir un mail lors d'une creation de site mutualise ('')
-            'code' =&gt; 'miclave',  // Code d'activation ('ecureuil')
-            'table_prefix' =&gt; true,     // Definir automatiquement le prefixe de table (false) ... mettre true si tous les sites dans la meme base
-            'cookie_prefix' =&gt; true,     // Definir automatiquement le prefixe de cookie (false)
-            'repertoire' =&gt; 'sites',     // Nom du repertoire contenant les sites mutualises ('sites')
-            'url_img_courtes' =&gt; true,   // Utiliser la redirection des URL d'images courtes dans la partie publique (false)
-            # 'utiliser_panel' =&gt; false, // Utiliser une table externe pour recuperer des identifiants ... (code, user, pass) permettant a un utilisateur d'installer le site (false)
-            'url_creer_base' =&gt; ''       // Creer la base de donnees via une URL (methode AlternC)
-        )
-    );
-
-
-?&gt;
-</pre>
-<p>Este mes_options.php (retocado por mi) permite que los sitios funcionen
-con o sin ’www’. También apunta a una única base de datos, donde se
-encargará de crear las tablas necesarias para cada sitio, diferenciadas
-por un prefijo.</p>
-<p>Sólo resta crear la carpeta <em>/sites</em> en la raiz del sitio, donde irán
-nuestros diferentes sitios mutualizados.</p>
-<p>Al acceder via web a un dominio de un sitio sobre esta mutualización, lo
-primero que aparecerá es una solicitud de contraseña, definida en array
-de configuración de mes_options.php (en el ejemplo, la contraseña es
-<em>miclave</em>)</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH303/Pantallazo-2-d2b75.png"></div>
+        <p><img alt="image0" src="images/messi_guardib9bf-5b102.jpg">
+El <a class="reference external" href="http://www.python.org/dev/peps/pep-0020/">Zen de Python</a> es
+también el Zen del Barça, el de Pep Guardiola. La "Pep" 20
+[<a class="reference external" href="blog/article/pep-20-el-zen-del-barca#nb1">1</a>]:</p>
+<blockquote>
+Bello es mejor que feo.
+Explícito es mejor que implícito.
+Simple es mejor que complejo.
+Complejo es mejor que complicado.
+Plano es mejor que anidado.
+Disperso es mejor que denso.
+La legibilidad cuenta.
+Los casos especiales no son tan especiales como para quebrantar las
+reglas.
+Aunque lo práctico gana a la pureza.
+Los errores nunca deberían dejarse pasar silenciosamente.
+A menos que hayan sido silenciados explícitamente.
+Frente a la ambigüedad, rechaza la tentación de adivinar.
+Debería haber una —y preferiblemente sólo una— manera obvia de
+hacerlo.
+Aunque esa manera puede no ser obvia al principio a menos que usted
+sea Messi, Xavi o Iniesta.
+Ahora es mejor que nunca.
+Aunque nunca es a menudo mejor que ya mismo.
+Si la implementación es difícil de explicar, es una mala idea.
+Si la implementación es fácil de explicar, puede que sea una buena
+idea.
+Los espacios son una gran idea ¡Hagamos más de esas cosas!</blockquote>
+        <p>
+        
+            <a href="posts/pep-20-el-zen-del-barca.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/compartiendo-documentacion-de.html">Compartiendo documentación de paquetes python</a>
+        <small>  
+             <span class="timeago" title="2011-04-10 19:16:38+00:00">2011-04-10 19:16:38+00:00</span>
+        </small></h1>
+        <p>Sabido es, aunque muchas veces se ignora, que un software sin
+documentación está incompleto
+[<a class="reference external" href="blog/article/compartiendo-documentacion-de#nb1">1</a>].</p>
+<p>Si bien el manifiesto ágil
+<a class="reference external" href="http://agilemanifesto.org/iso/es/">proclama</a> <em>"Software funcionando
+sobre documentación extensiva"</em>, yo subrayaría extensiva como eufemismo
+de documentación burocrática e inútil (opiné de esto
+<a class="reference external" href="posts/blog/article/veinteanero">acá</a>) que evidentemente no es la que hace
+falta. Pero la documentación (sobre todo la buena) es indispensable y
+para <a class="reference external" href="http://jacobian.org/writing/great-documentation/">algunos</a>, la
+parte que más los enorgullece del proyecto (y con razón).</p>
+<p>Desde el punto de vista técnico, escribir documentación (no <a class="reference external" href="http://sphinx.pocoo.org/examples.html">sólo para
+Python</a>!) es bastante fácil con
+<a class="reference external" href="http://docutils.sourceforge.net/rst.html">restructuredText</a> (qué feo
+el sitio de docutils, che!) que es <a class="reference external" href="http://www.python.org/dev/peps/pep-0287/">el markup estándar de los
+pythonistas</a>.</p>
+<p>Sobre este markup funciona <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>, el
+generador de documentación más utilizado (por lejos) en el ecosistema de
+Python. Es lo que usa la documentación de Python misma, la de Django y
+casi todo proyecto conocido o por conocer.</p>
+<p>Entonces usamos restructuredText, usamos Sphinx, pero para <a class="reference external" href="posts/blog/article/la-sanguijuela-de-cuevana">nuestro
+proyectito de morondanga</a> que
+no tiene web propia ni nada, ¿dónde subimos la documentación generada?
+Veamos.</p>
+<div class="section" id="usando-readthedocs-org">
+<h2>Usando Readthedocs.org</h2>
+<p><a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/">Read the docs</a>
+es un sitio para hospedar documentación realizada con Sphinx. Sólo se
+necesita indicarle el repositorio público del proyecto (svn, git,
+mercurial, bazaar), subir los fuentes .rst y contenido estático
+(imágenes) aptos para Sphinx en una carpeta /doc o /docs y el sitio se
+encarga de bajar los fuentes de documentación y renderizarlos a HTML a
+través de Sphinx.</p>
+<p>Estrictamente, usando rtfd.org (como le dicen <a class="reference external" href="http://www.urbandictionary.com/define.php?term=RTFD&amp;defid=2281638">los
+amigos</a>)
+ni siquiera hace falta tener Sphinx instalado localmente.</p>
 <div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 134)</p>
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 31); <em><a href="posts/compartiendo-documentacion-de.html#id2">backlink</a></em></p>
+Duplicate explicit target name: "acá".</div>
+<p>Más aun, por defecto actualiza diariamente, pero se puede utilizar un
+"hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
+al repo, de manera de tener la documentación actualizada al instante.
+Para usuarios de GitHub la activación del "web hook" se explica
+<a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/webhooks.html#github">acá</a>
+. Para <a class="reference external" href="http://bitbucket.org">BitBucket.org</a> es parecido:</p>
+<ol class="arabic simple"><li>Vas a tu proyecto , click en Admin -&gt; Services</li>
+<li>Agregás el servicio "POST"</li>
+<li>Completás el campo de texto con la URL que te da ReadTheDocs en la
+página de descripción de tu proyecto (estándo logueado). Por ejemplo:</li>
+</ol><div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 60)</p>
 Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>Luego siguen dos etapas que nos crean la estructura de directorios para
-este sitio dentro de <em>/sites</em> y las tablas para este sitio en la base de
-datos compartida. Lo que sigue es el proceso de instalación estándar de
-SPIP.</p>
-<p><strong>¡Listo!</strong></p>
-<p>Hay que tener en cuenta que ahora los archivos para nuestro sitio
-estarán dentro de <em>/sites/dominio/</em> y es allí donde deberán subirse los
-esqueletos y demás.</p>
+<p>Y listo. Tu docu al instante.</p>
+<p>Como el sitio genera el html en vez de servir una versión generada
+previamente, la documentación que requiere introspección del código (
+todas las directivas `` .. auto* :: `` de Sphinx) este debe poder
+ejecutarse. Para eso el paquete debe ser instalable via <tt class="docutils literal">setup.py</tt> y
+hay marcar desde la página de configuración del proyecto en RTFD.org,
+que instale en un virtualenv.</p>
+<p>Para ver si hubo algún problema en la generación, podés fijarte en
+"build" donde te muestra el stdout y el stderr de la corrida de Sphinx.</p>
 </div>
-<div class="section" id="mutualizar-un-sitio-en-produccion">
-<h2>Mutualizar un sitio en producción</h2>
-<p>¿Qué pasa si el sitio que quiero mutualizar ya está funcionando sobre un
-spip propio? No problem.</p>
-<p>Basta indicar (desde el panel, o solicitando al administrador del
-hosting) que nuestro dominio debe apuntar ahora a la carpeta donde
-tenemos el spip mutualizado (en mi ejemplo <em>/home/tin/public_html/spip</em>
-), crear el directorio <strong>/sites/dominio</strong> (donde dominio es la url del
-sitio que queremos migrar) y mover alli las carpetas /config, /IMG,
-/squelettes, /local y /tmp (o crear una /tmp nueva) del SPIP en uso al
-nuevo directorio. [[Estas carpetas, bien podrian ser link simbólicos].
-Magia!</p>
+<div class="section" id="subir-la-docu-a-pypi">
+<h2>Subir la docu a PyPi</h2>
+<p>Una forma buenísima de compartir tu trabajo pythónico es a través del
+Python Package Index, <a class="reference external" href="http://pypi.python.org/pypi">pypi</a>, que es el
+índice que usan las herramientas <a class="reference external" href="http://www.pip-installer.org">pip</a> e
+easy_install. Si bien no necesarimente los paquetes deben estar
+hospedados allí (indicando en el setup.py la URL de descarga) es muy
+común y fácil hacerlo con el comando <tt class="docutils literal">upload</tt> del setup.py.</p>
+<p>Lo que muchos no
+<a class="reference external" href="http://packages.python.org/an_example_pypi_project/buildanduploadsphinx.html">saben</a>
+es que PyPi también ofrece <a class="reference external" href="http://packages.python.org/">hostear la
+documentación</a>. La forma canónica es ir a
+la página de administración de tu proyecto en PyPi y adjuntar un .zip
+con la documentación (que no necesariamente tiene que ser hecha con
+Sphinx)</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 93)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Pero si usamos Sphinx hay una manera más fácil, manteniendosé en el
+"ecosistema" de desarrollo: usar esta <a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload/">extension de
+setuptools</a> que
+permite generar el html a través Sphinx y subirlo automáticamente. Se
+instala, obviamente, vía pypi:</p>
+<pre class="literal-block">
+$ easy_install sphinx-pypi-upload
+</pre>
+<p>Hay que condigurar un <tt class="docutils literal">setup.cfg</tt> (ubicado al nivel raiz, junto con
+<tt class="docutils literal">setup.py</tt>) indicandole dónde está la docu fuente y dónde el
+resultado. Más o menos así:</p>
+<pre class="literal-block">
+[build_sphinx]
+source-dir = doc/source
+build-dir  = doc/build
+all_files  = 1
+
+[upload_sphinx]
+upload-dir = doc/build/html
+</pre>
+<p>Luego se usa:</p>
+<pre class="literal-block">
+$ python setup.py build_sphinx
+$ python setup.py upload_sphinx
+</pre>
+<p>Y docu subida a la dire
+<em>`http://packages.python.org/tu-proyecto &lt;http://packages.python.org/tu-proyecto&gt;`_</em>
+. ¡<a class="reference external" href="http://packages.python.org/CuevanaLinks/">Charaaán</a>!</p>
 </div>
-<div class="section" id="conclusion">
-<h2>Conclusión</h2>
+<div class="section" id="usando-tu-repositorio-svn">
+<h2>Usando tu repositorio SVN</h2>
+<p>Si usas SVN y tu servidor lo permite, podés servir contenido estático
+(html y todo lo que produce y necesita Sphinx) directamente desde el
+repositorio.</p>
+<p>Para que el servidor Subversion muestre el html renderizado en vez del
+código (como texto plano) hay que indicarle el tipo <tt class="docutils literal">mime</tt> de cada
+archivo.</p>
+<pre class="literal-block">
+$ svn propset svn:mime-type 'text/html' FILENAME
+$ svn propset svn:mime-type 'image/jpeg' FILENAME
+</pre>
+<p>Para que esto se haga automático, se puede modificar el archivo de
+configuración <a href="posts/compartiendo-documentacion-de.html#id3"><span class="problematic" id="id4">``</span></a>~/.subversion/config ``</p>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 144); <em><a href="posts/compartiendo-documentacion-de.html#id4">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<pre class="literal-block">
+[miscellany]
+enable-auto-props = yes
+
+[auto-props]
+*.html = svn:mime-type=text/html
+*.css = svn:mime-type=text/css
+*.js = svn:mime-type=text/javascript
+*.png = svn:mime-type=image/png
+*.jpg = svn:mime-type=image/jpeg
+*.gif = svn:mime-type=image/gif
+</pre>
+<p>Un ejemplo de esto es el <a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">reporte de mi proyecto
+integrador</a>
+que está hospedado en Google Code</p>
+</div>
+<div class="section" id="aprovechandote-de-github">
+<h2>Aprovechándote de GitHub</h2>
+<p><a class="reference external" href="http://github.com">GitHub</a> hospeda <a class="reference external" href="http://pages.github.com/">páginas
+estáticas</a>, tanto del desarrollador/a como
+de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
+mas o menos automáticamente estas opciones que no he probado pero las
+dejo como referencia:</p>
+<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/">Hosting sphinx doc in
+github</a>
+de Luca Sbardella.
+<img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting">Usando
+github-tools</a>.</p>
 </div>
         <p>
         
-            <a href="posts/un-spip-para-muchos-sitios.html#disqus_thread">Comments</a>
+            <a href="posts/compartiendo-documentacion-de.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/limitar-la-cantidad-de-caracteres.html">Limitar la cantidad de caracteres de los comentarios</a>
+        <h1><a href="posts/la-sanguijuela-de-cuevana.html">La sanguijuela de cuevana</a>
         <small>  
-             <span class="timeago" title="2009-06-10 06:41:37">2009-06-10 06:41:37</span>
+             <span class="timeago" title="2011-04-09 14:22:27+00:00">2011-04-09 14:22:27+00:00</span>
         </small></h1>
-        <p>Si Twitter funciona con 140 caracteres los comentarios a nuestros
-artículos podrían tener 200, ¿no?</p>
-<p>Hay una forma fácil de limitar el largo permitido en un campo de texto
-mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
-caracteres restantes.</p>
-<p>Por ejemplo, esto limita el tamaño de un comentario en SPIP.</p>
+        <blockquote>
+<strong>UPDATE</strong> Hay una nueva versión con interfaz gráfica
+<a class="reference external" href="posts/blog/article/cuevanalinks-ahora-para-seres">acá</a></blockquote>
+<p>Parece que se me hizo hobby <a class="reference external" href="posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv">chupar links de
+cuevana.tv</a> y el
+experimento ahora tiene su versión pythonica:
+<a class="reference external" href="http://pypi.python.org/pypi/CuevanaLinks">Cuevanalinks</a> .</p>
+<p>Es un pequeño proyecto que permite "conseguir links" de contenidos
+ofrecidos en cuevana, sirviendo estos como fuentes a manejadores de
+descargas como <a class="reference external" href="http://www.tucaneando.com/">Tucan</a> o
+<a class="reference external" href="http://jdownloader.org/">JDownloader</a>.</p>
+<p>Más allá de los resultados, me ha tenido entretenido algunas horas y me
+permitió aprender (o al menos resolver) algunas cosas: cómo se usa
+mercurial (y en particular un merge conflictivo con Meld), cómo se
+escribe un setup.py, como se distribuye via PyPi, etc.</p>
+<p>También, por supuesto, me permitió usar dos utilidades que me gustan
+mucho: <a class="reference external" href="http://pyquery.org">PyQuery</a> y
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
+<p>La aplicación tiene dos módulos/componentes:</p>
+<ol class="arabic simple"><li>Una <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/src/943b329f3da5/cuevanalinks/cuevanaapi.py">biblioteca que intenta funcionar como
+API</a>
+de <a class="reference external" href="http://www.cuevana.tv">Cuevana</a> y es la encargada de
+<em>scrappear</em> la web en busca de la info interesante.</li>
+<li>Una <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/src/943b329f3da5/cuevanalinks/cuevanacli.py">interfaz de línea de
+comandos</a>
+que permite buscar links y bajar subtitulos de contenidos específicos</li>
+</ol><div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 37)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<div class="section" id="para-que-sirve">
+<h2>Para qué sirve</h2>
+<p>Por ejemplo, para bajar la temporada 4 completa de Mad Men, con
+subtitulos, se podría hacer esto:</p>
 <pre class="literal-block">
- $(document).ready(function () {
-
-     $("#texte").before("&lt;div id='chars' style='float:right;font-weigth:strong;margin-right:5px;'&gt;&lt;/div&gt;");
-
-$(function(){
-    $('#texte').keyup(function(){
-        limitChars('texte', 200, 'chars');
-    })
-    });
- });
-
-function limitChars(textid, limit, infodiv) {
-     var text = $('#'+textid).val();
-     var textlength = text.length;
-     if(textlength &gt; limit) {
-         $('#' + infodiv).html('No puede ingresar m&amp;aacute;s de '+limit+' caracteres');
-         $('#'+textid).val(text.substr(0,limit));
-         return false;
-     } else {
-         $('#' + infodiv).html('Restan '+ (limit - textlength) +' caracteres.');
-         return true;
-     }
-}
-</pre>
-<div class="section" id="intrucciones-para-spip">
-<h2>Intrucciones para SPIP</h2>
-<ol class="arabic simple"><li>Copiar el código</li>
-<li>Pegarlo luego de la baliza #INSERT_HEAD de tu cabecera</li>
-<li>(opcional) Cambiarle el límite (el número 200),</li>
-</ol><p>¡Listo!</p>
-</div>
-<div class="section" id="intrucciones-generales">
-<h2>Intrucciones generales</h2>
-<p>Es igual al anterior, sólo debes asegurarte que tiene en jquery en la
-página. Luego cambia el selector <tt class="docutils literal">#texte</tt> por el que corresponda al
-campo que querés limitar.</p>
-</div>
-<div class="section" id="ejemplo">
-<h2>Ejemplo</h2>
-</div>
-        <p>
-        
-            <a href="posts/limitar-la-cantidad-de-caracteres.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/ultima-version-de-spip-por-svn.html">Ultima versión de Spip por SVN</a>
-        <small>  
-             <span class="timeago" title="2009-05-22 00:19:54">2009-05-22 00:19:54</span>
-        </small></h1>
-        <p>Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
-control de versiones Subversion.</p>
-<p>A través de Subversion, podemos obtener la ultima version de desarrollo
-considerada estable</p>
-<pre class="literal-block">
-svn checkout svn://trac.rezo.net/spip/branches/spip-2.0/  carpeta_destino
-</pre>
-<p>Una de las ventajas de obtener SPIP a través de SVN, es que luego es muy
-fácil de actualizar.</p>
-<pre class="literal-block">
-cd  carpeta_destino
-svn update
-</pre>
-<p>Subversion asigna un numero de revision a cada cambio realizado al
-conjunto de archivos. Así, cuando los desarrolladores lo evaluan
-pertinente, en un determinado momento del desarrollo se empaqueta una
-nueva version "oficial"</p>
-<p>Por ejemplo, la revisión
-<a class="reference external" href="http://trac.rezo.net/trac/spip/browser/branches/spip-2.0?rev=13982">13982</a>
-es la version 2.08 de Spip.</p>
-<p>Podemos obtener una revision específica con el parámetro -r. Por
-ejemplo, el siguiente comando obtendría una copia de SPIP 2.08</p>
-<pre class="literal-block">
-svn -r 13982 checkout svn://trac.rezo.net/spip/branches/spip-2.0/  carpeta_destino
-</pre>
-<p>Genial, pero para para asegurarnos estar en una revision que se
-corresponda con una "version oficial" tenemos que saber el número de ID.</p>
-<p>En el <a class="reference external" href="http://trac.rezo.net/trac/spip/wiki">Trac de Spip</a> se mantiene
-una tabla donde se especifica esta correspondencia para cada nueva
-version, pero a decir verdad, es un engorro tener que ingresar sólo para
-averiguar un número. Mejor hagámoslo automático!</p>
-<div class="section" id="automatizando-la-obtencion-de-un-spip-oficial-por-svn">
-<h2>Automatizando la obtención de un SPIP oficial por SVN</h2>
-<pre class="literal-block">
-#!/bin/bash
-#script para una instalacion de spip a traves de svn
-
-if [ $# -lt 1 ]
-then
-echo "Debe indicar al menos un parametro:"
-echo "$0 destino [rev]"
-echo
-exit 1
-fi
-
-
-if [ $# -eq 2 ]
-then
-REV=$2
-else
-echo "Averiguando revision de la ultima release..."
-REV=$(svn info svn://trac.rezo.net/spip/archivelist.txt | sed -n '9p' | cut -d' ' -f5)
-fi
-
-
-echo "Recuperando la version $REV de SPIP"
-svn checkout -r `echo $REV` svn://trac.rezo.net/spip/branches/spip-2.0/ $1 1&gt;/dev/null
-echo "Configurando permisos..."
-cd $1
-chmod 657 IMG local tmp config
-echo "Lanzando el navegador para continuar la instalacion..."
-firefox http://localhost/~tin/$1/ecrire
-</pre>
-<p>Este script hace el trabajo aburrido por nosotros. Averigua cuál fue la
-última modificación de <em>archivelist.txt</em> que es un archivo que se
-modifica en cada nuevo lanzamiento de paquete. ¡Es el dato que nos hacía
-falta!</p>
-</div>
-<div class="section" id="una-solucion-mas-genuina">
-<h2>Una solución más genuina</h2>
-<p><strong>Atención</strong>: Ya me hicieron caso. <a class="reference external" href="blog/article/ultima-version-de-spip-por-svn#update">Ver
-actualización</a></p>
-<p>Aunque el hacking (como este) es sano y divertido (y a veces también
-útil), la solución más genuina sería que los desarrolladores de SPIP
-mantengan un <strong>tag</strong> por cada nuevo empaquetamiento y uno que apunte
-siempre al último.</p>
-<p>Por ejemplo, con el siguiente comando deberiamos obtener la version 2.05
-(sin saber a qué numero de revision corresponde)</p>
-<pre class="literal-block">
-svn checkout svn://trac.rezo.net/spip/tags/2.05
-</pre>
-<p>y con este otro obtener la <strong>última</strong> versión</p>
-<pre class="literal-block">
-svn checkout svn://trac.rezo.net/spip/tags/lastest-version
-</pre>
-<p>Esto, por ahora, no está implementado, pero ya hice llegar mi propuesta
-a <em>l’equipe</em> de SPIP, y <a class="reference external" href="http://article.gmane.org/gmane.comp.web.spip.devel/53503">lo están
-discutiendo</a></p>
-</div>
-<div class="section" id="actualizacion">
-<h2>Actualización</h2>
-<p>Gracias a <a class="reference external" href="http://my.opera.com/tech-nova/blog/">Gilles</a> el Dev Team
-adoptó mi propuesta y ahora existen Tags en el arbol SVN de spip. En
-particular,</p>
-<pre class="literal-block">
-svn co svn://trac.rezo.net/spip/tags/spip-2-stable
-</pre>
-</div>
-        <p>
-        
-            <a href="posts/ultima-version-de-spip-por-svn.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/el-numero-mi-primer-juego.html">El Número, mi primer juego</a>
-        <small>  
-             <span class="timeago" title="2009-04-24 18:37:28">2009-04-24 18:37:28</span>
-        </small></h1>
-        <p>Para suscribirse a la lista de
-<a class="reference external" href="http://python.org.ar/pyar/ListaDeCorreo">Pyar</a>, una de las tareas
-(opcional, pero muy bienvenida) es enviar tu "Hola Mundo".</p>
-<p>El 17 de enero de 2007 yo me suscribí y mandé el siguiente mensaje.</p>
-<blockquote>
-<p>Estimada gente:</p>
-<p>Cumpliendo solemnemente con el paso 2 de las indicaciones de
-suscripción a la lista, haciendo alarde de mi nerdismo, les dejo mi
-"hola mundo" (mi primero programa en python!). Se trata de humilde
-juego via consola que implemento en cada lenguaje en el que intento
-incursionar. Hete aqui:</p>
-<p>Dicha sea la verdad: vengo con muchas ganas de aprender, y por ahora
-muy poco que aportar (pago solidaridad con sinceridad).</p>
-<p>Decidir aprender un nuevo lenguaje es una gran decisión y creo que
-no me he equivocado con mi elección. Es que son mis primeros pinitos
-en la programación orientada a objetos, y aunque la facu exige Java
-(pero no enseña Java), creo que Python es una herramienta mucho mas
-versatil, accesible y apropiada para el nivel de software que tengo
-intención/necesidad de desarrollar.</p>
-<p>Ahora la parte aburrida. Me llamo Martin, soy de Neuquen y estudio
-Ingenieria en computacion en Cordoba. Soy programador PHP (uno del
-montón, que bah) y en particular laburo con un CMS/framework llamado
-<a class="reference external" href="http://www.spip.net">SPIP</a>, que me da de comer y beber. Tengo un
-weblog, aunque no sobre cuestiones técnicas.
-<a class="reference external" href="http://www.textosypretextos.com.ar">www.textosypretextos.com.ar</a>
-. Y lo más importante: soy hincha de boca.</p>
-<p>saludos desde Neuquén a 32ºC. (quien dijo que en el sur hace frio?)</p>
-<p>Martín</p>
-</blockquote>
-<p>Mi "Hola Mundo" fue <strong>El Número</strong>.</p>
-<div class="section" id="mi-primer-juego">
-<h2>Mi primer juego</h2>
-<p>El Número es un juego de lógica y habilidad mental. Consiste en
-encontrar el número escondido (generado aleatoriamente) a través de la
-información</p>
-<p>que brinda la máquina en cada intento. El número escondido tiene 4
-cifras no repetidas.</p>
-<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un digito <em>’bien’</em> significa que el hay un acierto en número y
-posición.</p>
-<p><img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Un digito <em>’regular’</em> significa que el digito existe en el
-número incógnita, pero no está en la posición correcta.</p>
-<p>Por ejemplo si el numero incógnita fuese el 1234 y se arriesga el 2031
-el resultado será de dos dígitos regulares (el 2 y el 1) y 1 dígito bien
-(el 3).</p>
-</div>
-<div class="section" id="descarga-e-instrucciones">
-<h2>Descarga e instrucciones</h2>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/elnumero.py-3.zip">|image3|</a></td>
-</tr><tr><td>El Número Martín Gaitán - Enero de 2007</td>
-</tr></tbody></table><p>Sobre Linux podés copiar y pegar este listado de comandos en la consola:</p>
-<pre class="literal-block">
-wget http://nqnwebs.com/IMG/zip/elnumero.py-3.zip
-unzip elnumero.py-3.zip
-chmod +x ./elnumero.py
-./elnumero.py
-</pre>
-<p>Sobre Windows, asegurate tener instalado Python (cualquier versión
-elnumero.py</p>
-</div>
-        <p>
-        
-            <a href="posts/el-numero-mi-primer-juego.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/charla-ser-freelance-como-trabajar.html">Charla "Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa"</a>
-        <small>  
-             <span class="timeago" title="2009-04-22 12:58:20">2009-04-22 12:58:20</span>
-        </small></h1>
-        <p>El miércoles 15 de abril de 2009 participé como disertante en las <a class="reference external" href="http://computacion.efn.uncor.edu/Conferencias-Abril-2009">3º
-Jornadas Abiertas de Ingeniería en
-Computación</a>
-que reune a estudiantes, profesores y profesionales invitados para dar
-charlas técnicas o de interés para la comunidad de la carrera.</p>
-<p>En la anterior edición, diserté sobre <a class="reference external" href="posts/blog/Control-de-Versiones-con">Control de Versiones con
-Subversion</a>. En esta oportunidad
-pretendí un tema menos técnico pero de interés para un vasto sector de
-mis compañeros: cómo animarse a dar los primeros pasos profesionalmente
-sin ser empleado.</p>
-<p>La charla se basó en una presentación de <a class="reference external" href="http://www.desimone.com.ar/">Sebastián
-Desimone</a>, publicada bajo <a class="reference external" href="http://creativecommons.org/licenses/by-nc/2.5/ar/">Creative
-Commons by-nc-ar</a>
-que escuché en las <a class="reference external" href="http://jornadas.grulic.org.ar/7/">7mas Jornadas Regionales de Software
-Libre</a>, realizadas en Córdoba, en
-2007.</p>
-<p>Como corresponde ética y legalmente, este trabajo está bajo la misma
-licencia.</p>
-<blockquote>
-Bajar diapositivas "<a class="reference external" href="downloads/ojotas_copia_.odp">Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa</a> "</blockquote>
-<p>El documento ODP incluye notas y comentarios.</p>
-<div class="section" id="video">
-<h2>Video</h2>
-<iframe width="425" height="344" src="http://www.youtube.com/embed/3pKPg11qBvM?rel=0&amp;hd=1&amp;wmode=transparent"></iframe></div>
-        <p>
-        
-            <a href="posts/charla-ser-freelance-como-trabajar.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/piccola-radiolina.html">Piccola Radiolina</a>
-        <small>  
-             <span class="timeago" title="2009-04-19 14:14:39">2009-04-19 14:14:39</span>
-        </small></h1>
-        <p><a class="reference external" href="http://code.google.com/p/radiolina/">Radiolina</a> es a mi jornada
-laboral lo que la Spika a la de mi abuelo, en aquellas mañanas de viñas
-mendocinas.</p>
-<p>Es un simple script <a class="reference external" href="http://es.wikipedia.org/wiki/bash">bash</a> que se
-vale del mágico <a class="reference external" href="http://www.mplayerhq.hu">mplayer</a> para reproducir las
-radios más importantes de argentina (y otras mejores que esas).</p>
-<p>Para bajar y empezar a disfrutar Radiolina puedes ejecutar los
-siguientes comandos desde tu consola.</p>
-<pre class="literal-block">
-wget http://radiolina.googlecode.com/svn/trunk/radiolina
-chmod +x radiolina
-./radiolina
-</pre>
-<p>Como frecuentemente lo actualizo, te recomiendo que utilices SVN para
-bajar el programa. En vez de la primer linea (<em>wget...</em>) utilizar</p>
-<pre class="literal-block">
-svn checkout https://radiolina.googlecode.com/svn/trunk/ ./
-</pre>
-        <p>
-        
-            <a href="posts/piccola-radiolina.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/backup-selectivo-de-tablas-mysql.html">Backup selectivo de tablas Mysql</a>
-        <small>  
-             <span class="timeago" title="2009-03-31 09:37:49">2009-03-31 09:37:49</span>
-        </small></h1>
-        <p>Un comando muy práctico para hacer backups de una base de datos MySQL es
-<em>mysqldump</em>.</p>
-<pre class="literal-block">
-mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
-</pre>
-<p>Eso hace un backup completo de la base <em>base_de_datos</em> (incluyendo la
-creación de todas las tablas.</p>
-<p>Para restaurar ese backup se hace directamente inyectando el sql al
-interprete de mysql.</p>
-<pre class="literal-block">
-mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos
-</pre>
-<div class="section" id="respaldar-solo-algunas-tablas-de-la-base">
-<h2>Respaldar sólo algunas tablas de la base</h2>
-<p>A menudo tenemos multiples sistemas instalados sobre la misma base de
-datos, Si sólo queremos respaldar algunas tablas bastaría enumerar las
-tablas luego del nombre de la base de datos</p>
-<pre class="literal-block">
-mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  tabla1 tabla2 &gt; backup.sql
-</pre>
-<p>Pero si estas tablas son muchas, es engorroso definirlas una por una.
-Por suerte, en general, un prefijo asocia todas las tablas de un
-sistema.</p>
-<p>En ese caso, se puede usar el siguiente compando que respalda todas las
-tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":</p>
-<pre class="literal-block">
-mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
-</pre>
-</div>
-        <p>
-        
-            <a href="posts/backup-selectivo-de-tablas-mysql.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/lorem-ipsum-para-spip.html">Lorem Ipsum para Spip</a>
-        <small>  
-             <span class="timeago" title="2009-03-26 20:39:24">2009-03-26 20:39:24</span>
-        </small></h1>
-        <p><a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a> es el texto
-que se usa habitualmente en diseño gráfico en demostraciones de
-tipografías o de borradores de diseño para probar el diseño visual antes
-de insertar el texto final.</p>
-<p>Cuando estamos desarrollando necesitamos ver cómo quedará el contenido,
-y debemos recurrir a un <em>copy &amp; paste</em> de caulquier cosa que tengamos a
-mano.</p>
-<p>La ventaja de un <em>Lorem Ipsum</em> sobre otros textos, es que este tiene una
-distribución del largo de las palabras bastante natural de las palabras
-lo que en textos largos queda mucho mejor que repetir un mismo fragmento
-una y otra vez.</p>
-<p>Hay muchos <a class="reference external" href="http://www.lipsum.com/">generadores de texto Lorem Ipsum</a>
-en internet, pero lo podemos hacer aún más fácil.</p>
-<div class="section" id="un-lorem-ipsum-automatico">
-<h2>Un Lorem Ipsum automático</h2>
-<p>Con la ayuda del plugin <a class="reference external" href="http://sanderkorvemaker.nl/jquery/jLorem.php">jQuery Lorem
-Ipsum</a> de Sander Korve
-hice un modelo (instalable como plugin) que permite insertar un texto
-del tamaño que queramos (por omisión, de 4 párrafos).</p>
-<p>Podés bajarlo desde acá:</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/loremipsum.zip">|image1|</a></td>
-</tr><tr><td>Lorem Ipsum Plugin version 0.2</td>
-</tr></tbody></table><p>O por SVN:</p>
-<pre class="literal-block">
-svn checkout svn://zone.spip.org/spip-zone/_plugins_/_test_/loremipsum
+$ cuevanalinks 'mad men' s04 -s &gt; madmen.txt &amp;&amp; tucan -d -i madmen.txt
 </pre>
 </div>
 <div class="section" id="instalacion">
 <h2>Instalación</h2>
-<p>La instalación es igual que con la de cualquier plugin: descomprimirlo
-en la carpeta <em>/plugins</em> y activarlo.</p>
-<p>Requiere además que los esqueletos tengan la baliza <tt class="docutils literal">#INSERT_HEAD</tt>
-dentro del header, ya que allí se incluirá el javascript necesario para
-su funcionamiento.</p>
+<p>Para instalarlo, basta con usar <a class="reference external" href="http://www.pip-installer.org">pip</a></p>
+<pre class="literal-block">
+$ sudo pip install cuevanalinks
+</pre>
+<p>O con
+<a class="reference external" href="http://packages.python.org/distribute/easy_install.html">easy_install</a>:</p>
+<pre class="literal-block">
+$ sudo easy_install cuevanalinks
+</pre>
+<p>O bien, bajar <a class="reference external" href="http://pypi.python.org/pypi/CuevanaLinks#downloads">el
+paquete</a> y
+ejecutar :</p>
+<pre class="literal-block">
+$ tar xvfz CuevanaLinks-0.1.tar.gz
+$ cd CuevanaLinks-0.1
+$ sudo python setup.py install
+</pre>
 </div>
-<div class="section" id="funcionamiento-basico">
-<h2>Funcionamiento básico</h2>
-<p>La inclusión de un <em>Lorem Ipsum</em> se basa en el modelo <em>lorem.html</em>
-incluído con el plugin, por lo que hay dos maneras de llamarlo:</p>
-<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> En el cuerpo (texto, descripción, etc) de un artículo: <tt class="docutils literal">&lt;lorem&gt;</tt></p>
-<p><img alt="image3" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Predefinido en un esqueleto: <tt class="docutils literal">#MODELE{lorem}</tt></p>
-<p>¡y listo!</p>
+<div class="section" id="algunas-posibilidades-de-la-api">
+<h2>Algunas posibilidades de la API</h2>
+<p>El CLI por ahora sólo expone una parte pequeña de la API, pero hay
+varias posibilidades. Por ejemplo:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; from cuevanalinks import cuevanaapi
+&gt;&gt;&gt; api = cuevanaapi.CuevanaAPI ()
+&gt;&gt;&gt; house = api.get_show ('house')
+&gt;&gt;&gt; house.plot
+u'El doctor Gregory House, especialista en el tratamiento de enfermedades infecciosas, trabaja en un hospital universitario de Princetown, donde dirige una unidad especial encargada de pacientes afectados por dolencias extrañas y en la que colabora con un selecto grupo de aventajados ayudantes.'
+&gt;&gt;&gt; house7x1 = house.get_episode (7, 1)
+&gt;&gt;&gt; house7x1.title
+'Now What?'
+&gt;&gt;&gt; house7x1.cast
+['Hugh Laurie',
+ 'Lisa Edelstein',
+ 'Omar Epps',
+ 'Jesse Spencer',
+ 'Jennifer Morrison',
+ 'Robert Sean Leonard',
+ 'Olivia Wilde',
+ 'Peter Jacobson']
+&gt;&gt;&gt; house7x1.sources
+['http://www.megaupload.com/?d=DM58TA0J',
+ 'http://www.filesonic.com/file/36841721/?',
+ 'http://bitshare.com/?f=67z435xm',
+ 'http://www.filefactory.com/file/caf85b9']
+&gt;&gt;&gt; house7x1.subs
+{'ES': 'http://www.cuevana.tv/download_sub?file=s/sub/7888_ES.srt'}
+</pre>
 </div>
-<div class="section" id="parametros">
-<h2>Parámetros</h2>
-<p>El modelo acepta algunos parámetros para configurar la longitud del
-texto. Por ejemplo <tt class="docutils literal">&lt;lorem5&gt;</tt> creará 5 párrafos.</p>
-<p>Pero también se puede especificar más datos:</p>
-<p><img alt="image4" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>type</strong>: permite especificar que tipo de resultado se quiere.
-Las opciones válidas son <strong>paragraphs</strong>, <strong>words</strong> o <strong>characters</strong> para
-párrafos, palabras o characteres. Así: creará un texto de 25 palabras.
-El valor por omisión es <strong>paragraphs</strong>.</p>
-<p><img alt="image5" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>amount</strong>: Es lo mismo que el ID pasado al modelo: es lo mismo
-que . Por ejemplo <tt class="docutils literal"><span class="pre">[(#MODELE{lorem}{amount=5})]</span></tt>
-[<a class="reference external" href="blog/article/lorem-ipsum-para-spip#nb1">1</a>].</p>
-<p><img alt="image6" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>ptags</strong>: Permite agregar las etiquetas &lt;code&lt;&gt;P&lt;&gt;/code&gt;
-alrededor de cada párrafo. Los valores aceptados son <strong>true</strong> o
-<strong>false</strong>. Por omisión es <strong>true</strong>.</p>
+<div class="section" id="lo-que-falta">
+<h2>Lo que falta</h2>
+<p>Si bien es lo más prolijito que he hecho, todavía está lejos de ser un
+trabajo completo, tanto en funcionalidades como en
+<a class="reference external" href="http://en.wikipedia.org/wiki/Software_Quality_Assurance">SQA</a></p>
+<p>Un aspecto esencial es hacer test (perdón Nati Bidart ;-) ), para lo
+cual tengo que aprender a usar
+<a class="reference external" href="http://code.google.com/p/python-nose/">nose</a> y
+<a class="reference external" href="http://blog.ianbicking.org/minimock.html">minimock</a>.</p>
+<p>Respecto a funciones, algo importante es definir cómo resuelve el CLI el
+manejo de múltiples resultados para una búsqueda. Actualmente devuelve
+el resultado "más relevante" sin anoticiar al usuario de otras opciones.</p>
+<p>También falta documentación! Veremos la próxima.</p>
 </div>
-<div class="section" id="una-astucia">
-<h2>Una astucia</h2>
-<p>Una forma de mostrar contenido en un artículo (o cualquier elemento) sin
-tener que editar cada artículo sólo para poner <tt class="docutils literal">&lt;lorem&gt;</tt> es invocar el
-modelo siempre y cuando no exista contenido en la baliza</p>
-<p>Por ejemplo [<a class="reference external" href="blog/article/lorem-ipsum-para-spip#nb2">2</a>]:</p>
+<div class="section" id="comentarios-sugerencias-bugs">
+<h2>Comentarios, sugerencias, bugs</h2>
+<p>Todo aporte (ideas, código, etc.) es bienvenido. Si encuentran
+problemas,
+<a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/issues">reportenlos</a>.</p>
+<p>No estoy seguro cuánto puede durar esto funcionando, ya que depende de
+que el funcionamiento del sitio no cambie o yo tenga mucho tiempo y
+ganas de andar parchando detrás. Por eso, si hay más interesados y
+usuarios, seguramente podremos hacerlo durar más.</p>
 </div>
         <p>
         
-            <a href="posts/lorem-ipsum-para-spip.html#disqus_thread">Comments</a>
+            <a href="posts/la-sanguijuela-de-cuevana.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/auto-podcast.html">Auto Podcast</a>
+        <h1><a href="posts/veinteanero.html">Veinteañero</a>
         <small>  
-             <span class="timeago" title="2009-03-21 12:53:03">2009-03-21 12:53:03</span>
+             <span class="timeago" title="2011-04-08 08:47:13+00:00">2011-04-08 08:47:13+00:00</span>
         </small></h1>
-        <p><a class="reference external" href="http://www.efectotabano.com.ar">Efecto Tábano</a> es el programa radial
-de mi amigo Fernando Barraza. Objetivamente, uno de los mejores
-programas radiales de Argentina.</p>
-<p>Lamentablemente, desde que me vine a Córdoba tuve que conformarme con
-los fragmentos de entrevistas o especiales que Fernando subía a la web.
-Pero ahora que la <a class="reference external" href="http://fm1037online.com/">Radio Calf-UNC</a> está
-online, la alegría está completa.</p>
-<p>El único problema que queda es que no todos los días tengo el tiempo de
-escucharlo de 16 a 18hs, Necesitaba grabarlo para escucharlo offline.</p>
-<p>Bien podría haber hecho esto localmente pero como al sitio lo administro
-yo, dije... ¿por qué no grabar el programa directamente desde el
-servidor, y que cualquiera pueda bajarlo cuando quiera?</p>
-<p>Aquí está mi podcaster automático para Efecto Tábano.</p>
-<div class="section" id="la-idea">
-<h2>La idea</h2>
-<p>Todo se basa en el glorioso <a class="reference external" href="http://mplayerhq.hu">Mplayer</a>, Mplayer es
-capaz de reproducir casi cualquier formato en streaming.</p>
-<p>Por supuesto, no habrá sonido en esa "reproducción" sobre el servidor,
-pero lo que queremos es la info para grabarla.</p>
-<p>En vez de enviarla a la placa de sonidos, la información cruda (el
-sonido WAV) lo enviamos a un archivo fifo desde donde
-<a class="reference external" href="http://lame.sourceforge.net/">lame</a> obtendrá su fuente de datos para
-comprimir a MP3 <em>on the fly</em>.</p>
-<p>Todo esto, claro, se ejecutará al horario del programa (y durante el
-tiempo que se indique, en este caso casi 2 horas) mediante una tarea
-<a class="reference external" href="http://es.wikipedia.org/wiki/Cron_(Unix)">cron</a></p>
-</div>
-<div class="section" id="instalando-lo-necesario">
-<h2>Instalando lo necesario</h2>
-<p>Como anticipé, hace falta mplayer y lame. Estos programas en general no
-se encuentran en el servidor (por ejemplo
-<a class="reference external" href="http://www.dreamhost.com/r.cgi?150740">Dreamhost</a>) así que hay que
-instalarlos. Como tampoco somos root (la gran mayoría de las veces)
-habrá que compilarlos desde las fuentes e instalarlos a nivel usuario.</p>
-<p>primero crear, si no existiése, un directorio /bin donde irán nuestros
-programas.</p>
-<pre class="literal-block">
-mkdir bin
-chmod 775 bin
-</pre>
-<p><strong>Mplayer y mencoder</strong></p>
-<pre class="literal-block">
-wget http://www3.mplayerhq.hu/MPlayer/releases/codecs/essential-20061022.tar.bz2
-bunzip2 essential-20061022.tar.bz2
-tar -xf essential-20061022.tar
-mv essential-20061022 $HOME/lib
-wget http://www3.mplayerhq.hu/MPlayer/releases/MPlayer-1.0rc1.tar.bz2
-bunzip2 MPlayer-1.0rc1.tar.bz2
-tar -xf MPlayer-1.0rc1.tar
-cd MPlayer-1.0rc1
-./configure --prefix=$HOME --codecsdir=$HOME/lib/essential-20061022
-make
-make install
-</pre>
-<p><strong>LAME</strong></p>
-<pre class="literal-block">
-wget http://nchc.dl.sourceforge.net/sourceforge/lame/lame-3.97.tar.gz
-tar -zxvf lame-3.97.tar.gz
-cd lame-3.97
-./configure "--prefix=$HOME" "--enable-shared"
-make
-make install
-</pre>
-<p>Con eso ya tendríamos los programas necesarios en <strong>./bin</strong></p>
-</div>
-<div class="section" id="el-script-podcaster-efectotabano-sh">
-<h2>El script podcaster-efectotabano.sh</h2>
-<pre class="literal-block">
-#!/bin/sh
-#
-# recorder — wrapper to pull remote audio stream and convert contents
-# to mp3
-
-# Path and arguments to lame (mp3 encoder)
-lame="$HOME/bin/lame -S -b 32 -m m"
-
-# Path and arguments to mplayer (stream decoder)
-mplayer="$HOME/bin/mplayer -quiet"
-
-# Where to put the output files
-odir="$HOME/efectotabano.com.ar/podcast"
-
-showname="efectotabano-`date +%Y-%m-%d`"
-duration="6660"
-url="http://78.159.108.83:8690/"
-
-fifo="${showname}_fifo"
-ofile="$odir/${showname}.mp3"
-
-#- end config ----------------------------------------------------
-
-mkfifo $fifo
-$lame $fifo $ofile &amp;
-$mplayer  -vc null -vo null -ao pcm:file=$fifo $url &amp;
-
-sleep 5
-pids=`ps auxww | grep $fifo | awk '{print $duration}'`
-
-sleep `echo ${duration} | bc`
-
-kill $pids
-rm $fifo
-</pre>
-<p>La primera parte permite configurar las rutas y parámetros de los
-programas a usar, así como el formato y destino del mp3 de salida.</p>
-<p>En este caso los parámetros de lame indican que se grabará a 32kbps en
-mono.</p>
-<p>Los mp3 de salida irán a <a class="reference external" href="http://www.efectotabano.com.ar/podcast/">este
-destino</a></p>
-<p>Este script se ejecuta de lunes a viernes a las 12:09 hora del servidor
-(16:09 en argentina) y durante 6660 segundo, de modo que termina
-tentativamente junto con la finalización del programa.</p>
-<p>Para configurar la tarea en cron ejecutar <strong>crontab -e</strong>. La tarea a
-agregar luce así:</p>
-<pre class="literal-block">
-09 12 * * 1-5 ~/bin/podcaster-efectotabano.sh
-</pre>
-<p>Eso es todo. Todos los días, de lunes a viernes tendré mi programa para
-descargar.</p>
-</div>
-<div class="section" id="to-do">
-<h2>TO DO</h2>
-<p>Por supuesto, para que esto sea un
-<a class="reference external" href="http://es.wikipedia.org/wiki/podcast">podcast</a> le falta la
-sindicación. Por lo tanto, habría que agregar la tarea de injectar
-información pertinente en una base de datos del cual generar el XML de
-sindicación.</p>
-</div>
+        <p>Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobijó.
+Al tiempo usé Mandrake, después Debian y desde su primera versión (2004)
+Ubuntu.</p>
+<p>Un largo camino de aprendizaje... que alguna vez recorreré ;-)</p>
         <p>
         
-            <a href="posts/auto-podcast.html#disqus_thread">Comments</a>
+            <a href="posts/veinteanero.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/variar-o-no-variar-esa-es-la.html">Variar o no variar, esa es la cuestión</a>
+        <h1><a href="posts/la-academia-las-practicas-agiles-y.html">La academia, las prácticas ágiles y el UML</a>
         <small>  
-             <span class="timeago" title="2009-03-15 20:03:38">2009-03-15 20:03:38</span>
+             <span class="timeago" title="2011-04-06 06:21:23+00:00">2011-04-06 06:21:23+00:00</span>
         </small></h1>
-        <p>Hace algunos días, en
-<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">spip-es</a> se planteó
-la duda de cómo controlar una cabecera diferente para algunas secciones
-en particular.</p>
-<p><a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C29008.88.7.114.173.1236164746.squirrel@correo.nodo50.org%3E">Xabi
-aportó</a>
-la solución canónica, que es crear esqueletos ad-hoc para cada sección
-difente, valiendose de los esqueletos con forma <em>rubrique-X.html</em> (donde
-X es el ID de la sección).</p>
-<p>Esto se describe en el apartado "<a class="reference external" href="http://www.spip.net/es_article2257.html">Para ir más
-lejos</a>" de la documentación.</p>
-<p>En este caso particular, sólo se quería mostrar el logo en la cabecera
-para algunas secciones. El problema es que las secciones "diferentes"
-serían iguales entre sí, pero invocando distintos esqueletos. Esto
-contradice el <a class="reference external" href="http://es.wikipedia.org/wiki/DRY">principio DRY</a>
-siempre deseable en todo desarrollo de software.</p>
-<p>Una forma sencilla, pero a la vez parcial de resolver esto, es hacer un
-<a class="reference external" href="http://es.wikipedia.org/wiki/enlace_duro">enlace duro</a> entre los
-esqueletos que son iguales.</p>
-<p>Por ejemplo, la sección 2, la 4 y la 6, tendrán el mismo esqueleto.
-Entonces creamos el rubrique-2.html y definimos rubrique-4.html y
-rubrique-6.html como enlaces duros al primero. Desde la línea de
-comandos:</p>
-<pre class="literal-block">
-$ ln rubrique-2.html rubrique-4.html
-$ ln rubrique-2.html rubrique-6.html
-</pre>
-<p>Esta solución funciona, pero es sólo para servidores <em>*nix</em> y teniendo
-acceso a la consola (por <a class="reference external" href="http://es.wikipedia.org/wiki/SSH">SSH</a>, por
-ejemplo). Además, hay que documentar bien qué se está haciendo, porque
-da lugar a errores cuando dos esqueletos "linkeados" intentan ser
-iguales.</p>
-<p>Por suerte, hay varias otras maneras de resolver esto,</p>
-<div class="section" id="filtros-de-condicion-o-filtro-match">
-<h2>Filtros de condición o filtro match</h2>
-<p><a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C516299.21618.qm@web90607.mail.mud.yahoo.com%3E">Esta
-solución</a>,
-es la que aportó <a class="reference external" href="http://www.graciasdenada.com.ar/">Juan Pablo
-Portugau</a>.</p>
-<p>Lo que plantea, es usar la baliza #ID_RUBRIQUE (que obviamente,
-devuelve el número de la sección) con filtros de comparación. Es,
-hablando en geek, un simple <strong>if</strong>: <em>Si es la sección 2, mostrar el
-logo. Sino, nada</em>:</p>
-<p>En código SPIP:</p>
-<pre class="literal-block">
-[(#ID_RUBRIQUE|=={2}|?{'#LOGO_RUBRIQUE',''})]
-</pre>
-<p>La limitación de esta solución se da cuando son múltiples los valores
-posibles. En nuestro caso, se debe mostrar el logo cuando se trata de la
-sección 2, de la 4 o de la 6. Juan Pablo propone anidar esta estructura.</p>
-<pre class="literal-block">
-[(#ID_RUBRIQUE|=={2}|?{'#LOGO_RUBRIQUE',[(#ID_RUBRIQUE|=={4}|?{'#LOGO_RUBRIQUE',[(#ID_RUBRIQUE|=={6}|?{'#LOGO_RUBRIQUE',''})]})]})]
-</pre>
-<p>Aunque es sintácticamente correcto, el código resultante es bastante
-inmantenible para un ser humano con cerebro normal y el monito parseador
-de SPIP queda agitado.</p>
-<p>Para eso existe el filtro
-<a class="reference external" href="http://www.spip.net/fr_article901.html#match">match</a>, que se vale de
-las <a class="reference external" href="http://www.regular-expressions.info/">expresiones regulares</a> para
-que hagamos nuestro festín.</p>
-<p>Lo de arriba, puede reducirse a esto:</p>
-<pre class="literal-block">
-[(#ID_RUBRIQUE|match{^(2|4|6)$}|?{'#LOGO_RUBRIQUE',''})]
-</pre>
-<p>El filtro devuelve <strong>VERDADERO</strong> si el valor de #ID_RUBRIQUE empieza
-con 2, 4 o 6 y termina con nada. Que es, dicho de otra manera, lo que
-queremos.</p>
-</div>
-<div class="section" id="y-aun-mas-claro-bucles-como-filtros">
-<h2>Y aún más claro: bucles como filtros</h2>
-<p>Las expresiones regulares <em>no son moco de pavo</em>, diría mi abuela. Super
-potentes, pero poco escalables en la curva complejidad-comprensibilidad.</p>
-<p>Hay una solución que es muy útil, sencilla pero no trivial: usar un
-bucle como filtro.</p>
+        <p>La manera más fácil para aprobar una tesis de ingeniería es mentir.
+Llenar páginas y páginas, preferentemente con tablas y viñetas, de
+contenidos vacuos y tediosos que seguramente nadie, mucho menos los
+evaluadores, leerán. Sólo hay que prestar atención a que sean muchas
+páginas y lo más simétricas posibles.</p>
+<p>El ejemplo paradigmático de esto son las <a class="reference external" href="http://www.google.com/search?q=plantilla+caso+de+uso">especificaciones formales de
+casos de uso</a>,
+pasión de burócratas que tienen cabida donde no hace falta demostrar
+mucho.</p>
+<p>Pero también el UML, me atrevo a decir, en su mayor parte y nivel de
+detalle es secuaz de esta ignominia que pauperiza el nivel del software
+académico: en vez de saber programar y poder leer código, se presta
+atención a los dibujitos, poniendo el grito en el cielo si la flechita
+es negra en vez de blanca, como dice
+<a class="reference external" href="http://www.comp.lancs.ac.uk/computing/resources/IanS/">Sommerville</a>
+que debe ser.</p>
+<p>Como no me gusta mentir, la facilidad no me seduce de más (tampoco la
+dificultad) y estoy bastante conforme con <a class="reference external" href="http://code.google.com/p/gpec2010/">lo que
+hice</a> me animé a ser sensato en
+expresar cómo hice mi trabajo.</p>
+<p>No me encerré 6 meses a hacer dibujitos que resultarían perfectos,
+inescrutables y luego harían la programación trivial. Eso, al menos en
+mi experiencia, no existe (sospecho que ellos todos lo saben, lo que
+exacerba la hipocresía). Sí, en cambio, hice algunos dibujitos que me
+ayudaran a entender (y dar a entender) cómo iba la cosa, mientras iba
+programando y evaluando si estaba bien encaminado.</p>
+<p>Este espíritu es el que cobijan las <a class="reference external" href="http://agilemanifesto.org/iso/es/">prácticas
+ágiles</a>, que es el marco conceptual
+(metodológico) que adopté.</p>
+<p>La cuestión es que, para ganarle al <em>unknow how</em> de los hombres de
+corbata, hay que justificar con nombres que les suenen admirables. Hay
+que mencionar mucho IBM, Microsoft, C#, Intel. Esas son las voces que
+respetan, aunque sean pura
+<a class="reference external" href="http://es.wikipedia.org/wiki/Argumento_de_autoridad">falacia</a></p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH603/anti-bullying-charity-school-tie-small-59832-3938a.jpg"></div>
 <div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 100)</p>
-Literal block expected; none found.</div>
-<p>La explicación es de la lógica de conjuntos: los criterios de un bucle
-funcionan como condiciones AND. Deben cumplirse todas. En este caso, el
-primer criterio <tt class="docutils literal">{id_rubrique IN (1,2,4)}</tt> exige que el id_rubrique
-sea 1, 2 o 4. En el segundo <tt class="docutils literal">{id_rubrique}</tt>, se exige que sea el que
-viene en contexto. Por lo tanto, este bucle sólo funcionará (mostrará el
-logo) si el id_rubrique <em>del contexto</em> es 1, 2 o 4. En lógica, es una
-operación <a class="reference external" href="http://es.wikipedia.org/wiki/Disyunci%C3%B3n_l%C3%B3gica">O
-exclusiva</a></p>
-<p>Funciona, es más legible que cualquiera de las otras soluciones y además
-permite una clausula <em>ELSE</em> mucho más accesible, simplemente usando la
-estructura completa del bucle.</p>
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 45)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Yo justifiqué
+<a class="reference external" href="http://code.google.com/p/gpec2010/source/browse/trunk/docs/metodologia.rst?spec=svn232&amp;r=232#92">así</a>:</p>
+<blockquote>
+<p>Según afirma Terry Quatrani, evangelizadora de las metodologías
+ágiles de IBM, en <a class="reference external" href="http://agilescout.com/agile-modeling-and-uml/">The Truth About Agile
+Modeling</a> :</p>
+<blockquote>
+Aunque sigas un proceso ágil, estarás realizando cierto grado de
+modelado – sólo que no lo realizarás tanto como si utilizaras un
+proceso tradicional. La falta de formalidad en el modelado ágil
+no significa que no estás modelando, sino que te pones el foco
+en los beneficios de este sin las desventajas y confusiones de
+documentos extraños y burocráticos.</blockquote>
+<p>Por su parte, Robert Martin sostiene en <a class="reference external" href="http://stackoverflow.com/questions/61487/do-you-use-uml-in-agile-development-practices">*Agile Principles,
+Patterns, and Practices in
+C#*</a>
+que el modelado basado en UML en el desarrollo ágil es útil como
+instrumento de comunicación, pero su detalle no aporta valor
+significativo:</p>
+<blockquote>
+No gastes mucho tiempo en esta tarea, no necesitas tanto
+detalle. Los modelos y los planos son necesarios en la
+arquitectura y la construcción civil porque es caro construir
+una casa para demostrar que su diseño funciona. El software no
+es así – puedes validar tu idea con sólo codificarla, en igual
+tiempo que el que insume hacer un modelo UML que nada prueba por
+sí mismo.</blockquote>
+<p>Aun más escéptico, Alans Stevens, reconocido ingeniero en software
+[<a class="reference external" href="blog/article/la-academia-las-practicas-agiles-y#nb1">1</a>] y
+conferencista, opina <a class="reference external" href="http://halanstevens.com/uml-sucks-really/">en un
+artículo</a>:</p>
+<blockquote>
+<p>No uso UML y noto que ninguno de mis colegas lo usa. Tengo
+sensaciones mezcladas acerca de su necesidad. Parece
+perfectamente razonable que debamos acordar como industria un
+conjunto de símbolos comunes para representar la programación
+orientada a objetos, pero UML tiene la típica apariencia de
+"diseñado por un comité".</p>
+<p>(...) El aspecto más crítico en un diseño inicial, en mi
+experiencia, es la interfaz entre la UI y el modelo de objetos.
+Lamentablemente UML no aborda este problema y en cambio parece
+obsesionado por las minucias en una parodia de distracción
+académica.</p>
+</blockquote>
+</blockquote>
+        <p>
+        
+            <a href="posts/la-academia-las-practicas-agiles-y.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/apuntes-del-pycamp-2011.html">Apuntes del PyCamp 2011</a>
+        <small>  
+             <span class="timeago" title="2011-03-30 19:50:40+00:00">2011-03-30 19:50:40+00:00</span>
+        </small></h1>
+        <p>Casi se hizo jueves y todavía no escribí nada sobre el
+<a class="reference external" href="http://python.org.ar/pyar/PyCamp/2011">PyCamp</a>. <a class="reference external" href="http://lateral.netmanagers.com.ar/">Roberto
+Alsina</a> se va a enojar.</p>
+<p>La excusa, vaga como yo, es que la devolución de uno de mis directores
+de <a class="reference external" href="posts/blog/article/preparados-listos-en-un-rato">tesis</a> fue más
+[STRIKEOUT:hinchapelotas] minuciosa que lo esperado. Así que para
+cumplir el
+<a class="reference external" href="http://twitter.com/#!/nqnwebs/status/48955773732134912">objetivo</a>
+tuve un amansador refactoring de 5pm a 6am cuyo resultado me permitió
+conseguir un lacónico:</p>
+<blockquote>
+Recibido, pero recién lo puedo ver el viernes</blockquote>
+<p>Inmediatamente demostré que el lenguaje soez en arameo es un
+conocimiento latente.</p>
+<div class="section" id="a-modo-de-intro">
+<h2>A modo de intro</h2>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 19); <em><a href="posts/apuntes-del-pycamp-2011.html#id1">backlink</a></em></p>
+Duplicate explicit target name: "pycamp".</div>
+<p>El <a class="reference external" href="http://python.org.ar/pyar/PyCamp/">PyCamp</a> es un encuentro de la
+comunidad <a class="reference external" href="http://www.python.org.ar">Python Argentina</a>. Monos (y
+pronto monas) con laptops afiladas se juntan en el algun rincón del país
+con internet, preferentemente lejos de las grandes urbes (para darle
+énfasis a eso de <em>camp</em>) a programar software libre, hackear de lo
+lindo, jugar jueguitos electrónicos y de los otros, tomar y beber en
+bucle continuo y hacer cuanto le plazca a cada uno, en un ambiente
+totalmente inclusivo, distendido y buena onda.</p>
+<p><img alt="image0" src="images/5575373677_34553-e5833.jpg">
+Python Argentina abarca el amplio espectro que va desde programadores
+reconocidos internacionalmente (gran parte de ese Ubuntu que seguro
+estas usando — o deberías — lo hacen pythonistas argentinos) hasta
+"newbies" que se anotaron en la lista con el único y nada despreciable
+objetivo de callar al amigo que ya sabe un poco más y no para de
+hincharle para que use Python (resulta que a los pocos dias, el
+(ex)newbie ya está molestando a un tercero).</p>
+<p>Esa población tiene fiel reflejo en el PyCamp, pero grosos y finitos
+tienen las mismas posibilidades de proponer, opinar y divertirse. Por
+supuesto, es impagable lo que se aprende y son increíbles las cosas que
+hacen los geeks cuando están divertidos.</p>
+<p>De estos encuentro salieron proyectos como
+<a class="reference external" href="http://www.cocos2d.org/">Cocos2d</a>, la
+<a class="reference external" href="http://python.org.ar/pyar/Proyectos/CDPedia">CDPedia</a> y
+<a class="reference external" href="http://www.taniquetil.com.ar/lalita/index.html">lalita</a>.</p>
+</div>
+<div class="section" id="mi-experiencia">
+<h2>Mi experiencia</h2>
+<p>El PyCamp 2011, el cuarto consecutivo, se realizó en La Falda y fue el
+primero en el que participo. Sabía, por referencias, fotos y
+repositorios, de qué se trataba, pero como dice el adagio... <em>del dicho
+al hecho ...</em>.</p>
+<p><img alt="image1" src="images/5575974174_116c8-4028d.jpg">
+Nati tenía un congreso de germanística en Buenos Aires y después se iba
+a La Plata a visitar a una amiga, así que las opciones eran ir a la
+marcha el jueves (24 de marzo) y
+<a class="reference external" href="posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv">cuevanear</a> el resto
+del finde o sumarme a la movida.
+<a class="reference external" href="http://www.perrito666.com.ar">Perrito</a> ofreció movilidad así que lo
+tuve servido.</p>
+<p>Salimos el jueves a la mañana y con nosotros venía
+<a class="reference external" href="http://blog.malev.com.ar/">Malev</a> y el organizador del evento, de pie
+señores, Nueces.</p>
+<p>A lo largo de los 4 días de PyCamp, participé en la CDpedia (mejoré la
+funcionalidad de "artículo al azar" y estuve haciendo unos benchmarks de
+optimización en el peso de las imágenes), amagué con un filtro para
+<a class="reference external" href="https://bitbucket.org/edvm/pep8fy">Pep8fy</a> que dejé medio inconcluso,
+comí al menos el doble de lo que venía comiendo (bien la comida, che!),
+jugué mi primer sesión de rol guiado por <a class="reference external" href="http://protocultura.net/">el señor
+ordenador</a> (Alecu, un maestro!), malabareé
+con las bolas (las de malabares) de
+<a class="reference external" href="http://humitos.wordpress.com/">Humitos</a>, presencié en vivo la
+gestación de un delirio mágico de <a class="reference external" href="http://lateral.netmanagers.com.ar/">Roberto
+Alsina</a>, me metí a la pileta y
+tomé sombra, perdí 0-5 0-5 los dos partidos de metegol y me cagué de
+risa igual con mi <a class="reference external" href="https://twitter.com/#!/edvm">coequiper</a> (¡fiesta!),
+escribí "puto" (con onda, <a class="reference external" href="http://www.felipelerena.com.ar/">Lipe</a>)
+desde un android con un <a class="reference external" href="https://launchpad.net/faldatouch">librería para
+multitouching</a> que estos bestias
+hicieron en una tarde, quedé pasmado con el vuelo de la discusión sobre
+los motivos (y posibles acciones correctoras) de la baja participación
+femenina en Python y el Software Libre en general, bebí vino, fernet,
+cerveza y mistela (me colé en un contingente más adelantado que el
+nuestro en la excursión del Hotel Edén, y después me volví con Flecox a
+ver el partido de Argentina), jugué con Tato (el pythonista más peque
+del encuentro, hijo de Roberto Alsina) y me enternecí viendo a otros
+geeks (Huguito — <a class="reference external" href="http://www.pilas-engine.com.ar">Pilas</a> rulez! —,
+John, Achuni, todos) jugar como niños.</p>
+<p><img alt="image2" src="images/5575353897_b47ee-6529e.jpg">
+Detalles faltan pero estos someros recuerdos sobran para afirmar que el
+balance es positivísimo.</p>
+</div>
+<div class="section" id="una-reflexion-final">
+<h2>Una reflexión final</h2>
+<p>PyCamp contrasta totalmente con los grises, aburridos y mediocres
+congresos académicos que en el ámbito universitario se difunden y en los
+que alguna vez he participado, donde los papelitos cuentan y donde
+(casi) todo se vuelve una ficción impulsada por la inercia y la
+necesidad de "publicar" (no importa mucho que), para mantener la beca,
+el statu quo y el viático.</p>
+<p>En PyCamp no se piden papeles ni se aplauden corbatas, la gente se llama
+por el sobrenombre y no por el título, se admira el conocimiento pero
+más se festeja su colectivización, y eso lo saben (y lo disfrutan) los
+picantes y los tiernitos.</p>
+<p>Cuanta falta le hace a la universidad visiones y experiencias como esta.</p>
 </div>
         <p>
         
-            <a href="posts/variar-o-no-variar-esa-es-la.html#disqus_thread">Comments</a>
+            <a href="posts/apuntes-del-pycamp-2011.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/el-quijote-del-software-libre.html">El Quijote del Software Libre</a>
+        <small>  
+             <span class="timeago" title="2011-03-21 09:04:48+00:00">2011-03-21 09:04:48+00:00</span>
+        </small></h1>
+        <p>Durante los ultimos años de facultad me he ganado ciertos apodos,
+algunos más buena leche que otros, relacionados con mi postura y
+militancia respecto al Software Libre.</p>
+<p>Esta postura se mezcla (se complementa) con otras posiciones políticas
+que he manifestado y defendido reiteradamente con profesores y
+compañeros, que son intrínsecas a la formación y el perfil de ingenier@s
+que se forma en la universidad pública, con la que suelo disentir.
+Muchas de esas discusiones, <a class="reference external" href="http://www.textosypretextos.com.ar/Universo-universitario">están publicadas en mi otro
+blog</a></p>
+<p>La semana pasada una amiga comentó un mensaje que dejé en Facebook
+avisando que había <a class="reference external" href="posts/blog/article/referenciar-figuras-por-numero-en">terminado la
+tésis</a>.</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L498xH351/2011-03-21-123747_498x351_scrot-cb8bb.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 19)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Inspirado en ese comentario de Lu, Nati (mi novia) me pintó esta remera
+como regalo de cumpleaños (que es mañana).</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH680/193004_10150430921700058_879055057_17417662_1519731_o-2c7b4.jpg"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 25)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Claro que yo no salgo muy favorecido (cansancio y flash no hacen buen
+equipo). Pero la remera está buenísima. Acá el detalle:</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH684/191578_10150430923120058_879055057_17417703_2608242_o-a7d8d.jpg"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 31)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>En la espalda podría ir esta
+<a class="reference external" href="http://pages.citebite.com/g4b5a9l5wwxv">cita</a> :</p>
+<blockquote>
+<p>"La libertad, Sancho, es uno de los más preciosos dones que a los
+hombres dieron los cielos; con ella no pueden igualarse los tesoros
+que encierra la tierra ni el mar encubre; por la libertad, así como
+por la honra, se puede y debe aventurar la vida, y, por el
+contrario, el cautiverio es el mayor mal que puede venir a los
+hombres."</p>
+<p><strong>Don Quijote, capítulo LVIII, segunda parte</strong></p>
+</blockquote>
+        <p>
+        
+            <a href="posts/el-quijote-del-software-libre.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/referenciar-figuras-por-numero-en.html">Referenciar figuras por número en Sphinx / Latex</a>
+        <small>  
+             <span class="timeago" title="2011-03-19 23:13:01+00:00">2011-03-19 23:13:01+00:00</span>
+        </small></h1>
+        <p>El viernes presenté el draft para la revisión final de mi <a class="reference external" href="posts/blog/article/preparados-listos-en-un-rato">proyecto
+integrador</a> (a.k.a. tesis).
+Tentativamente (¡a esta altura y todavía no es seguro!) se titula
+<em>"Software para graficación de digramas termodinámicos"</em> y se puede
+chusmear
+<a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">acá</a>.</p>
+<p>Como verán, lo hice con <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>, generando
+LaTeX y compilando luego a PDF. Estoy más que satisfecho del resultado.</p>
+<p>Sin embargo, un problema de Sphinx/Docsutils (y esto viene a ser el
+verdadero tema de este post) es es que si bien están llenos de pulentez
+y se la bancan mil, no están "pensados" para escribir tesis sino
+documentación/manuales de software. Esto se nota, sobre todo, en la
+subutilización de recursos de LaTeX a los que "no se accede" desde
+restructuredText.</p>
+<p>El caso paradigmático es la referenciación de figuras. En las versiones
+"imprimibles" que se generan con LaTeX suele pasar que una figura no
+quepa en una página y el compilador, al medir y darse cuenta, la manda a
+una página siguiente. Esto hace indispensable ser preciso en la
+referencia ya que un mensaje como <em>"en la siguiente figura"</em> puede estar
+seguido de toda una página sin figuras.</p>
+<p>Para hacer una referenciar una figura en Sphinx hay que declarar un
+target</p>
+<pre class="literal-block">
+.. _ok:
+
+.. figure:: ok.png
+
+   Una imágen
+</pre>
+<p>y luego usar el rol <tt class="docutils literal">:ref:</tt>. Por ejemplo:</p>
+<pre class="literal-block">
+Referenciando la figura :ref:`ok` se evidencia el problema.
+</pre>
+<p>El problema es que el LaTeX generado por Sphinx no hace exáctamente una
+referencia a la figura, sino un hipervínculo (hyperref). Como texto de
+ese hipevinculo usa el epígrafe de la figura, lo cual es horrible e
+inútil para textos cientificos/académicos. El issue, <a class="reference external" href="https://bitbucket.org/birkenfeld/sphinx/issue/76/proper-references-to-figures-code-tables">está reportado
+hace más de 2
+años</a>.</p>
+<p>Con el estilo gronchohacker que se me está volviendo costumbre, hice
+unos cambiecitos para que funcaran las referencias como tienen que ser,
+por número. La directiva es particularmente fácil en LaTeX: <tt class="docutils literal">~\ref{}</tt>.
+En concreto, el "gronchohackeo" se trata de cambiar
+<tt class="docutils literal"><span class="pre">{\hyperref[label]{\emph{epigrafe}}}</span></tt> por <tt class="docutils literal">~\ref{label}</tt>.</p>
+<p>Para garantizar compatibilidad con los que les gusta que el título de la
+referencia sea el epígrafe y no el número, lo hice opcional: toda
+referencia a un destino con sufijo <tt class="docutils literal"><span class="pre">-num</span></tt> usa una referencia númerica
+en vez de un hipervinculo con texto.</p>
+<p>Acá el patch (para la versión 1.1 —en desarrollo— )</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/sphinx-issue76.txt">|image1|</a></td>
+</tr><tr><td>Diff Parche para el Issue #76 de Sphinx</td>
+</tr></tbody></table><p>Y acá un ejemplo del problema y la gronchosolución</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/prueba.pdf">|image3|</a></td>
+</tr></tbody></table><p>El código del ejemplo es este:</p>
+<pre class="literal-block">
+Ejemplo
+*******
+
+Referenciando la figura :ref:`ok` se evidencia el problema. Aplicando mi
+rústico parche en cambio, se puede referenciar a la Figura :ref:`ok-num`.
+
+.. _ok:
+
+.. figure:: ok.png
+
+   Una imágen
+
+.. _ok-num:
+
+.. figure:: ok.png
+</pre>
+        <p>
+        
+            <a href="posts/referenciar-figuras-por-numero-en.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/yendo-a-las-fuentes-de-cuevana-tv.html">Yendo a las fuentes de cuevana.tv</a>
+        <small>  
+             <span class="timeago" title="2011-02-28 12:24:40+00:00">2011-02-28 12:24:40+00:00</span>
+        </small></h1>
+        <p>** UPDATE ** : la ultima version funciona con el nuevo sitio de cuevana.</p>
+<p>Dos cosas me gustan mucho últimamente:
+<a class="reference external" href="http://www.cuevana.tv">cuevana.tv</a> y
+<a class="reference external" href="http://www.greasespot.net/">GreaseMonkey</a></p>
+<p>Cuevana es un sitio para ver series y películas online, en streaming de
+alta calidad, con subtitulos y todo. El truco está en un plugincito que
+hace instalar en el navegador que permite reproducir (en un reproductor
+basado en flash comunacho) un archivo que se descarga de megaupload,
+filefactory o sitios por el estilo. El ancho de banda lo ponen otros, la
+alegría es toda de cuevana (y nuestra). Todos unos pillos.</p>
+<p>Lamentablemente, mi conexión no se banca un streaming de alta calidad
+(como los videos de cuevana) sin bufferear (?) y entonces pierde sentido
+(o gana mala sangre) intentar ver directamente "online".</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 21); <em><a href="posts/yendo-a-las-fuentes-de-cuevana-tv.html#id1">backlink</a></em></p>
+Duplicate explicit target name: "greasemonkey".</div>
+<p>Y acá entra <a class="reference external" href="http://es.wikipedia.org/wiki/Greasemonkey">Greasemonkey</a>,
+que es una extensión para Firefox (y otros navegadores) que permite
+agregar scripts (en javascript) para modificar localmente las páginas
+que indiquemos.</p>
+<p>Con esta herramienta, programadores voluntarios crean <a class="reference external" href="http://userscripts.org/">cientos de
+scripts</a> para mejorar la estética o
+funcionalidad de muchos sitios, conocidos o no.</p>
+<p>Mi <a class="reference external" href="http://userscripts.org/scripts/show/98017">primer aporte</a> a la
+"comunidad Greasemonkera" (y cuevanera) intenta subsanar la
+discriminación que el streaming de alta calidad tiene con los que
+tenemos un ancho de banda no muy ancho.</p>
+<p>Una vez
+<a class="reference external" href="http://userscripts.org/scripts/source/98017.user.js">instalado</a> el
+script muestra links a la fuente original de descarga, justo abajo de
+los iconos de selección.</p>
+<div class="figure align-center">
+<img alt="" src="posts/local/cache-vignettes/L510xH298/2011-02-28-011028_584x341_scrot-37636.png"></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 40)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Así podemos bajar los videos y verlos offline.</p>
+<p>Como complemento, se pueden copiar y pegar los links en un gestor de
+descargas como <a class="reference external" href="http://www.tucaneando.com/">Tucan</a></p>
+<p>[STRIKEOUT:Respecto a los subtítulos, todavía soy principiante con
+javascript, pero espero poder obtener el link a los subtitulos en
+futuras versiones. ]</p>
+        <p>
+        
+            <a href="posts/yendo-a-las-fuentes-de-cuevana-tv.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/covertura-de-los-oscars-2011.html">Covertura de los Oscars 2011</a>
+        <small>  
+             <span class="timeago" title="2011-02-24 15:05:21+00:00">2011-02-24 15:05:21+00:00</span>
+        </small></h1>
+        <p>Anoche, en un arrebato procrastinador, armé <a class="reference external" href="http://oscars-awards.com">Oscars
+Awards</a> y su clon <a class="reference external" href="http://oscars-winners.com">Oscars
+Winners</a> .</p>
+<p>Aprovechando una promo de
+<a class="reference external" href="http://www.netfirms.com/domain-names/">netfirms.com</a> y con un poco de
+suerte, consegui los dos dominios por u$s 9 que pagué con PayPal. Vuelve
+la burbuja .com ?</p>
+<p>El "streaming de tweets" está basado en
+<a class="reference external" href="http://juitter.com/">juitter</a>, pequeñamente hackeado.</p>
+        <p>
+        
+            <a href="posts/covertura-de-los-oscars-2011.html#disqus_thread">Comments</a>
         
         </p></div>
     
     <div>
 <ul class="pager"><li class="previous">
-        <a href="index-5.html">← Posts posteriores</a>
+        <a href="index-7.html">← Posts posteriores</a>
     </li>
   
   
     <li class="next">
-        <a href="index-7.html">Posts anteriores  →</a>
+        <a href="index-5.html">Posts anteriores  →</a>
     </li>
   
 </ul></div>

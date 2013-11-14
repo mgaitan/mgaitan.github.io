@@ -2,6 +2,19 @@
 .. slug: charlas
 .. date: 2012/11/19 00:00:00
 
+La pythonicidad al palo
+------------------------
+
+	¿Qué significa que un código sea "pythónico"?
+	Una charla sobre python idiomático: características de este lenguaje para expresar de forma simple, elegante y potente.
+
+:diapositivas: http://mgaitan.github.com/pythonicidad/
+:repo: http://github.com/mgaitan/pythonicidad/
+:evento: `PyCon Argentina 2013 <http://ar.pycon.org/2013>`_
+:fecha: Viernes 25 de octubre de 2013
+:lugar: Rosario, Argentina
+
+
 
 MyHDL, de Python al silicio
 ---------------------------
@@ -104,22 +117,22 @@ Pyquery: (des)trozemos la web
 :repo: https://github.com/nqnwebs/pyquery-lightning-talk
 :evento: `PyCon Argentina 2011 <http://ar.pycon.org/2011>`_
 :fecha: Viernes 23 de septiembre de 2011
-:lugar: Universidad Nacional del Noroeste de la Provincia de Buenos Aires, 
+:lugar: Universidad Nacional del Noroeste de la Provincia de Buenos Aires,
         Junín, Prov. de Buenos Aires
 
 
 Python ❤ Ingeniería
 -------------------
 
-    Taller sobre Python de 6 horas orientado a estudiantes y profesores de Ingenierías 
+    Taller sobre Python de 6 horas orientado a estudiantes y profesores de Ingenierías
     (con conocimientos en algún lenguaje de programación de alto nivel).
-    
-    En el primer encuentro se recorren los tipos y estructuras de datos incorporados 
-    (tipos numéricos, cadenas, listas, tuplas, conjuntos, diccionarios), 
-    el manejo de archivos, las estructuras de control de flujo (if, for, while) 
+
+    En el primer encuentro se recorren los tipos y estructuras de datos incorporados
+    (tipos numéricos, cadenas, listas, tuplas, conjuntos, diccionarios),
+    el manejo de archivos, las estructuras de control de flujo (if, for, while)
     y de código (funciones, generadores, clases).
-    
-    El segundo encuentro hace un repaso, brinda una somera introducción 
+
+    El segundo encuentro hace un repaso, brinda una somera introducción
     de numpy y matplotlib y se enfoca en distintos módulos útiles de la biblioteca estándar.
 
 :evento: Curso de capacitación para profesores y estudiantes avanzados de FCEFyN, UNC
@@ -135,7 +148,7 @@ IPython, la interactividad al poder
     Daremos un recorrido por sus funcionalidades más importante: introspección,
     logging, historial, accesos al sistema, etc.
 
-    Es una presentación interactiva que se **ejecuta** en IPython. 
+    Es una presentación interactiva que se **ejecuta** en IPython.
     Ver instrucciones en ``README.rst``
 
 :repositorio: https://github.com/nqnwebs/IPython-interactive-talk/
@@ -146,7 +159,7 @@ IPython, la interactividad al poder
 Python a los bifes: casos reales de aplicación en Ingeniería
 -------------------------------------------------------------
 
-    Basta de hablar y hablar de lo bueno que está Python: 
+    Basta de hablar y hablar de lo bueno que está Python:
     en la cancha se ven los pingos. Mostraré
     problemas reales de la carrera resueltos con este poderoso (y
     simple) lenguaje. Trabajos de Sistemas de Computación, Sistemas
@@ -184,9 +197,9 @@ Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa
 Utilizacion de Control de Versiones con Subversion
 ---------------------------------------------------
 
-    Subversion es un sistema de control de versiones que ha reemplazado 
-    al caduco CVS. El énfasis de la charla estará puesto en la importancia 
-    y utilidad de un sistema de control de versiones, 
+    Subversion es un sistema de control de versiones que ha reemplazado
+    al caduco CVS. El énfasis de la charla estará puesto en la importancia
+    y utilidad de un sistema de control de versiones,
     y se propone Subversion como una potente herramienta,
     libre, segura y de fácil uso. Se dará una demo con distintos
     clientes, tanto en GNU/Linux como en Windows.

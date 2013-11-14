@@ -43,695 +43,490 @@
             
     
         <div class="postbox">
-        <h1><a href="posts/una-mejor-manera-de-controlar-los.html">Una mejor manera de controlar los atributos en SPIP</a>
+        <h1><a href="posts/bienvenidos-al-tren.html">Bievenidos al tren</a>
         <small>  
-             <span class="timeago" title="2009-03-12 06:29:35">2009-03-12 06:29:35</span>
+             <span class="timeago" title="2012-10-11 01:15:00+00:00">2012-10-11 01:15:00+00:00</span>
         </small></h1>
-        <p>Muchas balizas SPIP generan código HTML como salida (las balizas
-#LOGO_* y los filtros |image_* son los más notorios) y
-frecuentemente necesitamos o queremos modificar este código autogenerado
-en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
-(<a class="reference external" href="http://www.spip.net/en_article2465.html#inserer_attribut">inserer_attribut</a>
-para insertar atributos y
-<a class="reference external" href="http://www.spip.net/en_article2465.html#extraire_attribut">extraire_attribut</a>
-para extraer el valor de uno generado) pero son particularmente largos y
-tediosos de tipear.</p>
-<p>Más allá de eso, aunque uso estos filtros bastantes seguido para
-implementar cosas como galerías de imágenes, todavía pienso lo difícil
-que es escribir las palabras en francés sin equivocarme. Por suerte, un
-pequeño wrapper, puede suavizar este inconveniente.</p>
-<p>Cuando se trata de acceder y modificar atributos de valores de atributos
-nada, en mi opinión, llega tan lejos como <a class="reference external" href="http://docs.jquery.com/Attributes">la API de atributos de
-jQuery</a>. El <a class="reference external" href="http://docs.jquery.com/Attributes/attr">método de jQuery
-*attr*</a> por sí solo, permite
-leer y escribir el valor de cualquier atributo en cualquier nodo. Recibe
-uno o dos parámetros, el nombre del atributo, y opcionalmente, el valor.</p>
-<p>Si sólo se especifica el nombre, entonces <em>attr</em> extrae y devuelve el
-valor de ese atributo. Si ambos parámetros son pasados al método,
-entonces attr modifica el objeto configurando el atributo en cuestión
-con el valor dado. Es jerga de Programación Orientada a Objetos, es un
-estilo de interfaz "polimórfica" — cuando un solo método tiene dos
-comportamientos complementarios que son distinguidos por el número y/o
-el tipo de los argumentos dados — que está por todos lados en jQuery y
-es una de las razones por las que este framework es tan conciso y
-productivo.</p>
-<p>Considerandola como la mejor estructura para este tipo de interfaces que
-conozco (y también, que uso diariamente), decidí ue mi wrapper tendría
-que copiarlo. Así fue como el <em>attr</em> nació.</p>
-<p>Como el método de jQuery, el filtro <em>attr</em> de SPIP toma uno o dos
-parámetros (y un objeto "implícito", pero lo ignoraremos por el
-momento). Si sólo pasamos uno, este lo remite como entrada a
-<em>extraire_attribut</em> para obtener el valor correspondiente. Si se lo
-llama con dos parámetros, entonces llama a <em>inserer_attribut</em> para
-modificar el objeto.</p>
-<p>Como la idea, el código es razonablemente sencillo; la únca</p>
-<p>Like the idea, the code is reasonably straightforward; quizas lo único
-un poco inusual el uso de
-<a class="reference external" href="http://php.net/func_get_args">func_get_args</a> para obtener el
-conjunto de los argumentos pasados a la función llamada. Con ese array
-podermos usar <a class="reference external" href="http://php.net/count">count</a> para saber cuantos
-argumentos se pasaron y decidir qué se debe hacer. Esto es más seguro
-que especificar y evaluar valores por defecto (FALSE o NULL, por
-ejemplo) porque algunos usuarios genuinamente podrían querer usar esos
-valores (supongamos que NULL signifique eliminar el atributo en una
-futura versión).</p>
+        <p>Hola!</p>
+<p>Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
+en <a class="reference external" href="http://nqnwebs.com/blog">http://nqnwebs.com/blog</a> y utilizaba <a class="reference external" href="http://www.spip.net">SPIP</a>. Por diversas razones
+que explicaré más adelante, estoy migrandolo a <a class="reference external" href="http://nikola.ralsina.com.ar">Nikola</a> utilizando
+<a class="reference external" href="http://github.com">Github</a> como plataforma de versionado y hosting.</p>
+<p>Espero que pronto esto esté más bonito y con contenido. También que la
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.</p>
+        <p>
+        
+            <a href="posts/bienvenidos-al-tren.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/de-mercurial-a-git-limpieza.html">De mercurial a git, limpieza mediante</a>
+        <small>  
+             <span class="timeago" title="2012-07-02 17:39:11+00:00">2012-07-02 17:39:11+00:00</span>
+        </small></h1>
+        <p>Cuando decidí dar el salto desde Subversion a un DVCS estuve leyendo
+muchos posts comparativos entre las dos opciones más relevantes, Git y
+Mercurial. Había que elegir entre <a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/">Mc Gyver o James
+Bond</a>
+decía uno, entre <a class="reference external" href="http://www.ericsink.com/entries/hg_denzel.html">Denzel Washington y Wesley
+Snipes</a> y la
+comparación jocosa entre estos dos grandes softwares se volvió una
+especie de meme tácito.</p>
+<p>Sabía que, a fin de cuentas, tenía que probarlos y ver cual encajaba
+mejor para mis necesidades de "solo developer". En el medio leí <a class="reference external" href="http://hginit.com/">Hg
+Init</a> del gran divulgador Joel Spolsky y, víctima
+de semejante labia, me sumergí para ese lado.</p>
+<p>Mi flujo de trabajo era bastante básico pero suficiente y superador de
+subvesion. Comparado con lo que había probado de Git era mucho menos
+verbósico (no podía entender la necesidad de Git hacer <tt class="docutils literal">add</tt> cada vez
+que quería commitear un archivo modificado) y
+<a class="reference external" href="http://bitbucket.org">Bitbucket</a> daba no sólo hospedaje gratuito para
+repositorios públicos sino también para potenciales desarrollos privados
+(cosa que GitHub, su equivalente — siendo benévolo con bitbucket — para
+Git, no daba).</p>
+<p>Con el tiempo empecé a compatir <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks">algunos
+proyectitos</a> con otros
+desarrolladores y mi inexperiencia en Mercurial me empezó a jugar en
+contra. Y justo cuando necesitaba ponerme a aprender más profundamente
+Hg, entre a laburar, muy a gusto, en
+<a class="reference external" href="http://machinalis.com">Machinalis</a> (qué vago, nunca conté nada por
+acá) donde usamos Git para el control de versiones de los proyectos,
+implementando <a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/">esta política de ramificación y
+mezcla</a>.</p>
+<p>Resultó entonces que en poquito tiempo ya sabía mucho más de Git que de
+Mercurial (con la ventaja de tenerlo a Daniel Moisset cerca para apagar
+algunos incendios que encendí las primeras semanas).</p>
+<p>Para más señales, Atlassian, la empresa detras de Bitbucket y principal
+referente de Mercurial (junto con Selenic, la creadora), comenzó a
+ofrecer Git (sin descartar mercurial) como sistema DVCS (comiéndose
+alguna que otra gastada porque alguna vez comunicó una noticia parecida
+como broma del dia de los inocentes).</p>
+<p>Asi que llegó el dia que decidí mudar un proyecto en Mercurial a Git.
+Atenti: las razones no son técnicas. No tengo suficiente conocimiento de
+Mercurial (ni de Git) para decir que uno es mejor que el otro por tales
+razones. Sólo es *mi experiencia*, que vino un poco por obligación. Y
+sí, también, siguiendo un poco a la manada. Proyectos de la envergadura
+de Django han migrado a Git (y, particularmente, a GitHub)</p>
+<div class="section" id="la-limpieza">
+<h2>La limpieza</h2>
+<p>Soy de esos que se mudan seguido. "¿Asi que si te renuevo contrato me
+aumentas 30 % el alquiler e igual te tengo que pagar comisión sin que
+hagas nada? ¡Andá a cagar!" puedo imaginarme dialogando con algun agente
+inmobiliario.</p>
+<p>Esta no era la excepción y debía mudar un repositorio mercurial que a su
+vez había sido mudado (en realidad, exportado desde el último commit, y
+arrancando de 0) desde
+<a class="reference external" href="http://code.google.com/p/gpec2010/">subversion</a>.</p>
+<p>El detalle es que el repositorio original, y por ende el nuevo en
+mercurial, tenia un montón de datos de documentación que era,
+basicamente, todos los fuentes y muchos de los archivos generados del
+reporte escrito de mi tesis.</p>
+<p>El primer changeset en el flamante mercurial consistió en borrar todo
+esa información innecesaria, pero que seguía allí, en el historial (uno
+110Mb de datos que no necesitaba).</p>
+<p>Así que ya que ahora iba a mudarme de nuevo, queria tirar a la basura
+todas esas cajas de papeles que había metido en un caja y, si bien no la
+veía, me ocupaban el placard.</p>
+<p>Despues de darle vueltas, <a class="reference external" href="http://stackoverflow.com/questions/2684898/mercurial-remove-history#8819813">encontré una
+punta</a>
+usando la extensión <a class="reference external" href="http://mercurial.selenic.com/wiki/ConvertExtension#Converting_from_Mercurial">hg convert para obtener un subconjunto de repo
+original</a>,
+por ejemplo, partiendo de un determinado cambio.</p>
+<ol class="arabic"><li><p class="first">Primero, activar la extensión editando <tt class="docutils literal"><span class="pre">~/.hgrc</span></tt>:</p>
 <pre class="literal-block">
-include_spip("inc/filtres");
+[extensions]
+convert =
+</pre>
+</li>
+<li><p class="first">¡Tirar las cajas del placard!</p>
+<pre class="literal-block">
+$ hg convert --config convert.hg.startrev=1 repo_hg_orig/ repo_hg_liviano/
+</pre>
+</li>
+</ol><p>En mi caso yo queria todo desde la revision 1. <strong>Atenti</strong>: como explica,
+esto genera un repo totalmente nuevo, con ids distintos para los
+changesets, de modo que no se puede mantener "sincronizados" ambos con
+el mismo cambio (al menos no de manera directa).</p>
+</div>
+<div class="section" id="la-mudanza">
+<h2>La mudanza</h2>
+<p>Contra todo pronóstico fruto de mi prejuicio y desidia, migrar a git fue
+extremadamente fácil usando
+<a class="reference external" href="http://repo.or.cz/w/fast-export.git">hg-fast-export</a>.</p>
+<ol class="arabic"><li><p class="first">Obtener los scripts</p>
+<pre class="literal-block">
+$ git clone git://repo.or.cz/fast-export.git
+</pre>
+</li>
+<li><p class="first">Convertir!</p>
+<pre class="literal-block">
+$ mkdir repo_git
+$ cd repo_git
+$ git init
+$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force
+</pre>
+</li>
+</ol><p>¡Charánnnn...!</p>
+<p>El flag <tt class="docutils literal"><span class="pre">--force</span></tt> era necesario en mi caso porque, como explica el
+<a class="reference external" href="http://repo.or.cz/w/fast-export.git/blob_plain/master:/hg-fast-export.txt">readme.txt</a>
+<em>"hg-fast-export supports multiple branches but only named branches with
+exaclty one head each..."</em>.</p>
+<p>El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
+original que sin perder la historia útil.</p>
+<p>Parafraseando a Lito, <em>si la historia la escriben los que ganan</em> ...
+¿ganamos ?</p>
+<iframe width="425" height="344" src="http://www.youtube.com/embed/3mkhn6oiqCM?rel=0&amp;hd=1&amp;wmode=transparent"></iframe></div>
+        <p>
+        
+            <a href="posts/de-mercurial-a-git-limpieza.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/como-volver-a-compartir-desde.html">Cómo volver a compartir desde Google Reader</a>
+        <small>  
+             <span class="timeago" title="2012-01-11 21:37:21+00:00">2012-01-11 21:37:21+00:00</span>
+        </small></h1>
+        <div class="important">
+<p class="first admonition-title">Important</p>
+<p class="last">El pipe tiene un problema con las fechas y quedó deactualizado
+cuando cambió en el html de G+. En su defecto hice este pequeño
+<a class="reference external" href="https://gist.github.com/2886591">scrapper</a> que es lo que uso
+en <a class="reference external" href="http://www.textospretextos.com.ar">Textos y Pretextos</a></p>
+</div>
+<p>Desde hace muchísimo tengo en <a class="reference external" href="http://www.textospretextos.com.ar">mi otro
+blog</a> una sección que se llama <em>"De
+por ahí, cosas que me parecieron interesantes"</em>. Es un feed de links a
+contenidos de toda índole (política, literatura, cine, fotografía,
+deportes, programación: intereses anchos) con un brevisimo extracto como
+descripción que fui alimentando de diversas formas a lo largo del
+tiempo: usé
+<a class="reference external" href="http://delicious.com/nqnwebs,%20use%20%20%5Besto%20%20-%3Ehttp://sourceforge.net/projects/linkwalla/">delicious</a>,
+usé mi
+<a class="reference external" href="http://twitter.com/nqnwebs).%20Pero%20cuando%20%5BGoogle%20Reader-%3Ehttp://reader.google.com">twitter</a>
+incorporó la opción de "Compartir" se convirtió en la manera por
+defecto: si algo me gustaba, un click en compartir y listo. Eso permitia
+que otros usuarios de Reader que me "seguian" pudieran ver mis posts
+compartidos pero a la vez generaba un feed rss que alimentaba la sección
+de mi blog.</p>
+<p>Con la aparición de Google+ aquella simple y muy usada funcionalidad se
+vió desplazada por el botón "+1" y por un "compartir" engañoso que sólo
+permite compartir en Google+</p>
+<p>Para colmo, cuando uno hace "+1" en algun contenido (dentro de Google
+Reader o en cualquier lado donde esté el botón) se lista en una <a class="reference external" href="https://plus.google.com/102449284377784435533/plusones/p/pub">página
+publica</a>
+pero que <strong>no tiene feed RSS</strong>! . Larry Page,
+(<a class="reference external" href="https://twitter.com/#!/nqnwebs/status/154772127139102720">doblemente</a>)
+te odio.</p>
+<div class="section" id="frustracion-colectiva">
+<h2>Frustración colectiva</h2>
+<p>La bronca por los cambios en Reader no es sólo mia, sino que generó una
+<a class="reference external" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&amp;formkey=dE16SFVla3JFZ1lwTkxGRWN2SkZtb2c6MA#gid=0">petición</a>
+firmada por más de
+<a class="reference external" href="http://www.bdkeller.com/2011/10/save-google-reader/">13000</a> usuarios
+que manifiestan que "algunos ven estos cambios como un intento errado
+para forzarnos a usar Google Plus, pero nosotros amamos la utilidad,
+simplicidad y funcionalidades sociales limitadas que ofrece Google
+Reader".</p>
+<p>Mientras tanto, muchos
+(<a class="reference external" href="http://www.theatlanticwire.com/technology/2011/10/how-survive-switch-google-reader-google/44069/">1</a>,
+<a class="reference external" href="https://github.com/jtwebman/GooglePlusToRSSFeed">2</a>,
+<a class="reference external" href="http://plus-one-feed-generator.appspot.com/">3</a>) intentan parchar el
+atropello.</p>
+</div>
+<div class="section" id="mi-solucion">
+<h2>Mi solución</h2>
+<p>"¿Así que no me dejás compartir donde yo quiera, el algoritmo de tu
+madre!?" vociferé, y no sin premeditación agarré <a class="reference external" href="posts/blog/article/yahoo-pipes-como-por-un-tubo">Yahoo!
+Pipes</a> (una genialidad, hay
+que decirlo) para scrappearlos a puro golpe de mouse y sin salir del
+navegador. El resultado fue <a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.info?_id=770fc166fd07a0f6e67fe63f513b05dc">este
+pipe</a>
+del que se puede obtener, por ejemplo, un <a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;_render=rss&amp;google_plus_id=102449284377784435533">feed RSS 2.0 de mis
++1s</a>
+. Podés obtener el feed de otros usuarios así:</p>
+<p><tt class="docutils literal"><span class="pre">http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;_render=rss&amp;google_plus_id=[GOOGLE_PLUS_ID]</span></tt>
+donde <tt class="docutils literal">[GOOGLE_PLUS_ID]</tt> es el numero de identificación del usuario en
+cuestión.</p>
+<div class="figure align-center">
+<img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"></div>
+</div>
+        <p>
+        
+            <a href="posts/como-volver-a-compartir-desde.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/lo-que-hace-un-geek-cuando-ama.html">Lo que hace un geek cuando ama</a>
+        <small>  
+             <span class="timeago" title="2011-11-11 20:43:47+00:00">2011-11-11 20:43:47+00:00</span>
+        </small></h1>
+        <p>Mi computadora de escritorio, la primera que compré trabajando como
+desarrollador de software, es del 2005. La "morocha", una AMD64 con
+placa madre <a class="reference external" href="http://www.asus.com/Motherboards/AMD_Socket_754/K8N">Asus
+K8N</a> que se la
+sigue bancando.</p>
+<img alt="/images/1110133923_20ebd-30987.jpg" class="align-center" src="images/1110133923_20ebd-30987.jpg"><p>Aquel año me enamoré, no por primera vez, pero sí mucho. Aunque resultó
+una <a class="reference external" href="http://www.textosypretextos.com.ar/Hurgando-en-el-Gmail">historia
+complicada</a>,
+es lindo recordar cuanto uno es capaz de amar y ser amado. Y reirse,
+también, de cuán estúpido se puede ser en ese estado.</p>
+<div class="section" id="el-tatuaje-digital">
+<h2>El tatuaje digital</h2>
+<p>Hay <a class="reference external" href="http://www.ascodevida.com/amor/42152">gestos de amor</a> que no
+miden consecuencias y son dificiles de comprender. Yo, por ejemplo,
+decidí "hackear" la BIOS de mi maquina recién comprada y poner una foto
+de aquella mujer amada como pantalla de splash, esa que se muestra apenas
+se enciende la computadora, mucho antes de cargar cualquier sistema
+operativo.</p>
+<p>Si bien por entonces ya usaba linux, para hacer esto usé una aplicación
+oficial de Asus que venía en el Windows instalado, que pronto, a falta
+de espacio en disco y necesidad, desapareció.</p>
+<p>La historia siguió, por supuesto. Aquel amor terminó pero esa imagen
+quedó allí, tatuada. Mientras vivía solo mucho no me importaba, quizas
+porque reiniciaba muy poco la computadora, quizas porque uno naturaliza
+una cicatriz hasta volverse indiferente.</p>
+<p>Cuando un amor nuevo llegó y más tarde la convivencia, encender la
+Morocha cada mañana empezó a hacerse un momento gracioso pero incómodo.
+Para colmo, aun estando dispuesto a reinstalar Windows con este único
+propósito, aquel programita de Asus se me hizo inconseguible .</p>
+<p>Hasta que hoy, seis años despues, me animé a la cirugía.</p>
+</div>
+<div class="section" id="si-no-podes-cambiar-el-tatuaje-cambia-de-piel">
+<h2>Si no podés cambiar el tatuaje, cambiá de piel</h2>
+<p>Encontré un <a class="reference external" href="http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip">firmware
+actualizado</a>
+para la BIOS. Aunque no hubiera problemas con la que tenía, actualizarlo
+traería el splash original de Asus.</p>
+<p>El problema, felación habitual a Microsoft de las fabricantes de
+hardware, es que <a class="reference external" href="http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip">la utilidad para actualizar
+BIOS</a> es para
+D.O.S.. WTF!</p>
+<p>La
+<a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html">solución</a>
+es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a></p>
+<pre class="code bash literal-block">
+<span class="c"># obtener una imagen booteable de freeDOS y montarla en un directorio
+</span>wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
+gunzip FDOEM.144.gz
+mkdir /tmp/floppy
+mount -t vfat -o loop FDOEM.144 /tmp/floppy
 
-/**
- * The `attr` function allows the user to get and set the attributes of an HTML tag.
- * It is intended to be used as a SPIP filter and depends on existing SPIP functionality.
- *
- * @param $tag
- *     The HTML code.
- * @param $name
- *     The name of the attribute.
- * @param $val...
- *     The new value for the attribute $nom. Optional.
- * @return
- *     If $val was given, the code for tag with $name=$val
- *     Otherwise, the value for the $name attribute in $tag.
- */
-function attr($tag, $name){
-        $args = func_get_args();
+<span class="c"># obtener la herramienta para actualizar el bios y la imagen, y moverlos
+</span>wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
+unzip AFUDOS211.zip
+mv AFUDOS.exe /tmp/floppy
+wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
+unzip K8n1011.zip
+mv 1011.rom /tmp/floppy
 
-        if (count($args) &gt; 2) {
-                // SET
-                return  inserer_attribut($tag, $name, $args[2]);
-        } else {
-                // GET
-                return extraire_attribut($tag, $name);
-        }
-}
+<span class="c"># desmontar
+</span>umount /tmp/floppy
+
+<span class="c"># crear una ISO y grabar a un disco virgen
+# (tambien se podría grabar a un pendrive)
+</span>mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
+cdrecord -v bootcd.iso
 </pre>
-<p>Simplemente copia el código en mes_fonctions.php (Mira "Agregar
-funciones propias" en la documentación sobre <a class="reference external" href="posts/Agregar%20funciones%20propias">filtros de
-spip</a>) y luego usa el filtro attr en
-tus esqueletos:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 94)</p>
-Literal block expected; none found.</div>
-<p>Hay algunos cambios que se puede hacer a esta función: pasar $args
-directamente a inserer_attribut y extraire_attribut en vez de las
-variables individuales, agregar un parámetro $value=FALSE que sólo sirva
-para la claridad de la documentación , y el mencionado, eliminar
-atributos cuando se pase por ejemplo NULL como parámetro.</p>
-        <p>
-        
-            <a href="posts/una-mejor-manera-de-controlar-los.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/personalizar-el-texto-de.html">Personalizar el texto de #INTRODUCTION</a>
-        <small>  
-             <span class="timeago" title="2009-03-10 10:38:44">2009-03-10 10:38:44</span>
-        </small></h1>
-        <p>Desde la versión 1.4, SPIP tiene una baliza calculada <tt class="docutils literal">#INTRODUCTION</tt>
-que como su nombre indica, sirve para presentar una introducción al
-artículo completo.</p>
-<p>En la <a class="reference external" href="http://www.spip.net/es_article116.html">documentación explica</a></p>
-<blockquote>
-#INTRODUCTION: [SPIP 1.4] si el artículo contiene una descripción,
-esta se utiliza aquí; si no, SPIP muestra los 600 primeros
-caracteres del inicio del artículo (del epígrafe, y luego del
-texto).</blockquote>
-<p>En la versión 1.92 se incorporó otro atajo para indicar el largo del
-texto mostrado (sobrecargando los 600 caracteres por omisión).</p>
-<p>Así, <a href="posts/personalizar-el-texto-de.html#id1"><span class="problematic" id="id2">``</span></a>#INTRODUCTION{150} `` mostrará la descripción, si existe, o los
-primeros 150 caracteres del epigrafe y/o el texto.</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 15); <em><a href="posts/personalizar-el-texto-de.html#id2">backlink</a></em></p>
-Inline literal start-string without end-string.</div>
-<p>Pero con la versión 2 llegó por fin un control más profundo para los
-redactores. Es posible definir cual es el texto que se mostrará con
-#INTRODUCTION encerrandolo entre la etiquetas <tt class="docutils literal"><span class="pre">&lt;intro&gt;...&lt;/intro&gt;</span></tt> en
-el cuerpo del artículo.
-[<a class="reference external" href="blog/article/personalizar-el-texto-de#nb1">1</a>]</p>
-<p>Así podemos redactar nuestro artículo con la siguiente estructura:</p>
+<p>Reinciar, bootear el CD de FreeDOS y ejecutar:</p>
 <pre class="literal-block">
-Esta oración es la introducción al articulo. Y acá sigue mi artículo completo.
+afudos /i1011.rom
 </pre>
-<p>Suponiendo que la baliza #INTRODUCTION se muestra en el esqueleto de
-seccion, allí se vería el texto</p>
-<blockquote>
-Esta oración es la introducción al articulo.</blockquote>
-<p>Y donde esté la baliza #TEXTE:</p>
-<blockquote>
-Esta oración es la introducción al articulo. Y acá sigue mi artículo
-completo.</blockquote>
-        <p>
-        
-            <a href="posts/personalizar-el-texto-de.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/una-introduccion-a-python.html">Una introducción a Python</a>
-        <small>  
-             <span class="timeago" title="2009-03-09 21:56:54">2009-03-09 21:56:54</span>
-        </small></h1>
-        <p><a class="reference external" href="http://python.org/">Python</a> es un lenguaje de programación
-interpretado, interactivo y multiplataforma, que con su facilidad y
-potencia hace las delicias de miles de programadores (y sin saberlo,
-también de los usuarios de los programas que estos desarrollan)
-alrededor del mundo.</p>
-<p>La comunidad de <a class="reference external" href="http://www.python.com.ar">Python Argentina</a> es
-particularmente activa, solidaria y muy capaz técnicamente.</p>
-<p>Esta charla fue dada por <a class="reference external" href="http://www.taniquetil.com.ar/plog/">Facundo
-Batista</a>, uno de los fundadores de
-PyAr, en las <a class="reference external" href="http://jornadas.grulic.org.ar/7/">7mas Jornada Regionales de Software
-Libre</a> realizadas en Córdoba,
-Argentina, en 2007.</p>
-<p>Aquí la presentación</p>
-        <p>
-        
-            <a href="posts/una-introduccion-a-python.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/c-automatico.html">© automático</a>
-        <small>  
-             <span class="timeago" title="2009-03-07 17:28:08">2009-03-07 17:28:08</span>
-        </small></h1>
-        <p>Más por costumbre que utilidad solemos poner la antigüedad de un sitio
-web al pie de página, asociado al símbolo ©, o (cc) si usamos <a class="reference external" href="http://es.wikipedia.org/wiki/Creative_Commons">Creative
-Commons</a>.</p>
-<p>En el 2007 hicimos el sitio, y en este 2009 todavía muestra.</p>
-<blockquote>
-© 2007</blockquote>
-<p>¡Muy feo! Aunque no hayamos actualizado el sitio desde entonces, nuestro
-deber, como buenos mentirosos, es lograr que el visitante no se entere.</p>
-<p>Así que podemos hacer que el año, o el período <strong>Año inicio - Año
-actual</strong> se actualice automáticamente.</p>
-<p>Muy simple:</p>
-<pre class="literal-block">
-© &lt;BOUCLE_yearbegin(ARTICLES){par date}{0,1}&gt;
-    #SET{year, #DATE|annee} #GET{year}
-  &lt;/BOUCLE_yearbegin&gt;
-[(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]
-</pre>
-<div class="section" id="explicacion">
-<h2>Explicación</h2>
-<ul class="simple"><li>Por convención, asumimos que el año de inicio del sitio es el año del
-primer artículo publicado, lo cual a mi me suena bastante lógico.</li>
-<li>Un bucle recupera esta información, la muestra y a la vez la
-guarda en una variable spip <tt class="docutils literal">#SET{year, #DATE|annee}</tt>.</li>
-<li>Fuera del bucle comparamos el año ya mostrado con el actual,
-obtenida de la baliza <tt class="docutils literal">#DATE</tt> sin contexto. Si son iguales,
-no se muestra nada más (para que no quede algo como
-<strong>© 2009 - 2009</strong>, que quedaría bien feo).
-Pero si son distintos, se muestra el año actual</li>
-</ul><p>El resultado, será:</p>
-<blockquote>
-© 2007 - 2009</blockquote>
-<p>Y si la lógica o el reloj del servidor no fallan, en cada año nuevo se
-incrementará el año final del período sin que toquemos una línea de código.</p>
 </div>
         <p>
         
-            <a href="posts/c-automatico.html#disqus_thread">Comments</a>
+            <a href="posts/lo-que-hace-un-geek-cuando-ama.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/suscribirse-a-los-comentarios-por.html">Suscribirse a los comentarios por RSS</a>
+        <h1><a href="posts/cuevanalinks-ahora-para-seres.html">Cuevanalinks, ahora para seres humanos</a>
         <small>  
-             <span class="timeago" title="2009-02-27 21:04:48">2009-02-27 21:04:48</span>
+             <span class="timeago" title="2011-08-03 08:51:21+00:00">2011-08-03 08:51:21+00:00</span>
         </small></h1>
-        <p>Con SPIP 2.0, más precisamente en la revisión
-<a class="reference external" href="http://trac.rezo.net/trac/spip/browser/spip/squelettes-dist/rss_forum_article.html?rev=13407">13407</a>
-se agregaron algunos esqueletos al juego de esqueletos estándar.</p>
-<p>Unos muy interesantes son los que permiten suscribirse a los
-comentarios.</p>
-<pre class="literal-block">
-squelettes-dist/rss_forum_article.html
-squelettes-dist/rss_forum_breve.html
-squelettes-dist/rss_forum_rubrique.html
-squelettes-dist/rss_forum_syndic.html
-squelettes-dist/rss_forum_thread.html
-</pre>
-<p>Por ejemplo, en el foro de un articulo, podriamos incluir el siguiente
-código, antes del bucle de comentarios de un artículo:</p>
-<pre class="literal-block">
-[] Suscribite a los comentarios de este artículo
-</pre>
-<p>Un código análogo, llamando al esqueleto correspondiente y pasando el
-parámetro correcto, sirve para las breves, las secciones, los artículos
-sindicados y los hilos de discusión (en foros con comentarios anidados).</p>
-        <p>
-        
-            <a href="posts/suscribirse-a-los-comentarios-por.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/mostrar-u-ocultar-contenido-facil.html">Mostrar u ocultar contenido, fácil</a>
-        <small>  
-             <span class="timeago" title="2009-02-26 06:12:34">2009-02-26 06:12:34</span>
-        </small></h1>
-        <p>Adrian León consultó en la lista
-<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">spip-es</a>:</p>
-<blockquote>
-<p>Estoy intentado poner balizas de este tipo:</p>
-<p>#BOUTON_BLOCK</p>
-<p>#DEBUT_BLOCK</p>
-<p>Desde el editor del sitio privado en el texto de un artículo. No
-conozco la forma de que funcione desde ahí (sale escrito como texto
-en la página resultante. ¿Hay alguna manera de hacerlo?</p>
-</blockquote>
-<p>Estaba intentando, me enteré después, usar <a class="reference external" href="http://www.spip-contrib.net/Block-deplier-replier">este
-plugin</a></p>
-<p>Al otro día yo contesté:</p>
-<blockquote>
-<p>Hola Adrián. Desconocía de qué hablabas hasta que Marina mandó el
-link. Me parece que en el algunas ocasiones los plugins están
-opacando las soluciones más eficientes e ingeniosas, esas que
-buscabamos antes de que todo fuese "enchufable". <strong>¡Spip se está
-wordpressisando!</strong></p>
-<p>Lo que quiero decir es que me parece que hay formas mejores de hacer
-eso. Yo tengo <a class="reference external" href="http://www.lavozdelanzarote.com/Carlos-Espino-cree-que-los">un ejemplo para
-darte</a></p>
-<p>Andá al pie del artículo, y hacé click en Opinar: despliega (u
-oculta, depende del estado) el formulario de comentarios.</p>
-<p>Es, sin balizas ni plugins, lo que parece que hace esa contrib.</p>
-</blockquote>
-<p>Y el código es de risa: un pelín de jQuery (con su efecto
-<a class="reference external" href="http://docs.jquery.com/Effects/toggle">toggle()</a> )</p>
-<p>El <a class="reference external" href="http://www.lavozdelanzarote.com/squelettes/inc_article.html">esqueleto del ejemplo que
-propongo</a>
-es bien sencillo. El formulario aparece encerrado en una <tt class="docutils literal">div</tt> y
-escondido con la propiedad CSS <tt class="docutils literal">display:none</tt>. De manera simplificada
-[<a class="reference external" href="blog/article/mostrar-u-ocultar-contenido-facil#nb1">1</a>] :</p>
-<pre class="literal-block">
-[(#FORMULAIRE_FORUM)]
-</pre>
-<p>Y el link que produce el efecto mostrar/ocultar (en este caso «opinar»
-)tiene este código.</p>
-<pre class="literal-block">
-Opinar
-</pre>
-<p>En perfecto argentino se diría: ¡una papa!</p>
-<p>Breve explicación: Al hacer click sobre el link, se ejecuta el evento
-Onclick, que mendiante jQuery (que ya se encuentra en todo sitio SPIP si
-existe la baliza #INSERT_HEAD en el <tt class="docutils literal">&lt;head&gt;</tt> de los esqueletos), se
-busca la el bloque con ID «form-comment» (o sea, el <tt class="docutils literal">div</tt> contenedor
-del formulario), y se aplica <tt class="docutils literal">toggle()</tt>, que es una funcion que si el
-bloque está oculto, lo muestra, y se está visible lo oculta. Simple y
-efectivo.</p>
-<div class="section" id="permitiendo-el-uso-desde-la-redaccion">
-<h2>Permitiendo el uso desde la redacción</h2>
-<p>Hasta aquí el reemplazo al plugin, que no da una solución completa a la
-consulta de Adrían, porque esta solución también está programado en los
-esqueletos del sitio. Pero, con simples modificaciones, se puede usar
-dentro del texto de los artículos.</p>
-<p>El truco es este: la balizas no se pueden usar en el texto, pero <strong>los
-modelos</strong> sí. Y como spip respeta el HTML, tenemos solución: generamo el
-link interruptor a través de <a class="reference external" href="http://www.spip.net/es_article3609.html">un
-modelo</a>
-[<a class="reference external" href="blog/article/mostrar-u-ocultar-contenido-facil#nb2">2</a>].</p>
-<p>Creamos un modelo dentro de <em>modeles/toggle.html</em> (dentro de la carpeta
-de nuestros esqueletos) con el siguiente código:</p>
-<pre class="literal-block">
-#ENV{texto}
-</pre>
-<p>¡Y listo!</p>
-<p>Para usarlo, en el cuerpo del artículo se invocaría al modelo con dos
-parámetros: el identificador del contenedor, y el texto de link
-controlador.</p>
-<p>Donde se quiera mostrar el link escribimos:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 95)</p>
-Literal block expected; none found.</div>
-<p>y donde queramos que vaya el contenido oculto:</p>
-<pre class="literal-block">
-Hola amigos, esto es una astucia para el compañero Adrian!
-&lt;/div&gt;
-</pre>
-<p>Sólo hay que asegurarse de que el ID del contenedor sea el mismo que el
-parametro <em>div</em> que pasamos a nuestro modelo. Por supuesto, esto permite
-tener múltiples bloques ocultos y link controladores.</p>
+        <div class="important">
+<p class="first admonition-title">Important</p>
+<p class="last">Cuevanlinks está desmantenido y con los cambios en cuevana.tv ya no
+funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
+¿Querés revivir el proyecto? <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/fork">Forkealo</a>!</p>
 </div>
-<div class="section" id="el-resultado">
-<h2>El resultado</h2>
-<p><a class="reference external" href="blog/article/mostrar-u-ocultar-contenido-facil#oculto">esto
-funciona?</a></p>
-<p>¡Hola amigos, esto es una astucia para el compañero Adrian!</p>
-</div>
-        <p>
-        
-            <a href="posts/mostrar-u-ocultar-contenido-facil.html#disqus_thread">Comments</a>
-        
-        </p></div>
-    
-        <div class="postbox">
-        <h1><a href="posts/yahoo-pipes-como-por-un-tubo.html">Yahoo! Pipes como por un tubo</a>
-        <small>  
-             <span class="timeago" title="2009-02-23 20:23:40">2009-02-23 20:23:40</span>
-        </small></h1>
-        <p><a class="reference external" href="http://pipes.yahoo.com">Yahoo! Pipes</a> es una una herramienta web
-interactiva para agregar y manipular feeds RSS (y otras fuentes de
-datos) a nuestro antojo de forma sencilla y asequible para cualquiera.</p>
-<p>Es un entorno de programación visual online. La programación visual es
-común para los ingenieros
-(<a class="reference external" href="http://en.wikipedia.org/wiki/Simulink">Simulink</a> o
-<a class="reference external" href="http://es.wikipedia.org/wiki/LabVIEW">LabVIEW</a>) y también para los
-viejos gamers (el glorioso <a class="reference external" href="http://en.wikipedia.org/wiki/The_Incredible_Machine">The incredible
-Machine</a>.</p>
-<p>El concepto es simple: se conectan distintos módulos ("tubos", con una o
-más salidas y entradas) según las necesidades, y se va probando el
-resultado en una salida final.</p>
-<p>En Y! Pipes, luego de toda nuestra manipulación, el resultado es un feed
-personalizado que contiene únicamente lo que se quiera tener, por
-ejemplo el resultado de mezclar y flitrar dos o más fuentes de
-información.</p>
-<div class="section" id="aplicandolo-a-spip">
-<h2>Aplicandolo a SPIP</h2>
-<p>Frecuentemente queremos ofrecer un canal RSS que provea tanto las breves
-como los artículos. SPIP maneja estos objetos independientemente y es
-muy dificil hacer un esqueleto que los mezcle (hay que trabajar con
-pilas en PHP). Con Yahoo! Pipes es tan sencillo como mezclar los dos (o
-más) feeds.</p>
-<p>Esto lo hice en el sitio <a class="reference external" href="http://www.agrupacionmazamorra.com.ar">Agrupación
-Mazamorra</a>:</p>
+<p>Un colega al que no conozco personalmente, <a class="reference external" href="http://mguillech.blogspot.com/">Martín
+Chikilian</a>, se ofreció a desarrollar
+una interfaz gráfica para
+<a class="reference external" href="posts/blog/article/la-sanguijuela-de-cuevana">Cuevanalinks</a>.</p>
+<p>Luego de algunos dias y teniendo una paciencia descomunal para soportar
+siempre nuevos requerimientos de mi parte, obtuvo una versión de
+Cuevanalinks-GUI, basado en <a class="reference external" href="http://es.wikipedia.org/wiki/PyQt">PyQt</a></p>
 <div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH321/Pantallazo-90218.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 36)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>El resultado puede verse (y clonarse) <a class="reference external" href="http://pipes.yahoo.com/mazamorra/rss_todo">desde
-aquí</a></p>
+<img alt="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png"></div>
+<p>Todavía está en desarrollo (hay algunos bugcitos y decisiones de diseño
+que no resolvemos del todo) pero ya ofrece ciertas ventajas sobre la
+versión para línea de comandos:</p>
+<ul class="simple"><li>Permite elegir qué se descarga cuando se hace una búsqueda de
+películas</li>
+<li>Te deja armar una cola de descargas de muchas cosas distintas
+haciendo muchas busquedas</li>
+<li>Y, lo más importante, lo puede instalar y usar un ser humano
+normal. :D</li>
+</ul><p>Para Windows, hay un instalador de la versión 0.5dev (el dev denota que
+está en desarrollo, se entiende) que se puede descargar desde acá:</p>
+<div class="important">
+<p class="first admonition-title">Important</p>
+<p><a class="reference external" href="downloads/cuevanalinks-0.5dev-installer.exe">cuevanalinks-0.5dev-installer.exe</a></p>
+<p class="last">para Windows XP o superior</p>
 </div>
-<div class="section" id="mas-ejemplos">
-<h2>Más ejemplos</h2>
-<p>Pero mezclar feeds no es la única posibilidad. De hecho, Pipes es tan
-potente que permite obtener datos parseando un sitio web que no tenga un
-canal RSS o Atom disponible (pero eso es un uso muy avanzado y lo
-dejamos para otra oportunidad).</p>
-<p>Un caso que sí está al alcance de esta breve introducción es filtrar el
-contenido de un feed. Doy mi ejemplo en uso: me gusta leer a <a class="reference external" href="http://nqnwebs.com">Hernán
-Casciari</a> que además de su blog, escribe una
-columna en el diario argentino La Nación. Es un diario asquerosamente
-oligarca y de derecha (¿redundante?) así que prefieron no leer nada más
-que a este autor,</p>
-<p>Fácil: Busco el feed de la sección donde se publican sus columnas,
-filtro con la palabra clave ’Casciari’, y me libro de todo lo que no
-quiero. <a class="reference external" href="http://pipes.yahoo.com/mazamorra/casciari">Aquí el resultado</a></p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L465xH360/pipes2-4a406.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 61)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-</div>
-<div class="section" id="ejemplo-en-video">
-<h2>Ejemplo en video</h2>
-<p>Un screencast de <a class="reference external" href="http://obm.corcoles.net">otro blog más</a></p>
+<p>Para los linuxeros, Martín puso <a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html">algunas
+instrucciones</a>
+para hacerlo andar desde los fuentes.</p>
+        <p>
+        
+            <a href="posts/cuevanalinks-ahora-para-seres.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/disqus-para-spip.html">Disqus para spip</a>
+        <small>  
+             <span class="timeago" title="2011-07-07 01:45:06+00:00">2011-07-07 01:45:06+00:00</span>
+        </small></h1>
+        <img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="images/disqus-newlod23a-8b781.gif"><p>Hace tiempo me interesa el servicio
+<a class="reference external" href="http://www.disqus.com">disqus.com</a> que provee una plataforma de
+comentarios muy poderosa y fácil de usar.</p>
+<p>Comencé un <a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus">pequeño
+plugin</a>
+para integrar Disqus a <a class="reference external" href="http://www.spip.net">Spip</a>.</p>
+<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/disqus.zip">Plugin Disqus para SPIP version 0.1</a></td>
+</tr></tbody></table><p>Por ahora tiene dos componentes básicos:</p>
+<ol class="arabic simple"><li>Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
+SPIP (y su formulario) por Disqus</li>
+<li>Un esqueleto para exportar comentarios existentes (genera un XML
+importable a traves del panel de disqus)</li>
+</ol><p>La configuración se realiza a través de una página (requiere el <a class="reference external" href="http://plugins.spip.net/CFG">plugin
+CFG</a>) donde se define el <em>"Disqus
+shortname"</em> (la identificación unica que asignamos al sitio donde
+usaremos Diqus).</p>
+<p>Para generar el XML con la exportación de comentarios preexistentes,
+basta acceder a <tt class="docutils literal"><span class="pre">/?page=export_comments_to_disqus</span></tt> y luego importar
+ese archivo desde el panel de Disqus (Tools -&gt; Import/Export )</p>
+        <p>
+        
+            <a href="posts/disqus-para-spip.html#disqus_thread">Comments</a>
+        
+        </p></div>
+    
+        <div class="postbox">
+        <h1><a href="posts/cdpedia-0-7-disponible.html">CDPedia 0.7 disponible</a>
+        <small>  
+             <span class="timeago" title="2011-07-01 11:00:00+00:00">2011-07-01 11:00:00+00:00</span>
+        </small></h1>
+        <img alt="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg" class="align-left" src="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg"><p><a class="reference external" href="http://www.python.org.ar">Python Argentina</a> se complace en informar que está
+disponible la <a class="reference external" href="http://cdpedia.python.org.ar/">versión 0.7 de CDPedia</a>
+, un proyecto de la comunidad para disponer de los contenidos de
+<a class="reference external" href="http://es.wikipedia.org">Wikipedia en español</a> sin acceso a internet,
+usando un CD o DVD como soporte de la información.</p>
+<p>La imágen de CD (.iso) se puede descargar desde acá:</p>
+<div class="important">
+<p class="first admonition-title">Important</p>
 <blockquote>
-Un cierto blog no ofrece los RSS filtrados por categorías. O por
-autores. O por ‘tags’. O queremos el RSS de un sitio, eliminando,
-por ejemplo, todas las entradas que hablen de petanca o del chucho
-del autor. Vamos, que nos gustaría filtrar el RSS de acuerdo con
-algún criterio propio. Para eso (y para bastantes más cosas, pero
-centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
-pequeño ’screencast’ que explica cómo recuperar las categorías (la
-de desarrollo web, en particular) que se ha cargado Feedburner…</blockquote>
-</div>
+<a class="reference external" href="downloads/cdpedia-CD-0.7.iso">CDPedia 0.7</a>
+CD 701Mb - 93500 artículos, 10% de imágenes</blockquote>
+<dl class="last docutils"><dt><a class="reference external" href="downloads/cdpedia-DVD5-0.7.iso">CDPedia 0.7 DVD</a></dt>
+<dd>DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.</dd>
+</dl></div>
+<p>Más información en
+<a class="reference external" href="http://cdpedia.python.org.ar/">http://cdpedia.python.org.ar/</a></p>
+<p>Esta versión de CDPedia es la que se distribuirá a todas las escuelas de
+Argentina a través de <a class="reference external" href="http://wikipediaenelaula.educ.ar/">Educ.ar</a>
+[<a class="reference external" href="blog/article/cdpedia-0-7-disponible#nb1">1</a>]</p>
+<p>Felicitaciones a todos los
+<a class="reference external" href="http://code.google.com/p/cdpedia/source/browse/trunk/resources/general_info/AUTORES.txt">colaboradores</a>
+por este logro de la comunidad. En especial, a
+<a class="reference external" href="http://twitter.com/#!/dmascialino">Diego</a>,
+<a class="reference external" href="http://twitter.com/#!/spiccinini">SAn</a>,
+<a class="reference external" href="http://www.taniquetil.com.ar/plog/">Facu</a> y
+<a class="reference external" href="http://protocultura.net/">Alecu</a> que son los principales</p>
         <p>
         
-            <a href="posts/yahoo-pipes-como-por-un-tubo.html#disqus_thread">Comments</a>
+            <a href="posts/cdpedia-0-7-disponible.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/esqueletos-accion.html">Esqueletos Acción</a>
+        <h1><a href="posts/revista-orsai-no-3-en-cordoba.html">Revista Orsai Nº 3 en Córdoba</a>
         <small>  
-             <span class="timeago" title="2009-02-23 19:28:33">2009-02-23 19:28:33</span>
+             <span class="timeago" title="2011-06-10 15:18:13+00:00">2011-06-10 15:18:13+00:00</span>
         </small></h1>
-        <p>En septiembre de 2008 participé con un grupo de compañeros de facultad
-en el <a class="reference external" href="http://www.undec.edu.ar/Cacic2008/esp/index.html">Congreso Argentino de Ciencias de la
-Computación</a>
-realizado en la ciudad de Chilecito, La Rioja.</p>
-<p>Allí realicé un taller de 20 horas sobre <em>Accesibilidad para la web</em> a
-cargo de las licenciadas Ivana Harrari y Ana Paola Amadeo, docentes de
-la Universidad Nacional de La Plata.</p>
-<p>El taller fue de un nivel bastante bajo y con errores de implementación
-bastante groseros, partiendo de que parte del material de práctica
-estaba en formato Adobe Shockwave y todo el curso se centraba en
-software para Windows. Las docentes, de cualquier manera, fueron muy
-amables y abiertas a escuchar nuestras inquietudes.</p>
-<p>Por este motivo, con los dos compañeros que participamos de este taller,
-Lourdes Dorado y Agustín Martina, nos propusimos aprovecharlo todo lo
-que pudiésemos.</p>
-<p>Desde aquí se puede bajar los informes de los trabajos prácticos
-realizados:</p>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/Grupo10_Pract1.pdf">|image1|</a></td>
-</tr><tr><td>Workshop sobre Accesibilidad web TP Nº 1</td>
-</tr></tbody></table><table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/Grupo10_Pract2.pdf">|image3|</a></td>
-</tr><tr><td>Workshop sobre Accesibilidad web TP Nº 2</td>
-</tr></tbody></table><table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/Grupo10_Pract3.pdf">|image5|</a></td>
-</tr><tr><td>Workshop sobre Accesibilidad web TP Nº 3</td>
-</tr></tbody></table><p>Además, la consigna del trabajo final era evaluar las accesibilidad y
-usabilidad de un sitio web a elección, por ejemplo, el de la facultad de
-procedencia de cada grupo. Como el de <a class="reference external" href="http://efn.uncor.edu">nuestra
-facu</a> nos avergüenza, decidimos construir
-nosotros que respete las normas.</p>
-<p>Nos basamos en un <a class="reference external" href="http://sitecreative.net">diseño libre</a> y mejoramos
-aquellos aspectos que no satisfacían completamente los requerimientos.
-El resultado es el proyecto <a class="reference external" href="http://lab.nqnweb%7C%20Marso%20%7C%20Ben%20%7C%2023%20a%C3%B1os%20%7Cs.com/accion">*Accion
-Inmobiliaria*</a></p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH463/Pantallazo-6-be9ab.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 55)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>Podés ver la <a class="reference external" href="http://lab.nqnwebs.com/accion">demo online</a>.</p>
-<div class="section" id="caracteristicas">
-<h2>Características</h2>
-<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> CSS y XHTML estándar válido
-<img alt="image7" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Se estudió el contraste de colores y el tamaño de la fuente
-para facilitar la lectura.
-<img alt="image8" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Accesibilidad probada en navegadores en modo texto (Elink) y
-lectores de pantalla.
-<img alt="image9" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> Licenciado bajo GPLv3</p>
-</div>
-<div class="section" id="descargar">
-<h2>Descargar</h2>
-<p>Podés bajarte los esqueletos, modificarlos y usarlos. Como se basa en
-GPL, tus trabajos derivados deben ser ofrecidos libremente.</p>
-</div>
-        <p>
+        <p>De nuevo soy distribuidor de la <a class="reference external" href="http://orsai.es">Orsai</a> en la ciudad
+de Córdoba. Si estás interesado date una vuelta por <a class="reference external" href="http://textosypretextos.com.ar/Reserva-Orsai-3-en-Cordoba">esta
+página</a></p>
+<img alt="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg" class="align-center" src="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg"><p>
         
-            <a href="posts/esqueletos-accion.html#disqus_thread">Comments</a>
+            <a href="posts/revista-orsai-no-3-en-cordoba.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/basta-de-ie6.html">¡Basta de IE6!</a>
+        <h1><a href="posts/charla-myhdl-de-python-al-siliicio.html">Charla: MyHDL, de python al silicio</a>
         <small>  
-             <span class="timeago" title="2009-02-21 17:23:07">2009-02-21 17:23:07</span>
+             <span class="timeago" title="2011-06-06 12:27:44+00:00">2011-06-06 12:27:44+00:00</span>
         </small></h1>
-        <p>El trabajo de un desarrollador web cuesta mechones de cabello a la hora
-de enfrentar al inmundo, malnacido e infeliz Internet Explorer 6. Horas
-y nervios perdemos intentando que nuestros sitios se vean decentemente
-en este navegador, que pese a tener casi 8 años de anitgüedad, aun tiene
-cuota de mercado. ¡Es hora de decir basta! Tomemos las armas y
-declaremosle la guerra a Internet explorer.</p>
-<div class="section" id="cuales-son-nuestras-armas">
-<h2>¿Cuáles son nuestras armas?</h2>
-<p>Te propongo dos, faciles y potentes:</p>
-<p><img alt="-" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> El script modificado por mí de la campaña <a class="reference external" href="http://www.end6.org/esp/home/">End
-6!</a>. Sólo debes copiar este código y
-pegarlo en el header de cada página de tu sitio, o sea entre <tt class="docutils literal">&lt;head&gt;</tt>
-y <tt class="docutils literal">&lt;/head&gt;</tt>.</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 20)</p>
-Literal block expected; none found.</div>
-<p>Si un visitante llega usando el vetusto y abominable navegador, verá un
-cartelito como este:</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH372/textosypretextos-289a7.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 26)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p><img alt="image1" src="posts/local/cache-vignettes/L8xH11/puce-32883.gif"> El plugin para spip <em>`Cambia el
-navegador! &lt;http://www.spip-contrib.net/Changez-de-navigateur&gt;`_</em> que al
-instalarlo y activarlo, muestra un mensaje en la cabecera de todo el
-sitio público si el visitante usa IE6 (o más viejo!)</p>
-<div class="figure align-center">
-<img alt="" src="posts/local/cache-vignettes/L510xH372/image.php-ef244.png"></div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 34)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<table border="1" class="docutils"><colgroup><col width="100%"></colgroup><tbody valign="top"><tr><td><a class="reference external" href="downloads/noie.zip">|image3|</a></td>
-</tr><tr><td>Cambia el Navegador!</td>
-</tr></tbody></table><p>Puedes bajar este plugin (multilingüe) desde aquí.</p>
-</div>
-<div class="section" id="basta-de-caldo-gordo">
-<h2>Basta de ’caldo gordo’</h2>
-<p>Como desarrolladores, tenemos cosas mejores que hacer que continuar
-garantizando la compatibilidad con lo arcaico, perdiendo el tiempo en
-torno a errores ajenos a nuestros desarrollos. Todo el tiempo dispensado
-allí debería ser concentrada en conquistar los nuevos horizontes que
-requieren nuestra atención como, por ejemplo, la web móvil.</p>
-<p>Y en gran parte, esta situación es nuestra responsabilidad. Todos los
-que trabajamos en internet (y los que la usamos con pasión) conocemos y
-odiamos con fundamentos el Internet Explorer 6. Pero justamente
-nosotros, por tener razones, somos responsables de difundirlas tanto
-como podamos para educar tecnológicamente a los usuarios más
-inexperimentados.</p>
+        <p>[Sigo <a class="reference external" href="posts/me-recibi-el-mes-pasado.html">publicando cosas</a> con
+delay de meses]</p>
+<p>El sábado 30 de mayo se realizó el <a class="reference external" href="http://www.pyday.com.ar/cordoba2011">PyDay Córdoba
+2011</a> con la participación de más
+de 200 personas y casi 20 charlas en dos salas simultáneas. Un éxito
+rotundo organizado por <a class="reference external" href="http://jbcabral.wordpress.com/">Juan</a> y un
+gran equipo de colaboradores/as . Felicitaciones.</p>
+<div class="section" id="mi-participacion">
+<h2>Mi participación</h2>
+<p>Participé dando una charla sobre <a class="reference external" href="http://myhdl.org">MyHDL</a>, un paquete
+que convierte Python en un <a class="reference external" href="http://en.wikipedia.org/wiki/Hardware_description_language">lenguaje para describir
+hardware</a>
+(HDL).</p>
+<ul class="simple"><li>Las diapositivas <a class="reference external" href="http://mgaitan.github.com/myhdl-talk/">se pueden ver
+acá</a></li>
+<li><a class="reference external" href="https://github.com/mgaitan/myhdl-talk">Repo</a></li>
+</ul><p>Usé MyHDL para hacer
+<a class="reference external" href="https://github.com/mgaitan/pymips/tree/pipeline">pymips</a>, una
+implementación de un <a class="reference external" href="http://en.wikipedia.org/wiki/DLX">procesador DLX</a>
+completo como trabajo final de la asignatura Arquitectura de Computadoras.
+Pueden leer un poco más sobre el trabajo en <a class="reference external" href="https://github.com/mgaitan/pymips/raw/pipeline/docs/informe.pdf">el
+informe</a>
+que presenté.</p>
 </div>
         <p>
         
-            <a href="posts/basta-de-ie6.html#disqus_thread">Comments</a>
+            <a href="posts/charla-myhdl-de-python-al-siliicio.html#disqus_thread">Comments</a>
         
         </p></div>
     
         <div class="postbox">
-        <h1><a href="posts/Control-de-Versiones-con.html">Control de Versiones con Subversion</a>
+        <h1><a href="posts/me-recibi-el-mes-pasado.html">Me recibí (el mes pasado)</a>
         <small>  
-             <span class="timeago" title="2009-02-14 11:23:41">2009-02-14 11:23:41</span>
+             <span class="timeago" title="2011-06-03 23:32:50+00:00">2011-06-03 23:32:50+00:00</span>
         </small></h1>
-        <p>Xab, compañero de la lista
-<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">Spip-es</a> me propone
-un trato:</p>
-<blockquote>
-Abro una cuenta con magoya en picasa y testeo el
-<a class="reference external" href="posts/spicasa-adjunta-fotos-de-picasa-a">plugin</a>, y a
-cambio vos "hacés (o recomendás)" un how-to subversion aplicado a
-Spip</blockquote>
-<p>Como tenía unos materiales de una charla que dí en la facu, lo comparto
-con el pueblo spipero.</p>
-<div class="section" id="subversion-un-software-de-control-de-versiones">
-<h2>Subversion, un software de control de versiones</h2>
-<p><a class="reference external" href="http://subversion.tigris.org/">Subversion</a> es el software de control
-de versiones más popular de la actualidad. Es robusto, fácil de usar,
-multiplataforma, libre y gratuito.</p>
-<p>Aquí las diapositivas (un tanto frías sin nuestra explicación) que
-presentamos.</p>
-<p>La pregunta del novato: <strong>¿Para qué sirve?</strong>. Bueno, para llevar total
-control del desarrollo de un software (u otros contenidos). Muchos lo
-hemos hecho manualmente:</p>
-<p>— Bueno, hasta aqui funciona. Hago una carpeta nueva, copio los
-archivos, y sigo.</p>
-<p>Así, al cabo de una semana de trabajo, tenemos 10 carpetas con versiones
-distintas, archivos repetidos, y no sabemos realmente cual es la version
-en curso. Más complicado aun, si se trabaja desde distintos equipos (por
-ejemplo, la notebook y la PC de escritorio).</p>
-<p>Pero además, sumemos la complicación de trabajar con colegas.</p>
-<p>— Ey, Martín, acá te mando la última versión del esqueleto de portada.
-— ¡Pero cómo! si te avisé que había modificado la portada completamente!</p>
-<p>Trabajar en equipo es casi inviable a la vieja usanza. Imaginen
-proyectos de software grandes, como SPIP. Imposible. Hace falta ayuda:
-Subversion.</p>
-</div>
-<div class="section" id="como-funciona">
-<h2>¿Cómo funciona?</h2>
-<p>Es una aplicación cliente-servidor. El cliente se instala en nuestra/s
-computadoras y el servidor está, generalmente, online. A este servidor
-online se le denomina <strong>repositorio</strong>. A la copia local de los archivos,
-<strong>copia de trabajo</strong>. A cada cambio que el repositorio recibe se le
-llama <strong>revisión</strong>.</p>
-<ul class="simple"><li>Para Windows, el mejor cliente es
-<a class="reference external" href="http://tortoisesvn.tigris.org/">TortoiseSVN</a></li>
-<li>Para GNU/Linux, basta <tt class="docutils literal">subversion</tt>, la versión para línea de
-comandos, o <strong>RapidSVN</strong>, una versión gráfica para entornos GTK.</li>
-</ul><p>El proceso de trabajo es más o menos así:</p>
-<ul class="simple"><li>Si no existe en el repositorio nuestro código, hacemos un
-<tt class="docutils literal">import</tt> (enviar por primera vez nuestro código al repositorio.</li>
-<li>Para empezar a trabajar, necesitamos hace un <tt class="docutils literal">checkout</tt>, es
-decir, decirle a Subversion que convierta nuestra carpeta de código (o
-la cree si no existe) en copia de trabajo.</li>
-<li>Ya preparados, el trabajo cotidiano: lo comandos más frecuentes
-son tres. <tt class="docutils literal">update</tt>, para actualizar la copia local con las ultimas
-revisiones; <tt class="docutils literal">commit</tt> para enviar nuestras modificaciones locales al
-repositorio y crear una nueva revisión y <tt class="docutils literal">add</tt> para agregar un archivo
-que hemos creado, y aun no existe en el repositorio.</li>
-</ul></div>
-<div class="section" id="un-ejemplo-con-spip-zone">
-<h2>Un ejemplo con SPIP-Zone</h2>
-<p><a class="reference external" href="http://zone.spip.org">Spip-zone</a> tiene un servidor subversion
-(asociado al software <a class="reference external" href="http://trac.edgewall.org/">Trac</a> que es un
-gestor integral de proyectos de software) donde se puede alojar
-cualquier contenido libre que tenga que ver con SPIP. Es abierto para
-lectura (podés hacer checkouts y updates anonimamente) pero necesitás
-ser usuario para hacer commits. Podés pedirle un user y pass a
-<a class="reference external" href="mailto:fil@nospam--.rezo.net">Fil</a>.</p>
-<div class="section" id="paso-0">
-<h3>Paso 0</h3>
-<p>Suponiendo que sos usuario con clave y password y querés compartir el
-desarrollo de tus squeletos, los <em>squelettes_maslindos</em> que están en la
-carpeta squelettes local (por poner un ejemplo).</p>
-<p>La dirección del repositorio, arbitraria pero recomendada,
-sería <tt class="docutils literal"><span class="pre">svn://zone.spip.org/spip-zone/_squelettes_/maslindos</span></tt></p>
-<p>Desde <strong>Tortoise</strong>, con el boton derecho sobre la carpeta de esqueletos,
-le damos a la opción <tt class="docutils literal">Import</tt> y ponemos la dire del repo donde la
-pide.</p>
-<p>Desde línea de comandos sería</p>
-<pre class="literal-block">
-$ svn import ./squelettes  svn://zone.spip.org/spip-zone/_squelettes_/maslindos -m "importacion de los squeletos más lindos"
-</pre>
-<p>Si la importación salió bien, debería poder ver tus archivos en la
-dirección <a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos">http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos</a></p>
-</div>
-<div class="section" id="paso-1">
-<h3>Paso 1</h3>
-<p>Este es el paso inicial para aquellos que quieren probar algo
-que está en el repositorio, pero sin intenciones de enviar
-modificaciones (sólo lectura). Tambien deben hacerlo aquellos que sí lo
-van a hacer, porque la importación no implica que se haya creado una
-copia de trabajo.</p>
-<p>Así que hay que hacer el <strong>checkout</strong>. Si hiciste el paso anterior, para
-evitar complicaciones, lo mejor es borrar la carpeta que importaste.</p>
-<p>Entonces sí, sobre la carpeta raiz (donde queremos que se cree la otra),
-hacemo checkout a la dire del repo, definiendo que la copia local será
-<tt class="docutils literal">./squelettes</tt> (si no, nos creará una que se llamará <em>maslindos</em>)</p>
-<p>La dire del repo es la siempre:</p>
-<pre class="literal-block">
-svn://zone.spip.org/spip-zone/_squelettes_/maslindos
-</pre>
-<p>Por línea de comandos sería así:</p>
-<pre class="literal-block">
-$ svn checkout svn://zone.spip.org/spip-zone/_squelettes_/maslindos ./squelettes
-</pre>
-</div>
-<div class="section" id="pasos-2-y-3">
-<h3>Pasos 2 y 3</h3>
-<p>Listo, tenemos nuetra copia de trabajo. Cada vez que queramos actualizar
-a la ultima versión, parados sobre la carpeta, hacemos <strong>update</strong></p>
-<pre class="literal-block">
-$ svn  update
-</pre>
-<p>Si somos desarrolladores, y queremos enviar nuestras modificaciones, hay
-que hacer <strong>commit</strong></p>
-<pre class="literal-block">
-$ svn  update
-</pre>
-<p>En caso de agregar archivos, hay que indicarselo a Subversion.</p>
-<pre class="literal-block">
-$ svn  add archivo1 archivo2 *jpg
-</pre>
-</div>
-</div>
-<div class="section" id="un-video-vale-mas-que-mil-palabras">
-<h2>Un video vale más que mil palabras</h2>
-<p>Un ejemplo de flujo de trabajo por línea de comandos</p>
-<iframe width="425" height="344" src="http://www.youtube.com/embed/P0XIj1w21YU?rel=0&amp;hd=1&amp;wmode=transparent"></iframe><p>Y otro ejemplo usando una interfaz gráfica.</p>
-<iframe width="425" height="344" src="http://www.youtube.com/embed/U3qVh9F6fv0?rel=0&amp;hd=1&amp;wmode=transparent"></iframe></div>
+        <p>Oh, cuantos planes elucubrados para cuando ya no tuviera un exámen
+cercano para obstaculizar la felicidad. Y resulta que ahora, que ya no
+tengo, tampoco encuentro el tiempo de empezar a darle forma de realidad
+a esos planes.</p>
+<p>Esta es la información: el 12 de mayo pasado me recibí de Ingeniero en
+Computación.</p>
         <p>
         
-            <a href="posts/Control-de-Versiones-con.html#disqus_thread">Comments</a>
+            <a href="posts/me-recibi-el-mes-pasado.html#disqus_thread">Comments</a>
         
         </p></div>
     
     <div>
 <ul class="pager"><li class="previous">
-        <a href="index-6.html">← Posts posteriores</a>
+        <a href="index-8.html">← Posts posteriores</a>
     </li>
   
   
     <li class="next">
-        <a href="index-8.html">Posts anteriores  →</a>
+        <a href="index-6.html">Posts anteriores  →</a>
     </li>
   
 </ul></div>
