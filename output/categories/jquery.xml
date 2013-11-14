@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (jQuery)</title><link>http://mgaitan.github.com</link><description></description><atom:link href="http://mgaitan.github.com/categories/jquery.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:14:09 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Yendo a las fuentes de cuevana.tv</title><link>http://mgaitan.github.com/posts/yendo-a-las-fuentes-de-cuevana-tv.html</link><description>&lt;p&gt;** UPDATE ** : la ultima version funciona con el nuevo sitio de cuevana.&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (jQuery)</title><link>http://mgaitan.github.io</link><description></description><atom:link href="http://mgaitan.github.io/categories/jquery.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:26:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Yendo a las fuentes de cuevana.tv</title><link>http://mgaitan.github.io/posts/yendo-a-las-fuentes-de-cuevana-tv.html</link><description>&lt;p&gt;** UPDATE ** : la ultima version funciona con el nuevo sitio de cuevana.&lt;/p&gt;
 &lt;p&gt;Dos cosas me gustan mucho últimamente:
 &lt;a class="reference external" href="http://www.cuevana.tv"&gt;cuevana.tv&lt;/a&gt; y
 &lt;a class="reference external" href="http://www.greasespot.net/"&gt;GreaseMonkey&lt;/a&gt;&lt;/p&gt;
@@ -13,7 +13,7 @@ alegría es toda de cuevana (y nuestra). Todos unos pillos.&lt;/p&gt;
 (como los videos de cuevana) sin bufferear (?) y entonces pierde sentido
 (o gana mala sangre) intentar ver directamente "online".&lt;/p&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 21); &lt;em&gt;&lt;a href="http://mgaitan.github.com/posts/yendo-a-las-fuentes-de-cuevana-tv.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 21); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/yendo-a-las-fuentes-de-cuevana-tv.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Duplicate explicit target name: "greasemonkey".&lt;/div&gt;
 &lt;p&gt;Y acá entra &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Greasemonkey"&gt;Greasemonkey&lt;/a&gt;,
 que es una extensión para Firefox (y otros navegadores) que permite
@@ -31,7 +31,7 @@ tenemos un ancho de banda no muy ancho.&lt;/p&gt;
 script muestra links a la fuente original de descarga, justo abajo de
 los iconos de selección.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L510xH298/2011-02-28-011028_584x341_scrot-37636.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L510xH298/2011-02-28-011028_584x341_scrot-37636.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 40)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -40,7 +40,7 @@ Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
 descargas como &lt;a class="reference external" href="http://www.tucaneando.com/"&gt;Tucan&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[STRIKEOUT:Respecto a los subtítulos, todavía soy principiante con
 javascript, pero espero poder obtener el link a los subtitulos en
-futuras versiones. ]&lt;/p&gt;</description><category>jQuery</category><category>Javascript</category><guid>http://mgaitan.github.com/posts/yendo-a-las-fuentes-de-cuevana-tv.html</guid><pubDate>Mon, 28 Feb 2011 12:24:40 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
+futuras versiones. ]&lt;/p&gt;</description><category>jQuery</category><category>Javascript</category><guid>http://mgaitan.github.io/posts/yendo-a-las-fuentes-de-cuevana-tv.html</guid><pubDate>Mon, 28 Feb 2011 12:24:40 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>http://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres.html</link><description>&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
 artículos podrían tener 200, ¿no?&lt;/p&gt;
 &lt;p&gt;Hay una forma fácil de limitar el largo permitido en un campo de texto
 mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
@@ -86,7 +86,7 @@ campo que querés limitar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="ejemplo"&gt;
 &lt;h2&gt;Ejemplo&lt;/h2&gt;
-&lt;/div&gt;</description><category>spip</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
+&lt;/div&gt;</description><category>spip</category><category>jQuery</category><guid>http://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres.html</guid><pubDate>Wed, 10 Jun 2009 06:41:37 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>http://mgaitan.github.io/posts/lorem-ipsum-para-spip.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
 que se usa habitualmente en diseño gráfico en demostraciones de
 tipografías o de borradores de diseño para probar el diseño visual antes
 de insertar el texto final.&lt;/p&gt;
@@ -106,7 +106,7 @@ Ipsum&lt;/a&gt; de Sander Korve
 hice un modelo (instalable como plugin) que permite insertar un texto
 del tamaño que queramos (por omisión, de 4 párrafos).&lt;/p&gt;
 &lt;p&gt;Podés bajarlo desde acá:&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://mgaitan.github.com/downloads/loremipsum.zip"&gt;|image1|&lt;/a&gt;&lt;/td&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/loremipsum.zip"&gt;|image1|&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Lorem Ipsum Plugin version 0.2&lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;O por SVN:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -125,8 +125,8 @@ su funcionamiento.&lt;/p&gt;
 &lt;h2&gt;Funcionamiento básico&lt;/h2&gt;
 &lt;p&gt;La inclusión de un &lt;em&gt;Lorem Ipsum&lt;/em&gt; se basa en el modelo &lt;em&gt;lorem.html&lt;/em&gt;
 incluído con el plugin, por lo que hay dos maneras de llamarlo:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; En el cuerpo (texto, descripción, etc) de un artículo: &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image3" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Predefinido en un esqueleto: &lt;tt class="docutils literal"&gt;#MODELE{lorem}&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; En el cuerpo (texto, descripción, etc) de un artículo: &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image3" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Predefinido en un esqueleto: &lt;tt class="docutils literal"&gt;#MODELE{lorem}&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;¡y listo!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="parametros"&gt;
@@ -134,14 +134,14 @@ incluído con el plugin, por lo que hay dos maneras de llamarlo:&lt;/p&gt;
 &lt;p&gt;El modelo acepta algunos parámetros para configurar la longitud del
 texto. Por ejemplo &lt;tt class="docutils literal"&gt;&amp;lt;lorem5&amp;gt;&lt;/tt&gt; creará 5 párrafos.&lt;/p&gt;
 &lt;p&gt;Pero también se puede especificar más datos:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image4" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;type&lt;/strong&gt;: permite especificar que tipo de resultado se quiere.
+&lt;p&gt;&lt;img alt="image4" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;type&lt;/strong&gt;: permite especificar que tipo de resultado se quiere.
 Las opciones válidas son &lt;strong&gt;paragraphs&lt;/strong&gt;, &lt;strong&gt;words&lt;/strong&gt; o &lt;strong&gt;characters&lt;/strong&gt; para
 párrafos, palabras o characteres. Así: creará un texto de 25 palabras.
 El valor por omisión es &lt;strong&gt;paragraphs&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image5" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;amount&lt;/strong&gt;: Es lo mismo que el ID pasado al modelo: es lo mismo
+&lt;p&gt;&lt;img alt="image5" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;amount&lt;/strong&gt;: Es lo mismo que el ID pasado al modelo: es lo mismo
 que . Por ejemplo &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;[(#MODELE{lorem}{amount=5})]&lt;/span&gt;&lt;/tt&gt;
-[&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/lorem-ipsum-para-spip#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image6" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;ptags&lt;/strong&gt;: Permite agregar las etiquetas &amp;lt;code&amp;lt;&amp;gt;P&amp;lt;&amp;gt;/code&amp;gt;
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/lorem-ipsum-para-spip#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image6" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;strong&gt;ptags&lt;/strong&gt;: Permite agregar las etiquetas &amp;lt;code&amp;lt;&amp;gt;P&amp;lt;&amp;gt;/code&amp;gt;
 alrededor de cada párrafo. Los valores aceptados son &lt;strong&gt;true&lt;/strong&gt; o
 &lt;strong&gt;false&lt;/strong&gt;. Por omisión es &lt;strong&gt;true&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -150,8 +150,8 @@ alrededor de cada párrafo. Los valores aceptados son &lt;strong&gt;true&lt;/str
 &lt;p&gt;Una forma de mostrar contenido en un artículo (o cualquier elemento) sin
 tener que editar cada artículo sólo para poner &lt;tt class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/tt&gt; es invocar el
 modelo siempre y cuando no exista contenido en la baliza&lt;/p&gt;
-&lt;p&gt;Por ejemplo [&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
-&lt;/div&gt;</description><category>spip</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en spip</title><link>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
+&lt;p&gt;Por ejemplo [&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
+&lt;/div&gt;</description><category>spip</category><category>jQuery</category><guid>http://mgaitan.github.io/posts/lorem-ipsum-para-spip.html</guid><pubDate>Thu, 26 Mar 2009 20:39:24 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en spip</title><link>http://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los.html</link><description>&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
 #LOGO_* y los filtros |image_* son los más notorios) y
 frecuentemente necesitamos o queremos modificar este código autogenerado
 en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
@@ -229,7 +229,7 @@ function attr($tag, $name){
 }
 &lt;/pre&gt;
 &lt;p&gt;Simplemente copia el código en mes_fonctions.php (Mira "Agregar
-funciones propias" en la documentación sobre &lt;a class="reference external" href="http://mgaitan.github.com/posts/Agregar%20funciones%20propias"&gt;filtros de
+funciones propias" en la documentación sobre &lt;a class="reference external" href="http://mgaitan.github.io/posts/Agregar%20funciones%20propias"&gt;filtros de
 spip&lt;/a&gt;) y luego usa el filtro attr en
 tus esqueletos:&lt;/p&gt;
 &lt;div class="system-message"&gt;
@@ -239,7 +239,7 @@ Literal block expected; none found.&lt;/div&gt;
 directamente a inserer_attribut y extraire_attribut en vez de las
 variables individuales, agregar un parámetro $value=FALSE que sólo sirva
 para la claridad de la documentación , y el mencionado, eliminar
-atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;</description><category>spip</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Mostrar u ocultar contenido, fácil</title><link>http://mgaitan.github.com/posts/mostrar-u-ocultar-contenido-facil.html</link><description>&lt;p&gt;Adrian León consultó en la lista
+atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;</description><category>spip</category><category>jQuery</category><guid>http://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los.html</guid><pubDate>Thu, 12 Mar 2009 06:29:35 GMT</pubDate></item><item><title>Mostrar u ocultar contenido, fácil</title><link>http://mgaitan.github.io/posts/mostrar-u-ocultar-contenido-facil.html</link><description>&lt;p&gt;Adrian León consultó en la lista
 &lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;spip-es&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Estoy intentado poner balizas de este tipo:&lt;/p&gt;
@@ -271,7 +271,7 @@ oculta, depende del estado) el formulario de comentarios.&lt;/p&gt;
 propongo&lt;/a&gt;
 es bien sencillo. El formulario aparece encerrado en una &lt;tt class="docutils literal"&gt;div&lt;/tt&gt; y
 escondido con la propiedad CSS &lt;tt class="docutils literal"&gt;display:none&lt;/tt&gt;. De manera simplificada
-[&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/mostrar-u-ocultar-contenido-facil#nb1"&gt;1&lt;/a&gt;] :&lt;/p&gt;
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/mostrar-u-ocultar-contenido-facil#nb1"&gt;1&lt;/a&gt;] :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 [(#FORMULAIRE_FORUM)]
 &lt;/pre&gt;
@@ -298,7 +298,7 @@ dentro del texto de los artículos.&lt;/p&gt;
 modelos&lt;/strong&gt; sí. Y como spip respeta el HTML, tenemos solución: generamo el
 link interruptor a través de &lt;a class="reference external" href="http://www.spip.net/es_article3609.html"&gt;un
 modelo&lt;/a&gt;
-[&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/mostrar-u-ocultar-contenido-facil#nb2"&gt;2&lt;/a&gt;].&lt;/p&gt;
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/mostrar-u-ocultar-contenido-facil#nb2"&gt;2&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Creamos un modelo dentro de &lt;em&gt;modeles/toggle.html&lt;/em&gt; (dentro de la carpeta
 de nuestros esqueletos) con el siguiente código:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -323,7 +323,7 @@ tener múltiples bloques ocultos y link controladores.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="el-resultado"&gt;
 &lt;h2&gt;El resultado&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/mostrar-u-ocultar-contenido-facil#oculto"&gt;esto
+&lt;p&gt;&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/mostrar-u-ocultar-contenido-facil#oculto"&gt;esto
 funciona?&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;¡Hola amigos, esto es una astucia para el compañero Adrian!&lt;/p&gt;
-&lt;/div&gt;</description><category>spip</category><category>jQuery</category><guid>http://mgaitan.github.com/posts/mostrar-u-ocultar-contenido-facil.html</guid><pubDate>Thu, 26 Feb 2009 06:12:34 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>spip</category><category>jQuery</category><guid>http://mgaitan.github.io/posts/mostrar-u-ocultar-contenido-facil.html</guid><pubDate>Thu, 26 Feb 2009 06:12:34 GMT</pubDate></item></channel></rss>

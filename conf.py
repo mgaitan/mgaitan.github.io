@@ -11,8 +11,8 @@ import os
 # Data about this site
 BLOG_AUTHOR = u'Martín Gaitán'
 BLOG_TITLE = "tin_nqn"
-SITE_URL = "http://mgaitan.github.com"
-BASE_URL = "http://mgaitan.github.com/"
+SITE_URL = "http://mgaitan.github.io"
+BASE_URL = "http://mgaitan.github.io/"
 
 BLOG_EMAIL = "gaitan@gmail.com"
 BLOG_DESCRIPTION = u'>>> me.geek.post()'

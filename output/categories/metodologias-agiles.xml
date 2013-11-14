@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Metodologías ágiles)</title><link>http://mgaitan.github.com</link><description></description><atom:link href="http://mgaitan.github.com/categories/metodologias-agiles.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:14:09 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes python</title><link>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Metodologías ágiles)</title><link>http://mgaitan.github.io</link><description></description><atom:link href="http://mgaitan.github.io/categories/metodologias-agiles.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:26:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes python</title><link>http://mgaitan.github.io/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
 documentación está incompleto
-[&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Si bien el manifiesto ágil
 &lt;a class="reference external" href="http://agilemanifesto.org/iso/es/"&gt;proclama&lt;/a&gt; &lt;em&gt;"Software funcionando
 sobre documentación extensiva"&lt;/em&gt;, yo subrayaría extensiva como eufemismo
 de documentación burocrática e inútil (opiné de esto
-&lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/veinteanero"&gt;acá&lt;/a&gt;) que evidentemente no es la que hace
+&lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/veinteanero"&gt;acá&lt;/a&gt;) que evidentemente no es la que hace
 falta. Pero la documentación (sobre todo la buena) es indispensable y
 para &lt;a class="reference external" href="http://jacobian.org/writing/great-documentation/"&gt;algunos&lt;/a&gt;, la
 parte que más los enorgullece del proyecto (y con razón).&lt;/p&gt;
@@ -19,7 +19,7 @@ pythonistas&lt;/a&gt;.&lt;/p&gt;
 generador de documentación más utilizado (por lejos) en el ecosistema de
 Python. Es lo que usa la documentación de Python misma, la de Django y
 casi todo proyecto conocido o por conocer.&lt;/p&gt;
-&lt;p&gt;Entonces usamos restructuredText, usamos Sphinx, pero para &lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/la-sanguijuela-de-cuevana"&gt;nuestro
+&lt;p&gt;Entonces usamos restructuredText, usamos Sphinx, pero para &lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/la-sanguijuela-de-cuevana"&gt;nuestro
 proyectito de morondanga&lt;/a&gt; que
 no tiene web propia ni nada, ¿dónde subimos la documentación generada?
 Veamos.&lt;/p&gt;
@@ -36,7 +36,7 @@ través de Sphinx.&lt;/p&gt;
 amigos&lt;/a&gt;)
 ni siquiera hace falta tener Sphinx instalado localmente.&lt;/p&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 31); &lt;em&gt;&lt;a href="http://mgaitan.github.com/posts/compartiendo-documentacion-de.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 31); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/compartiendo-documentacion-de.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Duplicate explicit target name: "acá".&lt;/div&gt;
 &lt;p&gt;Más aun, por defecto actualiza diariamente, pero se puede utilizar un
 "hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
@@ -49,7 +49,7 @@ Para usuarios de GitHub la activación del "web hook" se explica
 &lt;li&gt;Completás el campo de texto con la URL que te da ReadTheDocs en la
 página de descripción de tu proyecto (estándo logueado). Por ejemplo:&lt;/li&gt;
 &lt;/ol&gt;&lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 60)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -79,7 +79,7 @@ la página de administración de tu proyecto en PyPi y adjuntar un .zip
 con la documentación (que no necesariamente tiene que ser hecha con
 Sphinx)&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 93)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -125,9 +125,9 @@ $ svn propset svn:mime-type 'text/html' FILENAME
 $ svn propset svn:mime-type 'image/jpeg' FILENAME
 &lt;/pre&gt;
 &lt;p&gt;Para que esto se haga automático, se puede modificar el archivo de
-configuración &lt;a href="http://mgaitan.github.com/posts/compartiendo-documentacion-de.html#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
+configuración &lt;a href="http://mgaitan.github.io/posts/compartiendo-documentacion-de.html#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
 &lt;div class="system-message" id="id3"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 144); &lt;em&gt;&lt;a href="http://mgaitan.github.com/posts/compartiendo-documentacion-de.html#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 144); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/compartiendo-documentacion-de.html#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Inline literal start-string without end-string.&lt;/div&gt;
 &lt;pre class="literal-block"&gt;
 [miscellany]
@@ -152,12 +152,12 @@ estáticas&lt;/a&gt;, tanto del desarrollador/a como
 de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
 mas o menos automáticamente estas opciones que no he probado pero las
 dejo como referencia:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/"&gt;Hosting sphinx doc in
+&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/"&gt;Hosting sphinx doc in
 github&lt;/a&gt;
 de Luca Sbardella.
-&lt;img alt="image1" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
+&lt;img alt="image1" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;</description><category>Software Libre</category><category>python</category><category>Metodologías ágiles</category><guid>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>http://mgaitan.github.com/posts/la-academia-las-practicas-agiles-y.html</link><description>&lt;p&gt;La manera más fácil para aprobar una tesis de ingeniería es mentir.
+&lt;/div&gt;</description><category>Software Libre</category><category>python</category><category>Metodologías ágiles</category><guid>http://mgaitan.github.io/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>http://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y.html</link><description>&lt;p&gt;La manera más fácil para aprobar una tesis de ingeniería es mentir.
 Llenar páginas y páginas, preferentemente con tablas y viñetas, de
 contenidos vacuos y tediosos que seguramente nadie, mucho menos los
 evaluadores, leerán. Sólo hay que prestar atención a que sean muchas
@@ -192,7 +192,7 @@ que mencionar mucho IBM, Microsoft, C#, Intel. Esas son las voces que
 respetan, aunque sean pura
 &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Argumento_de_autoridad"&gt;falacia&lt;/a&gt;&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L510xH603/anti-bullying-charity-school-tie-small-59832-3938a.jpg"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L510xH603/anti-bullying-charity-school-tie-small-59832-3938a.jpg"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 45)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -224,7 +224,7 @@ es así – puedes validar tu idea con sólo codificarla, en igual
 tiempo que el que insume hacer un modelo UML que nada prueba por
 sí mismo.&lt;/blockquote&gt;
 &lt;p&gt;Aun más escéptico, Alans Stevens, reconocido ingeniero en software
-[&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/la-academia-las-practicas-agiles-y#nb1"&gt;1&lt;/a&gt;] y
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/la-academia-las-practicas-agiles-y#nb1"&gt;1&lt;/a&gt;] y
 conferencista, opina &lt;a class="reference external" href="http://halanstevens.com/uml-sucks-really/"&gt;en un
 artículo&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -240,4 +240,4 @@ Lamentablemente UML no aborda este problema y en cambio parece
 obsesionado por las minucias en una parodia de distracción
 académica.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/blockquote&gt;</description><category>Metodologías ágiles</category><guid>http://mgaitan.github.com/posts/la-academia-las-practicas-agiles-y.html</guid><pubDate>Wed, 06 Apr 2011 06:21:23 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;</description><category>Metodologías ágiles</category><guid>http://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y.html</guid><pubDate>Wed, 06 Apr 2011 06:21:23 GMT</pubDate></item></channel></rss>

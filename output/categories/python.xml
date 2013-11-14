@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (python)</title><link>http://mgaitan.github.com</link><description></description><atom:link href="http://mgaitan.github.com/categories/python.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:14:09 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (python)</title><link>http://mgaitan.github.io</link><description></description><atom:link href="http://mgaitan.github.io/categories/python.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:26:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.io/posts/pip-apurate-por-favor.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
 para el trabajo diario de un programador python: es el manejador
 de paquetes de nuestro entorno de trabajo (¡&lt;a class="reference external" href="http://www.virtualenv.org/en/latest/"&gt;virtual&lt;/a&gt; por favor!),
 con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
@@ -173,7 +173,7 @@ sys 0m0.024s
 &lt;/pre&gt;
 &lt;p&gt;Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
 django, whatever) me los haces rodar para que pip vuele.&lt;/p&gt;
-&lt;/div&gt;</description><category>pip</category><category>python</category><guid>http://mgaitan.github.com/posts/pip-apurate-por-favor.html</guid><pubDate>Wed, 10 Apr 2013 01:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
+&lt;/div&gt;</description><category>pip</category><category>python</category><guid>http://mgaitan.github.io/posts/pip-apurate-por-favor.html</guid><pubDate>Wed, 10 Apr 2013 01:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python.html</link><description>&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
 ¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
 proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
@@ -295,7 +295,7 @@ para saber más.&lt;/p&gt;
 &lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;&lt;/div&gt;
 &lt;hr class="docutils"&gt;&lt;blockquote&gt;
 Este artículo lo escribí originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
-&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>http://mgaitan.github.com/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="http://mgaitan.github.com/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
+&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>http://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 00:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><description>&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="http://mgaitan.github.io/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 allí porque somos pobretones y nos da repos privados gratis.
@@ -359,13 +359,13 @@ agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/
             &lt;span class="k"&gt;continue&lt;/span&gt;
         &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;¡Disfruten!&lt;/p&gt;</description><category>python</category><category>migraciones</category><category>scripts</category><guid>http://mgaitan.github.com/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
+&lt;p&gt;¡Disfruten!&lt;/p&gt;</description><category>python</category><category>migraciones</category><category>scripts</category><guid>http://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 00:09:24 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.io/posts/bienvenidos-al-tren.html</link><description>&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
 que explicaré más adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
 &lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
 &lt;p&gt;Espero que pronto esto esté más bonito y con contenido. También que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;</description><category>nikola</category><category>python</category><category>spip</category><category>blog</category><guid>http://mgaitan.github.com/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>http://mgaitan.github.com/posts/cuevanalinks-ahora-para-seres.html</link><description>&lt;div class="important"&gt;
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;</description><category>nikola</category><category>python</category><category>spip</category><category>blog</category><guid>http://mgaitan.github.io/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 01:15:00 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>http://mgaitan.github.io/posts/cuevanalinks-ahora-para-seres.html</link><description>&lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
 &lt;p class="last"&gt;Cuevanlinks está desmantenido y con los cambios en cuevana.tv ya no
 funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
@@ -374,7 +374,7 @@ funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
 &lt;p&gt;Un colega al que no conozco personalmente, &lt;a class="reference external" href="http://mguillech.blogspot.com/"&gt;Martín
 Chikilian&lt;/a&gt;, se ofreció a desarrollar
 una interfaz gráfica para
-&lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/la-sanguijuela-de-cuevana"&gt;Cuevanalinks&lt;/a&gt;.&lt;/p&gt;
+&lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/la-sanguijuela-de-cuevana"&gt;Cuevanalinks&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Luego de algunos dias y teniendo una paciencia descomunal para soportar
 siempre nuevos requerimientos de mi parte, obtuvo una versión de
 Cuevanalinks-GUI, basado en &lt;a class="reference external" href="http://es.wikipedia.org/wiki/PyQt"&gt;PyQt&lt;/a&gt;&lt;/p&gt;
@@ -393,12 +393,12 @@ normal. :D&lt;/li&gt;
 está en desarrollo, se entiende) que se puede descargar desde acá:&lt;/p&gt;
 &lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://mgaitan.github.com/downloads/cuevanalinks-0.5dev-installer.exe"&gt;cuevanalinks-0.5dev-installer.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/cuevanalinks-0.5dev-installer.exe"&gt;cuevanalinks-0.5dev-installer.exe&lt;/a&gt;&lt;/p&gt;
 &lt;p class="last"&gt;para Windows XP o superior&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Para los linuxeros, Martín puso &lt;a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html"&gt;algunas
 instrucciones&lt;/a&gt;
-para hacerlo andar desde los fuentes.&lt;/p&gt;</description><category>python</category><guid>http://mgaitan.github.com/posts/cuevanalinks-ahora-para-seres.html</guid><pubDate>Wed, 03 Aug 2011 08:51:21 GMT</pubDate></item><item><title>CDPedia 0.7 disponible</title><link>http://mgaitan.github.com/posts/cdpedia-0-7-disponible.html</link><description>&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg" class="align-left" src="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg"&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.python.org.ar"&gt;Python Argentina&lt;/a&gt; se complace en informar que está
+para hacerlo andar desde los fuentes.&lt;/p&gt;</description><category>python</category><guid>http://mgaitan.github.io/posts/cuevanalinks-ahora-para-seres.html</guid><pubDate>Wed, 03 Aug 2011 08:51:21 GMT</pubDate></item><item><title>CDPedia 0.7 disponible</title><link>http://mgaitan.github.io/posts/cdpedia-0-7-disponible.html</link><description>&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg" class="align-left" src="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg"&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.python.org.ar"&gt;Python Argentina&lt;/a&gt; se complace en informar que está
 disponible la &lt;a class="reference external" href="http://cdpedia.python.org.ar/"&gt;versión 0.7 de CDPedia&lt;/a&gt;
 , un proyecto de la comunidad para disponer de los contenidos de
 &lt;a class="reference external" href="http://es.wikipedia.org"&gt;Wikipedia en español&lt;/a&gt; sin acceso a internet,
@@ -407,26 +407,26 @@ usando un CD o DVD como soporte de la información.&lt;/p&gt;
 &lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;a class="reference external" href="http://mgaitan.github.com/downloads/cdpedia-CD-0.7.iso"&gt;CDPedia 0.7&lt;/a&gt;
+&lt;a class="reference external" href="http://mgaitan.github.io/downloads/cdpedia-CD-0.7.iso"&gt;CDPedia 0.7&lt;/a&gt;
 CD 701Mb - 93500 artículos, 10% de imágenes&lt;/blockquote&gt;
-&lt;dl class="last docutils"&gt;&lt;dt&gt;&lt;a class="reference external" href="http://mgaitan.github.com/downloads/cdpedia-DVD5-0.7.iso"&gt;CDPedia 0.7 DVD&lt;/a&gt;&lt;/dt&gt;
+&lt;dl class="last docutils"&gt;&lt;dt&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/cdpedia-DVD5-0.7.iso"&gt;CDPedia 0.7 DVD&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.&lt;/dd&gt;
 &lt;/dl&gt;&lt;/div&gt;
 &lt;p&gt;Más información en
 &lt;a class="reference external" href="http://cdpedia.python.org.ar/"&gt;http://cdpedia.python.org.ar/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Esta versión de CDPedia es la que se distribuirá a todas las escuelas de
 Argentina a través de &lt;a class="reference external" href="http://wikipediaenelaula.educ.ar/"&gt;Educ.ar&lt;/a&gt;
-[&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/cdpedia-0-7-disponible#nb1"&gt;1&lt;/a&gt;]&lt;/p&gt;
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/cdpedia-0-7-disponible#nb1"&gt;1&lt;/a&gt;]&lt;/p&gt;
 &lt;p&gt;Felicitaciones a todos los
 &lt;a class="reference external" href="http://code.google.com/p/cdpedia/source/browse/trunk/resources/general_info/AUTORES.txt"&gt;colaboradores&lt;/a&gt;
 por este logro de la comunidad. En especial, a
 &lt;a class="reference external" href="http://twitter.com/#!/dmascialino"&gt;Diego&lt;/a&gt;,
 &lt;a class="reference external" href="http://twitter.com/#!/spiccinini"&gt;SAn&lt;/a&gt;,
 &lt;a class="reference external" href="http://www.taniquetil.com.ar/plog/"&gt;Facu&lt;/a&gt; y
-&lt;a class="reference external" href="http://protocultura.net/"&gt;Alecu&lt;/a&gt; que son los principales&lt;/p&gt;</description><category>python</category><guid>http://mgaitan.github.com/posts/cdpedia-0-7-disponible.html</guid><pubDate>Fri, 01 Jul 2011 11:00:00 GMT</pubDate></item><item><title>Pep 20: El Zen del Barça</title><link>http://mgaitan.github.com/posts/pep-20-el-zen-del-barca.html</link><description>&lt;p&gt;&lt;img alt="image0" src="http://mgaitan.github.com/images/messi_guardib9bf-5b102.jpg"&gt;
+&lt;a class="reference external" href="http://protocultura.net/"&gt;Alecu&lt;/a&gt; que son los principales&lt;/p&gt;</description><category>python</category><guid>http://mgaitan.github.io/posts/cdpedia-0-7-disponible.html</guid><pubDate>Fri, 01 Jul 2011 11:00:00 GMT</pubDate></item><item><title>Pep 20: El Zen del Barça</title><link>http://mgaitan.github.io/posts/pep-20-el-zen-del-barca.html</link><description>&lt;p&gt;&lt;img alt="image0" src="http://mgaitan.github.io/images/messi_guardib9bf-5b102.jpg"&gt;
 El &lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0020/"&gt;Zen de Python&lt;/a&gt; es
 también el Zen del Barça, el de Pep Guardiola. La "Pep" 20
-[&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/pep-20-el-zen-del-barca#nb1"&gt;1&lt;/a&gt;]:&lt;/p&gt;
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/pep-20-el-zen-del-barca#nb1"&gt;1&lt;/a&gt;]:&lt;/p&gt;
 &lt;blockquote&gt;
 Bello es mejor que feo.
 Explícito es mejor que implícito.
@@ -450,14 +450,14 @@ Aunque nunca es a menudo mejor que ya mismo.
 Si la implementación es difícil de explicar, es una mala idea.
 Si la implementación es fácil de explicar, puede que sea una buena
 idea.
-Los espacios son una gran idea ¡Hagamos más de esas cosas!&lt;/blockquote&gt;</description><category>python</category><guid>http://mgaitan.github.com/posts/pep-20-el-zen-del-barca.html</guid><pubDate>Wed, 27 Apr 2011 16:22:47 GMT</pubDate></item><item><title>Compartiendo documentación de paquetes python</title><link>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+Los espacios son una gran idea ¡Hagamos más de esas cosas!&lt;/blockquote&gt;</description><category>python</category><guid>http://mgaitan.github.io/posts/pep-20-el-zen-del-barca.html</guid><pubDate>Wed, 27 Apr 2011 16:22:47 GMT</pubDate></item><item><title>Compartiendo documentación de paquetes python</title><link>http://mgaitan.github.io/posts/compartiendo-documentacion-de.html</link><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
 documentación está incompleto
-[&lt;a class="reference external" href="http://mgaitan.github.com/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Si bien el manifiesto ágil
 &lt;a class="reference external" href="http://agilemanifesto.org/iso/es/"&gt;proclama&lt;/a&gt; &lt;em&gt;"Software funcionando
 sobre documentación extensiva"&lt;/em&gt;, yo subrayaría extensiva como eufemismo
 de documentación burocrática e inútil (opiné de esto
-&lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/veinteanero"&gt;acá&lt;/a&gt;) que evidentemente no es la que hace
+&lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/veinteanero"&gt;acá&lt;/a&gt;) que evidentemente no es la que hace
 falta. Pero la documentación (sobre todo la buena) es indispensable y
 para &lt;a class="reference external" href="http://jacobian.org/writing/great-documentation/"&gt;algunos&lt;/a&gt;, la
 parte que más los enorgullece del proyecto (y con razón).&lt;/p&gt;
@@ -470,7 +470,7 @@ pythonistas&lt;/a&gt;.&lt;/p&gt;
 generador de documentación más utilizado (por lejos) en el ecosistema de
 Python. Es lo que usa la documentación de Python misma, la de Django y
 casi todo proyecto conocido o por conocer.&lt;/p&gt;
-&lt;p&gt;Entonces usamos restructuredText, usamos Sphinx, pero para &lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/la-sanguijuela-de-cuevana"&gt;nuestro
+&lt;p&gt;Entonces usamos restructuredText, usamos Sphinx, pero para &lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/la-sanguijuela-de-cuevana"&gt;nuestro
 proyectito de morondanga&lt;/a&gt; que
 no tiene web propia ni nada, ¿dónde subimos la documentación generada?
 Veamos.&lt;/p&gt;
@@ -487,7 +487,7 @@ través de Sphinx.&lt;/p&gt;
 amigos&lt;/a&gt;)
 ni siquiera hace falta tener Sphinx instalado localmente.&lt;/p&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 31); &lt;em&gt;&lt;a href="http://mgaitan.github.com/posts/compartiendo-documentacion-de.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 31); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/compartiendo-documentacion-de.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Duplicate explicit target name: "acá".&lt;/div&gt;
 &lt;p&gt;Más aun, por defecto actualiza diariamente, pero se puede utilizar un
 "hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
@@ -500,7 +500,7 @@ Para usuarios de GitHub la activación del "web hook" se explica
 &lt;li&gt;Completás el campo de texto con la URL que te da ReadTheDocs en la
 página de descripción de tu proyecto (estándo logueado). Por ejemplo:&lt;/li&gt;
 &lt;/ol&gt;&lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 60)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -530,7 +530,7 @@ la página de administración de tu proyecto en PyPi y adjuntar un .zip
 con la documentación (que no necesariamente tiene que ser hecha con
 Sphinx)&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 93)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -576,9 +576,9 @@ $ svn propset svn:mime-type 'text/html' FILENAME
 $ svn propset svn:mime-type 'image/jpeg' FILENAME
 &lt;/pre&gt;
 &lt;p&gt;Para que esto se haga automático, se puede modificar el archivo de
-configuración &lt;a href="http://mgaitan.github.com/posts/compartiendo-documentacion-de.html#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
+configuración &lt;a href="http://mgaitan.github.io/posts/compartiendo-documentacion-de.html#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
 &lt;div class="system-message" id="id3"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 144); &lt;em&gt;&lt;a href="http://mgaitan.github.com/posts/compartiendo-documentacion-de.html#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 144); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/compartiendo-documentacion-de.html#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Inline literal start-string without end-string.&lt;/div&gt;
 &lt;pre class="literal-block"&gt;
 [miscellany]
@@ -603,15 +603,15 @@ estáticas&lt;/a&gt;, tanto del desarrollador/a como
 de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
 mas o menos automáticamente estas opciones que no he probado pero las
 dejo como referencia:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/"&gt;Hosting sphinx doc in
+&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/"&gt;Hosting sphinx doc in
 github&lt;/a&gt;
 de Luca Sbardella.
-&lt;img alt="image1" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
+&lt;img alt="image1" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;</description><category>Software Libre</category><category>python</category><category>Metodologías ágiles</category><guid>http://mgaitan.github.com/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>La sanguijuela de cuevana</title><link>http://mgaitan.github.com/posts/la-sanguijuela-de-cuevana.html</link><description>&lt;blockquote&gt;
+&lt;/div&gt;</description><category>Software Libre</category><category>python</category><category>Metodologías ágiles</category><guid>http://mgaitan.github.io/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 19:16:38 GMT</pubDate></item><item><title>La sanguijuela de cuevana</title><link>http://mgaitan.github.io/posts/la-sanguijuela-de-cuevana.html</link><description>&lt;blockquote&gt;
 &lt;strong&gt;UPDATE&lt;/strong&gt; Hay una nueva versión con interfaz gráfica
-&lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/cuevanalinks-ahora-para-seres"&gt;acá&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;Parece que se me hizo hobby &lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv"&gt;chupar links de
+&lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/cuevanalinks-ahora-para-seres"&gt;acá&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;Parece que se me hizo hobby &lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv"&gt;chupar links de
 cuevana.tv&lt;/a&gt; y el
 experimento ahora tiene su versión pythonica:
 &lt;a class="reference external" href="http://pypi.python.org/pypi/CuevanaLinks"&gt;Cuevanalinks&lt;/a&gt; .&lt;/p&gt;
@@ -635,7 +635,7 @@ de &lt;a class="reference external" href="http://www.cuevana.tv"&gt;Cuevana&lt;/
 comandos&lt;/a&gt;
 que permite buscar links y bajar subtitulos de contenidos específicos&lt;/li&gt;
 &lt;/ol&gt;&lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 37)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
@@ -721,11 +721,11 @@ problemas,
 que el funcionamiento del sitio no cambie o yo tenga mucho tiempo y
 ganas de andar parchando detrás. Por eso, si hay más interesados y
 usuarios, seguramente podremos hacerlo durar más.&lt;/p&gt;
-&lt;/div&gt;</description><category>python</category><guid>http://mgaitan.github.com/posts/la-sanguijuela-de-cuevana.html</guid><pubDate>Sat, 09 Apr 2011 14:22:27 GMT</pubDate></item><item><title>Apuntes del PyCamp 2011</title><link>http://mgaitan.github.com/posts/apuntes-del-pycamp-2011.html</link><description>&lt;p&gt;Casi se hizo jueves y todavía no escribí nada sobre el
+&lt;/div&gt;</description><category>python</category><guid>http://mgaitan.github.io/posts/la-sanguijuela-de-cuevana.html</guid><pubDate>Sat, 09 Apr 2011 14:22:27 GMT</pubDate></item><item><title>Apuntes del PyCamp 2011</title><link>http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html</link><description>&lt;p&gt;Casi se hizo jueves y todavía no escribí nada sobre el
 &lt;a class="reference external" href="http://python.org.ar/pyar/PyCamp/2011"&gt;PyCamp&lt;/a&gt;. &lt;a class="reference external" href="http://lateral.netmanagers.com.ar/"&gt;Roberto
 Alsina&lt;/a&gt; se va a enojar.&lt;/p&gt;
 &lt;p&gt;La excusa, vaga como yo, es que la devolución de uno de mis directores
-de &lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/preparados-listos-en-un-rato"&gt;tesis&lt;/a&gt; fue más
+de &lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/preparados-listos-en-un-rato"&gt;tesis&lt;/a&gt; fue más
 [STRIKEOUT:hinchapelotas] minuciosa que lo esperado. Así que para
 cumplir el
 &lt;a class="reference external" href="http://twitter.com/#!/nqnwebs/status/48955773732134912"&gt;objetivo&lt;/a&gt;
@@ -738,7 +738,7 @@ conocimiento latente.&lt;/p&gt;
 &lt;div class="section" id="a-modo-de-intro"&gt;
 &lt;h2&gt;A modo de intro&lt;/h2&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 19); &lt;em&gt;&lt;a href="http://mgaitan.github.com/posts/apuntes-del-pycamp-2011.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 19); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Duplicate explicit target name: "pycamp".&lt;/div&gt;
 &lt;p&gt;El &lt;a class="reference external" href="http://python.org.ar/pyar/PyCamp/"&gt;PyCamp&lt;/a&gt; es un encuentro de la
 comunidad &lt;a class="reference external" href="http://www.python.org.ar"&gt;Python Argentina&lt;/a&gt;. Monos (y
@@ -748,7 +748,7 @@ con internet, preferentemente lejos de las grandes urbes (para darle
 lindo, jugar jueguitos electrónicos y de los otros, tomar y beber en
 bucle continuo y hacer cuanto le plazca a cada uno, en un ambiente
 totalmente inclusivo, distendido y buena onda.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image0" src="http://mgaitan.github.com/images/5575373677_34553-e5833.jpg"&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://mgaitan.github.io/images/5575373677_34553-e5833.jpg"&gt;
 Python Argentina abarca el amplio espectro que va desde programadores
 reconocidos internacionalmente (gran parte de ese Ubuntu que seguro
 estas usando — o deberías — lo hacen pythonistas argentinos) hasta
@@ -771,11 +771,11 @@ hacen los geeks cuando están divertidos.&lt;/p&gt;
 primero en el que participo. Sabía, por referencias, fotos y
 repositorios, de qué se trataba, pero como dice el adagio... &lt;em&gt;del dicho
 al hecho ...&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image1" src="http://mgaitan.github.com/images/5575974174_116c8-4028d.jpg"&gt;
+&lt;p&gt;&lt;img alt="image1" src="http://mgaitan.github.io/images/5575974174_116c8-4028d.jpg"&gt;
 Nati tenía un congreso de germanística en Buenos Aires y después se iba
 a La Plata a visitar a una amiga, así que las opciones eran ir a la
 marcha el jueves (24 de marzo) y
-&lt;a class="reference external" href="http://mgaitan.github.com/posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv"&gt;cuevanear&lt;/a&gt; el resto
+&lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv"&gt;cuevanear&lt;/a&gt; el resto
 del finde o sumarme a la movida.
 &lt;a class="reference external" href="http://www.perrito666.com.ar"&gt;Perrito&lt;/a&gt; ofreció movilidad así que lo
 tuve servido.&lt;/p&gt;
@@ -807,7 +807,7 @@ ver el partido de Argentina), jugué con Tato (el pythonista más peque
 del encuentro, hijo de Roberto Alsina) y me enternecí viendo a otros
 geeks (Huguito — &lt;a class="reference external" href="http://www.pilas-engine.com.ar"&gt;Pilas&lt;/a&gt; rulez! —,
 John, Achuni, todos) jugar como niños.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image2" src="http://mgaitan.github.com/images/5575353897_b47ee-6529e.jpg"&gt;
+&lt;p&gt;&lt;img alt="image2" src="http://mgaitan.github.io/images/5575353897_b47ee-6529e.jpg"&gt;
 Detalles faltan pero estos someros recuerdos sobran para afirmar que el
 balance es positivísimo.&lt;/p&gt;
 &lt;/div&gt;
@@ -824,4 +824,4 @@ por el sobrenombre y no por el título, se admira el conocimiento pero
 más se festeja su colectivización, y eso lo saben (y lo disfrutan) los
 picantes y los tiernitos.&lt;/p&gt;
 &lt;p&gt;Cuanta falta le hace a la universidad visiones y experiencias como esta.&lt;/p&gt;
-&lt;/div&gt;</description><category>Software Libre</category><category>python</category><guid>http://mgaitan.github.com/posts/apuntes-del-pycamp-2011.html</guid><pubDate>Wed, 30 Mar 2011 19:50:40 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>Software Libre</category><category>python</category><guid>http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html</guid><pubDate>Wed, 30 Mar 2011 19:50:40 GMT</pubDate></item></channel></rss>

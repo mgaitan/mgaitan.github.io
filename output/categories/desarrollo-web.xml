@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Desarrollo web)</title><link>http://mgaitan.github.com</link><description></description><atom:link href="http://mgaitan.github.com/categories/desarrollo-web.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:14:09 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>¡Basta de IE6!</title><link>http://mgaitan.github.com/posts/basta-de-ie6.html</link><description>&lt;p&gt;El trabajo de un desarrollador web cuesta mechones de cabello a la hora
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Desarrollo web)</title><link>http://mgaitan.github.io</link><description></description><atom:link href="http://mgaitan.github.io/categories/desarrollo-web.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 14 Nov 2013 18:26:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>¡Basta de IE6!</title><link>http://mgaitan.github.io/posts/basta-de-ie6.html</link><description>&lt;p&gt;El trabajo de un desarrollador web cuesta mechones de cabello a la hora
 de enfrentar al inmundo, malnacido e infeliz Internet Explorer 6. Horas
 y nervios perdemos intentando que nuestros sitios se vean decentemente
 en este navegador, que pese a tener casi 8 años de anitgüedad, aun tiene
@@ -8,7 +8,7 @@ declaremosle la guerra a Internet explorer.&lt;/p&gt;
 &lt;div class="section" id="cuales-son-nuestras-armas"&gt;
 &lt;h2&gt;¿Cuáles son nuestras armas?&lt;/h2&gt;
 &lt;p&gt;Te propongo dos, faciles y potentes:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El script modificado por mí de la campaña &lt;a class="reference external" href="http://www.end6.org/esp/home/"&gt;End
+&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El script modificado por mí de la campaña &lt;a class="reference external" href="http://www.end6.org/esp/home/"&gt;End
 6!&lt;/a&gt;. Sólo debes copiar este código y
 pegarlo en el header de cada página de tu sitio, o sea entre &lt;tt class="docutils literal"&gt;&amp;lt;head&amp;gt;&lt;/tt&gt;
 y &lt;tt class="docutils literal"&gt;&amp;lt;/head&amp;gt;&lt;/tt&gt;.&lt;/p&gt;
@@ -18,20 +18,20 @@ Literal block expected; none found.&lt;/div&gt;
 &lt;p&gt;Si un visitante llega usando el vetusto y abominable navegador, verá un
 cartelito como este:&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L510xH372/textosypretextos-289a7.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L510xH372/textosypretextos-289a7.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 26)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
-&lt;p&gt;&lt;img alt="image1" src="http://mgaitan.github.com/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El plugin para spip &lt;em&gt;`Cambia el
+&lt;p&gt;&lt;img alt="image1" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; El plugin para spip &lt;em&gt;`Cambia el
 navegador! &amp;lt;http://www.spip-contrib.net/Changez-de-navigateur&amp;gt;`_&lt;/em&gt; que al
 instalarlo y activarlo, muestra un mensaje en la cabecera de todo el
 sitio público si el visitante usa IE6 (o más viejo!)&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.com/posts/local/cache-vignettes/L510xH372/image.php-ef244.png"&gt;&lt;/div&gt;
+&lt;img alt="" src="http://mgaitan.github.io/posts/local/cache-vignettes/L510xH372/image.php-ef244.png"&gt;&lt;/div&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 34)&lt;/p&gt;
 Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
-&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://mgaitan.github.com/downloads/noie.zip"&gt;|image3|&lt;/a&gt;&lt;/td&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/noie.zip"&gt;|image3|&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Cambia el Navegador!&lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Puedes bajar este plugin (multilingüe) desde aquí.&lt;/p&gt;
 &lt;/div&gt;
@@ -48,4 +48,4 @@ odiamos con fundamentos el Internet Explorer 6. Pero justamente
 nosotros, por tener razones, somos responsables de difundirlas tanto
 como podamos para educar tecnológicamente a los usuarios más
 inexperimentados.&lt;/p&gt;
-&lt;/div&gt;</description><category>spip</category><category>Desarrollo web</category><guid>http://mgaitan.github.com/posts/basta-de-ie6.html</guid><pubDate>Sat, 21 Feb 2009 17:23:07 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>spip</category><category>Desarrollo web</category><guid>http://mgaitan.github.io/posts/basta-de-ie6.html</guid><pubDate>Sat, 21 Feb 2009 17:23:07 GMT</pubDate></item></channel></rss>
