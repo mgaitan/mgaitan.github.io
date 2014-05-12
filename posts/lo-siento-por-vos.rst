@@ -57,7 +57,7 @@ Mi "pitch" (casi todo allí son anglicismos: `pitch <http://vooza.com/videos/the
 
 Una vez que terminás, las "reglas" impiden la interacción con el panel; sólo podés escuchar lo que te dicen. Y lo que me dijeron fueron algunas cosas buenas (las dos mujeres, de unos 40 años, dijeron que les parecía muy buena idea si implementamos la utilidad de encontrar el mejor precio para el "carrito") pero `Juan Santiago <https://www.youtube.com/watch?v=LcKZpgivDmY>`_, dueño de la empresa `Santex <http://santexgroup.com>`_, me fulminó:
 
-— Me pareció pésima tu presentación. Horrible. Da la sensación de que no crees en tu proyecto, que podrías estar haciendo esto o cualquier otra cosa, no le transmitis pasión, no llegás a motivar a nadie. Toda esa cosa samaritana de tu proyecto, no la entendí. Y es un disparate que pidas tan poca plata, no tenés ni idea.
+— Me pareció pésimo tu pitch. Horrible. Da la sensación de que no crees en tu proyecto, que podrías estar haciendo esto o cualquier otra cosa, no le transmitis pasión, no llegás a motivar a nadie. Toda esa cosa samaritana de tu proyecto, no la entendí. Y es un disparate que pidas tan poca plata, no tenés ni idea.
 
 Hubo un momento de tensión generalizada en el lugar. El muchacho que coordinaba el encuentro se dió cuenta y se apuró a aclarar:
 
