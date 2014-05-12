@@ -84,6 +84,6 @@ Sé que hay otras maneras y existe gente que se anima a salirse del libreto. La 
 
 Sí, necesito plata. La ayuda de la gente que me ama, que cree en mí y en lo que estoy haciendo es enorme, pero no alcanza.
 
-No sé si lograré conseguirla, pero estoy muy seguro de que quiero intentarlo, de que este esfuerzo vale la pena, porque si funciona le servirá a muchos. Sé que es difícil pero me sobra pasión. "La estoy remando de dulce de leche,  pero el dulce de leche es rico", le resumí a un amigo.
+No sé si lograré conseguirla, pero estoy muy seguro de que quiero intentarlo, de que este esfuerzo vale la pena, porque si funciona le servirá a muchos. Sé que es difícil pero me sobra pasión. "La estoy remando en dulce de leche,  pero el dulce de leche es rico", le resumí a un amigo.
 
 Y de algo sí estoy seguro: no quiero ser tu mercancía. Creo mucho en lo que hago. Lo siento. Y lo siento por vos.
