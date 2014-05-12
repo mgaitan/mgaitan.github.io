@@ -68,7 +68,7 @@ Si no es personal, no lo quiero
 
 Me quedé con las explicaciones en la garganta. ¿Cómo podés decirme que no siento lo que estoy haciendo? Hace 10 minutos nunca habías visto mi cara ¿Sabés quién soy, qué hice, qué pienso? ¿Te enteraste que hay decenas de personas que están poniendo muchísimas horas de su tiempo, gratis, sólo porque creyeron en la idea? ¿No es eso "llegar"? ¿No tiene valor alguno para vos que un tipo como Daniel, un laburante, sienta que estamos haciendo lo que él quería pero no podía hacer?
 
-Parece que han comprado en USA el librito del emprendedorismo, donde la idionsincracia y la relación de las personas con la plata es totalmente distinta, donde el lucro es el único motor posible. Pero hablan, siempre, de latinoamérica, de las posibilidades que hay acá. Algo no encaja en el pitch del pitch.
+Parece que han comprado en USA el librito del emprendedorismo, donde la idiosincracia y la relación de las personas con la plata es totalmente distinta, donde el lucro es el único motor posible. Pero hablan, siempre, de latinoamérica, de las posibilidades que hay acá. Algo no encaja en el pitch del pitch.
 
 Un `muy buen artículo <http://blogs.publico.es/jorge-moruno/2013/05/27/por-que-esa-obsesion-con-los-emprendedores/>`_ lo describe así:
 
