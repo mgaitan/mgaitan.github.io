@@ -18,7 +18,7 @@ Tres meses después Preciosa tiene una primera versión con casi 2000 descargas,
 
 .. TEASER_END
 
-Fueron semanas enteras de laburo, a pulmón, muchísimas horas por día (71 dias sin pausa, `dice github <https://github.com/mgaitan/>`_) y la `colaboración <https://github.com/mgaitan/preciosa/wiki/Colaboradores>`_ desinteresada de decenas de personas e instituciones. La Incubadora de Empresas de la Universidad de Córdoba (donde funciona Phasety_) nos dió espacio y asesoramiento, la `asociación de consumidores más importante de Perú <http://www.aspec.org.pe>`_ está interesada en implementarlo en su pais, Huayra Linux `incluye Preciosa <http://www.pagina12.com.ar/diario/ultimas/20-244839-2014-04-24.html>`_ en su última versión, programadores de nivel internacional `hicieron aportes al código <https://github.com/mgaitan/preciosa/graphs/contributors>`_, diseñadores y diseñadoras hicieron el logo y muchas otras piezas gráficas y hasta tuvimos que armar un ¡equipo de comunicación!.
+Fueron semanas enteras de laburo, a pulmón, muchísimas horas por día (71 días sin pausa, `dice github <https://github.com/mgaitan/>`_) y la `colaboración <https://github.com/mgaitan/preciosa/wiki/Colaboradores>`_ desinteresada de decenas de personas e instituciones. La Incubadora de Empresas de la Universidad de Córdoba (donde funciona Phasety_) nos dió espacio y asesoramiento, la `asociación de consumidores más importante de Perú <http://www.aspec.org.pe>`_ está interesada en implementarlo en su pais, Huayra Linux `incluye Preciosa <http://www.pagina12.com.ar/diario/ultimas/20-244839-2014-04-24.html>`_ en su última versión, programadores de nivel internacional `hicieron aportes al código <https://github.com/mgaitan/preciosa/graphs/contributors>`_, diseñadores y diseñadoras hicieron el logo y muchas otras piezas gráficas y hasta tuvimos que armar un ¡equipo de comunicación!.
 
 .. _Phasety: http://phasety.com
 .. _Preciosa: http://mgaitan.github.io/posts/hola-preciosa.html
@@ -33,14 +33,14 @@ En esa carta a Kicillof describe, con palabras sencillas y argumentos brillantes
     o fracasaremos en lo que hagamos (...) Esto es lo que me motiva al enviarle esta idea. Me interesa mi futuro,el de mis hijos y el de mis
     nietos, y el de nuestra tierra Argentina maravillosa."
 
-Mi vieja está orgullosa de todo esto (y yo soy muy riquelmeano, sépanlo), así que estoy tranquilo, pero la *"gente que sabe"* me dijo, hace unos dias, que el proyecto era malo y que se notaba que "no lo siento" (sic).
+Mi vieja está orgullosa de todo esto (y yo soy muy riquelmeano, sépanlo), así que estoy tranquilo, pero la *"gente que sabe"* me dijo, hace unos días, que el proyecto era malo y que se notaba que "no lo siento" (sic).
 
 Qué sabe la gente que sabe
 --------------------------
 
 Hace algunas semanas que Preciosa no tiene mucha actividad pública. No hay nuevas versiones de la aplicación, tampoco cambios importantes en la web y hasta estamos flojos con las redes sociales. Pero sigo trabajando todo el día en el proyecto, intentando resolver el "bug Nº 0": necesito plata que me permita armar un equipo profesional full-time dedicado a hacer de Preciosa una herramienta concreta y masiva. No sólo una buena idea potencial: que permita que desde tu teléfono o el sitio web, puedas saber cuánto te va a costar toda tu lista de compras, no sólo un producto en particular. Y que te diga, por supuesto, a dónde te conviene ir y cuánta plata vas ahorrar.
 
-Nunca mandé más mails en mi vida como en estos últimos dias. Nunca hablé tanto por teléfono con personas que no conozco ni me animé a "encarar" a gente muy distinta a la que habitualmente me rodea, para contarle sobre el proyecto. Pero lo hice y lo seguiré haciendo porque confío (y sobre todo deseo) que esto funcione.
+Nunca mandé más mails en mi vida como en estos últimos días. Nunca hablé tanto por teléfono con personas que no conozco ni me animé a "encarar" a gente muy distinta a la que habitualmente me rodea, para contarle sobre el proyecto. Pero lo hice y lo seguiré haciendo porque confío (y sobre todo deseo) que esto funcione.
 
 Por eso dije que sí a la invitación que me hicieron para presentar Preciosa en "`El club del Pitch <http://blog.incutex.com.ar/2014/04/08/elclubdelpitch/>`_" un encuentro organizado por diversas empresas e instituciones del "ecosistema emprendedor" para presentar proyectos tecnológicos, a los que un panel le hace devoluciones breves, en una especie de simulacro de "ronda de inversión".
 
