@@ -7,7 +7,7 @@
 A fines de enero, apenas `volvimos de Ushuaia <https://www.youtube.com/watch?v=95ZzSM-BlZI>`_, en la góndola de los fideos del Vea de mi barrio decidí que iba a retomar Preciosa_. Hice un aviso en la lista de correo y `lo tuiteé <https://twitter.com/tin_nqn_/status/425463037110124546>`_, sin esperar mucha respuesta.
 
 Cuando salieron las primeras aplicaciones para "Precios Cuidados",
-Luciano Ferrer me `preguntó <https://twitter.com/luuuciano/status/429027032408657920>`_ si eran lo mismo que yo quería hacer. Le respondí que Preciosa era mucho más que eso, pero todavía tenía dudas sobre cómo concretarlo:
+Luciano Ferrer me `preguntó <https://twitter.com/luuuciano/status/429027032408657920>`_ si eran lo mismo que lo que yo quería hacer. Le respondí que Preciosa era mucho más que eso, pero todavía tenía dudas sobre cómo concretarlo:
 
 .. raw:: html
 
