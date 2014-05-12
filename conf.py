@@ -215,7 +215,7 @@ REDIRECTIONS = []
 # "rsync -rav output/* joe@my.site:/srv/www/site"
 # And then do a backup, or ping pingomatic.
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = ["git push --prefix=output origin master"]
+DEPLOY_COMMANDS = ["git subtree push --prefix=output origin master"]
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
