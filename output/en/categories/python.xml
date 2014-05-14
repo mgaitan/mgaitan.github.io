@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (python)</title><link>http://mgaitan.github.io/</link><description></description><language>en</language><lastBuildDate>Wed, 14 May 2014 00:57:10 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.io/en/posts/pip-apurate-por-favor.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
+para el trabajo diario de un programador python: es el manejador
+de paquetes de nuestro entorno de trabajo (¡&lt;a class="reference external" href="http://www.virtualenv.org/en/latest/"&gt;virtual&lt;/a&gt; por favor!),
+con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
+(y, recursivamente, las dependencias que estas pudieran tener).&lt;/p&gt;
+&lt;p&gt;Conceptualmente es similar a los manejadores de paquetes de sistema como &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt;&lt;/tt&gt;,
+diferenciándose en que, por defecto, &lt;em&gt;consulta cada vez&lt;/em&gt; a una &lt;a class="reference external" href="https://pypi.python.org/pypi/"&gt;base de
+datos online&lt;/a&gt; si el paquete solicitado existe y de dónde
+puede bajar la última versión o la específica que se haya pedido.&lt;/p&gt;
+&lt;p&gt;Responder "qué, cuál y de dónde" es una tarea lenta porque dicha base de datos no es
+más que una página html por cada paquete con links que funcionan como un índice (como
+&lt;a class="reference external" href="https://pypi.python.org/simple/lxml/"&gt;este&lt;/a&gt;  que pip
+&lt;a class="reference external" href="https://github.com/pypa/pip/blob/f1fb4b4fda127529e24b71a4e03bb0b5df484ef6/pip/index.py#L141"&gt;debe parsear&lt;/a&gt;
+comparar y elegir la mejor opción para bajar (a veces incluso debe parsear la homepage
+del proyecto en busca de links de descarga, puaj!).&lt;/p&gt;
+&lt;p&gt;Por eso (y porque muchas veces la infraestructura se satura) el uso estándar de pip es lento.
+Pero hay algunas maneras de que lo sea menos. Veámoslas.&lt;/p&gt;
+&lt;div class="section" id="no-bajes-dos-veces-lo-mismo"&gt;
+&lt;h2&gt;No bajes dos veces lo mismo&lt;/h2&gt;
+&lt;p&gt;El funcionamiento básico de pip es instalar un paquete con &lt;tt class="docutils literal"&gt;pip install &amp;lt;paquete&amp;gt;&lt;/tt&gt;: busca, baja e
+instala el paquete. El flag &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download_cache=&amp;lt;path&amp;gt;&lt;/span&gt;&lt;/tt&gt; evita repetir el paso del medio,
+cosa tediosa cuando tenemos que instalar frecuentemente (por ejemplo en distintos virtualenvs)
+la misma dependencia o cuando el uso de ancho de banda es limitado.&lt;/p&gt;
+&lt;p&gt;Por ejemplo instalamos por primera vez &lt;a class="reference external" href="http://lxml.de/"&gt;lxml&lt;/a&gt; y vemos cuanto tarda.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
+Downloading/unpacking lxml
+  Downloading lxml-3.1.1.tar.gz &lt;span class="o"&gt;(&lt;/span&gt;3.3MB&lt;span class="o"&gt;)&lt;/span&gt;: 3.3MB downloaded
+  Storing download in cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+  Running setup.py egg_info &lt;span class="k"&gt;for &lt;/span&gt;package lxml
+    Building lxml version 3.1.1.
+
+    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
+
+
+Successfully installed lxml
+Cleaning up...
+
+real    2m58.276s
+user    0m38.822s
+sys 0m0.676s
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;¡3 minutos! Y eso que estoy en una conexión bastante rápida.&lt;/p&gt;
+&lt;div class="tip"&gt;
+&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;p&gt;Cualquier flag que pip acepta en su linea de comando se puede configurar como una
+&lt;a class="reference external" href="http://www.pip-installer.org/en/latest/configuration.html#environment-variables"&gt;variable de entorno&lt;/a&gt;. Entonces podemos setear flag por defecto en nuestro &lt;tt class="docutils literal"&gt;.bashrc&lt;/tt&gt;,
+por ejemplo.. code-block: bash&lt;/p&gt;
+&lt;blockquote class="last"&gt;
+export PIP_DOWNLOAD_CACHE=~/.pip_download_cache&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;p&gt;Pero sigamos: una vez cacheado, las siguientes veces que queramos instalar la misma versión de lxml
+no bajará &lt;strong&gt;el archivo&lt;/strong&gt; de nuevo&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;test2&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test2&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
+
+Downloading/unpacking lxml
+  Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+  Running setup.py egg_info &lt;span class="k"&gt;for &lt;/span&gt;package lxml
+    Building lxml version 3.1.1.
+
+    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
+
+Successfully installed lxml
+Cleaning up...
+
+real    2m30.624s
+user    0m38.966s
+sys 0m0.504s
+&lt;/pre&gt;
+&lt;p&gt;Mejoró realmente poco. ¿que clase de caché es esta?
+Chusmeemos que hay en el directorio.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;ls ~/.pip_download_cache/ | grep lxml
+https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
+&lt;/pre&gt;
+&lt;p&gt;¿Caché de urls? &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-download-cache&lt;/span&gt;&lt;/tt&gt; no evita todo el laburo de averiguar de dónde bajar,
+sino simplemente no baja si la url resultante ya existe (como nombre de un archivo)
+en este directorio.&lt;/p&gt;
+&lt;p&gt;Lo explica simple &lt;a class="reference external" href="https://github.com/pypa/pip/issues/680#issuecomment-8773509"&gt;Carl Meyer&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+La función &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download-cache&lt;/span&gt;&lt;/tt&gt; no apunta a prevenir la búsqueda en la red del archivo
+correcto a bajar: todo lo que hace es guardarlo una vez que lo encontró.
+Si de verdad te interesa instalar tus depedencias desde tu compu (sin salir a la red)
+usá &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download&lt;/span&gt;&lt;/tt&gt; primero y luego &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--find-links&lt;/span&gt;&lt;/tt&gt; (apuntando al path de descarga) con
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--no-index&lt;/span&gt;&lt;/tt&gt;.&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="una-cache-sin-salir-a-la-red"&gt;
+&lt;h2&gt;Una caché sin salir a la red&lt;/h2&gt;
+&lt;p&gt;Sigamosle la corriente al bueno de &lt;a class="reference external" href="https://twitter.com/carljm"&gt;@carljm&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test3&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install --download&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
+Downloading/unpacking lxml
+  Using download cache from /home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+Saved /home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
+    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+
+Successfully downloaded lxml
+Cleaning up...
+
+real    2m8.969s
+user    0m1.008s
+sys 0m0.136s
+&lt;/pre&gt;
+&lt;p&gt;¡Uff, 2 minutos en copiar un archivo que ya tenía bajado! (evidentemente lo que demora mucho
+es &lt;em&gt;averiguar&lt;/em&gt; la versión del archivo a bajar)&lt;/p&gt;
+&lt;div class="tip"&gt;
+&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;p class="last"&gt;se puede inspeccionar el berenjenal de redirecciones y parseos que suceden hasta que pip
+da con el paquete lxml a bajar haciendo el comando más verborrágico con
+&lt;tt class="docutils literal"&gt;pip install lxml &lt;span class="pre"&gt;-vvv&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;En este caso, el caché es directamente el archivo:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;ls ~/.pip_packages/ | grep lxml
+lxml-3.1.1.tar.gz
+&lt;/pre&gt;
+&lt;p&gt;Por suerte, una vez cacheado el paquete de esta manera no tendremos
+que consultar el índice online las siguientes veces.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test3&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
+Ignoring indexes: https://pypi.python.org/simple/
+Downloading/unpacking lxml
+  Running setup.py egg_info &lt;span class="k"&gt;for &lt;/span&gt;package lxml
+    Building lxml version 3.1.1.
+
+    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+
+
+Successfully installed lxml
+Cleaning up...
+
+real    0m38.944s
+user    0m38.338s
+sys 0m0.564s
+&lt;/pre&gt;
+&lt;p&gt;Ok, ya va mejor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="haciendo-que-la-cosa-vuele-no-recompiles-la-rueda"&gt;
+&lt;h2&gt;Haciendo que la cosa vuele: no recompiles la rueda&lt;/h2&gt;
+&lt;p&gt;pip 1.4 (en desarrollo) trae &lt;a class="reference external" href="https://github.com/pypa/pip/commit/5d02b5207a305543ad6ef19d6e6596ffa45b99e5"&gt;soporte integrado&lt;/a&gt; para el nuevo formato de paquetes
+&lt;a class="reference external" href="http://wheel.rtfd.org/,"&gt;wheel&lt;/a&gt; (superador del viejo &lt;em&gt;egg&lt;/em&gt; y basado en los estándares actuales)
+que es muchísimo más rápido que instalar desde fuentes (sobre todo en casos
+que se debe compilar, como lxml)&lt;/p&gt;
+&lt;p&gt;Para usar wheel el paquete a bajar tiene que existir en dicho formato y todavía no abundan
+en PyPi asi que podemos armarlos localmente con el propio pip&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+pip wheel --wheel-dir&lt;span class="o"&gt;=&lt;/span&gt;./pip_packages lxml
+&lt;/pre&gt;
+&lt;p&gt;Eso es similar a usar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download&lt;/span&gt;&lt;/tt&gt; pero además compila y empaqueta como
+un archivo &lt;tt class="docutils literal"&gt;.whl&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Para que pip acepte instalar estos archivos hay que usar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--use-wheel&lt;/span&gt;&lt;/tt&gt;
+y para que los busque localmente haremos:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+pip install --use-wheel --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
+&lt;/pre&gt;
+&lt;p&gt;¡Lo que tardó menos de 2 decimas de segundo! Un speedup del 90mil veces respecto al primer
+y canónico &lt;tt class="docutils literal"&gt;pip install lxml&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
+Ignoring indexes: https://pypi.python.org/simple/
+Downloading/unpacking lxml
+Installing collected packages: lxml
+Successfully installed lxml
+Cleaning up...
+
+real    0m0.180s
+user    0m0.152s
+sys 0m0.024s
+&lt;/pre&gt;
+&lt;p&gt;Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
+django, whatever) me los haces rodar para que pip vuele.&lt;/p&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.io/en/posts/pip-apurate-por-favor.html</guid><pubDate>Wed, 10 Apr 2013 04:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.io/en/posts/creando-un-nuevo-proyecto-python.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
+¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
+proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
+no se te arme lio de dependencias que colisionan con las de otros
+proyectos ? Bien, te propongo esta receta.&lt;/p&gt;
+&lt;div class="section" id="las-herramientas"&gt;
+&lt;h2&gt;Las herramientas&lt;/h2&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://www.virtualenv.org"&gt;Virtualenv&lt;/a&gt;:  es una herramienta para aislar tu entorno de
+desarrollo python. Es muy pero muy útil para evitar conflictos entre las
+dependencias de tus distintos proyectos.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/"&gt;virtualenvwrapper&lt;/a&gt;: es un conjunto de extensiones que
+hacen la vida del usuario &lt;em&gt;virtualenv&lt;/em&gt; aun más feliz, permitiendo crear
+y borrar entornos virtuales, asociarlos a un proyecto, automatizar
+tareas al activar o desactivar uno, etc.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt;: es la herramienta moderna, correcta y recomendada
+para administrar los paquetes python instalados en tu
+sistema/virtualenv. Es un reemplazo de &lt;em&gt;easy_install&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://packages.python.org/distribute/"&gt;Distribute&lt;/a&gt;: es la herramienta moderna y recomendada para
+distribuir tu paquete python. Es un fork de &lt;em&gt;setuptools&lt;/em&gt; (que es, a su
+vez, una mejora sobre el módulo estándar &lt;em&gt;distutils&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/stumitchell/skeleton"&gt;skeleton&lt;/a&gt; es una herramienta que define &lt;em&gt;plantillas&lt;/em&gt;
+para iniciar un proyecto, generando la estructura básica necesaria. Es
+similar a &lt;a class="reference external" href="http://python.org.ar/pyar/PasteScript"&gt;PasteScript&lt;/a&gt; pero enfocado en esta
+tarea concreta, sin dependencias y compatible con Python 3.x&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;div class="section" id="la-receta"&gt;
+&lt;h2&gt;La receta&lt;/h2&gt;
+&lt;ol class="arabic"&gt;&lt;li&gt;&lt;p class="first"&gt;Instalá pip:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo apt-get install python-pip
+&lt;/pre&gt;
+&lt;p&gt;o bien directamente:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Instalá virtualenwrapper y skeleton:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pip install virtualenwrapper
+$ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;div class="note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;Notar que &lt;em&gt;skeleton&lt;/em&gt; se está instalando desde un &lt;em&gt;fork&lt;/em&gt; del proyecto
+original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol class="arabic" start="3"&gt;&lt;li&gt;&lt;p class="first"&gt;Configurá virtualenvwrapper&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.virtualenvs           &lt;span class="c"&gt;# acá se van a guardar tus entornos virtuales
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/proyectos              &lt;span class="c"&gt;# acá se van a guardar tus proyectos
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.pip_download_cache     &lt;span class="c"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Luego editá tu &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/tt&gt; agregando las siguientes líneas&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true
+export &lt;/span&gt;&lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
+&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
+&lt;/pre&gt;
+&lt;p&gt;y recargá tus cambios:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ source ~/.bashrc
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Inicializá tu proyecto. Por ejemplo el proyecto &lt;em&gt;zaraza&lt;/em&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ mkproject -t package zaraza
+&lt;/pre&gt;
+&lt;p&gt;Se te solicitarán algunos datos (nombre del proyecto, autor,
+licencia, etc.) y ¡(casi) listo! Estarás trabajando en tu proyecto
+&lt;em&gt;zaraza&lt;/em&gt;. Tu prompt se verá así&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+(zaraza)tin@morocha:~/proyectos/zaraza$
+&lt;/pre&gt;
+&lt;p&gt;¿Qué sucedió? Se creó un directorio &lt;tt class="docutils literal"&gt;~/proyectos/zaraza&lt;/tt&gt; para tu
+proyecto, asociado a un virtualenv ubicado en &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.virtualenvs/zaraza&lt;/span&gt;&lt;/tt&gt;.
+&lt;strong&gt;skeleton&lt;/strong&gt; automáticamente creó una estructura básica de
+paquete python en &lt;tt class="docutils literal"&gt;~/proyectos/zaraza/src&lt;/tt&gt; incluyendo un &lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt;
+basado en &lt;em&gt;distribute&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Instalá tu paquete en el virtualenv, para poder importarlo desde
+cualquier lado:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+(zaraza) $ cd  ~/proyectos/zaraza/src
+(zaraza) $ pip install -e .
+&lt;/pre&gt;
+&lt;p&gt;Esto agrega el directorio de desarrollo de tu proyecto al PYTHONPATH
+del virtualenv, de modo que puedes importar &lt;em&gt;zaraza&lt;/em&gt; desde cualquier
+lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
+&lt;em&gt;src/test&lt;/em&gt; al nivel de '/src/zaraza'&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;div class="section" id="y-ahora"&gt;
+&lt;h2&gt;¿Y ahora?&lt;/h2&gt;
+&lt;p&gt;Cada vez que quieras trabajar en tu proyecto &lt;em&gt;zaraza&lt;/em&gt; ejecutás:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ workon zaraza
+&lt;/pre&gt;
+&lt;p&gt;Para salir del virtualenv:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+(zaraza) $ deactivate
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="algunos-tips-mas-a-modo-de-despedida"&gt;
+&lt;h2&gt;Algunos tips más a modo de despedida&lt;/h2&gt;
+&lt;p&gt;Virtualenwrapper es totalmente hookeable y extensible. Esta receta
+propone usar &lt;em&gt;skeleton&lt;/em&gt; (que funciona como plugin de
+&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/"&gt;virtualenvwrapper.project&lt;/a&gt;)
+para crear una estructura de paquete estándar básica, pero hay plugins
+para proyectos más específicos. Por ejemplo
+&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.django/"&gt;virtualenwrapper.django&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;El comando &lt;tt class="docutils literal"&gt;mkproject&lt;/tt&gt; es un wrapper sobre el
+comando principal de virtualenvwrapper &lt;tt class="docutils literal"&gt;mkvirtualenv&lt;/tt&gt;, que acepta muchos
+parámetros opcionales. Ejecutá &lt;tt class="docutils literal"&gt;mkproject_help&lt;/tt&gt; o &lt;tt class="docutils literal"&gt;mkvirtualenv &lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/tt&gt;
+para saber más.&lt;/p&gt;
+&lt;p&gt;Y ya sabés ...&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;&lt;/div&gt;
+&lt;hr class="docutils"&gt;&lt;blockquote&gt;
+Este artículo lo escribí originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.io/en/posts/creando-un-nuevo-proyecto-python.html</guid><pubDate>Mon, 12 Nov 2012 03:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.io/en/posts/migrando-issues-entre-proyectos-de-bitbucket.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="http://mgaitan.github.io/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
+Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
+de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
+allí porque somos pobretones y nos da repos privados gratis.
+En la mudanza se me quedaron varios &lt;em&gt;issues&lt;/em&gt; que necesitaba migrar. Y &lt;a class="reference external" href="https://bitbucket.org/site/master/issue/1642/allow-moving-tickets-over-to-another"&gt;no era el único&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Buscando un rato encontré scriptcitos para migrar &lt;a class="reference external" href="https://github.com/sorich87/github-to-bitbucket-issues-migration"&gt;desde&lt;/a&gt; o &lt;a class="reference external" href="https://gist.github.com/3778347"&gt;hacia&lt;/a&gt; GitHub
+pero no había para migrar entre proyectos de Bitbucket, algo bastante común
+desde que empezaron a ofrecer soporte Git.&lt;/p&gt;
+&lt;p&gt;Decidí entonces que debía hacer mi propio scriptcito migrador. La cosa se
+complicaba porque &lt;a class="reference external" href="https://github.com/Sheeprider/BitBucket-api"&gt;el&lt;/a&gt;
+&lt;a class="reference external" href="https://github.com/ericof/python-bitbucket"&gt;par&lt;/a&gt; de bibliotecas python
+que interactuan con la API de Bitbucket no tenian, hasta el momento, soporte
+para "postear" &lt;em&gt;issues&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
+proyecto y encontré &lt;a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc"&gt;justo lo que estaba buscando&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Entonces bastó con instalar el fork de David Paz Reyes&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install git+https://github.com/davidmpaz/BitBucket-api.git
+&lt;/pre&gt;
+&lt;p&gt;he hice un script que migra todo los issues en estado &lt;em&gt;new&lt;/em&gt;
+del repo original (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) al nuevo (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) y los potenciales comentarios que tenga.
+Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
+agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bitbucket&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;
+
+&lt;span class="n"&gt;gpec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'gpec'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;gpec3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'gpec3'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# request original ISSUES&lt;/span&gt;
+&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issues&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'issues'&lt;/span&gt;&lt;span class="p"&gt;][:]:&lt;/span&gt;
+    &lt;span class="n"&gt;original_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'status'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s"&gt;'new'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;continue&lt;/span&gt;
+
+    &lt;span class="c"&gt;# and post to the new repo&lt;/span&gt;
+    &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'Fail migrating #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;original_id&lt;/span&gt;
+        &lt;span class="k"&gt;continue&lt;/span&gt;
+
+    &lt;span class="n"&gt;new_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'Migrated #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt; as #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt; in the new project'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c"&gt;# add a comment to mark the migration&lt;/span&gt;
+    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'reported_by'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'username'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s"&gt;'anonymous'&lt;/span&gt;
+    &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Issue migrated from the original repo. "&lt;/span&gt;
+            &lt;span class="s"&gt;"Was #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt; reported by &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="c"&gt;# migrate comments&lt;/span&gt;
+    &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issue_comments&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'content'&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+            &lt;span class="k"&gt;continue&lt;/span&gt;
+        &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;¡Disfruten!&lt;/p&gt;</description><guid>http://mgaitan.github.io/en/posts/migrando-issues-entre-proyectos-de-bitbucket.html</guid><pubDate>Sat, 10 Nov 2012 03:09:24 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.io/en/posts/bienvenidos-al-tren.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Hola!&lt;/p&gt;
+&lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
+en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
+que explicaré más adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
+&lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
+&lt;p&gt;Espero que pronto esto esté más bonito y con contenido. También que la
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;</description><guid>http://mgaitan.github.io/en/posts/bienvenidos-al-tren.html</guid><pubDate>Thu, 11 Oct 2012 04:15:00 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>http://mgaitan.github.io/en/posts/cuevanalinks-ahora-para-seres.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div class="important"&gt;
+&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
+&lt;p class="last"&gt;Cuevanlinks está desmantenido y con los cambios en cuevana.tv ya no
+funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
+¿Querés revivir el proyecto? &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/fork"&gt;Forkealo&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Un colega al que no conozco personalmente, &lt;a class="reference external" href="http://mguillech.blogspot.com/"&gt;Martín
+Chikilian&lt;/a&gt;, se ofreció a desarrollar
+una interfaz gráfica para
+&lt;a class="reference external" href="http://mgaitan.github.io/en/posts/blog/article/la-sanguijuela-de-cuevana"&gt;Cuevanalinks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Luego de algunos dias y teniendo una paciencia descomunal para soportar
+siempre nuevos requerimientos de mi parte, obtuvo una versión de
+Cuevanalinks-GUI, basado en &lt;a class="reference external" href="http://es.wikipedia.org/wiki/PyQt"&gt;PyQt&lt;/a&gt;&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png"&gt;&lt;/div&gt;
+&lt;p&gt;Todavía está en desarrollo (hay algunos bugcitos y decisiones de diseño
+que no resolvemos del todo) pero ya ofrece ciertas ventajas sobre la
+versión para línea de comandos:&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Permite elegir qué se descarga cuando se hace una búsqueda de
+películas&lt;/li&gt;
+&lt;li&gt;Te deja armar una cola de descargas de muchas cosas distintas
+haciendo muchas busquedas&lt;/li&gt;
+&lt;li&gt;Y, lo más importante, lo puede instalar y usar un ser humano
+normal. :D&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Para Windows, hay un instalador de la versión 0.5dev (el dev denota que
+está en desarrollo, se entiende) que se puede descargar desde acá:&lt;/p&gt;
+&lt;div class="important"&gt;
+&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/cuevanalinks-0.5dev-installer.exe"&gt;cuevanalinks-0.5dev-installer.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p class="last"&gt;para Windows XP o superior&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Para los linuxeros, Martín puso &lt;a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html"&gt;algunas
+instrucciones&lt;/a&gt;
+para hacerlo andar desde los fuentes.&lt;/p&gt;</description><guid>http://mgaitan.github.io/en/posts/cuevanalinks-ahora-para-seres.html</guid><pubDate>Wed, 03 Aug 2011 11:51:21 GMT</pubDate></item><item><title>CDPedia 0.7 disponible</title><link>http://mgaitan.github.io/en/posts/cdpedia-0-7-disponible.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg" class="align-left" src="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg"&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.python.org.ar"&gt;Python Argentina&lt;/a&gt; se complace en informar que está
+disponible la &lt;a class="reference external" href="http://cdpedia.python.org.ar/"&gt;versión 0.7 de CDPedia&lt;/a&gt;
+, un proyecto de la comunidad para disponer de los contenidos de
+&lt;a class="reference external" href="http://es.wikipedia.org"&gt;Wikipedia en español&lt;/a&gt; sin acceso a internet,
+usando un CD o DVD como soporte de la información.&lt;/p&gt;
+&lt;p&gt;La imágen de CD (.iso) se puede descargar desde acá:&lt;/p&gt;
+&lt;div class="important"&gt;
+&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://mgaitan.github.io/downloads/cdpedia-CD-0.7.iso"&gt;CDPedia 0.7&lt;/a&gt;
+CD 701Mb - 93500 artículos, 10% de imágenes&lt;/blockquote&gt;
+&lt;dl class="last docutils"&gt;&lt;dt&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/cdpedia-DVD5-0.7.iso"&gt;CDPedia 0.7 DVD&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.&lt;/dd&gt;
+&lt;/dl&gt;&lt;/div&gt;
+&lt;p&gt;Más información en
+&lt;a class="reference external" href="http://cdpedia.python.org.ar/"&gt;http://cdpedia.python.org.ar/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Esta versión de CDPedia es la que se distribuirá a todas las escuelas de
+Argentina a través de &lt;a class="reference external" href="http://wikipediaenelaula.educ.ar/"&gt;Educ.ar&lt;/a&gt;
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/cdpedia-0-7-disponible#nb1"&gt;1&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;Felicitaciones a todos los
+&lt;a class="reference external" href="http://code.google.com/p/cdpedia/source/browse/trunk/resources/general_info/AUTORES.txt"&gt;colaboradores&lt;/a&gt;
+por este logro de la comunidad. En especial, a
+&lt;a class="reference external" href="http://twitter.com/#!/dmascialino"&gt;Diego&lt;/a&gt;,
+&lt;a class="reference external" href="http://twitter.com/#!/spiccinini"&gt;SAn&lt;/a&gt;,
+&lt;a class="reference external" href="http://www.taniquetil.com.ar/plog/"&gt;Facu&lt;/a&gt; y
+&lt;a class="reference external" href="http://protocultura.net/"&gt;Alecu&lt;/a&gt; que son los principales&lt;/p&gt;</description><guid>http://mgaitan.github.io/en/posts/cdpedia-0-7-disponible.html</guid><pubDate>Fri, 01 Jul 2011 14:00:00 GMT</pubDate></item><item><title>Pep 20: El Zen del Barça</title><link>http://mgaitan.github.io/en/posts/pep-20-el-zen-del-barca.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;&lt;img alt="image0" src="http://mgaitan.github.io/images/messi_guardib9bf-5b102.jpg"&gt;
+El &lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0020/"&gt;Zen de Python&lt;/a&gt; es
+también el Zen del Barça, el de Pep Guardiola. La "Pep" 20
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/pep-20-el-zen-del-barca#nb1"&gt;1&lt;/a&gt;]:&lt;/p&gt;
+&lt;blockquote&gt;
+Bello es mejor que feo.
+Explícito es mejor que implícito.
+Simple es mejor que complejo.
+Complejo es mejor que complicado.
+Plano es mejor que anidado.
+Disperso es mejor que denso.
+La legibilidad cuenta.
+Los casos especiales no son tan especiales como para quebrantar las
+reglas.
+Aunque lo práctico gana a la pureza.
+Los errores nunca deberían dejarse pasar silenciosamente.
+A menos que hayan sido silenciados explícitamente.
+Frente a la ambigüedad, rechaza la tentación de adivinar.
+Debería haber una —y preferiblemente sólo una— manera obvia de
+hacerlo.
+Aunque esa manera puede no ser obvia al principio a menos que usted
+sea Messi, Xavi o Iniesta.
+Ahora es mejor que nunca.
+Aunque nunca es a menudo mejor que ya mismo.
+Si la implementación es difícil de explicar, es una mala idea.
+Si la implementación es fácil de explicar, puede que sea una buena
+idea.
+Los espacios son una gran idea ¡Hagamos más de esas cosas!&lt;/blockquote&gt;</description><guid>http://mgaitan.github.io/en/posts/pep-20-el-zen-del-barca.html</guid><pubDate>Wed, 27 Apr 2011 19:22:47 GMT</pubDate></item><item><title>Compartiendo documentación de paquetes python</title><link>http://mgaitan.github.io/en/posts/compartiendo-documentacion-de.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+documentación está incompleto
+[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;Si bien el manifiesto ágil
+&lt;a class="reference external" href="http://agilemanifesto.org/iso/es/"&gt;proclama&lt;/a&gt; &lt;em&gt;"Software funcionando
+sobre documentación extensiva"&lt;/em&gt;, yo subrayaría extensiva como eufemismo
+de documentación burocrática e inútil (opiné de esto
+&lt;a class="reference external" href="http://mgaitan.github.io/en/posts/blog/article/veinteanero"&gt;acá&lt;/a&gt;) que evidentemente no es la que hace
+falta. Pero la documentación (sobre todo la buena) es indispensable y
+para &lt;a class="reference external" href="http://jacobian.org/writing/great-documentation/"&gt;algunos&lt;/a&gt;, la
+parte que más los enorgullece del proyecto (y con razón).&lt;/p&gt;
+&lt;p&gt;Desde el punto de vista técnico, escribir documentación (no &lt;a class="reference external" href="http://sphinx.pocoo.org/examples.html"&gt;sólo para
+Python&lt;/a&gt;!) es bastante fácil con
+&lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;restructuredText&lt;/a&gt; (qué feo
+el sitio de docutils, che!) que es &lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0287/"&gt;el markup estándar de los
+pythonistas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Sobre este markup funciona &lt;a class="reference external" href="http://sphinx.pocoo.org/"&gt;Sphinx&lt;/a&gt;, el
+generador de documentación más utilizado (por lejos) en el ecosistema de
+Python. Es lo que usa la documentación de Python misma, la de Django y
+casi todo proyecto conocido o por conocer.&lt;/p&gt;
+&lt;p&gt;Entonces usamos restructuredText, usamos Sphinx, pero para &lt;a class="reference external" href="http://mgaitan.github.io/en/posts/blog/article/la-sanguijuela-de-cuevana"&gt;nuestro
+proyectito de morondanga&lt;/a&gt; que
+no tiene web propia ni nada, ¿dónde subimos la documentación generada?
+Veamos.&lt;/p&gt;
+&lt;div class="section" id="usando-readthedocs-org"&gt;
+&lt;h2&gt;Usando Readthedocs.org&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/"&gt;Read the docs&lt;/a&gt;
+es un sitio para hospedar documentación realizada con Sphinx. Sólo se
+necesita indicarle el repositorio público del proyecto (svn, git,
+mercurial, bazaar), subir los fuentes .rst y contenido estático
+(imágenes) aptos para Sphinx en una carpeta /doc o /docs y el sitio se
+encarga de bajar los fuentes de documentación y renderizarlos a HTML a
+través de Sphinx.&lt;/p&gt;
+&lt;p&gt;Estrictamente, usando rtfd.org (como le dicen &lt;a class="reference external" href="http://www.urbandictionary.com/define.php?term=RTFD&amp;amp;defid=2281638"&gt;los
+amigos&lt;/a&gt;)
+ni siquiera hace falta tener Sphinx instalado localmente.&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 31); &lt;em&gt;&lt;a href="http://mgaitan.github.io/en/posts/compartiendo-documentacion-de.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Duplicate explicit target name: "acá".&lt;/div&gt;
+&lt;p&gt;Más aun, por defecto actualiza diariamente, pero se puede utilizar un
+"hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
+al repo, de manera de tener la documentación actualizada al instante.
+Para usuarios de GitHub la activación del "web hook" se explica
+&lt;a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/webhooks.html#github"&gt;acá&lt;/a&gt;
+. Para &lt;a class="reference external" href="http://bitbucket.org"&gt;BitBucket.org&lt;/a&gt; es parecido:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;&lt;li&gt;Vas a tu proyecto , click en Admin -&amp;gt; Services&lt;/li&gt;
+&lt;li&gt;Agregás el servicio "POST"&lt;/li&gt;
+&lt;li&gt;Completás el campo de texto con la URL que te da ReadTheDocs en la
+página de descripción de tu proyecto (estándo logueado). Por ejemplo:&lt;/li&gt;
+&lt;/ol&gt;&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://mgaitan.github.io/en/posts/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 60)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;Y listo. Tu docu al instante.&lt;/p&gt;
+&lt;p&gt;Como el sitio genera el html en vez de servir una versión generada
+previamente, la documentación que requiere introspección del código (
+todas las directivas `` .. auto* :: `` de Sphinx) este debe poder
+ejecutarse. Para eso el paquete debe ser instalable via &lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt; y
+hay marcar desde la página de configuración del proyecto en RTFD.org,
+que instale en un virtualenv.&lt;/p&gt;
+&lt;p&gt;Para ver si hubo algún problema en la generación, podés fijarte en
+"build" donde te muestra el stdout y el stderr de la corrida de Sphinx.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="subir-la-docu-a-pypi"&gt;
+&lt;h2&gt;Subir la docu a PyPi&lt;/h2&gt;
+&lt;p&gt;Una forma buenísima de compartir tu trabajo pythónico es a través del
+Python Package Index, &lt;a class="reference external" href="http://pypi.python.org/pypi"&gt;pypi&lt;/a&gt;, que es el
+índice que usan las herramientas &lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt; e
+easy_install. Si bien no necesarimente los paquetes deben estar
+hospedados allí (indicando en el setup.py la URL de descarga) es muy
+común y fácil hacerlo con el comando &lt;tt class="docutils literal"&gt;upload&lt;/tt&gt; del setup.py.&lt;/p&gt;
+&lt;p&gt;Lo que muchos no
+&lt;a class="reference external" href="http://packages.python.org/an_example_pypi_project/buildanduploadsphinx.html"&gt;saben&lt;/a&gt;
+es que PyPi también ofrece &lt;a class="reference external" href="http://packages.python.org/"&gt;hostear la
+documentación&lt;/a&gt;. La forma canónica es ir a
+la página de administración de tu proyecto en PyPi y adjuntar un .zip
+con la documentación (que no necesariamente tiene que ser hecha con
+Sphinx)&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://mgaitan.github.io/en/posts/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 93)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;Pero si usamos Sphinx hay una manera más fácil, manteniendosé en el
+"ecosistema" de desarrollo: usar esta &lt;a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload/"&gt;extension de
+setuptools&lt;/a&gt; que
+permite generar el html a través Sphinx y subirlo automáticamente. Se
+instala, obviamente, vía pypi:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ easy_install sphinx-pypi-upload
+&lt;/pre&gt;
+&lt;p&gt;Hay que condigurar un &lt;tt class="docutils literal"&gt;setup.cfg&lt;/tt&gt; (ubicado al nivel raiz, junto con
+&lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt;) indicandole dónde está la docu fuente y dónde el
+resultado. Más o menos así:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[build_sphinx]
+source-dir = doc/source
+build-dir  = doc/build
+all_files  = 1
+
+[upload_sphinx]
+upload-dir = doc/build/html
+&lt;/pre&gt;
+&lt;p&gt;Luego se usa:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ python setup.py build_sphinx
+$ python setup.py upload_sphinx
+&lt;/pre&gt;
+&lt;p&gt;Y docu subida a la dire
+&lt;em&gt;`http://packages.python.org/tu-proyecto &amp;lt;http://packages.python.org/tu-proyecto&amp;gt;`_&lt;/em&gt;
+. ¡&lt;a class="reference external" href="http://packages.python.org/CuevanaLinks/"&gt;Charaaán&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="usando-tu-repositorio-svn"&gt;
+&lt;h2&gt;Usando tu repositorio SVN&lt;/h2&gt;
+&lt;p&gt;Si usas SVN y tu servidor lo permite, podés servir contenido estático
+(html y todo lo que produce y necesita Sphinx) directamente desde el
+repositorio.&lt;/p&gt;
+&lt;p&gt;Para que el servidor Subversion muestre el html renderizado en vez del
+código (como texto plano) hay que indicarle el tipo &lt;tt class="docutils literal"&gt;mime&lt;/tt&gt; de cada
+archivo.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ svn propset svn:mime-type 'text/html' FILENAME
+$ svn propset svn:mime-type 'image/jpeg' FILENAME
+&lt;/pre&gt;
+&lt;p&gt;Para que esto se haga automático, se puede modificar el archivo de
+configuración &lt;a href="http://mgaitan.github.io/en/posts/compartiendo-documentacion-de.html#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
+&lt;div class="system-message" id="id3"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 144); &lt;em&gt;&lt;a href="http://mgaitan.github.io/en/posts/compartiendo-documentacion-de.html#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline literal start-string without end-string.&lt;/div&gt;
+&lt;pre class="literal-block"&gt;
+[miscellany]
+enable-auto-props = yes
+
+[auto-props]
+*.html = svn:mime-type=text/html
+*.css = svn:mime-type=text/css
+*.js = svn:mime-type=text/javascript
+*.png = svn:mime-type=image/png
+*.jpg = svn:mime-type=image/jpeg
+*.gif = svn:mime-type=image/gif
+&lt;/pre&gt;
+&lt;p&gt;Un ejemplo de esto es el &lt;a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html"&gt;reporte de mi proyecto
+integrador&lt;/a&gt;
+que está hospedado en Google Code&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="aprovechandote-de-github"&gt;
+&lt;h2&gt;Aprovechándote de GitHub&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://github.com"&gt;GitHub&lt;/a&gt; hospeda &lt;a class="reference external" href="http://pages.github.com/"&gt;páginas
+estáticas&lt;/a&gt;, tanto del desarrollador/a como
+de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
+mas o menos automáticamente estas opciones que no he probado pero las
+dejo como referencia:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.io/en/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/"&gt;Hosting sphinx doc in
+github&lt;/a&gt;
+de Luca Sbardella.
+&lt;img alt="image1" src="http://mgaitan.github.io/en/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
+github-tools&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.io/en/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item><item><title>La sanguijuela de cuevana</title><link>http://mgaitan.github.io/en/posts/la-sanguijuela-de-cuevana.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;blockquote&gt;
+&lt;strong&gt;UPDATE&lt;/strong&gt; Hay una nueva versión con interfaz gráfica
+&lt;a class="reference external" href="http://mgaitan.github.io/en/posts/blog/article/cuevanalinks-ahora-para-seres"&gt;acá&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;Parece que se me hizo hobby &lt;a class="reference external" href="http://mgaitan.github.io/en/posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv"&gt;chupar links de
+cuevana.tv&lt;/a&gt; y el
+experimento ahora tiene su versión pythonica:
+&lt;a class="reference external" href="http://pypi.python.org/pypi/CuevanaLinks"&gt;Cuevanalinks&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Es un pequeño proyecto que permite "conseguir links" de contenidos
+ofrecidos en cuevana, sirviendo estos como fuentes a manejadores de
+descargas como &lt;a class="reference external" href="http://www.tucaneando.com/"&gt;Tucan&lt;/a&gt; o
+&lt;a class="reference external" href="http://jdownloader.org/"&gt;JDownloader&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Más allá de los resultados, me ha tenido entretenido algunas horas y me
+permitió aprender (o al menos resolver) algunas cosas: cómo se usa
+mercurial (y en particular un merge conflictivo con Meld), cómo se
+escribe un setup.py, como se distribuye via PyPi, etc.&lt;/p&gt;
+&lt;p&gt;También, por supuesto, me permitió usar dos utilidades que me gustan
+mucho: &lt;a class="reference external" href="http://pyquery.org"&gt;PyQuery&lt;/a&gt; y
+&lt;a class="reference external" href="http://pypi.python.org/pypi/plac"&gt;plac&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La aplicación tiene dos módulos/componentes:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;&lt;li&gt;Una &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/src/943b329f3da5/cuevanalinks/cuevanaapi.py"&gt;biblioteca que intenta funcionar como
+API&lt;/a&gt;
+de &lt;a class="reference external" href="http://www.cuevana.tv"&gt;Cuevana&lt;/a&gt; y es la encargada de
+&lt;em&gt;scrappear&lt;/em&gt; la web en busca de la info interesante.&lt;/li&gt;
+&lt;li&gt;Una &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/src/943b329f3da5/cuevanalinks/cuevanacli.py"&gt;interfaz de línea de
+comandos&lt;/a&gt;
+que permite buscar links y bajar subtitulos de contenidos específicos&lt;/li&gt;
+&lt;/ol&gt;&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://mgaitan.github.io/en/posts/local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 37)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;div class="section" id="para-que-sirve"&gt;
+&lt;h2&gt;Para qué sirve&lt;/h2&gt;
+&lt;p&gt;Por ejemplo, para bajar la temporada 4 completa de Mad Men, con
+subtitulos, se podría hacer esto:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ cuevanalinks 'mad men' s04 -s &amp;gt; madmen.txt &amp;amp;&amp;amp; tucan -d -i madmen.txt
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="instalacion"&gt;
+&lt;h2&gt;Instalación&lt;/h2&gt;
+&lt;p&gt;Para instalarlo, basta con usar &lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pip install cuevanalinks
+&lt;/pre&gt;
+&lt;p&gt;O con
+&lt;a class="reference external" href="http://packages.python.org/distribute/easy_install.html"&gt;easy_install&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo easy_install cuevanalinks
+&lt;/pre&gt;
+&lt;p&gt;O bien, bajar &lt;a class="reference external" href="http://pypi.python.org/pypi/CuevanaLinks#downloads"&gt;el
+paquete&lt;/a&gt; y
+ejecutar :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ tar xvfz CuevanaLinks-0.1.tar.gz
+$ cd CuevanaLinks-0.1
+$ sudo python setup.py install
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="algunas-posibilidades-de-la-api"&gt;
+&lt;h2&gt;Algunas posibilidades de la API&lt;/h2&gt;
+&lt;p&gt;El CLI por ahora sólo expone una parte pequeña de la API, pero hay
+varias posibilidades. Por ejemplo:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt;&amp;gt; from cuevanalinks import cuevanaapi
+&amp;gt;&amp;gt;&amp;gt; api = cuevanaapi.CuevanaAPI ()
+&amp;gt;&amp;gt;&amp;gt; house = api.get_show ('house')
+&amp;gt;&amp;gt;&amp;gt; house.plot
+u'El doctor Gregory House, especialista en el tratamiento de enfermedades infecciosas, trabaja en un hospital universitario de Princetown, donde dirige una unidad especial encargada de pacientes afectados por dolencias extrañas y en la que colabora con un selecto grupo de aventajados ayudantes.'
+&amp;gt;&amp;gt;&amp;gt; house7x1 = house.get_episode (7, 1)
+&amp;gt;&amp;gt;&amp;gt; house7x1.title
+'Now What?'
+&amp;gt;&amp;gt;&amp;gt; house7x1.cast
+['Hugh Laurie',
+ 'Lisa Edelstein',
+ 'Omar Epps',
+ 'Jesse Spencer',
+ 'Jennifer Morrison',
+ 'Robert Sean Leonard',
+ 'Olivia Wilde',
+ 'Peter Jacobson']
+&amp;gt;&amp;gt;&amp;gt; house7x1.sources
+['http://www.megaupload.com/?d=DM58TA0J',
+ 'http://www.filesonic.com/file/36841721/?',
+ 'http://bitshare.com/?f=67z435xm',
+ 'http://www.filefactory.com/file/caf85b9']
+&amp;gt;&amp;gt;&amp;gt; house7x1.subs
+{'ES': 'http://www.cuevana.tv/download_sub?file=s/sub/7888_ES.srt'}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lo-que-falta"&gt;
+&lt;h2&gt;Lo que falta&lt;/h2&gt;
+&lt;p&gt;Si bien es lo más prolijito que he hecho, todavía está lejos de ser un
+trabajo completo, tanto en funcionalidades como en
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Software_Quality_Assurance"&gt;SQA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Un aspecto esencial es hacer test (perdón Nati Bidart ;-) ), para lo
+cual tengo que aprender a usar
+&lt;a class="reference external" href="http://code.google.com/p/python-nose/"&gt;nose&lt;/a&gt; y
+&lt;a class="reference external" href="http://blog.ianbicking.org/minimock.html"&gt;minimock&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Respecto a funciones, algo importante es definir cómo resuelve el CLI el
+manejo de múltiples resultados para una búsqueda. Actualmente devuelve
+el resultado "más relevante" sin anoticiar al usuario de otras opciones.&lt;/p&gt;
+&lt;p&gt;También falta documentación! Veremos la próxima.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="comentarios-sugerencias-bugs"&gt;
+&lt;h2&gt;Comentarios, sugerencias, bugs&lt;/h2&gt;
+&lt;p&gt;Todo aporte (ideas, código, etc.) es bienvenido. Si encuentran
+problemas,
+&lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/issues"&gt;reportenlos&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;No estoy seguro cuánto puede durar esto funcionando, ya que depende de
+que el funcionamiento del sitio no cambie o yo tenga mucho tiempo y
+ganas de andar parchando detrás. Por eso, si hay más interesados y
+usuarios, seguramente podremos hacerlo durar más.&lt;/p&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.io/en/posts/la-sanguijuela-de-cuevana.html</guid><pubDate>Sat, 09 Apr 2011 17:22:27 GMT</pubDate></item><item><title>Apuntes del PyCamp 2011</title><link>http://mgaitan.github.io/en/posts/apuntes-del-pycamp-2011.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Casi se hizo jueves y todavía no escribí nada sobre el
+&lt;a class="reference external" href="http://python.org.ar/pyar/PyCamp/2011"&gt;PyCamp&lt;/a&gt;. &lt;a class="reference external" href="http://lateral.netmanagers.com.ar/"&gt;Roberto
+Alsina&lt;/a&gt; se va a enojar.&lt;/p&gt;
+&lt;p&gt;La excusa, vaga como yo, es que la devolución de uno de mis directores
+de &lt;a class="reference external" href="http://mgaitan.github.io/en/posts/blog/article/preparados-listos-en-un-rato"&gt;tesis&lt;/a&gt; fue más
+[STRIKEOUT:hinchapelotas] minuciosa que lo esperado. Así que para
+cumplir el
+&lt;a class="reference external" href="http://twitter.com/#!/nqnwebs/status/48955773732134912"&gt;objetivo&lt;/a&gt;
+tuve un amansador refactoring de 5pm a 6am cuyo resultado me permitió
+conseguir un lacónico:&lt;/p&gt;
+&lt;blockquote&gt;
+Recibido, pero recién lo puedo ver el viernes&lt;/blockquote&gt;
+&lt;p&gt;Inmediatamente demostré que el lenguaje soez en arameo es un
+conocimiento latente.&lt;/p&gt;
+&lt;div class="section" id="a-modo-de-intro"&gt;
+&lt;h2&gt;A modo de intro&lt;/h2&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 19); &lt;em&gt;&lt;a href="http://mgaitan.github.io/en/posts/apuntes-del-pycamp-2011.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Duplicate explicit target name: "pycamp".&lt;/div&gt;
+&lt;p&gt;El &lt;a class="reference external" href="http://python.org.ar/pyar/PyCamp/"&gt;PyCamp&lt;/a&gt; es un encuentro de la
+comunidad &lt;a class="reference external" href="http://www.python.org.ar"&gt;Python Argentina&lt;/a&gt;. Monos (y
+pronto monas) con laptops afiladas se juntan en el algun rincón del país
+con internet, preferentemente lejos de las grandes urbes (para darle
+énfasis a eso de &lt;em&gt;camp&lt;/em&gt;) a programar software libre, hackear de lo
+lindo, jugar jueguitos electrónicos y de los otros, tomar y beber en
+bucle continuo y hacer cuanto le plazca a cada uno, en un ambiente
+totalmente inclusivo, distendido y buena onda.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://mgaitan.github.io/images/5575373677_34553-e5833.jpg"&gt;
+Python Argentina abarca el amplio espectro que va desde programadores
+reconocidos internacionalmente (gran parte de ese Ubuntu que seguro
+estas usando — o deberías — lo hacen pythonistas argentinos) hasta
+"newbies" que se anotaron en la lista con el único y nada despreciable
+objetivo de callar al amigo que ya sabe un poco más y no para de
+hincharle para que use Python (resulta que a los pocos dias, el
+(ex)newbie ya está molestando a un tercero).&lt;/p&gt;
+&lt;p&gt;Esa población tiene fiel reflejo en el PyCamp, pero grosos y finitos
+tienen las mismas posibilidades de proponer, opinar y divertirse. Por
+supuesto, es impagable lo que se aprende y son increíbles las cosas que
+hacen los geeks cuando están divertidos.&lt;/p&gt;
+&lt;p&gt;De estos encuentro salieron proyectos como
+&lt;a class="reference external" href="http://www.cocos2d.org/"&gt;Cocos2d&lt;/a&gt;, la
+&lt;a class="reference external" href="http://python.org.ar/pyar/Proyectos/CDPedia"&gt;CDPedia&lt;/a&gt; y
+&lt;a class="reference external" href="http://www.taniquetil.com.ar/lalita/index.html"&gt;lalita&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mi-experiencia"&gt;
+&lt;h2&gt;Mi experiencia&lt;/h2&gt;
+&lt;p&gt;El PyCamp 2011, el cuarto consecutivo, se realizó en La Falda y fue el
+primero en el que participo. Sabía, por referencias, fotos y
+repositorios, de qué se trataba, pero como dice el adagio... &lt;em&gt;del dicho
+al hecho ...&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image1" src="http://mgaitan.github.io/images/5575974174_116c8-4028d.jpg"&gt;
+Nati tenía un congreso de germanística en Buenos Aires y después se iba
+a La Plata a visitar a una amiga, así que las opciones eran ir a la
+marcha el jueves (24 de marzo) y
+&lt;a class="reference external" href="http://mgaitan.github.io/en/posts/blog/article/yendo-a-las-fuentes-de-cuevana-tv"&gt;cuevanear&lt;/a&gt; el resto
+del finde o sumarme a la movida.
+&lt;a class="reference external" href="http://www.perrito666.com.ar"&gt;Perrito&lt;/a&gt; ofreció movilidad así que lo
+tuve servido.&lt;/p&gt;
+&lt;p&gt;Salimos el jueves a la mañana y con nosotros venía
+&lt;a class="reference external" href="http://blog.malev.com.ar/"&gt;Malev&lt;/a&gt; y el organizador del evento, de pie
+señores, Nueces.&lt;/p&gt;
+&lt;p&gt;A lo largo de los 4 días de PyCamp, participé en la CDpedia (mejoré la
+funcionalidad de "artículo al azar" y estuve haciendo unos benchmarks de
+optimización en el peso de las imágenes), amagué con un filtro para
+&lt;a class="reference external" href="https://bitbucket.org/edvm/pep8fy"&gt;Pep8fy&lt;/a&gt; que dejé medio inconcluso,
+comí al menos el doble de lo que venía comiendo (bien la comida, che!),
+jugué mi primer sesión de rol guiado por &lt;a class="reference external" href="http://protocultura.net/"&gt;el señor
+ordenador&lt;/a&gt; (Alecu, un maestro!), malabareé
+con las bolas (las de malabares) de
+&lt;a class="reference external" href="http://humitos.wordpress.com/"&gt;Humitos&lt;/a&gt;, presencié en vivo la
+gestación de un delirio mágico de &lt;a class="reference external" href="http://lateral.netmanagers.com.ar/"&gt;Roberto
+Alsina&lt;/a&gt;, me metí a la pileta y
+tomé sombra, perdí 0-5 0-5 los dos partidos de metegol y me cagué de
+risa igual con mi &lt;a class="reference external" href="https://twitter.com/#!/edvm"&gt;coequiper&lt;/a&gt; (¡fiesta!),
+escribí "puto" (con onda, &lt;a class="reference external" href="http://www.felipelerena.com.ar/"&gt;Lipe&lt;/a&gt;)
+desde un android con un &lt;a class="reference external" href="https://launchpad.net/faldatouch"&gt;librería para
+multitouching&lt;/a&gt; que estos bestias
+hicieron en una tarde, quedé pasmado con el vuelo de la discusión sobre
+los motivos (y posibles acciones correctoras) de la baja participación
+femenina en Python y el Software Libre en general, bebí vino, fernet,
+cerveza y mistela (me colé en un contingente más adelantado que el
+nuestro en la excursión del Hotel Edén, y después me volví con Flecox a
+ver el partido de Argentina), jugué con Tato (el pythonista más peque
+del encuentro, hijo de Roberto Alsina) y me enternecí viendo a otros
+geeks (Huguito — &lt;a class="reference external" href="http://www.pilas-engine.com.ar"&gt;Pilas&lt;/a&gt; rulez! —,
+John, Achuni, todos) jugar como niños.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image2" src="http://mgaitan.github.io/images/5575353897_b47ee-6529e.jpg"&gt;
+Detalles faltan pero estos someros recuerdos sobran para afirmar que el
+balance es positivísimo.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="una-reflexion-final"&gt;
+&lt;h2&gt;Una reflexión final&lt;/h2&gt;
+&lt;p&gt;PyCamp contrasta totalmente con los grises, aburridos y mediocres
+congresos académicos que en el ámbito universitario se difunden y en los
+que alguna vez he participado, donde los papelitos cuentan y donde
+(casi) todo se vuelve una ficción impulsada por la inercia y la
+necesidad de "publicar" (no importa mucho que), para mantener la beca,
+el statu quo y el viático.&lt;/p&gt;
+&lt;p&gt;En PyCamp no se piden papeles ni se aplauden corbatas, la gente se llama
+por el sobrenombre y no por el título, se admira el conocimiento pero
+más se festeja su colectivización, y eso lo saben (y lo disfrutan) los
+picantes y los tiernitos.&lt;/p&gt;
+&lt;p&gt;Cuanta falta le hace a la universidad visiones y experiencias como esta.&lt;/p&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.io/en/posts/apuntes-del-pycamp-2011.html</guid><pubDate>Wed, 30 Mar 2011 22:50:40 GMT</pubDate></item></channel></rss>

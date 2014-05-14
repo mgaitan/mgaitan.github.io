@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.io/</link><description></description><language>en</language><lastBuildDate>Wed, 14 May 2014 00:57:11 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>http://mgaitan.github.io/en/posts/como-volver-a-compartir-desde.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div class="important"&gt;
+&lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
+&lt;p class="last"&gt;El pipe tiene un problema con las fechas y quedó deactualizado
+cuando cambió en el html de G+. En su defecto hice este pequeño
+&lt;a class="reference external" href="https://gist.github.com/2886591"&gt;scrapper&lt;/a&gt; que es lo que uso
+en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;Textos y Pretextos&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Desde hace muchísimo tengo en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;mi otro
+blog&lt;/a&gt; una sección que se llama &lt;em&gt;"De
+por ahí, cosas que me parecieron interesantes"&lt;/em&gt;. Es un feed de links a
+contenidos de toda índole (política, literatura, cine, fotografía,
+deportes, programación: intereses anchos) con un brevisimo extracto como
+descripción que fui alimentando de diversas formas a lo largo del
+tiempo: usé
+&lt;a class="reference external" href="http://delicious.com/nqnwebs,%20use%20%20%5Besto%20%20-%3Ehttp://sourceforge.net/projects/linkwalla/"&gt;delicious&lt;/a&gt;,
+usé mi
+&lt;a class="reference external" href="http://twitter.com/nqnwebs).%20Pero%20cuando%20%5BGoogle%20Reader-%3Ehttp://reader.google.com"&gt;twitter&lt;/a&gt;
+incorporó la opción de "Compartir" se convirtió en la manera por
+defecto: si algo me gustaba, un click en compartir y listo. Eso permitia
+que otros usuarios de Reader que me "seguian" pudieran ver mis posts
+compartidos pero a la vez generaba un feed rss que alimentaba la sección
+de mi blog.&lt;/p&gt;
+&lt;p&gt;Con la aparición de Google+ aquella simple y muy usada funcionalidad se
+vió desplazada por el botón "+1" y por un "compartir" engañoso que sólo
+permite compartir en Google+&lt;/p&gt;
+&lt;p&gt;Para colmo, cuando uno hace "+1" en algun contenido (dentro de Google
+Reader o en cualquier lado donde esté el botón) se lista en una &lt;a class="reference external" href="https://plus.google.com/102449284377784435533/plusones/p/pub"&gt;página
+publica&lt;/a&gt;
+pero que &lt;strong&gt;no tiene feed RSS&lt;/strong&gt;! . Larry Page,
+(&lt;a class="reference external" href="https://twitter.com/#!/nqnwebs/status/154772127139102720"&gt;doblemente&lt;/a&gt;)
+te odio.&lt;/p&gt;
+&lt;div class="section" id="frustracion-colectiva"&gt;
+&lt;h2&gt;Frustración colectiva&lt;/h2&gt;
+&lt;p&gt;La bronca por los cambios en Reader no es sólo mia, sino que generó una
+&lt;a class="reference external" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&amp;amp;formkey=dE16SFVla3JFZ1lwTkxGRWN2SkZtb2c6MA#gid=0"&gt;petición&lt;/a&gt;
+firmada por más de
+&lt;a class="reference external" href="http://www.bdkeller.com/2011/10/save-google-reader/"&gt;13000&lt;/a&gt; usuarios
+que manifiestan que "algunos ven estos cambios como un intento errado
+para forzarnos a usar Google Plus, pero nosotros amamos la utilidad,
+simplicidad y funcionalidades sociales limitadas que ofrece Google
+Reader".&lt;/p&gt;
+&lt;p&gt;Mientras tanto, muchos
+(&lt;a class="reference external" href="http://www.theatlanticwire.com/technology/2011/10/how-survive-switch-google-reader-google/44069/"&gt;1&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/jtwebman/GooglePlusToRSSFeed"&gt;2&lt;/a&gt;,
+&lt;a class="reference external" href="http://plus-one-feed-generator.appspot.com/"&gt;3&lt;/a&gt;) intentan parchar el
+atropello.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mi-solucion"&gt;
+&lt;h2&gt;Mi solución&lt;/h2&gt;
+&lt;p&gt;"¿Así que no me dejás compartir donde yo quiera, el algoritmo de tu
+madre!?" vociferé, y no sin premeditación agarré &lt;a class="reference external" href="http://mgaitan.github.io/en/posts/blog/article/yahoo-pipes-como-por-un-tubo"&gt;Yahoo!
+Pipes&lt;/a&gt; (una genialidad, hay
+que decirlo) para scrappearlos a puro golpe de mouse y sin salir del
+navegador. El resultado fue &lt;a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.info?_id=770fc166fd07a0f6e67fe63f513b05dc"&gt;este
+pipe&lt;/a&gt;
+del que se puede obtener, por ejemplo, un &lt;a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;amp;_render=rss&amp;amp;google_plus_id=102449284377784435533"&gt;feed RSS 2.0 de mis
++1s&lt;/a&gt;
+. Podés obtener el feed de otros usuarios así:&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;amp;_render=rss&amp;amp;google_plus_id=[GOOGLE_PLUS_ID]&lt;/span&gt;&lt;/tt&gt;
+donde &lt;tt class="docutils literal"&gt;[GOOGLE_PLUS_ID]&lt;/tt&gt; es el numero de identificación del usuario en
+cuestión.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;&lt;/div&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.io/en/posts/como-volver-a-compartir-desde.html</guid><pubDate>Thu, 12 Jan 2012 00:37:21 GMT</pubDate></item><item><title>Disqus para spip</title><link>http://mgaitan.github.io/en/posts/disqus-para-spip.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="http://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;&lt;p&gt;Hace tiempo me interesa el servicio
+&lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
+comentarios muy poderosa y fácil de usar.&lt;/p&gt;
+&lt;p&gt;Comencé un &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus"&gt;pequeño
+plugin&lt;/a&gt;
+para integrar Disqus a &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt;.&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;&lt;colgroup&gt;&lt;col width="100%"&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Por ahora tiene dos componentes básicos:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;&lt;li&gt;Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
+SPIP (y su formulario) por Disqus&lt;/li&gt;
+&lt;li&gt;Un esqueleto para exportar comentarios existentes (genera un XML
+importable a traves del panel de disqus)&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;La configuración se realiza a través de una página (requiere el &lt;a class="reference external" href="http://plugins.spip.net/CFG"&gt;plugin
+CFG&lt;/a&gt;) donde se define el &lt;em&gt;"Disqus
+shortname"&lt;/em&gt; (la identificación unica que asignamos al sitio donde
+usaremos Diqus).&lt;/p&gt;
+&lt;p&gt;Para generar el XML con la exportación de comentarios preexistentes,
+basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><guid>http://mgaitan.github.io/en/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 04:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>http://mgaitan.github.io/en/posts/yahoo-pipes-como-por-un-tubo.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
+interactiva para agregar y manipular feeds RSS (y otras fuentes de
+datos) a nuestro antojo de forma sencilla y asequible para cualquiera.&lt;/p&gt;
+&lt;p&gt;Es un entorno de programación visual online. La programación visual es
+común para los ingenieros
+(&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Simulink"&gt;Simulink&lt;/a&gt; o
+&lt;a class="reference external" href="http://es.wikipedia.org/wiki/LabVIEW"&gt;LabVIEW&lt;/a&gt;) y también para los
+viejos gamers (el glorioso &lt;a class="reference external" href="http://en.wikipedia.org/wiki/The_Incredible_Machine"&gt;The incredible
+Machine&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;El concepto es simple: se conectan distintos módulos ("tubos", con una o
+más salidas y entradas) según las necesidades, y se va probando el
+resultado en una salida final.&lt;/p&gt;
+&lt;p&gt;En Y! Pipes, luego de toda nuestra manipulación, el resultado es un feed
+personalizado que contiene únicamente lo que se quiera tener, por
+ejemplo el resultado de mezclar y flitrar dos o más fuentes de
+información.&lt;/p&gt;
+&lt;div class="section" id="aplicandolo-a-spip"&gt;
+&lt;h2&gt;Aplicandolo a SPIP&lt;/h2&gt;
+&lt;p&gt;Frecuentemente queremos ofrecer un canal RSS que provea tanto las breves
+como los artículos. SPIP maneja estos objetos independientemente y es
+muy dificil hacer un esqueleto que los mezcle (hay que trabajar con
+pilas en PHP). Con Yahoo! Pipes es tan sencillo como mezclar los dos (o
+más) feeds.&lt;/p&gt;
+&lt;p&gt;Esto lo hice en el sitio &lt;a class="reference external" href="http://www.agrupacionmazamorra.com.ar"&gt;Agrupación
+Mazamorra&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://mgaitan.github.io/en/posts/local/cache-vignettes/L510xH321/Pantallazo-90218.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 36)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p&gt;El resultado puede verse (y clonarse) &lt;a class="reference external" href="http://pipes.yahoo.com/mazamorra/rss_todo"&gt;desde
+aquí&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mas-ejemplos"&gt;
+&lt;h2&gt;Más ejemplos&lt;/h2&gt;
+&lt;p&gt;Pero mezclar feeds no es la única posibilidad. De hecho, Pipes es tan
+potente que permite obtener datos parseando un sitio web que no tenga un
+canal RSS o Atom disponible (pero eso es un uso muy avanzado y lo
+dejamos para otra oportunidad).&lt;/p&gt;
+&lt;p&gt;Un caso que sí está al alcance de esta breve introducción es filtrar el
+contenido de un feed. Doy mi ejemplo en uso: me gusta leer a &lt;a class="reference external" href="http://nqnwebs.com"&gt;Hernán
+Casciari&lt;/a&gt; que además de su blog, escribe una
+columna en el diario argentino La Nación. Es un diario asquerosamente
+oligarca y de derecha (¿redundante?) así que prefieron no leer nada más
+que a este autor,&lt;/p&gt;
+&lt;p&gt;Fácil: Busco el feed de la sección donde se publican sus columnas,
+filtro con la palabra clave ’Casciari’, y me libro de todo lo que no
+quiero. &lt;a class="reference external" href="http://pipes.yahoo.com/mazamorra/casciari"&gt;Aquí el resultado&lt;/a&gt;&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://mgaitan.github.io/en/posts/local/cache-vignettes/L465xH360/pipes2-4a406.png"&gt;&lt;/div&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 61)&lt;/p&gt;
+Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ejemplo-en-video"&gt;
+&lt;h2&gt;Ejemplo en video&lt;/h2&gt;
+&lt;p&gt;Un screencast de &lt;a class="reference external" href="http://obm.corcoles.net"&gt;otro blog más&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+Un cierto blog no ofrece los RSS filtrados por categorías. O por
+autores. O por ‘tags’. O queremos el RSS de un sitio, eliminando,
+por ejemplo, todas las entradas que hablen de petanca o del chucho
+del autor. Vamos, que nos gustaría filtrar el RSS de acuerdo con
+algún criterio propio. Para eso (y para bastantes más cosas, pero
+centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
+pequeño ’screencast’ que explica cómo recuperar las categorías (la
+de desarrollo web, en particular) que se ha cargado Feedburner…&lt;/blockquote&gt;
+&lt;/div&gt;</description><guid>http://mgaitan.github.io/en/posts/yahoo-pipes-como-por-un-tubo.html</guid><pubDate>Mon, 23 Feb 2009 22:23:40 GMT</pubDate></item></channel></rss>
