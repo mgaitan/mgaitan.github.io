@@ -82,6 +82,8 @@ Enaml (lightning talk)
 :fecha: Viernes 16 de junio de 2012
 :lugar: Univesidad Nacional de Quilmes, Bernal, Buenos Aires
 
+------
+
 __doc__ """para todos y todas"""
 --------------------------------
 
