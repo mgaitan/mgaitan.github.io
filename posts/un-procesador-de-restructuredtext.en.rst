@@ -5,7 +5,7 @@
 .. title: The reStructuredText processor
 .. slug: the-reStructuredText-processor
 
-I always liked to write_. As far as I remember, I always do it with a keyboard, in the computer. Except for some doodles when I'm thinking something hard or when I'm boring in a meeting or class, I never write in paper.
+I always liked to write_. As far as I remember, I always do it with a keyboard, in the computer. Except for some doodles when I'm thinking something hard or when I'm bored in a meeting or class, I never write in paper.
 
 .. TEASER_END
 
