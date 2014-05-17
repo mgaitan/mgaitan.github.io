@@ -37,6 +37,9 @@ FIT mal computados. Algunos ejemplos
 -  `Mesa 1064 <http://t.co/oahdUgFwEu>`_: se computaron 10 en vez de 40
    votos del Frente de Izquierda.
 
+.. TEASER_END
+
+
 El sistema de publicación de telegramas electorales
 (www.resultados.gob.ar) es un gran progreso hacia la transparencia, pero
 está muy incompleto. Por ejemplo, no sólo carece de buscador, sino que

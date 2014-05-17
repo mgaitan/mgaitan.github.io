@@ -13,6 +13,9 @@ a través del formulario y otros tantos en los comentarios de los articulo previ
 Además, no sólo salió en los medios (para `algunos <http://pages.citebite.com/k2l2d5g4g7qky>`_ con mala leche soy "kirchnerista *pero* democrático") , sino que Liliana Olivero se comunicó conmigo para agradecerme y preguntarme si podíamos obtener más información. Hoy me reuní con integrantes del Frente de Izquierda para
 hacer `nuevos reportes <http://nbviewer.ipython.org/7281371>`_.
 
+.. TEASER_END
+
+
 Algunos números nuevos
 ----------------------
 

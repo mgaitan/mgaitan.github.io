@@ -1,67 +1,56 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700);
 
-.titlebox {
-    text-align: left;
+body {
+ margin-top: 0px;
+}
+
+p {
+    font-family: 'PT Serif', Georgia,Cambria,"Times New Roman",Times,serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'PT Serif', Georgia,Cambria,"Times New Roman",Times,serif;
+ font-weight: 700;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.navbar {
+    min-height: 60px;
 }
 
 #blog-title {
-    float: left;
-    font-size: 40px;
-    font-family: 'OFL Sorts Mill Goudy','OFL Sorts Mill Goudy TT',serif;
-    padding-left: 2px;
-    text-transform: lowercase;
-    background-color: transparent;
-    margin: 5px 0 0;
+    font-family: 'PT Serif';
+    font-weight: 400;
+    font-size: 25px;
+    color: white;
+    padding-bottom: 5px;
 }
 
 #blog-description {
-    float: left;
-    width: 270px;
+    display: block;
+    clear: left;
+    color: white;
+    font-family: courier;
     font-size: 11px;
     line-height: 13px;
+    margin-top: 5px;
     padding-left: 2px;
-    font-family: courier;
-    text-transform: lowercase;
-    background-color: transparent;
-    margin: 1px;
 }
 
-#menu {
-   float: right;
-    margin: 18px;
-    text-align: right;
+.metadata p:before, .postlist .listdate:before {
+    content: "";
 }
 
-.inline li {
-    display: inline;
+.dateline a {
+    font-size: 13px;
+    color: #999;
 }
 
-.postbox h1 {
-    margin-bottom: 0em;
-}
-
-.postbox h1 a:hover {
-        border-bottom: none;
-    }
-
-.postbox div {
-    margin-top: 1em;
-}
-
-.postbox  {
-    border-bottom: none;
-}
-
-.vcard {
-    margin-top: 0px !important;
-    float: left;
-}
-
-.vcard img {
-    /* thanks github */
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #DDDDDD;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    height: 210px;
-    padding: 5px;
-    width: 210px;
-}
+.byline, .commentline { display: none !important;}

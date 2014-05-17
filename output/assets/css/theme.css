@@ -1,14 +1,10 @@
 body {
-  padding-top: 60px;
+    margin-top: 60px;
 }
-@media (max-width: 979px) {
-  body {
-    padding-top: 0px;
-  }
-}
+
 #container {
     width: 960px;
-    margin: 50 auto;
+    margin: 0 auto;
 }
 
 #contentcolumn {
@@ -27,7 +23,11 @@ img {
     margin-bottom: 12px;
 }
 
-.footerbox {padding: 15px; text-align: center; margin-bottom: 15px;}
+.titlebox {
+    text-align: right;
+}
+
+#addthisbox {margin-bottom: 12px;}
 
 td.label {
     /* Issue #290 */
@@ -39,6 +39,7 @@ td.label {
     vertical-align: super;
     font-size: xx-small;
 }
+
 
 .caption {
     /* Issue 292 */
@@ -76,12 +77,107 @@ ul.bricks > li {
     margin: 3px;
 }
 
-ul.breadcrumb > li:before {
-    content: " / ";
+.at300b, .stMainServices, .stButton, .stButton_gradient {
+    box-sizing: content-box;
 }
 
 pre, pre code {
     white-space: pre;
     word-wrap: normal;
     overflow: auto;
+}
+
+article.post-micro {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+}
+
+/* fix anchors for headers */
+h1, h2, h3 {
+    margin-top: -40px;
+    padding-top: 60px;
+}
+
+h4, h5, h6 {
+    margin-top: -50px;
+    padding-top: 60px;
+}
+
+.image-block {
+    display: inline-block;
+}
+
+.flowr_row {
+    width: 100%;
+}
+
+.tags {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    text-align: center;
+
+}
+
+.tags > li {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #999;
+    border-radius: 10px;
+}
+
+.tags > li a {
+    color: #fff;
+}
+
+.metadata p:before,
+.postlist .listdate:before {
+    content: " — ";
+}
+
+.metadata p:first-of-type:before {
+    content: "";
+}
+
+.metadata p {
+    display: inline;
+}
+
+.posttranslations h3 {
+    display: inline;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.posttranslations h3:last-child {
+    display: none;
+}
+
+.entry-content {
+    margin-top: 1em;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+}
+
+.navbar-brand #blog-title {
+    padding: 15px 0;
+    display: inline-block;
+}
+
+.navbar-brand #logo {
+    max-width: 100%;
+}
+
+.row {
+    margin: 0;
 }
