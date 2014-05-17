@@ -24,6 +24,7 @@ article: http://ogp.me/ns/article#
 <meta name="og:type" content="article">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator:id" content="40654511">
+<link rel="alternate" hreflang="en" href="../en/posts/the-reStructuredText-processor.html">
 </head>
 <body>
 
@@ -96,6 +97,7 @@ article: http://ogp.me/ns/article#
 </div>
                 <div class="metadata posttranslations translations">
             <h3 class="posttranslations-intro">También disponible en:</h3>
+                <p><a href="../en/posts/the-reStructuredText-processor.html" rel="alternate" hreflang="en">English</a></p>
         </div>
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
@@ -106,7 +108,7 @@ article: http://ogp.me/ns/article#
 <p>reST es un lenguaje de marcado sencillo y potente, que a diferencia de LaTex fue pensado para que el contenido sea legible en formato fuente, es decir, en texto plano. Escribiendo con un simple <strong>editor</strong> de texto nos concentramos en lo importante (el contenido) y no en luchar contra el formato de la tabla, la sangría o el tipo de letra de un encabezado. Además, es más útil cuando se usa con un sistema de control de versiones, porque se pueden visualizar los cambios claramente.</p>
 <p>Si bien su sintaxis es algo más verborrágica <a class="footnote-reference" href="un-procesador-de-restructuredtext.html#id4" id="id1">[1]</a> que la de <a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> (el markup liviano más difundido en la web), reST es muchísimo más potente y orientado a tener múltiples formatos de salida (html, ebooks, pdf, etc.). De hecho se han escrito libros y toda la <a class="reference external" href="http://docs.python.org/">documentación oficial de Python</a> de esta manera.</p>
 <p>Pero tampoco hace falta ser un asceta: si un software nos puede ayudar a escribir y a formatear lo escrito mejor y más fácilmente, ¿por qué no usarlo?</p>
-<p>Eso hace <a class="reference external" href="https://github.com/dbousamra/sublime-rst-completion">rst-completions</a> el plugin para <a class="reference external" href="https://www.sublimetext.com/">SublimeText</a> del que soy el principal desarrollador <a class="footnote-reference" href="un-procesador-de-restructuredtext.html#id5" id="id2">[2]</a>. Acá una demo de los que se puede hacer.</p>
+<p>Eso hace <a class="reference external" href="https://github.com/mgaitan/sublime-rst-completion">rst-completions</a> el plugin para <a class="reference external" href="https://www.sublimetext.com/">SublimeText</a> del que soy el principal desarrollador <a class="footnote-reference" href="un-procesador-de-restructuredtext.html#id5" id="id2">[2]</a>. Acá una demo de los que se puede hacer.</p>
 <iframe width="640" height="360" src="//www.youtube.com/embed/otM_tjIi_vY" frameborder="0" allowfullscreen></iframe><p>Por ahora tiene:</p>
 <ul class="simple">
 <li>Atajos de directivas y formatos: links, admoniciones, código, etc.</li>
@@ -118,10 +120,6 @@ article: http://ogp.me/ns/article#
 </ul>
 <p>Lo hice para SublimeText porque es el editor que uso y, sobre todo, porque su API de plugins está basada en Python <a class="footnote-reference" href="un-procesador-de-restructuredtext.html#id5" id="id3">[2]</a>. Pero tengo la idea de separarlo como una biblioteca agnóstica, permitiendo hacer plugins como wrappers delgados para cualquier editor.</p>
 <p>¿Qué opinás? ¿Te sumás a colaborar?</p>
-<div class="note">
-<p class="first admonition-title">Note</p>
-<p class="last">¿Por qué está en el github de <a class="reference external" href="https://github.com/dbousamra">otro tipo</a>? Simplemente porque él lo empezó. Luego me dió permisos de escritura y yo <a class="reference external" href="https://github.com/dbousamra/sublime-rst-completion/contributors">me cebé un poco</a>.</p>
-</div>
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup>
 <col class="label">

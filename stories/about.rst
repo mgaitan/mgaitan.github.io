@@ -31,7 +31,7 @@ chico — supe algunas poesías de memoria, pero luego tuve que ocupar esas
 neuronas en recordar fórmulas de integrales.
 
 Aunque lo disimulo, soy un geek (y acá estás, leyendo mi blog que lo demuestra).
-`Trabajo <http://phasety.com>`_ con `computadoras <http://machinalis.com>`_.
+`Trabajo <http://preciosdeargentina.com.ar>`_ con `computadoras <http://phasety.com>`_.
 Ingeniero en Computación dice el papel. Creo en esas cosas — no en los
 papeles, sino en las computadoras —  y en internet. Son herramientas
 revolucionarias, y brego por su democratización. Mi compu se

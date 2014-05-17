@@ -40,14 +40,11 @@ Lo hice para SublimeText porque es el editor que uso y, sobre todo, porque su AP
 ¿Qué opinás? ¿Te sumás a colaborar?
 
 
-.. note::
-
-    ¿Por qué está en el github de `otro tipo <https://github.com/dbousamra>`_? Simplemente porque él lo empezó. Luego me dió permisos de escritura y yo `me cebé un poco <https://github.com/dbousamra/sublime-rst-completion/contributors>`_.
 
 
 .. _charlas: http://mgaitan.github.io/charlas.html
 .. _SublimeText: https://www.sublimetext.com/
-.. _rst-completions: https://github.com/dbousamra/sublime-rst-completion
+.. _rst-completions: https://github.com/mgaitan/sublime-rst-completion
 .. _documentación oficial de Python: http://docs.python.org/
 .. _escribir: http://textosypretextos.com.ar
 .. _garabatos: http://es.wikipedia.org/wiki/Garabato_%28dibujo%29

@@ -2,6 +2,22 @@
 .. slug: charlas
 .. date: 2012/11/19 00:00:00
 
+Ingeniería para ganar el mundial
+--------------------------------
+
+    Se dice que los ingenieros son *"quienes saben resolver problemas"*,
+    usando (¡y creando!) tecnología. Pero ¿Cuáles problemas debemos resolver?
+    ¿Podemos elegir? ¿Qué rol cumplimos los ingenieros en la Argentina actual?
+    Y ya que sabemos resolver problemas ¿Podemos ayudarle a Messi a ganar el Mundial?
+
+:diapositivas: http://mgaitan.github.io/ganar_el_mundial/
+:repo: http://github.com/mgaitan/ganar_el_mundial/
+:evento: Ciclo de charlas "Ingeniería y emprendedorismo", (Gradiente - La Bisagra)
+:fecha: 15 de abril de 2014
+:lugar: Facultad de Ciencias Exáctas, Físicas y Naturales, Córdoba, Argentina
+
+--------
+
 La pythonicidad al palo
 ------------------------
 
@@ -14,7 +30,7 @@ La pythonicidad al palo
 :fecha: Viernes 25 de octubre de 2013
 :lugar: Rosario, Argentina
 
-
+-----
 
 MyHDL, de Python al silicio
 ---------------------------
@@ -51,6 +67,8 @@ Presentaciones
 :fecha: Sábado 30 de abril de 2011
 :lugar: Universidad Tecnológica Nacional - Sede Córdoba
 
+-----
+
 Enaml (lightning talk)
 -----------------------
 
@@ -82,12 +100,13 @@ Presentaciones
 :fecha: Viernes 26 de octubre de 2012
 :lugar: Universidad Técnica Particular de Loja, Ecuador
 
-----------
 
 :evento: `PyDay Córdoba 2012 <http://pydaycba.com.ar/>`_
 :fecha: Sábado 15 de septiembre de 2012
 :lugar: FaMAF, Universidad Nacional de Córdoba
 
+
+-----
 
 Django, el framework para perfeccionistas
 -----------------------------------------
@@ -107,6 +126,8 @@ Django, el framework para perfeccionistas
 :fecha: Lunes 22 y Miércoles 24 de octubre, 2012
 :lugar: Loja, Ecuador
 
+-----
+
 Pyquery: (des)trozemos la web
 ------------------------------
 
@@ -120,6 +141,8 @@ Pyquery: (des)trozemos la web
 :lugar: Universidad Nacional del Noroeste de la Provincia de Buenos Aires,
         Junín, Prov. de Buenos Aires
 
+
+-----
 
 Python ❤ Ingeniería
 -------------------
@@ -140,6 +163,8 @@ Python ❤ Ingeniería
 :repositorio: https://github.com/mgaitan/python-ingenieria
 
 
+-----
+
 IPython, la interactividad al poder
 -------------------------------------
 
@@ -155,6 +180,9 @@ IPython, la interactividad al poder
 :evento: `PyCon Argentina 2010 <http://ar.pycon.org/2010>`_
 :fecha: Viernes 15 de octubre de 2010
 :lugar: Universidad Siglo XXI, Córdoba, Argentina
+
+
+-----
 
 Python a los bifes: casos reales de aplicación en Ingeniería
 -------------------------------------------------------------
@@ -172,6 +200,8 @@ Python a los bifes: casos reales de aplicación en Ingeniería
 :diapositivas: http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html
 :fuentes: http://lab.nqnwebs.com/charlas/alosbifes/alosbifes.tar.gz
 :post: `</posts/charla-python-a-los-bifes.html>`_
+
+-----
 
 Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa
 -----------------------------------------------------------------
@@ -193,6 +223,8 @@ Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa
 :lugar: FCEFyN, Universidad Nacional de Córdoba
 :post: `</posts/charla-ser-freelance-como-trabajar.html>`_
 :video: https://www.youtube.com/watch?v=3pKPg11qBvM
+
+-----
 
 Utilizacion de Control de Versiones con Subversion
 ---------------------------------------------------
