@@ -21,23 +21,86 @@ h1 {
   font-size: 40px;
 }
 
+a {
+    color: #2a6496;
+
+}
+
+h1 a, h1 a:hover{
+    color: #404040;
+}
+
+
+
+.body-content {
+    margin-top: 60px;
+}
+
+article:before, .body-content hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: rgba(0, 0, 0, 0.15) -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-right: 0 none;
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    display: block;
+    margin: 50px auto 40px;
+    width: 20%;
+}
+
 .navbar {
     min-height: 60px;
+    color: #000;
+    background-color: rgba(235, 235, 235, 0.95);
+    border-color: #D7D7D7;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 18px;
+    padding: 0 24px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-header {
+    margin-right: 35px;
+}
+
+ul.nav li a {
+    height: 60px;
+    color: #404040;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ul.nav li a:hover {
+    text-decoration: underline;
+}
+
+.navbar-nav > li > a {
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 #blog-title {
     font-family: 'PT Serif';
-    font-weight: 400;
+    font-weight: 700;
     font-size: 25px;
-    color: white;
     padding-bottom: 5px;
 }
 
 #blog-description {
+    font-family: courier;
+    font-weight: 400;
     display: block;
     clear: left;
-    color: white;
-    font-family: courier;
+    color: #111;
     font-size: 11px;
     line-height: 13px;
     margin-top: 5px;
@@ -48,9 +111,17 @@ h1 {
     content: "";
 }
 
+
+.metadata {
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
 .dateline a {
     font-size: 13px;
     color: #999;
 }
 
-.byline, .commentline { display: none !important;}
+.byline, .commentline {
+    display: none !important;
+}

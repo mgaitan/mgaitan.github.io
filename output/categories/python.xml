@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (python)</title><link>http://mgaitan.github.io/</link><description></description><language>es</language><lastBuildDate>Sat, 17 May 2014 01:22:35 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.io/posts/pip-apurate-por-favor.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (python)</title><link>http://mgaitan.github.io/</link><description></description><language>es</language><lastBuildDate>Sat, 17 May 2014 13:41:25 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.io/posts/pip-apurate-por-favor.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
 para el trabajo diario de un programador python: es el manejador
 de paquetes de nuestro entorno de trabajo (¡&lt;a class="reference external" href="http://www.virtualenv.org/en/latest/"&gt;virtual&lt;/a&gt; por favor!),
 con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
 (y, recursivamente, las dependencias que estas pudieran tener).&lt;/p&gt;
+&lt;!-- TEASER_END --&gt;
 &lt;p&gt;Conceptualmente es similar a los manejadores de paquetes de sistema como &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt;&lt;/tt&gt;,
 diferenciándose en que, por defecto, &lt;em&gt;consulta cada vez&lt;/em&gt; a una &lt;a class="reference external" href="https://pypi.python.org/pypi/"&gt;base de
 datos online&lt;/a&gt; si el paquete solicitado existe y de dónde
