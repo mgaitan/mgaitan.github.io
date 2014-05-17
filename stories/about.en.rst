@@ -14,7 +14,7 @@ I not believe in the horoscopes, religions nor in the DanActive, but I do in the
 
 I `write <http://textosypretextos.com.ar>`_ and
 `read <http://textosypretextos.com.ar/De-otros>`_. Seventh grade completed. I also
-`take few photos <http://textosypretextos.com.ar/fotos>`_. When I was a child and happy — not the unique age I was happy, nor the unique time I was a child — I knew by heart few poems, but I must forget them in order to use those neurons learning integral formulas.
+`take few photos <http://textosypretextos.com.ar/fotos>`_. When I was a child and happy — not the unique age I was happy, nor the unique time I was a child — I knew by heart few poems, but I must forget them in order to use those neurons to learn integral formulas.
 
 Althought I conceal it, I'm a geek (and this is my tech blog, btw). I `work <http://preciosdeargentina.com.ar>`_ with `computers <http://phasety.com>`_
 Computer Engineer, says the paper. I beleive in that things  — not in papers but computers — and also in Internet. They are revolutionaries tools, and I do my best for democratize them.  My laptop's name is "Morochita". Also my bike has a name, but , I don't want you think I have no friend and that's why I talk with things.
