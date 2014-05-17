@@ -38,7 +38,7 @@ Contact
         <li><i class="icon-twitter"></i> Twitter: <a href="http://twitter.com/tin_nqn_">@tin_nqn_</a></li>
         <li><i class="icon-github"></i> Github: <a href="http://github.com/mgaitan">mgaitan</a></li>
         <li><i class="icon-linkedin"></i> LinkedIn: <a href="http://www.linkedin.com/in/martingaitan">My profile</a></li>
-        <li><i class="icon-link"></i> Blog (not tech, in spanish): <a href="http://textosypretextos.com.ar">Textos y Pretextos</a></li>
+        <li><i class="icon-link"></i> My not tech blog (in spanish): <a href="http://textosypretextos.com.ar">Textos y Pretextos</a></li>
     </ul>
 
 
