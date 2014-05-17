@@ -12,6 +12,8 @@ A veces programando, otras barriendo la oficina o atornillando estanterías y ot
 
 Es que así como el "`chamuyo de ascensor <pitch>`_" es algo que se aprende y se entrena, no menor debería ser la importancia de la redacción de nuestros proyectos escritos. Que son, despues de todo, el gran sostén de esta etapa de `nuestros emprendimientos <phasety>`_.
 
+.. TEASER_END
+
 Pero suele pasar: somos muy buenos (ponele) programando y barriendo, te sabemos calcular una derivada parcial y hasta somos capaces de ser simpáticos y entradores en el ascensor... pero damos ocote escribiendo.
 
 ¡No os preocupeis! Hete aquí unos apuntes fácilmente masticables que harán las delicias de tod@ emprendedor/a que le pifia al acento y escribe oraciones de 50 palabras porque cree que así se florea

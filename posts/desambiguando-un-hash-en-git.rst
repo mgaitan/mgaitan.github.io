@@ -10,6 +10,8 @@ su hash sha1 <http://git-scm.com/book/ch6-1.html>`_ :
 
     Git is smart enough to figure out what commit you meant to type if you provide the first few characters, as long as your partial SHA-1 is at least four characters long and unambiguous — that is, only one object in the current repository begins with that partial SHA-1.
 
+.. TEASER_END
+
 Pero a veces soy demasiado vago, y Git deja de llevarse bien conmigo: Estaba en una rama con varios commits y quería volver al pasado, deshaciendo commits, pero llevando uno. Fácil: ``reset`` + ``cherry-pick``. Pero copié muy pocos caracteres del hash que quería *cherrypickear*:
 
 .. code-block:: bash

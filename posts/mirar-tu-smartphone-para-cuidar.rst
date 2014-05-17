@@ -8,6 +8,8 @@
 Leo sobre el programa `Mirar para cuidar <http://www.pagina12.com.ar/diario/economia/subnotas/221350-63733-2013-06-01.html>`_, la campaña de acción voluntaria para controlar el cumplimiento
 del `acuerdo de precios <http://www.preciosensusitio.gov.ar/>`_ con los supermercados.
 
+.. TEASER_END
+
 .. raw:: html
 
    <iframe width="420" height="315" src="http://www.youtube.com/embed/I5jQZ8xQ5Pw" frameborder="0" allowfullscreen></iframe>
