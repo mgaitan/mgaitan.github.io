@@ -7,6 +7,8 @@
 
 Siempre me gustó escribir_. Pero, desde que recuerdo, casi siempre lo hice en un teclado de computadora. Salvo garabatos_ cuando tengo que pensar algo difícil o cuando me aburro en una reunión/clase, casi no escribo en papel.
 
+.. TEASER_END
+
 En la compu escribo mucho y, sin embargo, tampoco uso procesadores de texto, ni siquiera los open source: aunque "lo que se ve" es "lo que se obtiene", (me)sucede demasiado seguido que lo que veo no es lo que quiero.
 
 Por ese motivo (y porque casi siempre sigo los consejos de `Roberto Alsina <http://ralsina.com.ar/>`_) escribo texto plano, usando el formato reStructuredText_. Y así escribo todo: este blog, las charlas_, mi `tesis de grado`_, la documentación de `mis proyectos`_ , notas rápidas en una `wiki`_, `cartas de amor`_, etc.
