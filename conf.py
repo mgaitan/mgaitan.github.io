@@ -437,7 +437,7 @@ LICENSE = """
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
+src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
@@ -652,9 +652,7 @@ RSS_TEASERS = False
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-EXTRA_HEAD_DATA = """
-    <link href="/assets/css/custom.css" rel="stylesheet">
-"""
+EXTRA_HEAD_DATA = """"""
 
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
