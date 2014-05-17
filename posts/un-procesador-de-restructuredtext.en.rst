@@ -18,7 +18,7 @@ reST is a simple markup language designed to be readable in its source form. Wri
 Even when its syntax is a more verbose [1]_ than Markdown_ (the light markup more used in the web), reST is more powerful, supporting many output formats
 (html, ebooks, pdf, etc.). In fact, there are books and the whole `official Python documentation`_ writing with this.
 
-However, there is no need to be an ascetic: if a software could help us to write and to format a writing easier ¿why not to use it?
+However, there is no need to be an ascetic: if a software could help us to write and to format a writing easier, why not to use it?
 
 That is what does `rst-completions`_, a plugin for SublimeText_ I've developed [2]_. Here a demo of its capabilities.
 
