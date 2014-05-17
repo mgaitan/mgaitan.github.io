@@ -10,6 +10,8 @@ de paquetes de nuestro entorno de trabajo (¡`virtual <http://www.virtualenv.org
 con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
 (y, recursivamente, las dependencias que estas pudieran tener).
 
+.. TEASER_END
+
 Conceptualmente es similar a los manejadores de paquetes de sistema como ``apt-get``,
 diferenciándose en que, por defecto, *consulta cada vez* a una `base de
 datos online <https://pypi.python.org/pypi/>`_ si el paquete solicitado existe y de dónde

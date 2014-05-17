@@ -11,6 +11,8 @@ de precios y ayude a encontrar mejores ofertas generó muchísimo debate en PyAr
 
 Hubo quienes desmerecieron la idea por "politizada_", otros que me `invitaron a no generar polémica`_ y llevar la discusión a otro lado [1]_, un par que no les gustó porque le quita *"la responsabilidad al gobierno que es el que genera inflación por su irresponsable emisión monetaria"*  y otros que directamente se `ofendieron feo`_ y dijeron que era fascista.
 
+.. TEASER_END
+
 .. raw:: html
 
     <blockquote class="twitter-tweet" data-conversation="none" lang="es"><p>@<a href="https://twitter.com/tin_nqn_">tin_nqn_</a> @<a href="https://twitter.com/damian_avila">damian_avila</a> por dios.eso es programar al gran hermano. Facismo en código</p>&mdash; JuanB. Cabral (@JuanBCabral) <a href="https://twitter.com/JuanBCabral/status/340955059607187457">1 de junio de 2013</a></blockquote>
