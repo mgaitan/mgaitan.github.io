@@ -130,6 +130,7 @@ ul.nav li a:hover {
 
 #notebook-container.container {
     width: 100%;
+    padding: 0px;
 }
 
 
