@@ -7,9 +7,10 @@
 
 I always liked to write_. As far as I remember, I always do it with a keyboard, in the computer. Except for some doodles when I'm thinking something hard or when I'm bored in a meeting or class, I never write in paper.
 
-.. TEASER_END
 
 In the computer I write a lot, but I not use text processors, neither the open-sources: althought "what you see" is "what you get", very frenquently what I see isn't what I want.
+
+.. TEASER_END
 
 For that reason (and because I always follow the advices of  `Roberto Alsina <http://ralsina.com.ar/>`_) I write in plain text, using reStructuredText_. And I write everything: this blog, the slides of my talks_, my `thesis`_, the documentation of my `projects`_ , quick notes in a `wiki`_, `love letters`_, etc.
 
