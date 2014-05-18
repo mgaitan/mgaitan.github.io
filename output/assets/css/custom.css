@@ -133,6 +133,10 @@ ul.nav li a:hover {
     padding: 0px;
 }
 
+div.ps p {
+    font-size: 1em;
+    font-style: italic;
+}
 
 div.prompt {
     font-size: 13px;
