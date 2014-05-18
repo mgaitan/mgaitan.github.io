@@ -169,6 +169,8 @@ TIMEZONE = "America/Argentina/Cordoba"
 
 POSTS = (
     ("posts/*.rst", "posts", "post.tmpl"),
+    ("posts/*.ipynb", "posts", "post.tmpl"),
+
     ("posts/*.txt", "posts", "post.tmpl"),
 )
 PAGES = (
@@ -682,6 +684,10 @@ BODY_END = """
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
     });
     </script>
 

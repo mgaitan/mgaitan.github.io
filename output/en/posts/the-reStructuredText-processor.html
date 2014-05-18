@@ -138,7 +138,11 @@ article: http://ogp.me/ns/article#
 </tr></tbody>
 </table>
 </div>
-    <aside class="postpromonav"><nav></nav><div class="metadata posttranslations translations">
+    <aside class="postpromonav"><nav><ul class="pager">
+<li class="next">
+                <a href="test.html" rel="next" title="We are nerds, we are cheesy">Next post</a>
+            </li>
+        </ul></nav><div class="metadata posttranslations translations">
             <h3 class="posttranslations-intro">Also available in:</h3>
                 <p><a href="../../posts/un-procesador-de-restructuredtext.html" rel="alternate" hreflang="es">Español</a></p>
         </div>
@@ -203,6 +207,8 @@ article: http://ogp.me/ns/article#
         jQuery("time.published").timeago();
 
         jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
     });
     </script>
 </body>

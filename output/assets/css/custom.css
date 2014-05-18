@@ -127,3 +127,25 @@ ul.nav li a:hover {
 .translations {
     margin-top: 5px;
 }
+
+#notebook-container.container {
+    width: 100%;
+}
+
+
+div.prompt {
+    font-size: 13px;
+    padding: 0.6em;
+}
+div.input_prompt {
+    border-top: 1px solid transparent;
+    color: navy;
+}
+div.prompt {
+    font-family: monospace;
+    line-height: 1.231em;
+    margin: 0;
+    padding: 0.4em;
+    text-align: right;
+    width: 11ex;
+}
