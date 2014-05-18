@@ -154,3 +154,7 @@ div.prompt {
     text-align: right;
     width: 11ex;
 }
+
+.vcard {
+    float: left;
+}
