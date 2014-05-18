@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Una introducción a python | tin_nqn</title>
+<title>Una introducción a python | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -97,10 +97,6 @@ también de los usuarios d">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p><a class="reference external" href="http://python.org/">Python</a> es un lenguaje de programación
 interpretado, interactivo y multiplataforma, que con su facilidad y
@@ -126,7 +122,12 @@ Argentina, en 2007.</p>
             <li class="next">
                 <a href="personalizar-el-texto-de.html" rel="next" title="Personalizar el texto de #INTRODUCTION">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -183,6 +184,8 @@ Argentina, en 2007.</p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

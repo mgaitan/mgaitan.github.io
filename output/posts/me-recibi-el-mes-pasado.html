@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Me recibí (el mes pasado) | tin_nqn</title>
+<title>Me recibí (el mes pasado) | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -96,10 +96,6 @@ tengo, tampoco encuentro el tiempo de empezar a darle forma de">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Oh, cuantos planes elucubrados para cuando ya no tuviera un exámen
 cercano para obstaculizar la felicidad. Y resulta que ahora, que ya no
@@ -115,7 +111,12 @@ Computación.</p>
             <li class="next">
                 <a href="charla-myhdl-de-python-al-siliicio.html" rel="next" title="Charla: MyHDL, de python al silicio">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -172,6 +173,8 @@ Computación.</p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Apuntes pa'mejorar el chamuio (escrito) | tin_nqn</title>
+<title>Apuntes pa'mejorar el chamuio (escrito) | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -95,10 +95,6 @@ A veces programando, otras barriendo la oficina o atornillando estanterías y ot
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Finde largo y el emprendorismo autóctono meta que meta, dale que dale, laburando en sus proyectos.</p>
 <p>A veces programando, otras barriendo la oficina o atornillando estanterías y otras veces, quizás las más, corrigiendo documentos (plan, cof, de negocios, cof, cof) que tienen que quedar facherazos. No sólo por lo que dicen sino por cómo lo dicen.</p>
@@ -123,7 +119,12 @@ es profesora de traducción periodística en la Universidad Nacional de Córdoba
             <li class="next">
                 <a href="fortran-windows-pesadilla2.html" rel="next" title="Fortran + Windows = pesadilla^2">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -180,6 +181,8 @@ es profesora de traducción periodística en la Universidad Nacional de Córdoba
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

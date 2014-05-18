@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>GPEC 2010: El poster | tin_nqn</title>
+<title>GPEC 2010: El poster | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -99,10 +99,6 @@ Riteq la semana que vi">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Otra cosa que hice en
 <a class="reference external" href="blog/article/pyconar-2010-el-orgullo-de">PyConAr</a> fue presentar un
@@ -154,7 +150,12 @@ svn checkout https://gpec2010.googlecode.com/svn/trunk/docs/poster
             <li class="next">
                 <a href="voto-electronico-e-ingenieros.html" rel="next" title="Voto electrónico e ingenieros analógicos">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -211,6 +212,8 @@ svn checkout https://gpec2010.googlecode.com/svn/trunk/docs/poster
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Mantener el scroll vertical de wx.ListCtrl abajo | tin_nqn</title>
+<title>Mantener el scroll vertical de wx.ListCtrl abajo | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -96,10 +96,6 @@ la barra de estada, pero con la ventaja (complementaria, si se">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Un típico uso de un <tt class="docutils literal">ListCtrl</tt> es usarlo para mostrar un Log de la
 aplicación que muestra mensajes al usuario, similar a lo que puede hacer
@@ -149,7 +145,12 @@ def OnAppendLog(self, msg):
             <li class="next">
                 <a href="usando-pubsub-para-una-panel-de.html" rel="next" title="Usando PubSub para un panel de mensajes">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -206,6 +207,8 @@ def OnAppendLog(self, msg):
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

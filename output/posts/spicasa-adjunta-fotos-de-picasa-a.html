@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Spicasa: adjuntá fotos de picasa a un artículo | tin_nqn</title>
+<title>Spicasa: adjuntá fotos de picasa a un artículo | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -97,10 +97,6 @@ El caso de uso, basado en mi propia necesidad, es el siguiente">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Con un poco de coca-cola en la sangre, retomé esta madrugada un
 proyectito que tenía: adjuntar fotos de un album de
@@ -173,7 +169,12 @@ Spicasa para adjuntar fotos.</p>
             <li class="next">
                 <a href="Control-de-Versiones-con.html" rel="next" title="Control de Versiones con Subversion">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -230,6 +231,8 @@ Spicasa para adjuntar fotos.</p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

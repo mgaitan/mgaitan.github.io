@@ -7,7 +7,7 @@ article: http://ogp.me/ns/article#
 <meta charset="utf-8">
 <meta name="description" content="&gt;&gt;&gt; me.geek.post()">
 <meta name="viewport" content="width=device-width">
-<title>tin_nqn (posts antiguos, página 8) | tin_nqn</title>
+<title>tin_nqn (posts antiguos, página 8) | tin_nqn  </title>
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="assets/css/code.css" rel="stylesheet" type="text/css">
@@ -953,6 +953,8 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Digitalizando recuerdos con mencoder | tin_nqn</title>
+<title>Digitalizando recuerdos con mencoder | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -96,10 +96,6 @@ Kozumi con el chip sintonizador BT878, uno de los más genéricos y">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Para el Mundial del 2006, compré, como tantos otros que no tenían
 televisor pero sí computadora, una plaquita sintonizadora de TV: una
@@ -164,7 +160,12 @@ cintas viejas.</p>
             <li class="next">
                 <a href="deja-que-el-servidor-trabaje-por.html" rel="next" title="Deja que el servidor trabaje por tí con GNU Screen">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -221,6 +222,8 @@ cintas viejas.</p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

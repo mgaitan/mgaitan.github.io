@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Usando PubSub para un panel de mensajes | tin_nqn</title>
+<title>Usando PubSub para un panel de mensajes | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -98,10 +98,6 @@ para mostrar mensajes co">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>La aplicación que estoy desarrollando,
 <a class="reference external" href="http://code.google.com/p/gpec2010">GPEC</a>, genera muchos mensajes que
@@ -354,7 +350,12 @@ if __name__ == "__main__":
             <li class="next">
                 <a href="django-dash-hace-una-aplicacion.html" rel="next" title="Django Dash: hacé una aplicación web en 2 dias">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -411,6 +412,8 @@ if __name__ == "__main__":
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

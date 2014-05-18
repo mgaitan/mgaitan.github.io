@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>pip, apurate por favor | tin_nqn</title>
+<title>pip, apurate por favor | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -97,10 +97,6 @@ con el que instalamos, actualizamos o">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p><a class="reference external" href="http://pip-installer.org/">pip</a>  es una herramienta esencial
 para el trabajo diario de un programador python: es el manejador
@@ -290,7 +286,12 @@ django, whatever) me los haces rodar para que pip vuele.</p>
             <li class="next">
                 <a href="mirar-tu-smartphone-para-cuidar.html" rel="next" title="Mirar (tu smartphone) para cuidar">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -347,6 +348,8 @@ django, whatever) me los haces rodar para que pip vuele.</p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

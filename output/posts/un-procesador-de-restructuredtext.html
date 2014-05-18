@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Un procesador de reStructuredText | tin_nqn</title>
+<title>Un procesador de reStructuredText | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -95,11 +95,6 @@ article: http://ogp.me/ns/article#
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-                <p><a href="../en/posts/the-reStructuredText-processor.html" rel="alternate" hreflang="en">English</a></p>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Siempre me gustó <a class="reference external" href="http://textosypretextos.com.ar">escribir</a>. Pero, desde que recuerdo, casi siempre lo hice en un teclado de computadora. Salvo <a class="reference external" href="http://es.wikipedia.org/wiki/Garabato_%28dibujo%29">garabatos</a> cuando tengo que pensar algo difícil o cuando me aburro en una reunión/clase, casi no escribo en papel.</p>
 <!-- TEASER_END -->
@@ -151,7 +146,13 @@ article: http://ogp.me/ns/article#
             <li class="next">
                 <a href="no-al-fraude-en-cordoba-ayudanos.html" rel="next" title="#NoAlFraudeEnCórdoba. Ayudanos">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+                <p><a href="../en/posts/the-reStructuredText-processor.html" rel="alternate" hreflang="en">English</a></p>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -208,6 +209,8 @@ article: http://ogp.me/ns/article#
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

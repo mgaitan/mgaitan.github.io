@@ -30,13 +30,11 @@ h1 a, h1 a:hover{
     color: #404040;
 }
 
-
-
 .body-content {
     margin-top: 60px;
 }
 
-article:before, .body-content hr {
+.body-content hr {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -47,7 +45,7 @@ article:before, .body-content hr {
     border-style: solid none none;
     border-width: 1px 0 0;
     display: block;
-    margin: 50px auto 40px;
+    margin: 30px auto 30px;
     width: 20%;
 }
 
@@ -124,4 +122,8 @@ ul.nav li a:hover {
 
 .byline, .commentline {
     display: none !important;
+}
+
+.translations {
+    margin-top: 5px;
 }

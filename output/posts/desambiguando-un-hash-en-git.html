@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Desambiguando un hash en Git | tin_nqn</title>
+<title>Desambiguando un hash en Git | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -97,10 +97,6 @@ Git is smart enough to figure out what commit you meant to type if you provide t
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Soy vago. Por eso me llevo bien con Git, que permite reconocer un changeset con un <a class="reference external" href="http://git-scm.com/book/ch6-1.html">pedacito de
 su hash sha1</a> :</p>
@@ -138,7 +134,12 @@ c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
             <li class="next">
                 <a href="pip-apurate-por-favor.html" rel="next" title="pip, apurate por favor">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -195,6 +196,8 @@ c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

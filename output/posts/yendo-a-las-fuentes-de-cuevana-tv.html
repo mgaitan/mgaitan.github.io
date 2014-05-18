@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Yendo a las fuentes de cuevana.tv | tin_nqn</title>
+<title>Yendo a las fuentes de cuevana.tv | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -98,10 +98,6 @@ Cuevana es un sitio para ver series y películas online, en str">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>** UPDATE ** : la ultima version funciona con el nuevo sitio de cuevana.</p>
 <p>Dos cosas me gustan mucho últimamente:
@@ -158,7 +154,12 @@ futuras versiones. ]</p>
             <li class="next">
                 <a href="referenciar-figuras-por-numero-en.html" rel="next" title="Referenciar figuras por número en Sphinx / Latex">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -215,6 +216,8 @@ futuras versiones. ]</p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

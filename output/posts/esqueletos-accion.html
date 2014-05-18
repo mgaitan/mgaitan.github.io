@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Esqueletos Acción | tin_nqn</title>
+<title>Esqueletos Acción | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -98,10 +98,6 @@ Allí realicé un taller de 2">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>En septiembre de 2008 participé con un grupo de compañeros de facultad
 en el <a class="reference external" href="http://www.undec.edu.ar/Cacic2008/esp/index.html">Congreso Argentino de Ciencias de la
@@ -194,7 +190,12 @@ GPL, tus trabajos derivados deben ser ofrecidos libremente.</p>
             <li class="next">
                 <a href="yahoo-pipes-como-por-un-tubo.html" rel="next" title="Yahoo! Pipes como por un tubo">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -251,6 +252,8 @@ GPL, tus trabajos derivados deben ser ofrecidos libremente.</p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

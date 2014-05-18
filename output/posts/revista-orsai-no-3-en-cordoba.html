@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Revista Orsai Nº 3 en Córdoba | tin_nqn</title>
+<title>Revista Orsai Nº 3 en Córdoba | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -96,10 +96,6 @@ página">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>De nuevo soy distribuidor de la <a class="reference external" href="http://orsai.es">Orsai</a> en la ciudad
 de Córdoba. Si estás interesado date una vuelta por <a class="reference external" href="http://textosypretextos.com.ar/Reserva-Orsai-3-en-Cordoba">esta
@@ -113,7 +109,12 @@ página</a></p>
             <li class="next">
                 <a href="cdpedia-0-7-disponible.html" rel="next" title="CDPedia 0.7 disponible">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -170,6 +171,8 @@ página</a></p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

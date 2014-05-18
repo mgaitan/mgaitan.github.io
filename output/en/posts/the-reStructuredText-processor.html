@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>The reStructuredText processor | tin_nqn</title>
+<title>The reStructuredText processor | tin_nqn  </title>
 <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -95,11 +95,6 @@ article: http://ogp.me/ns/article#
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">Also available in:</h3>
-                <p><a href="../../posts/un-procesador-de-restructuredtext.html" rel="alternate" hreflang="es">Español</a></p>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>I always liked to <a class="reference external" href="http://textosypretextos.com.ar">write</a>. As far as I remember, I always do it with a keyboard, in the computer. Except for some doodles when I'm thinking something hard or when I'm bored in a meeting or class, I never write in paper.</p>
 <!-- TEASER_END -->
@@ -143,7 +138,13 @@ article: http://ogp.me/ns/article#
 </tr></tbody>
 </table>
 </div>
-    <aside class="postpromonav"><nav></nav></aside><section class="comments"><h2>Comments</h2>
+    <aside class="postpromonav"><nav></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">Also available in:</h3>
+                <p><a href="../../posts/un-procesador-de-restructuredtext.html" rel="alternate" hreflang="es">Español</a></p>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comments</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -200,6 +201,8 @@ article: http://ogp.me/ns/article#
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

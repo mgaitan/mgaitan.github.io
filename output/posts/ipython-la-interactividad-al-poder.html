@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Ipython, la interactividad al poder | tin_nqn</title>
+<title>Ipython, la interactividad al poder | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -97,10 +97,6 @@ grosa. Me gusta compartir lo que sé, instarme ">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>A lo largo de esta vida he amado, he llorado y reído, me han salido
 canas y dí algunas charlas y talleres.</p>
@@ -193,7 +189,12 @@ git clone git@github.com:nqnwebs/IPython-interactive-talk.git
             <li class="next">
                 <a href="gpec-2010-el-poster.html" rel="next" title="GPEC 2010: El poster">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -250,6 +251,8 @@ git clone git@github.com:nqnwebs/IPython-interactive-talk.git
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

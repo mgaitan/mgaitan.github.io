@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>De otra galaxia | tin_nqn</title>
+<title>De otra galaxia | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -96,10 +96,6 @@ la tenés muy clara. Si en cambio no estás estudiando ni embo">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Si el sábado a la noche antes de rendir tu última materia en vez de
 estar estudiando estás emborranchandote por ahí, sos un inconciente y/o
@@ -155,7 +151,12 @@ plt.imshow (data.clip(0,255) )
             <li class="next">
                 <a href="covertura-de-los-oscars-2011.html" rel="next" title="Covertura de los Oscars 2011">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -212,6 +213,8 @@ plt.imshow (data.clip(0,255) )
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

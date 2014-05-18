@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Django Dash: hacé una aplicación web en 2 dias | tin_nqn</title>
+<title>Django Dash: hacé una aplicación web en 2 dias | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -98,10 +98,6 @@ deadlines” by giving you a REAL deadline. 48 hour">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Leemos en <a class="reference external" href="http://djangodash.com/">la web</a></p>
 <blockquote>
@@ -125,7 +121,12 @@ dias. ¿Será indicio de lo rápido que se programa con Django?</p>
             <li class="next">
                 <a href="bonito-feito-pero-efectivo.html" rel="next" title="Bonito, feito pero efectivo">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -182,6 +183,8 @@ dias. ¿Será indicio de lo rápido que se programa con Django?</p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>

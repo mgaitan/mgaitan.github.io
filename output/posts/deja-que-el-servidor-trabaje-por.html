@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Deja que el servidor trabaje por tí con GNU Screen | tin_nqn</title>
+<title>Deja que el servidor trabaje por tí con GNU Screen | tin_nqn  </title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -96,10 +96,6 @@ directamente en una maquina remota, muchas veces más poten">
 
         </p>
 </div>
-                <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Ya somos avispados usuarios de la línea de comandos y hacemos nuestros
 pinitos administrando un servidor: movemos, bajamos y hasta compilamos
@@ -177,7 +173,12 @@ que dejó en su paso).</p>
             <li class="next">
                 <a href="monetizar-pagos-virtuales-en.html" rel="next" title="Monetizar pagos virtuales en Argentina sin costo">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+        </ul></nav><div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+
+    </aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -234,6 +235,8 @@ que dejó en su paso).</p>
             };
         }
         jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
     });
     </script>
 </body>
