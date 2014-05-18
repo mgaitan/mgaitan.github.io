@@ -1,4 +1,5 @@
 *.py[co]
+.ipynb_checkpoints
 
 #nikola
 cache
