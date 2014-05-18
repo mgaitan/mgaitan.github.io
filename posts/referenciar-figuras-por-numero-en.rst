@@ -28,9 +28,9 @@ target
 ::
 
     .. _ok:
-    
+
     .. figure:: ok.png
-    
+
        Una imágen
 
 y luego usar el rol ``:ref:``. Por ejemplo:
@@ -57,19 +57,9 @@ referencia sea el epígrafe y no el número, lo hice opcional: toda
 referencia a un destino con sufijo ``-num`` usa una referencia númerica
 en vez de un hipervinculo con texto.
 
-Acá el patch (para la versión 1.1 —en desarrollo— )
+Acá el `patch <http://nqnwebs.com/sites/www.nqnwebs.com/IMG/txt/sphinx-issue76.txt>`_
 
-+-----------------------------------------------+
-| `|image1| </downloads/sphinx-issue76.txt>`_   |
-+-----------------------------------------------+
-| Diff Parche para el Issue #76 de Sphinx       |
-+-----------------------------------------------+
-
-Y acá un ejemplo del problema y la gronchosolución
-
-+---------------------------------------+
-| `|image3| </downloads/prueba.pdf>`_   |
-+---------------------------------------+
+Y acá un `ejemplo del problema y la gronchosolución <http://nqnwebs.com/sites/www.nqnwebs.com/IMG/pdf/prueba.pdf>`_
 
 El código del ejemplo es este:
 
@@ -77,22 +67,16 @@ El código del ejemplo es este:
 
     Ejemplo
     *******
-    
-    Referenciando la figura :ref:`ok` se evidencia el problema. Aplicando mi 
-    rústico parche en cambio, se puede referenciar a la Figura :ref:`ok-num`.
-    
-    .. _ok:
-    
-    .. figure:: ok.png
-    
-       Una imágen
-    
-    .. _ok-num:
-    
-    .. figure:: ok.png
-    
 
-.. |image0| image:: /images/txt-56069.png
-.. |image1| image:: /images/txt-56069.png
-.. |image2| image:: /images/pdf-eb697.png
-.. |image3| image:: /images/pdf-eb697.png
+    Referenciando la figura :ref:`ok` se evidencia el problema. Aplicando mi
+    rústico parche en cambio, se puede referenciar a la Figura :ref:`ok-num`.
+
+    .. _ok:
+
+    .. figure:: ok.png
+
+       Una imágen
+
+    .. _ok-num:
+
+    .. figure:: ok.png
