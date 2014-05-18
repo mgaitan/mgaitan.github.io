@@ -11,23 +11,25 @@ blog <http://www.textosypretextos.com.ar/Universo-universitario>`_
 
 La semana pasada una amiga comentó un mensaje que dejé en Facebook
 avisando que había `terminado la
-tésis <blog/article/referenciar-figuras-por-numero-en>`_.
+tésis </posts/referenciar-figuras-por-numero-en.html>`_.
 
-.. figure:: local/cache-vignettes/L498xH351/2011-03-21-123747_498x351_scrot-cb8bb.png
+.. image:: /images/2011-03-21-123747_498x351_scrot.png
    :align: center
-   :alt: 
+
+
 Inspirado en ese comentario de Lu, Nati (mi novia) me pintó esta remera
 como regalo de cumpleaños (que es mañana).
 
-.. figure:: local/cache-vignettes/L510xH680/193004_10150430921700058_879055057_17417662_1519731_o-2c7b4.jpg
+.. image:: /images/193004_10150430921700058_879055057_17417662_1519731_o.jpg
    :align: center
-   :alt: 
+
+
 Claro que yo no salgo muy favorecido (cansancio y flash no hacen buen
 equipo). Pero la remera está buenísima. Acá el detalle:
 
-.. figure:: local/cache-vignettes/L510xH684/191578_10150430923120058_879055057_17417703_2608242_o-a7d8d.jpg
+.. image:: /images/191578_10150430923120058_879055057_17417703_2608242_o.jpg
    :align: center
-   :alt: 
+
 En la espalda podría ir esta
 `cita <http://pages.citebite.com/g4b5a9l5wwxv>`_ :
 
