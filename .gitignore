@@ -1,5 +1,6 @@
 *.py[co]
 .ipynb_checkpoints
+*sqlite
 
 #nikola
 cache
