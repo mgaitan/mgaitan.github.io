@@ -1,5 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn</title><link>http://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><language>es</language><lastBuildDate>Thu, 05 Jun 2014 13:31:54 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Los números del Mundial</title><link>http://mgaitan.github.io/posts/los-numeros-del-mundial.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn</title><link>http://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><language>es</language><lastBuildDate>Thu, 12 Jun 2014 13:27:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deploy de Django con Circus, Chausette y Nginx</title><link>http://mgaitan.github.io/posts/deploy-de-django-con-circus-chausette-nginx.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela &lt;a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/"&gt;WSGI&lt;/a&gt;, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.&lt;/p&gt;
+&lt;!-- TEASER_END --&gt;
+&lt;p&gt;Si bien Nginx, el servidor web que está &lt;a class="reference external" href="http://w3techs.com/blog/entry/nginx_just_became_the_most_used_web_server_among_the_top_1000_websites"&gt;desplazando a Apache como el más popular&lt;/a&gt; tiene &lt;a class="reference external" href="http://wiki.nginx.org/NgxWSGIModule"&gt;un módulo&lt;/a&gt; que implementa el estándar WSGI de manera nativa, la arquitectura más típica es utilizarlo como &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Reverse_proxy"&gt;proxy reverso&lt;/a&gt;, conectado a un servidor WSGI especializado como &lt;a class="reference external" href="http://gunicorn.org/"&gt;Gunicorn&lt;/a&gt; que interactua con la aplicación web (posiblemente a través de multiples instancias o &lt;em&gt;workers&lt;/em&gt;). Como queremos que nuestra app funcione permanentemente, el proceso WSGI y otros que sean necesarios (por ejemplo Redis) se demonizan de manera que sepan restaurarse automáticamente si mueren y sea posible monitorearlos: para eso suele usarse &lt;a class="reference external" href="http://supervisord.org/"&gt;supervisor&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/classical-stack.png" src="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/classical-stack.png"&gt;&lt;p class="caption"&gt;La arquitectura de deployment más común para una aplicación web Python&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Si bien esta arquitectura está bastamente probada, hay una opción mejor.&lt;/p&gt;
+&lt;img alt="https://circus.readthedocs.org/en/0.11.1/_images/circus-medium.png" class="align-center" src="https://circus.readthedocs.org/en/0.11.1/_images/circus-medium.png"&gt;&lt;div class="section" id="el-circo-y-el-soquete"&gt;
+&lt;h2&gt;El circo y el soquete&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://circus.readthedocs.org/"&gt;Circus&lt;/a&gt; y &lt;a class="reference external" href="http://chaussette.readthedocs.org/"&gt;Chaussette&lt;/a&gt; son proyectos desarrollados por &lt;a class="reference external" href="http://ziade.org/"&gt;Tarek Ziadé&lt;/a&gt; y el equipo de &lt;a class="reference external" href="https://blog.mozilla.org/services/"&gt;Mozilla Sevices&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="tip"&gt;
+&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;p class="last"&gt;Tarek es un pythonista francés, core committer de Python y muchos proyectos relacionados. Recibió el &lt;a class="reference external" href="https://www.python.org/community/awards/psf-awards/#april-2011"&gt;reconocimiento de la PSF&lt;/a&gt; por sus aportes y es autor del gran libro &lt;a class="reference external" href="http://www.packtpub.com/expert-python-programming/book"&gt;Expert Python Programming&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Una arquitectura de producción análoga a la descripta arriba, pero basada en Circus, se ve así:&lt;/p&gt;
+&lt;img alt="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png" class="align-center" src="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png"&gt;&lt;p&gt;Circus maneja procesos demonizados igual que Supervisor, pero además puede bindear &lt;strong&gt;sockets&lt;/strong&gt; y manejarlos de la misma manera. Este desacople de la gestión de sockets del webserver WSGI permite muchas posibilidades, tanto en la gestión como en la escalabilidad de la arquitectura.&lt;/p&gt;
+&lt;p&gt;La capa WSGI en este esquema la aporta Chaussette, que tiene la particularidad que, en vez de abrir un socket nuevo, utiliza el que Circus abrió (y controla) para el worker. Además, aunque trae una implementación de WSGI &lt;em&gt;built-in&lt;/em&gt;, &lt;a class="reference external" href="http://chaussette.readthedocs.org/en/latest/index.html#backends"&gt;puede usar muchos backends&lt;/a&gt; más eficientes o con características particulares como &lt;a class="reference external" href="http://meinheld.org/"&gt;meinheld&lt;/a&gt;, &lt;a class="reference external" href="http://www.gevent.org/"&gt;gevent&lt;/a&gt;, &lt;a class="reference external" href="http://gevent-socketio.readthedocs.org/en/latest/"&gt;gevent-socketio&lt;/a&gt;, entre muchos otros.&lt;/p&gt;
+&lt;p&gt;A diferencia de Supervisor que se basa en el protocolo XML-RPC para inspeccionar los procesos que controla, Circus utiliza un canal pub/sub basado en el mucho más moderno &lt;a class="reference external" href="http://zeromq.org/"&gt;ZeroMQ&lt;/a&gt; (lo mismo que usa IPython Notebook) que permite un monitoreo realtime y una &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-devs/#extending-circus"&gt;API de plugins&lt;/a&gt; mucho más simple. Otra diferencia, nada menor, es que &lt;strong&gt;Circus funciona con Python 2 o 3&lt;/strong&gt; (supervisor no es compatible con Python 3).&lt;/p&gt;
+&lt;p&gt;Y de yapa: Circus se puede usar como una &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-devs/library/"&gt;biblioteca de muy alto nivel&lt;/a&gt;  para la gestión no bloqueante de procesos. Se puede pensar con un wrapper de &lt;tt class="docutils literal"&gt;subprocess&lt;/tt&gt; y/o &lt;tt class="docutils literal"&gt;multiprocess&lt;/tt&gt;, que aporta información de monitoreo y estadísticas, control de flujo, una &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-devs/writing-hooks/"&gt;capa de señales (hooks)&lt;/a&gt; muy completa y más.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="desplegando-django"&gt;
+&lt;h2&gt;Desplegando Django&lt;/h2&gt;
+&lt;p&gt;Para ejemplificar, voy utilizar un proyecto Django que estoy desarrollando (muy lentamente): &lt;a class="reference external" href="https://github.com/mgaitan/nikolahub"&gt;nikolahub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Circus se configura con un archivo con formato &lt;tt class="docutils literal"&gt;.ini&lt;/tt&gt;. El mio, que bauticé &lt;tt class="docutils literal"&gt;circus.ini&lt;/tt&gt; quedó así:&lt;/p&gt;
+&lt;pre class="code ini literal-block"&gt;
+&lt;span class="k"&gt;[circus]&lt;/span&gt;
+&lt;span class="na"&gt;check_delay&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;5&lt;/span&gt;
+&lt;span class="na"&gt;endpoint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;tcp://127.0.0.1:5555&lt;/span&gt;
+&lt;span class="na"&gt;pubsub_endpoint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;tcp://127.0.0.1:5556&lt;/span&gt;
+&lt;span class="na"&gt;stats_endpoint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;tcp://127.0.0.1:5557&lt;/span&gt;
+
+&lt;span class="k"&gt;[socket:nikolahub]&lt;/span&gt;
+&lt;span class="na"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;127.0.0.1&lt;/span&gt;
+&lt;span class="na"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;8080&lt;/span&gt;
+
+&lt;span class="k"&gt;[watcher:nikolahub]&lt;/span&gt;
+&lt;span class="na"&gt;cmd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;/virtualenvs/nikolahub/bin/chaussette --fd $(circus.sockets.nikolahub) nikolahub.wsgi.application&lt;/span&gt;
+&lt;span class="na"&gt;use_sockets&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;True&lt;/span&gt;
+&lt;span class="na"&gt;numprocesses&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;3&lt;/span&gt;
+
+&lt;span class="k"&gt;[env:nikolahub]&lt;/span&gt;
+&lt;span class="na"&gt;PYTHONPATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;/projects/nikolahub&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;La sección &lt;tt class="docutils literal"&gt;watcher&lt;/tt&gt; indica lanza el comando a controlar, en este caso levantando 3 workers de la aplicación -django.  Notar que como tengo instalado Chaussette dentro del virtualenv, uso el path absoluto al ejecutable. El fragmento &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--fd&lt;/span&gt; $(circus.sockets.nikolahub)&lt;/tt&gt; se expande implícitamente asignando el pid que obtuvo el fork (el proceso hijo) de circus.&lt;/p&gt;
+&lt;p&gt;Si quisieramos usar otro servidor web, sólo hay que indicar cual con el parámetro &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--backend&lt;/span&gt;&lt;/tt&gt; Por ejemplo:&lt;/p&gt;
+&lt;pre class="code ini literal-block"&gt;
+&lt;span class="na"&gt;cmd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;/virtualenvs/nikolahub/bin/chaussette --backend gevent --fd $(circus.sockets.nikolahub) nikolahub.wsgi.application&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Podemos probar si todo funciona:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circusd circus.ini
+2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Starting master on pid 1141
+2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; sockets started
+2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Arbiter now waiting &lt;span class="k"&gt;for &lt;/span&gt;commands
+2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; nikolahub started
+2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; circusd-stats started
+2014-06-12 04:36:17 circus&lt;span class="o"&gt;[&lt;/span&gt;1150&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Starting the stats streamer
+2014-06-12 04:36:17 &lt;span class="o"&gt;[&lt;/span&gt;1149&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Application is &amp;lt;django.core.handlers.wsgi.WSGIHandler object at 0xa06f60c&amp;gt;
+2014-06-12 04:36:17 &lt;span class="o"&gt;[&lt;/span&gt;1149&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Serving on fd://5
+2014-06-12 04:36:17 &lt;span class="o"&gt;[&lt;/span&gt;1149&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Using &amp;lt;class chaussette.backend._wsgiref.ChaussetteServer at 0x9f2d6ec&amp;gt; as a backend
+2014-06-12 04:36:17 &lt;span class="o"&gt;[&lt;/span&gt;1148&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Application is &amp;lt;django.core.handlers.wsgi.WSGIHandler object at 0x939b60c&amp;gt;
+2014-06-12 04:36:17 &lt;span class="o"&gt;[&lt;/span&gt;1148&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Serving on fd://5
+2014-06-12 04:36:17 &lt;span class="o"&gt;[&lt;/span&gt;1148&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Using &amp;lt;class chaussette.backend._wsgiref.ChaussetteServer at 0x92596ec&amp;gt; as a backend
+&lt;/pre&gt;
+&lt;p&gt;Tendremos la aplicación servida en el puerto 8080 de localhost. Demonizarlo es sólo un flag:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circud --daemon circus.ini
+&lt;/pre&gt;
+&lt;p&gt;Para implementar nginx como proxy reverso armé un archivo &lt;tt class="docutils literal"&gt;nginx.conf&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class="code javascript literal-block"&gt;
+&lt;span class="nx"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;server_name&lt;/span&gt; &lt;span class="nx"&gt;nikolahub&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;nqnwebs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="nx"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kr"&gt;static&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nx"&gt;alias&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;projects&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;nikolahub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kr"&gt;static&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="nx"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;media&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;alias&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;projects&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;nikolahub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;media&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="nx"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;proxy_pass&lt;/span&gt; &lt;span class="nx"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//localhost:8080/;
+&lt;/span&gt;        &lt;span class="nx"&gt;proxy_pass_header&lt;/span&gt; &lt;span class="nx"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;proxy_set_header&lt;/span&gt; &lt;span class="nx"&gt;Host&lt;/span&gt; &lt;span class="nx"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;proxy_redirect&lt;/span&gt; &lt;span class="nx"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;proxy_set_header&lt;/span&gt; &lt;span class="nx"&gt;X&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Real&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;IP&lt;/span&gt; &lt;span class="nx"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;proxy_set_header&lt;/span&gt; &lt;span class="nx"&gt;X&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Scheme&lt;/span&gt; &lt;span class="nx"&gt;$scheme&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;proxy_connect_timeout&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;proxy_send_timeout&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;proxy_read_timeout&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Luego agregamos el sitio:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;ln -s /etc/nginx/sites-available/nikolahub nginx.conf
+&lt;span class="nv"&gt;$ &lt;/span&gt;ln -s /etc/nginx/sites-enable/nikolahub nginx.conf
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo service nginx restart
+&lt;/pre&gt;
+&lt;img alt="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png" class="align-right" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png"&gt;&lt;p&gt;Esto pone a nginx como "frontend" de la aplicación, sirviendo los directorios con contenido estático y pasando el resto de las peticiones al puerto 8080 que administra Circus.&lt;/p&gt;
+&lt;p&gt;Ya tenemos nuestro sitio en producción.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="el-dueno-del-circo-y-los-monitos"&gt;
+&lt;h2&gt;El dueño del circo y los monitos&lt;/h2&gt;
+&lt;p&gt;De ahora en más, podremos usar las herramientas que provee Circus.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;circusctl&lt;/tt&gt; es el dueño del circo. Puede parar, reiniciar, cambiar la cantidad de workers, abrir una consola ipython para interactuar o inspeccionar y mucho mas. Se puede usar como subcomandos (&lt;tt class="docutils literal"&gt;circusctl &amp;lt;subcmd&amp;gt; &amp;lt;watcher&amp;gt;&lt;/tt&gt;) o usar la consola interactiva.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, si quisiera ver cuantos procesos workers tengo y agregar uno más, podría hacer así:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circusctl numprocesses nikolahub
+3
+&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circusctl incr nikolahub
+ok
+&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circusctl numprocesses nikolahub
+4
+&lt;/pre&gt;
+&lt;p&gt;Lo mismo y más se puede hacer desde una consola IPython.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circusctl ipython
+Python 2.7.4 &lt;span class="o"&gt;(&lt;/span&gt;default, Apr 19 2013, 18:32:33&lt;span class="o"&gt;)&lt;/span&gt;
+Type &lt;span class="s2"&gt;"copyright"&lt;/span&gt;, &lt;span class="s2"&gt;"credits"&lt;/span&gt; or &lt;span class="s2"&gt;"license"&lt;/span&gt; &lt;span class="k"&gt;for &lt;/span&gt;more information.
+
+IPython 2.1.0 -- An enhanced Interactive Python.
+?         -&amp;gt; Introduction and overview of IPython&lt;span class="s1"&gt;'s features.
+%quickref -&amp;gt; Quick reference.
+help      -&amp;gt; Python'&lt;/span&gt;s own &lt;span class="nb"&gt;help &lt;/span&gt;system.
+object?   -&amp;gt; Details about &lt;span class="s1"&gt;'object'&lt;/span&gt;, use &lt;span class="s1"&gt;'object??'&lt;/span&gt; &lt;span class="k"&gt;for &lt;/span&gt;extra details.
+
+In &lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt;: arbiter.numprocesses&lt;span class="o"&gt;()&lt;/span&gt;
+Out&lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt;: 4
+&lt;/pre&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;circus-top&lt;/span&gt;&lt;/tt&gt; es un monitor realtime, estilo top. Escucha las estadísticas
+que produce &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;circusd-stats&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circus-top
+&lt;/pre&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="/images/circus-top.png" src="http://mgaitan.github.io/images/circus-top.png"&gt;&lt;p class="caption"&gt;circus-top en acción. Muestra los procesos watcher y los recursos que cosumen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Todo esto puede verse y manejarse cómodamente a través de &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-ops/circusweb/"&gt;circus-web&lt;/a&gt;, un dashboard web que permite monitorear y
+administrar circus, con gráficos realtime y muy fácil de usar.&lt;/p&gt;
+&lt;img alt="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" class="align-center" src="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" style="width: 100%;"&gt;&lt;p&gt;Desde las últimas versiones, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;circus-web&lt;/span&gt;&lt;/tt&gt; se refactorizó para basarla en &lt;a class="reference external" href="http://www.tornadoweb.org"&gt;Tornado&lt;/a&gt; (originalmente usaba &lt;a class="reference external" href="http://bottlepy.org/"&gt;bottle&lt;/a&gt;) y hay que instalarlo aparte.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install circus-web
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusiones"&gt;
+&lt;h2&gt;Conclusiones&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://circus.readthedocs.org/"&gt;Circus&lt;/a&gt; es una herramienta que simplifica el stack de deployment de una aplicación web WSGI.
+La API de alto nivel, una arquitectura mucho más moderna y simple y el aval de ser desarrollada (y usada exhaustivamente) por Mozilla, son avales poderosos para probarla.&lt;/p&gt;
+&lt;p&gt;Como &lt;a class="reference external" href="http://textosypretextos.com.ar/Bienvenidos-al-show"&gt;escribío el Marcos Luc&lt;/a&gt; &lt;em&gt;"la función ya debería empezar (...) Bueno nena, buena suerte, cada vez la red te teme más..."&lt;/em&gt;&lt;/p&gt;
+&lt;iframe width="709" height="390" src="//www.youtube.com/embed/AhfUfjLpNvI" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;</description><category>devop</category><category>python</category><category>tutorial</category><guid>http://mgaitan.github.io/posts/deploy-de-django-con-circus-chausette-nginx.html</guid><pubDate>Thu, 12 Jun 2014 15:45:13 GMT</pubDate></item><item><title>Los números del Mundial</title><link>http://mgaitan.github.io/posts/los-numeros-del-mundial.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -3335,51 +3487,4 @@ será esta API podemos crear un proyecto nuevo para cada una de las aplicaciones
 
 Si sabés programar en python, web o cualquier tecnología mobile; sabes diseñar o maquetar css, o simplemente te gusta la idea, te esperamos en la nueva y preciosa lista_ --&gt;
 &lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/posts/hola-preciosa.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;¿esta actitud no es una "&lt;a class="reference external" href="http://www.ted.com/talks/lang/es/eli_pariser_beware_online_filter_bubbles.html"&gt;burbuja de filtros&lt;/a&gt;", voluntaria? ¿No es &lt;em&gt;"reducir
-nuestra visión del mundo"&lt;/em&gt; como dice Eli Pariser?&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/posts/hola-preciosa.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Esteban Morales propuso "DeCompras", que es más explícito e internacionalizable&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id6" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/posts/hola-preciosa.html#id3"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;o porque me inspiró su &lt;a class="reference external" href="https://plus.google.com/photos/102449284377784435533/albums/5362561505342208481/5362561730845131554?pid=5362561730845131554&amp;amp;oid=102449284377784435533"&gt;belleza&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><category>ideas</category><category>preciosa</category><guid>http://mgaitan.github.io/posts/hola-preciosa.html</guid><pubDate>Sun, 02 Jun 2013 23:54:17 GMT</pubDate></item><item><title>Mirar (tu smartphone) para cuidar</title><link>http://mgaitan.github.io/posts/mirar-tu-smartphone-para-cuidar.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Leo sobre el programa &lt;a class="reference external" href="http://www.pagina12.com.ar/diario/economia/subnotas/221350-63733-2013-06-01.html"&gt;Mirar para cuidar&lt;/a&gt;, la campaña de acción voluntaria para controlar el cumplimiento
-del &lt;a class="reference external" href="http://www.preciosensusitio.gov.ar/"&gt;acuerdo de precios&lt;/a&gt; con los supermercados.&lt;/p&gt;
-&lt;!-- TEASER_END --&gt;
-&lt;iframe width="420" height="315" src="http://www.youtube.com/embed/I5jQZ8xQ5Pw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;Me parece muy bueno todo este paquete de medidas y negociaciones que,
-en vez de &lt;a class="reference external" href="https://www.youtube.com/watch?v=tmoOnEIzU18"&gt;negar la situación&lt;/a&gt;, la
-asume y la enfrenta, con medidas simples e ingeniosas. La inflación, creo yo, es el flagelo más sentido por todo el pueblo trabajador.&lt;/p&gt;
-&lt;p&gt;¿Pero será efectivo tener a tantos compañeros mirando y anotando el precio del paquete de harina
-en una hoja de papel?&lt;/p&gt;
-&lt;p&gt;Supongamos que está más caro de lo acordado ¿Qué va a pasar? Imagino que los voluntarios
-tendrán que informarlo a las autoridades de la Secretaria de Comercio y desde allí
-deberán enviar a alguien con poder de policia que constate, para luego multar y exigir
-la adecuación del precio. ¿Cuantos días lleva eso? ¿Cuanta gente compró la harina más cara
-mientras tanto? ¿Cuánto esfuerzo de trabajo significó, no sólo de los voluntarios, sino de los funcionarios? ¿Cuántas posibilidades reales hay de implementar esto en todos los rincones
-del país?&lt;/p&gt;
-&lt;p&gt;Y otra cosa ¿Qué va a pasar con todos los productos que están fuera del acuerdo y no hay
-referencia para comparar?&lt;/p&gt;
-&lt;p&gt;Entonces me acordé de una idea que tuve en la era los celulares sin chip, pero que ahora
-es muy factible.&lt;/p&gt;
-&lt;div class="section" id="una-aplicacion-popular-para-el-control-de-precios"&gt;
-&lt;h2&gt;Una aplicación "popular" para el control de precios&lt;/h2&gt;
-&lt;p&gt;Hace 1 año, el &lt;a class="reference external" href="http://www.lanacion.com.ar/1473620-el-smartphone-otra-pasion-argentina"&gt;24% de los argentinos tenía un smartphone&lt;/a&gt;  y sospecho que, como yo, muchos nos compramos uno
-hace menos tiempo. Más de 10 millones de personas que pueden controlar precios con un botón
-de su aparatito móvil:&lt;/p&gt;
-&lt;p&gt;La aplicación que imagino es una base de datos centralizada que los propios usuarios pueden ampliar.&lt;/p&gt;
-&lt;p&gt;Entran a un super, agarran el paquete de harina, le sacan una fotito con su cámara al código
-de barra (o buscan el producto por nombre, marca, etc.) y la &lt;em&gt;app&lt;/em&gt; les dice cuál es el
-precio de referencia (o del acuerdo), en qué super cercano está más barato,
-cuándo y cuánto aumentó, etc.&lt;/p&gt;
-&lt;p&gt;El usuario puede anotar el precio que está viendo y enviarlo a la base de datos (diciendo
-de qué supermercado y sucursal se trata, que podría inferirse a través de geolocalización)
-y así contribuir y actualizar los datos.&lt;/p&gt;
-&lt;p&gt;Este simple proceso de carga de datos distribuída permitiría no sólo controlar el acuerdo de
-precios (reemplazando o ayudando eficientemente a los voluntarios mirones) y habilitar a
-Moreno (te banco, sabelo) a encajar unas buenas multas, sino algo mucho más efectivo: &lt;strong&gt;que la gente sepa a priori&lt;/strong&gt;, mirando su teléfono o la web, &lt;strong&gt;dónde comprar más barato y quién/es la están cagando&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Por otro lado, la exposición pública de los precios históricos alentaría la competencia de los super, que suelen tener esas políticas estilo &lt;em&gt;"te devolvemos la plata si encontrás un precio más barato"&lt;/em&gt; pero que resultan ser mero marketing por la dificultad de utilizarlas.&lt;/p&gt;
-&lt;p&gt;¡Imaginate la cantidad de datos para analizar! Por ejemplo, ¿cuánto aumentaron en promedio
-los productos de &lt;a class="reference external" href="http://www.taringa.net/posts/noticias/12546172/Empresa-que-manejan-casi-todos-los-productos-del-hogar.html"&gt;Unilever&lt;/a&gt; o &lt;a class="reference external" href="http://www.taringa.net/posts/info/3231784/Kraft-Terrabusi-150-despidos.html"&gt;Kraft&lt;/a&gt; ? ¿no resultará que son esas empresas (entre otras) las que tienen la batuta de los precios? ¿No podrémos, al menos, escracharlos y boicotearlos?&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;"¡Subiste un 35% las sardinas desde el mes pasado, hijuepú!, ¡Minga te voy a comprar!"&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="lo-hacemos"&gt;
-&lt;h2&gt;¿Lo hacemos?&lt;/h2&gt;
-&lt;p&gt;No tengo idea de cómo se hacen aplicaciones para smartphones &lt;a class="footnote-reference" href="http://mgaitan.github.io/posts/mirar-tu-smartphone-para-cuidar.html#id2" id="id1"&gt;[1]&lt;/a&gt;, pero sí puedo ayudar en
-la API/base datos/web.&lt;/p&gt;
-&lt;p&gt;Así que busco voluntarios para el programa &lt;em&gt;"Programar para cuidar"&lt;/em&gt; ;-).&lt;/p&gt;
-&lt;blockquote&gt;
-PD: ¿No se copará la secretaria de defensa del consumidor en poner unos pesos para
-hacer esto?&lt;/blockquote&gt;
-&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/posts/mirar-tu-smartphone-para-cuidar.html#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;en verdad, ideas tengo, lo que no tengo son certezas&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><category>android</category><category>ideas</category><category>preciosa</category><guid>http://mgaitan.github.io/posts/mirar-tu-smartphone-para-cuidar.html</guid><pubDate>Sat, 01 Jun 2013 12:50:39 GMT</pubDate></item></channel></rss>
+nuestra visión del mundo"&lt;/em&gt; como dice Eli Pariser?&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/posts/hola-preciosa.html#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Esteban Morales propuso "DeCompras", que es más explícito e internacionalizable&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;table class="docutils footnote" frame="void" id="id6" rules="none"&gt;&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;tbody valign="top"&gt;&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/posts/hola-preciosa.html#id3"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;o porque me inspiró su &lt;a class="reference external" href="https://plus.google.com/photos/102449284377784435533/albums/5362561505342208481/5362561730845131554?pid=5362561730845131554&amp;amp;oid=102449284377784435533"&gt;belleza&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</description><category>ideas</category><category>preciosa</category><guid>http://mgaitan.github.io/posts/hola-preciosa.html</guid><pubDate>Sun, 02 Jun 2013 23:54:17 GMT</pubDate></item></channel></rss>
