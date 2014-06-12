@@ -214,7 +214,7 @@ Conclusiones
 Circus_ es una herramienta que simplifica el stack de deployment de una aplicación web WSGI.
 La API de alto nivel, una arquitectura mucho más moderna y simple y el aval de ser desarrollada (y usada exhaustivamente) por Mozilla, son avales poderosos para probarla.
 
-Como `escribío el Marcos Luc <http://textosypretextos.com.ar/Bienvenidos-al-show>`_ *"la función ya debería empezar (...) Bueno nena, buena suerte, cada vez la red te teme más..."*
+Como `escribió el Marcos Luc <http://textosypretextos.com.ar/Bienvenidos-al-show>`_ *"la función ya debería empezar (...) Bueno nena, buena suerte, cada vez la red te teme más..."*
 
 
 .. raw:: html
