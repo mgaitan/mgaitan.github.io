@@ -27,7 +27,7 @@ Circus_ y Chaussette_ son proyectos desarrollados por `Tarek Ziadé <http://ziad
 
 Una arquitectura de producción análoga a la descripta arriba, pero basada en Circus, se ve así:
 
-.. figure:: https://github.com/mozilla-services/circus/blob/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png
+.. image:: https://github.com/mozilla-services/circus/blob/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png
 
 Circus maneja procesos demonizados como Supervisor, pero además puede bindear sockets y manejarlos de la misma manera. Este desacople de la gesti
 ón de sockets del webserver WSGI permite muchas posibilidades, tanto en la gestión como en la escalabilidad de la arquitectura.
