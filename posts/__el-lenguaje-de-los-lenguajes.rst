@@ -12,3 +12,8 @@
 - https://github.com/joyent/libuv/pull/1015
 - https://twitter.com/jacobian/status/471095922810970112
 - https://github.com/django/django/pull/2692
+
+Iniciativas
+
+https://www.madewithcode.com/
+http://www.pyladies.com/
