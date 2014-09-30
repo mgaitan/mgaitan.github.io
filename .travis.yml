@@ -3,7 +3,6 @@ branches:
   only:
   - writing
 before_install:
-- sudo apt-get install language-pack-es
 - git submodule update --init --recursive
 install:
 - pip install nikola jinja2 --use-mirrors
