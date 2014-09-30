@@ -92,7 +92,7 @@ __doc__ """para todos y todas"""
     su "cultura de la documentación". La charla dará ideas, herramientas,
     servicios y demás yerbas para ser un pythonista de ley, documentado.
 
-:diapositivas: http://mgaitan.github.com/charla__doc__/
+:diapositivas: http://mgaitan.github.io/charla__doc__/presentacion.html
 :repo: http://github.com/mgaitan/charla__doc__/
 
 Presentaciones
