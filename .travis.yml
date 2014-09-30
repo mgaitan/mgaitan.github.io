@@ -3,10 +3,11 @@ branches:
   only:
   - writing
 before_install:
+- sudo apt-get install language-pack-es
 - sudo apt-get update && sudo apt-get install git
 - git submodule update --init --recursive
 install:
-- pip install nikola
+- pip install nikola jinja2 --use-mirrors
 script:
 - nikola build
 after_success:
