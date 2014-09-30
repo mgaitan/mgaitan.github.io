@@ -4,6 +4,7 @@ branches:
   - writing
 before_install:
 - sudo apt-get update && sudo apt-get install git
+- git submodule update --init --recursive
 install:
 - pip install nikola
 script:
