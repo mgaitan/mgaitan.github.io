@@ -1,4 +1,4 @@
-`Efecto Tábano <http://www.efectotabano.com.ar>`_ es el programa radial
+`Efecto Tábano <http://efectotabano.nqnwebs.com>`_ es el programa radial
 de mi amigo Fernando Barraza. Objetivamente, uno de los mejores
 programas radiales de Argentina.
 
