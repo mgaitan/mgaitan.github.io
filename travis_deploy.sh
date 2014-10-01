@@ -15,7 +15,6 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     nikola build
     git add .
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages [ci skip]"
-    # git push -fq $TARGET_REPO $SOURCE_BRANCH > /dev/null
-    git push -fq $TARGET_REPO `git subtree split --prefix=$NIKOLA_OUTPUT_FOLDER $GH_BRANCH`:$GH_BRANCH
+    git subtree push --prefix=$NIKOLA_OUTPUT_FOLDER $TARGET_REPO $GH_BRANCH
     echo -e "Deploy completed\n"
 fi
