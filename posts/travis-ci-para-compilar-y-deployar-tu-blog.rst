@@ -11,6 +11,9 @@
 software libre. Pero son gente tan copada que no se enojan si en vez de una suite de tests, corremos, por ejemplo, 
 Nikola para compilar este blog y publicarlo automáticamente. 
 
+.. TEASER_END
+
+
 El flujo es así: 
 
 1. Escribimos un post en el branch "fuente" (En mi caso ``writing``) y comiteamos. 
