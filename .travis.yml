@@ -7,7 +7,7 @@ before_install:
 install:
 - pip install --use-wheel --use-mirrors nikola jinja2 ipython
 script:
-- bash travis_deploy.sh
+- bash -e travis_deploy.sh
 env:
   global:
     secure: dlAoq4DfE+K+BT26K+9JFp2ae9qkZxJRYeST4R3ZhvZhsUZnMeTYD0agDN6JkUzthaMZVIDY8syXq+CCy9yoMnHLdxmUAg1pdnzlMMO72mRnF+zgwHQAlqQkcTZsZLF3g+c0VeHMAnnOHb8+rWTnAgx4FYfAxV4z8e97ahPogao=
