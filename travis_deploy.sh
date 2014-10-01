@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 SOURCE_BRANCH=writing
 GH_BRANCH=master
-TARGET_REPO=mgaitan/mgaitan.github.com.git
+TARGET_REPO=https://${GH_TOKEN}@github.com/mgaitan/mgaitan.github.com.git
 NIKOLA_OUTPUT_FOLDER=output
 
 
@@ -14,7 +14,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     nikola build
     git add .
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
-    git push -fq https://${GH_TOKEN}@github.com/$TARGET_REPO $SOURCE_BRANCH > /dev/null
-    git subtree push --prefix=$NIKOLA_OUTPUT_FOLDER https://${GH_TOKEN}@github.com/$TARGET_REPO $GH_BRANCH
+    git push -fq $TARGET_REPO $SOURCE_BRANCH > /dev/null
+    git push -fq TARGET_REPO `git subtree split --prefix=$NIKOLA_OUTPUT_FOLDER $GH_BRANCH`:$GH_BRANCH
     echo -e "Deploy completed\n"
 fi
