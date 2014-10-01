@@ -1,7 +1,7 @@
 .. title: Deploy de Django con Circus, Chaussette y Nginx
 .. slug: deploy-de-django-con-circus-chaussette-nginx
 .. date: 06/12/14 12:45:13 UTC-03:00
-.. tags: python, devop, tutorial, django
+.. tags: python, devop, tutorial, django, circus
 .. link:
 .. description:
 .. type: text
