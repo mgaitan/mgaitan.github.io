@@ -93,14 +93,15 @@ Eso hace un backup completo de la base base">
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2009-03-31T09:37:49-03:00" itemprop="datePublished" title="Fecha de publicación: 31/03/09 09:37:49">31/03/09 09:37:49</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2009-03-31T09:37:49-03:00" itemprop="datePublished" title="Fecha de publicación: 03/31/2009 09:37:49 AM">03/31/2009 09:37:49 AM</time></a></p>
                 <p class="commentline">            <a href="backup-selectivo-de-tablas-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/backup-selectivo-de-tablas-mysql.html">Comments</a>
 
 
         </p>
 </div>
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>Un comando muy práctico para hacer backups de una base de datos MySQL es
+    <div>
+<p>Un comando muy práctico para hacer backups de una base de datos MySQL es
 <em>mysqldump</em>.</p>
 <pre class="literal-block">
 mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
@@ -128,6 +129,7 @@ tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":</p>
 <pre class="literal-block">
 mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
 </pre>
+</div>
 </div>
     </div>
 

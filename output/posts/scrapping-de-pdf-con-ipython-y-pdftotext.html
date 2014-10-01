@@ -90,7 +90,7 @@ Hola Martín, soy Franco Luque, profesor e investigador e">
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-05-18T08:17:39-03:00" itemprop="datePublished" title="Fecha de publicación: 18/05/14 08:17:39">18/05/14 08:17:39</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-05-18T08:17:39-03:00" itemprop="datePublished" title="Fecha de publicación: 05/18/2014 08:17:39 AM">05/18/2014 08:17:39 AM</time></a></p>
                 <p class="commentline">            <a href="scrapping-de-pdf-con-ipython-y-pdftotext.html#disqus_thread" data-disqus-identifier="cache/posts/scrapping-de-pdf-con-ipython-y-pdftotext.html">Comments</a>
 
 
@@ -110,14 +110,14 @@ Hola Martín, soy Franco Luque, profesor e investigador e">
 <p>Hola Martín, soy Franco Luque, profesor e investigador en Computación de la <a href="http://www.famaf.unc.edu.ar/">FaMAF</a>. Con Jorge Sánchez, otro investigador de acá que trabaja en procesamiento de imágenes, vimos tu iniciativa, muy buena por cierto, y nos pareció muy interesante la posibilidad de procesar las imágenes de las actas para reconocer los números manuscritos. Tan interesante nos pareció que pensamos en la posibilidad de organizar una jornada de programación (lo que algunos llaman hackatón muy a nuestro pesar :P), posiblemente para sábado de la semana que viene.</p>
 </blockquote>
 <p>Así fue que, en tiempo record, junto a Franco, Jorge, Jairo Trad, Andrés Vazquez y Marysol Farneda organizamos el evento <a href="http://democraciaconcodigos.github.io/">Democracia con códigos</a> en el que participaron 35 personas! Ese evento fue éxito en todo sentido y dio el puntapie inicial para armar el grupo <a href="https://groups.google.com/forum/#!forum/open-data-cordoba">Open Data Córdoba</a>. </p>
-<h2 id="abriendo-datos-para-la-democracia">Abriendo datos para la democracia</h2>
+<h3 id="abriendo-datos-para-la-democracia">Abriendo datos para la democracia</h3>
 <p>Uno de los requisitos fundamentales para investigar datos es tenerlos. Si bien el sitio oficial <a href="http://datospublicos.gob.ar">datospublicos.gob.ar</a> ya había publicado <a href="http://datospublicos.gob.ar/data/dataset/elecciones-2013/resource/68981df2-c831-4ba4-a7b1-b6ad84905ee9">datasets</a> oficiales de las elecciones, en el sitio <a href="http://www.resultados.gob.ar/">resultados.gob.ar</a>, donde se publicaron los telegramas en tiempo real, había más información. </p>
 <p>En particular, hay una <a href="http://www.resultados.gob.ar/telegramas/telegramas/colegios/04/DDN04999.htm%20que%20tiene%20un%20dato%20muy%20interesante">sección que muestra resúmemes los resultados provisorios por distrito</a> que incluye un dato muy interesante: <strong>la hora en que fue computado</strong> cada centro de votación en el escrutinio provisorio. Lamentablemente, esa info atrapada en PDFs no es muy útil. </p>
 <p>Si bien no alcazamos a utilizarlos en el evento (mi idea era agregar una línea de tiempo <a href="http://democraciaconcodigos.github.io/election-2013/">al mapa</a> para ver cómo fue evolucionando), el dia anterior del hackatón dediqué un ratito a extraer esos datos para poder computarlos. </p>
 <p>Lo publico ahora porque me parece útil no sólo como ejemplo de extracción de datos desde un PDF sino sobre las posibilidades de <strong>IPython Notebook</strong> (de paso, este artículo es un notebook) como entorno de "hackeo", pudiendo utilizar Python, muchísimos otros lenguajes y  cualquier herramienta que tengamos en el sistema, de una manera integrada y fácil. </p>
 <!-- TEASER_END -->
 
-<h2 id="primero-obtengo-todos-los-pdfs-para-c-rdoba-">Primero, obtengo todos los PDFs para Córdoba.</h2>
+<h3 id="primero-obtengo-todos-los-pdfs-para-c-rdoba-">Primero, obtengo todos los PDFs para Córdoba.</h3>
 </div>
 </div>
 </div>
@@ -177,7 +177,7 @@ C04003.pdf  C04006.pdf	C04009.pdf  C04012.pdf	C04015.pdf  C04018.pdf	C04021.pdf 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="veamos-c-mo-se-ve-una-p-gina">Veamos cómo se ve una página</h2>
+<h3 id="veamos-c-mo-se-ve-una-p-gina">Veamos cómo se ve una página</h3>
 </div>
 </div>
 </div>
@@ -221,7 +221,7 @@ In [3]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="por-d-nde-recortamos-">Por dónde recortamos ?</h2>
+<h3 id="por-d-nde-recortamos-">Por dónde recortamos ?</h3>
 <p>Como vemos, el <em>layout</em> es muy simétrico y todas las páginas son iguales (4 x 3 escuelas por página).  Lo que queremos es obtener el nombre de la escuela y la fecha y hora del registro de su escrutinio. Por ejemplo <code>CENTRO EDUC.NIVEL MEDIO ADULTO  27/10 a las 20:40</code>. Para extraer texto de un pdf, una herramienta sencilla y potente es <a href="http://en.wikipedia.org/wiki/Pdftotext">pdftotext</a></p>
 </div>
 </div>
@@ -487,7 +487,7 @@ In [8]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="limpiando-la-salida">Limpiando la salida</h2>
+<h3 id="limpiando-la-salida">Limpiando la salida</h3>
 <p>La salida de pdftotext se puede capturar, pero hay que limpiarla un poco</p>
 </div>
 </div>
@@ -626,7 +626,7 @@ CIENCIAS ECONOMICAS
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>... pero ya limpiamos la captura para <strong>una</strong> escuela y somos vagos, no?. Mejor hagamoslo página a página y listo. </p>
-<h2 id="-cuant-s-p-ginas-tiene-un-pdf-">¿Cuantás páginas tiene un PDF?</h2>
+<h3 id="-cuant-s-p-ginas-tiene-un-pdf-">¿Cuantás páginas tiene un PDF?</h3>
 <p>Google conoce el código que tiene la respuesta</p>
 </div>
 </div>
@@ -681,7 +681,7 @@ In [12]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="listo-ensamblemos-los-legos">Listo, ensamblemos los legos</h2>
+<h3 id="listo-ensamblemos-los-legos">Listo, ensamblemos los legos</h3>
 <p>Ejecutamos <code>pdftotext</code> para cada región que queremos en cada página de cada pdf descargado. Los resultados limpios, los guardamos en una lista como tuplas <code>(ID MUNICIPIO, ESCUELA, HORA)</code></p>
 </div>
 </div>

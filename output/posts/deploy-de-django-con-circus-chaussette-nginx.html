@@ -88,14 +88,15 @@ article: http://ogp.me/ns/article#
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-12T12:45:13-03:00" itemprop="datePublished" title="Fecha de publicación: 12/06/14 12:45:13">12/06/14 12:45:13</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-12T12:45:13-03:00" itemprop="datePublished" title="Fecha de publicación: 06/12/2014 12:45:13 PM">06/12/2014 12:45:13 PM</time></a></p>
                 <p class="commentline">            <a href="deploy-de-django-con-circus-chaussette-nginx.html#disqus_thread" data-disqus-identifier="cache/posts/deploy-de-django-con-circus-y-chausette.html">Comments</a>
 
 
         </p>
 </div>
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela <a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/">WSGI</a>, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.</p>
+    <div>
+<p>Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela <a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/">WSGI</a>, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.</p>
 <!-- TEASER_END -->
 <p>Si bien Nginx, el servidor web que está <a class="reference external" href="http://w3techs.com/blog/entry/nginx_just_became_the_most_used_web_server_among_the_top_1000_websites">desplazando a Apache como el más popular</a> tiene <a class="reference external" href="http://wiki.nginx.org/NgxWSGIModule">un módulo</a> que implementa el estándar WSGI de manera nativa, la arquitectura más típica es utilizarlo como <a class="reference external" href="http://en.wikipedia.org/wiki/Reverse_proxy">proxy reverso</a>, conectado a un servidor WSGI especializado como <a class="reference external" href="http://gunicorn.org/">Gunicorn</a> que interactua con la aplicación web (posiblemente a través de multiples instancias o <em>workers</em>). Como queremos que nuestra app funcione permanentemente, el proceso WSGI y otros que sean necesarios (por ejemplo Redis) se demonizan de manera que sepan restaurarse automáticamente si mueren y sea posible monitorearlos: para eso suele usarse <a class="reference external" href="http://supervisord.org/">supervisor</a>.</p>
 <div class="figure">
@@ -248,6 +249,7 @@ administrar circus, con gráficos realtime y muy fácil de usar.</p>
 La API de alto nivel, una arquitectura mucho más moderna y simple y el aval de ser desarrollada (y usada exhaustivamente) por Mozilla, son avales poderosos para probarla.</p>
 <p>Como <a class="reference external" href="http://textosypretextos.com.ar/Bienvenidos-al-show">escribió el Marcos Luc</a> <em>"la función ya debería empezar (...) Bueno nena, buena suerte, cada vez la red te teme más..."</em></p>
 <iframe width="709" height="390" src="//www.youtube.com/embed/AhfUfjLpNvI" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
     </div>
 

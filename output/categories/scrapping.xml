@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (scrapping)</title><link>http://mgaitan.github.io/</link><description></description><language>es</language><lastBuildDate>Thu, 12 Jun 2014 13:27:33 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Los números del Mundial</title><link>http://mgaitan.github.io/posts/los-numeros-del-mundial.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (scrapping)</title><link>http://mgaitan.github.io/</link><description></description><language>es</language><lastBuildDate>Wed, 01 Oct 2014 03:19:41 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Los números del Mundial</title><link>http://mgaitan.github.io/posts/los-numeros-del-mundial.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -14,7 +14,7 @@
 &lt;p&gt;En el 86 yo ya caminaba solito, pero mis recuerdos mundialistas arrancan recién en el '90 con el &lt;a href="https://www.youtube.com/watch?feature=player_detailpage&amp;amp;v=ldss7IDQhQ0#t=44"&gt;gol de Camerún&lt;/a&gt; a Pumpido (que todavia tenía todos los dedos, aunque no se notaba). Tan poco futbolera era mi casa pero tanto yo, que tengo la imágen nítida: cuando fue el gol del Canni a Brasil yo estaba en la rotiseria de de Don Duca, a 3 cuadras de mi casa, esperando que me entregaran un pollo asado que me habían mandado a comprar. Al escuchar el griterío del barrio alguien me dejó pasar, y pude ver el gol en la repetición en un televisorcito diminuto que tenían sobre una mesada mugrienta. Volví llorando, emocionado, con un olor a pollo que no olvidaré más. &lt;/p&gt;
 &lt;p&gt;Y ahora, por fin, está llegando ese olorcito de nuevo. En el interín me empapo de nombres y jugadores, estadísticas e historias de color. La fiebre no me deja dormir. &lt;/p&gt;
 &lt;p&gt;En esa procrastinación encontré el &lt;a href="http://en.wikipedia.org/wiki/2014_FIFA_World_Cup_squads"&gt;artículo de Wikipedia con la lista de todas las selecciones&lt;/a&gt; y, como una ducha de agua fria, intenté sacarle alguna información. &lt;/p&gt;
-&lt;h3 id="en-tu-cabeza-hay-un-scrapper-de-gol"&gt;En tu cabeza hay un (scrapper de) gol&lt;/h3&gt;
+&lt;h4 id="en-tu-cabeza-hay-un-scrapper-de-gol"&gt;En tu cabeza hay un (scrapper de) gol&lt;/h4&gt;
 &lt;p&gt;Usé la misma técnica que en el &lt;a href="https://mgaitan.github.io/posts/no-al-fraude-en-cordoba-ayudanos.html"&gt;análisis de las elecciones de Córdoba&lt;/a&gt;: la &lt;a href="https://github.com/mgaitan/django-orm-magic"&gt;extensión de IPython para usar el orm de Django&lt;/a&gt; que hice y &lt;a href="http://pyquery.readthedocs.org/"&gt;PyQuery&lt;/a&gt; para scrappear. &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -724,7 +724,7 @@ In [12]:
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Y ahora sí, podemos escarbar algunos números&lt;/p&gt;
-&lt;h3 id="cuesti-n-de-a-os"&gt;Cuestión de años&lt;/h3&gt;
+&lt;h4 id="cuesti-n-de-a-os"&gt;Cuestión de años&lt;/h4&gt;
 &lt;p&gt;¿Quién es el jugador más viejo de Brasil 2014? ¿Quién el más jóven?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -959,7 +959,7 @@ Kim Jin-Su de South Korea cumple el 13/6
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="lungos-y-petisos"&gt;Lungos y petisos&lt;/h3&gt;
+&lt;h4 id="lungos-y-petisos"&gt;Lungos y petisos&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1046,7 +1046,7 @@ In [18]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="cuesti-n-de-experiencia"&gt;Cuestión de experiencia&lt;/h3&gt;
+&lt;h4 id="cuesti-n-de-experiencia"&gt;Cuestión de experiencia&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1097,7 +1097,7 @@ In [19]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="la-temible-delantera"&gt;La temible delantera&lt;/h3&gt;
+&lt;h4 id="la-temible-delantera"&gt;La temible delantera&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1204,7 +1204,8 @@ South Korea. Máximo goleador: Park Chu-Young (24). Más perro: Kim Shin-Wook (3
 &lt;/div&gt;
 &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;</description><category>ideas</category><category>scrapping</category><category>scripts</category><guid>http://mgaitan.github.io/posts/los-numeros-del-mundial.html</guid><pubDate>Thu, 05 Jun 2014 16:17:23 GMT</pubDate></item><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.io/posts/como-funciona-cuevana.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Estimando cuanto trabajo significa actualizar &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;Cuevana sources&lt;/a&gt;
+  &lt;/div&gt;
+</description><category>ideas</category><category>scrapping</category><category>scripts</category><guid>http://mgaitan.github.io/posts/los-numeros-del-mundial.html</guid><pubDate>Thu, 05 Jun 2014 16:17:23 GMT</pubDate></item><item><title>Cómo funciona Cuevana</title><link>http://mgaitan.github.io/posts/como-funciona-cuevana.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Estimando cuanto trabajo significa actualizar &lt;a class="reference external" href="http://userscripts.org/scripts/show/98017"&gt;Cuevana sources&lt;/a&gt;
 y/o &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalib"&gt;Cuevanalib&lt;/a&gt;
 investigué cómo funciona la nueva versión de cuevana.&lt;/p&gt;
 &lt;p&gt;Estas notas son el resultado de lo que fui observando.&lt;/p&gt;
@@ -1367,4 +1368,4 @@ http://sc.cuevana.tv/files/s/sub/**ID**_**LANG**_720.srt
 &lt;pre class="literal-block"&gt;
 http://sc.cuevana.tv/files/sub/**ID**_**LANG**.srt
 &lt;/pre&gt;
-&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;</description><category>cuevana</category><category>scrapping</category><guid>http://mgaitan.github.io/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 13:17:55 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Y eso es todo lo que necesitamos saber.&lt;/p&gt;&lt;/div&gt;</description><category>cuevana</category><category>scrapping</category><guid>http://mgaitan.github.io/posts/como-funciona-cuevana.html</guid><pubDate>Thu, 07 Mar 2013 13:17:55 GMT</pubDate></item></channel></rss>
