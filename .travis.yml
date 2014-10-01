@@ -1,7 +1,7 @@
 language: python
 branches:
   only:
-  - writing
+    - writing
 before_install:
 - git submodule update --init --recursive
 install:
