@@ -11,6 +11,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
         git config --global user.email "travis@travis-ci.org"
         git config --global user.name "Travis"
     fi
+    git checkout $SOURCE_BRANCH
     nikola build
     git add .
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
