@@ -5,10 +5,8 @@ branches:
 before_install:
 - git submodule update --init --recursive
 install:
-- pip install nikola jinja2 ipython --use-mirrors
+- pip install --use-wheel --use-mirrors nikola jinja2 ipython
 script:
-- nikola build
-after_success:
 - bash travis_deploy.sh
 env:
   global:
