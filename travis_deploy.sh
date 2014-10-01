@@ -12,9 +12,11 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
         git config --global user.name "Travis"
     fi
     git checkout $SOURCE_BRANCH
+    git fetch
     nikola build
     git add .
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages [ci skip]"
-    git subtree push --prefix=$NIKOLA_OUTPUT_FOLDER $TARGET_REPO $GH_BRANCH
+    localrev=$(git subtree split --prefix="$NIKOLA_OUTPUT_FOLDER") || die
+    git push -fq $TARGET_REPO $localrev:refs/heads/$GH_BRANCH || die
     echo -e "Deploy completed\n"
 fi
