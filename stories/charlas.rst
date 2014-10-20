@@ -16,7 +16,22 @@ Ingeniería para ganar el mundial
 :fecha: 15 de abril de 2014
 :lugar: Facultad de Ciencias Exáctas, Físicas y Naturales, Córdoba, Argentina
 
+
 --------
+
+Introducción a Git
+------------------
+
+
+:presentación: http://mgaitan.github.io/intro-git/index.html
+:repo: https://github.com/mgaitan/intro-git
+:evento: 8vas Jornadas de Software Libre de la UNNOBA
+:fecha: 29 de Noviembre de 2013
+:lugar: Universidad Nacional del Noroeste de la Provincia de Buenos Aires, Junín, Buenos Aires. 
+
+
+---------
+
 
 La pythonicidad al palo
 ------------------------
