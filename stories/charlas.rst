@@ -2,6 +2,41 @@
 .. slug: charlas
 .. date: 2012/11/19 00:00:00
 
+Diez consejos para un mejor software (de) científico(s)
+--------------------------------------------------------
+
+    En `Phasety <http://phasety.com>`_ he lidiado (y aprendido) con el código escrito por científicos. 
+    Mentes brillantes, expertas en su campo de investigación, tienen como herramienta principal un lenguaje 
+    de programación cuyo aprendizaje ha sido informal, de fuentes erróneas o anticuadas, siguiendo ejemplos 
+    llenos de vicios y malas prácticas transmitidas de generación en generación.
+
+    No es este un curso de ingenieria de software. Ni siquiera de Python. Es un compendio de ideas 
+    simples y consejos prácticos para que la programación científica de cada día sea una herramienta 
+    más efectiva, mantenible y entendible.
+
+
+:presentación: `ver online <http://mgaitan.github.io/10consejos/index.html>`_
+:repo: https://github.com/mgaitan/10consejos
+:evento: Scipycon Argentina 2014
+:lugar: Universidad Nacional del Sur, Bahía Blanca, Argentina
+:fecha: 22 de octubre de 2014
+
+---------------------
+
+Curso de Python Científico
+--------------------------
+
+    Un curso de Python orientado a estudiantes de ingenieria, ingenieros e investigadores.
+
+
+:repo: https://github.com/mgaitan/curso-python-cientifico>
+:evento: Scipycon Argentina 2014
+:lugar: Universidad Nacional del Sur, Bahía Blanca, Argentina
+:fecha: 22 de octubre de 2014
+
+
+-------------
+
 Ingeniería para ganar el mundial
 --------------------------------
 
