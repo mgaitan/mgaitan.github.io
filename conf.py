@@ -290,7 +290,7 @@ REDIRECTIONS = []
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = ['git subtree push --prefix=output origin master']
+DEPLOY_COMMANDS = {'default': ['git subtree push --prefix=output origin master']}
 
 # For user.github.io/organization.github.io pages, the DEPLOY branch
 # MUST be 'master', and 'gh-pages' for other repositories.

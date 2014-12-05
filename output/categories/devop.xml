@@ -1,12 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (devop)</title><link>http://mgaitan.github.io/</link><description></description><language>es</language><lastBuildDate>Wed, 01 Oct 2014 03:25:46 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deploy de Django con Circus, Chaussette y Nginx</title><link>http://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela &lt;a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/"&gt;WSGI&lt;/a&gt;, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (devop)</title><link>http://mgaitan.github.io/</link><description></description><atom:link href="http://mgaitan.github.io/categories/devop.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 04 Dec 2014 21:54:34 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Travis-CI para compilar y deployar tu blog estático</title><link>http://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://travis-ci.org/"&gt;Travis-CI&lt;/a&gt; es un servicio de integración continua, gratuito para proyectos de
+software libre. Pero son gente tan copada que no se enojan si en vez de una suite de tests, corremos, por ejemplo,
+Nikola para compilar este blog y publicarlo automáticamente.&lt;/p&gt;
+&lt;!-- TEASER_END --&gt;
+&lt;p&gt;El flujo es así:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Escribimos un post en el branch "fuente" (En mi caso &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;) y comiteamos.
+Esto puede hacerse desde la propia compu, o usar el editor de Github :D&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="http://i.snag.gy/U4hmv.jpg" class="align-center" src="http://i.snag.gy/U4hmv.jpg" style="width: 640px;"&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;Travis detecta el commit en el branch, clona el repo, instala las dependencias
+y ejecuta un script que corre &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt; y lo necesario para pushear el resultado
+(por ejemplo, la carpeta &lt;tt class="docutils literal"&gt;output&lt;/tt&gt;) al branch Github pages (en general &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;gh-pages&lt;/span&gt;&lt;/tt&gt;,
+&lt;tt class="docutils literal"&gt;master&lt;/tt&gt; en mi caso)&lt;/li&gt;
+&lt;li&gt;Listo: Nikola desde la nube. For free.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="section" id="permiso-soy-el-ci"&gt;
+&lt;h2&gt;Permiso, soy el CI&lt;/h2&gt;
+&lt;p&gt;¿Cómo hace Travis para pushear de vuelta al repo? Bueno, hay que darle permiso. Para eso, necesitamos
+&lt;a class="reference external" href="https://github.com/settings/tokens/new"&gt;crear un token&lt;/a&gt; . Con un token,
+&lt;a class="reference external" href="https://github.com/blog/1270-easier-builds-and-deployments-using-git-over-https-and-oauth"&gt;se puede pushear a un repo&lt;/a&gt;
+via HTTPS sin que pida clave usando la url &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;https://&amp;lt;token&amp;gt;@github.com/owner/repo.git&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Pero como el archivo para configurar Travis es público (y el token es información muy sensible),
+lo configuramos como una variable de entorno encriptada.
+Para eso necesitamos el utilitario (hecho en ruby) que provee la gente de Travis:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo apt-get install ruby1.9.1-dev build-essentials
+$ sudo gem install travis
+
+$ travis encrypt GH_TOKEN=your_token
+&lt;/pre&gt;
+&lt;p&gt;el resultado lo ponemos en el yaml:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+env:
+  global:
+    secure: dlAoq4D...
+&lt;/pre&gt;
+&lt;p&gt;y con eso Travis tendrá una varible de entorno global llamada &lt;tt class="docutils literal"&gt;GH_TOKEN&lt;/tt&gt; que podemos usarla en nuestro script.&lt;/p&gt;
+&lt;p&gt;Podés ver el &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/.travis.yml"&gt;.travis.yml&lt;/a&gt; y
+el &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/travis_deploy.sh"&gt;script que compila y pushea de vuelta&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>devop</category><guid>http://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog.html</guid><pubDate>Tue, 30 Sep 2014 23:57:08 GMT</pubDate></item><item><title>Deploy de Django con Circus, Chaussette y Nginx</title><link>http://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela &lt;a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/"&gt;WSGI&lt;/a&gt;, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.&lt;/p&gt;
 &lt;!-- TEASER_END --&gt;
 &lt;p&gt;Si bien Nginx, el servidor web que está &lt;a class="reference external" href="http://w3techs.com/blog/entry/nginx_just_became_the_most_used_web_server_among_the_top_1000_websites"&gt;desplazando a Apache como el más popular&lt;/a&gt; tiene &lt;a class="reference external" href="http://wiki.nginx.org/NgxWSGIModule"&gt;un módulo&lt;/a&gt; que implementa el estándar WSGI de manera nativa, la arquitectura más típica es utilizarlo como &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Reverse_proxy"&gt;proxy reverso&lt;/a&gt;, conectado a un servidor WSGI especializado como &lt;a class="reference external" href="http://gunicorn.org/"&gt;Gunicorn&lt;/a&gt; que interactua con la aplicación web (posiblemente a través de multiples instancias o &lt;em&gt;workers&lt;/em&gt;). Como queremos que nuestra app funcione permanentemente, el proceso WSGI y otros que sean necesarios (por ejemplo Redis) se demonizan de manera que sepan restaurarse automáticamente si mueren y sea posible monitorearlos: para eso suele usarse &lt;a class="reference external" href="http://supervisord.org/"&gt;supervisor&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/classical-stack.png" src="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/classical-stack.png"&gt;&lt;p class="caption"&gt;La arquitectura de deployment más común para una aplicación web Python&lt;/p&gt;
+&lt;img alt="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/classical-stack.png" src="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/classical-stack.png"&gt;
+&lt;p class="caption"&gt;La arquitectura de deployment más común para una aplicación web Python&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Si bien esta arquitectura está bastamente probada, hay una opción mejor.&lt;/p&gt;
-&lt;img alt="https://circus.readthedocs.org/en/0.11.1/_images/circus-medium.png" class="align-center" src="https://circus.readthedocs.org/en/0.11.1/_images/circus-medium.png"&gt;&lt;div class="section" id="el-circo-y-el-soquete"&gt;
+&lt;img alt="https://circus.readthedocs.org/en/0.11.1/_images/circus-medium.png" class="align-center" src="https://circus.readthedocs.org/en/0.11.1/_images/circus-medium.png"&gt;
+&lt;div class="section" id="el-circo-y-el-soquete"&gt;
 &lt;h2&gt;El circo y el soquete&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://circus.readthedocs.org/"&gt;Circus&lt;/a&gt; y &lt;a class="reference external" href="http://chaussette.readthedocs.org/"&gt;Chaussette&lt;/a&gt; son proyectos desarrollados por &lt;a class="reference external" href="http://ziade.org/"&gt;Tarek Ziadé&lt;/a&gt; y el equipo de &lt;a class="reference external" href="https://blog.mozilla.org/services/"&gt;Mozilla Sevices&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="tip"&gt;
@@ -14,7 +57,8 @@
 &lt;p class="last"&gt;Tarek es un pythonista francés, core committer de Python y muchos proyectos relacionados. Recibió el &lt;a class="reference external" href="https://www.python.org/community/awards/psf-awards/#april-2011"&gt;reconocimiento de la PSF&lt;/a&gt; por sus aportes y es autor del gran libro &lt;a class="reference external" href="http://www.packtpub.com/expert-python-programming/book"&gt;Expert Python Programming&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Una arquitectura de producción análoga a la descripta arriba, pero basada en Circus, se ve así:&lt;/p&gt;
-&lt;img alt="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png" class="align-center" src="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png"&gt;&lt;p&gt;Circus maneja procesos demonizados igual que Supervisor, pero además puede bindear &lt;strong&gt;sockets&lt;/strong&gt; y manejarlos de la misma manera. Este desacople de la gestión de sockets del webserver WSGI permite muchas posibilidades, tanto en la gestión como en la escalabilidad de la arquitectura.&lt;/p&gt;
+&lt;img alt="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png" class="align-center" src="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png"&gt;
+&lt;p&gt;Circus maneja procesos demonizados igual que Supervisor, pero además puede bindear &lt;strong&gt;sockets&lt;/strong&gt; y manejarlos de la misma manera. Este desacople de la gestión de sockets del webserver WSGI permite muchas posibilidades, tanto en la gestión como en la escalabilidad de la arquitectura.&lt;/p&gt;
 &lt;p&gt;La capa WSGI en este esquema la aporta Chaussette, que tiene la particularidad que, en vez de abrir un socket nuevo, utiliza el que Circus abrió (y controla) para el worker. Además, aunque trae una implementación de WSGI &lt;em&gt;built-in&lt;/em&gt;, &lt;a class="reference external" href="http://chaussette.readthedocs.org/en/latest/index.html#backends"&gt;puede usar muchos backends&lt;/a&gt; más eficientes o con características particulares como &lt;a class="reference external" href="http://meinheld.org/"&gt;meinheld&lt;/a&gt;, &lt;a class="reference external" href="http://www.gevent.org/"&gt;gevent&lt;/a&gt;, &lt;a class="reference external" href="http://gevent-socketio.readthedocs.org/en/latest/"&gt;gevent-socketio&lt;/a&gt;, entre muchos otros.&lt;/p&gt;
 &lt;p&gt;A diferencia de Supervisor que se basa en el protocolo XML-RPC para inspeccionar los procesos que controla, Circus utiliza un canal pub/sub basado en el mucho más moderno &lt;a class="reference external" href="http://zeromq.org/"&gt;ZeroMQ&lt;/a&gt; (lo mismo que usa IPython Notebook) que permite un monitoreo realtime y una &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-devs/#extending-circus"&gt;API de plugins&lt;/a&gt; mucho más simple. Otra diferencia, nada menor, es que &lt;strong&gt;Circus funciona con Python 2 o 3&lt;/strong&gt; (supervisor no es compatible con Python 3).&lt;/p&gt;
 &lt;p&gt;Y de yapa: Circus se puede usar como una &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-devs/library/"&gt;biblioteca de muy alto nivel&lt;/a&gt;  para la gestión no bloqueante de procesos. Se puede pensar con un wrapper de &lt;tt class="docutils literal"&gt;subprocess&lt;/tt&gt; y/o &lt;tt class="docutils literal"&gt;multiprocess&lt;/tt&gt;, que aporta información de monitoreo y estadísticas, control de flujo, una &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-devs/writing-hooks/"&gt;capa de señales (hooks)&lt;/a&gt; muy completa y más.&lt;/p&gt;
@@ -52,7 +96,7 @@
 &lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circusd circus.ini
 2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Starting master on pid 1141
 2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; sockets started
-2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Arbiter now waiting &lt;span class="k"&gt;for &lt;/span&gt;commands
+2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Arbiter now waiting &lt;span class="k"&gt;for&lt;/span&gt; commands
 2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; nikolahub started
 2014-06-12 04:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;1141&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; circusd-stats started
 2014-06-12 04:36:17 circus&lt;span class="o"&gt;[&lt;/span&gt;1150&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Starting the stats streamer
@@ -100,7 +144,8 @@
 &lt;span class="nv"&gt;$ &lt;/span&gt;ln -s /etc/nginx/sites-enable/nikolahub nginx.conf
 &lt;span class="nv"&gt;$ &lt;/span&gt;sudo service nginx restart
 &lt;/pre&gt;
-&lt;img alt="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png" class="align-right" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png"&gt;&lt;p&gt;Esto pone a nginx como "frontend" de la aplicación, sirviendo los directorios con contenido estático y pasando el resto de las peticiones al puerto 8080 que administra Circus.&lt;/p&gt;
+&lt;img alt="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png" class="align-right" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png"&gt;
+&lt;p&gt;Esto pone a nginx como "frontend" de la aplicación, sirviendo los directorios con contenido estático y pasando el resto de las peticiones al puerto 8080 que administra Circus.&lt;/p&gt;
 &lt;p&gt;Ya tenemos nuestro sitio en producción.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="el-dueno-del-circo-y-los-monitos"&gt;
@@ -119,14 +164,14 @@ ok
 &lt;p&gt;Lo mismo y más se puede hacer desde una consola IPython.&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circusctl ipython
-Python 2.7.4 &lt;span class="o"&gt;(&lt;/span&gt;default, Apr 19 2013, 18:32:33&lt;span class="o"&gt;)&lt;/span&gt;
-Type &lt;span class="s2"&gt;"copyright"&lt;/span&gt;, &lt;span class="s2"&gt;"credits"&lt;/span&gt; or &lt;span class="s2"&gt;"license"&lt;/span&gt; &lt;span class="k"&gt;for &lt;/span&gt;more information.
+Python 2.7.4 &lt;span class="o"&gt;(&lt;/span&gt;default, Apr &lt;span class="m"&gt;19&lt;/span&gt; 2013, 18:32:33&lt;span class="o"&gt;)&lt;/span&gt;
+Type &lt;span class="s2"&gt;"copyright"&lt;/span&gt;, &lt;span class="s2"&gt;"credits"&lt;/span&gt; or &lt;span class="s2"&gt;"license"&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; more information.
 
 IPython 2.1.0 -- An enhanced Interactive Python.
 ?         -&amp;gt; Introduction and overview of IPython&lt;span class="s1"&gt;'s features.
 %quickref -&amp;gt; Quick reference.
 help      -&amp;gt; Python'&lt;/span&gt;s own &lt;span class="nb"&gt;help &lt;/span&gt;system.
-object?   -&amp;gt; Details about &lt;span class="s1"&gt;'object'&lt;/span&gt;, use &lt;span class="s1"&gt;'object??'&lt;/span&gt; &lt;span class="k"&gt;for &lt;/span&gt;extra details.
+object?   -&amp;gt; Details about &lt;span class="s1"&gt;'object'&lt;/span&gt;, use &lt;span class="s1"&gt;'object??'&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; extra details.
 
 In &lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt;: arbiter.numprocesses&lt;span class="o"&gt;()&lt;/span&gt;
 Out&lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt;: 4
@@ -137,11 +182,13 @@ que produce &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;circusd-s
 &lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:&lt;span class="nv"&gt;$ &lt;/span&gt;circus-top
 &lt;/pre&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="/images/circus-top.png" src="http://mgaitan.github.io/images/circus-top.png"&gt;&lt;p class="caption"&gt;circus-top en acción. Muestra los procesos watcher y los recursos que cosumen.&lt;/p&gt;
+&lt;img alt="/images/circus-top.png" src="http://mgaitan.github.io/images/circus-top.png"&gt;
+&lt;p class="caption"&gt;circus-top en acción. Muestra los procesos watcher y los recursos que cosumen.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Todo esto puede verse y manejarse cómodamente a través de &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-ops/circusweb/"&gt;circus-web&lt;/a&gt;, un dashboard web que permite monitorear y
 administrar circus, con gráficos realtime y muy fácil de usar.&lt;/p&gt;
-&lt;img alt="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" class="align-center" src="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" style="width: 100%;"&gt;&lt;p&gt;Desde las últimas versiones, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;circus-web&lt;/span&gt;&lt;/tt&gt; se refactorizó para basarla en &lt;a class="reference external" href="http://www.tornadoweb.org"&gt;Tornado&lt;/a&gt; (originalmente usaba &lt;a class="reference external" href="http://bottlepy.org/"&gt;bottle&lt;/a&gt;) y hay que instalarlo aparte.&lt;/p&gt;
+&lt;img alt="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" class="align-center" src="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" style="width: 100%;"&gt;
+&lt;p&gt;Desde las últimas versiones, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;circus-web&lt;/span&gt;&lt;/tt&gt; se refactorizó para basarla en &lt;a class="reference external" href="http://www.tornadoweb.org"&gt;Tornado&lt;/a&gt; (originalmente usaba &lt;a class="reference external" href="http://bottlepy.org/"&gt;bottle&lt;/a&gt;) y hay que instalarlo aparte.&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;pip install circus-web
 &lt;/pre&gt;
@@ -151,4 +198,4 @@ administrar circus, con gráficos realtime y muy fácil de usar.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://circus.readthedocs.org/"&gt;Circus&lt;/a&gt; es una herramienta que simplifica el stack de deployment de una aplicación web WSGI.
 La API de alto nivel, una arquitectura mucho más moderna y simple y el aval de ser desarrollada (y usada exhaustivamente) por Mozilla, son avales poderosos para probarla.&lt;/p&gt;
 &lt;p&gt;Como &lt;a class="reference external" href="http://textosypretextos.com.ar/Bienvenidos-al-show"&gt;escribió el Marcos Luc&lt;/a&gt; &lt;em&gt;"la función ya debería empezar (...) Bueno nena, buena suerte, cada vez la red te teme más..."&lt;/em&gt;&lt;/p&gt;
-&lt;iframe width="709" height="390" src="//www.youtube.com/embed/AhfUfjLpNvI" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;</description><category>devop</category><category>django</category><category>python</category><category>tutorial</category><guid>http://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx.html</guid><pubDate>Thu, 12 Jun 2014 15:45:13 GMT</pubDate></item></channel></rss>
+&lt;iframe width="709" height="390" src="//www.youtube.com/embed/AhfUfjLpNvI" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;</description><category>circus</category><category>devop</category><category>django</category><category>python</category><category>tutorial</category><guid>http://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx.html</guid><pubDate>Thu, 12 Jun 2014 15:45:13 GMT</pubDate></item></channel></rss>

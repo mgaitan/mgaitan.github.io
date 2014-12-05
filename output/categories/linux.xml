@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Linux)</title><link>http://mgaitan.github.io/</link><description></description><language>es</language><lastBuildDate>Wed, 01 Oct 2014 03:25:46 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Veinteañero</title><link>http://mgaitan.github.io/posts/veinteanero.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobijó.
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Linux)</title><link>http://mgaitan.github.io/</link><description></description><atom:link href="http://mgaitan.github.io/categories/linux.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Thu, 04 Dec 2014 21:54:35 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Veinteañero</title><link>http://mgaitan.github.io/posts/veinteanero.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobijó.
 Al tiempo usé Mandrake, después Debian y desde su primera versión (2004)
 Ubuntu.&lt;/p&gt;
 &lt;p&gt;Un largo camino de aprendizaje... que alguna vez recorreré ;-)&lt;/p&gt;&lt;/div&gt;</description><category>Linux</category><guid>http://mgaitan.github.io/posts/veinteanero.html</guid><pubDate>Fri, 08 Apr 2011 11:47:13 GMT</pubDate></item><item><title>Video SIS 771/671 en Ubuntu</title><link>http://mgaitan.github.io/posts/video-sis-771-671-en-ubuntu.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="system-message"&gt;
@@ -219,7 +219,8 @@ una terminal remota por ssh, por ejemplo), ejecutar cualquier proceso en
 ese entorno y desacoplarlo, pudiendo entonces desloguearse y cerrar la
 conexión remota dejando el proceso en curso.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Receta paso a paso&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;&lt;p class="first"&gt;ejecuta una consola virtual con screen&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;ejecuta una consola virtual con screen&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ screen
 &lt;/pre&gt;
@@ -234,8 +235,10 @@ $ wget http://mirror.mcs.anl.gov/pub/ubuntu-iso/DVDs/ubuntu/9.10/beta/ubuntu-9.1
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Desconectarse, tomar unos mates y volver cuando quieras&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Para retomar el proceso&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;&lt;p class="first"&gt;Conectarnos de nuevo al servidor mediante SSH&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para retomar el proceso&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Conectarnos de nuevo al servidor mediante SSH&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Listar las consolas virtuales para averiguar el PID&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -247,7 +250,8 @@ $ screen -list
 $ screen -r PID
 &lt;/pre&gt;
 &lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;y allí estará el proceso que dejamos corriendo (o al menos los rastros
+&lt;/ul&gt;
+&lt;p&gt;y allí estará el proceso que dejamos corriendo (o al menos los rastros
 que dejó en su paso).&lt;/p&gt;&lt;/div&gt;</description><category>Linux</category><guid>http://mgaitan.github.io/posts/deja-que-el-servidor-trabaje-por.html</guid><pubDate>Mon, 19 Oct 2009 23:33:31 GMT</pubDate></item><item><title>Digitalizando recuerdos con mencoder</title><link>http://mgaitan.github.io/posts/digitalizando-recuerdos-con.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Para el Mundial del 2006, compré, como tantos otros que no tenían
 televisor pero sí computadora, una plaquita sintonizadora de TV: una
 Kozumi con el chip sintonizador BT878, uno de los más genéricos y
@@ -278,7 +282,7 @@ sudo modprobe bttv card=151 pll=1 tuner=38 radio=1 bttv_verbose=1 gbuffers=4
 mencoder tv:// -tv driver=v4l2:device=/dev/video0:input=1:width=480:height=360:norm=ntsc:alsa:adevice=hw.0:amode=1:audiorate=44100:forceaudio:forcechan=1:buffersize=300 -oac mp3lame -lameopts cbr:br=96:mode=3 -af volume=-6:0,channels=1 -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=5000:keyint=125:mbd=2 -vf yadif,crop=464:352:8:2  -o salida.avi
 &lt;/pre&gt;
 &lt;p&gt;Algunos detalles:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt;&lt;a class="reference external" href="tv://"&gt;tv://&lt;/a&gt; indica que se va a capturar video, y se le pasan paramétros
+&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="tv://"&gt;tv://&lt;/a&gt; indica que se va a capturar video, y se le pasan paramétros
 luego del flag -tv: driver &lt;strong&gt;v4l2&lt;/strong&gt;, un tamaño de 480x360 (aunque
 después se recorta), preconfigurado para ntsc (29.97 fps).
 &lt;img alt="image1" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Un aspecto importante son los flags referidos al audio: se
