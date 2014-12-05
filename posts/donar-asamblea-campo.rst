@@ -20,7 +20,7 @@ Desde el 2005, a los poquitas semanas de haberme venido a vivir a Córdoba, hast
 
     <iframe width="560" height="315" src="//www.youtube.com/embed/elcqGWJKt3c" frameborder="0" allowfullscreen></iframe>
 
-Enseñé a multiplicar, salté la soga, hice barriletes, leí cuentos, metí goles con pelotas improvisadas, `los relate <http://www.textosypretextos.com.ar/El-abrazo-caracol>`_, discutí mucho, reí mucho más, escuché, aprendí. Recibí el pan, el mate y el abrazo de muchas familias, en sus ranchos sin lujos, rebalzados de ganas de devolver amor con más amor. `Fui payaso <http://www.textosypretextos.com.ar/Yo-payaso>`_, `serigrafista <http://lab.nqnwebs.com/mazamorra/spip.php?rubrique30>`_ y `amigo <http://www.textosypretextos.com.ar/Gordo>`_. Hay niños que conocí que  hoy, adultos, van a ser papás. Todavía nos vemos, conversamos, algunos vienen a mi casa de vez en cuando, a veces voy yo.
+Enseñé a multiplicar, salté la soga, hice barriletes, leí cuentos, metí goles con pelotas improvisadas, `los relate <http://www.textosypretextos.com.ar/El-abrazo-caracol>`_, discutí mucho, reí mucho más, escuché, aprendí. Recibí el pan, el mate y `el abrazo de muchas familias <http://www.textosypretextos.com.ar/Felices-Quince>`_, en sus ranchos sin lujos, rebalzados de ganas de devolver amor con más amor. Fui `payaso <http://www.textosypretextos.com.ar/Yo-payaso>`_, `serigrafista <http://lab.nqnwebs.com/mazamorra/spip.php?rubrique30>`_ y `amigo <http://www.textosypretextos.com.ar/Gordo>`_. Conocí niños que hoy, adultos, van a ser papás. Todavía nos vemos, conversamos, algunos vienen a mi casa de vez en cuando, a veces voy yo.
 
 .. TEASER_END
 
