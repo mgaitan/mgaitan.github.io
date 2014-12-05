@@ -7,7 +7,7 @@
 
 .. note::
 
-    Tengo dos weblogs. Este es en el que escribo artículos técnicos o que tienen que de alguna manera con mi profesión. El otro, `Textos y pretextos`_, es igual de personal, pero me sale --me sale cada vez menos, tristemente-- de otras tripas, quizás para otro público.
+    Tengo dos weblogs. Este es en el que escribo artículos técnicos o que tienen que ver de alguna manera con mi profesión. `Textos y pretextos`_ es igual de personal, pero me sale —me sale cada vez menos, tristemente— de otras tripas, quizás para otro público.
 
     Sin embargo, quiero hacer una excepción con este post, porque es algo que me atraviesa toda las facetas: las ganas de hacer de este que pisamos, un mejor mundo.
 
