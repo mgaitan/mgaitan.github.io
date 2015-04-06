@@ -16,11 +16,22 @@ El costo del curso es $400. Hay becas para estudiantes de grado de FaMAF.
 
 Acá está el `formulario de inscripción <http://goo.gl/forms/kB7jkXHLyf>`_.
 
+El curso está reconocido como Curso de Extensión de FaMAF (Res. HCD 107/2015) y
+se entregarán certificados oficiales a quienes completen asistencia y participación.
+
 .. class:: alert alert-warning
 
    **Atención** Los cupos son muy limitados!
 
+
 .. TEASER_END
+
+.. sidebar:: Python FTW!
+
+   La imagen que acompaña a este artículo es del proyecto `PSF Python Brochure <http://brochure.getpython.info/newsletter/learn-more>`_, una compilación de "casos de éxito" con el uso de Python en diversas áreas. El PDF se puede bajar `desde acá <http://brochure.getpython.info/media/releases/prerelases/psf-python-brochure-vol-1-final-content-preview>`_.
+
+   Otro documento similar es `20 Cool Things You Can Do With Python <https://github.com/pythonsd/intro-to-python/raw/master/slides/20-things-part-a.pdf>`_ de `Audrey Roy <https://github.com/audreyr>`_
+
 
 Introducción
 -------------
