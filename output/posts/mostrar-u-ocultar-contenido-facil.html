@@ -32,9 +32,10 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="Martín Gaitán">
-        <meta name="og:title" content="Mostrar u ocultar contenido, fácil">
-    <meta name="og:url" content="http://mgaitan.github.io/posts/mostrar-u-ocultar-contenido-facil.html">
-    <meta name="og:description" content="Adrian León consultó en la lista
+        <meta property="og:site_name" content="tin_nqn">
+    <meta property="og:title" content="Mostrar u ocultar contenido, fácil">
+    <meta property="og:url" content="http://mgaitan.github.io/posts/mostrar-u-ocultar-contenido-facil.html">
+    <meta property="og:description" content="Adrian León consultó en la lista
 spip-es:
 
 Estoy intentado poner balizas de este tipo:
@@ -42,8 +43,10 @@ Estoy intentado poner balizas de este tipo:
 #DEBUT_BLOCK
 Desde el editor del sitio privado en el texto de un artículo. No
 conozco la forma de q">
-    <meta name="og:site_name" content="tin_nqn">
-    <meta name="og:type" content="article">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2009-02-26T06:12:34-02:00">
+           <meta property="article:tag" content="jQuery">
+           <meta property="article:tag" content="spip">
 
         <meta name="twitter:card" content="summary">
     <meta name="twitter:creator:id" content="40654511">
@@ -261,7 +264,7 @@ funciona?</a></p>
         disqus_title="Mostrar u ocultar contenido, f\u00e1cil",
         disqus_identifier="cache/posts/mostrar-u-ocultar-contenido-facil.html",
         disqus_config = function () {
-            this.language = "";
+            this.language = "es_ES";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;

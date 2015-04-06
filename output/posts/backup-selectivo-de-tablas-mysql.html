@@ -32,16 +32,18 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="Martín Gaitán">
-        <meta name="og:title" content="Backup selectivo de tablas Mysql">
-    <meta name="og:url" content="http://mgaitan.github.io/posts/backup-selectivo-de-tablas-mysql.html">
-    <meta name="og:description" content="Un comando muy práctico para hacer backups de una base de datos MySQL es
+        <meta property="og:site_name" content="tin_nqn">
+    <meta property="og:title" content="Backup selectivo de tablas Mysql">
+    <meta property="og:url" content="http://mgaitan.github.io/posts/backup-selectivo-de-tablas-mysql.html">
+    <meta property="og:description" content="Un comando muy práctico para hacer backups de una base de datos MySQL es
 mysqldump.
 
 mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql
 
 Eso hace un backup completo de la base base">
-    <meta name="og:site_name" content="tin_nqn">
-    <meta name="og:type" content="article">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2009-03-31T09:37:49-03:00">
+           <meta property="article:tag" content="Linux">
 
         <meta name="twitter:card" content="summary">
     <meta name="twitter:creator:id" content="40654511">
@@ -199,7 +201,7 @@ mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spi
         disqus_title="Backup selectivo de tablas Mysql",
         disqus_identifier="cache/posts/backup-selectivo-de-tablas-mysql.html",
         disqus_config = function () {
-            this.language = "";
+            this.language = "es_ES";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;

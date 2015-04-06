@@ -32,9 +32,10 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="Martín Gaitán">
-        <meta name="og:title" content="We are nerds, we are cheesy">
-    <meta name="og:url" content="http://mgaitan.github.io/en/posts/test.html">
-    <meta name="og:description" content="We are nerds, we are cheesy :)
+        <meta property="og:site_name" content="tin_nqn">
+    <meta property="og:title" content="We are nerds, we are cheesy">
+    <meta property="og:url" content="http://mgaitan.github.io/en/posts/test.html">
+    <meta property="og:description" content="We are nerds, we are cheesy :)
 by @tin_nqn_
 
 
@@ -65,8 +66,8 @@ In [2]:
 
     
 # Source: http://stackov">
-    <meta name="og:site_name" content="tin_nqn">
-    <meta name="og:type" content="article">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2014-02-14T17:03:26-03:00">
 
         <meta name="twitter:card" content="summary">
     <meta name="twitter:creator:id" content="40654511">
@@ -328,7 +329,7 @@ In [3]:
         disqus_title="We are nerds, we are cheesy",
         disqus_identifier="cache/posts/cheesy.en.html",
         disqus_config = function () {
-            this.language = "./en";
+            this.language = "en";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;

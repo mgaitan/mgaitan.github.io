@@ -6,7 +6,7 @@
 .. description:
 .. type:
 
-.. image:: http://brochure.getpython.info/media/images/Newsletter4-Banner_20120705_12-44-50-800.jpg
+.. image:: /images/Newsletter4-Banner_20120705_12-44-50-800.jpg
 
 A partir del 29 de abril voy a dictar el curso de extensión `Introducción a Python para ciencias e ingenierías <https://github.com/mgaitan/curso-python-cientifico>`_ en la Facultad de Matemática, Física y Astronomía (más conocida como la `FaMAF <http://famaf.unc.edu.ar/>`_) de la Universidad Nacional de Córdoba.
 
