@@ -8,7 +8,7 @@
 
 .. image:: /images/Newsletter4-Banner_20120705_12-44-50-800.jpg
 
-A partir del 29 de abril voy a dictar el curso de extensión `Introducción a Python para ciencias e ingenierías <https://github.com/mgaitan/curso-python-cientifico>`_ en la Facultad de Matemática, Astronomía y Física (`FaMAF <http://famaf.unc.edu.ar/>`_) de la Universidad Nacional de Córdoba.
+A partir del 29 de abril voy a dar el curso `Introducción a Python para ciencias e ingenierías <https://github.com/mgaitan/curso-python-cientifico>`_ en la Facultad de Matemática, Astronomía y Física (`FaMAF <http://famaf.unc.edu.ar/>`_) de la Universidad Nacional de Córdoba.
 
 Este curso es una versión revisada y extendida del que dí en la `ScipyCon Argentina 2014 <http://scipycon.com.ar/>`_ y durará 8 clases de 2hs cada una. Será los miércoles de 18hs a 20hs en el laboratorio de computación de la facultad. No hace falta contar con equipo propio y el único pre-requisito es tener nociones básicas de programación en cualquier lenguaje.
 
