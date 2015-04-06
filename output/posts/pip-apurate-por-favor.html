@@ -32,17 +32,14 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="Martín Gaitán">
-        <meta property="og:site_name" content="tin_nqn">
-    <meta property="og:title" content="pip, apurate por favor">
-    <meta property="og:url" content="http://mgaitan.github.io/posts/pip-apurate-por-favor.html">
-    <meta property="og:description" content="pip  es una herramienta esencial
+        <meta name="og:title" content="pip, apurate por favor">
+    <meta name="og:url" content="http://mgaitan.github.io/posts/pip-apurate-por-favor.html">
+    <meta name="og:description" content="pip  es una herramienta esencial
 para el trabajo diario de un programador python: es el manejador
 de paquetes de nuestro entorno de trabajo (¡virtual por favor!),
 con el que instalamos, actualizamos o">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2013-04-10T01:17:55-03:00">
-           <meta property="article:tag" content="pip">
-           <meta property="article:tag" content="python">
+    <meta name="og:site_name" content="tin_nqn">
+    <meta name="og:type" content="article">
 
         <meta name="twitter:card" content="summary">
     <meta name="twitter:creator:id" content="40654511">
@@ -161,7 +158,7 @@ la misma dependencia o cuando el uso de ancho de banda es limitado.</p>
 Downloading/unpacking lxml
   Downloading lxml-3.1.1.tar.gz <span class="o">(</span>3.3MB<span class="o">)</span>: 3.3MB downloaded
   Storing download in cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-  Running setup.py egg_info <span class="k">for </span>package lxml
+  Running setup.py egg_info <span class="k">for</span> package lxml
     Building lxml version 3.1.1.
 
     <span class="o">[</span>... compilación<span class="o">]</span>
@@ -191,7 +188,7 @@ no bajará <strong>el archivo</strong> de nuevo</p>
 
 Downloading/unpacking lxml
   Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-  Running setup.py egg_info <span class="k">for </span>package lxml
+  Running setup.py egg_info <span class="k">for</span> package lxml
     Building lxml version 3.1.1.
 
     <span class="o">[</span>... compilación<span class="o">]</span>
@@ -206,7 +203,7 @@ sys 0m0.504s
 <p>Mejoró realmente poco. ¿que clase de caché es esta?
 Chusmeemos que hay en el directorio.</p>
 <pre class="code bash literal-block">
-<span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test<span class="nv">$ </span>ls ~/.pip_download_cache/ | grep lxml
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test<span class="nv">$ </span>ls ~/.pip_download_cache/ <span class="p">|</span> grep lxml
 https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
 https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
 </pre>
@@ -248,7 +245,7 @@ da con el paquete lxml a bajar haciendo el comando más verborrágico con
 </div>
 <p>En este caso, el caché es directamente el archivo:</p>
 <pre class="code bash literal-block">
-<span class="o">(</span><span class="nb">test</span><span class="o">)</span>mgaitan@traful:~/lab/test<span class="nv">$ </span>ls ~/.pip_packages/ | grep lxml
+<span class="o">(</span><span class="nb">test</span><span class="o">)</span>mgaitan@traful:~/lab/test<span class="nv">$ </span>ls ~/.pip_packages/ <span class="p">|</span> grep lxml
 lxml-3.1.1.tar.gz
 </pre>
 <p>Por suerte, una vez cacheado el paquete de esta manera no tendremos
@@ -257,7 +254,7 @@ que consultar el índice online las siguientes veces.</p>
 <span class="o">(</span>test3<span class="o">)</span>mgaitan@traful:~/lab/test3<span class="nv">$ </span><span class="nb">time </span>pip install --no-index --find-links<span class="o">=</span>~/.pip_packages lxml
 Ignoring indexes: https://pypi.python.org/simple/
 Downloading/unpacking lxml
-  Running setup.py egg_info <span class="k">for </span>package lxml
+  Running setup.py egg_info <span class="k">for</span> package lxml
     Building lxml version 3.1.1.
 
     <span class="o">[</span>...<span class="o">]</span>
@@ -348,7 +345,7 @@ django, whatever) me los haces rodar para que pip vuele.</p>
         disqus_title="pip, apurate por favor",
         disqus_identifier="cache/posts/pip_rapido.html",
         disqus_config = function () {
-            this.language = "es_ES";
+            this.language = "";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;

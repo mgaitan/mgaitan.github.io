@@ -32,13 +32,12 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="Martín Gaitán">
-        <meta property="og:site_name" content="tin_nqn">
-    <meta property="og:title" content="Fortran + Windows = pesadilla^2">
-    <meta property="og:url" content="http://mgaitan.github.io/posts/fortran-windows-pesadilla2.html">
-    <meta property="og:description" content="Hace bastante que no escribo en este blog y no es porque tengo otro, sino, principalmente, porque estoy con muchísimo trabajo.
+        <meta name="og:title" content="Fortran + Windows = pesadilla^2">
+    <meta name="og:url" content="http://mgaitan.github.io/posts/fortran-windows-pesadilla2.html">
+    <meta name="og:description" content="Hace bastante que no escribo en este blog y no es porque tengo otro, sino, principalmente, porque estoy con muchísimo trabajo.
 Hace casi un mes dejé [1] de trabajar en Machinalis, una de las empresas ">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2013-08-24T11:11:45-03:00">
+    <meta name="og:site_name" content="tin_nqn">
+    <meta name="og:type" content="article">
 
         <meta name="twitter:card" content="summary">
     <meta name="twitter:creator:id" content="40654511">
@@ -218,24 +217,24 @@ implementados en fortran</p>
 <tt class="docutils literal">numpy.linalg.solve</tt> (resolver un sistema lineal Ax=b), basada en la rutina <tt class="docutils literal">SGESV</tt>
 de lapack (para simple precisión).</p>
 <pre class="code fortran literal-block">
-<span class="k">subroutine </span><span class="nv">solve</span><span class="p">(</span><span class="nv">A</span><span class="p">,</span> <span class="nv">b</span><span class="p">,</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">n</span><span class="p">)</span>
+<span class="k">subroutine </span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
     <span class="k">implicit none</span>
 
     <span class="c">! solving the matrix equation A*x=b using LAPACK
 </span>    <span class="c">! declarations, notice single precision
-</span>    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="nv">n</span><span class="p">,</span><span class="nv">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="nv">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nv">A</span>
-    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="nv">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="nv">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nv">b</span>
-    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="nv">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="nv">out</span><span class="p">)</span> <span class="kd">::</span> <span class="nv">x</span>
+</span>    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>
+    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span>
 
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="nv">i</span><span class="p">,</span> <span class="nv">j</span><span class="p">,</span> <span class="nv">pivot</span><span class="p">(</span><span class="nv">n</span><span class="p">),</span> <span class="nv">ok</span>
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">pivot</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">ok</span>
 
-    <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="nv">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nv">n</span>
+    <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">n</span>
 
     <span class="c">! find the solution using the LAPACK routine SGESV
-</span>    <span class="k">call </span><span class="nv">SGESV</span><span class="p">(</span><span class="nv">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">A</span><span class="p">,</span> <span class="nv">n</span><span class="p">,</span> <span class="nv">pivot</span><span class="p">,</span> <span class="nv">b</span><span class="p">,</span> <span class="nv">n</span><span class="p">,</span> <span class="nv">ok</span><span class="p">)</span>
+</span>    <span class="k">call </span><span class="n">SGESV</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">pivot</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">ok</span><span class="p">)</span>
 
     <span class="c">! copy the vector x
-</span>    <span class="nv">x</span> <span class="o">=</span> <span class="nv">b</span>
+</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">b</span>
 
 <span class="k">end subroutine</span>
 </pre>
@@ -360,7 +359,7 @@ no es libre y sale 500 verdes :).</td>
         disqus_title="Fortran + Windows = pesadilla^2",
         disqus_identifier="cache/posts/fortran-windows-pesadilla2.html",
         disqus_config = function () {
-            this.language = "es_ES";
+            this.language = "";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;

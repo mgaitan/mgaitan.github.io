@@ -32,14 +32,13 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="Martín Gaitán">
-        <meta property="og:site_name" content="tin_nqn">
-    <meta property="og:title" content="Metiéndose cosas en la nariz">
-    <meta property="og:url" content="http://mgaitan.github.io/posts/metiendose-cosas-en-la-nariz.html">
-    <meta property="og:description" content="nose es un excelente framework para testing en python. Es mucho más
+        <meta name="og:title" content="Metiéndose cosas en la nariz">
+    <meta name="og:url" content="http://mgaitan.github.io/posts/metiendose-cosas-en-la-nariz.html">
+    <meta name="og:description" content="nose es un excelente framework para testing en python. Es mucho más
 que un testrunner inteligente: tiene un conjunto de extensiones y shortcuts
 de aserciones de unittest, soporta fixtures y setups/tea">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2013-02-26T22:17:55-03:00">
+    <meta name="og:site_name" content="tin_nqn">
+    <meta name="og:type" content="article">
 
         <meta name="twitter:card" content="summary">
     <meta name="twitter:creator:id" content="40654511">
@@ -210,7 +209,7 @@ métodos.</p>
 determinada subcadena en el nombre del método.</p>
 <p>Por ejemplo:</p>
 <pre class="code bash literal-block">
-<span class="nv">$ </span>djntest -v 2 common/tests/test_sequence_diff.py
+<span class="nv">$ </span>djntest -v <span class="m">2</span> common/tests/test_sequence_diff.py
 
 <span class="c">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
 #2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
@@ -218,16 +217,16 @@ determinada subcadena en el nombre del método.</p>
 #2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
 </span>
 ----------------------------------------------------------------------
-Ran 4 tests in 0.375s
+Ran <span class="m">4</span> tests in 0.375s
 </pre>
 <p>En cambio:</p>
 <pre class="code bash literal-block">
-<span class="nv">$ </span>djntest --select-tests<span class="o">=</span>differ -v 2 apps/common/tests/test_sequence_diff.py
+<span class="nv">$ </span>djntest --select-tests<span class="o">=</span>differ -v <span class="m">2</span> apps/common/tests/test_sequence_diff.py
 
 <span class="c">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
 #2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok
 </span>----------------------------------------------------------------------
-Ran 2 tests in 0.088s
+Ran <span class="m">2</span> tests in 0.088s
 </pre>
 </div>
 <div class="section" id="django-tests-autocomplete">
@@ -306,7 +305,7 @@ para meter en mi nariz?</p>
         disqus_title="Meti\u00e9ndose cosas en la nariz",
         disqus_identifier="cache/posts/metiendose-cosas-en-la-nariz.html",
         disqus_config = function () {
-            this.language = "es_ES";
+            this.language = "";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;

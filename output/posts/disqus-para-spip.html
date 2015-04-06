@@ -32,10 +32,9 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="Martín Gaitán">
-        <meta property="og:site_name" content="tin_nqn">
-    <meta property="og:title" content="Disqus para spip">
-    <meta property="og:url" content="http://mgaitan.github.io/posts/disqus-para-spip.html">
-    <meta property="og:description" content="Hace tiempo me interesa el servicio
+        <meta name="og:title" content="Disqus para spip">
+    <meta name="og:url" content="http://mgaitan.github.io/posts/disqus-para-spip.html">
+    <meta name="og:description" content="Hace tiempo me interesa el servicio
 disqus.com que provee una plataforma de
 comentarios muy poderosa y fácil de usar.
 Comencé un pequeño
@@ -47,11 +46,8 @@ para integrar Disqus a Spip.
 
 
 Plugin Disqus para SPI">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2011-07-07T01:45:06-03:00">
-           <meta property="article:tag" content="Software Libre">
-           <meta property="article:tag" content="Web 2.0">
-           <meta property="article:tag" content="spip">
+    <meta name="og:site_name" content="tin_nqn">
+    <meta name="og:type" content="article">
 
         <meta name="twitter:card" content="summary">
     <meta name="twitter:creator:id" content="40654511">
@@ -213,7 +209,7 @@ ese archivo desde el panel de Disqus (Tools -&gt; Import/Export )</p>
         disqus_title="Disqus para spip",
         disqus_identifier="cache/posts/disqus-para-spip.html",
         disqus_config = function () {
-            this.language = "es_ES";
+            this.language = "";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;

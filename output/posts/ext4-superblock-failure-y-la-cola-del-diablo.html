@@ -33,12 +33,11 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="Martín Gaitán">
-        <meta property="og:site_name" content="tin_nqn">
-    <meta property="og:title" content="Ext4 superblock failure y la cola del Diablo">
-    <meta property="og:url" content="http://mgaitan.github.io/posts/ext4-superblock-failure-y-la-cola-del-diablo.html">
-    <meta property="og:description" content="e">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2012-10-26T02:24:46-03:00">
+        <meta name="og:title" content="Ext4 superblock failure y la cola del Diablo">
+    <meta name="og:url" content="http://mgaitan.github.io/posts/ext4-superblock-failure-y-la-cola-del-diablo.html">
+    <meta name="og:description" content="e">
+    <meta name="og:site_name" content="tin_nqn">
+    <meta name="og:type" content="article">
 
         <meta name="twitter:card" content="summary">
     <meta name="twitter:creator:id" content="40654511">
@@ -202,7 +201,7 @@ Superblock backups stored on blocks:
 </pre>
 <p>Me la juego con el primer backup:</p>
 <pre class="code bash literal-block">
-sudo e2fsck -b 32768 /dev/sda3
+sudo e2fsck -b <span class="m">32768</span> /dev/sda3
 </pre>
 <p>Cientos de  <tt class="docutils literal">Y</tt> <tt class="docutils literal">Enter</tt> para mensajes estilo <em>"está roto, desea repararlo?"</em>
 (no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
@@ -258,7 +257,7 @@ brazo.</blockquote>
         disqus_title="Ext4 superblock failure y la cola del Diablo",
         disqus_identifier="cache/posts/ext4-superblock-failure-y-la-cola-del-diablo.html",
         disqus_config = function () {
-            this.language = "es_ES";
+            this.language = "";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;
