@@ -9,7 +9,7 @@
 
 .. class:: alert alert-success
 
-   **¡Los cupos irán a sorteo!** Anotate. Si no entrás en el cupo para en esta edición, quedás anotado para la próxima que será muy pronto.
+   **¡Los cupos irán a sorteo!** Anotate. Si no entrás para en esta edición, quedás anotado para la próxima que será muy pronto.
 
 La demanda nos desbordó. En menos de 2 dias tenemos inscriptos para llenar dos veces el laboratorio que tenemos disponible! Algunos ya están averiguando la disponibilidad del Estadio Kempes para hacer el próximo.
 
