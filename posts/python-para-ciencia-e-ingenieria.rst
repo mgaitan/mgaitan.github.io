@@ -6,6 +6,18 @@
 .. description:
 .. type:
 
+
+.. class:: alert alert-danger
+
+   **Inscripción cerrada hasta nuevo aviso!**
+
+   En menos de un día recibimos más de 30 inscripciones y casi sobrepasamos la capacidad del laboratorio.
+
+   Si lamentás no haberte enterado antes casi tanto como el gol que perdió
+   Palacio en la final contra Alemania (¡`era por abajo Palacio <http://i.embed.ly/1/display/resize?key=1e6a1a1efdb011df84894040444cdc60&url=http%3A%2F%2Fpbs.twimg.com%2Fmedia%2FB9FnH6bIEAAmUyi.jpg>`_!), anotate igual a través del formulario así te aviso si se liberan cupos o conseguimos
+   otro horario disponible para hacer un doble dictado.
+
+
 .. image:: /images/Newsletter4-Banner_20120705_12-44-50-800.jpg
 
 A partir del 29 de abril voy a dar el curso `Introducción a Python para ciencias e ingenierías <https://github.com/mgaitan/curso-python-cientifico>`_ en la Facultad de Matemática, Astronomía y Física (`FaMAF <http://famaf.unc.edu.ar/>`_) de la Universidad Nacional de Córdoba.
@@ -14,7 +26,7 @@ Este curso es una versión revisada y extendida del que dí en la `ScipyCon Arge
 
 El costo del curso es $400. Hay becas para estudiantes de grado de FaMAF.
 
-Acá está el `formulario de inscripción <http://goo.gl/forms/kB7jkXHLyf>`_.
+.. Acá está el `formulario de inscripción (condicional - CUPO COMPLETO) <http://goo.gl/forms/kB7jkXHLyf>`_.
 
 El curso está reconocido como Curso de Extensión de FaMAF (Res. HCD 107/2015) y
 se entregarán certificados oficiales a quienes completen asistencia y participación.
