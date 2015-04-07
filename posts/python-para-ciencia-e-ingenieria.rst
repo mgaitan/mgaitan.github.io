@@ -7,14 +7,30 @@
 .. type:
 
 
-.. class:: alert alert-danger
+.. class:: alert alert-success
 
-   **Inscripción cerrada hasta nuevo aviso!**
+   **¡Los cupos irán a sorteo!** Anotate. Si no entrás en el cupo para en esta edición, quedás anotado para la próxima que será muy pronto.
 
-En menos de un día recibimos más de 30 inscripciones y casi sobrepasamos la capacidad del laboratorio.
+La demanda nos desbordó. En menos de 2 dias tenemos inscriptos para llenar dos veces el laboratorio que tenemos disponible! Algunos ya están averiguando la disponibilidad del Estadio Kempes para hacer el próximo.
 
-Si lamentás no haberte enterado antes casi tanto como el gol que perdió
-Palacio en la final contra Alemania (¡`era por abajo Palacio <http://i.embed.ly/1/display/resize?key=1e6a1a1efdb011df84894040444cdc60&url=http%3A%2F%2Fpbs.twimg.com%2Fmedia%2FB9FnH6bIEAAmUyi.jpg>`_!), anotate igual a través del `formulario <http://goo.gl/forms/kB7jkXHLyf>`_ así te aviso si se liberan cupos o conseguimos otro horario de laboratorio disponible para hacer un doble dictado.
+Como recién hoy (martes 7 de abril) se realizó la difusión oficial desde FaMAF, la decisión
+de los organizadores es permitir la inscripción de todos los interesados y hacer un sorteo de las 25 plazas
+aranceladas y otro para las 15 plazas gratuitas reservadas para estudiantes de grado de FaMAF.
+
+La justificación de un sorteo en vez de tomar el orden de inscripción la dió el Dr. Nicolás Wolovick, que junto al Dr. Pedro Pury fueron los gestores para el curso se oficializara, con un argumento democráticamente ñoño:
+
+    Estar conectado 24/7 por 3G, recibir el tweet, e inscribirse, no es justo, es una condición de posibilidad que no todos tienen. La distribución uniforme es la que mayor entropía tiene :)
+
+Si estás interesado, es importante que te inscribas a través del `formulario <http://goo.gl/forms/kB7jkXHLyf>`_.
+Así tendremos una lista bien grande de "argumentos" para reeditar el curso lo más pronto posible.
+
+
+.. role:: strike
+   :class: strike
+
+
+Otra posibilidad es que averigües :strike:`hagas lobby` en tu empresa o laboratorio sobre la posibilidad de realizar el curso *in house* y, si tienen interés, `lo charlamos </about.html>`_.
+
 
 ----
 
@@ -26,7 +42,7 @@ Este curso es una versión revisada y extendida del que dí en la `ScipyCon Arge
 
 El costo del curso es $400. Hay becas para estudiantes de grado de FaMAF.
 
-Acá está el `formulario de inscripción (condicional - CUPO COMPLETO) <http://goo.gl/forms/kB7jkXHLyf>`_.
+Acá está el `formulario de pre-inscripción (LOS CUPOS IRAN A SORTEO) <http://goo.gl/forms/kB7jkXHLyf>`_.
 
 El curso está reconocido como Curso de Extensión de FaMAF (Res. HCD 107/2015) y
 se entregarán certificados oficiales a quienes completen asistencia y participación.
