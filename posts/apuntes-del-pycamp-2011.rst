@@ -31,7 +31,8 @@ lindo, jugar jueguitos electrónicos y de los otros, tomar y beber en
 bucle continuo y hacer cuanto le plazca a cada uno, en un ambiente
 totalmente inclusivo, distendido y buena onda.
 
-|image0|
+.. image:: /images/5575373677_34553-e5833.jpg
+
 Python Argentina abarca el amplio espectro que va desde programadores
 reconocidos internacionalmente (gran parte de ese Ubuntu que seguro
 estas usando — o deberías — lo hacen pythonistas argentinos) hasta
@@ -58,7 +59,8 @@ primero en el que participo. Sabía, por referencias, fotos y
 repositorios, de qué se trataba, pero como dice el adagio... *del dicho
 al hecho ...*.
 
-|image1|
+.. image:: /images/5575974174_116c8-4028d.jpg
+
 Nati tenía un congreso de germanística en Buenos Aires y después se iba
 a La Plata a visitar a una amiga, así que las opciones eran ir a la
 marcha el jueves (24 de marzo) y
@@ -97,7 +99,7 @@ del encuentro, hijo de Roberto Alsina) y me enternecí viendo a otros
 geeks (Huguito — `Pilas <http://www.pilas-engine.com.ar>`_ rulez! —,
 John, Achuni, todos) jugar como niños.
 
-|image2|
+.. image:: /images/5575353897_b47ee-6529e.jpg
 
 Detalles faltan pero estos someros recuerdos sobran para afirmar que el
 balance es positivísimo.
@@ -119,6 +121,3 @@ picantes y los tiernitos.
 
 Cuanta falta le hace a la universidad visiones y experiencias como esta.
 
-.. |image0| image:: /images/5575373677_34553-e5833.jpg
-.. |image1| image:: /images/5575974174_116c8-4028d.jpg
-.. |image2| image:: /images/5575353897_b47ee-6529e.jpg
