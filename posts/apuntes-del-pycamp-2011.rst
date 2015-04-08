@@ -1,3 +1,8 @@
+
+.. role:: strike
+   :class: strike
+
+
 Casi se hizo jueves y todavía no escribí nada sobre el
 `PyCamp <http://python.org.ar/pyar/PyCamp/2011>`_. `Roberto
 Alsina <http://lateral.netmanagers.com.ar/>`_ se va a enojar.
@@ -13,10 +18,6 @@ conseguir un lacónico:
 
 Inmediatamente demostré que el lenguaje soez en arameo es un
 conocimiento latente.
-
-.. role:: strike
-   :class: strike
-
 
 A modo de intro
 ~~~~~~~~~~~~~~~
