@@ -17,7 +17,7 @@ Como recién hoy (martes 7 de abril) se realizó la difusión oficial desde FaMA
 de los organizadores es permitir la inscripción de todos los interesados y hacer un sorteo de las 25 plazas
 aranceladas y otro para las 15 plazas gratuitas reservadas para estudiantes de grado de FaMAF.
 
-La justificación de un sorteo en vez de tomar el orden de inscripción la dió el Dr. Nicolás Wolovick, que junto al Dr. Pedro Pury fueron los gestores para el curso se oficializara, con un argumento democráticamente ñoño:
+La justificación de un sorteo en vez de tomar el orden de inscripción la dió el Dr. Nicolás Wolovick, que junto al Dr. Pedro Pury fueron los gestores para que el curso se oficializara, con un argumento democráticamente ñoño:
 
     Estar conectado 24/7 por 3G, recibir el tweet, e inscribirse, no es justo, es una condición de posibilidad que no todos tienen. La distribución uniforme es la que mayor entropía tiene :)
 
