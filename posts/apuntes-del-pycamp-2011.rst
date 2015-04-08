@@ -61,13 +61,13 @@ al hecho ...*.
 Nati tenía un congreso de germanística en Buenos Aires y después se iba
 a La Plata a visitar a una amiga, así que las opciones eran ir a la
 marcha el jueves (24 de marzo) y
-`cuevanear <blog/article/yendo-a-las-fuentes-de-cuevana-tv>`_ el resto
+`cuevanear <post/yendo-a-las-fuentes-de-cuevana-tv>`_ el resto
 del finde o sumarme a la movida.
-`Perrito <http://www.perrito666.com.ar>`_ ofreció movilidad así que lo
+`Perrito <https://twitter.com/perrito666>`_ ofreció movilidad así que lo
 tuve servido.
 
 Salimos el jueves a la mañana y con nosotros venía
-`Malev <http://blog.malev.com.ar/>`_ y el organizador del evento, de pie
+`Malev <https://twitter.com/malev>`_ y el organizador del evento, de pie
 señores, Nueces.
 
 A lo largo de los 4 días de PyCamp, participé en la CDpedia (mejoré la
@@ -79,10 +79,10 @@ jugué mi primer sesión de rol guiado por `el señor
 ordenador <http://protocultura.net/>`_ (Alecu, un maestro!), malabareé
 con las bolas (las de malabares) de
 `Humitos <http://humitos.wordpress.com/>`_, presencié en vivo la
-gestación de un delirio mágico de `Roberto
-Alsina <http://lateral.netmanagers.com.ar/>`_, me metí a la pileta y
+gestación de un `delirio mágico <https://www.youtube.com/watch?v=3lvThaowkPk>`_  de `Roberto
+Alsina <http://ralsina.me/weblog/index.html>`_, me metí a la pileta y
 tomé sombra, perdí 0-5 0-5 los dos partidos de metegol y me cagué de
-risa igual con mi `coequiper <https://twitter.com/#!/edvm>`_ (¡fiesta!),
+risa igual con mi `coequiper <https://twitter.com/edvm>`_ (¡fiesta!),
 escribí "puto" (con onda, `Lipe <http://www.felipelerena.com.ar/>`_)
 desde un android con un `librería para
 multitouching <https://launchpad.net/faldatouch>`_ que estos bestias
@@ -97,6 +97,7 @@ geeks (Huguito — `Pilas <http://www.pilas-engine.com.ar>`_ rulez! —,
 John, Achuni, todos) jugar como niños.
 
 |image2|
+
 Detalles faltan pero estos someros recuerdos sobran para afirmar que el
 balance es positivísimo.
 
