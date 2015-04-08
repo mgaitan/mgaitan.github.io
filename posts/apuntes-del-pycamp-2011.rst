@@ -4,8 +4,8 @@
 
 
 Casi se hizo jueves y todavía no escribí nada sobre el
-`PyCamp <http://python.org.ar/pyar/PyCamp/2011>`_. `Roberto
-Alsina <http://lateral.netmanagers.com.ar/>`_ se va a enojar.
+`PyCamp <http://python.org.ar/pyar/PyCamp/2011>`_. Roberto
+Alsina se va a enojar.
 
 La excusa, vaga como yo, es que la devolución de uno de mis directores
 de `tesis <blog/article/preparados-listos-en-un-rato>`_ fue más
