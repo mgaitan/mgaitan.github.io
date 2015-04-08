@@ -292,7 +292,8 @@ REDIRECTIONS = []
 # To do manual deployment, set it to []
 DEPLOY_COMMANDS = {
     'default': ['git subtree push --prefix=output origin master'],
-    'typo': ['nikola build', 'git add .', 'git commit -am "minor change"', 'git push', 'nikola deploy']
+    'typo': ['nikola build', 'git add .', 'git commit -am "minor change"',
+             'git push', 'nikola deploy']
 }
 
 # For user.github.io/organization.github.io pages, the DEPLOY branch

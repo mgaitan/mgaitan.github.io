@@ -4,9 +4,8 @@ Alsina <http://lateral.netmanagers.com.ar/>`_ se va a enojar.
 
 La excusa, vaga como yo, es que la devolución de uno de mis directores
 de `tesis <blog/article/preparados-listos-en-un-rato>`_ fue más
-[STRIKEOUT:hinchapelotas] minuciosa que lo esperado. Así que para
-cumplir el
-`objetivo <http://twitter.com/#!/nqnwebs/status/48955773732134912>`_
+:strike:`hinchapelotas` minuciosa que lo esperado. Así que para
+cumplir el `objetivo <http://twitter.com/#!/tin_nqn_/status/48955773732134912>`_
 tuve un amansador refactoring de 5pm a 6am cuyo resultado me permitió
 conseguir un lacónico:
 
@@ -15,10 +14,14 @@ conseguir un lacónico:
 Inmediatamente demostré que el lenguaje soez en arameo es un
 conocimiento latente.
 
+.. role:: strike
+   :class: strike
+
+
 A modo de intro
 ~~~~~~~~~~~~~~~
 
-El `PyCamp <http://python.org.ar/pyar/PyCamp/>`_ es un encuentro de la
+El PyCamp es un encuentro de la
 comunidad `Python Argentina <http://www.python.org.ar>`_. Monos (y
 pronto monas) con laptops afiladas se juntan en el algun rincón del país
 con internet, preferentemente lejos de las grandes urbes (para darle
