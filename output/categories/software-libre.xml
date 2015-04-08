@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Software Libre)</title><link>http://mgaitan.github.io/</link><description></description><atom:link href="http://mgaitan.github.io/categories/software-libre.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Wed, 08 Apr 2015 19:53:49 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para spip</title><link>http://mgaitan.github.io/posts/disqus-para-spip.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="http://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Software Libre)</title><link>http://mgaitan.github.io/</link><description></description><atom:link href="http://mgaitan.github.io/categories/software-libre.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Wed, 08 Apr 2015 19:54:36 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para spip</title><link>http://mgaitan.github.io/posts/disqus-para-spip.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="http://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
 &lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y fácil de usar.&lt;/p&gt;
@@ -195,13 +195,10 @@ github-tools&lt;/a&gt;.&lt;/p&gt;
 Alsina&lt;/a&gt; se va a enojar.&lt;/p&gt;
 &lt;p&gt;La excusa, vaga como yo, es que la devolución de uno de mis directores
 de &lt;a class="reference external" href="http://mgaitan.github.io/posts/blog/article/preparados-listos-en-un-rato"&gt;tesis&lt;/a&gt; fue más
-&lt;a href="http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;:strike:`hinchapelotas`&lt;/span&gt;&lt;/a&gt; minuciosa que lo esperado. Así que para
+&lt;span class="strike"&gt;hinchapelotas&lt;/span&gt; minuciosa que lo esperado. Así que para
 cumplir el &lt;a class="reference external" href="http://twitter.com/#!/tin_nqn_/status/48955773732134912"&gt;objetivo&lt;/a&gt;
 tuve un amansador refactoring de 5pm a 6am cuyo resultado me permitió
 conseguir un lacónico:&lt;/p&gt;
-&lt;div class="system-message" id="id1"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 5); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-Unknown interpreted text role "strike".&lt;/div&gt;
 &lt;blockquote&gt;
 Recibido, pero recién lo puedo ver el viernes&lt;/blockquote&gt;
 &lt;p&gt;Inmediatamente demostré que el lenguaje soez en arameo es un
@@ -251,7 +248,7 @@ tuve servido.&lt;/p&gt;
 &lt;a class="reference external" href="https://twitter.com/malev"&gt;Malev&lt;/a&gt; y el organizador del evento, de pie
 señores, Nueces.&lt;/p&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 53); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 54); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html#id1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 Duplicate explicit target name: "roberto alsina".&lt;/div&gt;
 &lt;p&gt;A lo largo de los 4 días de PyCamp, participé en la CDpedia (mejoré la
 funcionalidad de "artículo al azar" y estuve haciendo unos benchmarks de
