@@ -118,7 +118,7 @@
  </sitemap>
  <sitemap>
   <loc>http://mgaitan.github.io/categories/python.xml</loc>
-  <lastmod>2015-04-07</lastmod>
+  <lastmod>2015-04-08</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mgaitan.github.io/categories/scrapping.xml</loc>
@@ -130,7 +130,7 @@
  </sitemap>
  <sitemap>
   <loc>http://mgaitan.github.io/categories/software-libre.xml</loc>
-  <lastmod>2015-04-06</lastmod>
+  <lastmod>2015-04-08</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mgaitan.github.io/categories/solidaridad.xml</loc>
@@ -302,6 +302,6 @@
  </sitemap>
  <sitemap>
   <loc>http://mgaitan.github.io/sitemap.xml</loc>
-  <lastmod>2015-04-07</lastmod>
+  <lastmod>2015-04-08</lastmod>
  </sitemap>
 </sitemapindex>
