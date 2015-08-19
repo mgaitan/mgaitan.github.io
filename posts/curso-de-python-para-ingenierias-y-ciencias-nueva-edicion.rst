@@ -1,4 +1,4 @@
-.. title: Curso de Python para Ciencias e Ingenierías, nueva edición
+
 .. slug: curso-de-python-para-ciencias-e-ingenieria-nueva-edicion
 .. date: 2015-08-19 17:50:09 UTC-03:00
 .. tags:
@@ -10,7 +10,7 @@
 Está abierta la inscripción para el nuevo dictado del curso de **Introducción a Python para ciencias e ingenierías**. Esta vez será en la
 **Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba, todos los **miércoles de septiembre de 18 a 22hs**.
 
-La `edición anterior <http://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria.html>`, realizado como curso de extensión de la Facultad de Matemática, Física y Astronomía desbordó (en un 300%) de inscriptos, así que `no demores en anotarte <http://goo.gl/forms/cQszya0Sdi>`_ porque **los cupos son muy limitados**!
+La `edición anterior <http://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria.html>`_, realizado como curso de extensión de la Facultad de Matemática, Física y Astronomía desbordó (en un 300%) de inscriptos, así que `no demores en anotarte <http://goo.gl/forms/cQszya0Sdi>`_ porque **los cupos son muy limitados**!
 
 Se entregarán certificados a quienes completen asistencia y participación.
 
@@ -29,10 +29,10 @@ Aranceles
 ---------
 
 * $500.– estudiantes y docentes de la UNC.
-* $750.– estudiantes y docentes de otras Universidades.
+* $750.– estudiantes y docentes de otras universidades públicas.
 * $1.000.– público en general.
 
-Los aranceles deberán ser abonados antes de la iniciación del curso para que la inscripción quede confirmada.
+Los aranceles deberán ser abonados en la oficina Área Económica de la FCEFyN antes de la iniciación del curso para que la inscripción quede confirmada.
 
 Preinscripción
 ----------------
