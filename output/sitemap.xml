@@ -43,7 +43,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.io/2015/index.html</loc>
-  <lastmod>2015-08-19T21:21:00Z</lastmod>
+  <lastmod>2015-08-19T21:25:00Z</lastmod>
  </url>
  <url>
   <loc>http://mgaitan.github.io/about.html</loc>
@@ -455,7 +455,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.io/index.html</loc>
-  <lastmod>2015-08-19T21:21:00Z</lastmod>
+  <lastmod>2015-08-19T21:25:00Z</lastmod>
  </url>
  <url>
   <loc>http://mgaitan.github.io/posts/Control-de-Versiones-con.html</loc>
@@ -558,9 +558,13 @@
   <xhtml:link rel="alternate" hreflang="en" href="http://mgaitan.github.io/en/posts/cuevanalinks-ahora-para-seres.html" />
  </url>
  <url>
+  <loc>http://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion.html</loc>
+  <lastmod>2015-08-19T21:25:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="http://mgaitan.github.io/en/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion.html" />
+ </url>
+ <url>
   <loc>http://mgaitan.github.io/posts/curso-de-python-para-ingenierias-y-ciencias-nueva-edicion.html</loc>
   <lastmod>2015-08-19T21:21:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://mgaitan.github.io/en/posts/curso-de-python-para-ingenierias-y-ciencias-nueva-edicion.html" />
  </url>
  <url>
   <loc>http://mgaitan.github.io/posts/de-mercurial-a-git-limpieza.html</loc>
@@ -818,7 +822,7 @@
  </url>
  <url>
   <loc>http://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria.html</loc>
-  <lastmod>2015-08-19T21:21:00Z</lastmod>
+  <lastmod>2015-08-19T21:25:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="http://mgaitan.github.io/en/posts/python-para-ciencia-e-ingenieria.html" />
  </url>
  <url>
