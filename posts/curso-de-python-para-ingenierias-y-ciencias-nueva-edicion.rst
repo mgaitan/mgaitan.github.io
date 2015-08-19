@@ -1,5 +1,5 @@
-.. title: Curso de Python para Ingenierías (y ciencias), nueva edición
-.. slug: curso-de-python-para-ingenierias-y-ciencias-nueva-edicion
+.. title: Curso de Python para Ciencias e Ingenierías, nueva edición
+.. slug: curso-de-python-para-ciencias-e-ingenieria-nueva-edicion
 .. date: 2015-08-19 17:50:09 UTC-03:00
 .. tags:
 .. category:
