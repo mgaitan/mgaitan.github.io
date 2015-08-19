@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Software Libre)</title><link>http://mgaitan.github.io/</link><description></description><atom:link href="http://mgaitan.github.io/categories/software-libre.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Wed, 08 Apr 2015 20:49:18 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para spip</title><link>http://mgaitan.github.io/posts/disqus-para-spip.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="http://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Software Libre)</title><link>http://mgaitan.github.io/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://mgaitan.github.io/categories/software-libre.xml"></atom:link><language>es</language><lastBuildDate>Wed, 19 Aug 2015 21:21:55 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para spip</title><link>http://mgaitan.github.io/posts/disqus-para-spip.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="http://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
 &lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y fácil de usar.&lt;/p&gt;
@@ -28,7 +28,7 @@ shortname"&lt;/em&gt; (la identificación unica que asignamos al sitio donde
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportación de comentarios preexistentes,
 basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;&lt;/div&gt;</description><category>Software Libre</category><category>Web 2.0</category><category>spip</category><guid>http://mgaitan.github.io/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 04:45:06 GMT</pubDate></item><item><title>Compartiendo documentación de paquetes python</title><link>http://mgaitan.github.io/posts/compartiendo-documentacion-de.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;&lt;/div&gt;</description><category>Software Libre</category><category>spip</category><category>Web 2.0</category><guid>http://mgaitan.github.io/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 04:45:06 GMT</pubDate></item><item><title>Compartiendo documentación de paquetes python</title><link>http://mgaitan.github.io/posts/compartiendo-documentacion-de.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
 documentación está incompleto
 [&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Si bien el manifiesto ágil
@@ -190,7 +190,7 @@ github&lt;/a&gt;
 de Luca Sbardella.
 &lt;img alt="image1" src="http://mgaitan.github.io/posts/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>Software Libre</category><category>python</category><guid>http://mgaitan.github.io/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item><item><title>Apuntes del PyCamp 2011</title><link>http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Casi se hizo jueves y todavía no escribí nada sobre el
+&lt;/div&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>http://mgaitan.github.io/posts/compartiendo-documentacion-de.html</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item><item><title>Apuntes del PyCamp 2011</title><link>http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Casi se hizo jueves y todavía no escribí nada sobre el
 &lt;a class="reference external" href="http://python.org.ar/pyar/PyCamp/2011"&gt;PyCamp&lt;/a&gt;. Roberto
 Alsina se va a enojar.&lt;/p&gt;
 &lt;p&gt;La excusa, vaga como yo, es que la devolución de uno de mis directores
@@ -289,7 +289,7 @@ por el sobrenombre y no por el título, se admira el conocimiento pero
 más se festeja su colectivización, y eso lo saben (y lo disfrutan) los
 picantes y los tiernitos.&lt;/p&gt;
 &lt;p&gt;Cuanta falta le hace a la universidad visiones y experiencias como esta.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Software Libre</category><category>python</category><guid>http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html</guid><pubDate>Wed, 30 Mar 2011 22:50:40 GMT</pubDate></item><item><title>Control de Versiones con Subversion</title><link>http://mgaitan.github.io/posts/Control-de-Versiones-con.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Xab, compañero de la lista
+&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>Software Libre</category><guid>http://mgaitan.github.io/posts/apuntes-del-pycamp-2011.html</guid><pubDate>Wed, 30 Mar 2011 22:50:40 GMT</pubDate></item><item><title>Control de Versiones con Subversion</title><link>http://mgaitan.github.io/posts/Control-de-Versiones-con.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Xab, compañero de la lista
 &lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;Spip-es&lt;/a&gt; me propone
 un trato:&lt;/p&gt;
 &lt;blockquote&gt;

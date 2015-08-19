@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (pip)</title><link>http://mgaitan.github.io/</link><description></description><language>es</language><lastBuildDate>Mon, 06 Apr 2015 11:45:13 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.io/posts/pip-apurate-por-favor.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (pip)</title><link>http://mgaitan.github.io/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://mgaitan.github.io/categories/pip.xml"></atom:link><language>es</language><lastBuildDate>Wed, 19 Aug 2015 21:21:54 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip, apurate por favor</title><link>http://mgaitan.github.io/posts/pip-apurate-por-favor.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
 para el trabajo diario de un programador python: es el manejador
 de paquetes de nuestro entorno de trabajo (¡&lt;a class="reference external" href="http://www.virtualenv.org/en/latest/"&gt;virtual&lt;/a&gt; por favor!),
 con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
@@ -24,26 +24,24 @@ instala el paquete. El flag &lt;tt class="docutils literal"&gt;&lt;span class="p
 cosa tediosa cuando tenemos que instalar frecuentemente (por ejemplo en distintos virtualenvs)
 la misma dependencia o cuando el uso de ancho de banda es limitado.&lt;/p&gt;
 &lt;p&gt;Por ejemplo instalamos por primera vez &lt;a class="reference external" href="http://lxml.de/"&gt;lxml&lt;/a&gt; y vemos cuanto tarda.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
-Downloading/unpacking lxml
-  Downloading lxml-3.1.1.tar.gz &lt;span class="o"&gt;(&lt;/span&gt;3.3MB&lt;span class="o"&gt;)&lt;/span&gt;: 3.3MB downloaded
-  Storing download in cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-  Running setup.py egg_info &lt;span class="k"&gt;for&lt;/span&gt; package lxml
-    Building lxml version 3.1.1.
-
-    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
-
-
-Successfully installed lxml
-Cleaning up...
-
-real    2m58.276s
-user    0m38.822s
-sys 0m0.676s
-&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="err"&gt;$&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;¡3 minutos! Y eso que estoy en una conexión bastante rápida.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-2"&gt;&lt;/a&gt;Downloading/unpacking lxml
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-3"&gt;&lt;/a&gt;  Downloading lxml-3.1.1.tar.gz &lt;span class="o"&gt;(&lt;/span&gt;3.3MB&lt;span class="o"&gt;)&lt;/span&gt;: 3.3MB downloaded
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-4"&gt;&lt;/a&gt;  Storing download in cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-5"&gt;&lt;/a&gt;  Running setup.py egg_info &lt;span class="k"&gt;for&lt;/span&gt; package lxml
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-6"&gt;&lt;/a&gt;    Building lxml version 3.1.1.
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-8"&gt;&lt;/a&gt;    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-11"&gt;&lt;/a&gt;Successfully installed lxml
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-12"&gt;&lt;/a&gt;Cleaning up...
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-14"&gt;&lt;/a&gt;real    2m58.276s
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-15"&gt;&lt;/a&gt;user    0m38.822s
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-16"&gt;&lt;/a&gt;sys 0m0.676s
+&lt;a name="rest_code_35872c7ed75d4889b4943a905837f56e-17"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;¡3 minutos! Y eso que estoy en una conexión bastante rápida.&lt;/p&gt;
 &lt;div class="tip"&gt;
 &lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
 &lt;p&gt;Cualquier flag que pip acepta en su linea de comando se puede configurar como una
@@ -54,31 +52,27 @@ export PIP_DOWNLOAD_CACHE=~/.pip_download_cache&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;p&gt;Pero sigamos: una vez cacheado, las siguientes veces que queramos instalar la misma versión de lxml
 no bajará &lt;strong&gt;el archivo&lt;/strong&gt; de nuevo&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="o"&gt;(&lt;/span&gt;test2&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test2&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
-
-Downloading/unpacking lxml
-  Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-  Running setup.py egg_info &lt;span class="k"&gt;for&lt;/span&gt; package lxml
-    Building lxml version 3.1.1.
-
-    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
-
-Successfully installed lxml
-Cleaning up...
-
-real    2m30.624s
-user    0m38.966s
-sys 0m0.504s
-&lt;/pre&gt;
-&lt;p&gt;Mejoró realmente poco. ¿que clase de caché es esta?
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;test2&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test2&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-3"&gt;&lt;/a&gt;Downloading/unpacking lxml
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-4"&gt;&lt;/a&gt;  Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-5"&gt;&lt;/a&gt;  Running setup.py egg_info &lt;span class="k"&gt;for&lt;/span&gt; package lxml
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-6"&gt;&lt;/a&gt;    Building lxml version 3.1.1.
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-8"&gt;&lt;/a&gt;    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-10"&gt;&lt;/a&gt;Successfully installed lxml
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-11"&gt;&lt;/a&gt;Cleaning up...
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-13"&gt;&lt;/a&gt;real    2m30.624s
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-14"&gt;&lt;/a&gt;user    0m38.966s
+&lt;a name="rest_code_c3867fa33b7d4c169562ebc51678dfb3-15"&gt;&lt;/a&gt;sys 0m0.504s
+&lt;/pre&gt;&lt;p&gt;Mejoró realmente poco. ¿que clase de caché es esta?
 Chusmeemos que hay en el directorio.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;ls ~/.pip_download_cache/ &lt;span class="p"&gt;|&lt;/span&gt; grep lxml
-https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
-&lt;/pre&gt;
-&lt;p&gt;¿Caché de urls? &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-download-cache&lt;/span&gt;&lt;/tt&gt; no evita todo el laburo de averiguar de dónde bajar,
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6d2181093c604683b9187cbe7cd87cdd-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;ls ~/.pip_download_cache/ &lt;span class="p"&gt;|&lt;/span&gt; grep lxml
+&lt;a name="rest_code_6d2181093c604683b9187cbe7cd87cdd-2"&gt;&lt;/a&gt;https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+&lt;a name="rest_code_6d2181093c604683b9187cbe7cd87cdd-3"&gt;&lt;/a&gt;https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
+&lt;/pre&gt;&lt;p&gt;¿Caché de urls? &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-download-cache&lt;/span&gt;&lt;/tt&gt; no evita todo el laburo de averiguar de dónde bajar,
 sino simplemente no baja si la url resultante ya existe (como nombre de un archivo)
 en este directorio.&lt;/p&gt;
 &lt;p&gt;Lo explica simple &lt;a class="reference external" href="https://github.com/pypa/pip/issues/680#issuecomment-8773509"&gt;Carl Meyer&lt;/a&gt;:&lt;/p&gt;
@@ -92,21 +86,19 @@ usá &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download&lt;/s
 &lt;div class="section" id="una-cache-sin-salir-a-la-red"&gt;
 &lt;h2&gt;Una caché sin salir a la red&lt;/h2&gt;
 &lt;p&gt;Sigamosle la corriente al bueno de &lt;a class="reference external" href="https://twitter.com/carljm"&gt;@carljm&lt;/a&gt;:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test3&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install --download&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
-Downloading/unpacking lxml
-  Using download cache from /home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-Saved /home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
-    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
-
-Successfully downloaded lxml
-Cleaning up...
-
-real    2m8.969s
-user    0m1.008s
-sys 0m0.136s
-&lt;/pre&gt;
-&lt;p&gt;¡Uff, 2 minutos en copiar un archivo que ya tenía bajado! (evidentemente lo que demora mucho
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test3&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install --download&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-2"&gt;&lt;/a&gt;Downloading/unpacking lxml
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-3"&gt;&lt;/a&gt;  Using download cache from /home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-4"&gt;&lt;/a&gt;Saved /home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-5"&gt;&lt;/a&gt;    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-7"&gt;&lt;/a&gt;Successfully downloaded lxml
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-8"&gt;&lt;/a&gt;Cleaning up...
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-10"&gt;&lt;/a&gt;real    2m8.969s
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-11"&gt;&lt;/a&gt;user    0m1.008s
+&lt;a name="rest_code_5a70edaeceda458bbdd1943b3f0b187f-12"&gt;&lt;/a&gt;sys 0m0.136s
+&lt;/pre&gt;&lt;p&gt;¡Uff, 2 minutos en copiar un archivo que ya tenía bajado! (evidentemente lo que demora mucho
 es &lt;em&gt;averiguar&lt;/em&gt; la versión del archivo a bajar)&lt;/p&gt;
 &lt;div class="tip"&gt;
 &lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
@@ -115,30 +107,26 @@ da con el paquete lxml a bajar haciendo el comando más verborrágico con
 &lt;tt class="docutils literal"&gt;pip install lxml &lt;span class="pre"&gt;-vvv&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;En este caso, el caché es directamente el archivo:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;ls ~/.pip_packages/ &lt;span class="p"&gt;|&lt;/span&gt; grep lxml
-lxml-3.1.1.tar.gz
-&lt;/pre&gt;
-&lt;p&gt;Por suerte, una vez cacheado el paquete de esta manera no tendremos
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_5409bdfd09f94bcab7164fe4bc68d64c-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test&lt;span class="nv"&gt;$ &lt;/span&gt;ls ~/.pip_packages/ &lt;span class="p"&gt;|&lt;/span&gt; grep lxml
+&lt;a name="rest_code_5409bdfd09f94bcab7164fe4bc68d64c-2"&gt;&lt;/a&gt;lxml-3.1.1.tar.gz
+&lt;/pre&gt;&lt;p&gt;Por suerte, una vez cacheado el paquete de esta manera no tendremos
 que consultar el índice online las siguientes veces.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test3&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
-Ignoring indexes: https://pypi.python.org/simple/
-Downloading/unpacking lxml
-  Running setup.py egg_info &lt;span class="k"&gt;for&lt;/span&gt; package lxml
-    Building lxml version 3.1.1.
-
-    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
-
-
-Successfully installed lxml
-Cleaning up...
-
-real    0m38.944s
-user    0m38.338s
-sys 0m0.564s
-&lt;/pre&gt;
-&lt;p&gt;Ok, ya va mejor.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test3&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;time &lt;/span&gt;pip install --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-2"&gt;&lt;/a&gt;Ignoring indexes: https://pypi.python.org/simple/
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-3"&gt;&lt;/a&gt;Downloading/unpacking lxml
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-4"&gt;&lt;/a&gt;  Running setup.py egg_info &lt;span class="k"&gt;for&lt;/span&gt; package lxml
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-5"&gt;&lt;/a&gt;    Building lxml version 3.1.1.
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-7"&gt;&lt;/a&gt;    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-10"&gt;&lt;/a&gt;Successfully installed lxml
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-11"&gt;&lt;/a&gt;Cleaning up...
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-13"&gt;&lt;/a&gt;real    0m38.944s
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-14"&gt;&lt;/a&gt;user    0m38.338s
+&lt;a name="rest_code_4586e7a680234af394f18318d527bbd7-15"&gt;&lt;/a&gt;sys 0m0.564s
+&lt;/pre&gt;&lt;p&gt;Ok, ya va mejor.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="haciendo-que-la-cosa-vuele-no-recompiles-la-rueda"&gt;
 &lt;h2&gt;Haciendo que la cosa vuele: no recompiles la rueda&lt;/h2&gt;
@@ -148,30 +136,24 @@ que es muchísimo más rápido que instalar desde fuentes (sobre todo en casos
 que se debe compilar, como lxml)&lt;/p&gt;
 &lt;p&gt;Para usar wheel el paquete a bajar tiene que existir en dicho formato y todavía no abundan
 en PyPi asi que podemos armarlos localmente con el propio pip&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-pip wheel --wheel-dir&lt;span class="o"&gt;=&lt;/span&gt;./pip_packages lxml
-&lt;/pre&gt;
-&lt;p&gt;Eso es similar a usar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download&lt;/span&gt;&lt;/tt&gt; pero además compila y empaqueta como
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_bf1c1fe55a81401795794431ea005eb2-1"&gt;&lt;/a&gt;pip wheel --wheel-dir&lt;span class="o"&gt;=&lt;/span&gt;./pip_packages lxml
+&lt;/pre&gt;&lt;p&gt;Eso es similar a usar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download&lt;/span&gt;&lt;/tt&gt; pero además compila y empaqueta como
 un archivo &lt;tt class="docutils literal"&gt;.whl&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;Para que pip acepte instalar estos archivos hay que usar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--use-wheel&lt;/span&gt;&lt;/tt&gt;
 y para que los busque localmente haremos:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-pip install --use-wheel --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
-&lt;/pre&gt;
-&lt;p&gt;¡Lo que tardó menos de 2 decimas de segundo! Un speedup del 90mil veces respecto al primer
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_73429358f6dc4d4ca225eb7e7b4c64be-1"&gt;&lt;/a&gt;pip install --use-wheel --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
+&lt;/pre&gt;&lt;p&gt;¡Lo que tardó menos de 2 decimas de segundo! Un speedup del 90mil veces respecto al primer
 y canónico &lt;tt class="docutils literal"&gt;pip install lxml&lt;/tt&gt;&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;
-(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
-Ignoring indexes: https://pypi.python.org/simple/
-Downloading/unpacking lxml
-Installing collected packages: lxml
-Successfully installed lxml
-Cleaning up...
-
-real    0m0.180s
-user    0m0.152s
-sys 0m0.024s
-&lt;/pre&gt;
-&lt;p&gt;Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
+&lt;pre class="code text"&gt;&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-1"&gt;&lt;/a&gt;(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
+&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-2"&gt;&lt;/a&gt;Ignoring indexes: https://pypi.python.org/simple/
+&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-3"&gt;&lt;/a&gt;Downloading/unpacking lxml
+&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-4"&gt;&lt;/a&gt;Installing collected packages: lxml
+&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-5"&gt;&lt;/a&gt;Successfully installed lxml
+&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-6"&gt;&lt;/a&gt;Cleaning up...
+&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-8"&gt;&lt;/a&gt;real    0m0.180s
+&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-9"&gt;&lt;/a&gt;user    0m0.152s
+&lt;a name="rest_code_0da9385f5bc845598bf42ec133475ef4-10"&gt;&lt;/a&gt;sys 0m0.024s
+&lt;/pre&gt;&lt;p&gt;Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
 django, whatever) me los haces rodar para que pip vuele.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>pip</category><category>python</category><guid>http://mgaitan.github.io/posts/pip-apurate-por-favor.html</guid><pubDate>Wed, 10 Apr 2013 04:17:55 GMT</pubDate></item></channel></rss>

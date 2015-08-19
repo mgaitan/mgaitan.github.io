@@ -3,57 +3,37 @@
 og: http://ogp.me/ns#
 article: http://ogp.me/ns/article#
 " lang="es">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Desambiguando un hash en Git | tin_nqn  </title>
-
-                <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-            <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-
-                    <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../en/rss.xml">
-                <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml">
-
-      <link rel="canonical" href="http://mgaitan.github.io/posts/desambiguando-un-hash-en-git.html">
-
-
-
-    
-        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
-
-
-            <script src="../assets/js/jquery.min.js"></script>
-
-    
-
-    
-    <meta name="author" content="Martín Gaitán">
-        <meta property="og:site_name" content="tin_nqn">
-    <meta property="og:title" content="Desambiguando un hash en Git">
-    <meta property="og:url" content="http://mgaitan.github.io/posts/desambiguando-un-hash-en-git.html">
-    <meta property="og:description" content="Soy vago. Por eso me llevo bien con Git, que permite reconocer un changeset con un pedacito de
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Desambiguando un hash en Git | tin_nqn  </title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../en/rss.xml">
+<link rel="canonical" href="http://mgaitan.github.io/posts/desambiguando-un-hash-en-git.html">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Desambiguando un hash en Git">
+<meta property="og:url" content="http://mgaitan.github.io/posts/desambiguando-un-hash-en-git.html">
+<meta property="og:description" content="Soy vago. Por eso me llevo bien con Git, que permite reconocer un changeset con un pedacito de
 su hash sha1 :
 
 Git is smart enough to figure out what commit you meant to type if you provide the first ">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2013-03-14T18:02:01-03:00">
-
-        <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator:id" content="40654511">
-
-    
-
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-03-14T18:02:01-03:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
 </head>
 <body>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-static-top" role="navigation">
-    <div class="container">
+<nav class="navbar navbar-static-top" role="navigation"><div class="container">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -73,7 +53,7 @@ Git is smart enough to figure out what commit you meant to type if you provide t
 <!-- /.navbar-header -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                                <li>
+<li>
 <a href="../about.html">Sobre mí</a>
                 </li>
 <li>
@@ -91,31 +71,24 @@ Git is smart enough to figure out what commit you meant to type if you provide t
                 
             </li>
 </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                    <li>            </li>
+<ul class="nav navbar-nav navbar-right">
+<li>            </li>
 <li><a href="../en/index.html" rel="alternate" hreflang="en">English</a></li>
 
                 
             </ul>
-        </div>
+</div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav>
-
-<!-- End of Menubar -->
-
-<div class="container">
+</nav><!-- End of Menubar --><div class="container">
     <div class="body-content">
         <!--Body content-->
         <div class="row">
 
             <div class="col-md-offset-2 col-md-8">
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
-        <header>
-            <h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Desambiguando un hash en Git</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Desambiguando un hash en Git</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
@@ -125,9 +98,7 @@ Git is smart enough to figure out what commit you meant to type if you provide t
 
         </p>
 </div>
-    </header>
-
-    <div class="e-content entry-content" itemprop="articleBody text">
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>Soy vago. Por eso me llevo bien con Git, que permite reconocer un changeset con un <a class="reference external" href="http://git-scm.com/book/ch6-1.html">pedacito de
 su hash sha1</a> :</p>
@@ -135,26 +106,23 @@ su hash sha1</a> :</p>
 Git is smart enough to figure out what commit you meant to type if you provide the first few characters, as long as your partial SHA-1 is at least four characters long and unambiguous — that is, only one object in the current repository begins with that partial SHA-1.</blockquote>
 <!-- TEASER_END -->
 <p>Pero a veces soy demasiado vago, y Git deja de llevarse bien conmigo: Estaba en una rama con varios commits y quería volver al pasado, deshaciendo commits, pero llevando uno. Fácil: <tt class="docutils literal">reset</tt> + <tt class="docutils literal"><span class="pre">cherry-pick</span></tt>. Pero copié muy pocos caracteres del hash que quería <em>cherrypickear</em>:</p>
-<pre class="code bash literal-block">
-<span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi<span class="nv">$ </span>git reset --hard 772dad9a775
-HEAD is now at 772dad9 making aqueous migration script more robust
-<span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi<span class="nv">$ </span>git cherry-pick c4396
-error: short SHA1 c4396 is ambiguous.
-error: short SHA1 c4396 is ambiguous
-fatal: ambiguous argument <span class="s1">'c4396'</span>: unknown revision or path not in the working tree.
-Use <span class="s1">'--'</span> to separate paths from revisions
-<span class="o">(</span>cpi<span class="o">)</span>mgaitan@gutemberg:~/laburo/cpi/code/cpi_mrp<span class="err">$</span>
+<pre class="code bash"><a name="rest_code_3bb134ea6f714526974979cdcc86235e-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi<span class="nv">$ </span>git reset --hard 772dad9a775
+<a name="rest_code_3bb134ea6f714526974979cdcc86235e-2"></a>HEAD is now at 772dad9 making aqueous migration script more robust
+<a name="rest_code_3bb134ea6f714526974979cdcc86235e-3"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi<span class="nv">$ </span>git cherry-pick c4396
+<a name="rest_code_3bb134ea6f714526974979cdcc86235e-4"></a>error: short SHA1 c4396 is ambiguous.
+<a name="rest_code_3bb134ea6f714526974979cdcc86235e-5"></a>error: short SHA1 c4396 is ambiguous
+<a name="rest_code_3bb134ea6f714526974979cdcc86235e-6"></a>fatal: ambiguous argument <span class="s1">'c4396'</span>: unknown revision or path not in the working tree.
+<a name="rest_code_3bb134ea6f714526974979cdcc86235e-7"></a>Use <span class="s1">'--'</span> to separate paths from revisions
+<a name="rest_code_3bb134ea6f714526974979cdcc86235e-8"></a><span class="o">(</span>cpi<span class="o">)</span>mgaitan@gutemberg:~/laburo/cpi/code/cpi_mrp<span class="err">$</span>
 </pre>
 <p>Recórcholis.</p>
 <p>Un poquito de bash y <em>git plumbing</em> al rescate:</p>
-<pre class="code bash literal-block">
-<span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi<span class="nv">$ </span><span class="k">for</span> <span class="nb">hash </span>in c4396<span class="o">{{</span>0..9<span class="o">}</span>,<span class="o">{</span>a..f<span class="o">}}</span><span class="p">;</span> <span class="k">do</span> git cat-file -e <span class="nv">$hash</span> <span class="o">&amp;&amp;</span> git rev-parse <span class="nv">$hash</span><span class="p">;</span> <span class="k">done</span> 2&gt;/dev/nul
-c4396586273b2a9ea5eae46c4ab2d98e236e7792
-c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
+<pre class="code bash"><a name="rest_code_a02869103b2f406e99ef36733bebab61-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi<span class="nv">$ </span><span class="k">for</span> <span class="nb">hash </span>in c4396<span class="o">{{</span>0..9<span class="o">}</span>,<span class="o">{</span>a..f<span class="o">}}</span><span class="p">;</span> <span class="k">do</span> git cat-file -e <span class="nv">$hash</span> <span class="o">&amp;&amp;</span> git rev-parse <span class="nv">$hash</span><span class="p">;</span> <span class="k">done</span> 2&gt;/dev/nul
+<a name="rest_code_a02869103b2f406e99ef36733bebab61-2"></a>c4396586273b2a9ea5eae46c4ab2d98e236e7792
+<a name="rest_code_a02869103b2f406e99ef36733bebab61-3"></a>c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
 </pre>
 <p>Ahora tenemos el conjunto de hash con igual prefijo, y podemos revisarlos para ver cual era el que queriamos:</p>
-<pre class="code bash literal-block">
-<span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi<span class="nv">$ </span>git show c4396586273b2a9ea5eae46c4ab2d98e236e7792
+<pre class="code bash"><a name="rest_code_3229b1e626f642a3bd7ff5079f3f94d9-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi<span class="nv">$ </span>git show c4396586273b2a9ea5eae46c4ab2d98e236e7792
 </pre>
 <p>Y ese era el que quería.</p>
 </div>
@@ -163,7 +131,7 @@ c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
 
 
    <hr>
-    <div class="ps">
+<div class="ps">
             <div class="metadata posttranslations translations">
             <h3 class="posttranslations-intro">También disponible en:</h3>
         </div>
@@ -171,22 +139,14 @@ c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
     <p>El código de este artículo está disponible en  <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/desambiguando-un-hash-en-git.rst" id="sourcelink">github</a>. ¿Encontraste un error? Por favor,  <a href="https://github.com/mgaitan/mgaitan.github.com/edit/writing/posts/desambiguando-un-hash-en-git.rst" id="sourcelink">enviame un pull request</a>.</p>
     </div>
 
-    <aside class="postpromonav">
-    <nav>
-    
-            <ul class="pager">
-            <li class="previous">
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
                 <a href="como-funciona-cuevana.html" rel="prev" title="Cómo funciona Cuevana">Post anterior</a>
             </li>
             <li class="next">
                 <a href="pip-apurate-por-favor.html" rel="next" title="pip, apurate por favor">Siguiente post</a>
             </li>
-        </ul>
-
-    </nav>
-    </aside>
-        <section class="comments">
-        <h2>Comentarios</h2>
+        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
@@ -201,27 +161,18 @@ c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
 </noscript>
     <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section>
-    
-</article>
-               <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
-
-
-
-            <footer>
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer>
                 Contents © 2015         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
                 
             </footer>
-
-            </div>
+</div>
         </div>
         <!--End of body content-->
 
@@ -229,16 +180,7 @@ c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
     </div>
 </div>
 
-            <script src="../assets/js/bootstrap.min.js"></script>
-        <script src="../assets/js/jquery.colorbox-min.js"></script>
-        <script src="../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script>
-    
-
-
-    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
-
-    <script src="../assets/js/jquery.timeago.js" type="text/javascript"></script>
-    <script>
+            <script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/jquery.colorbox-min.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 
         if(jQuery('html').attr('lang') === 'es'){
@@ -266,9 +208,7 @@ c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
 
         jQuery('.highlight pre').addClass('code');
     });
-    </script>
-
-    <script>
+    </script><script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -278,8 +218,5 @@ c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
       ga('send', 'pageview');
 
     </script>
-
-
-
 </body>
 </html>

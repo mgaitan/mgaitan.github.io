@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.io/</link><description></description><language>es</language><lastBuildDate>Mon, 06 Apr 2015 11:45:13 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>http://mgaitan.github.io/posts/como-volver-a-compartir-desde.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="important"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Web 2.0)</title><link>http://mgaitan.github.io/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://mgaitan.github.io/categories/web-20.xml"></atom:link><language>es</language><lastBuildDate>Wed, 19 Aug 2015 21:21:55 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>http://mgaitan.github.io/posts/como-volver-a-compartir-desde.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="important"&gt;
 &lt;p class="first admonition-title"&gt;Important&lt;/p&gt;
 &lt;p class="last"&gt;El pipe tiene un problema con las fechas y quedó deactualizado
 cuando cambió en el html de G+. En su defecto hice este pequeño
@@ -92,7 +92,7 @@ shortname"&lt;/em&gt; (la identificación unica que asignamos al sitio donde
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportación de comentarios preexistentes,
 basta acceder a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/tt&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;&lt;/div&gt;</description><category>Software Libre</category><category>Web 2.0</category><category>spip</category><guid>http://mgaitan.github.io/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 04:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>http://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;&lt;/div&gt;</description><category>Software Libre</category><category>spip</category><category>Web 2.0</category><guid>http://mgaitan.github.io/posts/disqus-para-spip.html</guid><pubDate>Thu, 07 Jul 2011 04:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>http://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
 interactiva para agregar y manipular feeds RSS (y otras fuentes de
 datos) a nuestro antojo de forma sencilla y asequible para cualquiera.&lt;/p&gt;
 &lt;p&gt;Es un entorno de programación visual online. La programación visual es
@@ -160,4 +160,4 @@ algún criterio propio. Para eso (y para bastantes más cosas, pero
 centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
 pequeño ’screencast’ que explica cómo recuperar las categorías (la
 de desarrollo web, en particular) que se ha cargado Feedburner…&lt;/blockquote&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Web 2.0</category><category>spip</category><guid>http://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo.html</guid><pubDate>Mon, 23 Feb 2009 22:23:40 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>spip</category><category>Web 2.0</category><guid>http://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo.html</guid><pubDate>Mon, 23 Feb 2009 22:23:40 GMT</pubDate></item></channel></rss>
