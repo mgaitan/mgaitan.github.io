@@ -1,4 +1,3 @@
-
 .. slug: curso-de-python-para-ciencias-e-ingenieria-nueva-edicion
 .. date: 2015-08-19 17:50:09 UTC-03:00
 .. tags:
