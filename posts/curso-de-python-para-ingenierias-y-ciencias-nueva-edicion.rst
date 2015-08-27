@@ -7,6 +7,9 @@
 .. description: curso de python cientifico
 .. type:
 
+.. attention:: Habrá un redictado a partir del 7 de octubre! Anotate desde el mismo `formulario  <http://goo.gl/forms/cQszya0Sdi>`_
+
+
 Está abierta la inscripción para el nuevo dictado del curso de **Introducción a Python para ciencias e ingenierías**. Esta vez será en la
 **Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba, todos los **miércoles de septiembre de 18 a 22hs**.
 
