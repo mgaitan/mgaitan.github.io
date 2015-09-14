@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="http://mgaitan.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Mon, 14 Sep 2015 14:55:35 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Curso de Python para ciencias e ingeniería, nueva edición</title><link>http://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="attention"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>http://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link rel="self" href="http://mgaitan.github.io/rss.xml" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Mon, 14 Sep 2015 15:03:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Curso de Python para ciencias e ingeniería, nueva edición</title><link>http://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="attention"&gt;
 &lt;p class="first admonition-title"&gt;Attention!&lt;/p&gt;
 &lt;p class="last"&gt;Habrá un redictado a partir del 7 de octubre! Anotate desde el mismo &lt;a class="reference external" href="http://goo.gl/forms/cQszya0Sdi"&gt;formulario&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -153,32 +153,32 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Anoche me reí mucho con el hashtag &lt;a href="https://twitter.com/search?q=%23lagente&amp;amp;src=typd"&gt;#LaGente&lt;/a&gt;, que se viralizó mientras Alejandro Fantino entrevistaba, una vez más, al inefable candidato presidencial Sergio Massa.&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;blockquote class="twitter-tweet" lang="es"&gt;&lt;p&gt;"Me comprometo no ante vos, ante &lt;a href="https://twitter.com/hashtag/LaGente?src=hash"&gt;#LaGente&lt;/a&gt;". Lo harta que me tiene este tipo no tiene nombre.&lt;/p&gt;— Fenicia  (@zeinicienta) &lt;a href="https://twitter.com/zeinicienta/status/575858399021264896"&gt;marzo 12, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;blockquote class="twitter-tweet" lang="es"&gt;&lt;p&gt;"Me comprometo no ante vos, ante &lt;a href="https://twitter.com/hashtag/LaGente?src=hash"&gt;#LaGente&lt;/a&gt;". Lo harta que me tiene este tipo no tiene nombre.&lt;/p&gt;— Fenicia  (@zeinicienta) &lt;a href="https://twitter.com/zeinicienta/status/575858399021264896"&gt;marzo 12, 2015&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 
 &lt;blockquote class="twitter-tweet" lang="es"&gt;&lt;p&gt;Es insoportable la cantidad de frases hechas y lugares comunes que tira &lt;a href="https://twitter.com/SergioMassa"&gt;@SergioMassa&lt;/a&gt;. Demagogo berreta. &lt;a href="https://twitter.com/hashtag/LaGente?src=hash"&gt;#LaGente&lt;/a&gt;&lt;/p&gt;— Javier Smaldone (@mis2centavos) &lt;a href="https://twitter.com/mis2centavos/status/575850582386343938"&gt;marzo 12, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;p&gt;&lt;/p&gt;&lt;blockquote class="twitter-tweet" lang="es"&gt;&lt;p&gt;Quiero contar la cantidad de veces que +a dice &lt;a href="https://twitter.com/hashtag/LaGente?src=hash"&gt;#LaGente&lt;/a&gt;&lt;/p&gt;— memorex (@memorex) &lt;a href="https://twitter.com/memorex/status/575847833565163521"&gt;marzo 12, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
-&lt;p&gt;Me acordé entonces de un &lt;a href="http://zulko.github.io/blog/2014/06/21/some-more-videogreping-with-python/"&gt;post de Zulko&lt;/a&gt;, cuyo blog es un compilado de gemas ñoñamente divertidas. Allí muestra cómo recortar automáticamente los pedacitos de un video que mencionen una palabra o frase, basándose en las marcas de tiempo del archivo de subtítulos, utilizando su maravillosa biblioteca &lt;a href="http://zulko.github.io/moviepy/"&gt;Moviepy&lt;/a&gt; y un poco de Python. Más o menos lo que hace &lt;a href="https://github.com/antiboredom/videogrep"&gt;videogrep&lt;/a&gt;, pero más prolijo.&lt;/p&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;blockquote class="twitter-tweet" lang="es"&gt;&lt;p&gt;Quiero contar la cantidad de veces que +a dice &lt;a href="https://twitter.com/hashtag/LaGente?src=hash"&gt;#LaGente&lt;/a&gt;&lt;/p&gt;— memorex (@memorex) &lt;a href="https://twitter.com/memorex/status/575847833565163521"&gt;marzo 12, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;p&gt;Me acordé entonces de un &lt;a href="http://zulko.github.io/blog/2014/06/21/some-more-videogreping-with-python/"&gt;post de Zulko&lt;/a&gt;, cuyo blog es un compilado de gemas ñoñamente divertidas. Allí muestra cómo recortar automáticamente los pedacitos de un video que mencionen una palabra o frase, basándose en las marcas de tiempo del archivo de subtítulos, utilizando su maravillosa biblioteca &lt;a href="http://zulko.github.io/moviepy/"&gt;Moviepy&lt;/a&gt; y un poco de Python. Más o menos lo que hace &lt;a href="https://github.com/antiboredom/videogrep"&gt;videogrep&lt;/a&gt;, pero más prolijo.&lt;/p&gt;
 &lt;p&gt;La herramienta &lt;a href="http://rg3.github.io/youtube-dl/"&gt;youtube-dl&lt;/a&gt; (que también es genial y hecha en Python), permite no sólo bajar videos de youtube y los subtitulos existentes, sino que también puede bajar el "subtitulo automático". En general son bastante malos pero es suficientemente efectivo para encontrar pequeñas frases.&lt;/p&gt;
-&lt;h2 id="Todo-sea-por-&amp;quot;la-gente&amp;quot;:-manos-a-la-obra"&gt;Todo sea por "la gente": manos a la obra&lt;a class="anchor-link" href="#Todo-sea-por-&amp;quot;la-gente&amp;quot;:-manos-a-la-obra"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Lo primero que necesitamos es una lista de videos donde Sergio Massa hable. Hice una &lt;a href="https://www.youtube.com/results?search_query=entrevista+sergio+massa"&gt;búsqueda&lt;/a&gt;, decidí ignorar algunos (parodias, por ejemplo) y generé una lista. Hay varias maneras de obtener este listado de las primeras paginas de resultados, yo utilicé el rústico y efectivo webscrapping:&lt;/p&gt;
+&lt;h3 id='Todo-sea-por-"la-gente":-manos-a-la-obra'&gt;Todo sea por "la gente": manos a la obra&lt;a class="anchor-link" href="http://mgaitan.github.io/posts/sergio-massa-y-lagente.html#Todo-sea-por-%22la-gente%22:-manos-a-la-obra"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Lo primero que necesitamos es una lista de videos donde Sergio Massa hable. Hice una &lt;a href="https://www.youtube.com/results?search_query=entrevista+sergio+massa"&gt;búsqueda&lt;/a&gt;, decidí ignorar algunos (parodias, por ejemplo) y generé una lista. Hay varias maneras de obtener este listado de las primeras paginas de resultados, yo utilicé el rústico y efectivo webscrapping:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pyquery&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;PyQuery&lt;/span&gt;
 &lt;span class="n"&gt;links&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-&lt;span class="n"&gt;skip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;M0yuFHbhYLY&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;TLmMh9Qvmic&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;rY4Hwvn6GlA&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;skip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'M0yuFHbhYLY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'TLmMh9Qvmic'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'rY4Hwvn6GlA'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;pq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;PyQuery&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;https://www.youtube.com/results?search_query=entrevista+sergio+massa&amp;amp;page=%s&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;pq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;PyQuery&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'https://www.youtube.com/results?search_query=entrevista+sergio+massa&amp;amp;page=%s'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_links_absolute&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-    &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extend&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;a.yt-uix-tile-link&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;v=&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;skip&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extend&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'href'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'a.yt-uix-tile-link'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'href'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'v='&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;skip&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="n"&gt;links&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -194,83 +194,83 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;[&amp;apos;https://www.youtube.com/watch?v=8pP8G3fSAcY&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=g6QSwxUo1aw&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=_9FN6CI8fD4&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=5wqwNDpkZOo&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=V865E4mBiHU&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=TPrGNJnMS9U&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=SVTl11hG9Gs&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=Df_dwb5XHQM&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=sptBkyfq1VU&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=tzjz1xrNu3k&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=k-CGbuOo8do&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=_L-B_wHsEec&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=iFOABIQdo9Q&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=WOlRIKGrBWY&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=a-mCgN6W9ek&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=x5vhchv3zAY&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=bi5eK7i59w0&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=VNHV3D_6o4E&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=MWVZ6JDU9V8&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=v-JmdgVZqVc&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=FBFHpdxsyYU&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=WXmTc83l1sQ&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=GfNgds5vS60&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=UHRa34A6rDg&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=xVU-EjnuksU&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=-IXymTZZM6o&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=tzvwDTPyTHQ&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=a19z6EVWpQ4&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=rAOvF8X_nzM&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=wtvl4esdMGU&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=1YPHDDH1Az0&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=w7TnghsrJUo&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=qBT-6HpSrwc&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=JM-xblTxLGc&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=kMymsVsmETY&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=K1-dfiVfbOI&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=VnoiHVlR-So&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=hMTzJyLiXE4&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=VGQPNQ1Bhkg&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=0oR4z7SsY14&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=Cl4r8h_Hlak&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=gJFmek-YgYo&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=9VQ7Ov5W_tM&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=rKwKImVrYu4&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=LJwj9SHC9EU&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=-08OEpFThiw&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=BPJBl5y2P2g&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=MvkXlg9ZbL4&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=7KgIa4fX_Ng&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=upNLrHtzeBI&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=Y-norf1BKAs&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=QMvAl_fxQSA&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=3os_uXUOvcM&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=ZE_aChIEELo&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=iKI-8ceuR-A&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=CASdYLquQII&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=5cvyi1CcpYs&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=NVEw-YIAy5A&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=yMXn04-GQTY&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=RCCzZGcGg5k&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=FqMFKGsXLOE&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=MVOvQb8KBm0&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=ENvWfMwnJ_0&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=bs7xGm293Vs&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=7OvrK-U-axI&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=VHeWqPqs4vo&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=nVOEi9FESn8&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=eikTWAvFwTE&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=BU2amn3QdWk&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=GiB1pOuEvqg&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=GAPN17lTJ9c&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=4Ja1uZbMM8E&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=F1dAfCR4rc0&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=334O9xh-CQY&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=KgNmw3sJ0g8&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=-SQSue4-PLk&amp;apos;,
- &amp;apos;https://www.youtube.com/watch?v=HPE4PHlYySo&amp;apos;]&lt;/pre&gt;
+&lt;pre&gt;['https://www.youtube.com/watch?v=8pP8G3fSAcY',
+ 'https://www.youtube.com/watch?v=g6QSwxUo1aw',
+ 'https://www.youtube.com/watch?v=_9FN6CI8fD4',
+ 'https://www.youtube.com/watch?v=5wqwNDpkZOo',
+ 'https://www.youtube.com/watch?v=V865E4mBiHU',
+ 'https://www.youtube.com/watch?v=TPrGNJnMS9U',
+ 'https://www.youtube.com/watch?v=SVTl11hG9Gs',
+ 'https://www.youtube.com/watch?v=Df_dwb5XHQM',
+ 'https://www.youtube.com/watch?v=sptBkyfq1VU',
+ 'https://www.youtube.com/watch?v=tzjz1xrNu3k',
+ 'https://www.youtube.com/watch?v=k-CGbuOo8do',
+ 'https://www.youtube.com/watch?v=_L-B_wHsEec',
+ 'https://www.youtube.com/watch?v=iFOABIQdo9Q',
+ 'https://www.youtube.com/watch?v=WOlRIKGrBWY',
+ 'https://www.youtube.com/watch?v=a-mCgN6W9ek',
+ 'https://www.youtube.com/watch?v=x5vhchv3zAY',
+ 'https://www.youtube.com/watch?v=bi5eK7i59w0',
+ 'https://www.youtube.com/watch?v=VNHV3D_6o4E',
+ 'https://www.youtube.com/watch?v=MWVZ6JDU9V8',
+ 'https://www.youtube.com/watch?v=v-JmdgVZqVc',
+ 'https://www.youtube.com/watch?v=FBFHpdxsyYU',
+ 'https://www.youtube.com/watch?v=WXmTc83l1sQ',
+ 'https://www.youtube.com/watch?v=GfNgds5vS60',
+ 'https://www.youtube.com/watch?v=UHRa34A6rDg',
+ 'https://www.youtube.com/watch?v=xVU-EjnuksU',
+ 'https://www.youtube.com/watch?v=-IXymTZZM6o',
+ 'https://www.youtube.com/watch?v=tzvwDTPyTHQ',
+ 'https://www.youtube.com/watch?v=a19z6EVWpQ4',
+ 'https://www.youtube.com/watch?v=rAOvF8X_nzM',
+ 'https://www.youtube.com/watch?v=wtvl4esdMGU',
+ 'https://www.youtube.com/watch?v=1YPHDDH1Az0',
+ 'https://www.youtube.com/watch?v=w7TnghsrJUo',
+ 'https://www.youtube.com/watch?v=qBT-6HpSrwc',
+ 'https://www.youtube.com/watch?v=JM-xblTxLGc',
+ 'https://www.youtube.com/watch?v=kMymsVsmETY',
+ 'https://www.youtube.com/watch?v=K1-dfiVfbOI',
+ 'https://www.youtube.com/watch?v=VnoiHVlR-So',
+ 'https://www.youtube.com/watch?v=hMTzJyLiXE4',
+ 'https://www.youtube.com/watch?v=VGQPNQ1Bhkg',
+ 'https://www.youtube.com/watch?v=0oR4z7SsY14',
+ 'https://www.youtube.com/watch?v=Cl4r8h_Hlak',
+ 'https://www.youtube.com/watch?v=gJFmek-YgYo',
+ 'https://www.youtube.com/watch?v=9VQ7Ov5W_tM',
+ 'https://www.youtube.com/watch?v=rKwKImVrYu4',
+ 'https://www.youtube.com/watch?v=LJwj9SHC9EU',
+ 'https://www.youtube.com/watch?v=-08OEpFThiw',
+ 'https://www.youtube.com/watch?v=BPJBl5y2P2g',
+ 'https://www.youtube.com/watch?v=MvkXlg9ZbL4',
+ 'https://www.youtube.com/watch?v=7KgIa4fX_Ng',
+ 'https://www.youtube.com/watch?v=upNLrHtzeBI',
+ 'https://www.youtube.com/watch?v=Y-norf1BKAs',
+ 'https://www.youtube.com/watch?v=QMvAl_fxQSA',
+ 'https://www.youtube.com/watch?v=3os_uXUOvcM',
+ 'https://www.youtube.com/watch?v=ZE_aChIEELo',
+ 'https://www.youtube.com/watch?v=iKI-8ceuR-A',
+ 'https://www.youtube.com/watch?v=CASdYLquQII',
+ 'https://www.youtube.com/watch?v=5cvyi1CcpYs',
+ 'https://www.youtube.com/watch?v=NVEw-YIAy5A',
+ 'https://www.youtube.com/watch?v=yMXn04-GQTY',
+ 'https://www.youtube.com/watch?v=RCCzZGcGg5k',
+ 'https://www.youtube.com/watch?v=FqMFKGsXLOE',
+ 'https://www.youtube.com/watch?v=MVOvQb8KBm0',
+ 'https://www.youtube.com/watch?v=ENvWfMwnJ_0',
+ 'https://www.youtube.com/watch?v=bs7xGm293Vs',
+ 'https://www.youtube.com/watch?v=7OvrK-U-axI',
+ 'https://www.youtube.com/watch?v=VHeWqPqs4vo',
+ 'https://www.youtube.com/watch?v=nVOEi9FESn8',
+ 'https://www.youtube.com/watch?v=eikTWAvFwTE',
+ 'https://www.youtube.com/watch?v=BU2amn3QdWk',
+ 'https://www.youtube.com/watch?v=GiB1pOuEvqg',
+ 'https://www.youtube.com/watch?v=GAPN17lTJ9c',
+ 'https://www.youtube.com/watch?v=4Ja1uZbMM8E',
+ 'https://www.youtube.com/watch?v=F1dAfCR4rc0',
+ 'https://www.youtube.com/watch?v=334O9xh-CQY',
+ 'https://www.youtube.com/watch?v=KgNmw3sJ0g8',
+ 'https://www.youtube.com/watch?v=-SQSue4-PLk',
+ 'https://www.youtube.com/watch?v=HPE4PHlYySo']&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -291,7 +291,7 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;link&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -315,7 +315,7 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt; 
@@ -326,8 +326,8 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;convert_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;timestring&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Converts a string into seconds &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;nums&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;r&amp;#39;\d+&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;timestring&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+    &lt;span class="sd"&gt;""" Converts a string into seconds """&lt;/span&gt;
+    &lt;span class="n"&gt;nums&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;r'\d+'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;timestring&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;3600&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;
 
 
@@ -336,20 +336,20 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
         &lt;span class="n"&gt;lines&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readlines&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
     &lt;span class="n"&gt;times_texts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-    &lt;span class="n"&gt;current_times&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;current_text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;current_times&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;current_text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;lines&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;times&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;[0-9]*:[0-9]*:[0-9]*,[0-9]*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;times&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"[0-9]*:[0-9]*:[0-9]*,[0-9]*"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;times&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="p"&gt;[]:&lt;/span&gt;
             &lt;span class="n"&gt;current_times&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;convert_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;times&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
             &lt;span class="n"&gt;times_texts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;current_times&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;current_text&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-            &lt;span class="n"&gt;current_times&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;current_text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+            &lt;span class="n"&gt;current_times&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;current_text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;
         &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;current_times&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="k"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;current_text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;current_text&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="n"&gt;current_text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;current_text&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;" "&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;times_texts&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;find_word&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;times_texts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;=.&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Finds all &amp;#39;exact&amp;#39; (t_start, t_end) for a word &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="sd"&gt;""" Finds all 'exact' (t_start, t_end) for a word """&lt;/span&gt;
     &lt;span class="n"&gt;matches&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
                &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;times_texts&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -363,14 +363,14 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;video&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subclip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;cuts&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_all_subclips_for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;*.mp4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sub_ext&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.es.srt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shuffle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_all_subclips_for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'*.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sub_ext&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'.es.srt'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shuffle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;subclips&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;mp4&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;sub&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;splitext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mp4&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sub_ext&lt;/span&gt;
         &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
             &lt;span class="n"&gt;times&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;find_word&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;get_time_texts&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
         &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;IOError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="c"&gt;# ignore video if it hasn&amp;#39;t subtitle&lt;/span&gt;
+            &lt;span class="c"&gt;# ignore video if it hasn't subtitle&lt;/span&gt;
             &lt;span class="k"&gt;continue&lt;/span&gt;
         &lt;span class="n"&gt;cuts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_subclips&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mp4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;times&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="n"&gt;subclips&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extend&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cuts&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -396,10 +396,10 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="n"&gt;gente&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_all_subclips_for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;la gente&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="n"&gt;gente&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_all_subclips_for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'la gente'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gente&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -437,19 +437,19 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;make_preview&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;subclips_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clip&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;txt_clip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TextClip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;70&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;white&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;txt_clip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;txt_clip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_pos&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;center&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_duration&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;clip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;duration&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;txt_clip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TextClip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;70&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'white'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;txt_clip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;txt_clip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_pos&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'center'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_duration&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;clip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;duration&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="n"&gt;clip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CompositeVideoClip&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;clip&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;txt_clip&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
         &lt;span class="n"&gt;subclips_&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;clip&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-    &lt;span class="n"&gt;final&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;concatenate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;compose&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;final&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write_videofile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;preview.webm&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;codec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;libvpx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fps&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    
+    &lt;span class="n"&gt;final&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;concatenate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'compose'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;final&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write_videofile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'preview.webm'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;codec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'libvpx'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fps&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -459,7 +459,7 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[6]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="n"&gt;make_preview&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gente&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -502,7 +502,7 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="n"&gt;ignore&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;36&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;38&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;41&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;44&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;56&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;61&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;62&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;66&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;73&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;74&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -526,7 +526,7 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
@@ -538,8 +538,8 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;screenpos&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;screensize&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;640&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;360&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;txtClip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TextClip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Yn tragr ab rf obyhqn&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;rot13&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;white&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Amiri-Bold&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kerning&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;cvc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CompositeVideoClip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;txtClip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_pos&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;center&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)],&lt;/span&gt;
+&lt;span class="n"&gt;txtClip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TextClip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'Yn tragr ab rf obyhqn'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'rot13'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'white'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Amiri-Bold"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kerning&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;cvc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CompositeVideoClip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;txtClip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_pos&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'center'&lt;/span&gt;&lt;span class="p"&gt;)],&lt;/span&gt;
                         &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;screensize&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;letters&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;findObjects&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cvc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# a list of ImageClips&lt;/span&gt;
@@ -558,13 +558,13 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="c"&gt;# le damos una mezcladita más&lt;/span&gt;
 &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shuffle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips_cleaned&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;subclips_cleaned&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ending&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;make_final&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips_cleaned&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;massa_lagente_final.webm&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;make_final&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips_cleaned&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'massa_lagente_final.webm'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -598,14 +598,14 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Y este es el resultado:&lt;/p&gt;
-&lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ssXSLUVNz8o" frameborder="0" allowfullscreen&gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ssXSLUVNz8o" frameborder="0" allowfullscreen&gt;&amp;lt;/iframe&amp;gt;&lt;/iframe&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[&amp;nbsp;]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt; 
@@ -618,8 +618,7 @@ Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;&lt;/script&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://mgaitan.github.io/posts/sergio-massa-y-lagente.html</guid><pubDate>Fri, 13 Mar 2015 03:56:43 GMT</pubDate></item><item><title>Las cosas chiquitas que cambian el mundo</title><link>http://mgaitan.github.io/posts/las-cosas-chiquitas.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="note"&gt;
+</description><guid>http://mgaitan.github.io/posts/sergio-massa-y-lagente.html</guid><pubDate>Fri, 13 Mar 2015 03:56:43 GMT</pubDate></item><item><title>Las cosas chiquitas que cambian el mundo</title><link>http://mgaitan.github.io/posts/las-cosas-chiquitas.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="note"&gt;
 &lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
 &lt;p&gt;Tengo dos weblogs. Este es en el que escribo artículos técnicos o que tienen que ver de alguna manera con mi profesión. &lt;a class="reference external" href="http://www.textosypretextos.com.ar"&gt;Textos y pretextos&lt;/a&gt; es igual de personal, pero me sale —me sale cada vez menos, tristemente— de otras tripas, quizás para otro público.&lt;/p&gt;
 &lt;p class="last"&gt;Sin embargo, quiero hacer una excepción con este post, porque probablemente tenga más alcance aquí y es algo que me atraviesa todas las facetas: las ganas de hacer de este que pisamos, un mejor mundo.&lt;/p&gt;
