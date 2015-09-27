@@ -19,15 +19,18 @@ efectivo.
 Primero hice una plantilla en `Inkscape <http://inkscape.org>`_ donde
 entran 6 de estos bonitos en un A4.
 
-.. figure:: local/cache-vignettes/L500xH117/bonito2-ccc74.png
+
+.. figure:: /images/bonito2-ccc74.png
    :align: center
-   :alt: 
-Como el SVG es XML que es TEXTO, la marca XXXX se puede reemplazar
+   :alt:
+
+Como el SVG es XML que es texto, la marca XXXX se puede reemplazar
 fácilmente por el número que corresponda. Yo quería que me quedaran así:
 
-.. figure:: local/cache-vignettes/L400xH436/bonito-8305a.png
+.. figure:: /images/L400xH436/bonito-8305a.png
    :align: center
-   :alt: 
+   :alt:
+
 De esta manera, simplemente tengo que meter 6 broches a la izquierda y
 recortar, ya quedan ordenados para repartir entre los compañeros y
 compañeras.
@@ -46,19 +49,19 @@ Acá el código:
     # -*- coding: utf-8 -*-
     #
     #       bonito.py
-    #       
+    #      
     #       Copyright 2010 Martin Gaitán <gaitan(at)gmail.com>
-    #       
+    #      
     #       This program is free software; you can redistribute it and/or modify
     #       it under the terms of the GNU General Public License as published by
     #       the Free Software Foundation; either version 2 of the License, or
     #       (at your option) any later version.
-    #       
+    #      
     #       This program is distributed in the hope that it will be useful,
     #       but WITHOUT ANY WARRANTY; without even the implied warranty of
     #       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     #       GNU General Public License for more details.
-    #       
+    #      
     #       You should have received a copy of the GNU General Public License
     #       along with this program; if not, write to the Free Software
     #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
