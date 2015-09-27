@@ -27,7 +27,7 @@ entran 6 de estos bonitos en un A4.
 Como el SVG es XML que es texto, la marca XXXX se puede reemplazar
 fácilmente por el número que corresponda. Yo quería que me quedaran así:
 
-.. figure:: /images/L400xH436/bonito-8305a.png
+.. figure:: /images/bonito-8305a.png
    :align: center
    :alt:
 
