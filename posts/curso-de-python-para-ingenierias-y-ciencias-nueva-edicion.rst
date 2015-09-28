@@ -7,22 +7,26 @@
 .. description: curso de python cientifico
 .. type:
 
+.. image:: /images/Newsletter4-Banner_20120705_12-44-50-800.jpg
 
-Está abierta la inscripción para el nuevo dictado del curso de **Introducción a Python para ciencias e ingenierías**, Esta vez será en la
-**Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba (aprobado como curso de extensión - Resolución 1272/2015, "Python como herramienta para la ingeniería") desde el **miércoles 7 de ocubre de 18 a 22hs**, durante 5 semanas.
+Está abierta la inscripción para el nuevo dictado de mi curso de **introducción a Python para ciencias e ingenierías**, Esta vez será en la
+**Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba (aprobado como curso de extensión - [Resolución 1272/2015](http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015), "Python como herramienta para la ingeniería") desde el **miércoles 7 de ocubre de 18 a 22hs**, durante 5 semanas.
 
-La `edición anterior <http://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria.html>`_, realizado como curso de extensión de la Facultad de Matemática, Física y Astronomía desbordó (en un 300%) de inscriptos, así que `no demores en anotarte <http://goo.gl/forms/cQszya0Sdi>`_ porque **los cupos son muy limitados**!
+Este curso una versión mejorada del que [dicté](/posts/python-para-ciencia-e-ingenieria.html) en la Facultad de Matemática, Física y Astronomía en, avalado como curso de extensión ([Resolución HCD 107/2015](http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015)) en mayo pasado.
 
-Se entregarán certificados a quienes completen asistencia y participación.
+
+`no demores en anotarte <http://goo.gl/forms/cQszya0Sdi>`_ porque **los cupos son muy limitados**!
+
+Se entregarán certificados a quienes completen asistencia.
 
 .. TEASER_END
 
 Lo que hay que saber
 ---------------------
 
-:Fecha de inicio: miércoles 7 de septiembre de 2015, 18hs.
+:Fecha de inicio: miércoles 7 de octibre de 2015, 18hs.
 :Lugar: Laboratorio de computación (aula 112), FCEFyN.
-:Duración: 5 clases de 4hs (incluye *coffee break*), todos los miércoles de septiembre
+:Duración: 5 clases de 4hs (incluye *coffee break*), miércoles de 18 a 22hs
 :Docente: Ing. Martín Gaitán
 :Material: https://github.com/mgaitan/curso-python-cientifico
 
@@ -39,14 +43,13 @@ Inscripción
 
 A través de `este formulario <http://goo.gl/forms/cQszya0Sdi>`_
 
-Luego se deberá abonar a través de un depósito o transferencia bancaria a  la siguiente cuenta:
+Luego se deberá abonar a través de un depósito o transferencia bancaria a  la siguiente cuenta::
 
-
-   Titular: UNC - Fac. Cs. Exactas, Físicas y Naturales
-   CBU: 01102132 20021319046022
-   CUIT: 30-54667062-3
-   cuenta Corriente Bco. Nación Argentina - Suc. Córdoba  213-19046/02
-   Sucursal Nro. 1570
+     Titular: UNC - Fac. Cs. Exactas, Físicas y Naturales
+     CBU: 01102132 20021319046022
+     CUIT: 30-54667062-3
+     cuenta Corriente Bco. Nación Argentina - Suc. Córdoba  213-19046/02
+     Sucursal Nro. 1570
 
 Una vez realizado el pago, deben enviarnos el comprobante de pago y documento que acredite el descuento (si aplica)
 a los emails ``escueladecomputacion@efn.uncor.edu`` y ``gaitan@gmail.com``
@@ -78,15 +81,14 @@ Clase 3:
 
 Clase 4:
     Numpy: introducción al objeto Array. Slicing extendido, métodos y funciones importantes, importación de datos.
-    Concepto de vista. Aplicación de Numpy en álgebra lineal. Resolución de sistemas de ecuaciones lineales.
+    Concepto de vista. Máscaras y fancy indexing. Aplicación de Numpy en álgebra lineal. Resolución de sistemas de ecuaciones lineales.
     Matplotlib: generación de gráficos cartesianos continuos, puntos, histogramas.
     Matplotlib avanzado: API orientada a objetos. Manipulación del formato y apariencia.
     Gráficos 3D, otros tipos de gráficos 2D. Exportación con calidad de publicación.
 
 Clase 5:
-    Vectorización de funciones. Scipy: algoritmos optimización, integración, imágenes, ajuste de curvas etc.
-    Sympy, cálculo simbólico de precisión arbitraria con Python. Evaluación numérica de expresiones Sympy con
-    numpy y otras herramientas.
+    Vectorización de funciones. Scipy: algoritmos optimización, integración, procesamiento de imágenes, ajuste de curvas etc.
+    Sympy, cálculo simbólico de precisión arbitraria con Python. Evaluación numérica de expresiones Sympy con Numpy y otras herramientas de alta performance
 
 
 
