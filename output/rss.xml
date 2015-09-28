@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>tin_nqn</title><link>http://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="http://mgaitan.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Mon, 28 Sep 2015 14:36:52 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Curso de Python para ciencias e ingeniería, nueva edición</title><link>http://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/Newsletter4-Banner_20120705_12-44-50-800.jpg" src="http://mgaitan.github.io/images/Newsletter4-Banner_20120705_12-44-50-800.jpg"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link type="application/rss+xml" rel="self" href="http://mgaitan.github.io/rss.xml"></atom:link><language>es</language><lastBuildDate>Mon, 28 Sep 2015 14:41:09 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Curso de Python para ciencias e ingeniería, nueva edición</title><link>http://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/Newsletter4-Banner_20120705_12-44-50-800.jpg" src="http://mgaitan.github.io/images/Newsletter4-Banner_20120705_12-44-50-800.jpg"&gt;
 &lt;p&gt;Está abierta la inscripción para el nuevo dictado de mi curso de &lt;strong&gt;introducción a Python para ciencias e ingenierías&lt;/strong&gt;, Esta vez será en la
-&lt;strong&gt;Facultad de Ciencias Exáctas, Físicas y Naturales&lt;/strong&gt; de la Universidad Nacional de Córdoba (aprobado como curso de extensión - [Resolución 1272/2015](&lt;a class="reference external" href="http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015"&gt;http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015&lt;/a&gt;), "Python como herramienta para la ingeniería") desde el &lt;strong&gt;miércoles 7 de ocubre de 18 a 22hs&lt;/strong&gt;, durante 5 semanas.&lt;/p&gt;
-&lt;p&gt;Este curso una versión mejorada del que [dicté](/posts/python-para-ciencia-e-ingenieria.html) en la Facultad de Matemática, Física y Astronomía en, avalado como curso de extensión ([Resolución HCD 107/2015](&lt;a class="reference external" href="http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015"&gt;http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015&lt;/a&gt;)) en mayo pasado.&lt;/p&gt;
+&lt;strong&gt;Facultad de Ciencias Exáctas, Físicas y Naturales&lt;/strong&gt; de la Universidad Nacional de Córdoba (aprobado como curso de extensión - &lt;a href="http://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion.html#id1"&gt;&lt;span class="problematic" id="id2"&gt;`Resolución 1272/2015 &amp;lt;http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015`_&lt;/span&gt;&lt;/a&gt;, "Python como herramienta para la ingeniería") desde el &lt;strong&gt;miércoles 7 de ocubre de 18 a 22hs&lt;/strong&gt;, durante 5 semanas.&lt;/p&gt;
+&lt;p&gt;Este curso una versión mejorada del que [dicté](/posts/python-para-ciencia-e-ingenieria.html) en la Facultad de Matemática, Física y Astronomía en, avalado como curso de extensión (&lt;a class="reference external" href="http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015"&gt;Resolución HCD 107/2015&lt;/a&gt;) en mayo pasado.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://goo.gl/forms/cQszya0Sdi"&gt;no demores en anotarte&lt;/a&gt; porque &lt;strong&gt;los cupos son muy limitados&lt;/strong&gt;!&lt;/p&gt;
 &lt;p&gt;Se entregarán certificados a quienes completen asistencia.&lt;/p&gt;
 &lt;!-- TEASER_END --&gt;
@@ -36,7 +36,7 @@
 &lt;/div&gt;
 &lt;div class="section" id="inscripcion"&gt;
 &lt;h2&gt;Inscripción&lt;/h2&gt;
-&lt;p&gt;A través de &lt;a class="reference external" href="http://goo.gl/forms/cQszya0Sdi"&gt;este formulario&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Deberá completar &lt;a class="reference external" href="http://goo.gl/forms/cQszya0Sdi"&gt;este formulario&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Luego se deberá abonar a través de un depósito o transferencia bancaria a  la siguiente cuenta:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 Titular: UNC - Fac. Cs. Exactas, Físicas y Naturales
@@ -53,6 +53,11 @@ a los emails &lt;tt class="docutils literal"&gt;escueladecomputacion@efn.uncor.e
 &lt;p&gt;En las últimas décadas la computación se ha convertido en un pilar de la ingeniería y el desarrollo científico-tecnológico. En la mayoría de las áreas, el trabajo computacional es un complemento fundamental de la experimentación tradicional y de la teoría, ya que cada vez más se involucra simulaciones numéricas y modelado computacional.
 Frecuentemente, la tarea de los profesionales involucra el uso de aplicaciones específicas que requieren un gran trabajo de procesamiento de los datos de entrada y un post-procesamiento de los resultados utilizando otras herramientas.&lt;/p&gt;
 &lt;p&gt;Este curso brindará una introducción al poderoso lenguaje de programación Python (&lt;a class="reference external" href="http://python.org"&gt;http://python.org&lt;/a&gt;) y a las herramientas fundamentales del &lt;em&gt;"ecosistema científico"&lt;/em&gt; (IPython, Numpy, Matplotlib, Scipy) que conforman un entorno de programación interactivo de vanguardia, simple, libre, gratuito y multiplataforma.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sobre-el-docente"&gt;
+&lt;h2&gt;Sobre el docente&lt;/h2&gt;
+&lt;p&gt;Martín Gaitán es Ingeniero en Computación por la Universidad Nacional de Córdoba (2011). Socio fundador de Phasety, emprendimiento incubado en la UNC entre 2012 y 2015, donde desarrolló software de simulación especializado para la industria del petróleo y el gas. Pythonista desde hace una década, es especialista en el framework web Django y cree entender las necesidades del software científico. Es frecuente orador en eventos de software libre.&lt;/p&gt;
+&lt;p&gt;Más información en su &lt;a class="reference external" href="http://mgaitan.github.io/"&gt;blog&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="programa"&gt;
 &lt;h2&gt;Programa&lt;/h2&gt;
@@ -78,6 +83,12 @@ Gráficos 3D, otros tipos de gráficos 2D. Exportación con calidad de publicaci
 &lt;dd&gt;Vectorización de funciones. Scipy: algoritmos optimización, integración, procesamiento de imágenes, ajuste de curvas etc.
 Sympy, cálculo simbólico de precisión arbitraria con Python. Evaluación numérica de expresiones Sympy con Numpy y otras herramientas de alta performance&lt;/dd&gt;
 &lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="system-messages section"&gt;
+&lt;h2&gt;Docutils System Messages&lt;/h2&gt;
+&lt;div class="system-message" id="id1"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 3); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion.html#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Unknown target name: "resolución 1272/2015 &amp;lt;http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015".&lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</description><guid>http://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion.html</guid><pubDate>Wed, 19 Aug 2015 20:50:09 GMT</pubDate></item><item><title>Curso de Python para ñoños</title><link>http://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p class="alert alert-success"&gt;&lt;strong&gt;¡Los cupos irán a sorteo!&lt;/strong&gt; Anotate. Si no entrás para en esta edición, quedás anotado para la próxima que será muy pronto.&lt;/p&gt;
 &lt;p&gt;La demanda nos desbordó. En menos de 2 dias tenemos inscriptos para llenar dos veces el laboratorio que tenemos disponible! Algunos ya están averiguando la disponibilidad del Estadio Kempes para hacer el próximo.&lt;/p&gt;
 &lt;p&gt;Como recién hoy (martes 7 de abril) se realizó la difusión oficial desde FaMAF, la decisión
