@@ -10,9 +10,9 @@
 .. image:: /images/Newsletter4-Banner_20120705_12-44-50-800.jpg
 
 Está abierta la inscripción para el nuevo dictado de mi curso de **introducción a Python para ciencias e ingenierías**, Esta vez será en la
-**Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba (aprobado como curso de extensión - [Resolución 1272/2015](http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015), "Python como herramienta para la ingeniería") desde el **miércoles 7 de ocubre de 18 a 22hs**, durante 5 semanas.
+**Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba (aprobado como curso de extensión - `Resolución 1272/2015 <http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015`_, "Python como herramienta para la ingeniería") desde el **miércoles 7 de ocubre de 18 a 22hs**, durante 5 semanas.
 
-Este curso una versión mejorada del que [dicté](/posts/python-para-ciencia-e-ingenieria.html) en la Facultad de Matemática, Física y Astronomía en, avalado como curso de extensión ([Resolución HCD 107/2015](http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015)) en mayo pasado.
+Este curso una versión mejorada del que [dicté](/posts/python-para-ciencia-e-ingenieria.html) en la Facultad de Matemática, Física y Astronomía en, avalado como curso de extensión (`Resolución HCD 107/2015 <http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015>`_) en mayo pasado.
 
 
 `no demores en anotarte <http://goo.gl/forms/cQszya0Sdi>`_ porque **los cupos son muy limitados**!
@@ -41,7 +41,7 @@ Aranceles
 Inscripción
 ----------------
 
-A través de `este formulario <http://goo.gl/forms/cQszya0Sdi>`_
+Deberá completar `este formulario <http://goo.gl/forms/cQszya0Sdi>`_
 
 Luego se deberá abonar a través de un depósito o transferencia bancaria a  la siguiente cuenta::
 
@@ -61,6 +61,14 @@ En las últimas décadas la computación se ha convertido en un pilar de la inge
 Frecuentemente, la tarea de los profesionales involucra el uso de aplicaciones específicas que requieren un gran trabajo de procesamiento de los datos de entrada y un post-procesamiento de los resultados utilizando otras herramientas.
 
 Este curso brindará una introducción al poderoso lenguaje de programación Python (http://python.org) y a las herramientas fundamentales del *"ecosistema científico"* (IPython, Numpy, Matplotlib, Scipy) que conforman un entorno de programación interactivo de vanguardia, simple, libre, gratuito y multiplataforma.
+
+Sobre el docente
+----------------
+
+Martín Gaitán es Ingeniero en Computación por la Universidad Nacional de Córdoba (2011). Socio fundador de Phasety, emprendimiento incubado en la UNC entre 2012 y 2015, donde desarrolló software de simulación especializado para la industria del petróleo y el gas. Pythonista desde hace una década, es especialista en el framework web Django y cree entender las necesidades del software científico. Es frecuente orador en eventos de software libre.
+
+Más información en su `blog <http://mgaitan.github.io/>`_
+
 
 Programa
 ---------
