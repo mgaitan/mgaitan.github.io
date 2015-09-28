@@ -9,7 +9,10 @@
 
 .. image:: /images/Newsletter4-Banner_20120705_12-44-50-800.jpg
 
-Está abierta la inscripción para el nuevo dictado de mi curso de **introducción a Python para ciencias e ingenierías**, en la **Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba (aprobado como curso de extensión - `Resolución 1272/2015 <http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015>`_, bajo el nombre "Python como herramienta para la ingeniería") desde el **miércoles 7 de ocubre de 18 a 22hs**, durante 5 semanas.
+
+
+
+Está abierta la inscripción para el nuevo dictado de mi curso de **introducción a Python para ciencias e ingenierías**, en la **Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba (aprobado como curso de extensión - `Resolución 1272/2015 <http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015>`_, bajo el nombre "Python como herramienta para la ingeniería") desde el **miércoles 14 de ocubre de 18 a 22hs**,  durante 5 semanas.
 
 Este curso una versión mejorada del que `dicté </posts/python-para-ciencia-e-ingenieria.html>`_ en la Facultad de Matemática, Física y Astronomía en mayo pasado, avalado como curso de extensión (`Resolución HCD 107/2015 <http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015>`_)
 
@@ -22,7 +25,7 @@ Se entregarán certificados a quienes completen asistencia.
 Lo que hay que saber
 ---------------------
 
-:Fecha de inicio: miércoles 7 de octibre de 2015, 18hs.
+:Fecha de inicio: miércoles 14 de octibre de 2015, 18hs.
 :Lugar: Laboratorio de computación (aula 112), FCEFyN.
 :Duración: 5 clases de 4hs (incluye *coffee break*), miércoles de 18 a 22hs
 :Docente: Ing. Martín Gaitán
