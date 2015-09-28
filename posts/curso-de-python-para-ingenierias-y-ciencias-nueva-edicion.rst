@@ -9,13 +9,11 @@
 
 .. image:: /images/Newsletter4-Banner_20120705_12-44-50-800.jpg
 
-Está abierta la inscripción para el nuevo dictado de mi curso de **introducción a Python para ciencias e ingenierías**, Esta vez será en la
-**Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba (aprobado como curso de extensión - `Resolución 1272/2015 <http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015>`_, "Python como herramienta para la ingeniería") desde el **miércoles 7 de ocubre de 18 a 22hs**, durante 5 semanas.
+Está abierta la inscripción para el nuevo dictado de mi curso de **introducción a Python para ciencias e ingenierías**, en la **Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba (aprobado como curso de extensión - `Resolución 1272/2015 <http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015>`_, bajo el nombre "Python como herramienta para la ingeniería") desde el **miércoles 7 de ocubre de 18 a 22hs**, durante 5 semanas.
 
-Este curso una versión mejorada del que [dicté](/posts/python-para-ciencia-e-ingenieria.html) en la Facultad de Matemática, Física y Astronomía en, avalado como curso de extensión (`Resolución HCD 107/2015 <http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015>`_) en mayo pasado.
+Este curso una versión mejorada del que [dicté](/posts/python-para-ciencia-e-ingenieria.html) en la Facultad de Matemática, Física y Astronomía en mayo pasado, avalado como curso de extensión (`Resolución HCD 107/2015 <http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015>`_)
 
-
-`no demores en anotarte <http://goo.gl/forms/cQszya0Sdi>`_ porque **los cupos son muy limitados**!
+El precio está absolutamente subsidiado por las ganas de que más ingenieros e investigadores programen Python. No te demores en `anotarte <http://goo.gl/forms/cQszya0Sdi>`_ , **los cupos son muy limitados**!
 
 Se entregarán certificados a quienes completen asistencia.
 
