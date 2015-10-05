@@ -9,8 +9,7 @@
 
 .. image:: /images/Newsletter4-Banner_20120705_12-44-50-800.jpg
 
-
-
+.. attention:: ¿Estás interesado en que dicte este curso, de manera intensiva, en tu laboratorio o empresa? `Contactame <http://mgaitan.github.io/about.html#contacto>`_.
 
 Está abierta la inscripción para el nuevo dictado de mi curso de **introducción a Python para ciencias e ingenierías**, en la **Facultad de Ciencias Exáctas, Físicas y Naturales** de la Universidad Nacional de Córdoba (aprobado como curso de extensión - `Resolución 1272/2015 <http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015>`_, bajo el nombre "Python como herramienta para la ingeniería") desde el **miércoles 14 de ocubre de 18 a 22hs**,  durante 5 semanas.
 
