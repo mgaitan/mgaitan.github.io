@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>tin_nqn (pandas)</title><link>http://mgaitan.github.io/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://mgaitan.github.io/categories/pandas.xml"></atom:link><language>es</language><lastBuildDate>Tue, 13 Oct 2015 23:23:20 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>El padronazo cordobés</title><link>http://mgaitan.github.io/posts/el-padronazo-cordobes.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (pandas)</title><link>http://mgaitan.github.io/</link><description></description><atom:link href="http://mgaitan.github.io/categories/pandas.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Tue, 13 Oct 2015 23:35:32 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>El padronazo cordobés</title><link>http://mgaitan.github.io/posts/el-padronazo-cordobes.html</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -226,7 +226,7 @@ Name: 328532, dtype: object&lt;/pre&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;El &lt;a href="https://github.com/OpenDataCordoba/elecciones2015/tree/master/nombres"&gt;padrón que conseguimos&lt;/a&gt;  es el que la Justicia Electoral provee a los partidos políticos para sus tareas de fiscalización. En particular el de la provincia de Córdoba tiene &lt;strong&gt;2.78 millones de votantes habilitados&lt;/strong&gt; de los cuales el &lt;strong&gt;51.4% son mujeres&lt;/strong&gt;. El más viejo es Don Miguel Bastus, de 105 años.&lt;/p&gt;
-&lt;h4 id="Normalizando-y-separando-nombres"&gt;Normalizando y separando nombres&lt;a class="anchor-link" href="http://mgaitan.github.io/posts/el-padronazo-cordobes.html#Normalizando-y-separando-nombres"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Si bien el dataset del padrón incluye mucha información como circuito de cada votante y por supuesto el DNI y otros datos sensibles que por cuestiones de protección de la privacidad nunca publicaríamos, en particular me interesaba desagregar los nombres, que vienen en una sola columna, en dos o más y normalizarlos a un formato común (cada nombre o apellido comienza con mayúscula)&lt;/p&gt;
+&lt;p&gt;Si bien el dataset del padrón incluye mucha información como circuito de cada votante y por supuesto el DNI y otros datos sensibles que por cuestiones de protección de la privacidad nunca publicaríamos, en particular me interesaba desagregar los nombres, que vienen en una sola columna, en dos o más y normalizarlos a un formato común (cada nombre o apellido comienza con mayúscula)&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -412,7 +412,7 @@ Name: 328532, dtype: object&lt;/pre&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Ya tenemos el dataset como queríamos, podemos sacar algunas cuentas y, mejor, hacer algunos graficos!&lt;/p&gt;
-&lt;h5 id="Los-20-apellidos-más-comunes-en-Córdoba"&gt;Los 20 apellidos más comunes en Córdoba&lt;a class="anchor-link" href="http://mgaitan.github.io/posts/el-padronazo-cordobes.html#Los-20-apellidos-m%C3%A1s-comunes-en-C%C3%B3rdoba"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Vemos que contra todo pronóstico, los Pérez apenas entran en el top 10 de apellidos más comunes y el 1.3% del padrón son los González! Quizás signifique el hallazgo de un nuevo &lt;em&gt;focus group&lt;/em&gt; para campañas políticas.&lt;/p&gt;
+&lt;h4 id="Los-20-apellidos-más-comunes-en-Córdoba"&gt;Los 20 apellidos más comunes en Córdoba&lt;a class="anchor-link" href="http://mgaitan.github.io/posts/el-padronazo-cordobes.html#Los-20-apellidos-m%C3%A1s-comunes-en-C%C3%B3rdoba"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Vemos que contra todo pronóstico, los Pérez apenas entran en el top 10 de apellidos más comunes y el 1.3% del padrón son los González! Quizás signifique el hallazgo de un nuevo &lt;em&gt;focus group&lt;/em&gt; para campañas políticas.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -648,7 +648,7 @@ Name: 328532, dtype: object&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Nombres,-muchos-nombres"&gt;Nombres, muchos nombres&lt;a class="anchor-link" href="http://mgaitan.github.io/posts/el-padronazo-cordobes.html#Nombres,-muchos-nombres"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Parece que lo más común es que los cordobeses tengan 2 nombres, pero esa tendencia se empezó a modificar en los '80 donde la cantidad de gente con 1 sólo nombre creció.&lt;/p&gt;
+&lt;h4 id="Cuestión-de-cantidad"&gt;Cuestión de cantidad&lt;a class="anchor-link" href="http://mgaitan.github.io/posts/el-padronazo-cordobes.html#Cuesti%C3%B3n-de-cantidad"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Parece que lo más común es que los cordobeses tengan 2 nombres, pero esa tendencia se empezó a modificar en los '80 donde la cantidad de gente con 1 sólo nombre creció.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -691,6 +691,7 @@ Name: 328532, dtype: object&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;De cualquier manera, no importa mucho cuantos nombres tengas: a todos se les dice "Chichí" y "Guaso".&lt;/p&gt;
 &lt;h4 id="El-nombre-más-típico-de-la-clase"&gt;El nombre más típico de la clase&lt;a class="anchor-link" href="http://mgaitan.github.io/posts/el-padronazo-cordobes.html#El-nombre-m%C3%A1s-t%C3%ADpico-de-la-clase"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Si agrupásemos a todos hombres y mujeres del padrón según su edad, ¿cuál sería el nombre y apellido más probable para cada grupo?&lt;/p&gt;
 &lt;p&gt;Considerando que sólo se incluye a las personas vivas, sería una exageración decir que es el nombre más típico de ese año, pero es un indicio.&lt;/p&gt;
 &lt;p&gt;El siguiente algoritmo busca el primer nombre, segundo nombre y apellido más probable para hombres y mujeres nacidos en cada año. Si conocen a alguien que se llame exáctamente así nacido en ese año, pueden contarle que es tiene el nombre más protípico de su clase: ¡qué originalidad!&lt;/p&gt;
@@ -2133,7 +2134,7 @@ Name: 328532, dtype: object&lt;/pre&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;En Córdoba somos 4 veces más los Gaitán, aunque si la muestra fuese mi familia y la de mi esposa, sería casi al reves: ¡son 9 hermanos!&lt;/p&gt;
-&lt;h3 id="¡Hacé-tu-comparación!"&gt;¡Hacé tu comparación!&lt;a class="anchor-link" href="http://mgaitan.github.io/posts/el-padronazo-cordobes.html#%C2%A1Hac%C3%A9-tu-comparaci%C3%B3n!"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;¿Te interesa saber cuanta gente se llama como vos? Hicimos una pequeñisima aplicación web (de &lt;a href="https://github.com/mgaitan/nombres_cba"&gt;código libre&lt;/a&gt; que permite consultar la misma base de datos del padrón de córdoba y generar gráficos similares a los últimos para los nombres y apellidos que vos elijas. Se probar acá &lt;a href="http://lab.opendatacordoba.org"&gt;http://lab.opendatacordoba.org&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="¡Hacé-tu-propia-comparación!"&gt;¡Hacé tu propia comparación!&lt;a class="anchor-link" href="http://mgaitan.github.io/posts/el-padronazo-cordobes.html#%C2%A1Hac%C3%A9-tu-propia-comparaci%C3%B3n!"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;¿Te interesa saber cuanta gente se llama como vos? Hicimos una pequeñisima aplicación web (de &lt;a href="https://github.com/mgaitan/nombres_cba"&gt;código libre&lt;/a&gt; que permite consultar la misma base de datos del padrón de córdoba y generar gráficos similares a los últimos &lt;strong&gt;para los nombres y apellidos que vos elijas&lt;/strong&gt;. Se puede probar acá &lt;a href="http://lab.opendatacordoba.org"&gt;http://lab.opendatacordoba.org&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2150,6 +2151,19 @@ Name: 328532, dtype: object&lt;/pre&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
