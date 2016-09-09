@@ -433,7 +433,7 @@ INDEX_TEASERS = True
 # 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)
 INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
 # 'Read more...' for the RSS_FEED, if RSS_TEASERS is True (translatable)
-RSS_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
+FEED_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
@@ -607,7 +607,9 @@ COPY_SOURCES = False
 # RSS_LINK = None
 
 # Show only teasers in the RSS feed? Default to True
-RSS_TEASERS = False
+FEED_TEASERS = False
+
+WRITE_TAG_CLOUD = False
 
 # Strip HTML in the RSS feed? Default to False
 # RSS_PLAIN = False
