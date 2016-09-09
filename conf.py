@@ -296,6 +296,10 @@ DEPLOY_COMMANDS = {
              'git push', 'nikola deploy']
 }
 
+GITHUB_SOURCE_BRANCH = 'writing'
+GITHUB_DEPLOY_BRANCH = 'master'
+
+
 # For user.github.io/organization.github.io pages, the DEPLOY branch
 # MUST be 'master', and 'gh-pages' for other repositories.
 # GITHUB_SOURCE_BRANCH = 'master'
