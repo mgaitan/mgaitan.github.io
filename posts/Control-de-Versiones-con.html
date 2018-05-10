@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Control de Versiones con Subversion | tin_nqn  </title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../en/rss.xml">
+<link rel="canonical" href="http://mgaitan.github.io/posts/Control-de-Versiones-con.html">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Control de Versiones con Subversion">
+<meta property="og:url" content="http://mgaitan.github.io/posts/Control-de-Versiones-con.html">
+<meta property="og:description" content='Xab, compañero de la lista
+Spip-es me propone
+un trato:
+
+Abro una cuenta con magoya en picasa y testeo el
+plugin, y a
+cambio vos "hacés (o recomendás)" un how-to subversion aplicado a
+Spip
+Como tenía '>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2009-02-14T11:23:41-02:00">
+<meta property="article:tag" content="Software Libre">
+<meta property="article:tag" content="spip">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+</head>
+<body>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-static-top" role="navigation"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://mgaitan.github.io/">
+
+                <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+                </div>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../about.html">Sobre mí</a>
+                </li>
+<li>
+<a href="../charlas.html">Charlas</a>
+                </li>
+<li>
+<a href="../archive.html">Archivos</a>
+                </li>
+<li>
+<a href="../categories/index.html">Categorías</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>            </li>
+<li><a href="../en/index.html" rel="alternate" hreflang="en">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+
+            <div class="col-md-offset-2 col-md-8">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Control de Versiones con Subversion</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2009-02-14T11:23:41-02:00" itemprop="datePublished" title="Fecha de publicación: 14/02/09 11:23:41">14/02/09 11:23:41</time></a></p>
+                <p class="commentline">            <a href="Control-de-Versiones-con.html#disqus_thread" data-disqus-identifier="cache/posts/Control-de-Versiones-con.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Xab, compañero de la lista
+<a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es">Spip-es</a> me propone
+un trato:</p>
+<blockquote>
+Abro una cuenta con magoya en picasa y testeo el
+<a class="reference external" href="spicasa-adjunta-fotos-de-picasa-a">plugin</a>, y a
+cambio vos "hacés (o recomendás)" un how-to subversion aplicado a
+Spip</blockquote>
+<p>Como tenía unos materiales de una charla que dí en la facu, lo comparto
+con el pueblo spipero.</p>
+<div class="section" id="subversion-un-software-de-control-de-versiones">
+<h2>Subversion, un software de control de versiones</h2>
+<p><a class="reference external" href="http://subversion.tigris.org/">Subversion</a> es el software de control
+de versiones más popular de la actualidad. Es robusto, fácil de usar,
+multiplataforma, libre y gratuito.</p>
+<p>Aquí las diapositivas (un tanto frías sin nuestra explicación) que
+presentamos.</p>
+<p>La pregunta del novato: <strong>¿Para qué sirve?</strong>. Bueno, para llevar total
+control del desarrollo de un software (u otros contenidos). Muchos lo
+hemos hecho manualmente:</p>
+<p>— Bueno, hasta aqui funciona. Hago una carpeta nueva, copio los
+archivos, y sigo.</p>
+<p>Así, al cabo de una semana de trabajo, tenemos 10 carpetas con versiones
+distintas, archivos repetidos, y no sabemos realmente cual es la version
+en curso. Más complicado aun, si se trabaja desde distintos equipos (por
+ejemplo, la notebook y la PC de escritorio).</p>
+<p>Pero además, sumemos la complicación de trabajar con colegas.</p>
+<p>— Ey, Martín, acá te mando la última versión del esqueleto de portada.
+— ¡Pero cómo! si te avisé que había modificado la portada completamente!</p>
+<p>Trabajar en equipo es casi inviable a la vieja usanza. Imaginen
+proyectos de software grandes, como SPIP. Imposible. Hace falta ayuda:
+Subversion.</p>
+</div>
+<div class="section" id="como-funciona">
+<h2>¿Cómo funciona?</h2>
+<p>Es una aplicación cliente-servidor. El cliente se instala en nuestra/s
+computadoras y el servidor está, generalmente, online. A este servidor
+online se le denomina <strong>repositorio</strong>. A la copia local de los archivos,
+<strong>copia de trabajo</strong>. A cada cambio que el repositorio recibe se le
+llama <strong>revisión</strong>.</p>
+<ul class="simple">
+<li>Para Windows, el mejor cliente es
+<a class="reference external" href="http://tortoisesvn.tigris.org/">TortoiseSVN</a>
+</li>
+<li>Para GNU/Linux, basta <tt class="docutils literal">subversion</tt>, la versión para línea de
+comandos, o <strong>RapidSVN</strong>, una versión gráfica para entornos GTK.</li>
+</ul>
+<p>El proceso de trabajo es más o menos así:</p>
+<ul class="simple">
+<li>Si no existe en el repositorio nuestro código, hacemos un
+<tt class="docutils literal">import</tt> (enviar por primera vez nuestro código al repositorio.</li>
+<li>Para empezar a trabajar, necesitamos hace un <tt class="docutils literal">checkout</tt>, es
+decir, decirle a Subversion que convierta nuestra carpeta de código (o
+la cree si no existe) en copia de trabajo.</li>
+<li>Ya preparados, el trabajo cotidiano: lo comandos más frecuentes
+son tres. <tt class="docutils literal">update</tt>, para actualizar la copia local con las ultimas
+revisiones; <tt class="docutils literal">commit</tt> para enviar nuestras modificaciones locales al
+repositorio y crear una nueva revisión y <tt class="docutils literal">add</tt> para agregar un archivo
+que hemos creado, y aun no existe en el repositorio.</li>
+</ul>
+</div>
+<div class="section" id="un-ejemplo-con-spip-zone">
+<h2>Un ejemplo con SPIP-Zone</h2>
+<p><a class="reference external" href="http://zone.spip.org">Spip-zone</a> tiene un servidor subversion
+(asociado al software <a class="reference external" href="http://trac.edgewall.org/">Trac</a> que es un
+gestor integral de proyectos de software) donde se puede alojar
+cualquier contenido libre que tenga que ver con SPIP. Es abierto para
+lectura (podés hacer checkouts y updates anonimamente) pero necesitás
+ser usuario para hacer commits. Podés pedirle un user y pass a
+<a class="reference external" href="mailto:fil@nospam--.rezo.net">Fil</a>.</p>
+<div class="section" id="paso-0">
+<h3>Paso 0</h3>
+<p>Suponiendo que sos usuario con clave y password y querés compartir el
+desarrollo de tus squeletos, los <em>squelettes_maslindos</em> que están en la
+carpeta squelettes local (por poner un ejemplo).</p>
+<p>La dirección del repositorio, arbitraria pero recomendada,
+sería <tt class="docutils literal"><span class="pre">svn://zone.spip.org/spip-zone/_squelettes_/maslindos</span></tt></p>
+<p>Desde <strong>Tortoise</strong>, con el boton derecho sobre la carpeta de esqueletos,
+le damos a la opción <tt class="docutils literal">Import</tt> y ponemos la dire del repo donde la
+pide.</p>
+<p>Desde línea de comandos sería</p>
+<pre class="literal-block">
+$ svn import ./squelettes  svn://zone.spip.org/spip-zone/_squelettes_/maslindos -m "importacion de los squeletos más lindos"
+</pre>
+<p>Si la importación salió bien, debería poder ver tus archivos en la
+dirección <a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos">http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos</a></p>
+</div>
+<div class="section" id="paso-1">
+<h3>Paso 1</h3>
+<p>Este es el paso inicial para aquellos que quieren probar algo
+que está en el repositorio, pero sin intenciones de enviar
+modificaciones (sólo lectura). Tambien deben hacerlo aquellos que sí lo
+van a hacer, porque la importación no implica que se haya creado una
+copia de trabajo.</p>
+<p>Así que hay que hacer el <strong>checkout</strong>. Si hiciste el paso anterior, para
+evitar complicaciones, lo mejor es borrar la carpeta que importaste.</p>
+<p>Entonces sí, sobre la carpeta raiz (donde queremos que se cree la otra),
+hacemo checkout a la dire del repo, definiendo que la copia local será
+<tt class="docutils literal">./squelettes</tt> (si no, nos creará una que se llamará <em>maslindos</em>)</p>
+<p>La dire del repo es la siempre:</p>
+<pre class="literal-block">
+svn://zone.spip.org/spip-zone/_squelettes_/maslindos
+</pre>
+<p>Por línea de comandos sería así:</p>
+<pre class="literal-block">
+$ svn checkout svn://zone.spip.org/spip-zone/_squelettes_/maslindos ./squelettes
+</pre>
+</div>
+<div class="section" id="pasos-2-y-3">
+<h3>Pasos 2 y 3</h3>
+<p>Listo, tenemos nuetra copia de trabajo. Cada vez que queramos actualizar
+a la ultima versión, parados sobre la carpeta, hacemos <strong>update</strong></p>
+<pre class="literal-block">
+$ svn  update
+</pre>
+<p>Si somos desarrolladores, y queremos enviar nuestras modificaciones, hay
+que hacer <strong>commit</strong></p>
+<pre class="literal-block">
+$ svn  update
+</pre>
+<p>En caso de agregar archivos, hay que indicarselo a Subversion.</p>
+<pre class="literal-block">
+$ svn  add archivo1 archivo2 *jpg
+</pre>
+</div>
+</div>
+<div class="section" id="un-video-vale-mas-que-mil-palabras">
+<h2>Un video vale más que mil palabras</h2>
+<p>Un ejemplo de flujo de trabajo por línea de comandos</p>
+<div class="youtube-video">
+<iframe width="425" height="344" src="https://www.youtube.com/embed/P0XIj1w21YU?rel=0&amp;hd=1&amp;wmode=transparent"></iframe>
+</div>
+<p>Y otro ejemplo usando una interfaz gráfica.</p>
+<div class="youtube-video">
+<iframe width="425" height="344" src="https://www.youtube.com/embed/U3qVh9F6fv0?rel=0&amp;hd=1&amp;wmode=transparent"></iframe>
+</div>
+</div>
+</div>
+    </div>
+
+
+
+   <hr>
+<div class="ps">
+            <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+    <p>El código de este artículo está disponible en  <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/Control-de-Versiones-con.rst" id="sourcelink">github</a>. ¿Encontraste un error? Por favor,  <a href="https://github.com/mgaitan/mgaitan.github.com/edit/writing/posts/Control-de-Versiones-con.rst" id="sourcelink">enviame un pull request</a>.</p>
+    </div>
+
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/software-libre.html" rel="tag">Software Libre</a></li>
+            <li><a class="tag p-category" href="../categories/spip.html" rel="tag">spip</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="spicasa-adjunta-fotos-de-picasa-a.html" rel="prev" title="Spicasa: adjuntá fotos de picasa a un artículo">Post anterior</a>
+            </li>
+            <li class="next">
+                <a href="basta-de-ie6.html" rel="next" title="¡Basta de IE6!">Siguiente post</a>
+            </li>
+        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="http://mgaitan.github.io/posts/Control-de-Versiones-con.html",
+        disqus_title="Control de Versiones con Subversion",
+        disqus_identifier="cache/posts/Control-de-Versiones-con.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer>
+                Contents © 2016         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+                
+            </footer>
+</div>
+        </div>
+        <!--End of body content-->
+
+
+    </div>
+</div>
+
+            <script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/jquery.colorbox-min.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

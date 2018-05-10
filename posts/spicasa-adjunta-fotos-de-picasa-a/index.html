@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Spicasa: adjuntá fotos de picasa a un artículo | tin_nqn  </title>
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
+<link rel="canonical" href="http://mgaitan.github.io/posts/spicasa-adjunta-fotos-de-picasa-a/">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Spicasa: adjuntá fotos de picasa a un artículo">
+<meta property="og:url" content="http://mgaitan.github.io/posts/spicasa-adjunta-fotos-de-picasa-a/">
+<meta property="og:description" content="Con un poco de coca-cola en la sangre, retomé esta madrugada un
+proyectito que tenía: adjuntar fotos de un album de
+Picasa a un artículo.
+El caso de uso, basado en mi propia necesidad, es el siguiente">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2009-02-12T01:48:46-02:00">
+<meta property="article:tag" content="spip">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+</head>
+<body>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-static-top" role="navigation"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://mgaitan.github.io/">
+
+                <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+                </div>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../about.html">Sobre mí</a>
+                </li>
+<li>
+<a href="../../charlas.html">Charlas</a>
+                </li>
+<li>
+<a href="../../archive.html">Archivos</a>
+                </li>
+<li>
+<a href="../../categories/index.html">Categorías</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>            </li>
+<li><a href="../../en/" rel="alternate" hreflang="en">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+
+            <div class="col-md-offset-2 col-md-8">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Spicasa: adjuntá fotos de picasa a un artículo</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2009-02-12T01:48:46-02:00" itemprop="datePublished" title="Fecha de publicación: 12/02/09 01:48:46">12/02/09 01:48:46</time></a></p>
+                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/spicasa-adjunta-fotos-de-picasa-a.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Con un poco de coca-cola en la sangre, retomé esta madrugada un
+proyectito que tenía: adjuntar fotos de un album de
+<a class="reference external" href="http://picasaweb.google.com">Picasa</a> a un artículo.</p>
+<p>El caso de uso, basado en mi propia necesidad, es el siguiente:</p>
+<p><img alt="-" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Uso PicasaWeb para subir mis fotos. A veces son albumes públicos, a
+veces no.
+<img alt="image1" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Al subir fotos, generalmente le pongo una descripción.
+<img alt="image2" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Algunas fotos las subo también a mi blog personal.</p>
+<p>La complicación es que tengo que subir las fotos a picasa y tambien a mi
+web (por ftp si son muchas). Obviamente es ineficiente, y además pierdo
+los comentarios que hice en Picasa.</p>
+<div class="section" id="con-ustedes-spicasa">
+<h2>Con ustedes, Spicasa</h2>
+<p>Spicasa intenta solucionar esto. Está basado en el plugin
+<a class="reference external" href="http://plugins.spip.net/Flickr-CC">Flickr_cc</a> pero utilizando la
+excelente biblioteca <a class="reference external" href="http://cameronhinkle.com/blog/id/8585148182656068438">Lightweight PHP Picasa
+API</a> de Cameron
+Hinkle, para interactura con la <a class="reference external" href="http://code.google.com/intl/es-AR/apis/picasaweb/overview.html">API de
+Picasa</a></p>
+<p>Permite buscar fotos públicas en Picasa y asociarlas a un artículo, al
+igual que Flickr_cc lo hace con <a class="reference external" href="http://flickr.com">Flickr</a>. Pero
+además, permite ingresar a tu cuenta y adjuntar uno de tus albumes al
+artículo. Todo con mucho AJAX y dulce de leche.</p>
+<p><img alt="image3" src="../../images/Pantallazo-1-3e61d.png">
+Por supuesto, aunque cumple sus función básica, es un desarrollo
+totalmente inacabado que necesita desarrollo y depuración.</p>
+</div>
+<div class="section" id="requerimientos">
+<h2>Requerimientos</h2>
+<p><img alt="image4" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Requiere SPIP 2.0 o superior
+<img alt="image5" src="local/cache-vignettes/L8xH11/puce-32883.gif"> La biblioteca Lightweight PHP Picasa API está incluída. Sólo
+requiere PHP5.</p>
+</div>
+<div class="section" id="todo-y-bugs-conocidos">
+<h2>TODO y bugs conocidos</h2>
+<p><img alt="image6" src="local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:El tamaño máximo de las fotos descargadas es 800px]
+<img alt="image7" src="local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:No hace búsquedas de más de una palabra]
+<img alt="image8" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Hay que loguearse cada vez que se quiere adjuntar un álbum
+nuevo
+<img alt="image9" src="local/cache-vignettes/L8xH11/puce-32883.gif"> [STRIKEOUT:La ventana modal queda inaccesible si el scroll
+vertical no está arriba. (bug heredado de Flickr_cc)]</p>
+</div>
+<div class="section" id="descarga-e-instalacion">
+<h2>Descarga e instalación</h2>
+<table border="1" class="docutils">
+<colgroup><col width="100%"></colgroup>
+<tbody valign="top">
+<tr>
+<td><a class="reference external" href="../../downloads/spicasa0.13.zip">|image11|</a></td>
+</tr>
+<tr>
+<td>Spicasa 0.13</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="image12" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Descromprimilo en la carpeta <em>/plugins</em> de tu sitio spip
+<img alt="image13" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Activalo desde el panel de administración
+<img alt="image14" src="local/cache-vignettes/L8xH11/puce-32883.gif"> Al editar un artículo, te aparecerá un link con el logo de
+Spicasa para adjuntar fotos.</p>
+</div>
+</div>
+    </div>
+
+
+
+   <hr>
+<div class="ps">
+            <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+    <p>El código de este artículo está disponible en  <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/spicasa-adjunta-fotos-de-picasa-a.rst" id="sourcelink">github</a>. ¿Encontraste un error? Por favor,  <a href="https://github.com/mgaitan/mgaitan.github.com/edit/writing/posts/spicasa-adjunta-fotos-de-picasa-a.rst" id="sourcelink">enviame un pull request</a>.</p>
+    </div>
+
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/spip/" rel="tag">spip</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../jQuery-una-introduccion/" rel="prev" title="jQuery, una introducción">Post anterior</a>
+            </li>
+            <li class="next">
+                <a href="../Control-de-Versiones-con/" rel="next" title="Control de Versiones con Subversion">Siguiente post</a>
+            </li>
+        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="http://mgaitan.github.io/posts/spicasa-adjunta-fotos-de-picasa-a/",
+        disqus_title="Spicasa: adjunt\u00e1 fotos de picasa a un art\u00edculo",
+        disqus_identifier="cache/posts/spicasa-adjunta-fotos-de-picasa-a.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer>
+                Contents © 2018         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+                
+            </footer>
+</div>
+        </div>
+        <!--End of body content-->
+
+
+    </div>
+</div>
+
+            <script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
