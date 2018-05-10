@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Creando un nuevo proyecto Python | tin_nqn  </title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../en/rss.xml">
+<link rel="canonical" href="http://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python.html">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Creando un nuevo proyecto Python">
+<meta property="og:url" content="http://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python.html">
+<meta property="og:description" content="¿Así que querés comenzar un nuevo proyecto usando Python?
+¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
+proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
+no se">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2012-11-12T00:34:23-03:00">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="tutorial">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+</head>
+<body>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-static-top" role="navigation"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://mgaitan.github.io/">
+
+                <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+                </div>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../about.html">Sobre mí</a>
+                </li>
+<li>
+<a href="../charlas.html">Charlas</a>
+                </li>
+<li>
+<a href="../archive.html">Archivos</a>
+                </li>
+<li>
+<a href="../categories/index.html">Categorías</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>            </li>
+<li><a href="../en/index.html" rel="alternate" hreflang="en">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+
+            <div class="col-md-offset-2 col-md-8">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Creando un nuevo proyecto Python</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2012-11-12T00:34:23-03:00" itemprop="datePublished" title="Fecha de publicación: 12/11/12 00:34:23">12/11/12 00:34:23</time></a></p>
+                <p class="commentline">            <a href="creando-un-nuevo-proyecto-python.html#disqus_thread" data-disqus-identifier="cache/posts/creando-un-nuevo-proyecto-python.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>¿Así que querés comenzar un nuevo proyecto usando Python?
+¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
+proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
+no se te arme lio de dependencias que colisionan con las de otros
+proyectos ? Bien, te propongo esta receta.</p>
+<div class="section" id="las-herramientas">
+<h2>Las herramientas</h2>
+<ul class="simple">
+<li>
+<a class="reference external" href="http://www.virtualenv.org">Virtualenv</a>:  es una herramienta para aislar tu entorno de
+desarrollo python. Es muy pero muy útil para evitar conflictos entre las
+dependencias de tus distintos proyectos.</li>
+<li>
+<a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/">virtualenvwrapper</a>: es un conjunto de extensiones que
+hacen la vida del usuario <em>virtualenv</em> aun más feliz, permitiendo crear
+y borrar entornos virtuales, asociarlos a un proyecto, automatizar
+tareas al activar o desactivar uno, etc.</li>
+<li>
+<a class="reference external" href="http://www.pip-installer.org">pip</a>: es la herramienta moderna, correcta y recomendada
+para administrar los paquetes python instalados en tu
+sistema/virtualenv. Es un reemplazo de <em>easy_install</em>
+</li>
+<li>
+<a class="reference external" href="http://packages.python.org/distribute/">Distribute</a>: es la herramienta moderna y recomendada para
+distribuir tu paquete python. Es un fork de <em>setuptools</em> (que es, a su
+vez, una mejora sobre el módulo estándar <em>distutils</em>)</li>
+<li>
+<a class="reference external" href="https://github.com/stumitchell/skeleton">skeleton</a> es una herramienta que define <em>plantillas</em>
+para iniciar un proyecto, generando la estructura básica necesaria. Es
+similar a <a class="reference external" href="http://python.org.ar/pyar/PasteScript">PasteScript</a> pero enfocado en esta
+tarea concreta, sin dependencias y compatible con Python 3.x</li>
+</ul>
+</div>
+<div class="section" id="la-receta">
+<h2>La receta</h2>
+<ol class="arabic">
+<li>
+<p class="first">Instalá pip:</p>
+<pre class="literal-block">
+$ sudo apt-get install python-pip
+</pre>
+<p>o bien directamente:</p>
+<pre class="literal-block">
+$ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+</pre>
+</li>
+<li>
+<p class="first">Instalá virtualenwrapper y skeleton:</p>
+<pre class="literal-block">
+$ sudo pip install virtualenwrapper
+$ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton
+</pre>
+</li>
+</ol>
+<div class="note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Notar que <em>skeleton</em> se está instalando desde un <em>fork</em> del proyecto
+original (aparentemente desmantenida), que resuelve bugs importantes</p>
+</div>
+<ol class="arabic" start="3">
+<li>
+<p class="first">Configurá virtualenvwrapper</p>
+<pre class="code bash"><a name="rest_code_017f09e36f84447ea959732c57cdfaec-1"></a>$ mkdir ~/.virtualenvs           <span class="c1"># acá se van a guardar tus entornos virtuales</span>
+<a name="rest_code_017f09e36f84447ea959732c57cdfaec-2"></a>$ mkdir ~/proyectos              <span class="c1"># acá se van a guardar tus proyectos</span>
+<a name="rest_code_017f09e36f84447ea959732c57cdfaec-3"></a>$ mkdir ~/.pip_download_cache     <span class="c1"># para no bajar paquetes cada vez</span>
+</pre>
+<p>Luego editá tu <tt class="docutils literal"><span class="pre">~/.bashrc</span></tt> agregando las siguientes líneas</p>
+<pre class="code bash"><a name="rest_code_1dac2a58e1344708aaea84bb7f3d5428-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<a name="rest_code_1dac2a58e1344708aaea84bb7f3d5428-2"></a><span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<a name="rest_code_1dac2a58e1344708aaea84bb7f3d5428-3"></a><span class="nb">export</span> <span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
+<a name="rest_code_1dac2a58e1344708aaea84bb7f3d5428-4"></a><span class="nb">export</span> <span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<a name="rest_code_1dac2a58e1344708aaea84bb7f3d5428-5"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+</pre>
+<p>y recargá tus cambios:</p>
+<pre class="literal-block">
+$ source ~/.bashrc
+</pre>
+</li>
+<li>
+<p class="first">Inicializá tu proyecto. Por ejemplo el proyecto <em>zaraza</em></p>
+<pre class="literal-block">
+$ mkproject -t package zaraza
+</pre>
+<p>Se te solicitarán algunos datos (nombre del proyecto, autor,
+licencia, etc.) y ¡(casi) listo! Estarás trabajando en tu proyecto
+<em>zaraza</em>. Tu prompt se verá así</p>
+<pre class="literal-block">
+(zaraza)tin@morocha:~/proyectos/zaraza$
+</pre>
+<p>¿Qué sucedió? Se creó un directorio <tt class="docutils literal">~/proyectos/zaraza</tt> para tu
+proyecto, asociado a un virtualenv ubicado en <tt class="docutils literal"><span class="pre">~/.virtualenvs/zaraza</span></tt>.
+<strong>skeleton</strong> automáticamente creó una estructura básica de
+paquete python en <tt class="docutils literal">~/proyectos/zaraza/src</tt> incluyendo un <tt class="docutils literal">setup.py</tt>
+basado en <em>distribute</em>.</p>
+</li>
+<li>
+<p class="first">Instalá tu paquete en el virtualenv, para poder importarlo desde
+cualquier lado:</p>
+<pre class="literal-block">
+(zaraza) $ cd  ~/proyectos/zaraza/src
+(zaraza) $ pip install -e .
+</pre>
+<p>Esto agrega el directorio de desarrollo de tu proyecto al PYTHONPATH
+del virtualenv, de modo que puedes importar <em>zaraza</em> desde cualquier
+lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
+<em>src/test</em> al nivel de '/src/zaraza'</p>
+</li>
+</ol>
+</div>
+<div class="section" id="y-ahora">
+<h2>¿Y ahora?</h2>
+<p>Cada vez que quieras trabajar en tu proyecto <em>zaraza</em> ejecutás:</p>
+<pre class="literal-block">
+$ workon zaraza
+</pre>
+<p>Para salir del virtualenv:</p>
+<pre class="literal-block">
+(zaraza) $ deactivate
+</pre>
+</div>
+<div class="section" id="algunos-tips-mas-a-modo-de-despedida">
+<h2>Algunos tips más a modo de despedida</h2>
+<p>Virtualenwrapper es totalmente hookeable y extensible. Esta receta
+propone usar <em>skeleton</em> (que funciona como plugin de
+<a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/">virtualenvwrapper.project</a>)
+para crear una estructura de paquete estándar básica, pero hay plugins
+para proyectos más específicos. Por ejemplo
+<a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.django/">virtualenwrapper.django</a></p>
+<p>El comando <tt class="docutils literal">mkproject</tt> es un wrapper sobre el
+comando principal de virtualenvwrapper <tt class="docutils literal">mkvirtualenv</tt>, que acepta muchos
+parámetros opcionales. Ejecutá <tt class="docutils literal">mkproject_help</tt> o <tt class="docutils literal">mkvirtualenv <span class="pre">--help</span></tt>
+para saber más.</p>
+<p>Y ya sabés ...</p>
+<div class="figure align-center">
+<img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png">
+</div>
+<hr class="docutils">
+<blockquote>
+Este artículo lo escribí originalmente para el <a class="reference external" href="http://python.org.ar/pyar/Recetario">Recetario de PyAr</a>
+</blockquote>
+</div>
+</div>
+    </div>
+
+
+
+   <hr>
+<div class="ps">
+            <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+    <p>El código de este artículo está disponible en  <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/creando-un-nuevo-proyecto-python.rst" id="sourcelink">github</a>. ¿Encontraste un error? Por favor,  <a href="https://github.com/mgaitan/mgaitan.github.com/edit/writing/posts/creando-un-nuevo-proyecto-python.rst" id="sourcelink">enviame un pull request</a>.</p>
+    </div>
+
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../categories/tutorial.html" rel="tag">tutorial</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="migrando-issues-entre-proyectos-de-bitbucket.html" rel="prev" title="Migrando issues entre proyectos de Bitbucket">Post anterior</a>
+            </li>
+            <li class="next">
+                <a href="metiendose-cosas-en-la-nariz.html" rel="next" title="Metiéndose cosas en la nariz">Siguiente post</a>
+            </li>
+        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="http://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python.html",
+        disqus_title="Creando un nuevo proyecto Python",
+        disqus_identifier="cache/posts/creando-un-nuevo-proyecto-python.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer>
+                Contents © 2016         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+                
+            </footer>
+</div>
+        </div>
+        <!--End of body content-->
+
+
+    </div>
+</div>
+
+            <script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/jquery.colorbox-min.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

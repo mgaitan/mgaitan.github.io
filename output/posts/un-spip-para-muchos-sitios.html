@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Un spip para muchos sitios | tin_nqn  </title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../en/rss.xml">
+<link rel="canonical" href="http://mgaitan.github.io/posts/un-spip-para-muchos-sitios.html">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Un spip para muchos sitios">
+<meta property="og:url" content="http://mgaitan.github.io/posts/un-spip-para-muchos-sitios.html">
+<meta property="og:description" content="Administrar muchos sitios SPIP tiene sus bemoles. Yo administro, fácil,
+unos 30. Cuando hay que actualizar la versión (por cuestiones de
+funcionalidad, o bien, como la semana pasada, por cuestiones de">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2009-08-10T08:40:55-03:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+</head>
+<body>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-static-top" role="navigation"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://mgaitan.github.io/">
+
+                <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+                </div>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../about.html">Sobre mí</a>
+                </li>
+<li>
+<a href="../charlas.html">Charlas</a>
+                </li>
+<li>
+<a href="../archive.html">Archivos</a>
+                </li>
+<li>
+<a href="../categories/index.html">Categorías</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>            </li>
+<li><a href="../en/index.html" rel="alternate" hreflang="en">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+
+            <div class="col-md-offset-2 col-md-8">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Un spip para muchos sitios</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2009-08-10T08:40:55-03:00" itemprop="datePublished" title="Fecha de publicación: 10/08/09 08:40:55">10/08/09 08:40:55</time></a></p>
+                <p class="commentline">            <a href="un-spip-para-muchos-sitios.html#disqus_thread" data-disqus-identifier="cache/posts/un-spip-para-muchos-sitios.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Administrar muchos sitios SPIP tiene sus bemoles. Yo administro, fácil,
+unos 30. Cuando hay que actualizar la versión (por cuestiones de
+funcionalidad, o bien, como la semana pasada, por cuestiones de
+seguridad), es un trabajo engorroso y aburrido hacer 30 veces lo mismo.
+Y el trabajo se vuelve exponencial si hay que actualizar los plugins
+para cada uno</p>
+<p>Para evitar eso existe la
+<a class="reference external" href="http://www.spip-contrib.net/La-mutualisation-facile">Mutualización</a>,
+que desde la versión 2 es realmente muy fácil.</p>
+<p>El concepto es simple: un sólo núcleo de SPIP (/ecrire, /prive,
+/squelettes-dist, /plugins) se comparte para motorizar diferentes
+sitios, que tendrán los directorios con contenido propio (/squelettes,
+/config , /IMG, etc), separado del resto</p>
+<p>Así, a la hora de actualizar SPIP sólo tenemos que actualizar una sola
+instalación, tarea que se vuelve trivial si además usamos
+<a class="reference external" href="blog/article/ultima-version-de-spip-por-svn">svn</a>.</p>
+<div class="section" id="requisito">
+<h2>Requisito</h2>
+<p>En general, la mutualización funciona sin muchos pormenores en un
+servidor LAMP, pero nuestro servidor de hospedaje debe permitir apuntar
+diferentes dominios a un mismo directorio publico.</p>
+<p>Por ejemplo, mi sitio <strong>textosypretextos.com.ar</strong> apunta a
+<em>/home/tin/public_html/spip</em> y <strong>nqnwebs.com</strong> apunta también a
+<em>/home/tin/public_html/spip</em>.</p>
+<p>Es una configuración simple, pero no todos los servicios de hosting lo
+permiten.</p>
+</div>
+<div class="section" id="puesta-en-marcha">
+<h2>Puesta en marcha</h2>
+<table border="1" class="docutils">
+<colgroup><col width="100%"></colgroup>
+<tbody valign="top">
+<tr>
+<td><a class="reference external" href="../downloads/mutualisation.zip">|image1|</a></td>
+</tr>
+<tr>
+<td>plugin mutualisation</td>
+</tr>
+</tbody>
+</table>
+<p>La "mutualización fácil" funciona a través de este plugin, pero que
+particularmente <strong>debe ser instalado en la raiz del sitio</strong> y no en la
+carpeta /plugins</p>
+<p>Al descomprimirlo crea una nueva carpeta, <em>/mutualisation</em>, en la raiz
+de nuestro SPIP mutualizado</p>
+<p>Además, incluye un archivo <em>mes_options.php</em> de ejemplo, pero yo te
+propongo este, que debe ser instalado en <em>/config</em></p>
+<pre class="literal-block">
+ true
+     */
+    # define ('_INSTALL_USER_DB_ROOT', 'mon_root');
+    # define ('_INSTALL_PASS_DB_ROOT', '********');
+
+    /*
+     * Crear las bases de dato via un ping a una URL (metodo AlternC)
+     *
+     * Il suffit de renseigner l'option url_creer_base, en lui passant les bons parametres :
+     * 'url_creer_base' =&gt; 'https://bureau.tld/admin/sql_doadd.php?username=USER&amp;password=PASS&amp;dbn='.prefixe_mutualisation($site)
+     */
+
+
+    /*
+     * Transformar en las paginas publicas las URL de imagenes
+     * /sites/mon_site/IMG/* -&gt; /IMG/*
+     * /sites/mon_site/local/* -&gt; /local/*
+     *
+     * - Necesita el mod_rewrite (reescritura de url) de apache
+     * - Sólo funciona con nombres de dominio mutualización
+     * ('http_host' : http://mi_sitio_mutualizado.com)
+     * (por lo tanto, no funciona con un subdirectorio - http://mi_sitio_mutualizado.com/misitio/)
+     *
+     * y añadir en la opción
+     * 'url_img_courtes' =&gt; true
+     *
+     * Es posible generar los  .htaccess
+     * automaticamente en /IMG y /local
+     * gracias a ?var_mode=creer_htaccess_img
+     *
+     */
+
+    /*
+     * Indique aqui el nombre del sitio de administración de esta mutualización
+     * (o varios, separados por oma)
+     * (dpor ejemplo, 'scriibe.net' es el dominio de nivel maximo)
+     * para autorizar todos los sitios no definir la constante ;
+     * Si el propietario del sitio no se encuentra en los sites/ sino en la razi,
+     * escriba '' y agregue 'mutualisation' en $dossier_squelettes
+     */
+    define ('_SITES_ADMIN_MUTUALISATION', 'nqnwebs.com');
+
+
+    demarrer_site($site,
+        array(
+            'creer_site' =&gt; true,        // Creer ou non le site s'il n'existe pas (defaut: false)
+            'creer_base' =&gt; false,        // Creer ou non la base de donnee si elle n'existe pas (false)
+            'creer_user_base' =&gt; false,  // Creer ou non un utilisateur pour la nouvelle base de donnee (false)
+            'mail' =&gt; '',                // Adresse mail pour recevoir un mail lors d'une creation de site mutualise ('')
+            'code' =&gt; 'miclave',  // Code d'activation ('ecureuil')
+            'table_prefix' =&gt; true,     // Definir automatiquement le prefixe de table (false) ... mettre true si tous les sites dans la meme base
+            'cookie_prefix' =&gt; true,     // Definir automatiquement le prefixe de cookie (false)
+            'repertoire' =&gt; 'sites',     // Nom du repertoire contenant les sites mutualises ('sites')
+            'url_img_courtes' =&gt; true,   // Utiliser la redirection des URL d'images courtes dans la partie publique (false)
+            # 'utiliser_panel' =&gt; false, // Utiliser une table externe pour recuperer des identifiants ... (code, user, pass) permettant a un utilisateur d'installer le site (false)
+            'url_creer_base' =&gt; ''       // Creer la base de donnees via une URL (methode AlternC)
+        )
+    );
+
+
+?&gt;
+</pre>
+<p>Este mes_options.php (retocado por mi) permite que los sitios funcionen
+con o sin ’www’. También apunta a una única base de datos, donde se
+encargará de crear las tablas necesarias para cada sitio, diferenciadas
+por un prefijo.</p>
+<p>Sólo resta crear la carpeta <em>/sites</em> en la raiz del sitio, donde irán
+nuestros diferentes sitios mutualizados.</p>
+<p>Al acceder via web a un dominio de un sitio sobre esta mutualización, lo
+primero que aparecerá es una solicitud de contraseña, definida en array
+de configuración de mes_options.php (en el ejemplo, la contraseña es
+<em>miclave</em>)</p>
+<div class="figure align-center">
+<img alt="" src="local/cache-vignettes/L510xH303/Pantallazo-2-d2b75.png">
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 134)</p>
+Explicit markup ends without a blank line; unexpected unindent.</div>
+<p>Luego siguen dos etapas que nos crean la estructura de directorios para
+este sitio dentro de <em>/sites</em> y las tablas para este sitio en la base de
+datos compartida. Lo que sigue es el proceso de instalación estándar de
+SPIP.</p>
+<p><strong>¡Listo!</strong></p>
+<p>Hay que tener en cuenta que ahora los archivos para nuestro sitio
+estarán dentro de <em>/sites/dominio/</em> y es allí donde deberán subirse los
+esqueletos y demás.</p>
+</div>
+<div class="section" id="mutualizar-un-sitio-en-produccion">
+<h2>Mutualizar un sitio en producción</h2>
+<p>¿Qué pasa si el sitio que quiero mutualizar ya está funcionando sobre un
+spip propio? No problem.</p>
+<p>Basta indicar (desde el panel, o solicitando al administrador del
+hosting) que nuestro dominio debe apuntar ahora a la carpeta donde
+tenemos el spip mutualizado (en mi ejemplo <em>/home/tin/public_html/spip</em>
+), crear el directorio <strong>/sites/dominio</strong> (donde dominio es la url del
+sitio que queremos migrar) y mover alli las carpetas /config, /IMG,
+/squelettes, /local y /tmp (o crear una /tmp nueva) del SPIP en uso al
+nuevo directorio. [[Estas carpetas, bien podrian ser link simbólicos].
+Magia!</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusión</h2>
+</div>
+</div>
+    </div>
+
+
+
+   <hr>
+<div class="ps">
+            <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+        </div>
+
+    <p>El código de este artículo está disponible en  <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/un-spip-para-muchos-sitios.rst" id="sourcelink">github</a>. ¿Encontraste un error? Por favor,  <a href="https://github.com/mgaitan/mgaitan.github.com/edit/writing/posts/un-spip-para-muchos-sitios.rst" id="sourcelink">enviame un pull request</a>.</p>
+    </div>
+
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="limitar-la-cantidad-de-caracteres.html" rel="prev" title="Limitar la cantidad de caracteres de los comentarios">Post anterior</a>
+            </li>
+            <li class="next">
+                <a href="principios-para-un-freelancear.html" rel="next" title='Principios para un "freelancear" exitosamente'>Siguiente post</a>
+            </li>
+        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="http://mgaitan.github.io/posts/un-spip-para-muchos-sitios.html",
+        disqus_title="Un spip para muchos sitios",
+        disqus_identifier="cache/posts/un-spip-para-muchos-sitios.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer>
+                Contents © 2016         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+                
+            </footer>
+</div>
+        </div>
+        <!--End of body content-->
+
+
+    </div>
+</div>
+
+            <script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/jquery.colorbox-min.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

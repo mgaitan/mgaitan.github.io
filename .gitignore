@@ -7,7 +7,6 @@ cache
 .doit*
 .project
 __pycache__
-output
 
 
 # Packages
