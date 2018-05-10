@@ -50,12 +50,11 @@ Por ejemplo este en el que Macri reconoce las verdaderas razones que nos llevara
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/axH1AUDZw_8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-o este audio donde reconoce que niega los problemas y
-
+o este audio donde reconoce que niega los problemas
 
 .. raw:: html
 
-    <iframe width="560" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/442231311&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/442231311&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 
 
 O este otro en el acepta que están haciendo fantochadas y van a salir "para arriba" en cualquier momento:
@@ -81,25 +80,26 @@ y casi lo mismo si queremos hacer un video::
 
     $ miau macri_gato.mp4 macri_gato.txt -r remix.txt -o macri_gato_remixado.mp4
 
+.. tip:: te conviene siempre laburar primero generando audios y cuando estes conforme haces el video, ya que es mucho más rápido el recorte y concatenado.
+
 Como la detección de fragmentos no es infalible, hay que meterle laburo de prueba y error y a veces hay que ajustar un poquito los tiempos detectados automáticamente (sobre todo cuando se recortan palabras sueltas o frases muy breves).
 
 Eso se puede hacer de dos maneras:
 
- - Reusar el json intermedio que se produce con `--dump`, editarlo a gusto y pasarlo a una nueva ejecución de miau en reemplazo del txt de remix a ``-r``. Este paso lo que hace justamente es saltearse la alineación automática y usar lo que le damos explícitamente.
+- Reusar el json intermedio que se produce con `--dump`, editarlo a gusto y pasarlo a una nueva ejecución de miau en reemplazo del txt de remix a ``-r``. Este paso lo que hace justamente es saltearse la alineación automática y usar lo que le damos explícitamente.
 
- - Ponerle una metadata de ajuste al propio txt. La sintáxis que definí es un poco minimalista y se basa en ponerle signos ``+`` y ``-`` al final y/o al principio de cada linea, para estrechar o ensanchar el recorte. Cada símbolo equivale, por default, a 0.05s. Por ejemplo, si en el remix hay una línea que dice *"el único camino posible"* y nos damos cuenta que la detecta un instante tarde y la interrumpe antes de terminar, podemos corregirla poniendo un offset negativo al principio y uno positivo al final:
+- Ponerle una metadata de ajuste al propio txt. La sintáxis que definí es un poco minimalista y se basa en ponerle signos ``+`` y ``-`` al final y/o al principio de cada linea, para estrechar o ensanchar el recorte. Cada símbolo equivale, por default, a 0.05s. Por ejemplo, si en el remix hay una línea que dice *"el único camino posible"* y nos damos cuenta que la detecta un instante tarde y la interrumpe antes de terminar, podemos corregirla poniendo un offset negativo al principio y uno positivo al final:
 
- .. code-block::
+  .. code-block::
 
-     --el único camino posible+++``
+    --el único camino posible+++``
 
-Miau filtra la línea con una función que hace esto:
+  Miau filtra la línea con una función que hace esto:
 
-.. code-block:: python
+  .. code-block:: python
 
-   >>> fine_tuning('--el único camino posible+++'):
-   {'el único camino posible': {'start_offset': -0.1, 'end_offset': 0.15}}
-
+       >>> fine_tuning('--el único camino posible+++'):
+       {'el único camino posible': {'start_offset': -0.1, 'end_offset': 0.15}}
 
 En github fui dejando `algunos ejemplos <https://github.com/mgaitan/miau/tree/master/examples>`_ con los pasos y las fuentes con los que los hice.
 
@@ -141,8 +141,8 @@ Es decir, forzar que cada fragmento objetivo se encuentre textualmente en una fi
 Por ese motivo ``miau`` hace tantas versiones de fragmentado del texto original como encuentre necesarias para salvar estos solapamientos. Esas son las *iteraciones* que se corresponden con sendas llamadas a aeneas.
 
 
-Vermuth con software libre y good show!
----------------------------------------
+Vermuth con software libre y ¡good show!
+----------------------------------------
 
 Aunque es divertidísimo (es decir, es totalmente redituable), mantener software de humor político tiene sus costos, sobre todo cuando tenés más de un laburo, una familia, algun@s amig@s y varios libros a los que tenés que dedicarle tiempo.
 
