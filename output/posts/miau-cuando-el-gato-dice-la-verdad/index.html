@@ -5,7 +5,7 @@ article: http://ogp.me/ns/article#
 " lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>Miau: cuando el gato dice la verdad | tin_nqn  </title>
 <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
@@ -13,8 +13,8 @@ article: http://ogp.me/ns/article#
 <link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
 <link rel="canonical" href="http://mgaitan.github.io/posts/miau-cuando-el-gato-dice-la-verdad/">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
 <meta property="og:site_name" content="tin_nqn">
@@ -98,7 +98,10 @@ article: http://ogp.me/ns/article#
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>Cuando se cumplieron los primeros 7 meses de su gestión, el presidente Macri dió <a class="reference external" href="https://www.youtube.com/watch?v=Jp8_BXkTqXk">una entrevista exclusiva</a> a periodistas del canal Telefé. Horas después apareció este video en las redes, cuyo autor o autora desconozco:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C8e6Fibx0k0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><p>Ahí estaba el humor, el fruto más gozoso del ingenio popular, para salvarnos a carcajadas. No para evadirnos de la realidad sino, al contrario, para vencerla, para enfrentar la amargura que algunas certezas traen (ya sabíamos a esa altura, con devaluación a precios y tarifazos en curso, que las advertencias no habían sido una "campaña del miedo"). Pero era aún más: era un ejemplo de ese humor que enuncia verdades difíciles de escuchar de otra manera.</p>
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/C8e6Fibx0k0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<p>Ahí estaba el humor, el fruto más gozoso del ingenio popular, para salvarnos a carcajadas. No para evadirnos de la realidad sino, al contrario, para vencerla, para enfrentar la amargura que algunas certezas traen (ya sabíamos a esa altura, con devaluación a precios y tarifazos en curso, que las advertencias no habían sido una "campaña del miedo"). Pero era aún más: era un ejemplo de ese humor que enuncia verdades difíciles de escuchar de otra manera.</p>
 <p>Simplemente me pareció genial. Me acordé, por supuesto, de la <a class="reference external" href="https://www.youtube.com/watch?v=Lz__bWnUMFQ">entrevista a Homero</a> en el capítulo de la Venus de jalea y también de un cortometraje español que ví hace mucho titulado "<a class="reference external" href="https://www.youtube.com/watch?v=12Z3J1uzd0Q">Lo que tú quieras oir</a>", cuyo argumento se basa exáctamente en la creación de un <em>mash-up</em> de audio como alivio de una situación dramática.</p>
 <p>Cada discurso o entrevista de Macri me parecía (me parece) un puesta en escena cínica, plagada de mentiras, floja de fonética y con pésimo acting. Necesitaba más de estos videos que le hagan decir la verdad.</p>
 <!-- TEASER_END -->
@@ -111,14 +114,23 @@ article: http://ogp.me/ns/article#
 <p><em>sino cantar.</em></p>
 </blockquote>
 <p>Parafraseando (bastante lejos de esa belleza) yo podría decir:</p>
-<pre class="code text"><a name="rest_code_beb554fe11964932a32994f68d22987e-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
+<pre class="code text"><a name="rest_code_a71f812773f743e8abb35dc98cd125f7-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
 </pre>
 <p>Asi que ante la falta de talento natural para la edición audiovisual (entre todo el resto de las cosas), programé. Y así fue como hice un programita en Python que hace las ediciones por mí: <a class="reference external" href="http://github.com/mgaitan/miau">miau</a>.</p>
 <p>Sólo hay que darle la desgrabación del discurso original completo y el guión del discurso pretendido (basado en fragmentos textuales del original, en el orden que sea) y <tt class="docutils literal">miau</tt> se encarga de encontrar, recortar y concatenar para armar un clip de video o un audio remixado.</p>
 <p>Por ejemplo este en el que Macri reconoce las verdaderas razones que nos llevaran de vuelta a deberle al FMI.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/axH1AUDZw_8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><p>o este audio donde reconoce que niega los problemas</p>
-<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/442231311&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe><p>O este otro en el acepta que están haciendo fantochadas y van a salir "para arriba" en cualquier momento:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YtY_CRiFKPY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><div class="section" id="agarra-la-pala-o-copia-y-pegala">
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/axH1AUDZw_8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<p>o este audio donde reconoce que niega los problemas</p>
+<div class="video-container">
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/442231311&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+</div>
+<p>O este otro en el acepta que están haciendo fantochadas y van a salir "para arriba" en cualquier momento:</p>
+<div class="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/YtY_CRiFKPY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="section" id="agarra-la-pala-o-copia-y-pegala">
 <h2>Agarrá la pala (o copiá y pegala)</h2>
 <p>Si bien los excelsos discursos presidenciales suelen ser breves, ¿de verdad te fumás tener que desgrabar toda esa sarta de duranbarbaridades, Martincito?</p>
 <p>Pues no, al menos para el caso específico de este felino doméstico. Gracias a que <a class="reference external" href="http://www.casarosada.gob.ar">casarosada.gob.ar</a> se toma el trabajo de conservar cada palabra de la retórica sublime, de estadismo profundo y condensado que será aplaudido por generaciones, de esas piezas de discurso político que interpelan hasta al más indiferente... Bueno, quiero decir, gracias a que guardan el txt de las 30 frases en distinto orden que le escriben, no hace falta desgrabar nada.</p>
@@ -142,11 +154,11 @@ $ miau macri_gato.mp4 macri_gato.txt -r remix.txt -o macri_gato_remixado.mp4
 </li>
 <li>
 <p class="first">Ponerle una metadata de ajuste al propio txt. La sintáxis que definí es un poco minimalista y se basa en ponerle signos <tt class="docutils literal">+</tt> y <tt class="docutils literal">-</tt> al final y/o al principio de cada linea, para estrechar o ensanchar el recorte. Cada símbolo equivale, por default, a 0.05s. Por ejemplo, si en el remix hay una línea que dice <em>"el único camino posible"</em> y nos damos cuenta que la detecta un instante tarde y la interrumpe antes de terminar, podemos corregirla poniendo un offset negativo al principio y uno positivo al final:</p>
-<pre class="code text"><a name="rest_code_36a6352ca68140a489baac215683a5c3-1"></a>--el único camino posible+++``
+<pre class="code text"><a name="rest_code_9136f9ac2d1f4ae68c0031bd35818582-1"></a>--el único camino posible+++``
 </pre>
 <p>Miau filtra la línea con una función que hace esto:</p>
-<pre class="code python"><a name="rest_code_563342712c994211b490d67b6b683c8e-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
-<a name="rest_code_563342712c994211b490d67b6b683c8e-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
+<pre class="code python"><a name="rest_code_5b53fe863a58434a802f586b764b3e98-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
+<a name="rest_code_5b53fe863a58434a802f586b764b3e98-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
 </pre>
 </li>
 </ul>
@@ -156,9 +168,9 @@ para burlarte de gobiernos de derecha y podés hacer con ella lo que te plazca. 
 </div>
 <div class="section" id="deconstruyendo-el-relato-con-python">
 <h2>Deconstruyendo el relato, con Python</h2>
-<p>A este tipo de videos se le llaman "<a class="reference external" href="http://mgaitan.github.io/posts/sergio-massa-y-lagente.html">supercuts &lt;
-https://en.wikipedia.org/wiki/Supercut&gt;_" y hay distintas maneras de hacerlos.
-De hecho, sin saberlo entonces, hace un tiempo hice `uno sobre Sergio Massa</a>, basado en fragmentos de los subtitulos automáticos de youtube. También hay una <a class="reference external" href="https://github.com/antiboredom/videogrep">herramienta en python</a> que permite hacer un "grep" en el video.</p>
+<p>A este tipo de videos se le llaman "<a href="#id1"><span class="problematic" id="id2">`supercuts &lt;
+https://en.wikipedia.org/wiki/Supercut&gt;`_</span></a>" y hay distintas maneras de hacerlos.
+De hecho, sin saberlo entonces, hace un tiempo hice <a class="reference external" href="http://mgaitan.github.io/posts/sergio-massa-y-lagente.html">uno sobre Sergio Massa</a>, basado en fragmentos de los subtitulos automáticos de youtube. También hay una <a class="reference external" href="https://github.com/antiboredom/videogrep">herramienta en python</a> que permite hacer un "grep" en el video.</p>
 <p>Yo quería algo un poquito más ambicioso, algo que permita la generación de cualquier edición posible y que sea más o menos fácil para cualquiera con ganas de hacerla.</p>
 <p>Descubrí que existía software que se ocupa de la parte difícil: reconocer frases en un audio y generar las marcas de tiempo
 de su ubicación. Es algo que se llama <a class="reference external" href="http://linguistics.berkeley.edu/plab/guestwiki/index.php?title=Forced_alignment">forced aligment</a> y hay una biblioteca en Python, hecha por un academico italiano, que anda al pelo: <a class="reference external" href="https://github.com/readbeyond/aeneas">aeneas</a>. Anda tan bien que hasta acierta la mayoría de las veces con la dicción de Mauricio Macri, ¡imaginensé!. De yapa, soporta ("entiende") múltiples idiomas.</p>
@@ -188,6 +200,12 @@ para trabajar todos los días.
 <p>A futuro sería genial que tenga otras "atractividades" como una linda interfaz gráfica, que sea fácil instalarlo en cualquier sistema operativo (y particularmente en Windows) y, por qué no, que se convierta en el core de una app web (o la API REST para un app mobile) que permita usarlo directamente desde la nube.</p>
 <p>Espero sus tickets y pull requests.</p>
 <p>¡A maullar esos remixes!</p>
+</div>
+<div class="system-messages section">
+<h2>Docutils System Messages</h2>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 111); <em><a href="#id2">backlink</a></em></p>
+Unknown target name: "supercuts &lt; https://en.wikipedia.org/wiki/supercut&gt;".</div>
 </div>
 </div>
     </div>

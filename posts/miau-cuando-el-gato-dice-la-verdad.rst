@@ -11,7 +11,10 @@ Cuando se cumplieron los primeros 7 meses de su gestión, el presidente Macri di
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/C8e6Fibx0k0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/C8e6Fibx0k0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
 
 Ahí estaba el humor, el fruto más gozoso del ingenio popular, para salvarnos a carcajadas. No para evadirnos de la realidad sino, al contrario, para vencerla, para enfrentar la amargura que algunas certezas traen (ya sabíamos a esa altura, con devaluación a precios y tarifazos en curso, que las advertencias no habían sido una "campaña del miedo"). Pero era aún más: era un ejemplo de ese humor que enuncia verdades difíciles de escuchar de otra manera.
 
@@ -48,22 +51,26 @@ Por ejemplo este en el que Macri reconoce las verdaderas razones que nos llevara
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/axH1AUDZw_8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <div class="video-container">
+        <iframe  width="560" height="315" src="https://www.youtube.com/embed/axH1AUDZw_8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 
 o este audio donde reconoce que niega los problemas
 
 .. raw:: html
 
-    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/442231311&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-
+    <div class="video-container">
+        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/442231311&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </div>
 
 O este otro en el acepta que están haciendo fantochadas y van a salir "para arriba" en cualquier momento:
 
 .. raw:: html
 
+  <div class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/YtY_CRiFKPY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
+  </div>
 
 Agarrá la pala (o copiá y pegala)
 ---------------------------------
@@ -111,7 +118,7 @@ Deconstruyendo el relato, con Python
 ------------------------------------
 
 A este tipo de videos se le llaman "`supercuts <
-https://en.wikipedia.org/wiki/Supercut>_" y hay distintas maneras de hacerlos.
+https://en.wikipedia.org/wiki/Supercut>`_" y hay distintas maneras de hacerlos.
 De hecho, sin saberlo entonces, hace un tiempo hice `uno sobre Sergio Massa <http://mgaitan.github.io/posts/sergio-massa-y-lagente.html>`_, basado en fragmentos de los subtitulos automáticos de youtube. También hay una `herramienta en python <https://github.com/antiboredom/videogrep>`_ que permite hacer un "grep" en el video.
 
 Yo quería algo un poquito más ambicioso, algo que permita la generación de cualquier edición posible y que sea más o menos fácil para cualquiera con ganas de hacerla.

@@ -599,7 +599,7 @@ COPY_SOURCES = False
 
 # Modify the number of Post per Index Page
 # Defaults to 10
-# INDEX_DISPLAY_POST_COUNT = 10
+INDEX_DISPLAY_POST_COUNT = 4
 
 # By default, Nikola generates RSS files for the website and for tags.
 # Set this to False to disable all that.
@@ -659,7 +659,7 @@ WRITE_TAG_CLOUD = False
 # bootstrap is served from the NetDNA CDN
 # Set this to False if you want to host your site without requiring access to
 # external resources.
-# USE_CDN = False
+USE_CDN = False
 
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
