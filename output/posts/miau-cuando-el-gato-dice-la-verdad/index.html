@@ -13,8 +13,8 @@ article: http://ogp.me/ns/article#
 <link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
 <link rel="canonical" href="http://mgaitan.github.io/posts/miau-cuando-el-gato-dice-la-verdad/">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
 <meta property="og:site_name" content="tin_nqn">
@@ -114,7 +114,7 @@ article: http://ogp.me/ns/article#
 <p><em>sino cantar.</em></p>
 </blockquote>
 <p>Parafraseando (bastante lejos de esa belleza) yo podría decir:</p>
-<pre class="code text"><a name="rest_code_a71f812773f743e8abb35dc98cd125f7-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
+<pre class="code text"><a name="rest_code_c8fcf3e8dbeb4e9082efbfcaf68a6636-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
 </pre>
 <p>Asi que ante la falta de talento natural para la edición audiovisual (entre todo el resto de las cosas), programé. Y así fue como hice un programita en Python que hace las ediciones por mí: <a class="reference external" href="http://github.com/mgaitan/miau">miau</a>.</p>
 <p>Sólo hay que darle la desgrabación del discurso original completo y el guión del discurso pretendido (basado en fragmentos textuales del original, en el orden que sea) y <tt class="docutils literal">miau</tt> se encarga de encontrar, recortar y concatenar para armar un clip de video o un audio remixado.</p>
@@ -154,11 +154,11 @@ $ miau macri_gato.mp4 macri_gato.txt -r remix.txt -o macri_gato_remixado.mp4
 </li>
 <li>
 <p class="first">Ponerle una metadata de ajuste al propio txt. La sintáxis que definí es un poco minimalista y se basa en ponerle signos <tt class="docutils literal">+</tt> y <tt class="docutils literal">-</tt> al final y/o al principio de cada linea, para estrechar o ensanchar el recorte. Cada símbolo equivale, por default, a 0.05s. Por ejemplo, si en el remix hay una línea que dice <em>"el único camino posible"</em> y nos damos cuenta que la detecta un instante tarde y la interrumpe antes de terminar, podemos corregirla poniendo un offset negativo al principio y uno positivo al final:</p>
-<pre class="code text"><a name="rest_code_9136f9ac2d1f4ae68c0031bd35818582-1"></a>--el único camino posible+++``
+<pre class="code text"><a name="rest_code_627238dae4fa4f93805a2f650f047685-1"></a>--el único camino posible+++``
 </pre>
 <p>Miau filtra la línea con una función que hace esto:</p>
-<pre class="code python"><a name="rest_code_5b53fe863a58434a802f586b764b3e98-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
-<a name="rest_code_5b53fe863a58434a802f586b764b3e98-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
+<pre class="code python"><a name="rest_code_da2f4e199fba4712945bfc3204a86b8d-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
+<a name="rest_code_da2f4e199fba4712945bfc3204a86b8d-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
 </pre>
 </li>
 </ul>
@@ -168,8 +168,7 @@ para burlarte de gobiernos de derecha y podés hacer con ella lo que te plazca. 
 </div>
 <div class="section" id="deconstruyendo-el-relato-con-python">
 <h2>Deconstruyendo el relato, con Python</h2>
-<p>A este tipo de videos se le llaman "<a href="#id1"><span class="problematic" id="id2">`supercuts &lt;
-https://en.wikipedia.org/wiki/Supercut&gt;`_</span></a>" y hay distintas maneras de hacerlos.
+<p>A este tipo de videos se le llaman "<a class="reference external" href="https://en.wikipedia.org/wiki/Supercut">supercuts</a>" y hay distintas maneras de hacerlos.
 De hecho, sin saberlo entonces, hace un tiempo hice <a class="reference external" href="http://mgaitan.github.io/posts/sergio-massa-y-lagente.html">uno sobre Sergio Massa</a>, basado en fragmentos de los subtitulos automáticos de youtube. También hay una <a class="reference external" href="https://github.com/antiboredom/videogrep">herramienta en python</a> que permite hacer un "grep" en el video.</p>
 <p>Yo quería algo un poquito más ambicioso, algo que permita la generación de cualquier edición posible y que sea más o menos fácil para cualquiera con ganas de hacerla.</p>
 <p>Descubrí que existía software que se ocupa de la parte difícil: reconocer frases en un audio y generar las marcas de tiempo
@@ -200,12 +199,6 @@ para trabajar todos los días.
 <p>A futuro sería genial que tenga otras "atractividades" como una linda interfaz gráfica, que sea fácil instalarlo en cualquier sistema operativo (y particularmente en Windows) y, por qué no, que se convierta en el core de una app web (o la API REST para un app mobile) que permita usarlo directamente desde la nube.</p>
 <p>Espero sus tickets y pull requests.</p>
 <p>¡A maullar esos remixes!</p>
-</div>
-<div class="system-messages section">
-<h2>Docutils System Messages</h2>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 111); <em><a href="#id2">backlink</a></em></p>
-Unknown target name: "supercuts &lt; https://en.wikipedia.org/wiki/supercut&gt;".</div>
 </div>
 </div>
     </div>

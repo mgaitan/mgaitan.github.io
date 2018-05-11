@@ -117,8 +117,7 @@ para burlarte de gobiernos de derecha y podés hacer con ella lo que te plazca. 
 Deconstruyendo el relato, con Python
 ------------------------------------
 
-A este tipo de videos se le llaman "`supercuts <
-https://en.wikipedia.org/wiki/Supercut>`_" y hay distintas maneras de hacerlos.
+A este tipo de videos se le llaman "`supercuts <https://en.wikipedia.org/wiki/Supercut>`_" y hay distintas maneras de hacerlos.
 De hecho, sin saberlo entonces, hace un tiempo hice `uno sobre Sergio Massa <http://mgaitan.github.io/posts/sergio-massa-y-lagente.html>`_, basado en fragmentos de los subtitulos automáticos de youtube. También hay una `herramienta en python <https://github.com/antiboredom/videogrep>`_ que permite hacer un "grep" en el video.
 
 Yo quería algo un poquito más ambicioso, algo que permita la generación de cualquier edición posible y que sea más o menos fácil para cualquiera con ganas de hacerla.
