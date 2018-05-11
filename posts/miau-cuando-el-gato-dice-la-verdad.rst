@@ -152,11 +152,11 @@ Vermuth con software libre y ¡good show!
 
 Aunque es divertidísimo (es decir, es totalmente redituable), mantener software de humor político tiene sus costos, sobre todo cuando tenés más de un laburo, una familia, algun@s amig@s y varios libros a los que tenés que dedicarle tiempo.
 
-El tema es que ``miau`` anda masomenos. O como el culo, seamos sinceros. Y, saben, yo no puedo ni quiero pedirle un *stand-by* al Fondo Monetario, porque sé como termina esa ayudita. Por eso te pido a vos, programador/a, expert o wannabe, que me des una mano. Por ahora no son mucho más de 300 líneas de código en un solo módulo que `no hacen nada demasiado raro <import antigravity>`_, así que la zambullida para poder colaborar es accesible.
+El tema es que ``miau`` anda masomenos. O como el culo, seamos sinceros. Y, saben, yo no puedo ni quiero pedirle un *stand-by* al Fondo Monetario, porque sé como termina esa ayudita. Por eso te pido a vos, programador/a, expert o wannabe, que me des una mano. Por ahora no son mucho más de `300 líneas de código <https://github.com/mgaitan/miau/commit/6ba2112c37f3da6b6a62ec71083af98b286ecf4d#diff-657a6fda96a86fe382470f22ff361bed>`_ en un solo módulo que `no hacen nada demasiado raro <https://xkcd.com/353/>`_, así que la zambullida para poder colaborar es accesible.
 
-¿Y cómo? En este orden: usándolo, encontrando errores (que vamos anotando en el `issue tracker <https://github.com/mgaitan/miau/issues>`_), desculando por qué suceden y por último arreglándolos. También es indispensable tener pruebas unitarias, así no rompemos tanto nuevo cuando vamos arreglando lo viejo. Y hay funcionalidades que me gustaria completar, como la de permitir múltiples fuentes de entrada para hacer ediciones más complejas y ampliar la base de frases.
+¿Y cómo? En este orden: usándolo, encontrando errores (que vamos anotando en el `issue tracker <https://github.com/mgaitan/miau/issues>`_), desculando por qué suceden y por último arreglándolos. También es indispensable tener pruebas unitarias, así no rompemos tanto nuevo cuando vamos arreglando lo viejo. Y hay funcionalidades que me gustaría completar, como la de permitir múltiples fuentes de entrada para hacer ediciones más complejas y ampliar la base de frases.
 
-A futuro sería genial que tenga otras "atractividades" como una linda interfaz gráfica, que sea fácil instalarlo en cualquier sistema operativo (y particularmente en Windows) y, por qué no, que se convierta en el core de una app web (o la API REST para un app mobile) que permita usarlo directamente desde la nube.
+A futuro sería genial que tenga otras "atractividades" como una linda interfaz gráfica, que sea fácil instalarlo en cualquier sistema operativo (y particularmente en Windows) y, por qué no, que se convierta en el core de una app web o la API para un app mobile que permita usarlo directamente desde la nube.
 
 Espero sus tickets y pull requests.
 
