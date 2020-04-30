@@ -1,2 +1,2 @@
 Nikola==8.0.4
-notebook==4.2.2
+notebook>=5.7.8
