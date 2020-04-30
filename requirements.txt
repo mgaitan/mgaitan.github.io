@@ -1,2 +1,2 @@
-Nikola==7.8.0
+Nikola==8.0.4
 notebook==4.2.2
