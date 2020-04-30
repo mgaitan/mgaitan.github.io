@@ -5,7 +5,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Desambiguando un hash en Git | tin_nqn</title>
+<title>El mono salta entre las ramas. El desarrollador también | tin_nqn</title>
 <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
@@ -18,19 +18,18 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
-<link rel="canonical" href="https://mgaitan.github.io/posts/desambiguando-un-hash-en-git/">
+<link rel="canonical" href="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
-<link rel="prev" href="../como-funciona-cuevana/" title="Cómo funciona Cuevana" type="text/html">
-<link rel="next" href="../pip-apurate-por-favor/" title="pip, apurate por favor" type="text/html">
+<meta name="robots" content="noindex">
 <meta property="og:site_name" content="tin_nqn">
-<meta property="og:title" content="Desambiguando un hash en Git">
-<meta property="og:url" content="https://mgaitan.github.io/posts/desambiguando-un-hash-en-git/">
-<meta property="og:description" content="Soy vago. Por eso me llevo bien con Git, que permite reconocer un changeset con un pedacito de
-su hash sha1 :
-
-Git is smart enough to figure out what commit you meant to type if you provide the first ">
+<meta property="og:title" content="El mono salta entre las ramas. El desarrollador también">
+<meta property="og:url" content="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/">
+<meta property="og:description" content="Cuando laburamos con git, necesitamos frecuentemente cambiar
+de rama, sea porque estamos haciendo un feature mientras esperamos
+que alguien haga review de otra cosa y eventualmente pide algo,
+sea porq">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2013-03-14T18:02:01-03:00">
+<meta property="article:published_time" content="2020-04-30T01:59:00-03:00">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator:id" content="40654511">
 </head>
@@ -88,7 +87,7 @@ navbar-light bg-light
     <div class="body-content">
         <!--Body content-->
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Desambiguando un hash en Git</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">El mono salta entre las ramas. El desarrollador también</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -96,9 +95,9 @@ navbar-light bg-light
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2013-03-14T18:02:01-03:00" itemprop="datePublished" title="2013-03-14 18:02">2013-03-14 18:02</time></a>
+            <time class="published dt-published" datetime="2020-04-30T01:59:00-03:00" itemprop="datePublished" title="2020-04-30 01:59">2020-04-30 01:59</time></a>
             </p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/desambiguando-un-hash-en-git.html">Comentarios</a>
+                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/el-mono-salta-entre-las-ramas.html">Comentarios</a>
 
 
             
@@ -107,48 +106,100 @@ navbar-light bg-light
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>Soy vago. Por eso me llevo bien con Git, que permite reconocer un changeset con un <a class="reference external" href="http://git-scm.com/book/ch6-1.html">pedacito de
-su hash sha1</a> :</p>
-<blockquote>
-<p>Git is smart enough to figure out what commit you meant to type if you provide the first few characters, as long as your partial SHA-1 is at least four characters long and unambiguous — that is, only one object in the current repository begins with that partial SHA-1.</p>
-</blockquote>
+<p>Cuando laburamos con git, necesitamos frecuentemente cambiar
+de rama, sea porque estamos haciendo un feature mientras esperamos
+que alguien haga review de otra cosa y eventualmente pide algo,
+sea porque somos nosotros los que <em>checkouteamos</em> el branch
+de un compañero para probar algo.</p>
+<p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
+un alias del branch previo.</p>
+<pre class="code bash"><a name="rest_code_1495059d410444b184b290930dd82227-1"></a>$ git checkout master
+<a name="rest_code_1495059d410444b184b290930dd82227-2"></a>Switched to a new branch <span class="s1">'master'</span>
+<a name="rest_code_1495059d410444b184b290930dd82227-3"></a>$ git checkout -
+<a name="rest_code_1495059d410444b184b290930dd82227-4"></a>Switched to branch <span class="s1">'writing'</span>
+</pre>
+<p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
+y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>
+<p>El problema es que si no nos acordamos el nombre del branch, mucho menos
+podriamos acordarnos el orden cronológico en el que lo usamos.</p>
 <!-- TEASER_END -->
-<p>Pero a veces soy demasiado vago, y Git deja de llevarse bien conmigo: Estaba en una rama con varios commits y quería volver al pasado, deshaciendo commits, pero llevando uno. Fácil: <code class="docutils literal">reset</code> + <code class="docutils literal"><span class="pre">cherry-pick</span></code>. Pero copié muy pocos caracteres del hash que quería <em>cherrypickear</em>:</p>
-<pre class="code bash"><a name="rest_code_02186e5dadcd4d349041fff569d54e1c-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ git reset --hard 772dad9a775
-<a name="rest_code_02186e5dadcd4d349041fff569d54e1c-2"></a>HEAD is now at 772dad9 making aqueous migration script more robust
-<a name="rest_code_02186e5dadcd4d349041fff569d54e1c-3"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ git cherry-pick c4396
-<a name="rest_code_02186e5dadcd4d349041fff569d54e1c-4"></a>error: short SHA1 c4396 is ambiguous.
-<a name="rest_code_02186e5dadcd4d349041fff569d54e1c-5"></a>error: short SHA1 c4396 is ambiguous
-<a name="rest_code_02186e5dadcd4d349041fff569d54e1c-6"></a>fatal: ambiguous argument <span class="s1">'c4396'</span>: unknown revision or path not in the working tree.
-<a name="rest_code_02186e5dadcd4d349041fff569d54e1c-7"></a>Use <span class="s1">'--'</span> to separate paths from revisions
-<a name="rest_code_02186e5dadcd4d349041fff569d54e1c-8"></a><span class="o">(</span>cpi<span class="o">)</span>mgaitan@gutemberg:~/laburo/cpi/code/cpi_mrp$
+<p>Así que tomando ideas de aqui y allá, hice este scriptcito en Python
+al que bauticé <code class="docutils literal"><span class="pre">git-recent-branches</span></code> que basicamente te lista las ramas
+en las que venis trabajando (las 10 últimas por defecto o <code class="docutils literal"><span class="pre">-n</span> N</code>)
+y checkoutear la que querés rapidamente pasando el índice.</p>
+<p>En mi día a día lo uso un montón asi que quizas les sirve.</p>
+<script src="https://gist.github.com/ba1e4e252b90a7fd4a4eb9e1742e94fb.js"></script><noscript>
+<pre class="literal-block">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+List the most recent branches you have been working on, and checkout any of them. 
+
+# Install
+
+Put this file somewhere in your PATH, and set execution permissions. 
+Git will recognize it as the "recent-branches" subcommand.  
+
+# Usage
+
+Without positional argument, it shows the last 10 most recently used branches. 
+You can pass -n &lt;number&gt; to see more.  
+
+$ git recent-branches 
+1 - feature/EN-634
+2 - feature/en-583_3
+3 - master
+4 - HOTFIX/spotify
+5 - tests_factories
+6 - feature/en-583_2
+7 - _prod/workers/orders_py3
+8 - prueba
+9 - _prod/workers/products_py3
+10 - staging
+
+Passing a number will checkout the branch listed in that position. 
+
+$ git recent-branches 5
+Switched to branch 'tests_factories'
+Your branch is up to date with 'origin/tests_factories'.
+
+"""
+
+import argparse
+import subprocess
+from collections import OrderedDict
+
+import re
+pattern = re.compile(r'checkout: moving from (.*) to')
+
+parser = argparse.ArgumentParser(
+    description='Recent branches'
+)
+parser.add_argument('index', type=int, nargs='?', help='Move to the i-th branch in the list')
+parser.add_argument('--limit', '-n', type=int, default=10, help='Show until the n-th branch')
+args = parser.parse_args()
+
+output = subprocess.check_output(['git', 'reflog'])
+
+# OrderedList.fromkeys(list).keys() works as a filter of repeated items in list
+# keeping the first occurrence of them. A poor-man sorted set.
+branches = list(OrderedDict.fromkeys(re.findall(pattern, output.decode('utf8'))).keys())
+
+if args.index:
+    subprocess.call(['git', 'checkout', branches[args.index - 1]])
+else:
+    for i, branch in enumerate(branches[:args.limit], 1):
+        print('{} - {}'.format(i, branch))
 </pre>
-<p>Recórcholis.</p>
-<p>Un poquito de bash y <em>git plumbing</em> al rescate:</p>
-<pre class="code bash"><a name="rest_code_6946587658b54afda7b780d31a38576a-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ <span class="k">for</span> <span class="nb">hash</span> in c4396<span class="o">{{</span><span class="m">0</span>..9<span class="o">}</span>,<span class="o">{</span>a..f<span class="o">}}</span><span class="p">;</span> <span class="k">do</span> git cat-file -e <span class="nv">$hash</span> <span class="o">&amp;&amp;</span> git rev-parse <span class="nv">$hash</span><span class="p">;</span> <span class="k">done</span> <span class="m">2</span>&gt;/dev/nul
-<a name="rest_code_6946587658b54afda7b780d31a38576a-2"></a>c4396586273b2a9ea5eae46c4ab2d98e236e7792
-<a name="rest_code_6946587658b54afda7b780d31a38576a-3"></a>c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
-</pre>
-<p>Ahora tenemos el conjunto de hash con igual prefijo, y podemos revisarlos para ver cual era el que queriamos:</p>
-<pre class="code bash"><a name="rest_code_98951786bd774371a6c67cb5c5553cfb-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ git show c4396586273b2a9ea5eae46c4ab2d98e236e7792
-</pre>
-<p>Y ese era el que quería.</p>
+</noscript>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
-<li class="previous">
-                <a href="../como-funciona-cuevana/" rel="prev" title="Cómo funciona Cuevana">Post anterior</a>
-            </li>
-            <li class="next">
-                <a href="../pip-apurate-por-favor/" rel="next" title="pip, apurate por favor">Siguiente post</a>
-            </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+    <aside class="postpromonav"><nav></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
-            disqus_url="https://mgaitan.github.io/posts/desambiguando-un-hash-en-git/",
-        disqus_title="Desambiguando un hash en Git",
-        disqus_identifier="cache/posts/desambiguando-un-hash-en-git.html",
+            disqus_url="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/",
+        disqus_title="El mono salta entre las ramas. El desarrollador tambi\u00e9n",
+        disqus_identifier="cache/posts/el-mono-salta-entre-las-ramas.html",
         disqus_config = function () {
             this.language = "es_ES";
         };

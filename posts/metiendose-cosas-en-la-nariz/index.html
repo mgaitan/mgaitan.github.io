@@ -139,7 +139,7 @@ para mostrar errores y fallos <em>on the fly</em>.</p>
 tracebacks a la parte útil, e incluye colores usados con criterio
 (basada en la genial biblioteca <a class="reference external" href="https://pypi.python.org/pypi/blessings">blessing</a>, del mismo autor).</p>
 <p>Para instalarlo, lo de siempre:</p>
-<pre class="code bash"><a name="rest_code_8237419a3be5406284a93bf888edb9d3-1"></a><span class="o">(</span>env<span class="o">)</span> $ pip install nose-progressive
+<pre class="code bash"><a name="rest_code_6d0314ce7779417bac3af822fb5c42d9-1"></a><span class="o">(</span>env<span class="o">)</span> $ pip install nose-progressive
 </pre>
 <p>Para usarlo, agregar <code class="docutils literal"><span class="pre">--with-progressive</span></code> como parámetros de <code class="docutils literal">nosetests</code>,
 o bien, para usarlo siempre, configurarlo en <code class="docutils literal">.noserc</code> o en la
@@ -186,23 +186,23 @@ métodos.</p>
 <p>Por eso existe <a class="reference external" href="https://github.com/iElectric/nose-selecttests">nose-selecttests</a>, que permite filtrar pruebas con
 determinada subcadena en el nombre del método.</p>
 <p>Por ejemplo:</p>
-<pre class="code bash"><a name="rest_code_1ab7a38b855c4e398f2ad292781dce13-1"></a>$ djntest -v <span class="m">2</span> common/tests/test_sequence_diff.py
-<a name="rest_code_1ab7a38b855c4e398f2ad292781dce13-2"></a>
-<a name="rest_code_1ab7a38b855c4e398f2ad292781dce13-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_1ab7a38b855c4e398f2ad292781dce13-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_1ab7a38b855c4e398f2ad292781dce13-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_1ab7a38b855c4e398f2ad292781dce13-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_1ab7a38b855c4e398f2ad292781dce13-7"></a>
-<a name="rest_code_1ab7a38b855c4e398f2ad292781dce13-8"></a>----------------------------------------------------------------------
-<a name="rest_code_1ab7a38b855c4e398f2ad292781dce13-9"></a>Ran <span class="m">4</span> tests in <span class="m">0</span>.375s
+<pre class="code bash"><a name="rest_code_117b3912fe954f79b661abde7b6c8775-1"></a>$ djntest -v <span class="m">2</span> common/tests/test_sequence_diff.py
+<a name="rest_code_117b3912fe954f79b661abde7b6c8775-2"></a>
+<a name="rest_code_117b3912fe954f79b661abde7b6c8775-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_117b3912fe954f79b661abde7b6c8775-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_117b3912fe954f79b661abde7b6c8775-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_117b3912fe954f79b661abde7b6c8775-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_117b3912fe954f79b661abde7b6c8775-7"></a>
+<a name="rest_code_117b3912fe954f79b661abde7b6c8775-8"></a>----------------------------------------------------------------------
+<a name="rest_code_117b3912fe954f79b661abde7b6c8775-9"></a>Ran <span class="m">4</span> tests in <span class="m">0</span>.375s
 </pre>
 <p>En cambio:</p>
-<pre class="code bash"><a name="rest_code_067f26d0238843ecbbac0b2667f2e7f2-1"></a>$ djntest --select-tests<span class="o">=</span>differ -v <span class="m">2</span> apps/common/tests/test_sequence_diff.py
-<a name="rest_code_067f26d0238843ecbbac0b2667f2e7f2-2"></a>
-<a name="rest_code_067f26d0238843ecbbac0b2667f2e7f2-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_067f26d0238843ecbbac0b2667f2e7f2-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_067f26d0238843ecbbac0b2667f2e7f2-5"></a>----------------------------------------------------------------------
-<a name="rest_code_067f26d0238843ecbbac0b2667f2e7f2-6"></a>Ran <span class="m">2</span> tests in <span class="m">0</span>.088s
+<pre class="code bash"><a name="rest_code_4498afcb95ad448b8678d7332524dc27-1"></a>$ djntest --select-tests<span class="o">=</span>differ -v <span class="m">2</span> apps/common/tests/test_sequence_diff.py
+<a name="rest_code_4498afcb95ad448b8678d7332524dc27-2"></a>
+<a name="rest_code_4498afcb95ad448b8678d7332524dc27-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_4498afcb95ad448b8678d7332524dc27-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_4498afcb95ad448b8678d7332524dc27-5"></a>----------------------------------------------------------------------
+<a name="rest_code_4498afcb95ad448b8678d7332524dc27-6"></a>Ran <span class="m">2</span> tests in <span class="m">0</span>.088s
 </pre>
 </div>
 <div class="section" id="django-tests-autocomplete">
@@ -212,13 +212,13 @@ que aprovecha las posibilidades de bash para
 <a class="reference external" href="http://bash-completion.alioth.debian.org/">autocompletar</a> usando la tecla
 tab.</p>
 <p>¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:</p>
-<pre class="code bash"><a name="rest_code_93e369f6905444f387ff718f31fe3830-1"></a>$ nosetests path/to/test.py
+<pre class="code bash"><a name="rest_code_694b9431e34248eb8ee0744d347867f1-1"></a>$ nosetests path/to/test.py
 </pre>
 <p>Pero también permite afinar la puntería y "meterse" adentro del módulo:</p>
-<pre class="code bash"><a name="rest_code_67d06e13a77a4478a67dfb2e6b300feb-1"></a>$ nosetests path/to/test.py:MyImportantTestCase
+<pre class="code bash"><a name="rest_code_2b5ae47743e7441f9ead749c4f9284e9-1"></a>$ nosetests path/to/test.py:MyImportantTestCase
 </pre>
 <p>E incluso adentro del testcase:</p>
-<pre class="code bash"><a name="rest_code_1aeb67fde14c41e9be97c834209a9b4f-1"></a>$ nosetests path/to/test.py:MyImportantTestCase.test_super_important
+<pre class="code bash"><a name="rest_code_29d2b64ecf7a4cb6ba69e557121977f1-1"></a>$ nosetests path/to/test.py:MyImportantTestCase.test_super_important
 </pre>
 <p>Desde el <code class="docutils literal">:</code> en adelante estamos en Python y Bash ya no sabe autocompletar,
 salvo que usemos esta herramienta que instrospecciona y "alimenta" el

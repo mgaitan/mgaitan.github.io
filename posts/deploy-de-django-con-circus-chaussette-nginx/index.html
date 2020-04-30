@@ -133,76 +133,76 @@ navbar-light bg-light
 <h2>Desplegando Django</h2>
 <p>Para ejemplificar, voy utilizar un proyecto Django que estoy desarrollando (muy lentamente): <a class="reference external" href="https://github.com/mgaitan/nikolahub">nikolahub</a>.</p>
 <p>Circus se configura con un archivo con formato <code class="docutils literal">.ini</code>. El mio, que bauticé <code class="docutils literal">circus.ini</code> quedó así:</p>
-<pre class="code ini"><a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-1"></a><span class="k">[circus]</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-2"></a><span class="na">check_delay</span> <span class="o">=</span> <span class="s">5</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-3"></a><span class="na">endpoint</span> <span class="o">=</span> <span class="s">tcp://127.0.0.1:5555</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-4"></a><span class="na">pubsub_endpoint</span> <span class="o">=</span> <span class="s">tcp://127.0.0.1:5556</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-5"></a><span class="na">stats_endpoint</span> <span class="o">=</span> <span class="s">tcp://127.0.0.1:5557</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-6"></a>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-7"></a><span class="k">[socket:nikolahub]</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-8"></a><span class="na">host</span> <span class="o">=</span> <span class="s">127.0.0.1</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-9"></a><span class="na">port</span> <span class="o">=</span> <span class="s">8080</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-10"></a>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-11"></a><span class="k">[watcher:nikolahub]</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-12"></a><span class="na">cmd</span> <span class="o">=</span> <span class="s">/virtualenvs/nikolahub/bin/chaussette --fd $(circus.sockets.nikolahub) nikolahub.wsgi.application</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-13"></a><span class="na">use_sockets</span> <span class="o">=</span> <span class="s">True</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-14"></a><span class="na">numprocesses</span> <span class="o">=</span> <span class="s">3</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-15"></a>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-16"></a><span class="k">[env:nikolahub]</span>
-<a name="rest_code_00d4eb4d313d474e89fdad1ea3e3eb48-17"></a><span class="na">PYTHONPATH</span> <span class="o">=</span> <span class="s">/projects/nikolahub</span>
+<pre class="code ini"><a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-1"></a><span class="k">[circus]</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-2"></a><span class="na">check_delay</span> <span class="o">=</span> <span class="s">5</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-3"></a><span class="na">endpoint</span> <span class="o">=</span> <span class="s">tcp://127.0.0.1:5555</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-4"></a><span class="na">pubsub_endpoint</span> <span class="o">=</span> <span class="s">tcp://127.0.0.1:5556</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-5"></a><span class="na">stats_endpoint</span> <span class="o">=</span> <span class="s">tcp://127.0.0.1:5557</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-6"></a>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-7"></a><span class="k">[socket:nikolahub]</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-8"></a><span class="na">host</span> <span class="o">=</span> <span class="s">127.0.0.1</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-9"></a><span class="na">port</span> <span class="o">=</span> <span class="s">8080</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-10"></a>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-11"></a><span class="k">[watcher:nikolahub]</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-12"></a><span class="na">cmd</span> <span class="o">=</span> <span class="s">/virtualenvs/nikolahub/bin/chaussette --fd $(circus.sockets.nikolahub) nikolahub.wsgi.application</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-13"></a><span class="na">use_sockets</span> <span class="o">=</span> <span class="s">True</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-14"></a><span class="na">numprocesses</span> <span class="o">=</span> <span class="s">3</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-15"></a>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-16"></a><span class="k">[env:nikolahub]</span>
+<a name="rest_code_4ccb92d85f2d46f193a61fff11676aaa-17"></a><span class="na">PYTHONPATH</span> <span class="o">=</span> <span class="s">/projects/nikolahub</span>
 </pre>
 <p>La sección <code class="docutils literal">watcher</code> indica lanza el comando a controlar, en este caso levantando 3 workers de la aplicación -django.  Notar que como tengo instalado Chaussette dentro del virtualenv, uso el path absoluto al ejecutable. El fragmento <code class="docutils literal"><span class="pre">--fd</span> $(circus.sockets.nikolahub)</code> se expande implícitamente asignando el pid que obtuvo el fork (el proceso hijo) de circus.</p>
 <p>Si quisieramos usar otro servidor web, sólo hay que indicar cual con el parámetro <code class="docutils literal"><span class="pre">--backend</span></code> Por ejemplo:</p>
-<pre class="code ini"><a name="rest_code_3fbe71d0094e4d98a6c5963887a432a3-1"></a><span class="na">cmd</span> <span class="o">=</span> <span class="s">/virtualenvs/nikolahub/bin/chaussette --backend gevent --fd $(circus.sockets.nikolahub) nikolahub.wsgi.application</span>
+<pre class="code ini"><a name="rest_code_28f960a164434487b6efa0e188d17684-1"></a><span class="na">cmd</span> <span class="o">=</span> <span class="s">/virtualenvs/nikolahub/bin/chaussette --backend gevent --fd $(circus.sockets.nikolahub) nikolahub.wsgi.application</span>
 </pre>
 <p>Podemos probar si todo funciona:</p>
-<pre class="code bash"><a name="rest_code_747c951d8e4240abb2274f209acf225a-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusd circus.ini
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-2"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Starting master on pid <span class="m">1141</span>
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-3"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> sockets started
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-4"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Arbiter now waiting <span class="k">for</span> commands
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-5"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> nikolahub started
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-6"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> circusd-stats started
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-7"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 circus<span class="o">[</span><span class="m">1150</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Starting the stats streamer
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-8"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1149</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Application is &lt;django.core.handlers.wsgi.WSGIHandler object at 0xa06f60c&gt;
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-9"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1149</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Serving on fd://5
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-10"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1149</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Using &lt;class chaussette.backend._wsgiref.ChaussetteServer at 0x9f2d6ec&gt; as a backend
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-11"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1148</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Application is &lt;django.core.handlers.wsgi.WSGIHandler object at 0x939b60c&gt;
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-12"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1148</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Serving on fd://5
-<a name="rest_code_747c951d8e4240abb2274f209acf225a-13"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1148</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Using &lt;class chaussette.backend._wsgiref.ChaussetteServer at 0x92596ec&gt; as a backend
+<pre class="code bash"><a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusd circus.ini
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-2"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Starting master on pid <span class="m">1141</span>
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-3"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> sockets started
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-4"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Arbiter now waiting <span class="k">for</span> commands
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-5"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> nikolahub started
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-6"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:16 circus<span class="o">[</span><span class="m">1141</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> circusd-stats started
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-7"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 circus<span class="o">[</span><span class="m">1150</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Starting the stats streamer
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-8"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1149</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Application is &lt;django.core.handlers.wsgi.WSGIHandler object at 0xa06f60c&gt;
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-9"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1149</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Serving on fd://5
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-10"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1149</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Using &lt;class chaussette.backend._wsgiref.ChaussetteServer at 0x9f2d6ec&gt; as a backend
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-11"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1148</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Application is &lt;django.core.handlers.wsgi.WSGIHandler object at 0x939b60c&gt;
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-12"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1148</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Serving on fd://5
+<a name="rest_code_09219254dbc14664a7ad5d7d68cc2fd2-13"></a><span class="m">2014</span>-06-12 <span class="m">04</span>:36:17 <span class="o">[</span><span class="m">1148</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Using &lt;class chaussette.backend._wsgiref.ChaussetteServer at 0x92596ec&gt; as a backend
 </pre>
 <p>Tendremos la aplicación servida en el puerto 8080 de localhost. Demonizarlo es sólo un flag:</p>
-<pre class="code bash"><a name="rest_code_967cedca834345d594f28cfe6d01592c-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circud --daemon circus.ini
+<pre class="code bash"><a name="rest_code_ae3f80054c3a4e18ac3a7e4167f5f28e-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circud --daemon circus.ini
 </pre>
 <p>Para implementar nginx como proxy reverso armé un archivo <code class="docutils literal">nginx.conf</code>:</p>
-<pre class="code javascript"><a name="rest_code_d614c8c5585e47178d194663cca094e6-1"></a><span class="nx">server</span> <span class="p">{</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-2"></a>    <span class="nx">listen</span> <span class="mi">80</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-3"></a>    <span class="nx">server_name</span> <span class="nx">nikolahub</span><span class="p">.</span><span class="nx">nqnwebs</span><span class="p">.</span><span class="nx">com</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-4"></a>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-5"></a>    <span class="nx">location</span> <span class="o">/</span><span class="kr">static</span><span class="o">/</span> <span class="p">{</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-6"></a>            <span class="nx">alias</span> <span class="o">/</span><span class="nx">projects</span><span class="o">/</span><span class="nx">nikolahub</span><span class="o">/</span><span class="kr">static</span><span class="o">/</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-7"></a>    <span class="p">}</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-8"></a>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-9"></a>    <span class="nx">location</span> <span class="o">/</span><span class="nx">media</span><span class="o">/</span> <span class="p">{</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-10"></a>        <span class="nx">alias</span> <span class="o">/</span><span class="nx">projects</span><span class="o">/</span><span class="nx">nikolahub</span><span class="o">/</span><span class="nx">media</span><span class="o">/</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-11"></a>    <span class="p">}</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-12"></a>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-13"></a>    <span class="nx">location</span> <span class="o">/</span> <span class="p">{</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-14"></a>        <span class="nx">proxy_pass</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//localhost:8080/;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-15"></a>        <span class="nx">proxy_pass_header</span> <span class="nx">Server</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-16"></a>        <span class="nx">proxy_set_header</span> <span class="nx">Host</span> <span class="nx">$host</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-17"></a>        <span class="nx">proxy_redirect</span> <span class="nx">off</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-18"></a>        <span class="nx">proxy_set_header</span> <span class="nx">X</span><span class="o">-</span><span class="nx">Real</span><span class="o">-</span><span class="nx">IP</span> <span class="nx">$remote_addr</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-19"></a>        <span class="nx">proxy_set_header</span> <span class="nx">X</span><span class="o">-</span><span class="nx">Scheme</span> <span class="nx">$scheme</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-20"></a>        <span class="nx">proxy_connect_timeout</span> <span class="mi">600</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-21"></a>        <span class="nx">proxy_send_timeout</span> <span class="mi">600</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-22"></a>        <span class="nx">proxy_read_timeout</span> <span class="mi">600</span><span class="p">;</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-23"></a>    <span class="p">}</span>
-<a name="rest_code_d614c8c5585e47178d194663cca094e6-24"></a><span class="p">}</span>
+<pre class="code javascript"><a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-1"></a><span class="nx">server</span> <span class="p">{</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-2"></a>    <span class="nx">listen</span> <span class="mi">80</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-3"></a>    <span class="nx">server_name</span> <span class="nx">nikolahub</span><span class="p">.</span><span class="nx">nqnwebs</span><span class="p">.</span><span class="nx">com</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-4"></a>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-5"></a>    <span class="nx">location</span> <span class="o">/</span><span class="kr">static</span><span class="o">/</span> <span class="p">{</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-6"></a>            <span class="nx">alias</span> <span class="o">/</span><span class="nx">projects</span><span class="o">/</span><span class="nx">nikolahub</span><span class="o">/</span><span class="kr">static</span><span class="o">/</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-7"></a>    <span class="p">}</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-8"></a>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-9"></a>    <span class="nx">location</span> <span class="o">/</span><span class="nx">media</span><span class="o">/</span> <span class="p">{</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-10"></a>        <span class="nx">alias</span> <span class="o">/</span><span class="nx">projects</span><span class="o">/</span><span class="nx">nikolahub</span><span class="o">/</span><span class="nx">media</span><span class="o">/</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-11"></a>    <span class="p">}</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-12"></a>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-13"></a>    <span class="nx">location</span> <span class="o">/</span> <span class="p">{</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-14"></a>        <span class="nx">proxy_pass</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//localhost:8080/;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-15"></a>        <span class="nx">proxy_pass_header</span> <span class="nx">Server</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-16"></a>        <span class="nx">proxy_set_header</span> <span class="nx">Host</span> <span class="nx">$host</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-17"></a>        <span class="nx">proxy_redirect</span> <span class="nx">off</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-18"></a>        <span class="nx">proxy_set_header</span> <span class="nx">X</span><span class="o">-</span><span class="nx">Real</span><span class="o">-</span><span class="nx">IP</span> <span class="nx">$remote_addr</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-19"></a>        <span class="nx">proxy_set_header</span> <span class="nx">X</span><span class="o">-</span><span class="nx">Scheme</span> <span class="nx">$scheme</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-20"></a>        <span class="nx">proxy_connect_timeout</span> <span class="mi">600</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-21"></a>        <span class="nx">proxy_send_timeout</span> <span class="mi">600</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-22"></a>        <span class="nx">proxy_read_timeout</span> <span class="mi">600</span><span class="p">;</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-23"></a>    <span class="p">}</span>
+<a name="rest_code_6d483b76527c4a0fb4a120c2c951f9dc-24"></a><span class="p">}</span>
 </pre>
 <p>Luego agregamos el sitio:</p>
-<pre class="code bash"><a name="rest_code_261e1b55c49741e6b0b5c7e496b5a042-1"></a>$ ln -s /etc/nginx/sites-available/nikolahub nginx.conf
-<a name="rest_code_261e1b55c49741e6b0b5c7e496b5a042-2"></a>$ ln -s /etc/nginx/sites-enable/nikolahub nginx.conf
-<a name="rest_code_261e1b55c49741e6b0b5c7e496b5a042-3"></a>$ sudo service nginx restart
+<pre class="code bash"><a name="rest_code_4efe97a503bf4bd19994918c4ba336ee-1"></a>$ ln -s /etc/nginx/sites-available/nikolahub nginx.conf
+<a name="rest_code_4efe97a503bf4bd19994918c4ba336ee-2"></a>$ ln -s /etc/nginx/sites-enable/nikolahub nginx.conf
+<a name="rest_code_4efe97a503bf4bd19994918c4ba336ee-3"></a>$ sudo service nginx restart
 </pre>
 <img alt="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png" class="align-right" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png"><p>Esto pone a nginx como "frontend" de la aplicación, sirviendo los directorios con contenido estático y pasando el resto de las peticiones al puerto 8080 que administra Circus.</p>
 <p>Ya tenemos nuestro sitio en producción.</p>
@@ -212,30 +212,30 @@ navbar-light bg-light
 <p>De ahora en más, podremos usar las herramientas que provee Circus.</p>
 <p><code class="docutils literal">circusctl</code> es el dueño del circo. Puede parar, reiniciar, cambiar la cantidad de workers, abrir una consola ipython para interactuar o inspeccionar y mucho mas. Se puede usar como subcomandos (<code class="docutils literal">circusctl &lt;subcmd&gt; &lt;watcher&gt;</code>) o usar la consola interactiva.</p>
 <p>Por ejemplo, si quisiera ver cuantos procesos workers tengo y agregar uno más, podría hacer así:</p>
-<pre class="code bash"><a name="rest_code_328d0bb264744088af62bf7980a3678f-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusctl numprocesses nikolahub
-<a name="rest_code_328d0bb264744088af62bf7980a3678f-2"></a><span class="m">3</span>
-<a name="rest_code_328d0bb264744088af62bf7980a3678f-3"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusctl incr nikolahub
-<a name="rest_code_328d0bb264744088af62bf7980a3678f-4"></a>ok
-<a name="rest_code_328d0bb264744088af62bf7980a3678f-5"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusctl numprocesses nikolahub
-<a name="rest_code_328d0bb264744088af62bf7980a3678f-6"></a><span class="m">4</span>
+<pre class="code bash"><a name="rest_code_8c3bbb86936c4848bf0004bd9fb663e2-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusctl numprocesses nikolahub
+<a name="rest_code_8c3bbb86936c4848bf0004bd9fb663e2-2"></a><span class="m">3</span>
+<a name="rest_code_8c3bbb86936c4848bf0004bd9fb663e2-3"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusctl incr nikolahub
+<a name="rest_code_8c3bbb86936c4848bf0004bd9fb663e2-4"></a>ok
+<a name="rest_code_8c3bbb86936c4848bf0004bd9fb663e2-5"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusctl numprocesses nikolahub
+<a name="rest_code_8c3bbb86936c4848bf0004bd9fb663e2-6"></a><span class="m">4</span>
 </pre>
 <p>Lo mismo y más se puede hacer desde una consola IPython.</p>
-<pre class="code bash"><a name="rest_code_c74fa702214944e6986036be665c194b-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusctl ipython
-<a name="rest_code_c74fa702214944e6986036be665c194b-2"></a>Python <span class="m">2</span>.7.4 <span class="o">(</span>default, Apr <span class="m">19</span> <span class="m">2013</span>, <span class="m">18</span>:32:33<span class="o">)</span>
-<a name="rest_code_c74fa702214944e6986036be665c194b-3"></a>Type <span class="s2">"copyright"</span>, <span class="s2">"credits"</span> or <span class="s2">"license"</span> <span class="k">for</span> more information.
-<a name="rest_code_c74fa702214944e6986036be665c194b-4"></a>
-<a name="rest_code_c74fa702214944e6986036be665c194b-5"></a>IPython <span class="m">2</span>.1.0 -- An enhanced Interactive Python.
-<a name="rest_code_c74fa702214944e6986036be665c194b-6"></a>?         -&gt; Introduction and overview of IPython<span class="s1">'s features.</span>
-<a name="rest_code_c74fa702214944e6986036be665c194b-7"></a><span class="s1">%quickref -&gt; Quick reference.</span>
-<a name="rest_code_c74fa702214944e6986036be665c194b-8"></a><span class="s1">help      -&gt; Python'</span>s own <span class="nb">help</span> system.
-<a name="rest_code_c74fa702214944e6986036be665c194b-9"></a>object?   -&gt; Details about <span class="s1">'object'</span>, use <span class="s1">'object??'</span> <span class="k">for</span> extra details.
-<a name="rest_code_c74fa702214944e6986036be665c194b-10"></a>
-<a name="rest_code_c74fa702214944e6986036be665c194b-11"></a>In <span class="o">[</span><span class="m">1</span><span class="o">]</span>: arbiter.numprocesses<span class="o">()</span>
-<a name="rest_code_c74fa702214944e6986036be665c194b-12"></a>Out<span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="m">4</span>
+<pre class="code bash"><a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circusctl ipython
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-2"></a>Python <span class="m">2</span>.7.4 <span class="o">(</span>default, Apr <span class="m">19</span> <span class="m">2013</span>, <span class="m">18</span>:32:33<span class="o">)</span>
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-3"></a>Type <span class="s2">"copyright"</span>, <span class="s2">"credits"</span> or <span class="s2">"license"</span> <span class="k">for</span> more information.
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-4"></a>
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-5"></a>IPython <span class="m">2</span>.1.0 -- An enhanced Interactive Python.
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-6"></a>?         -&gt; Introduction and overview of IPython<span class="s1">'s features.</span>
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-7"></a><span class="s1">%quickref -&gt; Quick reference.</span>
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-8"></a><span class="s1">help      -&gt; Python'</span>s own <span class="nb">help</span> system.
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-9"></a>object?   -&gt; Details about <span class="s1">'object'</span>, use <span class="s1">'object??'</span> <span class="k">for</span> extra details.
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-10"></a>
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-11"></a>In <span class="o">[</span><span class="m">1</span><span class="o">]</span>: arbiter.numprocesses<span class="o">()</span>
+<a name="rest_code_2cd8bde5f4ff492d8f09e5d3604685d7-12"></a>Out<span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="m">4</span>
 </pre>
 <p><code class="docutils literal"><span class="pre">circus-top</span></code> es un monitor realtime, estilo top. Escucha las estadísticas
 que produce <code class="docutils literal"><span class="pre">circusd-stats</span></code>.</p>
-<pre class="code bash"><a name="rest_code_9d7091d150144eb8951ffeac1bc18820-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circus-top
+<pre class="code bash"><a name="rest_code_e0d47f0f1a0e45268f0ed8ad3e14153a-1"></a><span class="o">(</span>nikolahub<span class="o">)</span>tin@morochita:$ circus-top
 </pre>
 <div class="figure">
 <img alt="/images/circus-top.png" src="../../images/circus-top.png"><p class="caption">circus-top en acción. Muestra los procesos watcher y los recursos que cosumen.</p>
@@ -243,7 +243,7 @@ que produce <code class="docutils literal"><span class="pre">circusd-stats</span
 <p>Todo esto puede verse y manejarse cómodamente a través de <a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-ops/circusweb/">circus-web</a>, un dashboard web que permite monitorear y
 administrar circus, con gráficos realtime y muy fácil de usar.</p>
 <img alt="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" class="align-center" src="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" style="width: 100%;"><p>Desde las últimas versiones, <code class="docutils literal"><span class="pre">circus-web</span></code> se refactorizó para basarla en <a class="reference external" href="http://www.tornadoweb.org">Tornado</a> (originalmente usaba <a class="reference external" href="http://bottlepy.org/">bottle</a>) y hay que instalarlo aparte.</p>
-<pre class="code bash"><a name="rest_code_01c41660abef41c8ab8911bb1307edf4-1"></a>$ pip install circus-web
+<pre class="code bash"><a name="rest_code_240caf09f92449fca72be44d5cfab9e1-1"></a>$ pip install circus-web
 </pre>
 </div>
 <div class="section" id="conclusiones">

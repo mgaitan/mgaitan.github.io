@@ -142,84 +142,84 @@ con los números reemplazados a un PDF. Después concateno todos los PDF
 de una tanda (por ejemplo agrupados de a 10, como en el dibujo) con
 Ghostscript.</p>
 <p>Acá el código:</p>
-<pre class="code python"><a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-3"></a><span class="c1">#</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-4"></a><span class="c1">#       bonito.py</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-5"></a><span class="c1">#</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-6"></a><span class="c1">#       Copyright 2010 Martin Gaitán &lt;gaitan(at)gmail.com&gt;</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-7"></a><span class="c1">#</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-8"></a><span class="c1">#       This program is free software; you can redistribute it and/or modify</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-9"></a><span class="c1">#       it under the terms of the GNU General Public License as published by</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-10"></a><span class="c1">#       the Free Software Foundation; either version 2 of the License, or</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-11"></a><span class="c1">#       (at your option) any later version.</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-12"></a><span class="c1">#</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-13"></a><span class="c1">#       This program is distributed in the hope that it will be useful,</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-14"></a><span class="c1">#       but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-15"></a><span class="c1">#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-16"></a><span class="c1">#       GNU General Public License for more details.</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-17"></a><span class="c1">#</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-18"></a><span class="c1">#       You should have received a copy of the GNU General Public License</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-19"></a><span class="c1">#       along with this program; if not, write to the Free Software</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-20"></a><span class="c1">#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-21"></a><span class="c1">#       MA 02110-1301, USA.</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-22"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-23"></a><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-24"></a><span class="kn">import</span> <span class="nn">subprocess</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-25"></a><span class="kn">import</span> <span class="nn">glob</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-26"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-27"></a><span class="k">def</span> <span class="nf">markToNum</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">mark</span><span class="o">=</span><span class="s1">'XXXX'</span><span class="p">):</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-28"></a>    <span class="n">num_as_string</span> <span class="o">=</span> <span class="s1">'0'</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-29"></a>    <span class="k">return</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="n">num_as_string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-30"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-31"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-32"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-33"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-34"></a>        <span class="nb">print</span> <span class="s2">"Modo de uso:"</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-35"></a>        <span class="nb">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" archivo.svg"</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-36"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-37"></a>    <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-38"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">as</span> <span class="nb">input</span><span class="p">:</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-39"></a>            <span class="n">svg_content</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-40"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-41"></a>        <span class="n">index_from</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Desde [0]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-42"></a>        <span class="n">number_by_page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Num por pagina [6]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">6</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-43"></a>        <span class="n">grouped_by</span> <span class="o">=</span>  <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'agrupar de a [20]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">20</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-44"></a>        <span class="n">planchas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Planchas [1]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-45"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-46"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-47"></a>        <span class="k">for</span> <span class="n">plancha</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">planchas</span><span class="p">):</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-48"></a>            <span class="n">counter_from</span> <span class="o">=</span> <span class="n">index_from</span> <span class="o">+</span> <span class="n">plancha</span><span class="o">*</span><span class="n">number_by_page</span><span class="o">*</span><span class="n">grouped_by</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-49"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-50"></a>            <span class="k">for</span> <span class="n">pagina</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grouped_by</span><span class="p">):</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-51"></a>                <span class="n">page_content</span> <span class="o">=</span> <span class="n">svg_content</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-52"></a>                <span class="k">for</span> <span class="n">bono</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_by_page</span><span class="p">):</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-53"></a>                    <span class="n">num_remplazo</span> <span class="o">=</span> <span class="n">counter_from</span> <span class="o">+</span> <span class="n">bono</span><span class="o">*</span><span class="n">grouped_by</span> <span class="o">+</span> <span class="n">pagina</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-54"></a>                    <span class="n">page_content</span> <span class="o">=</span> <span class="n">markToNum</span><span class="p">(</span><span class="n">page_content</span><span class="p">,</span> <span class="n">num_remplazo</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-55"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-56"></a>                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'temp.svg'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_svg</span><span class="p">:</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-57"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-58"></a>                    <span class="n">output_svg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">page_content</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-59"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-60"></a>                <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">"inkscape"</span><span class="p">,</span> <span class="s2">"-f"</span><span class="p">,</span> <span class="s1">'temp.svg'</span><span class="p">,</span> <span class="s1">'--export-dpi=150'</span><span class="p">,</span> <span class="s1">'-A'</span><span class="p">,</span> <span class="s1">'temp</span><span class="si">%s</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"0"</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">))</span> <span class="p">])</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-61"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-62"></a>            <span class="n">generator</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'gs'</span><span class="p">,</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-63"></a>                         <span class="s1">'-q'</span><span class="p">,</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-64"></a>                         <span class="s1">'-sPAPERSIZE=a4'</span><span class="p">,</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-65"></a>                         <span class="s1">'-dNOPAUSE'</span><span class="p">,</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-66"></a>                         <span class="s1">'-dBATCH'</span><span class="p">,</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-67"></a>                         <span class="s1">'-sDEVICE=pdfwrite'</span><span class="p">,</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-68"></a>                         <span class="s1">'-sOutputFile=</span><span class="si">%s</span><span class="s1">-</span><span class="si">%i</span><span class="s1">-</span><span class="si">%i</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="n">counter_from</span><span class="p">,</span> <span class="n">num_remplazo</span><span class="p">),]</span> <span class="o">+</span> \
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-69"></a>                        <span class="p">[</span><span class="s1">'temp</span><span class="si">%s</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"0"</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">)))</span> <span class="o">+</span> \
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-70"></a>                            <span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">))</span> <span class="k">for</span> <span class="n">pagina</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grouped_by</span><span class="p">)]</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-71"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-72"></a>            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-73"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-74"></a>            <span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'temp*'</span><span class="p">):</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-75"></a>                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-76"></a>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-77"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_b9079a5a38ee4de9b14b37c3d3aaea58-78"></a>    <span class="n">main</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-3"></a><span class="c1">#</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-4"></a><span class="c1">#       bonito.py</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-5"></a><span class="c1">#</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-6"></a><span class="c1">#       Copyright 2010 Martin Gaitán &lt;gaitan(at)gmail.com&gt;</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-7"></a><span class="c1">#</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-8"></a><span class="c1">#       This program is free software; you can redistribute it and/or modify</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-9"></a><span class="c1">#       it under the terms of the GNU General Public License as published by</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-10"></a><span class="c1">#       the Free Software Foundation; either version 2 of the License, or</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-11"></a><span class="c1">#       (at your option) any later version.</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-12"></a><span class="c1">#</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-13"></a><span class="c1">#       This program is distributed in the hope that it will be useful,</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-14"></a><span class="c1">#       but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-15"></a><span class="c1">#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-16"></a><span class="c1">#       GNU General Public License for more details.</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-17"></a><span class="c1">#</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-18"></a><span class="c1">#       You should have received a copy of the GNU General Public License</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-19"></a><span class="c1">#       along with this program; if not, write to the Free Software</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-20"></a><span class="c1">#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-21"></a><span class="c1">#       MA 02110-1301, USA.</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-22"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-23"></a><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-24"></a><span class="kn">import</span> <span class="nn">subprocess</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-25"></a><span class="kn">import</span> <span class="nn">glob</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-26"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-27"></a><span class="k">def</span> <span class="nf">markToNum</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">mark</span><span class="o">=</span><span class="s1">'XXXX'</span><span class="p">):</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-28"></a>    <span class="n">num_as_string</span> <span class="o">=</span> <span class="s1">'0'</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-29"></a>    <span class="k">return</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="n">num_as_string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-30"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-31"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-32"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-33"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-34"></a>        <span class="nb">print</span> <span class="s2">"Modo de uso:"</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-35"></a>        <span class="nb">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" archivo.svg"</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-36"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-37"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-38"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">as</span> <span class="nb">input</span><span class="p">:</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-39"></a>            <span class="n">svg_content</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-40"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-41"></a>        <span class="n">index_from</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Desde [0]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-42"></a>        <span class="n">number_by_page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Num por pagina [6]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">6</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-43"></a>        <span class="n">grouped_by</span> <span class="o">=</span>  <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'agrupar de a [20]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">20</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-44"></a>        <span class="n">planchas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Planchas [1]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-45"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-46"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-47"></a>        <span class="k">for</span> <span class="n">plancha</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">planchas</span><span class="p">):</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-48"></a>            <span class="n">counter_from</span> <span class="o">=</span> <span class="n">index_from</span> <span class="o">+</span> <span class="n">plancha</span><span class="o">*</span><span class="n">number_by_page</span><span class="o">*</span><span class="n">grouped_by</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-49"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-50"></a>            <span class="k">for</span> <span class="n">pagina</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grouped_by</span><span class="p">):</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-51"></a>                <span class="n">page_content</span> <span class="o">=</span> <span class="n">svg_content</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-52"></a>                <span class="k">for</span> <span class="n">bono</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_by_page</span><span class="p">):</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-53"></a>                    <span class="n">num_remplazo</span> <span class="o">=</span> <span class="n">counter_from</span> <span class="o">+</span> <span class="n">bono</span><span class="o">*</span><span class="n">grouped_by</span> <span class="o">+</span> <span class="n">pagina</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-54"></a>                    <span class="n">page_content</span> <span class="o">=</span> <span class="n">markToNum</span><span class="p">(</span><span class="n">page_content</span><span class="p">,</span> <span class="n">num_remplazo</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-55"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-56"></a>                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'temp.svg'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_svg</span><span class="p">:</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-57"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-58"></a>                    <span class="n">output_svg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">page_content</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-59"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-60"></a>                <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">"inkscape"</span><span class="p">,</span> <span class="s2">"-f"</span><span class="p">,</span> <span class="s1">'temp.svg'</span><span class="p">,</span> <span class="s1">'--export-dpi=150'</span><span class="p">,</span> <span class="s1">'-A'</span><span class="p">,</span> <span class="s1">'temp</span><span class="si">%s</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"0"</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">))</span> <span class="p">])</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-61"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-62"></a>            <span class="n">generator</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'gs'</span><span class="p">,</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-63"></a>                         <span class="s1">'-q'</span><span class="p">,</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-64"></a>                         <span class="s1">'-sPAPERSIZE=a4'</span><span class="p">,</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-65"></a>                         <span class="s1">'-dNOPAUSE'</span><span class="p">,</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-66"></a>                         <span class="s1">'-dBATCH'</span><span class="p">,</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-67"></a>                         <span class="s1">'-sDEVICE=pdfwrite'</span><span class="p">,</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-68"></a>                         <span class="s1">'-sOutputFile=</span><span class="si">%s</span><span class="s1">-</span><span class="si">%i</span><span class="s1">-</span><span class="si">%i</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="n">counter_from</span><span class="p">,</span> <span class="n">num_remplazo</span><span class="p">),]</span> <span class="o">+</span> \
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-69"></a>                        <span class="p">[</span><span class="s1">'temp</span><span class="si">%s</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"0"</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">)))</span> <span class="o">+</span> \
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-70"></a>                            <span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">))</span> <span class="k">for</span> <span class="n">pagina</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grouped_by</span><span class="p">)]</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-71"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-72"></a>            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-73"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-74"></a>            <span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'temp*'</span><span class="p">):</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-75"></a>                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-76"></a>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-77"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_5a3e4274051f42138f6b6b7dcb29b59a-78"></a>    <span class="n">main</span><span class="p">()</span>
 </pre>
 <p>Nada que no se pueda hacer con Bash, cierto, pero mucho más fácil de
 escribir (y de leer).</p>

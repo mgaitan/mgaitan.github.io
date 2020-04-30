@@ -119,73 +119,73 @@ investigué cómo funciona la nueva versión de cuevana.</p>
 <p><a class="reference external" href="http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula">http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula</a></p>
 </blockquote>
 <p>En código javascript inline define las fuentes disponibles para ese contenido</p>
-<pre class="code javascript"><a name="rest_code_f796cd56bb834192bafeb22585fc38ad-1"></a><span class="kd">var</span> <span class="nx">plugin_ver</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">plugin_rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<a name="rest_code_f796cd56bb834192bafeb22585fc38ad-2"></a><span class="kd">var</span> <span class="nx">actual_ver</span><span class="p">,</span> <span class="nx">actual_rev</span><span class="p">;</span>
-<a name="rest_code_f796cd56bb834192bafeb22585fc38ad-3"></a>
-<a name="rest_code_f796cd56bb834192bafeb22585fc38ad-4"></a><span class="kd">var</span> <span class="nx">sources</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_f796cd56bb834192bafeb22585fc38ad-5"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_f796cd56bb834192bafeb22585fc38ad-6"></a>        <span class="s2">"360"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uptobox"</span><span class="p">,</span> <span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"filebox"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">,</span> <span class="s2">"zalaa"</span><span class="p">],</span>
-<a name="rest_code_f796cd56bb834192bafeb22585fc38ad-7"></a>        <span class="s2">"720"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">]</span>
-<a name="rest_code_f796cd56bb834192bafeb22585fc38ad-8"></a>    <span class="p">}</span>
-<a name="rest_code_f796cd56bb834192bafeb22585fc38ad-9"></a><span class="p">},</span> <span class="nx">sel_source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<pre class="code javascript"><a name="rest_code_93a4eeb6d0124eb38886564ac3fa455c-1"></a><span class="kd">var</span> <span class="nx">plugin_ver</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">plugin_rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="rest_code_93a4eeb6d0124eb38886564ac3fa455c-2"></a><span class="kd">var</span> <span class="nx">actual_ver</span><span class="p">,</span> <span class="nx">actual_rev</span><span class="p">;</span>
+<a name="rest_code_93a4eeb6d0124eb38886564ac3fa455c-3"></a>
+<a name="rest_code_93a4eeb6d0124eb38886564ac3fa455c-4"></a><span class="kd">var</span> <span class="nx">sources</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_93a4eeb6d0124eb38886564ac3fa455c-5"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_93a4eeb6d0124eb38886564ac3fa455c-6"></a>        <span class="s2">"360"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uptobox"</span><span class="p">,</span> <span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"filebox"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">,</span> <span class="s2">"zalaa"</span><span class="p">],</span>
+<a name="rest_code_93a4eeb6d0124eb38886564ac3fa455c-7"></a>        <span class="s2">"720"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">]</span>
+<a name="rest_code_93a4eeb6d0124eb38886564ac3fa455c-8"></a>    <span class="p">}</span>
+<a name="rest_code_93a4eeb6d0124eb38886564ac3fa455c-9"></a><span class="p">},</span> <span class="nx">sel_source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre>
 <p>La primer clave (en este caso <code class="docutils literal">2</code>, inglés) es el idioma del audio,
 y la segunda la calidad del video</p>
 <p>Luego define diferentes constates:</p>
-<pre class="code javascript"><a name="rest_code_291c1e08110847a08c8b8453e943c68c-1"></a><span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-2"></a>    <span class="s1">'360'</span><span class="o">:</span> <span class="s1">'SD (360p)'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-3"></a>    <span class="s1">'480'</span><span class="o">:</span> <span class="s1">'SD (480p)'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-4"></a>    <span class="s1">'720'</span><span class="o">:</span> <span class="s1">'HD (720p)'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-5"></a>    <span class="s1">'1080'</span><span class="o">:</span> <span class="s1">'HD (1080p)'</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-6"></a><span class="p">};</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-7"></a><span class="kd">var</span> <span class="nx">labeli</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-8"></a>    <span class="s2">"1"</span><span class="o">:</span> <span class="s2">"Espa\u00f1ol"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-9"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="s2">"Ingl\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-10"></a>    <span class="s2">"3"</span><span class="o">:</span> <span class="s2">"Portugu\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-11"></a>    <span class="s2">"4"</span><span class="o">:</span> <span class="s2">"Alem\u00e1n"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-12"></a>    <span class="s2">"5"</span><span class="o">:</span> <span class="s2">"Franc\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-13"></a>    <span class="s2">"6"</span><span class="o">:</span> <span class="s2">"Coreano"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-14"></a>    <span class="s2">"7"</span><span class="o">:</span> <span class="s2">"Italiano"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-15"></a>    <span class="s2">"8"</span><span class="o">:</span> <span class="s2">"Tailand\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-16"></a>    <span class="s2">"9"</span><span class="o">:</span> <span class="s2">"Ruso"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-17"></a>    <span class="s2">"10"</span><span class="o">:</span> <span class="s2">"Mongol"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-18"></a>    <span class="s2">"11"</span><span class="o">:</span> <span class="s2">"Polaco"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-19"></a>    <span class="s2">"12"</span><span class="o">:</span> <span class="s2">"Esloveno"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-20"></a>    <span class="s2">"13"</span><span class="o">:</span> <span class="s2">"Sueco"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-21"></a>    <span class="s2">"14"</span><span class="o">:</span> <span class="s2">"Griego"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-22"></a>    <span class="s2">"15"</span><span class="o">:</span> <span class="s2">"Canton\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-23"></a>    <span class="s2">"16"</span><span class="o">:</span> <span class="s2">"Japon\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-24"></a>    <span class="s2">"17"</span><span class="o">:</span> <span class="s2">"Dan\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-25"></a>    <span class="s2">"18"</span><span class="o">:</span> <span class="s2">"Neerland\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-26"></a>    <span class="s2">"19"</span><span class="o">:</span> <span class="s2">"Hebreo"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-27"></a>    <span class="s2">"20"</span><span class="o">:</span> <span class="s2">"Serbio"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-28"></a>    <span class="s2">"21"</span><span class="o">:</span> <span class="s2">"\u00c1rabe"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-29"></a>    <span class="s2">"22"</span><span class="o">:</span> <span class="s2">"Hindi"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-30"></a>    <span class="s2">"23"</span><span class="o">:</span> <span class="s2">"Noruego"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-31"></a>    <span class="s2">"24"</span><span class="o">:</span> <span class="s2">"Turco"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-32"></a>    <span class="s2">"26"</span><span class="o">:</span> <span class="s2">"Mandar\u00edn"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-33"></a>    <span class="s2">"27"</span><span class="o">:</span> <span class="s2">"Nepal\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-34"></a>    <span class="s2">"28"</span><span class="o">:</span> <span class="s2">"Rumano"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-35"></a>    <span class="s2">"29"</span><span class="o">:</span> <span class="s2">"Iran\u00ed"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-36"></a>    <span class="s2">"30"</span><span class="o">:</span> <span class="s2">"Est\u00f3n"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-37"></a>    <span class="s2">"31"</span><span class="o">:</span> <span class="s2">"Bosnio"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-38"></a>    <span class="s2">"32"</span><span class="o">:</span> <span class="s2">"Checo"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-39"></a>    <span class="s2">"33"</span><span class="o">:</span> <span class="s2">"Croata"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-40"></a>    <span class="s2">"34"</span><span class="o">:</span> <span class="s2">"Fin\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-41"></a>    <span class="s2">"35"</span><span class="o">:</span> <span class="s2">"H\u00fanagro"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-42"></a>    <span class="s2">"36"</span><span class="o">:</span> <span class="s2">"Persa"</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-43"></a>    <span class="s2">"38"</span><span class="o">:</span> <span class="s2">"Indonesio"</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-44"></a><span class="p">};</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-45"></a><span class="kd">var</span> <span class="nx">labelh</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-46"></a>    <span class="s1">'filebox'</span><span class="o">:</span> <span class="s1">'Filebox'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-47"></a>    <span class="s1">'uptobox'</span><span class="o">:</span> <span class="s1">'Uptobox (NUEVO)'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-48"></a>    <span class="s1">'uploadcore'</span><span class="o">:</span> <span class="s1">'Uploadcore (NUEVO)'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-49"></a>    <span class="s1">'vidbull'</span><span class="o">:</span> <span class="s1">'Vidbull (NUEVO)'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-50"></a>    <span class="s1">'zalaa'</span><span class="o">:</span> <span class="s1">'Zalaa'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-51"></a>    <span class="s1">'cramit'</span><span class="o">:</span> <span class="s1">'Cramit'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-52"></a>    <span class="s1">'180upload'</span><span class="o">:</span> <span class="s1">'180upload'</span><span class="p">,</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-53"></a>    <span class="s1">'bayfiles'</span><span class="o">:</span> <span class="s1">'Bayfiles'</span>
-<a name="rest_code_291c1e08110847a08c8b8453e943c68c-54"></a><span class="p">};</span>
+<pre class="code javascript"><a name="rest_code_f24273d920004aefb0f2485c4b67088e-1"></a><span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-2"></a>    <span class="s1">'360'</span><span class="o">:</span> <span class="s1">'SD (360p)'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-3"></a>    <span class="s1">'480'</span><span class="o">:</span> <span class="s1">'SD (480p)'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-4"></a>    <span class="s1">'720'</span><span class="o">:</span> <span class="s1">'HD (720p)'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-5"></a>    <span class="s1">'1080'</span><span class="o">:</span> <span class="s1">'HD (1080p)'</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-6"></a><span class="p">};</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-7"></a><span class="kd">var</span> <span class="nx">labeli</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-8"></a>    <span class="s2">"1"</span><span class="o">:</span> <span class="s2">"Espa\u00f1ol"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-9"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="s2">"Ingl\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-10"></a>    <span class="s2">"3"</span><span class="o">:</span> <span class="s2">"Portugu\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-11"></a>    <span class="s2">"4"</span><span class="o">:</span> <span class="s2">"Alem\u00e1n"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-12"></a>    <span class="s2">"5"</span><span class="o">:</span> <span class="s2">"Franc\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-13"></a>    <span class="s2">"6"</span><span class="o">:</span> <span class="s2">"Coreano"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-14"></a>    <span class="s2">"7"</span><span class="o">:</span> <span class="s2">"Italiano"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-15"></a>    <span class="s2">"8"</span><span class="o">:</span> <span class="s2">"Tailand\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-16"></a>    <span class="s2">"9"</span><span class="o">:</span> <span class="s2">"Ruso"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-17"></a>    <span class="s2">"10"</span><span class="o">:</span> <span class="s2">"Mongol"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-18"></a>    <span class="s2">"11"</span><span class="o">:</span> <span class="s2">"Polaco"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-19"></a>    <span class="s2">"12"</span><span class="o">:</span> <span class="s2">"Esloveno"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-20"></a>    <span class="s2">"13"</span><span class="o">:</span> <span class="s2">"Sueco"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-21"></a>    <span class="s2">"14"</span><span class="o">:</span> <span class="s2">"Griego"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-22"></a>    <span class="s2">"15"</span><span class="o">:</span> <span class="s2">"Canton\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-23"></a>    <span class="s2">"16"</span><span class="o">:</span> <span class="s2">"Japon\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-24"></a>    <span class="s2">"17"</span><span class="o">:</span> <span class="s2">"Dan\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-25"></a>    <span class="s2">"18"</span><span class="o">:</span> <span class="s2">"Neerland\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-26"></a>    <span class="s2">"19"</span><span class="o">:</span> <span class="s2">"Hebreo"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-27"></a>    <span class="s2">"20"</span><span class="o">:</span> <span class="s2">"Serbio"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-28"></a>    <span class="s2">"21"</span><span class="o">:</span> <span class="s2">"\u00c1rabe"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-29"></a>    <span class="s2">"22"</span><span class="o">:</span> <span class="s2">"Hindi"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-30"></a>    <span class="s2">"23"</span><span class="o">:</span> <span class="s2">"Noruego"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-31"></a>    <span class="s2">"24"</span><span class="o">:</span> <span class="s2">"Turco"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-32"></a>    <span class="s2">"26"</span><span class="o">:</span> <span class="s2">"Mandar\u00edn"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-33"></a>    <span class="s2">"27"</span><span class="o">:</span> <span class="s2">"Nepal\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-34"></a>    <span class="s2">"28"</span><span class="o">:</span> <span class="s2">"Rumano"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-35"></a>    <span class="s2">"29"</span><span class="o">:</span> <span class="s2">"Iran\u00ed"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-36"></a>    <span class="s2">"30"</span><span class="o">:</span> <span class="s2">"Est\u00f3n"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-37"></a>    <span class="s2">"31"</span><span class="o">:</span> <span class="s2">"Bosnio"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-38"></a>    <span class="s2">"32"</span><span class="o">:</span> <span class="s2">"Checo"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-39"></a>    <span class="s2">"33"</span><span class="o">:</span> <span class="s2">"Croata"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-40"></a>    <span class="s2">"34"</span><span class="o">:</span> <span class="s2">"Fin\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-41"></a>    <span class="s2">"35"</span><span class="o">:</span> <span class="s2">"H\u00fanagro"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-42"></a>    <span class="s2">"36"</span><span class="o">:</span> <span class="s2">"Persa"</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-43"></a>    <span class="s2">"38"</span><span class="o">:</span> <span class="s2">"Indonesio"</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-44"></a><span class="p">};</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-45"></a><span class="kd">var</span> <span class="nx">labelh</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-46"></a>    <span class="s1">'filebox'</span><span class="o">:</span> <span class="s1">'Filebox'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-47"></a>    <span class="s1">'uptobox'</span><span class="o">:</span> <span class="s1">'Uptobox (NUEVO)'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-48"></a>    <span class="s1">'uploadcore'</span><span class="o">:</span> <span class="s1">'Uploadcore (NUEVO)'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-49"></a>    <span class="s1">'vidbull'</span><span class="o">:</span> <span class="s1">'Vidbull (NUEVO)'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-50"></a>    <span class="s1">'zalaa'</span><span class="o">:</span> <span class="s1">'Zalaa'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-51"></a>    <span class="s1">'cramit'</span><span class="o">:</span> <span class="s1">'Cramit'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-52"></a>    <span class="s1">'180upload'</span><span class="o">:</span> <span class="s1">'180upload'</span><span class="p">,</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-53"></a>    <span class="s1">'bayfiles'</span><span class="o">:</span> <span class="s1">'Bayfiles'</span>
+<a name="rest_code_f24273d920004aefb0f2485c4b67088e-54"></a><span class="p">};</span>
 </pre>
 <p>El usuario selecciona mediante un menú donde se define <code class="docutils literal">audio</code>, <code class="docutils literal">quality</code> y <code class="docutils literal">source</code>
 que se configuran como atributos data del link:</p>
@@ -213,27 +213,27 @@ la versión para Firefox desde <a class="reference external" href="http://www.cu
 Descomprimirlo con unzip y abrir el archivo <code class="docutils literal">content/cuevanastream.js</code></p>
 <p>La presencia de los parámetros <code class="docutils literal"><span class="pre">cid``y</span> ``ctipo</code> y una url de alguno de los servicios
 que usa Cuevana hace que se inyecte un javascript en la URL del servicio.</p>
-<pre class="code javascript"><a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-1"></a><span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/cid=/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ctipo=/i</span><span class="p">));</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-2"></a><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.)?bayfiles\.com/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-3"></a>    <span class="nx">addScript</span><span class="p">(</span><span class="s1">'bayfiles'</span><span class="p">);</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-4"></a><span class="p">}</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-5"></a>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-6"></a>    <span class="c1">// más servicios</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-7"></a>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-8"></a>  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i</span><span class="p">))</span> <span class="p">{</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-9"></a>    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-10"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'plugin_ok'</span><span class="p">;</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-11"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-version'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">);</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-12"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-revision'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">);</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-13"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-14"></a><span class="p">}</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-15"></a>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-16"></a><span class="kd">function</span> <span class="nx">addScript</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-17"></a>    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-18"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/javascript'</span><span class="p">);</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-19"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span> <span class="s1">'http://sc.cuevana.tv/player/scripts/5/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'.js'</span><span class="p">);</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-20"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-<a name="rest_code_4df35ccaa8694abda2c05dea8c97d086-21"></a><span class="p">}</span>
+<pre class="code javascript"><a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-1"></a><span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/cid=/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ctipo=/i</span><span class="p">));</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-2"></a><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.)?bayfiles\.com/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-3"></a>    <span class="nx">addScript</span><span class="p">(</span><span class="s1">'bayfiles'</span><span class="p">);</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-4"></a><span class="p">}</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-5"></a>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-6"></a>    <span class="c1">// más servicios</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-7"></a>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-8"></a>  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i</span><span class="p">))</span> <span class="p">{</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-9"></a>    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-10"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'plugin_ok'</span><span class="p">;</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-11"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-version'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">);</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-12"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-revision'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">);</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-13"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-14"></a><span class="p">}</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-15"></a>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-16"></a><span class="kd">function</span> <span class="nx">addScript</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-17"></a>    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-18"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/javascript'</span><span class="p">);</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-19"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span> <span class="s1">'http://sc.cuevana.tv/player/scripts/5/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'.js'</span><span class="p">);</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-20"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<a name="rest_code_dbdc26baeb444f21b576efe0ed1f594c-21"></a><span class="p">}</span>
 </pre>
 <p>En ese caso se inyecta el javascript:</p>
 <pre class="literal-block">http://sc.cuevana.tv/player/scripts/5/bayfiles.js</pre>
