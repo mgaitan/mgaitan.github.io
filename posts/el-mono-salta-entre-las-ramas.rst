@@ -1,7 +1,6 @@
 .. title: El mono salta entre las ramas. El desarrollador también
 .. slug: el-mono-salta-entre-las-ramas
 .. date: 2020-04-30 01:59:00 UTC-03:00
-.. status: draft
 .. tags:
 .. category:
 .. link:
