@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="en">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>We are nerds, we are cheesy | tin_nqn  </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>We are nerds, we are cheesy | tin_nqn</title>
 <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/bootblog.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../../rss.xml">
-<link rel="canonical" href="http://mgaitan.github.io/en/posts/test/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../../../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
+<link rel="canonical" href="https://mgaitan.github.io/en/posts/test/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../the-reStructuredText-processor/" title="The reStructuredText processor" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="We are nerds, we are cheesy">
-<meta property="og:url" content="http://mgaitan.github.io/en/posts/test/">
+<meta property="og:url" content="https://mgaitan.github.io/en/posts/test/">
 <meta property="og:description" content="We are nerds, we are cheesy :)¶by @tin_nqn_
 
 
@@ -36,7 +40,7 @@ import matplotlib
 matplotlib.rcParams['figure.figsize'] = (16,13)
 
 
-
+    
 
 
 
@@ -46,85 +50,94 @@ matplotlib.rcParams['figure.figsize'] = (16,13)
 In [2]:
 
     
-# Source: http://stackoverf">
+# Source: http://stacko">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-02-14T17:03:26-03:00">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator:id" content="40654511">
 </head>
 <body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-<!-- Menubar -->
-
-<nav class="navbar navbar-static-top" role="navigation"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="http://mgaitan.github.io/">
-
-                <div id="blog-title">
-                    tin_nqn
-                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
-                </div>
-            </a>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
         </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-<li>
-<a href="../../about.html">About me</a>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="https://mgaitan.github.io/en/">
+
+            <span id="blog-title">tin_nqn</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item"><a href="https://mgaitan.github.io/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+
+                    
+                    
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../about" class="nav-link">About me</a>
                 </li>
-<li>
-<a href="../../talks.html">Talks</a>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archive</a>
                 </li>
-<li>
-<a href="../../archive.html">Archivos</a>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Tags</a>
                 </li>
-<li>
-<a href="../../categories/index.html">Tags</a>
-                </li>
-<li>
-<a href="../../rss.xml">RSS feed</a>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
             </li>
 </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>            </li>
-<li><a href="../../../" rel="alternate" hreflang="es">Español</a></li>
-
-                
-            </ul>
 </div>
 <!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container">
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
-        <div class="row">
-
-            <div class="col-md-offset-2 col-md-8">
-            
+        
+        
+        
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">We are nerds, we are cheesy</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-02-14T17:03:26-03:00" itemprop="datePublished" title="Publication date: 02/14/2014 05:03:26 PM">02/14/2014 05:03:26 PM</time></a></p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/cheesy.en.html">Comments</a>
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2014-02-14T17:03:26-03:00" itemprop="datePublished" title="2014-02-14 17:03">2014-02-14 17:03</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/cheesy.en.html">Comments</a>
 
+
+            
 
         </p>
 </div>
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+        
 
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -148,7 +161,7 @@ In [2]:
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'figure.figsize'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -161,7 +174,7 @@ In [2]:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Source: http://stackoverflow.com/a/4687582</span>
 <span class="c1"># Thanks!</span>
 
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="k">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -203,7 +216,7 @@ In [2]:
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -219,7 +232,7 @@ In [2]:
 <span class="n">plot_implicit</span><span class="p">(</span><span class="n">happy_saint_valentine_ipython</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -229,7 +242,7 @@ In [2]:
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -252,36 +265,24 @@ In [2]:
 <div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
+</div>
 </div>
     </div>
-  </div>
-
-    </div>
-
-
-
-   <hr>
-<div class="ps">
-            <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">Also available in:</h3>
-        </div>
-
-    <p>The source of this post is available in  <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/cheesy.en.ipynb" id="sourcelink">github</a>. Did you find a typo or mistake? Please  <a href="https://github.com/mgaitan/mgaitan.github.com/edit/writing/posts/cheesy.en.ipynb" id="sourcelink">send me a pull request</a>.</p>
-    </div>
-
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../the-reStructuredText-processor/" rel="prev" title="The reStructuredText processor">Previous post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comments</h2>
-                        <div id="disqus_thread"></div>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
-            disqus_url="http://mgaitan.github.io/en/posts/test/",
+            disqus_url="https://mgaitan.github.io/en/posts/test/",
         disqus_title="We are nerds, we are cheesy",
         disqus_identifier="cache/posts/cheesy.en.html",
         disqus_config = function () {
@@ -297,23 +298,24 @@ In [2]:
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer>
-                Contents © 2018         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
-<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
-                
-            </footer>
+        </script></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+            
+        </footer>
 </div>
-        </div>
-        <!--End of body content-->
-
-
-    </div>
 </div>
 
-            <script src="../../../assets/js/bootstrap.min.js"></script><script src="../../../assets/js/jquery.colorbox-min.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script src="../../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+
+            <script src="../../../assets/js/jquery.min.js"></script><script src="../../../assets/js/popper.min.js"></script><script src="../../../assets/js/bootstrap.min.js"></script><script src="../../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 
         if(jQuery('html').attr('lang') === 'es'){

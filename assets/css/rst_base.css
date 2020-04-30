@@ -238,17 +238,17 @@ pre.code {
 pre.code .ln { color: gray; } /* line numbers */
 
 /* Tables */
-table { border-collapse: collapse; }
-td, th {
+table.docutils { border-collapse: collapse; }
+table.docutils > td, table.docutils > th {
   border-style: solid;
   border-color: silver;
   padding: 0 1ex;
   border-width: thin;
 }
-td > p:first-child, th > p:first-child { margin-top: 0; }
-td > p, th > p { margin-bottom: 0; }
+table.docutils > td > p:first-child, table.docutils > th > p:first-child { margin-top: 0; }
+table.docutils > td > p, table.docutils > th > p { margin-bottom: 0; }
 
-table > caption {
+table.docutils > caption {
   text-align: left;
   margin-bottom: 0.25em
 }
@@ -296,13 +296,13 @@ hr.docutils {
 /* ==========               */
 
 /* vertical space (parskip) */
-p, ol, ul, dl,
-div.line-block,
-table{
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-h1, h2, h3, h4, h5, h6,
+/*p, ol, ul, dl,*/
+/*div.line-block,*/
+/*table{*/
+  /*margin-top: 0.5em;*/
+  /*margin-bottom: 0.5em;*/
+/*}*/
+/*h1, h2, h3, h4, h5, h6, */
 dl > dd {
   margin-bottom: 0.5em;
 }

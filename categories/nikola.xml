@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>tin_nqn (Posts sobre nikola)</title><link>http://mgaitan.github.io/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://mgaitan.github.io/categories/nikola.xml"></atom:link><language>es</language><lastBuildDate>Wed, 13 Sep 2017 02:06:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>http://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Publicaciones sobre nikola)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/nikola.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Thu, 30 Apr 2020 04:17:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco más bonito.&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;div class="section" id="github-nikola"&gt;
@@ -10,32 +10,28 @@ el servicio de hosting gratuito de contenido estático que ofrece Github.&lt;/p&
 el contenido del branch &lt;em&gt;gh-page&lt;/em&gt; del proyecto en cuestión,
 para usar gh-pages por usuario hay que crear
 un repo llamado &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt;.github.com (donde &lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt; es el tuyo)
-y lo que sirve en &lt;a class="reference external" href="http://mgaitan.github.io/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch
+y lo que sirve en &lt;a class="reference external" href="http:/"&gt;http:/&lt;/a&gt;/&amp;lt;username&amp;gt;.github.com es directamente el branch
 &lt;em&gt;master&lt;/em&gt; (&lt;a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages"&gt;referencia&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;Por este motivo creé otro branch (que sin mucha imaginación denominé
 &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing"&gt;writing&lt;/a&gt; )
 donde tengo todo el mi "proyecto" hecho con Nikola&lt;/p&gt;
-&lt;p&gt;Allí escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Allí escribo, intento mejorar mi &lt;a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/tree/writing/themes/custom"&gt;theme&lt;/a&gt;, y corro &lt;code class="docutils literal"&gt;nikola build&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;El branch master es el de deploy y sirve todo lo que haya en la carpeta
-&lt;tt class="docutils literal"&gt;output/&lt;/tt&gt; del branch &lt;tt class="docutils literal"&gt;writing&lt;/tt&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que ir a &lt;em&gt;master&lt;/em&gt;,
-borrar todo y leer desde el árbol del otro branch con &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-git checkout master
+&lt;code class="docutils literal"&gt;output/&lt;/code&gt; del branch &lt;code class="docutils literal"&gt;writing&lt;/code&gt;. Para hacer &lt;a class="reference external" href="http://stackoverflow.com/a/10591668"&gt;esto&lt;/a&gt; hay que ir a &lt;em&gt;master&lt;/em&gt;,
+borrar todo y leer desde el árbol del otro branch con &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;read-tree&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;git checkout master
 git rm *    # sólo la primera vez
 git read-tree writing:output
 git commit -m 'deploying last build'
-git push
-&lt;/pre&gt;
+git push&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="migrando-desde-spip"&gt;
 &lt;h2&gt;Migrando desde Spip&lt;/h2&gt;
 &lt;p&gt;Uno de los motivos que me llevaron a migrar desde &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt; es que el markup
 que usa es &lt;em&gt;ad hoc&lt;/em&gt; y muy feo. Algo así&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-{{{ Un intertítulo }}}
+&lt;pre class="literal-block"&gt;{{{ Un intertítulo }}}
 
-Esto es {{negrita}} y este [mi twitter-&amp;gt;http://twitter.com/tin_nqn_]
-&lt;/pre&gt;
+Esto es {{negrita}} y este [mi twitter-&amp;gt;http://twitter.com/tin_nqn_]&lt;/pre&gt;
 &lt;p&gt;Hasta ahí no se ve tan mal, pero es muy limitado cuando se trata de mostrar
 código, necesario en todo blog mas o menos técnico.&lt;/p&gt;
 &lt;p&gt;Para migrar esquivé la idea de convertir el markup de spip y opté por un
@@ -57,47 +53,39 @@ preferimos ponerlo en otra cosa. No gusta, pero no es lo más importante.&lt;/p&
 muchos otros ñoños con sitios lindos y legibles que son tan amables de
 compartir sus estilos (y existe &lt;a class="reference external" href="http://twitter.github.com/bootstrap"&gt;bootstrap&lt;/a&gt;, claro) voy a ir intentándolo,
 incrementalmente.&lt;/p&gt;
-&lt;p&gt;Por ahora tomé ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference" href="http://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id3" id="id1"&gt;[1]&lt;/a&gt; y de la documentación
-de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference" href="http://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id4" id="id2"&gt;[2]&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Por ahora tomé ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference brackets" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id3" id="id1"&gt;1&lt;/a&gt; y de la documentación
+de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference brackets" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id4" id="id2"&gt;2&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="disqus"&gt;
 &lt;h2&gt;Disqus&lt;/h2&gt;
 &lt;p&gt;El blog viejo usaba &lt;a class="reference external" href="http://disqus.com"&gt;Disqus&lt;/a&gt;, con un &lt;a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html"&gt;plugin&lt;/a&gt; que hice hace algun tiempo.
 Para migrar los comentarios utilicé el método de subir un CSV con
 el formato que genera el mismo script de migración:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-URL_POST_X_OLD, URL_POST_X_NEW
-URL_POST_Y_OLD, URL_POST_Y_NEW
-&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;URL_POST_X_OLD, URL_POST_X_NEW
+URL_POST_Y_OLD, URL_POST_Y_NEW&lt;/pre&gt;
 &lt;p&gt;En cuestión de minutos los (pocos) comentarios estaban migrados.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="redireccion"&gt;
 &lt;h2&gt;Redirección&lt;/h2&gt;
 &lt;p&gt;Como mantuve el slug de los viejos artículos, una redirección 301
 via .htaccess redirige del viejo blog al nuevo:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-# nqnwebs.com blog rules
+&lt;pre class="literal-block"&gt;# nqnwebs.com blog rules
 RewriteCond %{HTTP_HOST} ^nqnwebs [nc]
 RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
-RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]
-&lt;/pre&gt;
+RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]&lt;/pre&gt;
 &lt;p&gt;¿Cómo se va viendo?&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>migration tools</category><category>nikola</category><category>spip</category><guid>http://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</guid><pubDate>Sun, 14 Oct 2012 22:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.io/posts/bienvenidos-al-tren/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hola!&lt;/p&gt;
+&lt;dl class="footnote brackets"&gt;
+&lt;dt class="label" id="id3"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class="label" id="id4"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id2"&gt;2&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>migration tools</category><category>nikola</category><category>spip</category><guid>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</guid><pubDate>Sun, 14 Oct 2012 22:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>https://mgaitan.github.io/posts/bienvenidos-al-tren/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
 que explicaré más adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
 &lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
 &lt;p&gt;Espero que pronto esto esté más bonito y con contenido. También que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;&lt;/div&gt;</description><category>blog</category><category>nikola</category><category>python</category><category>spip</category><guid>http://mgaitan.github.io/posts/bienvenidos-al-tren/</guid><pubDate>Thu, 11 Oct 2012 04:15:00 GMT</pubDate></item></channel></rss>
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;&lt;/div&gt;</description><category>blog</category><category>nikola</category><category>python</category><category>spip</category><guid>https://mgaitan.github.io/posts/bienvenidos-al-tren/</guid><pubDate>Thu, 11 Oct 2012 04:15:00 GMT</pubDate></item></channel></rss>

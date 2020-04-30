@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="es">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Travis-CI para compilar y deployar tu blog estático | tin_nqn  </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travis-CI para compilar y deployar tu blog estático | tin_nqn</title>
 <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootblog.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
-<link rel="canonical" href="http://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
+<link rel="canonical" href="https://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../deploy-de-django-con-circus-chaussette-nginx/" title="Deploy de Django con Circus, Chaussette y Nginx" type="text/html">
+<link rel="next" href="../hombres-machistas-involuntariamente/" title="Formas en que los hombres de tecnología son involuntariamente sexistas" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="Travis-CI para compilar y deployar tu blog estático">
-<meta property="og:url" content="http://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/">
+<meta property="og:url" content="https://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/">
 <meta property="og:description" content="Travis-CI es un servicio de integración continua, gratuito para proyectos de
 software libre. Pero son gente tan copada que no se enojan si en vez de una suite de tests, corremos, por ejemplo,
 Nikola p">
@@ -30,74 +35,88 @@ Nikola p">
 <meta name="twitter:creator:id" content="40654511">
 </head>
 <body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
 
-<!-- Menubar -->
-
-<nav class="navbar navbar-static-top" role="navigation"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="http://mgaitan.github.io/">
-
-                <div id="blog-title">
-                    tin_nqn
-                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
-                </div>
-            </a>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
         </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-<li>
-<a href="../../about.html">Sobre mí</a>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="https://mgaitan.github.io/">
+
+            <span id="blog-title">tin_nqn</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                    
+                    
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Sobre mí</a>
                 </li>
-<li>
-<a href="../../charlas.html">Charlas</a>
+<li class="nav-item">
+<a href="../../charlas/" class="nav-link">Charlas</a>
                 </li>
-<li>
-<a href="../../archive.html">Archivos</a>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archivos</a>
                 </li>
-<li>
-<a href="../../categories/index.html">Categorías</a>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Categorías</a>
                 </li>
-<li>
-<a href="../../rss.xml">RSS</a>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS</a>
 
                 
             </li>
 </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>            </li>
-<li><a href="../../en/" rel="alternate" hreflang="en">English</a></li>
-
-                
-            </ul>
 </div>
 <!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container">
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
-        <div class="row">
-
-            <div class="col-md-offset-2 col-md-8">
-            
+        
+        
+        
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Travis-CI para compilar y deployar tu blog estático</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-09-30T20:57:08-03:00" itemprop="datePublished" title="Fecha de publicación: 30/09/14 20:57:08">30/09/14 20:57:08</time></a></p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/travis-ci-para-compilar-y-deployar-tu-blog.html">Comments</a>
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2014-09-30T20:57:08-03:00" itemprop="datePublished" title="2014-09-30 20:57">2014-09-30 20:57</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/travis-ci-para-compilar-y-deployar-tu-blog.html">Comentarios</a>
 
+
+            
 
         </p>
 </div>
+        
+
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p><a class="reference external" href="http://travis-ci.org/">Travis-CI</a> es un servicio de integración continua, gratuito para proyectos de
@@ -106,70 +125,56 @@ Nikola para compilar este blog y publicarlo automáticamente.</p>
 <!-- TEASER_END -->
 <p>El flujo es así:</p>
 <ol class="arabic simple">
-<li>Escribimos un post en el branch "fuente" (En mi caso <tt class="docutils literal">writing</tt>) y comiteamos.
-Esto puede hacerse desde la propia compu, o usar el editor de Github :D</li>
+<li><p>Escribimos un post en el branch "fuente" (En mi caso <code class="docutils literal">writing</code>) y comiteamos.
+Esto puede hacerse desde la propia compu, o usar el editor de Github :D</p></li>
 </ol>
 <img alt="http://i.snag.gy/U4hmv.jpg" class="align-center" src="http://i.snag.gy/U4hmv.jpg" style="width: 640px;"><ol class="arabic simple" start="2">
-<li>Travis detecta el commit en el branch, clona el repo, instala las dependencias
-y ejecuta un script que corre <tt class="docutils literal">nikola build</tt> y lo necesario para pushear el resultado
-(por ejemplo, la carpeta <tt class="docutils literal">output</tt>) al branch Github pages (en general <tt class="docutils literal"><span class="pre">gh-pages</span></tt>,
-<tt class="docutils literal">master</tt> en mi caso)</li>
-<li>Listo: Nikola desde la nube. For free.</li>
+<li><p>Travis detecta el commit en el branch, clona el repo, instala las dependencias
+y ejecuta un script que corre <code class="docutils literal">nikola build</code> y lo necesario para pushear el resultado
+(por ejemplo, la carpeta <code class="docutils literal">output</code>) al branch Github pages (en general <code class="docutils literal"><span class="pre">gh-pages</span></code>,
+<code class="docutils literal">master</code> en mi caso)</p></li>
+<li><p>Listo: Nikola desde la nube. For free.</p></li>
 </ol>
 <div class="section" id="permiso-soy-el-ci">
 <h2>Permiso, soy el CI</h2>
 <p>¿Cómo hace Travis para pushear de vuelta al repo? Bueno, hay que darle permiso. Para eso, necesitamos
 <a class="reference external" href="https://github.com/settings/tokens/new">crear un token</a> . Con un token,
 <a class="reference external" href="https://github.com/blog/1270-easier-builds-and-deployments-using-git-over-https-and-oauth">se puede pushear a un repo</a>
-via HTTPS sin que pida clave usando la url <tt class="docutils literal"><span class="pre">https://&lt;token&gt;@github.com/owner/repo.git</span></tt>.</p>
+via HTTPS sin que pida clave usando la url <code class="docutils literal"><span class="pre">https://&lt;token&gt;@github.com/owner/repo.git</span></code>.</p>
 <p>Pero como el archivo para configurar Travis es público (y el token es información muy sensible),
 lo configuramos como una variable de entorno encriptada.
 Para eso necesitamos el utilitario (hecho en ruby) que provee la gente de Travis:</p>
-<pre class="literal-block">
-$ sudo apt-get install ruby1.9.1-dev build-essentials
+<pre class="literal-block">$ sudo apt-get install ruby1.9.1-dev build-essentials
 $ sudo gem install travis
 
-$ travis encrypt GH_TOKEN=your_token
-</pre>
+$ travis encrypt GH_TOKEN=your_token</pre>
 <p>el resultado lo ponemos en el yaml:</p>
-<pre class="literal-block">
-env:
+<pre class="literal-block">env:
   global:
-    secure: dlAoq4D...
-</pre>
-<p>y con eso Travis tendrá una varible de entorno global llamada <tt class="docutils literal">GH_TOKEN</tt> que podemos usarla en nuestro script.</p>
+    secure: dlAoq4D...</pre>
+<p>y con eso Travis tendrá una varible de entorno global llamada <code class="docutils literal">GH_TOKEN</code> que podemos usarla en nuestro script.</p>
 <p>Podés ver el <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/.travis.yml">.travis.yml</a> y
 el <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/travis_deploy.sh">script que compila y pushea de vuelta</a></p>
 </div>
 </div>
     </div>
-
-
-
-   <hr>
-<div class="ps">
-            <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
-    <p>El código de este artículo está disponible en  <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/travis-ci-para-compilar-y-deployar-tu-blog.rst" id="sourcelink">github</a>. ¿Encontraste un error? Por favor,  <a href="https://github.com/mgaitan/mgaitan.github.com/edit/writing/posts/travis-ci-para-compilar-y-deployar-tu-blog.rst" id="sourcelink">enviame un pull request</a>.</p>
-    </div>
-
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/devop/" rel="tag">devop</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../deploy-de-django-con-circus-chaussette-nginx/" rel="prev" title="Deploy de Django con Circus, Chaussette y Nginx">Post anterior</a>
+                <a href="../deploy-de-django-con-circus-chaussette-nginx/" rel="prev" title="Deploy de Django con Circus, Chaussette y Nginx">Publicación anterior</a>
             </li>
             <li class="next">
-                <a href="../las-cosas-chiquitas/" rel="next" title="Las cosas chiquitas que cambian el mundo">Siguiente post</a>
+                <a href="../hombres-machistas-involuntariamente/" rel="next" title="Formas en que los hombres de tecnología son involuntariamente sexistas">Siguiente publicación</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
-                        <div id="disqus_thread"></div>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+        
+        
+        <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
-            disqus_url="http://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/",
+            disqus_url="https://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/",
         disqus_title="Travis-CI para compilar y deployar tu blog est\u00e1tico",
         disqus_identifier="cache/posts/travis-ci-para-compilar-y-deployar-tu-blog.html",
         disqus_config = function () {
@@ -185,21 +190,22 @@ el <a class="reference external" href="https://github.com/mgaitan/mgaitan.github
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer>
-                Contents © 2018         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
-<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
-                
-            </footer>
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+            
+        </footer>
 </div>
-        </div>
-        <!--End of body content-->
-
-
-    </div>
 </div>
 
-            <script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 
         if(jQuery('html').attr('lang') === 'es'){

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>tin_nqn</title><link>http://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link type="application/rss+xml" rel="self" href="http://mgaitan.github.io/en/rss.xml"></atom:link><language>en</language><lastBuildDate>Wed, 13 Sep 2017 02:06:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>We are nerds, we are cheesy</title><link>http://mgaitan.github.io/en/posts/test/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/en/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Thu, 30 Apr 2020 04:17:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>We are nerds, we are cheesy</title><link>https://mgaitan.github.io/en/posts/test/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="We-are-nerds,-we-are-cheesy-:)"&gt;We are nerds, we are cheesy :)&lt;a class="anchor-link" href="http://mgaitan.github.io/en/posts/test/#We-are-nerds,-we-are-cheesy-:)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;by &lt;a href="https://twitter.com/tin_nqn_"&gt;&lt;code&gt;@tin_nqn_&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="We-are-nerds,-we-are-cheesy-:)"&gt;We are nerds, we are cheesy :)&lt;a class="anchor-link" href="https://mgaitan.github.io/en/posts/test/#We-are-nerds,-we-are-cheesy-:)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;by &lt;a href="https://twitter.com/tin_nqn_"&gt;&lt;code&gt;@tin_nqn_&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -22,7 +18,7 @@
 &lt;span class="n"&gt;matplotlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'figure.figsize'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -35,7 +31,7 @@
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Source: http://stackoverflow.com/a/4687582&lt;/span&gt;
 &lt;span class="c1"&gt;# Thanks!&lt;/span&gt;
 
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;mpl_toolkits.mplot3d&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Axes3D&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;mpl_toolkits.mplot3d&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Axes3D&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 
@@ -77,7 +73,7 @@
     &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -93,7 +89,7 @@
 &lt;span class="n"&gt;plot_implicit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;happy_saint_valentine_ipython&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -103,7 +99,7 @@
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -126,41 +122,10 @@
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-</description><guid>http://mgaitan.github.io/en/posts/test/</guid><pubDate>Fri, 14 Feb 2014 20:03:26 GMT</pubDate></item><item><title>The reStructuredText processor</title><link>http://mgaitan.github.io/en/posts/the-reStructuredText-processor/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;I always liked to &lt;a class="reference external" href="http://textosypretextos.com.ar"&gt;write&lt;/a&gt;. As far as I remember, I always do it with a keyboard, in the computer. Except for some doodles when I'm thinking something hard or when I'm bored in a meeting or class, I never write in paper.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://mgaitan.github.io/en/posts/test/</guid><pubDate>Fri, 14 Feb 2014 20:03:26 GMT</pubDate></item><item><title>The reStructuredText processor</title><link>https://mgaitan.github.io/en/posts/the-reStructuredText-processor/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;I always liked to &lt;a class="reference external" href="http://textosypretextos.com.ar"&gt;write&lt;/a&gt;. As far as I remember, I always do it with a keyboard, in the computer. Except for some doodles when I'm thinking something hard or when I'm bored in a meeting or class, I never write in paper.&lt;/p&gt;
 &lt;p&gt;In the computer I write a lot, but I not use text processors, neither the open-sources: althought "what you see" is "what you get", very frenquently what I see isn't what I want.&lt;/p&gt;
-&lt;!-- TEASER_END --&gt;
-&lt;p&gt;For that reason (and because I always follow the advices of  &lt;a class="reference external" href="http://ralsina.com.ar/"&gt;Roberto Alsina&lt;/a&gt;) I write in plain text, using &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;. And I write everything: this blog, the slides of my &lt;a class="reference external" href="http://mgaitan.github.io/charlas.html"&gt;talks&lt;/a&gt;, my &lt;a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html"&gt;thesis&lt;/a&gt;, the documentation of my &lt;a class="reference external" href="http://github.com/mgaitan/"&gt;projects&lt;/a&gt; , quick notes in a &lt;a class="reference external" href="https://github.com/mgaitan/waliki/"&gt;wiki&lt;/a&gt;, &lt;a class="reference external" href="http://www.textosypretextos.com.ar/Cartas-de-amor-efimero-"&gt;love letters&lt;/a&gt;, etc.&lt;/p&gt;
-&lt;p&gt;reST is a simple markup language designed to be readable in its source form. Writing in any text &lt;strong&gt;editor&lt;/strong&gt;, we focus in the important part (the content), without fight against a table, the indentation or the header fonts. Morover, it's more useful under a version control system where the &lt;em&gt;diff&lt;/em&gt; is easily viewable&lt;/p&gt;
-&lt;p&gt;Even when its syntax is a more verbose &lt;a class="footnote-reference" href="http://mgaitan.github.io/en/posts/the-reStructuredText-processor/#id4" id="id1"&gt;[1]&lt;/a&gt; than &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; (the light markup more used in the web), reST is more powerful, supporting many output formats
-(html, ebooks, pdf, etc.). In fact, there are books and the whole &lt;a class="reference external" href="http://docs.python.org/"&gt;official Python documentation&lt;/a&gt; writing with this.&lt;/p&gt;
-&lt;p&gt;However, there is no need to be an ascetic: if a software could help us to write and to format a writing easier, why not to use it?&lt;/p&gt;
-&lt;p&gt;That is what does &lt;a class="reference external" href="https://github.com/mgaitan/sublime-rst-completion"&gt;rst-completions&lt;/a&gt;, a plugin for &lt;a class="reference external" href="https://www.sublimetext.com/"&gt;SublimeText&lt;/a&gt; I've developed &lt;a class="footnote-reference" href="http://mgaitan.github.io/en/posts/the-reStructuredText-processor/#id5" id="id2"&gt;[2]&lt;/a&gt;. Here a demo of its capabilities.&lt;/p&gt;
-&lt;iframe width="640" height="360" src="//www.youtube.com/embed/otM_tjIi_vY" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;At the moment it has:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;Shortcuts for links, admonitions, code blocks, etc.&lt;/li&gt;
-&lt;li&gt;Headers: automcomplete, navigation, level changes, block folding&lt;/li&gt;
-&lt;li&gt;Tables: autoformat, fixed or variable fitting, merge of cells&lt;/li&gt;
-&lt;li&gt;Footnotes: automatic insertion at the bottom of the text, jump between the reference and definition&lt;/li&gt;
-&lt;li&gt;Lists: automatic detection of the pattern (for ordered or unordered lists)&lt;/li&gt;
-&lt;li&gt;Output: html, pdf, etc. (using pandoc, rst2pdf o rst2html)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I did it for SublimeText because it is the editor I currently use, among its extensions API is based on Python &lt;a class="footnote-reference" href="http://mgaitan.github.io/en/posts/the-reStructuredText-processor/#id5" id="id3"&gt;[2]&lt;/a&gt;. But I have the idea to split as an agnostic library, allowing make light wrappers for any other editor.&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://mgaitan.github.io/en/posts/the-reStructuredText-processor/#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;At a basic level, they are &lt;a class="reference external" href="https://gist.github.com/dupuy/1855764"&gt;very similar&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;[2]&lt;/td&gt;&lt;td&gt;&lt;em&gt;(&lt;a class="fn-backref" href="http://mgaitan.github.io/en/posts/the-reStructuredText-processor/#id2"&gt;1&lt;/a&gt;, &lt;a class="fn-backref" href="http://mgaitan.github.io/en/posts/the-reStructuredText-processor/#id3"&gt;2&lt;/a&gt;)&lt;/em&gt; Although its documentation sucks.&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;&lt;/div&gt;</description><guid>http://mgaitan.github.io/en/posts/the-reStructuredText-processor/</guid><pubDate>Wed, 04 Sep 2013 23:38:44 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/en/posts/the-reStructuredText-processor/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><guid>https://mgaitan.github.io/en/posts/the-reStructuredText-processor/</guid><pubDate>Wed, 04 Sep 2013 23:38:44 GMT</pubDate></item></channel></rss>

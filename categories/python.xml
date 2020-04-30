@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>tin_nqn (Posts sobre python)</title><link>http://mgaitan.github.io/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://mgaitan.github.io/categories/python.xml"></atom:link><language>es</language><lastBuildDate>Wed, 13 Sep 2017 02:06:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Curso de Python para ñoños</title><link>http://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p class="alert alert-success"&gt;&lt;strong&gt;¡Los cupos irán a sorteo!&lt;/strong&gt; Anotate. Si no entrás para en esta edición, quedás anotado para la próxima que será muy pronto.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Publicaciones sobre python)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/python.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Thu, 30 Apr 2020 04:17:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Curso de Python para ñoños</title><link>https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p class="alert alert-success"&gt;&lt;strong&gt;¡Los cupos irán a sorteo!&lt;/strong&gt; Anotate. Si no entrás para en esta edición, quedás anotado para la próxima que será muy pronto.&lt;/p&gt;
 &lt;p&gt;La demanda nos desbordó. En menos de 2 dias tenemos inscriptos para llenar dos veces el laboratorio que tenemos disponible! Algunos ya están averiguando la disponibilidad del Estadio Kempes para hacer el próximo.&lt;/p&gt;
 &lt;p&gt;Como recién hoy (martes 7 de abril) se realizó la difusión oficial desde FaMAF, la decisión
 de los organizadores es permitir la inscripción de todos los interesados y hacer un sorteo de las 25 plazas
 aranceladas y otro para las 15 plazas gratuitas reservadas para estudiantes de grado de FaMAF.&lt;/p&gt;
 &lt;p&gt;La justificación de un sorteo en vez de tomar el orden de inscripción la dió el Dr. Nicolás Wolovick, que junto al Dr. Pedro Pury fueron los gestores para que el curso se oficializara, con un argumento democráticamente ñoño:&lt;/p&gt;
 &lt;blockquote&gt;
-Estar conectado 24/7 por 3G, recibir el tweet, e inscribirse, no es justo, es una condición de posibilidad que no todos tienen. La distribución uniforme es la que mayor entropía tiene :)&lt;/blockquote&gt;
+&lt;p&gt;Estar conectado 24/7 por 3G, recibir el tweet, e inscribirse, no es justo, es una condición de posibilidad que no todos tienen. La distribución uniforme es la que mayor entropía tiene :)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Si estás interesado, es importante que te inscribas a través del &lt;a class="reference external" href="http://goo.gl/forms/kB7jkXHLyf"&gt;formulario&lt;/a&gt;.
 Así tendremos una lista bien grande de "argumentos" para reeditar el curso lo más pronto posible.&lt;/p&gt;
-&lt;p&gt;Otra posibilidad es que averigües &lt;span class="strike"&gt;hagas lobby&lt;/span&gt; en tu empresa o laboratorio sobre la posibilidad de realizar el curso &lt;em&gt;in house&lt;/em&gt; y, si tienen interés, &lt;a class="reference external" href="http://mgaitan.github.io/about.html"&gt;lo charlamos&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Otra posibilidad es que averigües &lt;span class="strike"&gt;hagas lobby&lt;/span&gt; en tu empresa o laboratorio sobre la posibilidad de realizar el curso &lt;em&gt;in house&lt;/em&gt; y, si tienen interés, &lt;a class="reference external" href="https://mgaitan.github.io/about.html"&gt;lo charlamos&lt;/a&gt;.&lt;/p&gt;
 &lt;hr class="docutils"&gt;
-&lt;img alt="/images/Newsletter4-Banner_20120705_12-44-50-800.jpg" src="http://mgaitan.github.io/images/Newsletter4-Banner_20120705_12-44-50-800.jpg"&gt;
+&lt;img alt="/images/Newsletter4-Banner_20120705_12-44-50-800.jpg" src="https://mgaitan.github.io/images/Newsletter4-Banner_20120705_12-44-50-800.jpg"&gt;
 &lt;p&gt;A partir del 29 de abril voy a dar el curso &lt;a class="reference external" href="https://github.com/mgaitan/curso-python-cientifico"&gt;Introducción a Python para ciencias e ingenierías&lt;/a&gt; en la Facultad de Matemática, Astronomía y Física (&lt;a class="reference external" href="http://famaf.unc.edu.ar/"&gt;FaMAF&lt;/a&gt;) de la Universidad Nacional de Córdoba.&lt;/p&gt;
 &lt;p&gt;Este curso es una versión revisada y extendida del que dí en la &lt;a class="reference external" href="http://scipycon.com.ar/"&gt;ScipyCon Argentina 2014&lt;/a&gt; y durará 8 clases de 2hs cada una. Será los miércoles de 18hs a 20hs en el laboratorio de computación de la facultad. No hace falta contar con equipo propio y el único pre-requisito es tener nociones básicas de programación en cualquier lenguaje.&lt;/p&gt;
 &lt;p&gt;El costo del curso es $400. Hay becas para estudiantes de grado de FaMAF.&lt;/p&gt;
@@ -19,356 +20,13 @@ Así tendremos una lista bien grande de "argumentos" para reeditar el curso lo m
 &lt;p&gt;El curso está reconocido como Curso de Extensión de FaMAF (Res. HCD 107/2015) y
 se entregarán certificados oficiales a quienes completen asistencia y participación.&lt;/p&gt;
 &lt;p class="alert alert-warning"&gt;&lt;strong&gt;Atención&lt;/strong&gt; Los cupos son muy limitados!&lt;/p&gt;
-&lt;!-- TEASER_END --&gt;
-&lt;div class="sidebar"&gt;
-&lt;p class="first sidebar-title"&gt;Python FTW!&lt;/p&gt;
-&lt;p&gt;La imagen que acompaña a este artículo es del proyecto &lt;a class="reference external" href="http://brochure.getpython.info/newsletter/learn-more"&gt;PSF Python Brochure&lt;/a&gt;, una compilación de "casos de éxito" con el uso de Python en diversas áreas. El PDF se puede bajar &lt;a class="reference external" href="http://brochure.getpython.info/media/releases/prerelases/psf-python-brochure-vol-1-final-content-preview"&gt;desde acá&lt;/a&gt;.&lt;/p&gt;
-&lt;p class="last"&gt;Otro documento similar es &lt;a class="reference external" href="https://github.com/pythonsd/intro-to-python/raw/master/slides/20-things-part-a.pdf"&gt;20 Cool Things You Can Do With Python&lt;/a&gt; de &lt;a class="reference external" href="https://github.com/audreyr"&gt;Audrey Roy&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="introduccion"&gt;
-&lt;h2&gt;Introducción&lt;/h2&gt;
-&lt;p&gt;En las últimas décadas la computación se ha convertido en un pilar de la ingeniería y la investigación científica. En la mayoría de las áreas, el trabajo computacional es un complemento fundamental de la experimentación tradicional y de la teoría, y cada vez más publicaciones involucran cálculos numéricos, simulaciones y modelado computacional.&lt;/p&gt;
-&lt;p&gt;Frecuentemente, la tarea de los profesionales involucra el uso de aplicaciones específicas que requieren un gran trabajo de procesamiento de los datos de entrada y un post-procesamiento de los resultados utilizando otras herramientas.&lt;/p&gt;
-&lt;p&gt;Otras veces se desarrolla software &lt;em&gt;ad hoc&lt;/em&gt; en lenguajes de programación tradicionales en la ciencia como Fortran, muy limitados para el pre-procesamiento y la visualización de datos y cuyo desarrollo se torna improductivo por los tiempos inherentes al ciclo de edición, compilación, ejecución y depuración.&lt;/p&gt;
-&lt;p&gt;Existen nuevos entornos y lenguajes de programación que permiten un flujo de trabajo dinámico e interactivo, mucho más armónico y útil en el contexto de la &lt;em&gt;"experimentación computacional"&lt;/em&gt;. Un entorno interactivo permite a los científicos e ingenieros manipular datos, probar algoritmos y visualizar resultados de una manera integrada y versátil, sin limitaciones impuestas por una interfaz de usuario ni la laboriosa y frágil tarea de hacer interactuar distintos sistemas.&lt;/p&gt;
-&lt;p&gt;Este curso brindará una introducción al lenguaje de programación &lt;a class="reference external" href="http://python.org"&gt;Python&lt;/a&gt; y a las herramientas fundamentales del &lt;em&gt;"ecosistema científico"&lt;/em&gt; (IPython, Numpy, Matplotlib, Scipy, Sympy, entre otros) que conforman un entorno de programación interactivo de vanguardia, simple, libre, gratuito y multiplataforma.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="sobre-el-docente"&gt;
-&lt;h2&gt;Sobre el docente&lt;/h2&gt;
-&lt;p&gt;Martín Gaitán es Ingeniero en Computación por la Universidad Nacional de Córdoba (2011). Socio fundador de &lt;a class="reference external" href="http://phasety.com"&gt;Phasety&lt;/a&gt;, emprendimiento incubado en la UNC que desarrolla software de simulación especializado para la industria del petróleo y el gas. &lt;em&gt;Pythonista&lt;/em&gt; desde hace casi una década, es especialista en el framework web Django y cree entender las necesidades del software científico. Es frecuente orador en eventos de software libre. Hincha de Boca y fundamentalista del locro.
-Más información en &lt;a class="reference external" href="http://mgaitan.github.io/about.html"&gt;su blog&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="programa"&gt;
-&lt;h2&gt;Programa&lt;/h2&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;Clase 1:&lt;/dt&gt;
-&lt;dd&gt;Instalación de entorno para Python en Windows/Linux. Modos de usar Python. Anaconda. Introducción a Ipython Notebook
-Tipos de datos: enteros, floats, complejos, strings.
-Estructuras de datos: listas, tuplas, diccionarios, conjuntos. Packing, indexing, slicing, etc.
-Conceptos de mutabilidad/inmutabilidad, secuencia, iterador
-Control de flujo: if, for, while, manejo de excepciones.&lt;/dd&gt;
-&lt;dt&gt;Clase 2:&lt;/dt&gt;
-&lt;dd&gt;Funciones: definición, argumentos posicionales y nominales. Sentencia yield.
-Funciones incorporadas: zip, range, enumerate, etc.
-Manejo de I/O: lectura y escritura de archivos.&lt;/dd&gt;
-&lt;dt&gt;Clase 3:&lt;/dt&gt;
-&lt;dd&gt;Estructura de proyectos: módulos, paquetes, importación.
-Paseo por la biblioteca estandar: math, CSV, json, pickle
-Conceptos básicos de programacion orientada a objetos.
-Introduccion a Matplotlib y Numpy.&lt;/dd&gt;
-&lt;dt&gt;Clase 4:&lt;/dt&gt;
-&lt;dd&gt;Numpy: introducción al objeto Array. Slicing extendido, métodos y funciones importantes, importación de datos.
-Aplicación de Numpy en algebra lineal. Resolución de sistemas de ecuaciones lineales.
-Matplotlib: generación de gráficos cartesianos continuos, puntos, histogramas.&lt;/dd&gt;
-&lt;dt&gt;Clase 5:&lt;/dt&gt;
-&lt;dd&gt;Vectorización de funciones con Numpy. Matplotlib avanzado: API orientada a objetos. Manipulación del formato y apariencia.
-Gráficos 3D, otros tipos de gráficos 2D.
-Introducción a Scipy: algoritmos para estadística, interpolación, regresión lineal, integración, etc.&lt;/dd&gt;
-&lt;dt&gt;Clase 6:&lt;/dt&gt;
-&lt;dd&gt;Python como "lenguaje pegamento". Integración con Fortran a través de F2Py. Herramienta "fortran-magic".
-Paso de argumentos escalares, arrays, output implícito, manipulación de signatura.
-Introducción a otras herramientas de optimización: Cython y Numba.&lt;/dd&gt;
-&lt;dt&gt;Clase 7:&lt;/dt&gt;
-&lt;dd&gt;Sympy: Python para matemática simbólica.&lt;/dd&gt;
-&lt;dt&gt;Clase 8:&lt;/dt&gt;
-&lt;dd&gt;Otras herramientas del "ecosistema científico" de Python. Entornos virtuales. Instalación de otros paquetes. Widgets de IPython Notebook. Exportación de documentos.&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>ciencia</category><category>curso</category><category>python</category><guid>http://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/</guid><pubDate>Mon, 06 Apr 2015 13:46:36 GMT</pubDate></item><item><title>Deploy de Django con Circus, Chaussette y Nginx</title><link>http://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela &lt;a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/"&gt;WSGI&lt;/a&gt;, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.&lt;/p&gt;
-&lt;!-- TEASER_END --&gt;
-&lt;p&gt;Si bien Nginx, el servidor web que está &lt;a class="reference external" href="http://w3techs.com/blog/entry/nginx_just_became_the_most_used_web_server_among_the_top_1000_websites"&gt;desplazando a Apache como el más popular&lt;/a&gt; tiene &lt;a class="reference external" href="http://wiki.nginx.org/NgxWSGIModule"&gt;un módulo&lt;/a&gt; que implementa el estándar WSGI de manera nativa, la arquitectura más típica es utilizarlo como &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Reverse_proxy"&gt;proxy reverso&lt;/a&gt;, conectado a un servidor WSGI especializado como &lt;a class="reference external" href="http://gunicorn.org/"&gt;Gunicorn&lt;/a&gt; que interactua con la aplicación web (posiblemente a través de multiples instancias o &lt;em&gt;workers&lt;/em&gt;). Como queremos que nuestra app funcione permanentemente, el proceso WSGI y otros que sean necesarios (por ejemplo Redis) se demonizan de manera que sepan restaurarse automáticamente si mueren y sea posible monitorearlos: para eso suele usarse &lt;a class="reference external" href="http://supervisord.org/"&gt;supervisor&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="figure"&gt;
-&lt;img alt="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/classical-stack.png" src="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/classical-stack.png"&gt;
-&lt;p class="caption"&gt;La arquitectura de deployment más común para una aplicación web Python&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Si bien esta arquitectura está bastamente probada, hay una opción mejor.&lt;/p&gt;
-&lt;img alt="https://circus.readthedocs.org/en/0.11.1/_images/circus-medium.png" class="align-center" src="https://circus.readthedocs.org/en/0.11.1/_images/circus-medium.png"&gt;
-&lt;div class="section" id="el-circo-y-el-soquete"&gt;
-&lt;h2&gt;El circo y el soquete&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://circus.readthedocs.org/"&gt;Circus&lt;/a&gt; y &lt;a class="reference external" href="http://chaussette.readthedocs.org/"&gt;Chaussette&lt;/a&gt; son proyectos desarrollados por &lt;a class="reference external" href="http://ziade.org/"&gt;Tarek Ziadé&lt;/a&gt; y el equipo de &lt;a class="reference external" href="https://blog.mozilla.org/services/"&gt;Mozilla Sevices&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="admonition tip"&gt;
-&lt;p class="first admonition-title"&gt;Consejo&lt;/p&gt;
-&lt;p class="last"&gt;Tarek es un pythonista francés, core committer de Python y muchos proyectos relacionados. Recibió el &lt;a class="reference external" href="https://www.python.org/community/awards/psf-awards/#april-2011"&gt;reconocimiento de la PSF&lt;/a&gt; por sus aportes y es autor del gran libro &lt;a class="reference external" href="http://www.packtpub.com/expert-python-programming/book"&gt;Expert Python Programming&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Una arquitectura de producción análoga a la descripta arriba, pero basada en Circus, se ve así:&lt;/p&gt;
-&lt;img alt="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png" class="align-center" src="https://raw.githubusercontent.com/mozilla-services/circus/dff6cf3a348fecc0b58bd08cae91b1508aed14c2/docs/source/circus-stack.png"&gt;
-&lt;p&gt;Circus maneja procesos demonizados igual que Supervisor, pero además puede bindear &lt;strong&gt;sockets&lt;/strong&gt; y manejarlos de la misma manera. Este desacople de la gestión de sockets del webserver WSGI permite muchas posibilidades, tanto en la gestión como en la escalabilidad de la arquitectura.&lt;/p&gt;
-&lt;p&gt;La capa WSGI en este esquema la aporta Chaussette, que tiene la particularidad que, en vez de abrir un socket nuevo, utiliza el que Circus abrió (y controla) para el worker. Además, aunque trae una implementación de WSGI &lt;em&gt;built-in&lt;/em&gt;, &lt;a class="reference external" href="http://chaussette.readthedocs.org/en/latest/index.html#backends"&gt;puede usar muchos backends&lt;/a&gt; más eficientes o con características particulares como &lt;a class="reference external" href="http://meinheld.org/"&gt;meinheld&lt;/a&gt;, &lt;a class="reference external" href="http://www.gevent.org/"&gt;gevent&lt;/a&gt;, &lt;a class="reference external" href="http://gevent-socketio.readthedocs.org/en/latest/"&gt;gevent-socketio&lt;/a&gt;, entre muchos otros.&lt;/p&gt;
-&lt;p&gt;A diferencia de Supervisor que se basa en el protocolo XML-RPC para inspeccionar los procesos que controla, Circus utiliza un canal pub/sub basado en el mucho más moderno &lt;a class="reference external" href="http://zeromq.org/"&gt;ZeroMQ&lt;/a&gt; (lo mismo que usa IPython Notebook) que permite un monitoreo realtime y una &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-devs/#extending-circus"&gt;API de plugins&lt;/a&gt; mucho más simple. Otra diferencia, nada menor, es que &lt;strong&gt;Circus funciona con Python 2 o 3&lt;/strong&gt; (supervisor no es compatible con Python 3).&lt;/p&gt;
-&lt;p&gt;Y de yapa: Circus se puede usar como una &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-devs/library/"&gt;biblioteca de muy alto nivel&lt;/a&gt;  para la gestión no bloqueante de procesos. Se puede pensar con un wrapper de &lt;tt class="docutils literal"&gt;subprocess&lt;/tt&gt; y/o &lt;tt class="docutils literal"&gt;multiprocess&lt;/tt&gt;, que aporta información de monitoreo y estadísticas, control de flujo, una &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-devs/writing-hooks/"&gt;capa de señales (hooks)&lt;/a&gt; muy completa y más.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="desplegando-django"&gt;
-&lt;h2&gt;Desplegando Django&lt;/h2&gt;
-&lt;p&gt;Para ejemplificar, voy utilizar un proyecto Django que estoy desarrollando (muy lentamente): &lt;a class="reference external" href="https://github.com/mgaitan/nikolahub"&gt;nikolahub&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Circus se configura con un archivo con formato &lt;tt class="docutils literal"&gt;.ini&lt;/tt&gt;. El mio, que bauticé &lt;tt class="docutils literal"&gt;circus.ini&lt;/tt&gt; quedó así:&lt;/p&gt;
-&lt;pre class="code ini"&gt;&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;[circus]&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-2"&gt;&lt;/a&gt;&lt;span class="na"&gt;check_delay&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;5&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-3"&gt;&lt;/a&gt;&lt;span class="na"&gt;endpoint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;tcp://127.0.0.1:5555&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-4"&gt;&lt;/a&gt;&lt;span class="na"&gt;pubsub_endpoint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;tcp://127.0.0.1:5556&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-5"&gt;&lt;/a&gt;&lt;span class="na"&gt;stats_endpoint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;tcp://127.0.0.1:5557&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;[socket:nikolahub]&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-8"&gt;&lt;/a&gt;&lt;span class="na"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;127.0.0.1&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-9"&gt;&lt;/a&gt;&lt;span class="na"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;8080&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-11"&gt;&lt;/a&gt;&lt;span class="k"&gt;[watcher:nikolahub]&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-12"&gt;&lt;/a&gt;&lt;span class="na"&gt;cmd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;/virtualenvs/nikolahub/bin/chaussette --fd $(circus.sockets.nikolahub) nikolahub.wsgi.application&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-13"&gt;&lt;/a&gt;&lt;span class="na"&gt;use_sockets&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;True&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-14"&gt;&lt;/a&gt;&lt;span class="na"&gt;numprocesses&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;3&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-15"&gt;&lt;/a&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-16"&gt;&lt;/a&gt;&lt;span class="k"&gt;[env:nikolahub]&lt;/span&gt;
-&lt;a name="rest_code_04bcd4a91f6a4d51887d18bec4750908-17"&gt;&lt;/a&gt;&lt;span class="na"&gt;PYTHONPATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;/projects/nikolahub&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;La sección &lt;tt class="docutils literal"&gt;watcher&lt;/tt&gt; indica lanza el comando a controlar, en este caso levantando 3 workers de la aplicación -django.  Notar que como tengo instalado Chaussette dentro del virtualenv, uso el path absoluto al ejecutable. El fragmento &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--fd&lt;/span&gt; $(circus.sockets.nikolahub)&lt;/tt&gt; se expande implícitamente asignando el pid que obtuvo el fork (el proceso hijo) de circus.&lt;/p&gt;
-&lt;p&gt;Si quisieramos usar otro servidor web, sólo hay que indicar cual con el parámetro &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--backend&lt;/span&gt;&lt;/tt&gt; Por ejemplo:&lt;/p&gt;
-&lt;pre class="code ini"&gt;&lt;a name="rest_code_e6c93284aa3449f7b327bb1520b887d4-1"&gt;&lt;/a&gt;&lt;span class="na"&gt;cmd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;/virtualenvs/nikolahub/bin/chaussette --backend gevent --fd $(circus.sockets.nikolahub) nikolahub.wsgi.application&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Podemos probar si todo funciona:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:$ circusd circus.ini
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-2"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1141&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Starting master on pid &lt;span class="m"&gt;1141&lt;/span&gt;
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-3"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1141&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; sockets started
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-4"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1141&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Arbiter now waiting &lt;span class="k"&gt;for&lt;/span&gt; commands
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-5"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1141&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; nikolahub started
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-6"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:16 circus&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1141&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; circusd-stats started
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-7"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:17 circus&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1150&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Starting the stats streamer
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-8"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:17 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1149&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Application is &amp;lt;django.core.handlers.wsgi.WSGIHandler object at 0xa06f60c&amp;gt;
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-9"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:17 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1149&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Serving on fd://5
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-10"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:17 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1149&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Using &amp;lt;class chaussette.backend._wsgiref.ChaussetteServer at 0x9f2d6ec&amp;gt; as a backend
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-11"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:17 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1148&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Application is &amp;lt;django.core.handlers.wsgi.WSGIHandler object at 0x939b60c&amp;gt;
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-12"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:17 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1148&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Serving on fd://5
-&lt;a name="rest_code_a69ce3e232744cebaf14d5207c890cfe-13"&gt;&lt;/a&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-06-12 &lt;span class="m"&gt;04&lt;/span&gt;:36:17 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1148&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Using &amp;lt;class chaussette.backend._wsgiref.ChaussetteServer at 0x92596ec&amp;gt; as a backend
-&lt;/pre&gt;&lt;p&gt;Tendremos la aplicación servida en el puerto 8080 de localhost. Demonizarlo es sólo un flag:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a199e2e10fe546728e0a1b6ba27206c6-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:$ circud --daemon circus.ini
-&lt;/pre&gt;&lt;p&gt;Para implementar nginx como proxy reverso armé un archivo &lt;tt class="docutils literal"&gt;nginx.conf&lt;/tt&gt;:&lt;/p&gt;
-&lt;pre class="code javascript"&gt;&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-1"&gt;&lt;/a&gt;&lt;span class="nx"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-2"&gt;&lt;/a&gt;    &lt;span class="nx"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-3"&gt;&lt;/a&gt;    &lt;span class="nx"&gt;server_name&lt;/span&gt; &lt;span class="nx"&gt;nikolahub&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;nqnwebs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-5"&gt;&lt;/a&gt;    &lt;span class="nx"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kr"&gt;static&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-6"&gt;&lt;/a&gt;            &lt;span class="nx"&gt;alias&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;projects&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;nikolahub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kr"&gt;static&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-7"&gt;&lt;/a&gt;    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-9"&gt;&lt;/a&gt;    &lt;span class="nx"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;media&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-10"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;alias&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;projects&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;nikolahub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;media&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-11"&gt;&lt;/a&gt;    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-12"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-13"&gt;&lt;/a&gt;    &lt;span class="nx"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-14"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;proxy_pass&lt;/span&gt; &lt;span class="nx"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//localhost:8080/;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-15"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;proxy_pass_header&lt;/span&gt; &lt;span class="nx"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-16"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;proxy_set_header&lt;/span&gt; &lt;span class="nx"&gt;Host&lt;/span&gt; &lt;span class="nx"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-17"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;proxy_redirect&lt;/span&gt; &lt;span class="nx"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-18"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;proxy_set_header&lt;/span&gt; &lt;span class="nx"&gt;X&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Real&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;IP&lt;/span&gt; &lt;span class="nx"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-19"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;proxy_set_header&lt;/span&gt; &lt;span class="nx"&gt;X&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Scheme&lt;/span&gt; &lt;span class="nx"&gt;$scheme&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-20"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;proxy_connect_timeout&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-21"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;proxy_send_timeout&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-22"&gt;&lt;/a&gt;        &lt;span class="nx"&gt;proxy_read_timeout&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-23"&gt;&lt;/a&gt;    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;a name="rest_code_3cf61af07f2f49169b95fcecda2a53f0-24"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Luego agregamos el sitio:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_2af37cbe73bc48ffb29eae770269b854-1"&gt;&lt;/a&gt;$ ln -s /etc/nginx/sites-available/nikolahub nginx.conf
-&lt;a name="rest_code_2af37cbe73bc48ffb29eae770269b854-2"&gt;&lt;/a&gt;$ ln -s /etc/nginx/sites-enable/nikolahub nginx.conf
-&lt;a name="rest_code_2af37cbe73bc48ffb29eae770269b854-3"&gt;&lt;/a&gt;$ sudo service nginx restart
-&lt;/pre&gt;&lt;img alt="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png" class="align-right" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Reverse_proxy_h2g2bob.svg/400px-Reverse_proxy_h2g2bob.svg.png"&gt;
-&lt;p&gt;Esto pone a nginx como "frontend" de la aplicación, sirviendo los directorios con contenido estático y pasando el resto de las peticiones al puerto 8080 que administra Circus.&lt;/p&gt;
-&lt;p&gt;Ya tenemos nuestro sitio en producción.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="el-dueno-del-circo-y-los-monitos"&gt;
-&lt;h2&gt;El dueño del circo y los monitos&lt;/h2&gt;
-&lt;p&gt;De ahora en más, podremos usar las herramientas que provee Circus.&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;circusctl&lt;/tt&gt; es el dueño del circo. Puede parar, reiniciar, cambiar la cantidad de workers, abrir una consola ipython para interactuar o inspeccionar y mucho mas. Se puede usar como subcomandos (&lt;tt class="docutils literal"&gt;circusctl &amp;lt;subcmd&amp;gt; &amp;lt;watcher&amp;gt;&lt;/tt&gt;) o usar la consola interactiva.&lt;/p&gt;
-&lt;p&gt;Por ejemplo, si quisiera ver cuantos procesos workers tengo y agregar uno más, podría hacer así:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_2800afadec374ee9a5d3eaa9e76fdfd9-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:$ circusctl numprocesses nikolahub
-&lt;a name="rest_code_2800afadec374ee9a5d3eaa9e76fdfd9-2"&gt;&lt;/a&gt;&lt;span class="m"&gt;3&lt;/span&gt;
-&lt;a name="rest_code_2800afadec374ee9a5d3eaa9e76fdfd9-3"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:$ circusctl incr nikolahub
-&lt;a name="rest_code_2800afadec374ee9a5d3eaa9e76fdfd9-4"&gt;&lt;/a&gt;ok
-&lt;a name="rest_code_2800afadec374ee9a5d3eaa9e76fdfd9-5"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:$ circusctl numprocesses nikolahub
-&lt;a name="rest_code_2800afadec374ee9a5d3eaa9e76fdfd9-6"&gt;&lt;/a&gt;&lt;span class="m"&gt;4&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Lo mismo y más se puede hacer desde una consola IPython.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:$ circusctl ipython
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-2"&gt;&lt;/a&gt;Python &lt;span class="m"&gt;2&lt;/span&gt;.7.4 &lt;span class="o"&gt;(&lt;/span&gt;default, Apr &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;, &lt;span class="m"&gt;18&lt;/span&gt;:32:33&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-3"&gt;&lt;/a&gt;Type &lt;span class="s2"&gt;"copyright"&lt;/span&gt;, &lt;span class="s2"&gt;"credits"&lt;/span&gt; or &lt;span class="s2"&gt;"license"&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; more information.
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-5"&gt;&lt;/a&gt;IPython &lt;span class="m"&gt;2&lt;/span&gt;.1.0 -- An enhanced Interactive Python.
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-6"&gt;&lt;/a&gt;?         -&amp;gt; Introduction and overview of IPython&lt;span class="s1"&gt;'s features.&lt;/span&gt;
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-7"&gt;&lt;/a&gt;&lt;span class="s1"&gt;%quickref -&amp;gt; Quick reference.&lt;/span&gt;
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-8"&gt;&lt;/a&gt;&lt;span class="s1"&gt;help      -&amp;gt; Python'&lt;/span&gt;s own &lt;span class="nb"&gt;help&lt;/span&gt; system.
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-9"&gt;&lt;/a&gt;object?   -&amp;gt; Details about &lt;span class="s1"&gt;'object'&lt;/span&gt;, use &lt;span class="s1"&gt;'object??'&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; extra details.
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-11"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: arbiter.numprocesses&lt;span class="o"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_1fa6dafbfefe4a3b95afd249786fbc90-12"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="m"&gt;4&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;circus-top&lt;/span&gt;&lt;/tt&gt; es un monitor realtime, estilo top. Escucha las estadísticas
-que produce &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;circusd-stats&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_d8ea933cc4bb469a983c47b8f9285253-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;nikolahub&lt;span class="o"&gt;)&lt;/span&gt;tin@morochita:$ circus-top
-&lt;/pre&gt;&lt;div class="figure"&gt;
-&lt;img alt="/images/circus-top.png" src="http://mgaitan.github.io/images/circus-top.png"&gt;
-&lt;p class="caption"&gt;circus-top en acción. Muestra los procesos watcher y los recursos que cosumen.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Todo esto puede verse y manejarse cómodamente a través de &lt;a class="reference external" href="https://circus.readthedocs.org/en/0.11.1/for-ops/circusweb/"&gt;circus-web&lt;/a&gt;, un dashboard web que permite monitorear y
-administrar circus, con gráficos realtime y muy fácil de usar.&lt;/p&gt;
-&lt;img alt="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" class="align-center" src="https://circus.readthedocs.org/en/0.11.1/_images/web-watchers.png" style="width: 100%;"&gt;
-&lt;p&gt;Desde las últimas versiones, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;circus-web&lt;/span&gt;&lt;/tt&gt; se refactorizó para basarla en &lt;a class="reference external" href="http://www.tornadoweb.org"&gt;Tornado&lt;/a&gt; (originalmente usaba &lt;a class="reference external" href="http://bottlepy.org/"&gt;bottle&lt;/a&gt;) y hay que instalarlo aparte.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_56b906d2e6ea420b960416675d584a92-1"&gt;&lt;/a&gt;$ pip install circus-web
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="conclusiones"&gt;
-&lt;h2&gt;Conclusiones&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://circus.readthedocs.org/"&gt;Circus&lt;/a&gt; es una herramienta que simplifica el stack de deployment de una aplicación web WSGI.
-La API de alto nivel, una arquitectura mucho más moderna y simple y el aval de ser desarrollada (y usada exhaustivamente) por Mozilla, son avales poderosos para probarla.&lt;/p&gt;
-&lt;p&gt;Como &lt;a class="reference external" href="http://textosypretextos.com.ar/Bienvenidos-al-show"&gt;escribió el Marcos Luc&lt;/a&gt; &lt;em&gt;"la función ya debería empezar (...) Bueno nena, buena suerte, cada vez la red te teme más..."&lt;/em&gt;&lt;/p&gt;
-&lt;iframe width="709" height="390" src="//www.youtube.com/embed/AhfUfjLpNvI" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;</description><category>circus</category><category>devop</category><category>django</category><category>python</category><category>tutorial</category><guid>http://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/</guid><pubDate>Thu, 12 Jun 2014 15:45:13 GMT</pubDate></item><item><title>pip, apurate por favor</title><link>http://mgaitan.github.io/posts/pip-apurate-por-favor/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/"&gt;Leer más…&lt;/a&gt; (quedan 3 minutos de lectura)&lt;/p&gt;&lt;/div&gt;</description><category>ciencia</category><category>curso</category><category>python</category><guid>https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/</guid><pubDate>Mon, 06 Apr 2015 13:46:36 GMT</pubDate></item><item><title>Deploy de Django con Circus, Chaussette y Nginx</title><link>https://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela &lt;a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/"&gt;WSGI&lt;/a&gt;, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/"&gt;Leer más…&lt;/a&gt; (quedan 7 minutos de lectura)&lt;/p&gt;&lt;/div&gt;</description><category>circus</category><category>devop</category><category>django</category><category>python</category><category>tutorial</category><guid>https://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/</guid><pubDate>Thu, 12 Jun 2014 15:45:13 GMT</pubDate></item><item><title>pip, apurate por favor</title><link>https://mgaitan.github.io/posts/pip-apurate-por-favor/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://pip-installer.org/"&gt;pip&lt;/a&gt;  es una herramienta esencial
 para el trabajo diario de un programador python: es el manejador
 de paquetes de nuestro entorno de trabajo (¡&lt;a class="reference external" href="http://www.virtualenv.org/en/latest/"&gt;virtual&lt;/a&gt; por favor!),
 con el que instalamos, actualizamos o eliminamos las dependencias de nuestro proyecto
 (y, recursivamente, las dependencias que estas pudieran tener).&lt;/p&gt;
-&lt;!-- TEASER_END --&gt;
-&lt;p&gt;Conceptualmente es similar a los manejadores de paquetes de sistema como &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt;&lt;/tt&gt;,
-diferenciándose en que, por defecto, &lt;em&gt;consulta cada vez&lt;/em&gt; a una &lt;a class="reference external" href="https://pypi.python.org/pypi/"&gt;base de
-datos online&lt;/a&gt; si el paquete solicitado existe y de dónde
-puede bajar la última versión o la específica que se haya pedido.&lt;/p&gt;
-&lt;p&gt;Responder "qué, cuál y de dónde" es una tarea lenta porque dicha base de datos no es
-más que una página html por cada paquete con links que funcionan como un índice (como
-&lt;a class="reference external" href="https://pypi.python.org/simple/lxml/"&gt;este&lt;/a&gt;  que pip
-&lt;a class="reference external" href="https://github.com/pypa/pip/blob/f1fb4b4fda127529e24b71a4e03bb0b5df484ef6/pip/index.py#L141"&gt;debe parsear&lt;/a&gt;
-comparar y elegir la mejor opción para bajar (a veces incluso debe parsear la homepage
-del proyecto en busca de links de descarga, puaj!).&lt;/p&gt;
-&lt;p&gt;Por eso (y porque muchas veces la infraestructura se satura) el uso estándar de pip es lento.
-Pero hay algunas maneras de que lo sea menos. Veámoslas.&lt;/p&gt;
-&lt;div class="section" id="no-bajes-dos-veces-lo-mismo"&gt;
-&lt;h2&gt;No bajes dos veces lo mismo&lt;/h2&gt;
-&lt;p&gt;El funcionamiento básico de pip es instalar un paquete con &lt;tt class="docutils literal"&gt;pip install &amp;lt;paquete&amp;gt;&lt;/tt&gt;: busca, baja e
-instala el paquete. El flag &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download_cache=&amp;lt;path&amp;gt;&lt;/span&gt;&lt;/tt&gt; evita repetir el paso del medio,
-cosa tediosa cuando tenemos que instalar frecuentemente (por ejemplo en distintos virtualenvs)
-la misma dependencia o cuando el uso de ancho de banda es limitado.&lt;/p&gt;
-&lt;p&gt;Por ejemplo instalamos por primera vez &lt;a class="reference external" href="http://lxml.de/"&gt;lxml&lt;/a&gt; y vemos cuanto tarda.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test$ &lt;span class="nb"&gt;time&lt;/span&gt; pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-2"&gt;&lt;/a&gt;Downloading/unpacking lxml
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-3"&gt;&lt;/a&gt;  Downloading lxml-3.1.1.tar.gz &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.3MB&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;3&lt;/span&gt;.3MB downloaded
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-4"&gt;&lt;/a&gt;  Storing download in cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-5"&gt;&lt;/a&gt;  Running setup.py egg_info &lt;span class="k"&gt;for&lt;/span&gt; package lxml
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-6"&gt;&lt;/a&gt;    Building lxml version &lt;span class="m"&gt;3&lt;/span&gt;.1.1.
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-8"&gt;&lt;/a&gt;    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-11"&gt;&lt;/a&gt;Successfully installed lxml
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-12"&gt;&lt;/a&gt;Cleaning up...
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-13"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-14"&gt;&lt;/a&gt;real    2m58.276s
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-15"&gt;&lt;/a&gt;user    0m38.822s
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-16"&gt;&lt;/a&gt;sys 0m0.676s
-&lt;a name="rest_code_7213234a5f154f11a5ca71f3f4171127-17"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test$
-&lt;/pre&gt;&lt;p&gt;¡3 minutos! Y eso que estoy en una conexión bastante rápida.&lt;/p&gt;
-&lt;div class="admonition tip"&gt;
-&lt;p class="first admonition-title"&gt;Consejo&lt;/p&gt;
-&lt;p&gt;Cualquier flag que pip acepta en su linea de comando se puede configurar como una
-&lt;a class="reference external" href="http://www.pip-installer.org/en/latest/configuration.html#environment-variables"&gt;variable de entorno&lt;/a&gt;. Entonces podemos setear flag por defecto en nuestro &lt;tt class="docutils literal"&gt;.bashrc&lt;/tt&gt;,
-por ejemplo.. code-block: bash&lt;/p&gt;
-&lt;blockquote class="last"&gt;
-export PIP_DOWNLOAD_CACHE=~/.pip_download_cache&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;p&gt;Pero sigamos: una vez cacheado, las siguientes veces que queramos instalar la misma versión de lxml
-no bajará &lt;strong&gt;el archivo&lt;/strong&gt; de nuevo&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;test2&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test2$ &lt;span class="nb"&gt;time&lt;/span&gt; pip install lxml --download-cache&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_download
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-3"&gt;&lt;/a&gt;Downloading/unpacking lxml
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-4"&gt;&lt;/a&gt;  Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-5"&gt;&lt;/a&gt;  Running setup.py egg_info &lt;span class="k"&gt;for&lt;/span&gt; package lxml
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-6"&gt;&lt;/a&gt;    Building lxml version &lt;span class="m"&gt;3&lt;/span&gt;.1.1.
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-8"&gt;&lt;/a&gt;    &lt;span class="o"&gt;[&lt;/span&gt;... compilación&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-10"&gt;&lt;/a&gt;Successfully installed lxml
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-11"&gt;&lt;/a&gt;Cleaning up...
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-12"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-13"&gt;&lt;/a&gt;real    2m30.624s
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-14"&gt;&lt;/a&gt;user    0m38.966s
-&lt;a name="rest_code_3c3555fd9f064397b5bae922b3211e93-15"&gt;&lt;/a&gt;sys 0m0.504s
-&lt;/pre&gt;&lt;p&gt;Mejoró realmente poco. ¿que clase de caché es esta?
-Chusmeemos que hay en el directorio.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_0c124b85907d4fb7b0f6923b89185f30-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test$ ls ~/.pip_download_cache/ &lt;span class="p"&gt;|&lt;/span&gt; grep lxml
-&lt;a name="rest_code_0c124b85907d4fb7b0f6923b89185f30-2"&gt;&lt;/a&gt;https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-&lt;a name="rest_code_0c124b85907d4fb7b0f6923b89185f30-3"&gt;&lt;/a&gt;https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
-&lt;/pre&gt;&lt;p&gt;¿Caché de urls? &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-download-cache&lt;/span&gt;&lt;/tt&gt; no evita todo el laburo de averiguar de dónde bajar,
-sino simplemente no baja si la url resultante ya existe (como nombre de un archivo)
-en este directorio.&lt;/p&gt;
-&lt;p&gt;Lo explica simple &lt;a class="reference external" href="https://github.com/pypa/pip/issues/680#issuecomment-8773509"&gt;Carl Meyer&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-La función &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download-cache&lt;/span&gt;&lt;/tt&gt; no apunta a prevenir la búsqueda en la red del archivo
-correcto a bajar: todo lo que hace es guardarlo una vez que lo encontró.
-Si de verdad te interesa instalar tus depedencias desde tu compu (sin salir a la red)
-usá &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download&lt;/span&gt;&lt;/tt&gt; primero y luego &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--find-links&lt;/span&gt;&lt;/tt&gt; (apuntando al path de descarga) con
-&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--no-index&lt;/span&gt;&lt;/tt&gt;.&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="una-cache-sin-salir-a-la-red"&gt;
-&lt;h2&gt;Una caché sin salir a la red&lt;/h2&gt;
-&lt;p&gt;Sigamosle la corriente al bueno de &lt;a class="reference external" href="https://twitter.com/carljm"&gt;@carljm&lt;/a&gt;:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;tin@traful:~/lab/test3$ &lt;span class="nb"&gt;time&lt;/span&gt; pip install --download&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-2"&gt;&lt;/a&gt;Downloading/unpacking lxml
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-3"&gt;&lt;/a&gt;  Using download cache from /home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-4"&gt;&lt;/a&gt;Saved /home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-5"&gt;&lt;/a&gt;    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-7"&gt;&lt;/a&gt;Successfully downloaded lxml
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-8"&gt;&lt;/a&gt;Cleaning up...
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-10"&gt;&lt;/a&gt;real    2m8.969s
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-11"&gt;&lt;/a&gt;user    0m1.008s
-&lt;a name="rest_code_d6595074a9614b2b9945c9686b2b4692-12"&gt;&lt;/a&gt;sys 0m0.136s
-&lt;/pre&gt;&lt;p&gt;¡Uff, 2 minutos en copiar un archivo que ya tenía bajado! (evidentemente lo que demora mucho
-es &lt;em&gt;averiguar&lt;/em&gt; la versión del archivo a bajar)&lt;/p&gt;
-&lt;div class="admonition tip"&gt;
-&lt;p class="first admonition-title"&gt;Consejo&lt;/p&gt;
-&lt;p class="last"&gt;se puede inspeccionar el berenjenal de redirecciones y parseos que suceden hasta que pip
-da con el paquete lxml a bajar haciendo el comando más verborrágico con
-&lt;tt class="docutils literal"&gt;pip install lxml &lt;span class="pre"&gt;-vvv&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;En este caso, el caché es directamente el archivo:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_253085f2140849b6acad4813f2e7a719-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test$ ls ~/.pip_packages/ &lt;span class="p"&gt;|&lt;/span&gt; grep lxml
-&lt;a name="rest_code_253085f2140849b6acad4813f2e7a719-2"&gt;&lt;/a&gt;lxml-3.1.1.tar.gz
-&lt;/pre&gt;&lt;p&gt;Por suerte, una vez cacheado el paquete de esta manera no tendremos
-que consultar el índice online las siguientes veces.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;test3&lt;span class="o"&gt;)&lt;/span&gt;mgaitan@traful:~/lab/test3$ &lt;span class="nb"&gt;time&lt;/span&gt; pip install --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-2"&gt;&lt;/a&gt;Ignoring indexes: https://pypi.python.org/simple/
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-3"&gt;&lt;/a&gt;Downloading/unpacking lxml
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-4"&gt;&lt;/a&gt;  Running setup.py egg_info &lt;span class="k"&gt;for&lt;/span&gt; package lxml
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-5"&gt;&lt;/a&gt;    Building lxml version &lt;span class="m"&gt;3&lt;/span&gt;.1.1.
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-7"&gt;&lt;/a&gt;    &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-10"&gt;&lt;/a&gt;Successfully installed lxml
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-11"&gt;&lt;/a&gt;Cleaning up...
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-12"&gt;&lt;/a&gt;
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-13"&gt;&lt;/a&gt;real    0m38.944s
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-14"&gt;&lt;/a&gt;user    0m38.338s
-&lt;a name="rest_code_49085c6b75a241a68c60edbd808d6cd4-15"&gt;&lt;/a&gt;sys 0m0.564s
-&lt;/pre&gt;&lt;p&gt;Ok, ya va mejor.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="haciendo-que-la-cosa-vuele-no-recompiles-la-rueda"&gt;
-&lt;h2&gt;Haciendo que la cosa vuele: no recompiles la rueda&lt;/h2&gt;
-&lt;p&gt;pip 1.4 (en desarrollo) trae &lt;a class="reference external" href="https://github.com/pypa/pip/commit/5d02b5207a305543ad6ef19d6e6596ffa45b99e5"&gt;soporte integrado&lt;/a&gt; para el nuevo formato de paquetes
-&lt;a class="reference external" href="http://wheel.rtfd.org/,"&gt;wheel&lt;/a&gt; (superador del viejo &lt;em&gt;egg&lt;/em&gt; y basado en los estándares actuales)
-que es muchísimo más rápido que instalar desde fuentes (sobre todo en casos
-que se debe compilar, como lxml)&lt;/p&gt;
-&lt;p&gt;Para usar wheel el paquete a bajar tiene que existir en dicho formato y todavía no abundan
-en PyPi asi que podemos armarlos localmente con el propio pip&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_e5a9b3882af24b61958787c08eb2651f-1"&gt;&lt;/a&gt;pip wheel --wheel-dir&lt;span class="o"&gt;=&lt;/span&gt;./pip_packages lxml
-&lt;/pre&gt;&lt;p&gt;Eso es similar a usar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--download&lt;/span&gt;&lt;/tt&gt; pero además compila y empaqueta como
-un archivo &lt;tt class="docutils literal"&gt;.whl&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;Para que pip acepte instalar estos archivos hay que usar &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--use-wheel&lt;/span&gt;&lt;/tt&gt;
-y para que los busque localmente haremos:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a4e23fce909844548c70caeae645e294-1"&gt;&lt;/a&gt;pip install --use-wheel --no-index --find-links&lt;span class="o"&gt;=&lt;/span&gt;~/.pip_packages lxml
-&lt;/pre&gt;&lt;p&gt;¡Lo que tardó menos de 2 decimas de segundo! Un speedup del 90mil veces respecto al primer
-y canónico &lt;tt class="docutils literal"&gt;pip install lxml&lt;/tt&gt;&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_c63129373551416688e0a0a67715f539-1"&gt;&lt;/a&gt;(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
-&lt;a name="rest_code_c63129373551416688e0a0a67715f539-2"&gt;&lt;/a&gt;Ignoring indexes: https://pypi.python.org/simple/
-&lt;a name="rest_code_c63129373551416688e0a0a67715f539-3"&gt;&lt;/a&gt;Downloading/unpacking lxml
-&lt;a name="rest_code_c63129373551416688e0a0a67715f539-4"&gt;&lt;/a&gt;Installing collected packages: lxml
-&lt;a name="rest_code_c63129373551416688e0a0a67715f539-5"&gt;&lt;/a&gt;Successfully installed lxml
-&lt;a name="rest_code_c63129373551416688e0a0a67715f539-6"&gt;&lt;/a&gt;Cleaning up...
-&lt;a name="rest_code_c63129373551416688e0a0a67715f539-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_c63129373551416688e0a0a67715f539-8"&gt;&lt;/a&gt;real    0m0.180s
-&lt;a name="rest_code_c63129373551416688e0a0a67715f539-9"&gt;&lt;/a&gt;user    0m0.152s
-&lt;a name="rest_code_c63129373551416688e0a0a67715f539-10"&gt;&lt;/a&gt;sys 0m0.024s
-&lt;/pre&gt;&lt;p&gt;Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
-django, whatever) me los haces rodar para que pip vuele.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>pip</category><category>python</category><guid>http://mgaitan.github.io/posts/pip-apurate-por-favor/</guid><pubDate>Wed, 10 Apr 2013 04:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>http://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/pip-apurate-por-favor/"&gt;Leer más…&lt;/a&gt; (quedan 4 minutos de lectura)&lt;/p&gt;&lt;/div&gt;</description><category>pip</category><category>python</category><guid>https://mgaitan.github.io/posts/pip-apurate-por-favor/</guid><pubDate>Wed, 10 Apr 2013 04:17:55 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
 ¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
 proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
@@ -376,87 +34,73 @@ proyectos ? Bien, te propongo esta receta.&lt;/p&gt;
 &lt;div class="section" id="las-herramientas"&gt;
 &lt;h2&gt;Las herramientas&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.virtualenv.org"&gt;Virtualenv&lt;/a&gt;:  es una herramienta para aislar tu entorno de
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.virtualenv.org"&gt;Virtualenv&lt;/a&gt;:  es una herramienta para aislar tu entorno de
 desarrollo python. Es muy pero muy útil para evitar conflictos entre las
-dependencias de tus distintos proyectos.&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/"&gt;virtualenvwrapper&lt;/a&gt;: es un conjunto de extensiones que
+dependencias de tus distintos proyectos.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/"&gt;virtualenvwrapper&lt;/a&gt;: es un conjunto de extensiones que
 hacen la vida del usuario &lt;em&gt;virtualenv&lt;/em&gt; aun más feliz, permitiendo crear
 y borrar entornos virtuales, asociarlos a un proyecto, automatizar
-tareas al activar o desactivar uno, etc.&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt;: es la herramienta moderna, correcta y recomendada
+tareas al activar o desactivar uno, etc.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt;: es la herramienta moderna, correcta y recomendada
 para administrar los paquetes python instalados en tu
-sistema/virtualenv. Es un reemplazo de &lt;em&gt;easy_install&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://packages.python.org/distribute/"&gt;Distribute&lt;/a&gt;: es la herramienta moderna y recomendada para
+sistema/virtualenv. Es un reemplazo de &lt;em&gt;easy_install&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://packages.python.org/distribute/"&gt;Distribute&lt;/a&gt;: es la herramienta moderna y recomendada para
 distribuir tu paquete python. Es un fork de &lt;em&gt;setuptools&lt;/em&gt; (que es, a su
-vez, una mejora sobre el módulo estándar &lt;em&gt;distutils&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/stumitchell/skeleton"&gt;skeleton&lt;/a&gt; es una herramienta que define &lt;em&gt;plantillas&lt;/em&gt;
+vez, una mejora sobre el módulo estándar &lt;em&gt;distutils&lt;/em&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/stumitchell/skeleton"&gt;skeleton&lt;/a&gt; es una herramienta que define &lt;em&gt;plantillas&lt;/em&gt;
 para iniciar un proyecto, generando la estructura básica necesaria. Es
 similar a &lt;a class="reference external" href="http://python.org.ar/pyar/PasteScript"&gt;PasteScript&lt;/a&gt; pero enfocado en esta
-tarea concreta, sin dependencias y compatible con Python 3.x&lt;/li&gt;
+tarea concreta, sin dependencias y compatible con Python 3.x&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="la-receta"&gt;
 &lt;h2&gt;La receta&lt;/h2&gt;
 &lt;ol class="arabic"&gt;
-&lt;li&gt;&lt;p class="first"&gt;Instalá pip:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo apt-get install python-pip
-&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;Instalá pip:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;$ sudo apt-get install python-pip&lt;/pre&gt;
 &lt;p&gt;o bien directamente:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
-&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;$ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Instalá virtualenwrapper y skeleton:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo pip install virtualenwrapper
-$ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton
-&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;Instalá virtualenwrapper y skeleton:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;$ sudo pip install virtualenwrapper
+$ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="admonition note"&gt;
-&lt;p class="first admonition-title"&gt;Nota&lt;/p&gt;
-&lt;p class="last"&gt;Notar que &lt;em&gt;skeleton&lt;/em&gt; se está instalando desde un &lt;em&gt;fork&lt;/em&gt; del proyecto
+&lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
+&lt;p&gt;Notar que &lt;em&gt;skeleton&lt;/em&gt; se está instalando desde un &lt;em&gt;fork&lt;/em&gt; del proyecto
 original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
 &lt;/div&gt;
 &lt;ol class="arabic" start="3"&gt;
-&lt;li&gt;&lt;p class="first"&gt;Configurá virtualenvwrapper&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a67f5a194d7b4f2997a5495871132141-1"&gt;&lt;/a&gt;$ mkdir ~/.virtualenvs           &lt;span class="c1"&gt;# acá se van a guardar tus entornos virtuales&lt;/span&gt;
-&lt;a name="rest_code_a67f5a194d7b4f2997a5495871132141-2"&gt;&lt;/a&gt;$ mkdir ~/proyectos              &lt;span class="c1"&gt;# acá se van a guardar tus proyectos&lt;/span&gt;
-&lt;a name="rest_code_a67f5a194d7b4f2997a5495871132141-3"&gt;&lt;/a&gt;$ mkdir ~/.pip_download_cache     &lt;span class="c1"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Luego editá tu &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/tt&gt; agregando las siguientes líneas&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b99ead7815e14d69a55702bd5772d232-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
-&lt;a name="rest_code_b99ead7815e14d69a55702bd5772d232-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
-&lt;a name="rest_code_b99ead7815e14d69a55702bd5772d232-3"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;a name="rest_code_b99ead7815e14d69a55702bd5772d232-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
-&lt;a name="rest_code_b99ead7815e14d69a55702bd5772d232-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
+&lt;li&gt;&lt;p&gt;Configurá virtualenvwrapper&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4ad7f80fa41c47198ef5f66d7344c128-1"&gt;&lt;/a&gt;$ mkdir ~/.virtualenvs           &lt;span class="c1"&gt;# acá se van a guardar tus entornos virtuales&lt;/span&gt;
+&lt;a name="rest_code_4ad7f80fa41c47198ef5f66d7344c128-2"&gt;&lt;/a&gt;$ mkdir ~/proyectos              &lt;span class="c1"&gt;# acá se van a guardar tus proyectos&lt;/span&gt;
+&lt;a name="rest_code_4ad7f80fa41c47198ef5f66d7344c128-3"&gt;&lt;/a&gt;$ mkdir ~/.pip_download_cache     &lt;span class="c1"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Luego editá tu &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/code&gt; agregando las siguientes líneas&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_993da01aba024888b74589c2757a1225-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
+&lt;a name="rest_code_993da01aba024888b74589c2757a1225-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
+&lt;a name="rest_code_993da01aba024888b74589c2757a1225-3"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;a name="rest_code_993da01aba024888b74589c2757a1225-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
+&lt;a name="rest_code_993da01aba024888b74589c2757a1225-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
 &lt;/pre&gt;&lt;p&gt;y recargá tus cambios:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ source ~/.bashrc
-&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;$ source ~/.bashrc&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Inicializá tu proyecto. Por ejemplo el proyecto &lt;em&gt;zaraza&lt;/em&gt;&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ mkproject -t package zaraza
-&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;Inicializá tu proyecto. Por ejemplo el proyecto &lt;em&gt;zaraza&lt;/em&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;$ mkproject -t package zaraza&lt;/pre&gt;
 &lt;p&gt;Se te solicitarán algunos datos (nombre del proyecto, autor,
 licencia, etc.) y ¡(casi) listo! Estarás trabajando en tu proyecto
 &lt;em&gt;zaraza&lt;/em&gt;. Tu prompt se verá así&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-(zaraza)tin@morocha:~/proyectos/zaraza$
-&lt;/pre&gt;
-&lt;p&gt;¿Qué sucedió? Se creó un directorio &lt;tt class="docutils literal"&gt;~/proyectos/zaraza&lt;/tt&gt; para tu
-proyecto, asociado a un virtualenv ubicado en &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.virtualenvs/zaraza&lt;/span&gt;&lt;/tt&gt;.
+&lt;pre class="literal-block"&gt;(zaraza)tin@morocha:~/proyectos/zaraza$&lt;/pre&gt;
+&lt;p&gt;¿Qué sucedió? Se creó un directorio &lt;code class="docutils literal"&gt;~/proyectos/zaraza&lt;/code&gt; para tu
+proyecto, asociado a un virtualenv ubicado en &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;~/.virtualenvs/zaraza&lt;/span&gt;&lt;/code&gt;.
 &lt;strong&gt;skeleton&lt;/strong&gt; automáticamente creó una estructura básica de
-paquete python en &lt;tt class="docutils literal"&gt;~/proyectos/zaraza/src&lt;/tt&gt; incluyendo un &lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt;
+paquete python en &lt;code class="docutils literal"&gt;~/proyectos/zaraza/src&lt;/code&gt; incluyendo un &lt;code class="docutils literal"&gt;setup.py&lt;/code&gt;
 basado en &lt;em&gt;distribute&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Instalá tu paquete en el virtualenv, para poder importarlo desde
+&lt;li&gt;&lt;p&gt;Instalá tu paquete en el virtualenv, para poder importarlo desde
 cualquier lado:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-(zaraza) $ cd  ~/proyectos/zaraza/src
-(zaraza) $ pip install -e .
-&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;(zaraza) $ cd  ~/proyectos/zaraza/src
+(zaraza) $ pip install -e .&lt;/pre&gt;
 &lt;p&gt;Esto agrega el directorio de desarrollo de tu proyecto al PYTHONPATH
 del virtualenv, de modo que puedes importar &lt;em&gt;zaraza&lt;/em&gt; desde cualquier
 lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
@@ -467,13 +111,9 @@ lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
 &lt;div class="section" id="y-ahora"&gt;
 &lt;h2&gt;¿Y ahora?&lt;/h2&gt;
 &lt;p&gt;Cada vez que quieras trabajar en tu proyecto &lt;em&gt;zaraza&lt;/em&gt; ejecutás:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ workon zaraza
-&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;$ workon zaraza&lt;/pre&gt;
 &lt;p&gt;Para salir del virtualenv:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-(zaraza) $ deactivate
-&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;(zaraza) $ deactivate&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="algunos-tips-mas-a-modo-de-despedida"&gt;
 &lt;h2&gt;Algunos tips más a modo de despedida&lt;/h2&gt;
@@ -483,9 +123,9 @@ propone usar &lt;em&gt;skeleton&lt;/em&gt; (que funciona como plugin de
 para crear una estructura de paquete estándar básica, pero hay plugins
 para proyectos más específicos. Por ejemplo
 &lt;a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.django/"&gt;virtualenwrapper.django&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;El comando &lt;tt class="docutils literal"&gt;mkproject&lt;/tt&gt; es un wrapper sobre el
-comando principal de virtualenvwrapper &lt;tt class="docutils literal"&gt;mkvirtualenv&lt;/tt&gt;, que acepta muchos
-parámetros opcionales. Ejecutá &lt;tt class="docutils literal"&gt;mkproject_help&lt;/tt&gt; o &lt;tt class="docutils literal"&gt;mkvirtualenv &lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/tt&gt;
+&lt;p&gt;El comando &lt;code class="docutils literal"&gt;mkproject&lt;/code&gt; es un wrapper sobre el
+comando principal de virtualenvwrapper &lt;code class="docutils literal"&gt;mkvirtualenv&lt;/code&gt;, que acepta muchos
+parámetros opcionales. Ejecutá &lt;code class="docutils literal"&gt;mkproject_help&lt;/code&gt; o &lt;code class="docutils literal"&gt;mkvirtualenv &lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/code&gt;
 para saber más.&lt;/p&gt;
 &lt;p&gt;Y ya sabés ...&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
@@ -493,8 +133,9 @@ para saber más.&lt;/p&gt;
 &lt;/div&gt;
 &lt;hr class="docutils"&gt;
 &lt;blockquote&gt;
-Este artículo lo escribí originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/blockquote&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>http://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</guid><pubDate>Mon, 12 Nov 2012 03:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>http://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="http://mgaitan.github.io/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
+&lt;p&gt;Este artículo lo escribí originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</guid><pubDate>Mon, 12 Nov 2012 03:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>https://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="https://mgaitan.github.io/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 allí porque somos pobretones y nos da repos privados gratis.
@@ -510,66 +151,66 @@ para "postear" &lt;em&gt;issues&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
 proyecto y encontré &lt;a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc"&gt;justo lo que estaba buscando&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Entonces bastó con instalar el fork de David Paz Reyes&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_5887ea8d68244f52953787866435ae89-1"&gt;&lt;/a&gt;$ pip install git+https://github.com/davidmpaz/BitBucket-api.git
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6144f5225d494986b561cf092cf644c3-1"&gt;&lt;/a&gt;$ pip install git+https://github.com/davidmpaz/BitBucket-api.git
 &lt;/pre&gt;&lt;p&gt;he hice un script que migra todo los issues en estado &lt;em&gt;new&lt;/em&gt;
-del repo original (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) al nuevo (&lt;tt class="docutils literal"&gt;gpec&lt;/tt&gt;) y los potenciales comentarios que tenga.
+del repo original (&lt;code class="docutils literal"&gt;gpec&lt;/code&gt;) al nuevo (&lt;code class="docutils literal"&gt;gpec&lt;/code&gt;) y los potenciales comentarios que tenga.
 Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
 agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bitbucket&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;gpec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'gpec'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;gpec3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'gpec3'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-9"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# request original ISSUES&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issues&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-11"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'issues'&lt;/span&gt;&lt;span class="p"&gt;][:]:&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-13"&gt;&lt;/a&gt;    &lt;span class="n"&gt;original_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-14"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'status'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s1"&gt;'new'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-15"&gt;&lt;/a&gt;        &lt;span class="k"&gt;continue&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-16"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-17"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# and post to the new repo&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-18"&gt;&lt;/a&gt;    &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-19"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-20"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-21"&gt;&lt;/a&gt;        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Fail migrating #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;original_id&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-22"&gt;&lt;/a&gt;        &lt;span class="k"&gt;continue&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-23"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-24"&gt;&lt;/a&gt;    &lt;span class="n"&gt;new_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-25"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-26"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Migrated #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; as #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; in the new project'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-27"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-28"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# add a comment to mark the migration&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-29"&gt;&lt;/a&gt;    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'reported_by'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-30"&gt;&lt;/a&gt;    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'username'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;'anonymous'&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-31"&gt;&lt;/a&gt;    &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Issue migrated from the original repo. "&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-32"&gt;&lt;/a&gt;            &lt;span class="s2"&gt;"Was #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt; reported by &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-33"&gt;&lt;/a&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-34"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# migrate comments&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-35"&gt;&lt;/a&gt;    &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issue_comments&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-36"&gt;&lt;/a&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-37"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'content'&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-38"&gt;&lt;/a&gt;            &lt;span class="k"&gt;continue&lt;/span&gt;
-&lt;a name="rest_code_391dc845845749a38a69eecaf1b57bc7-39"&gt;&lt;/a&gt;        &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;¡Disfruten!&lt;/p&gt;&lt;/div&gt;</description><category>migraciones</category><category>python</category><category>scripts</category><guid>http://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/</guid><pubDate>Sat, 10 Nov 2012 03:09:24 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>http://mgaitan.github.io/posts/bienvenidos-al-tren/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hola!&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bitbucket&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;gpec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'gpec'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;gpec3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'gpec3'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-9"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# request original ISSUES&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issues&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'issues'&lt;/span&gt;&lt;span class="p"&gt;][:]:&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-13"&gt;&lt;/a&gt;    &lt;span class="n"&gt;original_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-14"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'status'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s1"&gt;'new'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-15"&gt;&lt;/a&gt;        &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-16"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-17"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# and post to the new repo&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-18"&gt;&lt;/a&gt;    &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-19"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-20"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-21"&gt;&lt;/a&gt;        &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Fail migrating #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;original_id&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-22"&gt;&lt;/a&gt;        &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-23"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-24"&gt;&lt;/a&gt;    &lt;span class="n"&gt;new_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-25"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-26"&gt;&lt;/a&gt;    &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Migrated #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; as #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; in the new project'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-27"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-28"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# add a comment to mark the migration&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-29"&gt;&lt;/a&gt;    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'reported_by'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-30"&gt;&lt;/a&gt;    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'username'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;'anonymous'&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-31"&gt;&lt;/a&gt;    &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Issue migrated from the original repo. "&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-32"&gt;&lt;/a&gt;            &lt;span class="s2"&gt;"Was #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt; reported by &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-33"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-34"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# migrate comments&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-35"&gt;&lt;/a&gt;    &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issue_comments&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-36"&gt;&lt;/a&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-37"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'content'&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-38"&gt;&lt;/a&gt;            &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;a name="rest_code_ae8fe0e65620426b8f3066c189d7174d-39"&gt;&lt;/a&gt;        &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;¡Disfruten!&lt;/p&gt;&lt;/div&gt;</description><category>migraciones</category><category>python</category><category>scripts</category><guid>https://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/</guid><pubDate>Sat, 10 Nov 2012 03:09:24 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>https://mgaitan.github.io/posts/bienvenidos-al-tren/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
 que explicaré más adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
 &lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
 &lt;p&gt;Espero que pronto esto esté más bonito y con contenido. También que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;&lt;/div&gt;</description><category>blog</category><category>nikola</category><category>python</category><category>spip</category><guid>http://mgaitan.github.io/posts/bienvenidos-al-tren/</guid><pubDate>Thu, 11 Oct 2012 04:15:00 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>http://mgaitan.github.io/posts/cuevanalinks-ahora-para-seres/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="admonition important"&gt;
-&lt;p class="first admonition-title"&gt;Importante&lt;/p&gt;
-&lt;p class="last"&gt;Cuevanlinks está desmantenido y con los cambios en cuevana.tv ya no
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;&lt;/div&gt;</description><category>blog</category><category>nikola</category><category>python</category><category>spip</category><guid>https://mgaitan.github.io/posts/bienvenidos-al-tren/</guid><pubDate>Thu, 11 Oct 2012 04:15:00 GMT</pubDate></item><item><title>Cuevanalinks, ahora para seres humanos</title><link>https://mgaitan.github.io/posts/cuevanalinks-ahora-para-seres/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="admonition important"&gt;
+&lt;p class="admonition-title"&gt;Importante&lt;/p&gt;
+&lt;p&gt;Cuevanlinks está desmantenido y con los cambios en cuevana.tv ya no
 funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
 ¿Querés revivir el proyecto? &lt;a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/fork"&gt;Forkealo&lt;/a&gt;!&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Un colega al que no conozco personalmente, &lt;a class="reference external" href="http://mguillech.blogspot.com/"&gt;Martín
 Chikilian&lt;/a&gt;, se ofreció a desarrollar
 una interfaz gráfica para
-&lt;a class="reference external" href="http://mgaitan.github.io/posts/cuevanalinks-ahora-para-seres/blog/article/la-sanguijuela-de-cuevana"&gt;Cuevanalinks&lt;/a&gt;.&lt;/p&gt;
+&lt;a class="reference external" href="https://mgaitan.github.io/posts/cuevanalinks-ahora-para-seres/blog/article/la-sanguijuela-de-cuevana"&gt;Cuevanalinks&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Luego de algunos dias y teniendo una paciencia descomunal para soportar
 siempre nuevos requerimientos de mi parte, obtuvo una versión de
 Cuevanalinks-GUI, basado en &lt;a class="reference external" href="http://es.wikipedia.org/wiki/PyQt"&gt;PyQt&lt;/a&gt;&lt;/p&gt;
@@ -580,23 +221,23 @@ Cuevanalinks-GUI, basado en &lt;a class="reference external" href="http://es.wik
 que no resolvemos del todo) pero ya ofrece ciertas ventajas sobre la
 versión para línea de comandos:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Permite elegir qué se descarga cuando se hace una búsqueda de
-películas&lt;/li&gt;
-&lt;li&gt;Te deja armar una cola de descargas de muchas cosas distintas
-haciendo muchas busquedas&lt;/li&gt;
-&lt;li&gt;Y, lo más importante, lo puede instalar y usar un ser humano
-normal. :D&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Permite elegir qué se descarga cuando se hace una búsqueda de
+películas&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Te deja armar una cola de descargas de muchas cosas distintas
+haciendo muchas busquedas&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Y, lo más importante, lo puede instalar y usar un ser humano
+normal. :D&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Para Windows, hay un instalador de la versión 0.5dev (el dev denota que
 está en desarrollo, se entiende) que se puede descargar desde acá:&lt;/p&gt;
 &lt;div class="admonition important"&gt;
-&lt;p class="first admonition-title"&gt;Importante&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/cuevanalinks-0.5dev-installer.exe"&gt;cuevanalinks-0.5dev-installer.exe&lt;/a&gt;&lt;/p&gt;
-&lt;p class="last"&gt;para Windows XP o superior&lt;/p&gt;
+&lt;p class="admonition-title"&gt;Importante&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://mgaitan.github.io/downloads/cuevanalinks-0.5dev-installer.exe"&gt;cuevanalinks-0.5dev-installer.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;para Windows XP o superior&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Para los linuxeros, Martín puso &lt;a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html"&gt;algunas
 instrucciones&lt;/a&gt;
-para hacerlo andar desde los fuentes.&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>http://mgaitan.github.io/posts/cuevanalinks-ahora-para-seres/</guid><pubDate>Wed, 03 Aug 2011 11:51:21 GMT</pubDate></item><item><title>CDPedia 0.7 disponible</title><link>http://mgaitan.github.io/posts/cdpedia-0-7-disponible/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg" class="align-left" src="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg"&gt;
+para hacerlo andar desde los fuentes.&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>https://mgaitan.github.io/posts/cuevanalinks-ahora-para-seres/</guid><pubDate>Wed, 03 Aug 2011 11:51:21 GMT</pubDate></item><item><title>CDPedia 0.7 disponible</title><link>https://mgaitan.github.io/posts/cdpedia-0-7-disponible/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg" class="align-left" src="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg"&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://www.python.org.ar"&gt;Python Argentina&lt;/a&gt; se complace en informar que está
 disponible la &lt;a class="reference external" href="http://cdpedia.python.org.ar/"&gt;versión 0.7 de CDPedia&lt;/a&gt;
 , un proyecto de la comunidad para disponer de los contenidos de
@@ -604,32 +245,34 @@ disponible la &lt;a class="reference external" href="http://cdpedia.python.org.a
 usando un CD o DVD como soporte de la información.&lt;/p&gt;
 &lt;p&gt;La imágen de CD (.iso) se puede descargar desde acá:&lt;/p&gt;
 &lt;div class="admonition important"&gt;
-&lt;p class="first admonition-title"&gt;Importante&lt;/p&gt;
+&lt;p class="admonition-title"&gt;Importante&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;a class="reference external" href="http://mgaitan.github.io/downloads/cdpedia-CD-0.7.iso"&gt;CDPedia 0.7&lt;/a&gt;
-CD 701Mb - 93500 artículos, 10% de imágenes&lt;/blockquote&gt;
-&lt;dl class="last docutils"&gt;
-&lt;dt&gt;&lt;a class="reference external" href="http://mgaitan.github.io/downloads/cdpedia-DVD5-0.7.iso"&gt;CDPedia 0.7 DVD&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.&lt;/dd&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://mgaitan.github.io/downloads/cdpedia-CD-0.7.iso"&gt;CDPedia 0.7&lt;/a&gt;
+CD 701Mb - 93500 artículos, 10% de imágenes&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;dl class="simple"&gt;
+&lt;dt&gt;&lt;a class="reference external" href="https://mgaitan.github.io/downloads/cdpedia-DVD5-0.7.iso"&gt;CDPedia 0.7 DVD&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.&lt;/p&gt;
+&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;/div&gt;
 &lt;p&gt;Más información en
 &lt;a class="reference external" href="http://cdpedia.python.org.ar/"&gt;http://cdpedia.python.org.ar/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Esta versión de CDPedia es la que se distribuirá a todas las escuelas de
 Argentina a través de &lt;a class="reference external" href="http://wikipediaenelaula.educ.ar/"&gt;Educ.ar&lt;/a&gt;
-[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/cdpedia-0-7-disponible#nb1"&gt;1&lt;/a&gt;]&lt;/p&gt;
+[&lt;a class="reference external" href="https://mgaitan.github.io/blog/article/cdpedia-0-7-disponible#nb1"&gt;1&lt;/a&gt;]&lt;/p&gt;
 &lt;p&gt;Felicitaciones a todos los
 &lt;a class="reference external" href="http://code.google.com/p/cdpedia/source/browse/trunk/resources/general_info/AUTORES.txt"&gt;colaboradores&lt;/a&gt;
 por este logro de la comunidad. En especial, a
 &lt;a class="reference external" href="http://twitter.com/#!/dmascialino"&gt;Diego&lt;/a&gt;,
 &lt;a class="reference external" href="http://twitter.com/#!/spiccinini"&gt;SAn&lt;/a&gt;,
 &lt;a class="reference external" href="http://www.taniquetil.com.ar/plog/"&gt;Facu&lt;/a&gt; y
-&lt;a class="reference external" href="http://protocultura.net/"&gt;Alecu&lt;/a&gt; que son los principales&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>http://mgaitan.github.io/posts/cdpedia-0-7-disponible/</guid><pubDate>Fri, 01 Jul 2011 14:00:00 GMT</pubDate></item><item><title>Pep 20: El Zen del Barça</title><link>http://mgaitan.github.io/posts/pep-20-el-zen-del-barca/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;img alt="image0" src="http://mgaitan.github.io/images/messi_guardib9bf-5b102.jpg"&gt;
+&lt;a class="reference external" href="http://protocultura.net/"&gt;Alecu&lt;/a&gt; que son los principales&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>https://mgaitan.github.io/posts/cdpedia-0-7-disponible/</guid><pubDate>Fri, 01 Jul 2011 14:00:00 GMT</pubDate></item><item><title>Pep 20: El Zen del Barça</title><link>https://mgaitan.github.io/posts/pep-20-el-zen-del-barca/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;img alt="image0" src="https://mgaitan.github.io/images/messi_guardib9bf-5b102.jpg"&gt;
 El &lt;a class="reference external" href="http://www.python.org/dev/peps/pep-0020/"&gt;Zen de Python&lt;/a&gt; es
 también el Zen del Barça, el de Pep Guardiola. La "Pep" 20
-[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/pep-20-el-zen-del-barca#nb1"&gt;1&lt;/a&gt;]:&lt;/p&gt;
+[&lt;a class="reference external" href="https://mgaitan.github.io/blog/article/pep-20-el-zen-del-barca#nb1"&gt;1&lt;/a&gt;]:&lt;/p&gt;
 &lt;blockquote&gt;
-Bello es mejor que feo.
+&lt;p&gt;Bello es mejor que feo.
 Explícito es mejor que implícito.
 Simple es mejor que complejo.
 Complejo es mejor que complicado.
@@ -651,14 +294,15 @@ Aunque nunca es a menudo mejor que ya mismo.
 Si la implementación es difícil de explicar, es una mala idea.
 Si la implementación es fácil de explicar, puede que sea una buena
 idea.
-Los espacios son una gran idea ¡Hagamos más de esas cosas!&lt;/blockquote&gt;&lt;/div&gt;</description><category>python</category><guid>http://mgaitan.github.io/posts/pep-20-el-zen-del-barca/</guid><pubDate>Wed, 27 Apr 2011 19:22:47 GMT</pubDate></item><item><title>Compartiendo documentación de paquetes python</title><link>http://mgaitan.github.io/posts/compartiendo-documentacion-de/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+Los espacios son una gran idea ¡Hagamos más de esas cosas!&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>python</category><guid>https://mgaitan.github.io/posts/pep-20-el-zen-del-barca/</guid><pubDate>Wed, 27 Apr 2011 19:22:47 GMT</pubDate></item><item><title>Compartiendo documentación de paquetes python</title><link>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
 documentación está incompleto
-[&lt;a class="reference external" href="http://mgaitan.github.io/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
+[&lt;a class="reference external" href="https://mgaitan.github.io/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Si bien el manifiesto ágil
 &lt;a class="reference external" href="http://agilemanifesto.org/iso/es/"&gt;proclama&lt;/a&gt; &lt;em&gt;"Software funcionando
 sobre documentación extensiva"&lt;/em&gt;, yo subrayaría extensiva como eufemismo
 de documentación burocrática e inútil (opiné de esto
-&lt;a class="reference external" href="http://mgaitan.github.io/posts/compartiendo-documentacion-de/blog/article/veinteanero"&gt;acá&lt;/a&gt;) que evidentemente no es la que hace
+&lt;a class="reference external" href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/blog/article/veinteanero"&gt;acá&lt;/a&gt;) que evidentemente no es la que hace
 falta. Pero la documentación (sobre todo la buena) es indispensable y
 para &lt;a class="reference external" href="http://jacobian.org/writing/great-documentation/"&gt;algunos&lt;/a&gt;, la
 parte que más los enorgullece del proyecto (y con razón).&lt;/p&gt;
@@ -671,7 +315,7 @@ pythonistas&lt;/a&gt;.&lt;/p&gt;
 generador de documentación más utilizado (por lejos) en el ecosistema de
 Python. Es lo que usa la documentación de Python misma, la de Django y
 casi todo proyecto conocido o por conocer.&lt;/p&gt;
-&lt;p&gt;Entonces usamos restructuredText, usamos Sphinx, pero para &lt;a class="reference external" href="http://mgaitan.github.io/posts/compartiendo-documentacion-de/blog/article/la-sanguijuela-de-cuevana"&gt;nuestro
+&lt;p&gt;Entonces usamos restructuredText, usamos Sphinx, pero para &lt;a class="reference external" href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/blog/article/la-sanguijuela-de-cuevana"&gt;nuestro
 proyectito de morondanga&lt;/a&gt; que
 no tiene web propia ni nada, ¿dónde subimos la documentación generada?
 Veamos.&lt;/p&gt;
@@ -688,8 +332,9 @@ través de Sphinx.&lt;/p&gt;
 amigos&lt;/a&gt;)
 ni siquiera hace falta tener Sphinx instalado localmente.&lt;/p&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 31); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/compartiendo-documentacion-de/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-Duplicate explicit target name: "acá".&lt;/div&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 31); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Duplicate explicit target name: "acá".&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;Más aun, por defecto actualiza diariamente, pero se puede utilizar un
 "hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
 al repo, de manera de tener la documentación actualizada al instante.
@@ -697,22 +342,23 @@ Para usuarios de GitHub la activación del "web hook" se explica
 &lt;a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/webhooks.html#github"&gt;acá&lt;/a&gt;
 . Para &lt;a class="reference external" href="http://bitbucket.org"&gt;BitBucket.org&lt;/a&gt; es parecido:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
-&lt;li&gt;Vas a tu proyecto , click en Admin -&amp;gt; Services&lt;/li&gt;
-&lt;li&gt;Agregás el servicio "POST"&lt;/li&gt;
-&lt;li&gt;Completás el campo de texto con la URL que te da ReadTheDocs en la
-página de descripción de tu proyecto (estándo logueado). Por ejemplo:&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Vas a tu proyecto , click en Admin -&amp;gt; Services&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Agregás el servicio "POST"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Completás el campo de texto con la URL que te da ReadTheDocs en la
+página de descripción de tu proyecto (estándo logueado). Por ejemplo:&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;
+&lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;
 &lt;/div&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 60)&lt;/p&gt;
-Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 60)&lt;/p&gt;
+&lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;Y listo. Tu docu al instante.&lt;/p&gt;
 &lt;p&gt;Como el sitio genera el html en vez de servir una versión generada
 previamente, la documentación que requiere introspección del código (
 todas las directivas `` .. auto* :: `` de Sphinx) este debe poder
-ejecutarse. Para eso el paquete debe ser instalable via &lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt; y
+ejecutarse. Para eso el paquete debe ser instalable via &lt;code class="docutils literal"&gt;setup.py&lt;/code&gt; y
 hay marcar desde la página de configuración del proyecto en RTFD.org,
 que instale en un virtualenv.&lt;/p&gt;
 &lt;p&gt;Para ver si hubo algún problema en la generación, podés fijarte en
@@ -725,7 +371,7 @@ Python Package Index, &lt;a class="reference external" href="http://pypi.python.
 índice que usan las herramientas &lt;a class="reference external" href="http://www.pip-installer.org"&gt;pip&lt;/a&gt; e
 easy_install. Si bien no necesarimente los paquetes deben estar
 hospedados allí (indicando en el setup.py la URL de descarga) es muy
-común y fácil hacerlo con el comando &lt;tt class="docutils literal"&gt;upload&lt;/tt&gt; del setup.py.&lt;/p&gt;
+común y fácil hacerlo con el comando &lt;code class="docutils literal"&gt;upload&lt;/code&gt; del setup.py.&lt;/p&gt;
 &lt;p&gt;Lo que muchos no
 &lt;a class="reference external" href="http://packages.python.org/an_example_pypi_project/buildanduploadsphinx.html"&gt;saben&lt;/a&gt;
 es que PyPi también ofrece &lt;a class="reference external" href="http://packages.python.org/"&gt;hostear la
@@ -734,36 +380,31 @@ la página de administración de tu proyecto en PyPi y adjuntar un .zip
 con la documentación (que no necesariamente tiene que ser hecha con
 Sphinx)&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="" src="http://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;
+&lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;
 &lt;/div&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 93)&lt;/p&gt;
-Explicit markup ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 93)&lt;/p&gt;
+&lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;Pero si usamos Sphinx hay una manera más fácil, manteniendosé en el
 "ecosistema" de desarrollo: usar esta &lt;a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload/"&gt;extension de
 setuptools&lt;/a&gt; que
 permite generar el html a través Sphinx y subirlo automáticamente. Se
 instala, obviamente, vía pypi:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ easy_install sphinx-pypi-upload
-&lt;/pre&gt;
-&lt;p&gt;Hay que condigurar un &lt;tt class="docutils literal"&gt;setup.cfg&lt;/tt&gt; (ubicado al nivel raiz, junto con
-&lt;tt class="docutils literal"&gt;setup.py&lt;/tt&gt;) indicandole dónde está la docu fuente y dónde el
+&lt;pre class="literal-block"&gt;$ easy_install sphinx-pypi-upload&lt;/pre&gt;
+&lt;p&gt;Hay que condigurar un &lt;code class="docutils literal"&gt;setup.cfg&lt;/code&gt; (ubicado al nivel raiz, junto con
+&lt;code class="docutils literal"&gt;setup.py&lt;/code&gt;) indicandole dónde está la docu fuente y dónde el
 resultado. Más o menos así:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-[build_sphinx]
+&lt;pre class="literal-block"&gt;[build_sphinx]
 source-dir = doc/source
 build-dir  = doc/build
 all_files  = 1
 
 [upload_sphinx]
-upload-dir = doc/build/html
-&lt;/pre&gt;
+upload-dir = doc/build/html&lt;/pre&gt;
 &lt;p&gt;Luego se usa:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ python setup.py build_sphinx
-$ python setup.py upload_sphinx
-&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;$ python setup.py build_sphinx
+$ python setup.py upload_sphinx&lt;/pre&gt;
 &lt;p&gt;Y docu subida a la dire
 &lt;em&gt;`http://packages.python.org/tu-proyecto &amp;lt;http://packages.python.org/tu-proyecto&amp;gt;`_&lt;/em&gt;
 . ¡&lt;a class="reference external" href="http://packages.python.org/CuevanaLinks/"&gt;Charaaán&lt;/a&gt;!&lt;/p&gt;
@@ -774,19 +415,17 @@ $ python setup.py upload_sphinx
 (html y todo lo que produce y necesita Sphinx) directamente desde el
 repositorio.&lt;/p&gt;
 &lt;p&gt;Para que el servidor Subversion muestre el html renderizado en vez del
-código (como texto plano) hay que indicarle el tipo &lt;tt class="docutils literal"&gt;mime&lt;/tt&gt; de cada
+código (como texto plano) hay que indicarle el tipo &lt;code class="docutils literal"&gt;mime&lt;/code&gt; de cada
 archivo.&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ svn propset svn:mime-type 'text/html' FILENAME
-$ svn propset svn:mime-type 'image/jpeg' FILENAME
-&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;$ svn propset svn:mime-type 'text/html' FILENAME
+$ svn propset svn:mime-type 'image/jpeg' FILENAME&lt;/pre&gt;
 &lt;p&gt;Para que esto se haga automático, se puede modificar el archivo de
-configuración &lt;a href="http://mgaitan.github.io/posts/compartiendo-documentacion-de/#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
+configuración &lt;a href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
 &lt;div class="system-message" id="id3"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 144); &lt;em&gt;&lt;a href="http://mgaitan.github.io/posts/compartiendo-documentacion-de/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-Inline literal start-string without end-string.&lt;/div&gt;
-&lt;pre class="literal-block"&gt;
-[miscellany]
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 144); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class="literal-block"&gt;[miscellany]
 enable-auto-props = yes
 
 [auto-props]
@@ -795,8 +434,7 @@ enable-auto-props = yes
 *.js = svn:mime-type=text/javascript
 *.png = svn:mime-type=image/png
 *.jpg = svn:mime-type=image/jpeg
-*.gif = svn:mime-type=image/gif
-&lt;/pre&gt;
+*.gif = svn:mime-type=image/gif&lt;/pre&gt;
 &lt;p&gt;Un ejemplo de esto es el &lt;a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html"&gt;reporte de mi proyecto
 integrador&lt;/a&gt;
 que está hospedado en Google Code&lt;/p&gt;
@@ -808,9 +446,9 @@ estáticas&lt;/a&gt;, tanto del desarrollador/a como
 de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
 mas o menos automáticamente estas opciones que no he probado pero las
 dejo como referencia:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="-" src="http://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/"&gt;Hosting sphinx doc in
+&lt;p&gt;&lt;img alt="-" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="http://lucasbardella.com/report/hosting-your-sphinx-docs-in-github/"&gt;Hosting sphinx doc in
 github&lt;/a&gt;
 de Luca Sbardella.
-&lt;img alt="image1" src="http://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
+&lt;img alt="image1" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>http://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item></channel></rss>
