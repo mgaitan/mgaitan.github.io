@@ -20,8 +20,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="en/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/">
-<link rel="next" href="index-9.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/miau-cuando-el-gato-dice-la-verdad/" type="text/html">
+<link rel="next" href="index-10.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/el-mono-salta-entre-las-ramas/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -80,7 +80,42 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/miau-cuando-el-gato-dice-la-verdad/" class="u-url">Miau: cuando el gato dice la verdad</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-mono-salta-entre-las-ramas/" class="u-url">El mono salta entre las ramas. El desarrollador también</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/el-mono-salta-entre-las-ramas/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-04-30T01:59:00-03:00" itemprop="datePublished" title="2020-04-30 01:59">2020-04-30 01:59</time></a>
+            </p>
+                <p class="commentline">            <a href="posts/el-mono-salta-entre-las-ramas/#disqus_thread" data-disqus-identifier="cache/posts/el-mono-salta-entre-las-ramas.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Cuando laburamos con git, necesitamos frecuentemente cambiar
+de rama, sea porque estamos haciendo un feature mientras esperamos
+que alguien haga review de otra cosa y eventualmente pide algo,
+sea porque somos nosotros los que <em>checkouteamos</em> el branch
+de un compañero para probar algo.</p>
+<p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
+un alias del branch previo.</p>
+<pre class="code bash"><a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-1"></a>$ git checkout master
+<a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-2"></a>Switched to a new branch <span class="s1">'master'</span>
+<a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-3"></a>$ git checkout -
+<a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-4"></a>Switched to branch <span class="s1">'writing'</span>
+</pre>
+<p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
+y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>
+<p>El problema es que si no nos acordamos el nombre del branch, mucho menos
+podriamos acordarnos el orden cronológico en el que lo usamos.</p>
+<p class="more"><a href="posts/el-mono-salta-entre-las-ramas/">Leer más…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/miau-cuando-el-gato-dice-la-verdad/" class="u-url">Miau: cuando el gato dice la verdad</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -1173,37 +1208,10 @@ Nikola para compilar este blog y publicarlo automáticamente.</p>
 <p class="more"><a href="posts/deploy-de-django-con-circus-chaussette-nginx/">Leer más…</a></p>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/los-numeros-del-mundial/" class="u-url">Los números del Mundial</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/los-numeros-del-mundial/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-06-05T13:17:23-03:00" itemprop="datePublished" title="2014-06-05 13:17">2014-06-05 13:17</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/los-numeros-del-mundial/#disqus_thread" data-disqus-identifier="cache/posts/los-numeros-del-mundial.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Un amigo me dijo ayer que la fiebre del mundial ya no le afecta como antes. Cuando era chico, decía, la ansiedad por la navidad, los reyes y sobre todo, los mundiales, no lo dejaba dormir.</p>
-<p>A mí Papá Noel y los Reyes me tenían bastante sin cuidado (que sólo ocasionalmente venían a mi casa, sobre todo cuando le hacíamos caso a mi hermano mayor, que nos instruía que a Baltazar había que dejarle una cerveza negra bien fría, para pasar el calor de las madrugadas de enero). Pero me sigue pasando lo mismo con el mundial de fútbol: fiebre. No hay acontecimiento que ansíe más que ese.</p>
-<p class="more"><a href="posts/los-numeros-del-mundial/">Leer más…</a></p>
-</div>
-</div>
-</div>
-    </div>
     </article>
 </div>
         <ul class="pager postindexpager clearfix">
-<li class="next"><a href="index-9.html" rel="next">Posts anteriores</a></li>
+<li class="next"><a href="index-10.html" rel="next">Posts anteriores</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});

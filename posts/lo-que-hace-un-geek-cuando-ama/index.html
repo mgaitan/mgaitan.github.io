@@ -154,27 +154,27 @@ D.O.S.. WTF!</p>
 <p>La
 <a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html">solución</a>
 es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a></p>
-<pre class="code bash"><a name="rest_code_cf241be8571843eab5b84cb750133286-1"></a><span class="c1"># obtener una imagen booteable de freeDOS y montarla en un directorio</span>
-<a name="rest_code_cf241be8571843eab5b84cb750133286-2"></a>wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
-<a name="rest_code_cf241be8571843eab5b84cb750133286-3"></a>gunzip FDOEM.144.gz
-<a name="rest_code_cf241be8571843eab5b84cb750133286-4"></a>mkdir /tmp/floppy
-<a name="rest_code_cf241be8571843eab5b84cb750133286-5"></a>mount -t vfat -o loop FDOEM.144 /tmp/floppy
-<a name="rest_code_cf241be8571843eab5b84cb750133286-6"></a>
-<a name="rest_code_cf241be8571843eab5b84cb750133286-7"></a><span class="c1"># obtener la herramienta para actualizar el bios y la imagen, y moverlos</span>
-<a name="rest_code_cf241be8571843eab5b84cb750133286-8"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
-<a name="rest_code_cf241be8571843eab5b84cb750133286-9"></a>unzip AFUDOS211.zip
-<a name="rest_code_cf241be8571843eab5b84cb750133286-10"></a>mv AFUDOS.exe /tmp/floppy
-<a name="rest_code_cf241be8571843eab5b84cb750133286-11"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
-<a name="rest_code_cf241be8571843eab5b84cb750133286-12"></a>unzip K8n1011.zip
-<a name="rest_code_cf241be8571843eab5b84cb750133286-13"></a>mv <span class="m">1011</span>.rom /tmp/floppy
-<a name="rest_code_cf241be8571843eab5b84cb750133286-14"></a>
-<a name="rest_code_cf241be8571843eab5b84cb750133286-15"></a><span class="c1"># desmontar</span>
-<a name="rest_code_cf241be8571843eab5b84cb750133286-16"></a>umount /tmp/floppy
-<a name="rest_code_cf241be8571843eab5b84cb750133286-17"></a>
-<a name="rest_code_cf241be8571843eab5b84cb750133286-18"></a><span class="c1"># crear una ISO y grabar a un disco virgen</span>
-<a name="rest_code_cf241be8571843eab5b84cb750133286-19"></a><span class="c1"># (tambien se podría grabar a un pendrive)</span>
-<a name="rest_code_cf241be8571843eab5b84cb750133286-20"></a>mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
-<a name="rest_code_cf241be8571843eab5b84cb750133286-21"></a>cdrecord -v bootcd.iso
+<pre class="code bash"><a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-1"></a><span class="c1"># obtener una imagen booteable de freeDOS y montarla en un directorio</span>
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-2"></a>wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-3"></a>gunzip FDOEM.144.gz
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-4"></a>mkdir /tmp/floppy
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-5"></a>mount -t vfat -o loop FDOEM.144 /tmp/floppy
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-6"></a>
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-7"></a><span class="c1"># obtener la herramienta para actualizar el bios y la imagen, y moverlos</span>
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-8"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-9"></a>unzip AFUDOS211.zip
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-10"></a>mv AFUDOS.exe /tmp/floppy
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-11"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-12"></a>unzip K8n1011.zip
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-13"></a>mv <span class="m">1011</span>.rom /tmp/floppy
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-14"></a>
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-15"></a><span class="c1"># desmontar</span>
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-16"></a>umount /tmp/floppy
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-17"></a>
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-18"></a><span class="c1"># crear una ISO y grabar a un disco virgen</span>
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-19"></a><span class="c1"># (tambien se podría grabar a un pendrive)</span>
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-20"></a>mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
+<a name="rest_code_ef55de5138104e61b84ae2d279b79fbd-21"></a>cdrecord -v bootcd.iso
 </pre>
 <p>Reinciar, bootear el CD de FreeDOS y ejecutar:</p>
 <pre class="literal-block">afudos /i1011.rom</pre>

@@ -159,16 +159,16 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <ol class="arabic" start="3">
 <li>
 <p>Configurá virtualenvwrapper</p>
-<pre class="code bash"><a name="rest_code_ee70faa4273e43878d4d9e42159b2ca6-1"></a>$ mkdir ~/.virtualenvs           <span class="c1"># acá se van a guardar tus entornos virtuales</span>
-<a name="rest_code_ee70faa4273e43878d4d9e42159b2ca6-2"></a>$ mkdir ~/proyectos              <span class="c1"># acá se van a guardar tus proyectos</span>
-<a name="rest_code_ee70faa4273e43878d4d9e42159b2ca6-3"></a>$ mkdir ~/.pip_download_cache     <span class="c1"># para no bajar paquetes cada vez</span>
+<pre class="code bash"><a name="rest_code_38b84bed7b8c445989e484386984b651-1"></a>$ mkdir ~/.virtualenvs           <span class="c1"># acá se van a guardar tus entornos virtuales</span>
+<a name="rest_code_38b84bed7b8c445989e484386984b651-2"></a>$ mkdir ~/proyectos              <span class="c1"># acá se van a guardar tus proyectos</span>
+<a name="rest_code_38b84bed7b8c445989e484386984b651-3"></a>$ mkdir ~/.pip_download_cache     <span class="c1"># para no bajar paquetes cada vez</span>
 </pre>
 <p>Luego editá tu <code class="docutils literal"><span class="pre">~/.bashrc</span></code> agregando las siguientes líneas</p>
-<pre class="code bash"><a name="rest_code_008b0d8f08b24035ab5bdc3234f687b0-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<a name="rest_code_008b0d8f08b24035ab5bdc3234f687b0-2"></a><span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
-<a name="rest_code_008b0d8f08b24035ab5bdc3234f687b0-3"></a><span class="nb">export</span> <span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
-<a name="rest_code_008b0d8f08b24035ab5bdc3234f687b0-4"></a><span class="nb">export</span> <span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
-<a name="rest_code_008b0d8f08b24035ab5bdc3234f687b0-5"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+<pre class="code bash"><a name="rest_code_8aec490615da446ba59ca4dd5485fca6-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<a name="rest_code_8aec490615da446ba59ca4dd5485fca6-2"></a><span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<a name="rest_code_8aec490615da446ba59ca4dd5485fca6-3"></a><span class="nb">export</span> <span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
+<a name="rest_code_8aec490615da446ba59ca4dd5485fca6-4"></a><span class="nb">export</span> <span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<a name="rest_code_8aec490615da446ba59ca4dd5485fca6-5"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 </pre>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">$ source ~/.bashrc</pre>

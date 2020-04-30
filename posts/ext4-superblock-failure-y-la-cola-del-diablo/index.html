@@ -170,13 +170,13 @@ de nuevo. Mientras tanto, el Dios en el que no creo me pone
 en el camino de resultados de Google.</p>
 <p>"Ernesto, prabamos esto?" y no alcanzó a contestar
 antes de que esté poniendo los primeros comandos</p>
-<pre class="code bash"><a name="rest_code_2fb29fc23b2243d1b9cf3c54a88347b2-1"></a>$ sudo mke2fs -n /dev/sda3
-<a name="rest_code_2fb29fc23b2243d1b9cf3c54a88347b2-2"></a>
-<a name="rest_code_2fb29fc23b2243d1b9cf3c54a88347b2-3"></a>Superblock backups stored on blocks:
-<a name="rest_code_2fb29fc23b2243d1b9cf3c54a88347b2-4"></a><span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>
+<pre class="code bash"><a name="rest_code_f17b1145645f48fe9020651ca8331085-1"></a>$ sudo mke2fs -n /dev/sda3
+<a name="rest_code_f17b1145645f48fe9020651ca8331085-2"></a>
+<a name="rest_code_f17b1145645f48fe9020651ca8331085-3"></a>Superblock backups stored on blocks:
+<a name="rest_code_f17b1145645f48fe9020651ca8331085-4"></a><span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>
 </pre>
 <p>Me la juego con el primer backup:</p>
-<pre class="code bash"><a name="rest_code_3764ca0009e34748af34b37be6950f13-1"></a>sudo e2fsck -b <span class="m">32768</span> /dev/sda3
+<pre class="code bash"><a name="rest_code_e7e939e544994bba841813f4a45ef8ea-1"></a>sudo e2fsck -b <span class="m">32768</span> /dev/sda3
 </pre>
 <p>Cientos de  <code class="docutils literal">Y</code> <code class="docutils literal">Enter</code> para mensajes estilo <em>"está roto, desea repararlo?"</em>
 (no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
