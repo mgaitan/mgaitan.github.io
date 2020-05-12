@@ -185,7 +185,7 @@ de todos los nodos con <code>ast.walk(mod)</code> donde <code>mod</code> es el n
 
 
 <p>Podemos asumir que el bloque de líneas de código que componen un nodo termina justo antes de que empiece el que le sigue, así que es plausible una función que encuentre los segmentos (las lineas del source) donde hay <em>imports</em> y los recorte (es decir, reescriba el módulo sin esas lineas) y luego pegue todas las recortadas juntas justo a continuación de los imports que ya existen en la cabecera (o en la línea 1 si no había).</p>
-<p>Si bien Python 3.8 trae una función llamada <code>[get_source_segment](https://docs.python.org/3/library/ast.html#ast.get_source_segment)</code> que sería útil para este fin, hay dos motivos para hacerlo por nuestra cuenta:</p>
+<p>Si bien Python 3.8 trae una función llamada <a href="https://docs.python.org/3/library/ast.html#ast.get_source_segment">get_source_segment</a> que sería útil para este fin, hay dos motivos para hacerlo por nuestra cuenta:</p>
 <ol>
 <li>que funcione con otras versiones no tan nuevas de python</li>
 <li>que no descarte comentarios que puedan estar justo arriba de un nodo a mover (por omisión, los comentarios no representan nodos en ast, así que hay que tratarlos desde la edición texto)</li>
