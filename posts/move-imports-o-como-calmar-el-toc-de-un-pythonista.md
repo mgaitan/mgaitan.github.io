@@ -103,7 +103,7 @@ Out[7]: 2
 
 Podemos asumir que el bloque de líneas de código que componen un nodo termina justo antes de que empiece el que le sigue, así que es plausible una función que encuentre los segmentos (las lineas del source) donde hay *imports* y los recorte (es decir, reescriba el módulo sin esas lineas) y luego pegue todas las recortadas juntas justo a continuación de los imports que ya existen en la cabecera (o en la línea 1 si no había).
 
-Si bien Python 3.8 trae una función llamada `[get_source_segment](https://docs.python.org/3/library/ast.html#ast.get_source_segment)` que sería útil para este fin, hay dos motivos para hacerlo por nuestra cuenta:
+Si bien Python 3.8 trae una función llamada [get_source_segment](https://docs.python.org/3/library/ast.html#ast.get_source_segment) que sería útil para este fin, hay dos motivos para hacerlo por nuestra cuenta:
 
 1. que funcione con otras versiones no tan nuevas de python
 2. que no descarte comentarios que puedan estar justo arriba de un nodo a mover (por omisión, los comentarios no representan nodos en ast, así que hay que tratarlos desde la edición texto)
