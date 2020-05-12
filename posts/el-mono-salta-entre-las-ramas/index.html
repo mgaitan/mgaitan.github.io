@@ -21,6 +21,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="canonical" href="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../miau-cuando-el-gato-dice-la-verdad/" title="Miau: cuando el gato dice la verdad" type="text/html">
+<link rel="next" href="../move-imports-o-como-calmar-el-toc-de-un-pythonista/" title="move-imports, o cómo calmar el TOC de un pythonista" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="El mono salta entre las ramas. El desarrollador también">
 <meta property="og:url" content="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/">
@@ -113,10 +114,10 @@ sea porque somos nosotros los que <em>checkouteamos</em> el branch
 de un compañero para probar algo.</p>
 <p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
 un alias del branch previo.</p>
-<pre class="code bash"><a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-1"></a>$ git checkout master
-<a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-2"></a>Switched to a new branch <span class="s1">'master'</span>
-<a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-3"></a>$ git checkout -
-<a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-4"></a>Switched to branch <span class="s1">'writing'</span>
+<pre class="code bash"><a name="rest_code_fc0d1f9818694f07b8cfbdd32b139618-1"></a>$ git checkout master
+<a name="rest_code_fc0d1f9818694f07b8cfbdd32b139618-2"></a>Switched to a new branch <span class="s1">'master'</span>
+<a name="rest_code_fc0d1f9818694f07b8cfbdd32b139618-3"></a>$ git checkout -
+<a name="rest_code_fc0d1f9818694f07b8cfbdd32b139618-4"></a>Switched to branch <span class="s1">'writing'</span>
 </pre>
 <p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
 y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>
@@ -196,6 +197,9 @@ else:
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../miau-cuando-el-gato-dice-la-verdad/" rel="prev" title="Miau: cuando el gato dice la verdad">Post anterior</a>
+            </li>
+            <li class="next">
+                <a href="../move-imports-o-como-calmar-el-toc-de-un-pythonista/" rel="next" title="move-imports, o cómo calmar el TOC de un pythonista">Siguiente post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>

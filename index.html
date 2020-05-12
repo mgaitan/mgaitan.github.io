@@ -21,7 +21,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/">
 <link rel="next" href="index-10.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/el-mono-salta-entre-las-ramas/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -80,7 +80,34 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-mono-salta-entre-las-ramas/" class="u-url">El mono salta entre las ramas. El desarrollador también</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/" class="u-url">move-imports, o cómo calmar el TOC de un pythonista</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-05-12T16:13:41-03:00" itemprop="datePublished" title="2020-05-12 16:13">2020-05-12 16:13</time></a>
+            </p>
+                <p class="commentline">            <a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/#disqus_thread" data-disqus-identifier="cache/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Una historia de éxito: un grupito pequeño de programadores (o quizas sólo uno)
+a pura pasión, café y feedback de sus usuarios mete miles de lineas de código
+que logran hacer funcionar un negocio.</p>
+<p>Parte del éxito, supongamos, es porque el sistema está hecho en Python, que se eligió porque es versátil y pragmático para obtener resultados rápidos.
+Pero se sabe: en el vértigo la pasión, el feedback y el café no cabían muchas elegancias ni había tiempo para estilos o convenciones. <em>Caminante no hay camino, se hace camino al andar</em>, dijo Machado, refiriéndose a la deuda técnica que toman las startups en sus inicios.</p>
+<p>El negocio comienza a crecer, hay más demandas de los clientes y la cosa está tan fea que algo, alguito, hay que mejorar. Como, por suerte, la cosa va bien, se contratan nuevos programadores que tengan experiencia en Python específicamente. Y estos nuevos programadores experimentados, los <em>pythonistas</em>, vienen con
+sus mañosas convenciones del lenguaje a cuestas. Una de ellas está <a href="https://pep8.org#imports">tallada en piedra</a>: salvo ineludibles excepciones, <strong>los <em>imports</em> van en la cabecera del módulo y en un orden en particular</strong>.</p>
+<p>Hay justificación, dicen los pythonistas. Simplificar la lectura, saber a simple vista de qué depende un módulo, tener bloques de código más chicos, no repetirse. Pero, aceptémoslo, es un <a href="https://es.wikipedia.org/wiki/Trastorno_obsesivo-compulsivo">TOC</a>.</p>
+<p class="more"><a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/">Leer más…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-mono-salta-entre-las-ramas/" class="u-url">El mono salta entre las ramas. El desarrollador también</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -103,10 +130,10 @@ sea porque somos nosotros los que <em>checkouteamos</em> el branch
 de un compañero para probar algo.</p>
 <p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
 un alias del branch previo.</p>
-<pre class="code bash"><a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-1"></a>$ git checkout master
-<a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-2"></a>Switched to a new branch <span class="s1">'master'</span>
-<a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-3"></a>$ git checkout -
-<a name="rest_code_d80ae3329e3c43bd80f419ee073b51e1-4"></a>Switched to branch <span class="s1">'writing'</span>
+<pre class="code bash"><a name="rest_code_fc0d1f9818694f07b8cfbdd32b139618-1"></a>$ git checkout master
+<a name="rest_code_fc0d1f9818694f07b8cfbdd32b139618-2"></a>Switched to a new branch <span class="s1">'master'</span>
+<a name="rest_code_fc0d1f9818694f07b8cfbdd32b139618-3"></a>$ git checkout -
+<a name="rest_code_fc0d1f9818694f07b8cfbdd32b139618-4"></a>Switched to branch <span class="s1">'writing'</span>
 </pre>
 <p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
 y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>
@@ -1186,26 +1213,6 @@ everything I read online).</p>
 software libre. Pero son gente tan copada que no se enojan si en vez de una suite de tests, corremos, por ejemplo,
 Nikola para compilar este blog y publicarlo automáticamente.</p>
 <p class="more"><a href="posts/travis-ci-para-compilar-y-deployar-tu-blog/">Leer más…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/deploy-de-django-con-circus-chaussette-nginx/" class="u-url">Deploy de Django con Circus, Chaussette y Nginx</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/deploy-de-django-con-circus-chaussette-nginx/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-06-12T12:45:13-03:00" itemprop="datePublished" title="2014-06-12 12:45">2014-06-12 12:45</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/deploy-de-django-con-circus-chaussette-nginx/#disqus_thread" data-disqus-identifier="cache/posts/deploy-de-django-con-circus-y-chausette.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela <a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/">WSGI</a>, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.</p>
-<p class="more"><a href="posts/deploy-de-django-con-circus-chaussette-nginx/">Leer más…</a></p>
 </div>
     </div>
     </article>
