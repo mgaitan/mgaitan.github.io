@@ -17,8 +17,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/index-2.html">
 <link rel="prev" href="index-3.html" type="text/html">
 <link rel="next" href="index-1.html" type="text/html">
@@ -66,7 +66,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -119,12 +119,10 @@ licencia.</p>
 <p>Bajar diapositivas "<a class="reference external" href="downloads/ojotas_copia_.odp">Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa</a> "</p>
 </blockquote>
 <p>El documento ODP incluye notas y comentarios.</p>
-<div class="section" id="video">
-<h2>Video</h2>
+<section id="video"><h2>Video</h2>
 <div class="youtube-video">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3pKPg11qBvM?rel=0&amp;wmode=transparent" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
-</div>
-</div>
+</div></section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/piccola-radiolina/" class="u-url">Piccola Radiolina</a></h1>
@@ -183,8 +181,7 @@ creación de todas las tablas.</p>
 <p>Para restaurar ese backup se hace directamente inyectando el sql al
 interprete de mysql.</p>
 <pre class="literal-block">mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos</pre>
-<div class="section" id="respaldar-solo-algunas-tablas-de-la-base">
-<h2>Respaldar sólo algunas tablas de la base</h2>
+<section id="respaldar-solo-algunas-tablas-de-la-base"><h2>Respaldar sólo algunas tablas de la base</h2>
 <p>A menudo tenemos multiples sistemas instalados sobre la misma base de
 datos, Si sólo queremos respaldar algunas tablas bastaría enumerar las
 tablas luego del nombre de la base de datos</p>
@@ -195,7 +192,7 @@ sistema.</p>
 <p>En ese caso, se puede usar el siguiente compando que respalda todas las
 tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":</p>
 <pre class="literal-block">mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql</pre>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/lorem-ipsum-para-spip/" class="u-url">Lorem Ipsum para Spip</a></h1>
@@ -227,8 +224,7 @@ lo que en textos largos queda mucho mejor que repetir un mismo fragmento
 una y otra vez.</p>
 <p>Hay muchos <a class="reference external" href="http://www.lipsum.com/">generadores de texto Lorem Ipsum</a>
 en internet, pero lo podemos hacer aún más fácil.</p>
-<div class="section" id="un-lorem-ipsum-automatico">
-<h2>Un Lorem Ipsum automático</h2>
+<section id="un-lorem-ipsum-automatico"><h2>Un Lorem Ipsum automático</h2>
 <p>Con la ayuda del plugin <a class="reference external" href="http://sanderkorvemaker.nl/jquery/jLorem.php">jQuery Lorem
 Ipsum</a> de Sander Korve
 hice un modelo (instalable como plugin) que permite insertar un texto
@@ -247,25 +243,19 @@ del tamaño que queramos (por omisión, de 4 párrafos).</p>
 </table>
 <p>O por SVN:</p>
 <pre class="literal-block">svn checkout svn://zone.spip.org/spip-zone/_plugins_/_test_/loremipsum</pre>
-</div>
-<div class="section" id="instalacion">
-<h2>Instalación</h2>
+</section><section id="instalacion"><h2>Instalación</h2>
 <p>La instalación es igual que con la de cualquier plugin: descomprimirlo
 en la carpeta <em>/plugins</em> y activarlo.</p>
 <p>Requiere además que los esqueletos tengan la baliza <code class="docutils literal">#INSERT_HEAD</code>
 dentro del header, ya que allí se incluirá el javascript necesario para
 su funcionamiento.</p>
-</div>
-<div class="section" id="funcionamiento-basico">
-<h2>Funcionamiento básico</h2>
+</section><section id="funcionamiento-basico"><h2>Funcionamiento básico</h2>
 <p>La inclusión de un <em>Lorem Ipsum</em> se basa en el modelo <em>lorem.html</em>
 incluído con el plugin, por lo que hay dos maneras de llamarlo:</p>
 <p><img alt="-" src="posts/lorem-ipsum-para-spip/local/cache-vignettes/L8xH11/puce-32883.gif"> En el cuerpo (texto, descripción, etc) de un artículo: <code class="docutils literal">&lt;lorem&gt;</code></p>
 <p><img alt="image3" src="posts/lorem-ipsum-para-spip/local/cache-vignettes/L8xH11/puce-32883.gif"> Predefinido en un esqueleto: <code class="docutils literal">#MODELE{lorem}</code></p>
 <p>¡y listo!</p>
-</div>
-<div class="section" id="parametros">
-<h2>Parámetros</h2>
+</section><section id="parametros"><h2>Parámetros</h2>
 <p>El modelo acepta algunos parámetros para configurar la longitud del
 texto. Por ejemplo <code class="docutils literal">&lt;lorem5&gt;</code> creará 5 párrafos.</p>
 <p>Pero también se puede especificar más datos:</p>
@@ -279,14 +269,12 @@ que . Por ejemplo <code class="docutils literal"><span class="pre">[(#MODELE{lor
 <p><img alt="image6" src="posts/lorem-ipsum-para-spip/local/cache-vignettes/L8xH11/puce-32883.gif"><strong>ptags</strong>: Permite agregar las etiquetas &lt;code&lt;&gt;P&lt;&gt;/code&gt;
 alrededor de cada párrafo. Los valores aceptados son <strong>true</strong> o
 <strong>false</strong>. Por omisión es <strong>true</strong>.</p>
-</div>
-<div class="section" id="una-astucia">
-<h2>Una astucia</h2>
+</section><section id="una-astucia"><h2>Una astucia</h2>
 <p>Una forma de mostrar contenido en un artículo (o cualquier elemento) sin
 tener que editar cada artículo sólo para poner <code class="docutils literal">&lt;lorem&gt;</code> es invocar el
 modelo siempre y cuando no exista contenido en la baliza</p>
 <p>Por ejemplo [<a class="reference external" href="blog/article/lorem-ipsum-para-spip#nb2">2</a>]:</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/auto-podcast/" class="u-url">Auto Podcast</a></h1>
@@ -318,8 +306,7 @@ escucharlo de 16 a 18hs, Necesitaba grabarlo para escucharlo offline.</p>
 yo, dije... ¿por qué no grabar el programa directamente desde el
 servidor, y que cualquiera pueda bajarlo cuando quiera?</p>
 <p>Aquí está mi podcaster automático para Efecto Tábano.</p>
-<div class="section" id="la-idea">
-<h2>La idea</h2>
+<section id="la-idea"><h2>La idea</h2>
 <p>Todo se basa en el glorioso <a class="reference external" href="http://mplayerhq.hu">Mplayer</a>, Mplayer es
 capaz de reproducir casi cualquier formato en streaming.</p>
 <p>Por supuesto, no habrá sonido en esa "reproducción" sobre el servidor,
@@ -331,9 +318,7 @@ comprimir a MP3 <em>on the fly</em>.</p>
 <p>Todo esto, claro, se ejecutará al horario del programa (y durante el
 tiempo que se indique, en este caso casi 2 horas) mediante una tarea
 <a class="reference external" href="http://es.wikipedia.org/wiki/Cron_(Unix)">cron</a></p>
-</div>
-<div class="section" id="instalando-lo-necesario">
-<h2>Instalando lo necesario</h2>
+</section><section id="instalando-lo-necesario"><h2>Instalando lo necesario</h2>
 <p>Como anticipé, hace falta mplayer y lame. Estos programas en general no
 se encuentran en el servidor (por ejemplo
 <a class="reference external" href="http://www.dreamhost.com/r.cgi?150740">Dreamhost</a>) así que hay que
@@ -363,9 +348,7 @@ cd lame-3.97
 make
 make install</pre>
 <p>Con eso ya tendríamos los programas necesarios en <strong>./bin</strong></p>
-</div>
-<div class="section" id="el-script-podcaster-efectotabano-sh">
-<h2>El script podcaster-efectotabano.sh</h2>
+</section><section id="el-script-podcaster-efectotabano-sh"><h2>El script podcaster-efectotabano.sh</h2>
 <pre class="literal-block">#!/bin/sh
 #
 # recorder — wrapper to pull remote audio stream and convert contents
@@ -414,15 +397,13 @@ agregar luce así:</p>
 <pre class="literal-block">09 12 * * 1-5 ~/bin/podcaster-efectotabano.sh</pre>
 <p>Eso es todo. Todos los días, de lunes a viernes tendré mi programa para
 descargar.</p>
-</div>
-<div class="section" id="to-do">
-<h2>TO DO</h2>
+</section><section id="to-do"><h2>TO DO</h2>
 <p>Por supuesto, para que esto sea un
 <a class="reference external" href="http://es.wikipedia.org/wiki/podcast">podcast</a> le falta la
 sindicación. Por lo tanto, habría que agregar la tarea de injectar
 información pertinente en una base de datos del cual generar el XML de
 sindicación.</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/variar-o-no-variar-esa-es-la/" class="u-url">Variar o no variar, esa es la cuestión</a></h1>
@@ -472,8 +453,7 @@ ejemplo). Además, hay que documentar bien qué se está haciendo, porque
 da lugar a errores cuando dos esqueletos "linkeados" intentan ser
 iguales.</p>
 <p>Por suerte, hay varias otras maneras de resolver esto,</p>
-<div class="section" id="filtros-de-condicion-o-filtro-match">
-<h2>Filtros de condición o filtro match</h2>
+<section id="filtros-de-condicion-o-filtro-match"><h2>Filtros de condición o filtro match</h2>
 <p><a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C516299.21618.qm@web90607.mail.mud.yahoo.com%3E">Esta
 solución</a>,
 es la que aportó <a class="reference external" href="http://www.graciasdenada.com.ar/">Juan Pablo
@@ -500,9 +480,7 @@ que hagamos nuestro festín.</p>
 <p>El filtro devuelve <strong>VERDADERO</strong> si el valor de #ID_RUBRIQUE empieza
 con 2, 4 o 6 y termina con nada. Que es, dicho de otra manera, lo que
 queremos.</p>
-</div>
-<div class="section" id="y-aun-mas-claro-bucles-como-filtros">
-<h2>Y aún más claro: bucles como filtros</h2>
+</section><section id="y-aun-mas-claro-bucles-como-filtros"><h2>Y aún más claro: bucles como filtros</h2>
 <p>Las expresiones regulares <em>no son moco de pavo</em>, diría mi abuela. Super
 potentes, pero poco escalables en la curva complejidad-comprensibilidad.</p>
 <p>Hay una solución que es muy útil, sencilla pero no trivial: usar un
@@ -522,7 +500,7 @@ exclusiva</a></p>
 <p>Funciona, es más legible que cualquiera de las otras soluciones y además
 permite una clausula <em>ELSE</em> mucho más accesible, simplemente usando la
 estructura completa del bucle.</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/una-mejor-manera-de-controlar-los/" class="u-url">Una mejor manera de controlar los atributos en spip</a></h1>
@@ -747,8 +725,7 @@ actual</strong> se actualice automáticamente.</p>
     #SET{year, #DATE|annee} #GET{year}
   &lt;/BOUCLE_yearbegin&gt;
 [(#GET{year}|=={#DATE|annee}|?{'' , - #DATE|annee} )]</pre>
-<div class="section" id="explicacion">
-<h2>Explicación</h2>
+<section id="explicacion"><h2>Explicación</h2>
 <ul class="simple">
 <li><p>Por convención, asumimos que el año de inicio del sitio es el año del
 primer artículo publicado, lo cual a mi me suena bastante lógico.</p></li>
@@ -766,7 +743,7 @@ Pero si son distintos, se muestra el año actual</p></li>
 </blockquote>
 <p>Y si la lógica o el reloj del servidor no fallan, en cada año nuevo se
 incrementará el año final del período sin que toquemos una línea de código.</p>
-</div>
+</section>
 </div>
     </div>
     </article>
@@ -776,7 +753,7 @@ incrementará el año final del período sin que toquemos una línea de código.
             <li class="next"><a href="index-1.html" rel="next">Posts anteriores</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

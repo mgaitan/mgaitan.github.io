@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/integracion-de-dineromail-en/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../simplecart-js-para-spip/" title="SimpleCart(js) para spip" type="text/html">
@@ -79,7 +79,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -138,8 +138,7 @@ sobre SPIP, por lo que puede ser útil para usarlo independientemente o
 integrarlo con otro CMS.</p>
 <p>El código está <a class="reference external" href="http://github.com/nqnwebs/simplecart-js">disponible en
 GitHub</a></p>
-<div class="section" id="instalacion-rapida">
-<h2>Instalación rápida</h2>
+<section id="instalacion-rapida"><h2>Instalación rápida</h2>
 <p>Obviamente, se incluye el código javascript en la cabecera de la página
 HTML.</p>
 <div class="system-message">
@@ -150,9 +149,7 @@ HTML.</p>
 <pre class="literal-block">&lt;/root&gt;</pre>
 <p>¡Listo! Al hacer Checkout, el contenido del carrito será enviado a
 DineroMail para procesar el pago.</p>
-</div>
-<div class="section" id="otros-parametros">
-<h2>Otros parámetros</h2>
+</section><section id="otros-parametros"><h2>Otros parámetros</h2>
 <p>El carrito de DineroMail tiene muchísimos parámetros opcionales que en
 su mayoría he omitido. Mirá el <a class="reference external" href="https://ar.dineromail.com/content/Integraci%C3%B3n-AR.pdf">manual de
 integración</a>
@@ -195,9 +192,7 @@ por ejemplo <code class="docutils literal">simpleCart.dmSellerName = "Vendedor L
 <p>El valor ’X18A’ se envía a DineroMail para futuros controles del
 vendedor.</p>
 <p>Es todo por ahora. ¡A vender!</p>
-</div>
-<div class="section" id="actualizacion">
-<h2>Actualización</h2>
+</section><section id="actualizacion"><h2>Actualización</h2>
 <p>Agregué unos selectores asociados al evento "click" para permitir
 cambiar dinámicamente el método de pago, de manera de darle más libertad
 al comprador.</p>
@@ -217,7 +212,7 @@ simpleCart_to_dineromail
 Activa Google Checkout como medio de pago
 Un ejemplo de uso podría ser:</p>
 <pre class="literal-block">Elija su método de pago</pre>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -252,7 +247,7 @@ Un ejemplo de uso podría ser:</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

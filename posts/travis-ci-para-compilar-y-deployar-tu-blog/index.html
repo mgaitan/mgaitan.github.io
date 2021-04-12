@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../deploy-de-django-con-circus-chaussette-nginx/" title="Deploy de Django con Circus, Chaussette y Nginx" type="text/html">
@@ -76,7 +76,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -123,8 +123,7 @@ y ejecuta un script que corre <code class="docutils literal">nikola build</code>
 <code class="docutils literal">master</code> en mi caso)</p></li>
 <li><p>Listo: Nikola desde la nube. For free.</p></li>
 </ol>
-<div class="section" id="permiso-soy-el-ci">
-<h2>Permiso, soy el CI</h2>
+<section id="permiso-soy-el-ci"><h2>Permiso, soy el CI</h2>
 <p>¿Cómo hace Travis para pushear de vuelta al repo? Bueno, hay que darle permiso. Para eso, necesitamos
 <a class="reference external" href="https://github.com/settings/tokens/new">crear un token</a> . Con un token,
 <a class="reference external" href="https://github.com/blog/1270-easier-builds-and-deployments-using-git-over-https-and-oauth">se puede pushear a un repo</a>
@@ -143,7 +142,7 @@ $ travis encrypt GH_TOKEN=your_token</pre>
 <p>y con eso Travis tendrá una varible de entorno global llamada <code class="docutils literal">GH_TOKEN</code> que podemos usarla en nuestro script.</p>
 <p>Podés ver el <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/.travis.yml">.travis.yml</a> y
 el <a class="reference external" href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/travis_deploy.sh">script que compila y pushea de vuelta</a></p>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -177,7 +176,7 @@ el <a class="reference external" href="https://github.com/mgaitan/mgaitan.github
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/miau-cuando-el-gato-dice-la-verdad/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../el-padronazo-cordobes/" title="El padronazo cordobés" type="text/html">
@@ -73,7 +73,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -121,7 +121,7 @@ navbar-light bg-light
 <p><em>sino cantar.</em></p>
 </blockquote>
 <p>Parafraseando (bastante lejos de esa belleza) yo podría decir:</p>
-<pre class="code text"><a name="rest_code_352a6e86f38e4435accbfa6c082f9211-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
+<pre class="code text"><a name="rest_code_6bf506c124d243eca1551de00a5a4642-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
 </pre>
 <p>Asi que ante la falta de talento natural para la edición audiovisual (entre todo el resto de las cosas), programé. Y así fue como hice un programita en Python que hace las ediciones por mí: <a class="reference external" href="http://github.com/mgaitan/miau">miau</a>.</p>
 <p>Sólo hay que darle la desgrabación del discurso original completo y el guión del discurso pretendido (basado en fragmentos textuales del original, en el orden que sea) y <code class="docutils literal">miau</code> se encarga de encontrar, recortar y concatenar para armar un clip de video o un audio remixado.</p>
@@ -137,8 +137,7 @@ navbar-light bg-light
 <div class="video-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/YtY_CRiFKPY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<div class="section" id="agarra-la-pala-o-copia-y-pegala">
-<h2>Agarrá la pala (o copiá y pegala)</h2>
+<section id="agarra-la-pala-o-copia-y-pegala"><h2>Agarrá la pala (o copiá y pegala)</h2>
 <p>Si bien los excelsos discursos presidenciales suelen ser breves, ¿de verdad te fumás tener que desgrabar toda esa sarta de duranbarbaridades, Martincito?</p>
 <p>Pues no, al menos para el caso específico de este felino doméstico. Gracias a que <a class="reference external" href="http://www.casarosada.gob.ar">casarosada.gob.ar</a> se toma el trabajo de conservar cada palabra de la retórica sublime, de estadismo profundo y condensado que será aplaudido por generaciones, de esas piezas de discurso político que interpelan hasta al más indiferente... Bueno, quiero decir, gracias a que guardan el txt de las 30 frases en distinto orden que le escriben, no hace falta desgrabar nada.</p>
 <p>Alcanza con ir <a class="reference external" href="https://www.casarosada.gob.ar/informacion/discursos">acá</a>, copiar un discurso y guardarlo en un txt, y luego <a class="reference external" href="https://www.youtube.com/user/casarosada/videos">allá</a> para bajarse el video que corresponda (por ejemplo, usando el genial <a class="reference external" href="https://rg3.github.io/youtube-dl/">youtube-dl</a>), y ya tenemos todo el material de entrada necesario para mofarnos de estos fugadores un buen rato. Si a esos contenidos los guardamos, supongamos, como <code class="docutils literal">macri_gato.txt</code> y <code class="docutils literal">macri_gato.mp4</code>, y a nuestro remix lo guardamos como <code class="docutils literal">remix.txt</code>, podemos hacer un <em>supercut</em> en mp3 así:</p>
@@ -155,20 +154,18 @@ navbar-light bg-light
 <li><p>Reusar el json intermedio que se produce con <cite>--dump</cite>, editarlo a gusto y pasarlo a una nueva ejecución de miau en reemplazo del txt de remix a <code class="docutils literal"><span class="pre">-r</span></code>. Este paso lo que hace justamente es saltearse la alineación automática y usar lo que le damos explícitamente.</p></li>
 <li>
 <p>Ponerle una metadata de ajuste al propio txt. La sintáxis que definí es un poco minimalista y se basa en ponerle signos <code class="docutils literal">+</code> y <code class="docutils literal">-</code> al final y/o al principio de cada linea, para estrechar o ensanchar el recorte. Cada símbolo equivale, por default, a 0.05s. Por ejemplo, si en el remix hay una línea que dice <em>"el único camino posible"</em> y nos damos cuenta que la detecta un instante tarde y la interrumpe antes de terminar, podemos corregirla poniendo un offset negativo al principio y uno positivo al final:</p>
-<pre class="code text"><a name="rest_code_bfd4945b0935401ea25a9b0aca788ee6-1"></a>--el único camino posible+++``
+<pre class="code text"><a name="rest_code_29fef44a22f048d6941dd016cd6f2f49-1"></a>--el único camino posible+++``
 </pre>
 <p>Miau filtra la línea con una función que hace esto:</p>
-<pre class="code python"><a name="rest_code_cfa471e45ec84c968226ab8edb0280b3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
-<a name="rest_code_cfa471e45ec84c968226ab8edb0280b3-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
+<pre class="code python"><a name="rest_code_e92ee543d750407ab589be1b401905fe-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
+<a name="rest_code_e92ee543d750407ab589be1b401905fe-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
 </pre>
 </li>
 </ul>
 <p>En github fui dejando <a class="reference external" href="https://github.com/mgaitan/miau/tree/master/examples">algunos ejemplos</a> con los pasos y las fuentes con los que los hice.</p>
 <p>Vale resaltar que esta herramienta <strong>es software libre</strong>, lo que quiere decir que no necesariamente tenés que usarla
 para burlarte de gobiernos de derecha y podés hacer con ella lo que te plazca. ¡Hacele decir a la tía Berta eso que nunca dijo (o al menos no de esa textual manera) en Whatsapp!</p>
-</div>
-<div class="section" id="deconstruyendo-el-relato-con-python">
-<h2>Deconstruyendo el relato, con Python</h2>
+</section><section id="deconstruyendo-el-relato-con-python"><h2>Deconstruyendo el relato, con Python</h2>
 <p>A este tipo de videos se le llaman "<a class="reference external" href="https://en.wikipedia.org/wiki/Supercut">supercuts</a>" y hay distintas maneras de hacerlos.
 De hecho, sin saberlo entonces, hace un tiempo hice <a class="reference external" href="http://mgaitan.github.io/posts/sergio-massa-y-lagente.html">uno sobre Sergio Massa</a>, basado en fragmentos de los subtitulos automáticos de youtube. También hay una <a class="reference external" href="https://github.com/antiboredom/videogrep">herramienta en python</a> que permite hacer un "grep" en el video.</p>
 <p>Yo quería algo un poquito más ambicioso, algo que permita la generación de cualquier edición posible y que sea más o menos fácil para cualquiera con ganas de hacerla.</p>
@@ -187,16 +184,14 @@ me postulé para la Presidencia
 para trabajar todos los días.</pre>
 <p>Es decir, forzar que cada fragmento objetivo se encuentre textualmente en una fila independiente. El problema es que cabe la posiblidad de que queramos fragmentos que se solapan entre sí. Por ejemplo, si además de los anteriores quisiéramos <em>"me metí en política y me postulé"</em>, no tendríamos manera de cumplir con la regla de las filas independientes ya que <em>"me postulé"</em> debería estar repetido en dos renglones.</p>
 <p>Por ese motivo <code class="docutils literal">miau</code> hace tantas versiones de fragmentado del texto original como encuentre necesarias para salvar estos solapamientos. Esas son las <em>iteraciones</em> que se corresponden con sendas llamadas a aeneas.</p>
-</div>
-<div class="section" id="vermuth-con-software-libre-y-good-show">
-<h2>Vermuth con software libre y ¡good show!</h2>
+</section><section id="vermuth-con-software-libre-y-good-show"><h2>Vermuth con software libre y ¡good show!</h2>
 <p>Aunque es divertidísimo (es decir, es totalmente redituable), mantener software de humor político tiene sus costos, sobre todo cuando tenés más de un laburo, una familia, algun@s amig@s y varios libros a los que tenés que dedicarle tiempo.</p>
 <p>El tema es que <code class="docutils literal">miau</code> anda masomenos. O como el culo, seamos sinceros. Y, saben, yo no puedo ni quiero pedirle un <em>stand-by</em> al Fondo Monetario, porque sé como termina esa ayudita. Por eso te pido a vos, programador/a, expert o wannabe, que me des una mano. Por ahora no son mucho más de <a class="reference external" href="https://github.com/mgaitan/miau/commit/6ba2112c37f3da6b6a62ec71083af98b286ecf4d#diff-657a6fda96a86fe382470f22ff361bed">300 líneas de código</a> en un solo módulo que <a class="reference external" href="https://xkcd.com/353/">no hacen nada demasiado raro</a>, así que la zambullida para poder colaborar es accesible.</p>
 <p>¿Y cómo? En este orden: usándolo, encontrando errores (que vamos anotando en el <a class="reference external" href="https://github.com/mgaitan/miau/issues">issue tracker</a>), desculando por qué suceden y por último arreglándolos. También es indispensable tener pruebas unitarias, así no rompemos tanto nuevo cuando vamos arreglando lo viejo. Y hay funcionalidades que me gustaría completar, como la de permitir múltiples fuentes de entrada para hacer ediciones más complejas y ampliar la base de frases.</p>
 <p>A futuro sería genial que tenga otras "atractividades" como una linda interfaz gráfica, que sea fácil instalarlo en cualquier sistema operativo (y particularmente en Windows) y, por qué no, que se convierta en el core de una app web o la API para un app mobile que permita usarlo directamente desde la nube.</p>
 <p>Espero sus tickets y pull requests.</p>
 <p>¡A maullar esos remixes!</p>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
@@ -227,7 +222,7 @@ para trabajar todos los días.</pre>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

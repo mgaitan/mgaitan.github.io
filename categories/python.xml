@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre python)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/python.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 May 2020 21:00:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Curso de Python para ñoños</title><link>https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p class="alert alert-success"&gt;&lt;strong&gt;¡Los cupos irán a sorteo!&lt;/strong&gt; Anotate. Si no entrás para en esta edición, quedás anotado para la próxima que será muy pronto.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre python)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/python.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Mon, 12 Apr 2021 18:06:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Curso de Python para ñoños</title><link>https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p class="alert alert-success"&gt;&lt;strong&gt;¡Los cupos irán a sorteo!&lt;/strong&gt; Anotate. Si no entrás para en esta edición, quedás anotado para la próxima que será muy pronto.&lt;/p&gt;
 &lt;p&gt;La demanda nos desbordó. En menos de 2 dias tenemos inscriptos para llenar dos veces el laboratorio que tenemos disponible! Algunos ya están averiguando la disponibilidad del Estadio Kempes para hacer el próximo.&lt;/p&gt;
 &lt;p&gt;Como recién hoy (martes 7 de abril) se realizó la difusión oficial desde FaMAF, la decisión
 de los organizadores es permitir la inscripción de todos los interesados y hacer un sorteo de las 25 plazas
@@ -31,7 +31,7 @@ con el que instalamos, actualizamos o eliminamos las dependencias de nuestro pro
 proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
 proyectos ? Bien, te propongo esta receta.&lt;/p&gt;
-&lt;div class="section" id="las-herramientas"&gt;
+&lt;section id="las-herramientas"&gt;
 &lt;h2&gt;Las herramientas&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.virtualenv.org"&gt;Virtualenv&lt;/a&gt;:  es una herramienta para aislar tu entorno de
@@ -52,8 +52,8 @@ para iniciar un proyecto, generando la estructura básica necesaria. Es
 similar a &lt;a class="reference external" href="http://python.org.ar/pyar/PasteScript"&gt;PasteScript&lt;/a&gt; pero enfocado en esta
 tarea concreta, sin dependencias y compatible con Python 3.x&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="la-receta"&gt;
+&lt;/section&gt;
+&lt;section id="la-receta"&gt;
 &lt;h2&gt;La receta&lt;/h2&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p&gt;Instalá pip:&lt;/p&gt;
@@ -73,15 +73,15 @@ original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
 &lt;/div&gt;
 &lt;ol class="arabic" start="3"&gt;
 &lt;li&gt;&lt;p&gt;Configurá virtualenvwrapper&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-1"&gt;&lt;/a&gt;$ mkdir ~/.virtualenvs           &lt;span class="c1"&gt;# acá se van a guardar tus entornos virtuales&lt;/span&gt;
-&lt;a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-2"&gt;&lt;/a&gt;$ mkdir ~/proyectos              &lt;span class="c1"&gt;# acá se van a guardar tus proyectos&lt;/span&gt;
-&lt;a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-3"&gt;&lt;/a&gt;$ mkdir ~/.pip_download_cache     &lt;span class="c1"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_da18115c3ee74ed786867271b50cc5cf-1"&gt;&lt;/a&gt;$ mkdir ~/.virtualenvs           &lt;span class="c1"&gt;# acá se van a guardar tus entornos virtuales&lt;/span&gt;
+&lt;a name="rest_code_da18115c3ee74ed786867271b50cc5cf-2"&gt;&lt;/a&gt;$ mkdir ~/proyectos              &lt;span class="c1"&gt;# acá se van a guardar tus proyectos&lt;/span&gt;
+&lt;a name="rest_code_da18115c3ee74ed786867271b50cc5cf-3"&gt;&lt;/a&gt;$ mkdir ~/.pip_download_cache     &lt;span class="c1"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Luego editá tu &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/code&gt; agregando las siguientes líneas&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
-&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
-&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-3"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
-&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
+&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
+&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-3"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
+&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
 &lt;/pre&gt;&lt;p&gt;y recargá tus cambios:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;$ source ~/.bashrc&lt;/pre&gt;
 &lt;/li&gt;
@@ -107,15 +107,15 @@ lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
 &lt;em&gt;src/test&lt;/em&gt; al nivel de '/src/zaraza'&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="section" id="y-ahora"&gt;
+&lt;/section&gt;
+&lt;section id="y-ahora"&gt;
 &lt;h2&gt;¿Y ahora?&lt;/h2&gt;
 &lt;p&gt;Cada vez que quieras trabajar en tu proyecto &lt;em&gt;zaraza&lt;/em&gt; ejecutás:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;$ workon zaraza&lt;/pre&gt;
 &lt;p&gt;Para salir del virtualenv:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;(zaraza) $ deactivate&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="algunos-tips-mas-a-modo-de-despedida"&gt;
+&lt;/section&gt;
+&lt;section id="algunos-tips-mas-a-modo-de-despedida"&gt;
 &lt;h2&gt;Algunos tips más a modo de despedida&lt;/h2&gt;
 &lt;p&gt;Virtualenwrapper es totalmente hookeable y extensible. Esta receta
 propone usar &lt;em&gt;skeleton&lt;/em&gt; (que funciona como plugin de
@@ -128,14 +128,14 @@ comando principal de virtualenvwrapper &lt;code class="docutils literal"&gt;mkvi
 parámetros opcionales. Ejecutá &lt;code class="docutils literal"&gt;mkproject_help&lt;/code&gt; o &lt;code class="docutils literal"&gt;mkvirtualenv &lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/code&gt;
 para saber más.&lt;/p&gt;
 &lt;p&gt;Y ya sabés ...&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;hr class="docutils"&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Este artículo lo escribí originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</guid><pubDate>Mon, 12 Nov 2012 03:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>https://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="https://mgaitan.github.io/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
+&lt;/section&gt;&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</guid><pubDate>Mon, 12 Nov 2012 03:34:23 GMT</pubDate></item><item><title>Migrando issues entre proyectos de Bitbucket</title><link>https://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace un tiempo conté &lt;a class="reference external" href="https://mgaitan.github.io/posts/de-mercurial-a-git-limpieza.html"&gt;como migré un repositorio Mercurial a Git&lt;/a&gt; .
 Se trataba de un proyecto hospedado en &lt;a class="reference external" href="http://bitbucket.org"&gt;Bitbucket&lt;/a&gt; y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 allí porque somos pobretones y nos da repos privados gratis.
@@ -151,50 +151,50 @@ para "postear" &lt;em&gt;issues&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
 proyecto y encontré &lt;a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc"&gt;justo lo que estaba buscando&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Entonces bastó con instalar el fork de David Paz Reyes&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_396e75a7506c4a52b9207b66206d6ef2-1"&gt;&lt;/a&gt;$ pip install git+https://github.com/davidmpaz/BitBucket-api.git
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4c0469835d2745f7b0b9c2e4e6b78d8b-1"&gt;&lt;/a&gt;$ pip install git+https://github.com/davidmpaz/BitBucket-api.git
 &lt;/pre&gt;&lt;p&gt;he hice un script que migra todo los issues en estado &lt;em&gt;new&lt;/em&gt;
 del repo original (&lt;code class="docutils literal"&gt;gpec&lt;/code&gt;) al nuevo (&lt;code class="docutils literal"&gt;gpec&lt;/code&gt;) y los potenciales comentarios que tenga.
 Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
 agrego un comentario avisando que es un &lt;em&gt;issue migrado&lt;/em&gt;.&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bitbucket&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;gpec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'gpec'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;gpec3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'gpec3'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-9"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# request original ISSUES&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issues&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-11"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'issues'&lt;/span&gt;&lt;span class="p"&gt;][:]:&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-13"&gt;&lt;/a&gt;    &lt;span class="n"&gt;original_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-14"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'status'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s1"&gt;'new'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-15"&gt;&lt;/a&gt;        &lt;span class="k"&gt;continue&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-16"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-17"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# and post to the new repo&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-18"&gt;&lt;/a&gt;    &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-19"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-20"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-21"&gt;&lt;/a&gt;        &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Fail migrating #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;original_id&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-22"&gt;&lt;/a&gt;        &lt;span class="k"&gt;continue&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-23"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-24"&gt;&lt;/a&gt;    &lt;span class="n"&gt;new_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-25"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-26"&gt;&lt;/a&gt;    &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Migrated #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; as #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; in the new project'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-27"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-28"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# add a comment to mark the migration&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-29"&gt;&lt;/a&gt;    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'reported_by'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-30"&gt;&lt;/a&gt;    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'username'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;'anonymous'&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-31"&gt;&lt;/a&gt;    &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Issue migrated from the original repo. "&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-32"&gt;&lt;/a&gt;            &lt;span class="s2"&gt;"Was #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt; reported by &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-33"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-34"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# migrate comments&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-35"&gt;&lt;/a&gt;    &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issue_comments&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-36"&gt;&lt;/a&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-37"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'content'&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-38"&gt;&lt;/a&gt;            &lt;span class="k"&gt;continue&lt;/span&gt;
-&lt;a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-39"&gt;&lt;/a&gt;        &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bitbucket&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;gpec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'gpec'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;gpec3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitbucket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bitbucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'tin_nqn'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'***'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'gpec3'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-9"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# request original ISSUES&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issues&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'issues'&lt;/span&gt;&lt;span class="p"&gt;][:]:&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-13"&gt;&lt;/a&gt;    &lt;span class="n"&gt;original_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-14"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'status'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s1"&gt;'new'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-15"&gt;&lt;/a&gt;        &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-16"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-17"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# and post to the new repo&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-18"&gt;&lt;/a&gt;    &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-19"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-20"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-21"&gt;&lt;/a&gt;        &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Fail migrating #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;original_id&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-22"&gt;&lt;/a&gt;        &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-23"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-24"&gt;&lt;/a&gt;    &lt;span class="n"&gt;new_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_issue&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'local_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-25"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-26"&gt;&lt;/a&gt;    &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Migrated #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; as #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; in the new project'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-27"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-28"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# add a comment to mark the migration&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-29"&gt;&lt;/a&gt;    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;issue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'reported_by'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-30"&gt;&lt;/a&gt;    &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'username'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;'anonymous'&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-31"&gt;&lt;/a&gt;    &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Issue migrated from the original repo. "&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-32"&gt;&lt;/a&gt;            &lt;span class="s2"&gt;"Was #&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt; reported by &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-33"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-34"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# migrate comments&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-35"&gt;&lt;/a&gt;    &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_issue_comments&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;original_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-36"&gt;&lt;/a&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-37"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'content'&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-38"&gt;&lt;/a&gt;            &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;a name="rest_code_a867d5f9109044f3813e51e7614267a3-39"&gt;&lt;/a&gt;        &lt;span class="n"&gt;gpec3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_issue_comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;¡Disfruten!&lt;/p&gt;&lt;/div&gt;</description><category>migraciones</category><category>python</category><category>scripts</category><guid>https://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/</guid><pubDate>Sat, 10 Nov 2012 03:09:24 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>https://mgaitan.github.io/posts/bienvenidos-al-tren/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
@@ -214,9 +214,9 @@ una interfaz gráfica para
 &lt;p&gt;Luego de algunos dias y teniendo una paciencia descomunal para soportar
 siempre nuevos requerimientos de mi parte, obtuvo una versión de
 Cuevanalinks-GUI, basado en &lt;a class="reference external" href="http://es.wikipedia.org/wiki/PyQt"&gt;PyQt&lt;/a&gt;&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;p&gt;Todavía está en desarrollo (hay algunos bugcitos y decisiones de diseño
 que no resolvemos del todo) pero ya ofrece ciertas ventajas sobre la
 versión para línea de comandos:&lt;/p&gt;
@@ -319,7 +319,7 @@ casi todo proyecto conocido o por conocer.&lt;/p&gt;
 proyectito de morondanga&lt;/a&gt; que
 no tiene web propia ni nada, ¿dónde subimos la documentación generada?
 Veamos.&lt;/p&gt;
-&lt;div class="section" id="usando-readthedocs-org"&gt;
+&lt;section id="usando-readthedocs-org"&gt;
 &lt;h2&gt;Usando Readthedocs.org&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/"&gt;Read the docs&lt;/a&gt;
 es un sitio para hospedar documentación realizada con Sphinx. Sólo se
@@ -347,9 +347,9 @@ Para usuarios de GitHub la activación del "web hook" se explica
 &lt;li&gt;&lt;p&gt;Completás el campo de texto con la URL que te da ReadTheDocs en la
 página de descripción de tu proyecto (estándo logueado). Por ejemplo:&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 60)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
@@ -363,8 +363,8 @@ hay marcar desde la página de configuración del proyecto en RTFD.org,
 que instale en un virtualenv.&lt;/p&gt;
 &lt;p&gt;Para ver si hubo algún problema en la generación, podés fijarte en
 "build" donde te muestra el stdout y el stderr de la corrida de Sphinx.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="subir-la-docu-a-pypi"&gt;
+&lt;/section&gt;
+&lt;section id="subir-la-docu-a-pypi"&gt;
 &lt;h2&gt;Subir la docu a PyPi&lt;/h2&gt;
 &lt;p&gt;Una forma buenísima de compartir tu trabajo pythónico es a través del
 Python Package Index, &lt;a class="reference external" href="http://pypi.python.org/pypi"&gt;pypi&lt;/a&gt;, que es el
@@ -379,9 +379,9 @@ documentación&lt;/a&gt;. La forma canónica es ir a
 la página de administración de tu proyecto en PyPi y adjuntar un .zip
 con la documentación (que no necesariamente tiene que ser hecha con
 Sphinx)&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 93)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
@@ -408,8 +408,8 @@ $ python setup.py upload_sphinx&lt;/pre&gt;
 &lt;p&gt;Y docu subida a la dire
 &lt;em&gt;`http://packages.python.org/tu-proyecto &amp;lt;http://packages.python.org/tu-proyecto&amp;gt;`_&lt;/em&gt;
 . ¡&lt;a class="reference external" href="http://packages.python.org/CuevanaLinks/"&gt;Charaaán&lt;/a&gt;!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="usando-tu-repositorio-svn"&gt;
+&lt;/section&gt;
+&lt;section id="usando-tu-repositorio-svn"&gt;
 &lt;h2&gt;Usando tu repositorio SVN&lt;/h2&gt;
 &lt;p&gt;Si usas SVN y tu servidor lo permite, podés servir contenido estático
 (html y todo lo que produce y necesita Sphinx) directamente desde el
@@ -438,8 +438,8 @@ enable-auto-props = yes
 &lt;p&gt;Un ejemplo de esto es el &lt;a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html"&gt;reporte de mi proyecto
 integrador&lt;/a&gt;
 que está hospedado en Google Code&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="aprovechandote-de-github"&gt;
+&lt;/section&gt;
+&lt;section id="aprovechandote-de-github"&gt;
 &lt;h2&gt;Aprovechándote de GitHub&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://github.com"&gt;GitHub&lt;/a&gt; hospeda &lt;a class="reference external" href="http://pages.github.com/"&gt;páginas
 estáticas&lt;/a&gt;, tanto del desarrollador/a como
@@ -451,4 +451,4 @@ github&lt;/a&gt;
 de Luca Sbardella.
 &lt;img alt="image1" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item></channel></rss>

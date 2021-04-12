@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Web 2.0)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/web-20.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 May 2020 21:00:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>https://mgaitan.github.io/posts/como-volver-a-compartir-desde/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="admonition important"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Web 2.0)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/web-20.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Mon, 12 Apr 2021 18:06:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>https://mgaitan.github.io/posts/como-volver-a-compartir-desde/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="admonition important"&gt;
 &lt;p class="admonition-title"&gt;Importante&lt;/p&gt;
 &lt;p&gt;El pipe tiene un problema con las fechas y quedó deactualizado
 cuando cambió en el html de G+. En su defecto hice este pequeño
@@ -30,7 +30,7 @@ publica&lt;/a&gt;
 pero que &lt;strong&gt;no tiene feed RSS&lt;/strong&gt;! . Larry Page,
 (&lt;a class="reference external" href="https://twitter.com/#!/nqnwebs/status/154772127139102720"&gt;doblemente&lt;/a&gt;)
 te odio.&lt;/p&gt;
-&lt;div class="section" id="frustracion-colectiva"&gt;
+&lt;section id="frustracion-colectiva"&gt;
 &lt;h2&gt;Frustración colectiva&lt;/h2&gt;
 &lt;p&gt;La bronca por los cambios en Reader no es sólo mia, sino que generó una
 &lt;a class="reference external" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&amp;amp;formkey=dE16SFVla3JFZ1lwTkxGRWN2SkZtb2c6MA#gid=0"&gt;petición&lt;/a&gt;
@@ -45,8 +45,8 @@ Reader".&lt;/p&gt;
 &lt;a class="reference external" href="https://github.com/jtwebman/GooglePlusToRSSFeed"&gt;2&lt;/a&gt;,
 &lt;a class="reference external" href="http://plus-one-feed-generator.appspot.com/"&gt;3&lt;/a&gt;) intentan parchar el
 atropello.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mi-solucion"&gt;
+&lt;/section&gt;
+&lt;section id="mi-solucion"&gt;
 &lt;h2&gt;Mi solución&lt;/h2&gt;
 &lt;p&gt;"¿Así que no me dejás compartir donde yo quiera, el algoritmo de tu
 madre!?" vociferé, y no sin premeditación agarré &lt;a class="reference external" href="https://mgaitan.github.io/posts/como-volver-a-compartir-desde/blog/article/yahoo-pipes-como-por-un-tubo"&gt;Yahoo!
@@ -60,10 +60,10 @@ del que se puede obtener, por ejemplo, un &lt;a class="reference external" href=
 &lt;p&gt;&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;amp;_render=rss&amp;amp;google_plus_id=[GOOGLE_PLUS_ID]&lt;/span&gt;&lt;/code&gt;
 donde &lt;code class="docutils literal"&gt;[GOOGLE_PLUS_ID]&lt;/code&gt; es el numero de identificación del usuario en
 cuestión.&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/como-volver-a-compartir-desde/</guid><pubDate>Thu, 12 Jan 2012 00:37:21 GMT</pubDate></item><item><title>Disqus para spip</title><link>https://mgaitan.github.io/posts/disqus-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="https://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
+&lt;/figure&gt;
+&lt;/section&gt;&lt;/div&gt;</description><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/como-volver-a-compartir-desde/</guid><pubDate>Thu, 12 Jan 2012 00:37:21 GMT</pubDate></item><item><title>Disqus para spip</title><link>https://mgaitan.github.io/posts/disqus-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="https://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
 &lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y fácil de usar.&lt;/p&gt;
@@ -108,7 +108,7 @@ resultado en una salida final.&lt;/p&gt;
 personalizado que contiene únicamente lo que se quiera tener, por
 ejemplo el resultado de mezclar y flitrar dos o más fuentes de
 información.&lt;/p&gt;
-&lt;div class="section" id="aplicandolo-a-spip"&gt;
+&lt;section id="aplicandolo-a-spip"&gt;
 &lt;h2&gt;Aplicandolo a SPIP&lt;/h2&gt;
 &lt;p&gt;Frecuentemente queremos ofrecer un canal RSS que provea tanto las breves
 como los artículos. SPIP maneja estos objetos independientemente y es
@@ -117,17 +117,17 @@ pilas en PHP). Con Yahoo! Pipes es tan sencillo como mezclar los dos (o
 más) feeds.&lt;/p&gt;
 &lt;p&gt;Esto lo hice en el sitio &lt;a class="reference external" href="http://www.agrupacionmazamorra.com.ar"&gt;Agrupación
 Mazamorra&lt;/a&gt;:&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/local/cache-vignettes/L510xH321/Pantallazo-90218.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 36)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;El resultado puede verse (y clonarse) &lt;a class="reference external" href="http://pipes.yahoo.com/mazamorra/rss_todo"&gt;desde
 aquí&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mas-ejemplos"&gt;
+&lt;/section&gt;
+&lt;section id="mas-ejemplos"&gt;
 &lt;h2&gt;Más ejemplos&lt;/h2&gt;
 &lt;p&gt;Pero mezclar feeds no es la única posibilidad. De hecho, Pipes es tan
 potente que permite obtener datos parseando un sitio web que no tenga un
@@ -142,15 +142,15 @@ que a este autor,&lt;/p&gt;
 &lt;p&gt;Fácil: Busco el feed de la sección donde se publican sus columnas,
 filtro con la palabra clave ’Casciari’, y me libro de todo lo que no
 quiero. &lt;a class="reference external" href="http://pipes.yahoo.com/mazamorra/casciari"&gt;Aquí el resultado&lt;/a&gt;&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/local/cache-vignettes/L465xH360/pipes2-4a406.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 61)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="ejemplo-en-video"&gt;
+&lt;/section&gt;
+&lt;section id="ejemplo-en-video"&gt;
 &lt;h2&gt;Ejemplo en video&lt;/h2&gt;
 &lt;p&gt;Un screencast de &lt;a class="reference external" href="http://obm.corcoles.net"&gt;otro blog más&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -163,4 +163,4 @@ centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
 pequeño ’screencast’ que explica cómo recuperar las categorías (la
 de desarrollo web, en particular) que se ha cargado Feedburner…&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>spip</category><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/</guid><pubDate>Mon, 23 Feb 2009 22:23:40 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;&lt;/div&gt;</description><category>spip</category><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/</guid><pubDate>Mon, 23 Feb 2009 22:23:40 GMT</pubDate></item></channel></rss>

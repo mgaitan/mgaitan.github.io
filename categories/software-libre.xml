@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Software Libre)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/software-libre.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 May 2020 21:00:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para spip</title><link>https://mgaitan.github.io/posts/disqus-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="https://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Software Libre)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/software-libre.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Mon, 12 Apr 2021 18:06:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Disqus para spip</title><link>https://mgaitan.github.io/posts/disqus-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="https://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
 &lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y fácil de usar.&lt;/p&gt;
@@ -52,7 +52,7 @@ casi todo proyecto conocido o por conocer.&lt;/p&gt;
 proyectito de morondanga&lt;/a&gt; que
 no tiene web propia ni nada, ¿dónde subimos la documentación generada?
 Veamos.&lt;/p&gt;
-&lt;div class="section" id="usando-readthedocs-org"&gt;
+&lt;section id="usando-readthedocs-org"&gt;
 &lt;h2&gt;Usando Readthedocs.org&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/"&gt;Read the docs&lt;/a&gt;
 es un sitio para hospedar documentación realizada con Sphinx. Sólo se
@@ -80,9 +80,9 @@ Para usuarios de GitHub la activación del "web hook" se explica
 &lt;li&gt;&lt;p&gt;Completás el campo de texto con la URL que te da ReadTheDocs en la
 página de descripción de tu proyecto (estándo logueado). Por ejemplo:&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 60)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
@@ -96,8 +96,8 @@ hay marcar desde la página de configuración del proyecto en RTFD.org,
 que instale en un virtualenv.&lt;/p&gt;
 &lt;p&gt;Para ver si hubo algún problema en la generación, podés fijarte en
 "build" donde te muestra el stdout y el stderr de la corrida de Sphinx.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="subir-la-docu-a-pypi"&gt;
+&lt;/section&gt;
+&lt;section id="subir-la-docu-a-pypi"&gt;
 &lt;h2&gt;Subir la docu a PyPi&lt;/h2&gt;
 &lt;p&gt;Una forma buenísima de compartir tu trabajo pythónico es a través del
 Python Package Index, &lt;a class="reference external" href="http://pypi.python.org/pypi"&gt;pypi&lt;/a&gt;, que es el
@@ -112,9 +112,9 @@ documentación&lt;/a&gt;. La forma canónica es ir a
 la página de administración de tu proyecto en PyPi y adjuntar un .zip
 con la documentación (que no necesariamente tiene que ser hecha con
 Sphinx)&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 93)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
@@ -141,8 +141,8 @@ $ python setup.py upload_sphinx&lt;/pre&gt;
 &lt;p&gt;Y docu subida a la dire
 &lt;em&gt;`http://packages.python.org/tu-proyecto &amp;lt;http://packages.python.org/tu-proyecto&amp;gt;`_&lt;/em&gt;
 . ¡&lt;a class="reference external" href="http://packages.python.org/CuevanaLinks/"&gt;Charaaán&lt;/a&gt;!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="usando-tu-repositorio-svn"&gt;
+&lt;/section&gt;
+&lt;section id="usando-tu-repositorio-svn"&gt;
 &lt;h2&gt;Usando tu repositorio SVN&lt;/h2&gt;
 &lt;p&gt;Si usas SVN y tu servidor lo permite, podés servir contenido estático
 (html y todo lo que produce y necesita Sphinx) directamente desde el
@@ -171,8 +171,8 @@ enable-auto-props = yes
 &lt;p&gt;Un ejemplo de esto es el &lt;a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html"&gt;reporte de mi proyecto
 integrador&lt;/a&gt;
 que está hospedado en Google Code&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="aprovechandote-de-github"&gt;
+&lt;/section&gt;
+&lt;section id="aprovechandote-de-github"&gt;
 &lt;h2&gt;Aprovechándote de GitHub&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://github.com"&gt;GitHub&lt;/a&gt; hospeda &lt;a class="reference external" href="http://pages.github.com/"&gt;páginas
 estáticas&lt;/a&gt;, tanto del desarrollador/a como
@@ -184,7 +184,7 @@ github&lt;/a&gt;
 de Luca Sbardella.
 &lt;img alt="image1" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item><item><title>Apuntes del PyCamp 2011</title><link>https://mgaitan.github.io/posts/apuntes-del-pycamp-2011/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Casi se hizo jueves y todavía no escribí nada sobre el
+&lt;/section&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item><item><title>Apuntes del PyCamp 2011</title><link>https://mgaitan.github.io/posts/apuntes-del-pycamp-2011/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Casi se hizo jueves y todavía no escribí nada sobre el
 &lt;a class="reference external" href="http://python.org.ar/pyar/PyCamp/2011"&gt;PyCamp&lt;/a&gt;. Roberto
 Alsina se va a enojar.&lt;/p&gt;
 &lt;p&gt;La excusa, vaga como yo, es que la devolución de uno de mis directores
@@ -198,7 +198,7 @@ conseguir un lacónico:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Inmediatamente demostré que el lenguaje soez en arameo es un
 conocimiento latente.&lt;/p&gt;
-&lt;div class="section" id="a-modo-de-intro"&gt;
+&lt;section id="a-modo-de-intro"&gt;
 &lt;h2&gt;A modo de intro&lt;/h2&gt;
 &lt;p&gt;El PyCamp es un encuentro de la
 comunidad &lt;a class="reference external" href="http://www.python.org.ar"&gt;Python Argentina&lt;/a&gt;. Monos (y
@@ -224,8 +224,8 @@ hacen los geeks cuando están divertidos.&lt;/p&gt;
 &lt;a class="reference external" href="http://www.cocos2d.org/"&gt;Cocos2d&lt;/a&gt;, la
 &lt;a class="reference external" href="http://python.org.ar/pyar/Proyectos/CDPedia"&gt;CDPedia&lt;/a&gt; y
 &lt;a class="reference external" href="http://www.taniquetil.com.ar/lalita/index.html"&gt;lalita&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mi-experiencia"&gt;
+&lt;/section&gt;
+&lt;section id="mi-experiencia"&gt;
 &lt;h2&gt;Mi experiencia&lt;/h2&gt;
 &lt;p&gt;El PyCamp 2011, el cuarto consecutivo, se realizó en La Falda y fue el
 primero en el que participo. Sabía, por referencias, fotos y
@@ -270,8 +270,8 @@ John, Achuni, todos) jugar como niños.&lt;/p&gt;
 &lt;img alt="/images/5575353897_b47ee-6529e.jpg" src="https://mgaitan.github.io/images/5575353897_b47ee-6529e.jpg"&gt;
 &lt;p&gt;Detalles faltan pero estos someros recuerdos sobran para afirmar que el
 balance es positivísimo.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="una-reflexion-final"&gt;
+&lt;/section&gt;
+&lt;section id="una-reflexion-final"&gt;
 &lt;h2&gt;Una reflexión final&lt;/h2&gt;
 &lt;p&gt;PyCamp contrasta totalmente con los grises, aburridos y mediocres
 congresos académicos que en el ámbito universitario se difunden y en los
@@ -284,7 +284,7 @@ por el sobrenombre y no por el título, se admira el conocimiento pero
 más se festeja su colectivización, y eso lo saben (y lo disfrutan) los
 picantes y los tiernitos.&lt;/p&gt;
 &lt;p&gt;Cuanta falta le hace a la universidad visiones y experiencias como esta.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/apuntes-del-pycamp-2011/</guid><pubDate>Wed, 30 Mar 2011 22:50:40 GMT</pubDate></item><item><title>Control de Versiones con Subversion</title><link>https://mgaitan.github.io/posts/Control-de-Versiones-con/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Xab, compañero de la lista
+&lt;/section&gt;&lt;/div&gt;</description><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/apuntes-del-pycamp-2011/</guid><pubDate>Wed, 30 Mar 2011 22:50:40 GMT</pubDate></item><item><title>Control de Versiones con Subversion</title><link>https://mgaitan.github.io/posts/Control-de-Versiones-con/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Xab, compañero de la lista
 &lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;Spip-es&lt;/a&gt; me propone
 un trato:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -295,7 +295,7 @@ Spip&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Como tenía unos materiales de una charla que dí en la facu, lo comparto
 con el pueblo spipero.&lt;/p&gt;
-&lt;div class="section" id="subversion-un-software-de-control-de-versiones"&gt;
+&lt;section id="subversion-un-software-de-control-de-versiones"&gt;
 &lt;h2&gt;Subversion, un software de control de versiones&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://subversion.tigris.org/"&gt;Subversion&lt;/a&gt; es el software de control
 de versiones más popular de la actualidad. Es robusto, fácil de usar,
@@ -317,8 +317,8 @@ ejemplo, la notebook y la PC de escritorio).&lt;/p&gt;
 &lt;p&gt;Trabajar en equipo es casi inviable a la vieja usanza. Imaginen
 proyectos de software grandes, como SPIP. Imposible. Hace falta ayuda:
 Subversion.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="como-funciona"&gt;
+&lt;/section&gt;
+&lt;section id="como-funciona"&gt;
 &lt;h2&gt;¿Cómo funciona?&lt;/h2&gt;
 &lt;p&gt;Es una aplicación cliente-servidor. El cliente se instala en nuestra/s
 computadoras y el servidor está, generalmente, online. A este servidor
@@ -344,8 +344,8 @@ revisiones; &lt;code class="docutils literal"&gt;commit&lt;/code&gt; para enviar
 repositorio y crear una nueva revisión y &lt;code class="docutils literal"&gt;add&lt;/code&gt; para agregar un archivo
 que hemos creado, y aun no existe en el repositorio.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="un-ejemplo-con-spip-zone"&gt;
+&lt;/section&gt;
+&lt;section id="un-ejemplo-con-spip-zone"&gt;
 &lt;h2&gt;Un ejemplo con SPIP-Zone&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://zone.spip.org"&gt;Spip-zone&lt;/a&gt; tiene un servidor subversion
 (asociado al software &lt;a class="reference external" href="http://trac.edgewall.org/"&gt;Trac&lt;/a&gt; que es un
@@ -354,7 +354,7 @@ cualquier contenido libre que tenga que ver con SPIP. Es abierto para
 lectura (podés hacer checkouts y updates anonimamente) pero necesitás
 ser usuario para hacer commits. Podés pedirle un user y pass a
 &lt;a class="reference external" href="mailto:fil@nospam--.rezo.net"&gt;Fil&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="section" id="paso-0"&gt;
+&lt;section id="paso-0"&gt;
 &lt;h3&gt;Paso 0&lt;/h3&gt;
 &lt;p&gt;Suponiendo que sos usuario con clave y password y querés compartir el
 desarrollo de tus squeletos, los &lt;em&gt;squelettes_maslindos&lt;/em&gt; que están en la
@@ -368,8 +368,8 @@ pide.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;$ svn import ./squelettes  svn://zone.spip.org/spip-zone/_squelettes_/maslindos -m "importacion de los squeletos más lindos"&lt;/pre&gt;
 &lt;p&gt;Si la importación salió bien, debería poder ver tus archivos en la
 dirección &lt;a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos"&gt;http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="paso-1"&gt;
+&lt;/section&gt;
+&lt;section id="paso-1"&gt;
 &lt;h3&gt;Paso 1&lt;/h3&gt;
 &lt;p&gt;Este es el paso inicial para aquellos que quieren probar algo
 que está en el repositorio, pero sin intenciones de enviar
@@ -385,8 +385,8 @@ hacemo checkout a la dire del repo, definiendo que la copia local será
 &lt;pre class="literal-block"&gt;svn://zone.spip.org/spip-zone/_squelettes_/maslindos&lt;/pre&gt;
 &lt;p&gt;Por línea de comandos sería así:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;$ svn checkout svn://zone.spip.org/spip-zone/_squelettes_/maslindos ./squelettes&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="pasos-2-y-3"&gt;
+&lt;/section&gt;
+&lt;section id="pasos-2-y-3"&gt;
 &lt;h3&gt;Pasos 2 y 3&lt;/h3&gt;
 &lt;p&gt;Listo, tenemos nuetra copia de trabajo. Cada vez que queramos actualizar
 a la ultima versión, parados sobre la carpeta, hacemos &lt;strong&gt;update&lt;/strong&gt;&lt;/p&gt;
@@ -396,9 +396,9 @@ que hacer &lt;strong&gt;commit&lt;/strong&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;$ svn  update&lt;/pre&gt;
 &lt;p&gt;En caso de agregar archivos, hay que indicarselo a Subversion.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;$ svn  add archivo1 archivo2 *jpg&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="un-video-vale-mas-que-mil-palabras"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="un-video-vale-mas-que-mil-palabras"&gt;
 &lt;h2&gt;Un video vale más que mil palabras&lt;/h2&gt;
 &lt;p&gt;Un ejemplo de flujo de trabajo por línea de comandos&lt;/p&gt;
 &lt;div class="youtube-video"&gt;
@@ -406,4 +406,4 @@ que hacer &lt;strong&gt;commit&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;p&gt;Y otro ejemplo usando una interfaz gráfica.&lt;/p&gt;
 &lt;div class="youtube-video"&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/U3qVh9F6fv0?rel=0&amp;amp;wmode=transparent" frameborder="0" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Software Libre</category><category>spip</category><guid>https://mgaitan.github.io/posts/Control-de-Versiones-con/</guid><pubDate>Sat, 14 Feb 2009 13:23:41 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;</description><category>Software Libre</category><category>spip</category><guid>https://mgaitan.github.io/posts/Control-de-Versiones-con/</guid><pubDate>Sat, 14 Feb 2009 13:23:41 GMT</pubDate></item></channel></rss>

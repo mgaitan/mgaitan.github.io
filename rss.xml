@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 May 2020 21:00:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>move-imports, o cómo calmar el TOC de un pythonista</title><link>https://mgaitan.github.io/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Una historia de éxito: un grupito pequeño de programadores (o quizas sólo uno)
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Mon, 12 Apr 2021 18:06:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Screen layout switcher para Linux</title><link>https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Mi setup de trabajo consiste en la laptop (Lenovo x1 del 2015), un monitor externo de 22" y un combo teclado + mouse inalambrico &lt;a href="https://www.cotodigital3.com.ar/sitios/cdigi/producto/-teclado-top-house-wireless-combo-mouse-kb592gcm/_/A-00484043-00484043-200"&gt;del supermercado&lt;/a&gt;. Actualmente estoy usando &lt;a href="https://pop.system76.com/"&gt;Pop!_OS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;El monitor está en un &lt;a href="https://www.oneboxsolutions.com.ar/producto/ob-lcd12/"&gt;brazo&lt;/a&gt; que me permite acomodarlo y girarlo en cualquier posición. El brazo está en una pequeña alzada que me permite ganar unos 13cm de altura, de manera que puedo usarlo para hacer standup desk junto con mi mesita. &lt;/p&gt;
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="es" dir="ltr"&gt;Hoy terminé mí mesita para trabajar parado. Con el brazo para monitor suplementado la altura queda bastante razonable y también puedo usarla con el tele vía chromecast &lt;a href="https://t.co/O6RLKogCO7"&gt;pic.twitter.com/O6RLKogCO7&lt;/a&gt;&lt;/p&gt;— Martín Gaitán (@tin_nqn_) &lt;a href="https://twitter.com/tin_nqn_/status/1304951373482647553?ref_src=twsrc%5Etfw"&gt;September 13, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;p&gt;Trato de trabajar al menos la mitad del día parado y a veces me voy con la compu a otra parte de la casa. Así que todo el tiempo estoy cambiando la configuración de la/s pantalla/s. Hacer esta tarea a mano me llevaba mucho tiempo y además es dificilisima la motricidad con el mouse si la pantalla está girada.  &lt;/p&gt;
+&lt;p&gt;Dentro del soporte de "funciones avanzadas de teclado" de los linux modernos está "switch-monitor". Gnome mapea esta funcion con &lt;code&gt;&amp;lt;Super&amp;gt;+P&lt;/code&gt; además de la tecla especial del teclado. &lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ gsettings get org.gnome.mutter.keybindings switch-monitor
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;Super&amp;gt;p'&lt;/span&gt;, &lt;span class="s1"&gt;'XF86Display'&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El problema con esta funcionalidad es que los modos están predefinidos: monitores espejados, sólo externa, sólo integrada o ambas "unidas" pero asumiendo ambas horizontales y el monitor izquierdo a la derecha (y el mio queda a la izquierda de la laptop). &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/tin_nqn_/status/1380947297777901570"&gt;Pregunté en twitter&lt;/a&gt; y varios amigos me apuntaron a la herramienta 
+&lt;a href="https://christian.amsuess.com/tools/arandr/"&gt;arandr&lt;/a&gt; que permite hacer las mismas configuraciones de pantallas que la herramienta de Gnome (de manera manual y visual) con la diferencia de que los modos definidos se pueden guardar como un comando de xrandr. Por ejemplo este setup de ambas pantallas encendidas y horizontales &lt;/p&gt;
+&lt;p&gt;&lt;img alt="arandr example" src="https://user-images.githubusercontent.com/2355719/114436452-b7c04780-9b9b-11eb-9b0f-1c7bc1c2da04.png"&gt;&lt;/p&gt;
+&lt;p&gt;se guarda desde arandr (¡y se puede abrir para editar!) como un script &lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tin&lt;/span&gt;&lt;span class="nv"&gt;@pop&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;os&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;screenlayout&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;horizontal&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#!&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;xrandr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;--output eDP-1 --mode 1920x1080 --pos 1920x283 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --primary --mode 1920x1080 --pos 0x0 --rotate normal&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Asi es que definí con esa herramienta los modos frecuentes que uso&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.screenlayout$ ls *.sh
+2horizontal.sh  ext-horizontal.sh  ext-vertical.sh  lapt-solo.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lo que quería luego era un atajo de teclado que me permitiera rotar entre esos modos. Hice un script en python que lo dejé en la misma carpeta&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/env python3&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;
+
+&lt;span class="n"&gt;folder&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__file__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;absolute&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parent&lt;/span&gt;
+&lt;span class="n"&gt;layouts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cycle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;folder&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'*.sh'&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;  &lt;span class="c1"&gt;# roundrobin over the layouts. &lt;/span&gt;
+
+
+&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="c1"&gt;# if there is a last used, move to the next one&lt;/span&gt;
+    &lt;span class="n"&gt;last&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;folder&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="s1"&gt;'.last'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_text&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"last found"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;layouts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dropwhile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;layouts&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;layouts&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;FileNotFoundError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt; 
+
+
+&lt;span class="n"&gt;current&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;layouts&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"switching to &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# write the last&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;folder&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="s1"&gt;'.last'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;&lt;span class="p"&gt;)])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Este &lt;code&gt;switcher.py&lt;/code&gt; busca todos los archivos &lt;code&gt;.sh&lt;/code&gt; en la misma carpeta y ejecuta el que sigue al ultimo ejecutado, que se guarda en un archivo &lt;code&gt;.last&lt;/code&gt; (si no existe, el primer modo será el primero listado). &lt;/p&gt;
+&lt;p&gt;Decidí deshabilitar el atajo por default &lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ gsettings &lt;span class="nb"&gt;set&lt;/span&gt; org.gnome.mutter.keybindings switch-monitor &lt;span class="s2"&gt;"['XF86Display']&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;y agregué un shortcut que ejecuta &lt;code&gt;~/.screenlayout/switcher&lt;/code&gt; con &lt;code&gt;Ctrl + Super + P&lt;/code&gt; (en gnome: Configuración -&amp;gt; Keyboard -&amp;gt; Combinación de teclas -&amp;gt; Customize Shortcuts -&amp;gt; Combinación Personalizada )&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="https://user-images.githubusercontent.com/2355719/114437517-0a4e3380-9b9d-11eb-8847-1d6ebdd61f16.png"&gt;&lt;/p&gt;
+&lt;p&gt;Ahora puedo pararme cuando quiera, levantar y girar el monitor y apretar 
+&lt;code&gt;Ctrl + Super + P&lt;/code&gt; las veces necesarias hasta que quede como quiero. &lt;/p&gt;&lt;/div&gt;</description><guid>https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/</guid><pubDate>Mon, 12 Apr 2021 16:52:34 GMT</pubDate></item><item><title>move-imports, o cómo calmar el TOC de un pythonista</title><link>https://mgaitan.github.io/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Una historia de éxito: un grupito pequeño de programadores (o quizas sólo uno)
 a pura pasión, café y feedback de sus usuarios mete miles de lineas de código
 que logran hacer funcionar un negocio.&lt;/p&gt;
 &lt;p&gt;Parte del éxito, supongamos, es porque el sistema está hecho en Python, que se eligió porque es versátil y pragmático para obtener resultados rápidos.
@@ -14,10 +76,10 @@ sea porque somos nosotros los que &lt;em&gt;checkouteamos&lt;/em&gt; el branch
 de un compañero para probar algo.&lt;/p&gt;
 &lt;p&gt;Ir y volver entre ramas es fácil porque basta usar &lt;cite&gt;-&lt;/cite&gt; que es
 un alias del branch previo.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_108653d53a5942d488a04c3b22ca4412-1"&gt;&lt;/a&gt;$ git checkout master
-&lt;a name="rest_code_108653d53a5942d488a04c3b22ca4412-2"&gt;&lt;/a&gt;Switched to a new branch &lt;span class="s1"&gt;'master'&lt;/span&gt;
-&lt;a name="rest_code_108653d53a5942d488a04c3b22ca4412-3"&gt;&lt;/a&gt;$ git checkout -
-&lt;a name="rest_code_108653d53a5942d488a04c3b22ca4412-4"&gt;&lt;/a&gt;Switched to branch &lt;span class="s1"&gt;'writing'&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_582fd6619c004fff9a69665393bdca9a-1"&gt;&lt;/a&gt;$ git checkout master
+&lt;a name="rest_code_582fd6619c004fff9a69665393bdca9a-2"&gt;&lt;/a&gt;Switched to a new branch &lt;span class="s1"&gt;'master'&lt;/span&gt;
+&lt;a name="rest_code_582fd6619c004fff9a69665393bdca9a-3"&gt;&lt;/a&gt;$ git checkout -
+&lt;a name="rest_code_582fd6619c004fff9a69665393bdca9a-4"&gt;&lt;/a&gt;Switched to branch &lt;span class="s1"&gt;'writing'&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;git checkout -&lt;/code&gt; es equivalente a la forma general &lt;code class="docutils literal"&gt;git checkout &lt;span class="pre"&gt;@{-1}&lt;/span&gt;&lt;/code&gt;
 y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.&lt;/p&gt;
 &lt;p&gt;El problema es que si no nos acordamos el nombre del branch, mucho menos
@@ -537,7 +599,7 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;p&gt;esta es una traducción del artículo
 &lt;a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/"&gt;Ways Men In Tech Are Unintentionally Sexist&lt;/a&gt; de &lt;a class="reference external" href="http://notapattern.net/author/codebykat/"&gt;Kat Hagan&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="formas-en-que-los-hombres-de-tecnologia-son-involuntariamente-sexistas"&gt;
+&lt;section id="formas-en-que-los-hombres-de-tecnologia-son-involuntariamente-sexistas"&gt;
 &lt;h2&gt;Formas en que los hombres de tecnología son involuntariamente sexistas&lt;/h2&gt;
 &lt;p&gt;Un amigo publicó esto en twitter:&lt;/p&gt;
 &lt;p&gt;Realmente respeto&lt;/p&gt;
@@ -633,9 +695,9 @@ others’ usage unless they ask. I consider this an application of the
 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Robustness_principle"&gt;robustness
 principle&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;So, without further ado.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/section&gt;
 &lt;hr class="docutils"&gt;
-&lt;div class="section" id="using-guys-to-mean-people"&gt;
+&lt;section id="using-guys-to-mean-people"&gt;
 &lt;h2&gt;1. Using “guys” to mean “people”.&lt;/h2&gt;
 &lt;p&gt;I fear I’m earning a bit of a reputation for this one among my
 colleagues, as I sometimes good-naturedly respond to “Hey guys,
@@ -667,8 +729,8 @@ then become normal.&lt;/p&gt;
 documentation&lt;/a&gt;.
 Just stop worrying and &lt;a class="reference external" href="http://motivatedgrammar.wordpress.com/2009/09/10/singular-they-and-the-many-reasons-why-its-correct/"&gt;embrace the singular
 “they”&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="similarly-girls-for-women"&gt;
+&lt;/section&gt;
+&lt;section id="similarly-girls-for-women"&gt;
 &lt;h2&gt;2. Similarly: “girls” for “women”.&lt;/h2&gt;
 &lt;p&gt;Yes, I know it’s the best we have as an informal analogue to “guys”, but
 it &lt;a class="reference external" href="http://thecurrentconscience.com/blog/2013/02/01/referring-to-women-as-girls/"&gt;infantilizes
@@ -682,8 +744,8 @@ can be a bit loaded (personally, I don’t think of myself as a lady; when
 I was a child, my grandfather would reprimand me for wearing jeans or
 climbing trees, because those things were “unladylike”). YMMV, but for
 people you don’t know well, I would stick to “women”.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mom-as-an-example-of-a-non-technical-user"&gt;
+&lt;/section&gt;
+&lt;section id="mom-as-an-example-of-a-non-technical-user"&gt;
 &lt;h2&gt;3. “Mom” as an example of a non-technical user.&lt;/h2&gt;
 &lt;p&gt;I know: your mom, like a lot of people, may not be very good with
 computers. (&lt;em&gt;My&lt;/em&gt; mom, on the other hand, while she doesn’t really give
@@ -700,16 +762,16 @@ which suggests alternatives: “When the purpose of the statement is to
 convey the idea that something is “really simple”, ideal nouns will
 refer to non-human or purely technical categories, such as cat,
 non-technical user, Ubuntu user, or “newbie.””&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="using-avatars-that-are-male-by-default"&gt;
+&lt;/section&gt;
+&lt;section id="using-avatars-that-are-male-by-default"&gt;
 &lt;h2&gt;4. Using avatars that are male by default.&lt;/h2&gt;
 &lt;p&gt;If the default (or unset) avatar on your site reads as male, you’re
 making an implicit statement that your “normal” user is male and anyone
 else is an exception. Personally, I think &lt;a class="reference external" href="http://molly.is/saying/no-more-put-a-skirt-on-it/"&gt;using a non-gendered (even
 non-human) avatar&lt;/a&gt;
 can really showcase an app’s creativity.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="describing-software-or-algorithms-as-sexy-hot-etc"&gt;
+&lt;/section&gt;
+&lt;section id="describing-software-or-algorithms-as-sexy-hot-etc"&gt;
 &lt;h2&gt;5. Describing software or algorithms as “sexy”, “hot”, etc.&lt;/h2&gt;
 &lt;p&gt;By sexualizing something that does not need to be sexualized, you’re
 creating a college-frat-boy type environment, as well as
@@ -723,8 +785,8 @@ have a great UI?&lt;/p&gt;
 pronouns. Yeah, okay, grand naval tradition and all that, but it’s still
 kind of weird. Can you not tell the difference between women and
 objects?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="assuming-women-they-meet-are-in-non-technical-roles"&gt;
+&lt;/section&gt;
+&lt;section id="assuming-women-they-meet-are-in-non-technical-roles"&gt;
 &lt;h2&gt;6. Assuming women they meet are in non-technical roles.&lt;/h2&gt;
 &lt;p&gt;If you meet a woman in a professional setting, like a conference (or the
 afterparty!), your first assumption should be that she’s there because
@@ -746,8 +808,8 @@ line&lt;/a&gt;
 between looking properly “nerdy” (at the risk of coming across
 as sloppy) and looking put-together (but risking being taken less
 seriously).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="fetishizing-hot-geek-girls"&gt;
+&lt;/section&gt;
+&lt;section id="fetishizing-hot-geek-girls"&gt;
 &lt;h2&gt;7. Fetishizing “hot geek girls”.&lt;/h2&gt;
 &lt;p&gt;It’s not a compliment to get comments like “Wow, a beautiful woman who’s
 also into kernel hacking?? Will you marry me?”&lt;/p&gt;
@@ -770,8 +832,8 @@ challenges, but no one wants to feel like they’re only getting attention
 because of their gender. We want to be treated normally, like human
 beings who happen to share some perfectly ordinary and normal interests
 with you.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="denigrating-things-by-comparing-them-to-women-or-femininity"&gt;
+&lt;/section&gt;
+&lt;section id="denigrating-things-by-comparing-them-to-women-or-femininity"&gt;
 &lt;h2&gt;8. Denigrating things by comparing them to women or femininity.&lt;/h2&gt;
 &lt;p&gt;Don’t casually accuse someone of being “girly” or a “pussy”, or say that
 they “fight like a girl”, or make fun of them for liking “chick flicks”.
@@ -786,8 +848,8 @@ good, and acting like a woman is inherently bad?&lt;/p&gt;
 common. I recently called out a cyclist friend for referring to the
 lowest gear as the “&lt;a class="reference external" href="http://forums.mtbr.com/beginners-corner/why-called-granny-gear-807335.html"&gt;granny
 gear&lt;/a&gt;”.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="stereotyping-womens-needs-or-ignoring-them"&gt;
+&lt;/section&gt;
+&lt;section id="stereotyping-womens-needs-or-ignoring-them"&gt;
 &lt;h2&gt;9. Stereotyping women’s needs… or ignoring them.&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://happynicetimepeople.com/goldman-sachs-ladies-tech-event-probably-want-nail-files/"&gt;Emery boards as conference
 swag&lt;/a&gt;?
@@ -800,8 +862,8 @@ in the Apple’s new Health app). The whole issue of &lt;a class="reference exte
 t-shirts&lt;/a&gt; is a big one in
 this category.&lt;/p&gt;
 &lt;p&gt;Which brings us neatly to…&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="using-dark-ui-patterns"&gt;
+&lt;/section&gt;
+&lt;section id="using-dark-ui-patterns"&gt;
 &lt;h2&gt;10. Using dark UI patterns.&lt;/h2&gt;
 &lt;p&gt;If you write software that &lt;a class="reference external" href="http://www.theatlantic.com/technology/archive/2014/10/the-unsafety-net-how-social-media-turned-against-women/381261/"&gt;enables harassment and
 stalking&lt;/a&gt;,
@@ -815,8 +877,8 @@ impact marginalized
 groups&lt;/a&gt;.
 Commit to writing software that embodies &lt;a class="reference external" href="http://modelviewculture.com/pieces/the-fantasy-and-abuse-of-the-manipulable-user"&gt;affirmative
 consent&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="repeating-generalizations-about-gender-essentialism"&gt;
+&lt;/section&gt;
+&lt;section id="repeating-generalizations-about-gender-essentialism"&gt;
 &lt;h2&gt;11. Repeating generalizations about gender essentialism.&lt;/h2&gt;
 &lt;p&gt;“Women just aren’t interested in programming/math/logic.” This is a
 thing that people really think, and &lt;a class="reference external" href="http://www.thewire.com/technology/2013/08/explaining-fascination-explaining-why-there-are-no-female-programmers/68538/"&gt;say out
@@ -841,15 +903,15 @@ type excuses. Dismantling gender stereotypes is also about having more
 respect for men — believing they are &lt;a class="reference external" href="http://www.kieranstrange.com/dear-men-you-need-feminism-too/"&gt;just as capable of empathy and
 self-restraint&lt;/a&gt;
 as any other adult human being.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="assuming-every-woman-in-tech-feels-the-same-way-and-or-wants-to-discuss-her-experiences-as-a-woman-in-tech"&gt;
+&lt;/section&gt;
+&lt;section id="assuming-every-woman-in-tech-feels-the-same-way-and-or-wants-to-discuss-her-experiences-as-a-woman-in-tech"&gt;
 &lt;h2&gt;12. Assuming every woman in tech feels the same way and/or wants to discuss her experiences “as a woman in tech”.&lt;/h2&gt;
 &lt;p&gt;We’re not a monolith, we can’t all speak for each other, and we often
 want to just talk about our work instead of being seen as women first.
 See the Ada Initiative’s great post, &lt;a class="reference external" href="http://adainitiative.org/2014/03/breaking-the-unicorn-law-stop-asking-women-in-open-techculture-about-women-in-open-techculture/"&gt;Breaking The Unicorn
 Law&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="staying-quiet-when-other-men-do-these-things"&gt;
+&lt;/section&gt;
+&lt;section id="staying-quiet-when-other-men-do-these-things"&gt;
 &lt;h2&gt;13. Staying quiet when other men do these things.&lt;/h2&gt;
 &lt;p&gt;Finally: this is &lt;a class="reference external" href="http://www.ashedryden.com/blog/the-responsibility-of-diversity"&gt;everybody’s
 work&lt;/a&gt;.
@@ -894,7 +956,7 @@ Tech&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 check out my saved links on
 &lt;a class="reference external" href="https://pinboard.in/u:wirehead"&gt;Pinboard&lt;/a&gt; (basically a firehose of
 everything I read online).&lt;/p&gt;
-&lt;div class="section" id="share-this"&gt;
+&lt;section id="share-this"&gt;
 &lt;h3&gt;Share this:&lt;/h3&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/?share=twitter&amp;amp;nb=1"&gt;Twitter1K+&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -902,21 +964,18 @@ everything I read online).&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/?share=google-plus-1&amp;amp;nb=1"&gt;Google&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;/li&gt;&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="like-this"&gt;
+&lt;/section&gt;
+&lt;section id="like-this"&gt;
 &lt;h3&gt;Like this:&lt;/h3&gt;
 &lt;p&gt;Like Loading...&lt;/p&gt;
 &lt;p&gt;This entry was tagged
 &lt;a class="reference external" href="http://notapattern.net/tag/feminism/"&gt;feminism&lt;/a&gt;. Bookmark the
 &lt;a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/"&gt;permalink&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>draft</category><guid>https://mgaitan.github.io/posts/hombres-machistas-involuntariamente/</guid><pubDate>Thu, 04 Dec 2014 22:23:44 GMT</pubDate></item><item><title>Las cosas chiquitas que cambian el mundo</title><link>https://mgaitan.github.io/posts/las-cosas-chiquitas/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="admonition note"&gt;
+&lt;/section&gt;
+&lt;/section&gt;&lt;/div&gt;</description><category>draft</category><guid>https://mgaitan.github.io/posts/hombres-machistas-involuntariamente/</guid><pubDate>Thu, 04 Dec 2014 22:23:44 GMT</pubDate></item><item><title>Las cosas chiquitas que cambian el mundo</title><link>https://mgaitan.github.io/posts/las-cosas-chiquitas/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="admonition note"&gt;
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Tengo dos weblogs. Este es en el que escribo artículos técnicos o que tienen que ver de alguna manera con mi profesión. &lt;a class="reference external" href="http://www.textosypretextos.com.ar"&gt;Textos y pretextos&lt;/a&gt; es igual de personal, pero me sale —me sale cada vez menos, tristemente— de otras tripas, quizás para otro público.&lt;/p&gt;
 &lt;p&gt;Sin embargo, quiero hacer una excepción con este post, porque probablemente tenga más alcance aquí y es algo que me atraviesa todas las facetas: las ganas de hacer de este que pisamos, un mejor mundo.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Desde el 2005, a las poquitas semanas de haberme venido a vivir a Córdoba, hasta no sé que día del 2012, cada sábado de todas las semanas del año, me tomé dos bondis (o uno, cuando me iba a pata hasta el centro), para llegar a Campo de La Ribera. &lt;em&gt;Mazamorra&lt;/em&gt;, la &lt;em&gt;agrupación&lt;/em&gt;, fue mi espacio de militancia, mi usina de amistad, mi cobijo del dar y recibir. Sobre todo del recibir.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="//www.youtube.com/embed/elcqGWJKt3c" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/las-cosas-chiquitas/"&gt;Leer más…&lt;/a&gt; (restan 2 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>donar</category><category>solidaridad</category><guid>https://mgaitan.github.io/posts/las-cosas-chiquitas/</guid><pubDate>Thu, 04 Dec 2014 22:23:44 GMT</pubDate></item><item><title>Travis-CI para compilar y deployar tu blog estático</title><link>https://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://travis-ci.org/"&gt;Travis-CI&lt;/a&gt; es un servicio de integración continua, gratuito para proyectos de
-software libre. Pero son gente tan copada que no se enojan si en vez de una suite de tests, corremos, por ejemplo,
-Nikola para compilar este blog y publicarlo automáticamente.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/"&gt;Leer más…&lt;/a&gt; (restan 1 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>devop</category><guid>https://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/</guid><pubDate>Tue, 30 Sep 2014 23:57:08 GMT</pubDate></item></channel></rss>
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/elcqGWJKt3c" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/las-cosas-chiquitas/"&gt;Leer más…&lt;/a&gt; (restan 2 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>donar</category><category>solidaridad</category><guid>https://mgaitan.github.io/posts/las-cosas-chiquitas/</guid><pubDate>Thu, 04 Dec 2014 22:23:44 GMT</pubDate></item></channel></rss>

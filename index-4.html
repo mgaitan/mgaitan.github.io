@@ -17,8 +17,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/index-4.html">
 <link rel="prev" href="index-5.html" type="text/html">
 <link rel="next" href="index-3.html" type="text/html">
@@ -66,7 +66,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -207,8 +207,7 @@ tenga tiempo. Invito también, de manera enfática, a leer <a class="reference e
 justificación</a>
 de que el software desarrollado en el marco de mi proyecto integrador lo
 libero como Software Libre</p>
-<div class="section" id="mas-alla-del-negocio">
-<h2>Más allá del negocio</h2>
+<section id="mas-alla-del-negocio"><h2>Más allá del negocio</h2>
 <p>Además de lo expuesto se me cruzan cuestionamientos sobre el rol de la
 universidad y el estado en este escenario.</p>
 <p>Como ciudadano y futuro profesional festejo la inversión que en los
@@ -226,7 +225,7 @@ los cuales está aportando grandes recursos, además de ser agente
 regulador? ¿quién y cómo regula la relación e intereses existentes entre
 los grupos de investigación y el sector privado? ¿no se puede prestar a
 malversaciones y abuso del <em>sello</em> de la universidad?</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/bonito-feito-pero-efectivo/" class="u-url">Bonito, feito pero efectivo</a></h1>
@@ -261,15 +260,9 @@ talón -).</p>
 efectivo.</p>
 <p>Primero hice una plantilla en <a class="reference external" href="http://inkscape.org">Inkscape</a> donde
 entran 6 de estos bonitos en un A4.</p>
-<div class="figure align-center">
-<img alt="" src="images/bonito2-ccc74.png">
-</div>
-<p>Como el SVG es XML que es texto, la marca XXXX se puede reemplazar
+<figure class="align-center"><img alt="" src="images/bonito2-ccc74.png"></figure><p>Como el SVG es XML que es texto, la marca XXXX se puede reemplazar
 fácilmente por el número que corresponda. Yo quería que me quedaran así:</p>
-<div class="figure align-center">
-<img alt="" src="images/bonito-8305a.png">
-</div>
-<p>De esta manera, simplemente tengo que meter 6 broches a la izquierda y
+<figure class="align-center"><img alt="" src="images/bonito-8305a.png"></figure><p>De esta manera, simplemente tengo que meter 6 broches a la izquierda y
 recortar, ya quedan ordenados para repartir entre los compañeros y
 compañeras.</p>
 <p>Para algunas cosas, Inkscape se puede usar por línea de comandos, por
@@ -278,84 +271,84 @@ con los números reemplazados a un PDF. Después concateno todos los PDF
 de una tanda (por ejemplo agrupados de a 10, como en el dibujo) con
 Ghostscript.</p>
 <p>Acá el código:</p>
-<pre class="code python"><a name="rest_code_753ce218eb81496592c20fda311829ac-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-3"></a><span class="c1">#</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-4"></a><span class="c1">#       bonito.py</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-5"></a><span class="c1">#</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-6"></a><span class="c1">#       Copyright 2010 Martin Gaitán &lt;gaitan(at)gmail.com&gt;</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-7"></a><span class="c1">#</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-8"></a><span class="c1">#       This program is free software; you can redistribute it and/or modify</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-9"></a><span class="c1">#       it under the terms of the GNU General Public License as published by</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-10"></a><span class="c1">#       the Free Software Foundation; either version 2 of the License, or</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-11"></a><span class="c1">#       (at your option) any later version.</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-12"></a><span class="c1">#</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-13"></a><span class="c1">#       This program is distributed in the hope that it will be useful,</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-14"></a><span class="c1">#       but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-15"></a><span class="c1">#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-16"></a><span class="c1">#       GNU General Public License for more details.</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-17"></a><span class="c1">#</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-18"></a><span class="c1">#       You should have received a copy of the GNU General Public License</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-19"></a><span class="c1">#       along with this program; if not, write to the Free Software</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-20"></a><span class="c1">#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-21"></a><span class="c1">#       MA 02110-1301, USA.</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-22"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-23"></a><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-24"></a><span class="kn">import</span> <span class="nn">subprocess</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-25"></a><span class="kn">import</span> <span class="nn">glob</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-26"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-27"></a><span class="k">def</span> <span class="nf">markToNum</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">mark</span><span class="o">=</span><span class="s1">'XXXX'</span><span class="p">):</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-28"></a>    <span class="n">num_as_string</span> <span class="o">=</span> <span class="s1">'0'</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-29"></a>    <span class="k">return</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="n">num_as_string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-30"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-31"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-32"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-33"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-34"></a>        <span class="nb">print</span> <span class="s2">"Modo de uso:"</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-35"></a>        <span class="nb">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" archivo.svg"</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-36"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-37"></a>    <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-38"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">as</span> <span class="nb">input</span><span class="p">:</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-39"></a>            <span class="n">svg_content</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-40"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-41"></a>        <span class="n">index_from</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Desde [0]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-42"></a>        <span class="n">number_by_page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Num por pagina [6]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">6</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-43"></a>        <span class="n">grouped_by</span> <span class="o">=</span>  <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'agrupar de a [20]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">20</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-44"></a>        <span class="n">planchas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Planchas [1]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-45"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-46"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-47"></a>        <span class="k">for</span> <span class="n">plancha</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">planchas</span><span class="p">):</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-48"></a>            <span class="n">counter_from</span> <span class="o">=</span> <span class="n">index_from</span> <span class="o">+</span> <span class="n">plancha</span><span class="o">*</span><span class="n">number_by_page</span><span class="o">*</span><span class="n">grouped_by</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-49"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-50"></a>            <span class="k">for</span> <span class="n">pagina</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grouped_by</span><span class="p">):</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-51"></a>                <span class="n">page_content</span> <span class="o">=</span> <span class="n">svg_content</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-52"></a>                <span class="k">for</span> <span class="n">bono</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_by_page</span><span class="p">):</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-53"></a>                    <span class="n">num_remplazo</span> <span class="o">=</span> <span class="n">counter_from</span> <span class="o">+</span> <span class="n">bono</span><span class="o">*</span><span class="n">grouped_by</span> <span class="o">+</span> <span class="n">pagina</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-54"></a>                    <span class="n">page_content</span> <span class="o">=</span> <span class="n">markToNum</span><span class="p">(</span><span class="n">page_content</span><span class="p">,</span> <span class="n">num_remplazo</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-55"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-56"></a>                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'temp.svg'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_svg</span><span class="p">:</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-57"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-58"></a>                    <span class="n">output_svg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">page_content</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-59"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-60"></a>                <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">"inkscape"</span><span class="p">,</span> <span class="s2">"-f"</span><span class="p">,</span> <span class="s1">'temp.svg'</span><span class="p">,</span> <span class="s1">'--export-dpi=150'</span><span class="p">,</span> <span class="s1">'-A'</span><span class="p">,</span> <span class="s1">'temp</span><span class="si">%s</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"0"</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">))</span> <span class="p">])</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-61"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-62"></a>            <span class="n">generator</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'gs'</span><span class="p">,</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-63"></a>                         <span class="s1">'-q'</span><span class="p">,</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-64"></a>                         <span class="s1">'-sPAPERSIZE=a4'</span><span class="p">,</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-65"></a>                         <span class="s1">'-dNOPAUSE'</span><span class="p">,</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-66"></a>                         <span class="s1">'-dBATCH'</span><span class="p">,</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-67"></a>                         <span class="s1">'-sDEVICE=pdfwrite'</span><span class="p">,</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-68"></a>                         <span class="s1">'-sOutputFile=</span><span class="si">%s</span><span class="s1">-</span><span class="si">%i</span><span class="s1">-</span><span class="si">%i</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="n">counter_from</span><span class="p">,</span> <span class="n">num_remplazo</span><span class="p">),]</span> <span class="o">+</span> \
-<a name="rest_code_753ce218eb81496592c20fda311829ac-69"></a>                        <span class="p">[</span><span class="s1">'temp</span><span class="si">%s</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"0"</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">)))</span> <span class="o">+</span> \
-<a name="rest_code_753ce218eb81496592c20fda311829ac-70"></a>                            <span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">))</span> <span class="k">for</span> <span class="n">pagina</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grouped_by</span><span class="p">)]</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-71"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-72"></a>            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-73"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-74"></a>            <span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'temp*'</span><span class="p">):</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-75"></a>                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-76"></a>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-77"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_753ce218eb81496592c20fda311829ac-78"></a>    <span class="n">main</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_0c37486522e64d68912e5475d06078b6-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-3"></a><span class="c1">#</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-4"></a><span class="c1">#       bonito.py</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-5"></a><span class="c1">#</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-6"></a><span class="c1">#       Copyright 2010 Martin Gaitán &lt;gaitan(at)gmail.com&gt;</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-7"></a><span class="c1">#</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-8"></a><span class="c1">#       This program is free software; you can redistribute it and/or modify</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-9"></a><span class="c1">#       it under the terms of the GNU General Public License as published by</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-10"></a><span class="c1">#       the Free Software Foundation; either version 2 of the License, or</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-11"></a><span class="c1">#       (at your option) any later version.</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-12"></a><span class="c1">#</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-13"></a><span class="c1">#       This program is distributed in the hope that it will be useful,</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-14"></a><span class="c1">#       but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-15"></a><span class="c1">#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-16"></a><span class="c1">#       GNU General Public License for more details.</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-17"></a><span class="c1">#</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-18"></a><span class="c1">#       You should have received a copy of the GNU General Public License</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-19"></a><span class="c1">#       along with this program; if not, write to the Free Software</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-20"></a><span class="c1">#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-21"></a><span class="c1">#       MA 02110-1301, USA.</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-22"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-23"></a><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-24"></a><span class="kn">import</span> <span class="nn">subprocess</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-25"></a><span class="kn">import</span> <span class="nn">glob</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-26"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-27"></a><span class="k">def</span> <span class="nf">markToNum</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">mark</span><span class="o">=</span><span class="s1">'XXXX'</span><span class="p">):</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-28"></a>    <span class="n">num_as_string</span> <span class="o">=</span> <span class="s1">'0'</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-29"></a>    <span class="k">return</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="n">num_as_string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-30"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-31"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-32"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-33"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-34"></a>        <span class="nb">print</span> <span class="s2">"Modo de uso:"</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-35"></a>        <span class="nb">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" archivo.svg"</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-36"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-37"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-38"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">as</span> <span class="nb">input</span><span class="p">:</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-39"></a>            <span class="n">svg_content</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-40"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-41"></a>        <span class="n">index_from</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Desde [0]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-42"></a>        <span class="n">number_by_page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Num por pagina [6]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">6</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-43"></a>        <span class="n">grouped_by</span> <span class="o">=</span>  <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'agrupar de a [20]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">20</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-44"></a>        <span class="n">planchas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_input</span><span class="p">(</span><span class="s1">'Planchas [1]'</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-45"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-46"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-47"></a>        <span class="k">for</span> <span class="n">plancha</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">planchas</span><span class="p">):</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-48"></a>            <span class="n">counter_from</span> <span class="o">=</span> <span class="n">index_from</span> <span class="o">+</span> <span class="n">plancha</span><span class="o">*</span><span class="n">number_by_page</span><span class="o">*</span><span class="n">grouped_by</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-49"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-50"></a>            <span class="k">for</span> <span class="n">pagina</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grouped_by</span><span class="p">):</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-51"></a>                <span class="n">page_content</span> <span class="o">=</span> <span class="n">svg_content</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-52"></a>                <span class="k">for</span> <span class="n">bono</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_by_page</span><span class="p">):</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-53"></a>                    <span class="n">num_remplazo</span> <span class="o">=</span> <span class="n">counter_from</span> <span class="o">+</span> <span class="n">bono</span><span class="o">*</span><span class="n">grouped_by</span> <span class="o">+</span> <span class="n">pagina</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-54"></a>                    <span class="n">page_content</span> <span class="o">=</span> <span class="n">markToNum</span><span class="p">(</span><span class="n">page_content</span><span class="p">,</span> <span class="n">num_remplazo</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-55"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-56"></a>                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'temp.svg'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_svg</span><span class="p">:</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-57"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-58"></a>                    <span class="n">output_svg</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">page_content</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-59"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-60"></a>                <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">"inkscape"</span><span class="p">,</span> <span class="s2">"-f"</span><span class="p">,</span> <span class="s1">'temp.svg'</span><span class="p">,</span> <span class="s1">'--export-dpi=150'</span><span class="p">,</span> <span class="s1">'-A'</span><span class="p">,</span> <span class="s1">'temp</span><span class="si">%s</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"0"</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">))</span> <span class="p">])</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-61"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-62"></a>            <span class="n">generator</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'gs'</span><span class="p">,</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-63"></a>                         <span class="s1">'-q'</span><span class="p">,</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-64"></a>                         <span class="s1">'-sPAPERSIZE=a4'</span><span class="p">,</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-65"></a>                         <span class="s1">'-dNOPAUSE'</span><span class="p">,</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-66"></a>                         <span class="s1">'-dBATCH'</span><span class="p">,</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-67"></a>                         <span class="s1">'-sDEVICE=pdfwrite'</span><span class="p">,</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-68"></a>                         <span class="s1">'-sOutputFile=</span><span class="si">%s</span><span class="s1">-</span><span class="si">%i</span><span class="s1">-</span><span class="si">%i</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="n">counter_from</span><span class="p">,</span> <span class="n">num_remplazo</span><span class="p">),]</span> <span class="o">+</span> \
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-69"></a>                        <span class="p">[</span><span class="s1">'temp</span><span class="si">%s</span><span class="s1">.pdf'</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"0"</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">)))</span> <span class="o">+</span> \
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-70"></a>                            <span class="nb">str</span><span class="p">(</span><span class="n">pagina</span><span class="p">))</span> <span class="k">for</span> <span class="n">pagina</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grouped_by</span><span class="p">)]</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-71"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-72"></a>            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-73"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-74"></a>            <span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'temp*'</span><span class="p">):</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-75"></a>                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-76"></a>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-77"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_0c37486522e64d68912e5475d06078b6-78"></a>    <span class="n">main</span><span class="p">()</span>
 </pre>
 <p>Nada que no se pueda hacer con Bash, cierto, pero mucho más fácil de
 escribir (y de leer).</p>
@@ -442,16 +435,12 @@ cambiar el widget que muestra los mensajes y el método para anexar
 mensajes tiene otro nombre? ¿y si además de mostrarlos, con algunos los
 mensajes queremos hacer alguna otra cosa (ejecutar un simple sonido de
 alarma, por ejemplo) ?</p>
-<div class="section" id="pubsub">
-<h2>PubSub</h2>
+<section id="pubsub"><h2>PubSub</h2>
 <p>Una manera más elegante y eficiente es utilizar
 <a class="reference external" href="http://pubsub.sourceforge.net">PubSub</a> una implentación en Python del
 paradigma de
 <a class="reference external" href="http://en.wikipedia.org/wiki/Publish/subscribe">publicación-suscripción</a>.</p>
-<div class="figure align-center">
-<img alt="" src="posts/usando-pubsub-para-una-panel-de/local/cache-vignettes/L510xH357/pubsub_concept-47f35.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="posts/usando-pubsub-para-una-panel-de/local/cache-vignettes/L510xH357/pubsub_concept-47f35.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 56)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -640,7 +629,7 @@ if __name__ == "__main__":
     pub.sendMessage('log', ('ok', 'Ready! You can send any message from anywhere.') )
     pub.sendMessage('log', ('info', "Just import pubsub.Publisher and send a 'log' message") )
     pub.sendMessage('log', ('warning', "The message data is a tuple ('icon', 'message') ") )</pre>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mantener-el-scroll-vertical-de-wx/" class="u-url">Mantener el scroll vertical de wx.ListCtrl abajo</a></h1>
@@ -663,10 +652,7 @@ if __name__ == "__main__":
 aplicación que muestra mensajes al usuario, similar a lo que puede hacer
 la barra de estada, pero con la ventaja (complementaria, si se quiere),
 de mantener un historial de los eventos ocurridos.</p>
-<div class="figure align-center">
-<img alt="" src="posts/mantener-el-scroll-vertical-de-wx/local/cache-vignettes/L510xH114/log-4afe3.jpg">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="posts/mantener-el-scroll-vertical-de-wx/local/cache-vignettes/L510xH114/log-4afe3.jpg"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 9)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -1018,8 +1004,7 @@ argentinos) por palabra, mientras que en europa se cobra entre 0.05 € y
 0.07€. O sea, se gana hasta el triple por realizar el mismo trabajo.</p>
 <p>El problema, al menos desde Argentina, es cobrar. Aquí comparto mi
 experiencia esperando ayudar a otros.</p>
-<div class="section" id="de-adsense-a-la-billetera">
-<h2>De Adsense a la billetera</h2>
+<section id="de-adsense-a-la-billetera"><h2>De Adsense a la billetera</h2>
 <p><img alt="image0" src="images/google-adsenf60e-93be1.jpg">
 Una forma simple y rápida pero bastante onerosa es <a class="reference external" href="http://www.westernunion.com">Western
 Union</a>. Es un servicio de transferencias
@@ -1044,9 +1029,7 @@ de transferencia (MCU) y documento en mano aclarar en Wester Union de
 Walmart que queremos cobrar en dólares.</p>
 <p>Mucho más fácil, rápido y sin perder un sope que pedir el cheque y
 venderlo en una financiera.</p>
-</div>
-<div class="section" id="cobrar-del-extranjero">
-<h2>Cobrar del extranjero</h2>
+</section><section id="cobrar-del-extranjero"><h2>Cobrar del extranjero</h2>
 <p><img alt="image2" src="images/paypal_logog8b6f-21423.gif">
 Internacionalmente está casi estandarizado el uso de
 <a class="reference external" href="http://www.paypal.com">Paypal</a> como medio de pago de honorarios (y
@@ -1083,9 +1066,7 @@ momento que creamos conveniente.</p>
 <p>Paypal aclara que ofrece este servicio (Multiples divisas) para
 facilitar el comercio electrónico internacional y no debe utilizarse con
 fines especulativos. Pero los timberos decidirán.</p>
-</div>
-<div class="section" id="de-paypal-a-la-billetera">
-<h2>De Paypal a la billetera</h2>
+</section><section id="de-paypal-a-la-billetera"><h2>De Paypal a la billetera</h2>
 <table>
 <colgroup><col style="width: 100%"></colgroup>
 <tbody><tr>
@@ -1138,7 +1119,7 @@ suele tener cupones válidos, ¡de hasta el 100%!</p>
 retiramos los fondos a través de Xoom.com en dólares consiguiendo un
 cupón del 100%, tendremos toda nuestra platita en el bolsillo, en
 dólares y sin perder nada en el camino.</p>
-</div>
+</section>
 </div>
     </div>
     </article>
@@ -1148,7 +1129,7 @@ dólares y sin perder nada en el camino.</p>
             <li class="next"><a href="index-3.html" rel="next">Posts anteriores</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

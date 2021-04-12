@@ -17,8 +17,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/index-8.html">
 <link rel="prev" href="index-9.html" type="text/html">
 <link rel="next" href="index-7.html" type="text/html">
@@ -66,7 +66,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -175,73 +175,73 @@ investigué cómo funciona la nueva versión de cuevana.</p>
 <p><a class="reference external" href="http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula">http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula</a></p>
 </blockquote>
 <p>En código javascript inline define las fuentes disponibles para ese contenido</p>
-<pre class="code javascript"><a name="rest_code_fa69cf54b3f547fc8a598026af17d72c-1"></a><span class="kd">var</span> <span class="nx">plugin_ver</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">plugin_rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<a name="rest_code_fa69cf54b3f547fc8a598026af17d72c-2"></a><span class="kd">var</span> <span class="nx">actual_ver</span><span class="p">,</span> <span class="nx">actual_rev</span><span class="p">;</span>
-<a name="rest_code_fa69cf54b3f547fc8a598026af17d72c-3"></a>
-<a name="rest_code_fa69cf54b3f547fc8a598026af17d72c-4"></a><span class="kd">var</span> <span class="nx">sources</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_fa69cf54b3f547fc8a598026af17d72c-5"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_fa69cf54b3f547fc8a598026af17d72c-6"></a>        <span class="s2">"360"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uptobox"</span><span class="p">,</span> <span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"filebox"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">,</span> <span class="s2">"zalaa"</span><span class="p">],</span>
-<a name="rest_code_fa69cf54b3f547fc8a598026af17d72c-7"></a>        <span class="s2">"720"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">]</span>
-<a name="rest_code_fa69cf54b3f547fc8a598026af17d72c-8"></a>    <span class="p">}</span>
-<a name="rest_code_fa69cf54b3f547fc8a598026af17d72c-9"></a><span class="p">},</span> <span class="nx">sel_source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<pre class="code javascript"><a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-1"></a><span class="kd">var</span> <span class="nx">plugin_ver</span> <span class="o">=</span> <span class="mf">5</span><span class="p">,</span> <span class="nx">plugin_rev</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-2"></a><span class="kd">var</span> <span class="nx">actual_ver</span><span class="p">,</span> <span class="nx">actual_rev</span><span class="p">;</span>
+<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-3"></a>
+<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-4"></a><span class="kd">var</span> <span class="nx">sources</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-5"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-6"></a>        <span class="s2">"360"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uptobox"</span><span class="p">,</span> <span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"filebox"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">,</span> <span class="s2">"zalaa"</span><span class="p">],</span>
+<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-7"></a>        <span class="s2">"720"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">]</span>
+<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-8"></a>    <span class="p">}</span>
+<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-9"></a><span class="p">},</span> <span class="nx">sel_source</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 </pre>
 <p>La primer clave (en este caso <code class="docutils literal">2</code>, inglés) es el idioma del audio,
 y la segunda la calidad del video</p>
 <p>Luego define diferentes constates:</p>
-<pre class="code javascript"><a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-1"></a><span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-2"></a>    <span class="s1">'360'</span><span class="o">:</span> <span class="s1">'SD (360p)'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-3"></a>    <span class="s1">'480'</span><span class="o">:</span> <span class="s1">'SD (480p)'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-4"></a>    <span class="s1">'720'</span><span class="o">:</span> <span class="s1">'HD (720p)'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-5"></a>    <span class="s1">'1080'</span><span class="o">:</span> <span class="s1">'HD (1080p)'</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-6"></a><span class="p">};</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-7"></a><span class="kd">var</span> <span class="nx">labeli</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-8"></a>    <span class="s2">"1"</span><span class="o">:</span> <span class="s2">"Espa\u00f1ol"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-9"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="s2">"Ingl\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-10"></a>    <span class="s2">"3"</span><span class="o">:</span> <span class="s2">"Portugu\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-11"></a>    <span class="s2">"4"</span><span class="o">:</span> <span class="s2">"Alem\u00e1n"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-12"></a>    <span class="s2">"5"</span><span class="o">:</span> <span class="s2">"Franc\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-13"></a>    <span class="s2">"6"</span><span class="o">:</span> <span class="s2">"Coreano"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-14"></a>    <span class="s2">"7"</span><span class="o">:</span> <span class="s2">"Italiano"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-15"></a>    <span class="s2">"8"</span><span class="o">:</span> <span class="s2">"Tailand\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-16"></a>    <span class="s2">"9"</span><span class="o">:</span> <span class="s2">"Ruso"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-17"></a>    <span class="s2">"10"</span><span class="o">:</span> <span class="s2">"Mongol"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-18"></a>    <span class="s2">"11"</span><span class="o">:</span> <span class="s2">"Polaco"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-19"></a>    <span class="s2">"12"</span><span class="o">:</span> <span class="s2">"Esloveno"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-20"></a>    <span class="s2">"13"</span><span class="o">:</span> <span class="s2">"Sueco"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-21"></a>    <span class="s2">"14"</span><span class="o">:</span> <span class="s2">"Griego"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-22"></a>    <span class="s2">"15"</span><span class="o">:</span> <span class="s2">"Canton\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-23"></a>    <span class="s2">"16"</span><span class="o">:</span> <span class="s2">"Japon\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-24"></a>    <span class="s2">"17"</span><span class="o">:</span> <span class="s2">"Dan\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-25"></a>    <span class="s2">"18"</span><span class="o">:</span> <span class="s2">"Neerland\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-26"></a>    <span class="s2">"19"</span><span class="o">:</span> <span class="s2">"Hebreo"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-27"></a>    <span class="s2">"20"</span><span class="o">:</span> <span class="s2">"Serbio"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-28"></a>    <span class="s2">"21"</span><span class="o">:</span> <span class="s2">"\u00c1rabe"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-29"></a>    <span class="s2">"22"</span><span class="o">:</span> <span class="s2">"Hindi"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-30"></a>    <span class="s2">"23"</span><span class="o">:</span> <span class="s2">"Noruego"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-31"></a>    <span class="s2">"24"</span><span class="o">:</span> <span class="s2">"Turco"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-32"></a>    <span class="s2">"26"</span><span class="o">:</span> <span class="s2">"Mandar\u00edn"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-33"></a>    <span class="s2">"27"</span><span class="o">:</span> <span class="s2">"Nepal\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-34"></a>    <span class="s2">"28"</span><span class="o">:</span> <span class="s2">"Rumano"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-35"></a>    <span class="s2">"29"</span><span class="o">:</span> <span class="s2">"Iran\u00ed"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-36"></a>    <span class="s2">"30"</span><span class="o">:</span> <span class="s2">"Est\u00f3n"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-37"></a>    <span class="s2">"31"</span><span class="o">:</span> <span class="s2">"Bosnio"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-38"></a>    <span class="s2">"32"</span><span class="o">:</span> <span class="s2">"Checo"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-39"></a>    <span class="s2">"33"</span><span class="o">:</span> <span class="s2">"Croata"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-40"></a>    <span class="s2">"34"</span><span class="o">:</span> <span class="s2">"Fin\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-41"></a>    <span class="s2">"35"</span><span class="o">:</span> <span class="s2">"H\u00fanagro"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-42"></a>    <span class="s2">"36"</span><span class="o">:</span> <span class="s2">"Persa"</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-43"></a>    <span class="s2">"38"</span><span class="o">:</span> <span class="s2">"Indonesio"</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-44"></a><span class="p">};</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-45"></a><span class="kd">var</span> <span class="nx">labelh</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-46"></a>    <span class="s1">'filebox'</span><span class="o">:</span> <span class="s1">'Filebox'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-47"></a>    <span class="s1">'uptobox'</span><span class="o">:</span> <span class="s1">'Uptobox (NUEVO)'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-48"></a>    <span class="s1">'uploadcore'</span><span class="o">:</span> <span class="s1">'Uploadcore (NUEVO)'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-49"></a>    <span class="s1">'vidbull'</span><span class="o">:</span> <span class="s1">'Vidbull (NUEVO)'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-50"></a>    <span class="s1">'zalaa'</span><span class="o">:</span> <span class="s1">'Zalaa'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-51"></a>    <span class="s1">'cramit'</span><span class="o">:</span> <span class="s1">'Cramit'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-52"></a>    <span class="s1">'180upload'</span><span class="o">:</span> <span class="s1">'180upload'</span><span class="p">,</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-53"></a>    <span class="s1">'bayfiles'</span><span class="o">:</span> <span class="s1">'Bayfiles'</span>
-<a name="rest_code_dae6c8ae9ec04ff9bb0ffa606aa38766-54"></a><span class="p">};</span>
+<pre class="code javascript"><a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-1"></a><span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-2"></a>    <span class="s1">'360'</span><span class="o">:</span> <span class="s1">'SD (360p)'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-3"></a>    <span class="s1">'480'</span><span class="o">:</span> <span class="s1">'SD (480p)'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-4"></a>    <span class="s1">'720'</span><span class="o">:</span> <span class="s1">'HD (720p)'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-5"></a>    <span class="s1">'1080'</span><span class="o">:</span> <span class="s1">'HD (1080p)'</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-6"></a><span class="p">};</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-7"></a><span class="kd">var</span> <span class="nx">labeli</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-8"></a>    <span class="s2">"1"</span><span class="o">:</span> <span class="s2">"Espa\u00f1ol"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-9"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="s2">"Ingl\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-10"></a>    <span class="s2">"3"</span><span class="o">:</span> <span class="s2">"Portugu\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-11"></a>    <span class="s2">"4"</span><span class="o">:</span> <span class="s2">"Alem\u00e1n"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-12"></a>    <span class="s2">"5"</span><span class="o">:</span> <span class="s2">"Franc\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-13"></a>    <span class="s2">"6"</span><span class="o">:</span> <span class="s2">"Coreano"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-14"></a>    <span class="s2">"7"</span><span class="o">:</span> <span class="s2">"Italiano"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-15"></a>    <span class="s2">"8"</span><span class="o">:</span> <span class="s2">"Tailand\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-16"></a>    <span class="s2">"9"</span><span class="o">:</span> <span class="s2">"Ruso"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-17"></a>    <span class="s2">"10"</span><span class="o">:</span> <span class="s2">"Mongol"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-18"></a>    <span class="s2">"11"</span><span class="o">:</span> <span class="s2">"Polaco"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-19"></a>    <span class="s2">"12"</span><span class="o">:</span> <span class="s2">"Esloveno"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-20"></a>    <span class="s2">"13"</span><span class="o">:</span> <span class="s2">"Sueco"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-21"></a>    <span class="s2">"14"</span><span class="o">:</span> <span class="s2">"Griego"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-22"></a>    <span class="s2">"15"</span><span class="o">:</span> <span class="s2">"Canton\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-23"></a>    <span class="s2">"16"</span><span class="o">:</span> <span class="s2">"Japon\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-24"></a>    <span class="s2">"17"</span><span class="o">:</span> <span class="s2">"Dan\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-25"></a>    <span class="s2">"18"</span><span class="o">:</span> <span class="s2">"Neerland\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-26"></a>    <span class="s2">"19"</span><span class="o">:</span> <span class="s2">"Hebreo"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-27"></a>    <span class="s2">"20"</span><span class="o">:</span> <span class="s2">"Serbio"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-28"></a>    <span class="s2">"21"</span><span class="o">:</span> <span class="s2">"\u00c1rabe"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-29"></a>    <span class="s2">"22"</span><span class="o">:</span> <span class="s2">"Hindi"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-30"></a>    <span class="s2">"23"</span><span class="o">:</span> <span class="s2">"Noruego"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-31"></a>    <span class="s2">"24"</span><span class="o">:</span> <span class="s2">"Turco"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-32"></a>    <span class="s2">"26"</span><span class="o">:</span> <span class="s2">"Mandar\u00edn"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-33"></a>    <span class="s2">"27"</span><span class="o">:</span> <span class="s2">"Nepal\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-34"></a>    <span class="s2">"28"</span><span class="o">:</span> <span class="s2">"Rumano"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-35"></a>    <span class="s2">"29"</span><span class="o">:</span> <span class="s2">"Iran\u00ed"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-36"></a>    <span class="s2">"30"</span><span class="o">:</span> <span class="s2">"Est\u00f3n"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-37"></a>    <span class="s2">"31"</span><span class="o">:</span> <span class="s2">"Bosnio"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-38"></a>    <span class="s2">"32"</span><span class="o">:</span> <span class="s2">"Checo"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-39"></a>    <span class="s2">"33"</span><span class="o">:</span> <span class="s2">"Croata"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-40"></a>    <span class="s2">"34"</span><span class="o">:</span> <span class="s2">"Fin\u00e9s"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-41"></a>    <span class="s2">"35"</span><span class="o">:</span> <span class="s2">"H\u00fanagro"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-42"></a>    <span class="s2">"36"</span><span class="o">:</span> <span class="s2">"Persa"</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-43"></a>    <span class="s2">"38"</span><span class="o">:</span> <span class="s2">"Indonesio"</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-44"></a><span class="p">};</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-45"></a><span class="kd">var</span> <span class="nx">labelh</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-46"></a>    <span class="s1">'filebox'</span><span class="o">:</span> <span class="s1">'Filebox'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-47"></a>    <span class="s1">'uptobox'</span><span class="o">:</span> <span class="s1">'Uptobox (NUEVO)'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-48"></a>    <span class="s1">'uploadcore'</span><span class="o">:</span> <span class="s1">'Uploadcore (NUEVO)'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-49"></a>    <span class="s1">'vidbull'</span><span class="o">:</span> <span class="s1">'Vidbull (NUEVO)'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-50"></a>    <span class="s1">'zalaa'</span><span class="o">:</span> <span class="s1">'Zalaa'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-51"></a>    <span class="s1">'cramit'</span><span class="o">:</span> <span class="s1">'Cramit'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-52"></a>    <span class="s1">'180upload'</span><span class="o">:</span> <span class="s1">'180upload'</span><span class="p">,</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-53"></a>    <span class="s1">'bayfiles'</span><span class="o">:</span> <span class="s1">'Bayfiles'</span>
+<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-54"></a><span class="p">};</span>
 </pre>
 <p>El usuario selecciona mediante un menú donde se define <code class="docutils literal">audio</code>, <code class="docutils literal">quality</code> y <code class="docutils literal">source</code>
 que se configuran como atributos data del link:</p>
@@ -269,27 +269,27 @@ la versión para Firefox desde <a class="reference external" href="http://www.cu
 Descomprimirlo con unzip y abrir el archivo <code class="docutils literal">content/cuevanastream.js</code></p>
 <p>La presencia de los parámetros <code class="docutils literal"><span class="pre">cid``y</span> ``ctipo</code> y una url de alguno de los servicios
 que usa Cuevana hace que se inyecte un javascript en la URL del servicio.</p>
-<pre class="code javascript"><a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-1"></a><span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/cid=/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ctipo=/i</span><span class="p">));</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-2"></a><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.)?bayfiles\.com/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-3"></a>    <span class="nx">addScript</span><span class="p">(</span><span class="s1">'bayfiles'</span><span class="p">);</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-4"></a><span class="p">}</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-5"></a>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-6"></a>    <span class="c1">// más servicios</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-7"></a>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-8"></a>  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i</span><span class="p">))</span> <span class="p">{</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-9"></a>    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-10"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'plugin_ok'</span><span class="p">;</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-11"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-version'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">);</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-12"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-revision'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">);</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-13"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-14"></a><span class="p">}</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-15"></a>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-16"></a><span class="kd">function</span> <span class="nx">addScript</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-17"></a>    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-18"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/javascript'</span><span class="p">);</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-19"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span> <span class="s1">'http://sc.cuevana.tv/player/scripts/5/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'.js'</span><span class="p">);</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-20"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-<a name="rest_code_33b5d4852bff479b97e9d27f91c96ea1-21"></a><span class="p">}</span>
+<pre class="code javascript"><a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-1"></a><span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/cid=/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ctipo=/i</span><span class="p">));</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-2"></a><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.)?bayfiles\.com/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-3"></a>    <span class="nx">addScript</span><span class="p">(</span><span class="s1">'bayfiles'</span><span class="p">);</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-4"></a><span class="p">}</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-5"></a>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-6"></a>    <span class="c1">// más servicios</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-7"></a>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-8"></a>  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i</span><span class="p">))</span> <span class="p">{</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-9"></a>    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-10"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'plugin_ok'</span><span class="p">;</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-11"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-version'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">);</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-12"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-revision'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">);</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-13"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-14"></a><span class="p">}</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-15"></a>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-16"></a><span class="kd">function</span> <span class="nx">addScript</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-17"></a>    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-18"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/javascript'</span><span class="p">);</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-19"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span> <span class="s1">'http://sc.cuevana.tv/player/scripts/5/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'.js'</span><span class="p">);</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-20"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-21"></a><span class="p">}</span>
 </pre>
 <p>En ese caso se inyecta el javascript:</p>
 <pre class="literal-block">http://sc.cuevana.tv/player/scripts/5/bayfiles.js</pre>
@@ -342,8 +342,7 @@ por paquetes, y viene con un montón de plugins incorporados.</p>
 <p>dice el eslogan y eso es lo que queremos: tests más fáciles de escribir,
 más rápidos de ejecutar.</p>
 <p>De plugins y opciones que potencian esta idea se trata este post.</p>
-<div class="section" id="nose-progressive">
-<h2>nose-progressive</h2>
+<section id="nose-progressive"><h2>nose-progressive</h2>
 <blockquote class="epigraph">
 <p>Ah, beautiful dots</p>
 <p class="attribution">—<a class="reference external" href="http://blog.mozilla.org/webdev/2011/04/14/a-humane-python-test-runner/">Erik Rose</a></p>
@@ -365,14 +364,12 @@ para mostrar errores y fallos <em>on the fly</em>.</p>
 tracebacks a la parte útil, e incluye colores usados con criterio
 (basada en la genial biblioteca <a class="reference external" href="https://pypi.python.org/pypi/blessings">blessing</a>, del mismo autor).</p>
 <p>Para instalarlo, lo de siempre:</p>
-<pre class="code bash"><a name="rest_code_10de5523dc384da8a816efb91e6e3e39-1"></a><span class="o">(</span>env<span class="o">)</span> $ pip install nose-progressive
+<pre class="code bash"><a name="rest_code_9734bbb61a4c4e92a4680332c84e72ea-1"></a><span class="o">(</span>env<span class="o">)</span> $ pip install nose-progressive
 </pre>
 <p>Para usarlo, agregar <code class="docutils literal"><span class="pre">--with-progressive</span></code> como parámetros de <code class="docutils literal">nosetests</code>,
 o bien, para usarlo siempre, configurarlo en <code class="docutils literal">.noserc</code> o en la
 variable <code class="docutils literal">NOSE_ARGS</code> de <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a></p>
-</div>
-<div class="section" id="django-nose">
-<h2>django-nose</h2>
+</section><section id="django-nose"><h2>django-nose</h2>
 <p>Si trabajás con Django esto quizas suene a perogrullada, pero <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a>
 es la vuelta de tuerca que faltaba para que la nariz brille en este entorno.
 Con django-nose por defecto sólo se corren los tests del proyecto y no
@@ -384,9 +381,7 @@ de tablas en cada corrida, ahorrando unos cuantos segundos de setup en aplicacio
 como muchos modelos. Por supuesto, si la base de datos cambia (porque
 se agregó un modelo o se se migró con <a class="reference external" href="http://south.aeracode.org/">South</a>) tenés que asegurarte
 que la variable está en 0 para que cree la última version</p>
-</div>
-<div class="section" id="with-id-failed">
-<h2>with-id + failed</h2>
+</section><section id="with-id-failed"><h2>with-id + failed</h2>
 <p>La opción <a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption--with-id">--with-id</a>
 (estrictamente el plugin <code class="docutils literal">TestId</code>, que viene en las baterías incluídas de nose)
 le asigna un número único a cada test ejecutado,
@@ -395,9 +390,7 @@ resultado de la última corrida.</p>
 <p>Lo bueno es que pasando <code class="docutils literal"><span class="pre">--with-id</span> <span class="pre">--failed</span></code> nose usa esa información
 y ejecuta solamente los tests que fallaron en la última corrida,
 permitiendo una rápida iteración <em>"falla/corrección"</em>.</p>
-</div>
-<div class="section" id="nose-selecttests">
-<h2>nose-selecttests</h2>
+</section><section id="nose-selecttests"><h2>nose-selecttests</h2>
 <p>Frecuentemente sucede que tenemos caso (una subclase de <code class="docutils literal">TestCase</code>)
 con muchas pruebas (métodos) que están lógicamente agrupadas
 porque comparten un setup, por ejemplo,
@@ -412,39 +405,36 @@ métodos.</p>
 <p>Por eso existe <a class="reference external" href="https://github.com/iElectric/nose-selecttests">nose-selecttests</a>, que permite filtrar pruebas con
 determinada subcadena en el nombre del método.</p>
 <p>Por ejemplo:</p>
-<pre class="code bash"><a name="rest_code_50deb61498424e4cb892996a991c59be-1"></a>$ djntest -v <span class="m">2</span> common/tests/test_sequence_diff.py
-<a name="rest_code_50deb61498424e4cb892996a991c59be-2"></a>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-7"></a>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-8"></a>----------------------------------------------------------------------
-<a name="rest_code_50deb61498424e4cb892996a991c59be-9"></a>Ran <span class="m">4</span> tests in <span class="m">0</span>.375s
+<pre class="code bash"><a name="rest_code_ac1d127090a4441a9af0e01232bf2981-1"></a>$ djntest -v <span class="m">2</span> common/tests/test_sequence_diff.py
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-2"></a>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-7"></a>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-8"></a>----------------------------------------------------------------------
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-9"></a>Ran <span class="m">4</span> tests <span class="k">in</span> <span class="m">0</span>.375s
 </pre>
 <p>En cambio:</p>
-<pre class="code bash"><a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-1"></a>$ djntest --select-tests<span class="o">=</span>differ -v <span class="m">2</span> apps/common/tests/test_sequence_diff.py
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-2"></a>
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-5"></a>----------------------------------------------------------------------
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-6"></a>Ran <span class="m">2</span> tests in <span class="m">0</span>.088s
-</pre>
-</div>
-<div class="section" id="django-tests-autocomplete">
-<h2>django-tests-autocomplete</h2>
+<pre class="code bash"><a name="rest_code_2d201b172d694a2595c43ec733fe6e60-1"></a>$ djntest --select-tests<span class="o">=</span>differ -v <span class="m">2</span> apps/common/tests/test_sequence_diff.py
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-2"></a>
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-5"></a>----------------------------------------------------------------------
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-6"></a>Ran <span class="m">2</span> tests <span class="k">in</span> <span class="m">0</span>.088s
+</pre></section><section id="django-tests-autocomplete"><h2>django-tests-autocomplete</h2>
 <p>Esta herramienta no es estrictamente un plugin de nose, sino un helper
 que aprovecha las posibilidades de bash para
 <a class="reference external" href="http://bash-completion.alioth.debian.org/">autocompletar</a> usando la tecla
 tab.</p>
 <p>¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:</p>
-<pre class="code bash"><a name="rest_code_5c90a797ea6a45888b01ffd5e1c8ac08-1"></a>$ nosetests path/to/test.py
+<pre class="code bash"><a name="rest_code_d3c450162a2048698734cd9497c8bfd8-1"></a>$ nosetests path/to/test.py
 </pre>
 <p>Pero también permite afinar la puntería y "meterse" adentro del módulo:</p>
-<pre class="code bash"><a name="rest_code_35b8d86de0a046b2aa996027124f1a57-1"></a>$ nosetests path/to/test.py:MyImportantTestCase
+<pre class="code bash"><a name="rest_code_8c3136c82927475384aa8194f7ffdc46-1"></a>$ nosetests path/to/test.py:MyImportantTestCase
 </pre>
 <p>E incluso adentro del testcase:</p>
-<pre class="code bash"><a name="rest_code_ce1824b943c443d6a18fafccb3dbe73d-1"></a>$ nosetests path/to/test.py:MyImportantTestCase.test_super_important
+<pre class="code bash"><a name="rest_code_3d441d0234534e75b54129b3d1a386a9-1"></a>$ nosetests path/to/test.py:MyImportantTestCase.test_super_important
 </pre>
 <p>Desde el <code class="docutils literal">:</code> en adelante estamos en Python y Bash ya no sabe autocompletar,
 salvo que usemos esta herramienta que instrospecciona y "alimenta" el
@@ -453,20 +443,16 @@ autocompleter.</p>
 <a class="reference external" href="https://github.com/machinalis/django-test-autocomplete#future-features">busca ayuda</a>
 para mejorarlo y generalizarlo.</p>
 <p>¿No sería buenísimo que esto estuviese built-in en nose? ¿Nos ayudarías?</p>
-</div>
-<div class="section" id="nose-timer">
-<h2>nose-timer</h2>
+</section><section id="nose-timer"><h2>nose-timer</h2>
 <p>¿Cuánto tiempo insume cada test? Instalá <a class="reference external" href="https://github.com/mahmoudimus/nose-timer/">nose-timer</a> y activalo (con <code class="docutils literal"><span class="pre">--with-timer</span></code>)
 para saber la respuesta.</p>
-</div>
-<div class="section" id="nose-ipdb">
-<h2>nose-ipdb</h2>
+</section><section id="nose-ipdb"><h2>nose-ipdb</h2>
 <p>nose tiene una opción <code class="docutils literal"><span class="pre">--pdb</span></code> (o la más estricta <code class="docutils literal"><span class="pre">--ipdb-failures</span></code>)
 que nos manda al debugger cuando un test falla o da error.</p>
 <p><a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb">nose-ipdb</a> lo imita, pero usando el más pulenta de los debuggers: <a class="reference external" href="https://pypi.python.org/pypi/ipdb">ipdb</a>.</p>
 <p>Suficiente por hoy. Pero ¿me estoy perdiendo alguna cosa interesante
 para meter en mi nariz?</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/creando-un-nuevo-proyecto-python/" class="u-url">Creando un nuevo proyecto Python</a></h1>
@@ -490,8 +476,7 @@ para meter en mi nariz?</p>
 proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
 proyectos ? Bien, te propongo esta receta.</p>
-<div class="section" id="las-herramientas">
-<h2>Las herramientas</h2>
+<section id="las-herramientas"><h2>Las herramientas</h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.virtualenv.org">Virtualenv</a>:  es una herramienta para aislar tu entorno de
 desarrollo python. Es muy pero muy útil para evitar conflictos entre las
@@ -510,10 +495,7 @@ vez, una mejora sobre el módulo estándar <em>distutils</em>)</p></li>
 para iniciar un proyecto, generando la estructura básica necesaria. Es
 similar a <a class="reference external" href="http://python.org.ar/pyar/PasteScript">PasteScript</a> pero enfocado en esta
 tarea concreta, sin dependencias y compatible con Python 3.x</p></li>
-</ul>
-</div>
-<div class="section" id="la-receta">
-<h2>La receta</h2>
+</ul></section><section id="la-receta"><h2>La receta</h2>
 <ol class="arabic">
 <li>
 <p>Instalá pip:</p>
@@ -535,16 +517,16 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <ol class="arabic" start="3">
 <li>
 <p>Configurá virtualenvwrapper</p>
-<pre class="code bash"><a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-1"></a>$ mkdir ~/.virtualenvs           <span class="c1"># acá se van a guardar tus entornos virtuales</span>
-<a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-2"></a>$ mkdir ~/proyectos              <span class="c1"># acá se van a guardar tus proyectos</span>
-<a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-3"></a>$ mkdir ~/.pip_download_cache     <span class="c1"># para no bajar paquetes cada vez</span>
+<pre class="code bash"><a name="rest_code_da18115c3ee74ed786867271b50cc5cf-1"></a>$ mkdir ~/.virtualenvs           <span class="c1"># acá se van a guardar tus entornos virtuales</span>
+<a name="rest_code_da18115c3ee74ed786867271b50cc5cf-2"></a>$ mkdir ~/proyectos              <span class="c1"># acá se van a guardar tus proyectos</span>
+<a name="rest_code_da18115c3ee74ed786867271b50cc5cf-3"></a>$ mkdir ~/.pip_download_cache     <span class="c1"># para no bajar paquetes cada vez</span>
 </pre>
 <p>Luego editá tu <code class="docutils literal"><span class="pre">~/.bashrc</span></code> agregando las siguientes líneas</p>
-<pre class="code bash"><a name="rest_code_fe79cd2c69864f719151972b68b0fe18-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<a name="rest_code_fe79cd2c69864f719151972b68b0fe18-2"></a><span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
-<a name="rest_code_fe79cd2c69864f719151972b68b0fe18-3"></a><span class="nb">export</span> <span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
-<a name="rest_code_fe79cd2c69864f719151972b68b0fe18-4"></a><span class="nb">export</span> <span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
-<a name="rest_code_fe79cd2c69864f719151972b68b0fe18-5"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+<pre class="code bash"><a name="rest_code_e4411a1ada5c451daa88e600cc711864-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<a name="rest_code_e4411a1ada5c451daa88e600cc711864-2"></a><span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<a name="rest_code_e4411a1ada5c451daa88e600cc711864-3"></a><span class="nb">export</span> <span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
+<a name="rest_code_e4411a1ada5c451daa88e600cc711864-4"></a><span class="nb">export</span> <span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<a name="rest_code_e4411a1ada5c451daa88e600cc711864-5"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 </pre>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">$ source ~/.bashrc</pre>
@@ -572,17 +554,12 @@ del virtualenv, de modo que puedes importar <em>zaraza</em> desde cualquier
 lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
 <em>src/test</em> al nivel de '/src/zaraza'</p>
 </li>
-</ol>
-</div>
-<div class="section" id="y-ahora">
-<h2>¿Y ahora?</h2>
+</ol></section><section id="y-ahora"><h2>¿Y ahora?</h2>
 <p>Cada vez que quieras trabajar en tu proyecto <em>zaraza</em> ejecutás:</p>
 <pre class="literal-block">$ workon zaraza</pre>
 <p>Para salir del virtualenv:</p>
 <pre class="literal-block">(zaraza) $ deactivate</pre>
-</div>
-<div class="section" id="algunos-tips-mas-a-modo-de-despedida">
-<h2>Algunos tips más a modo de despedida</h2>
+</section><section id="algunos-tips-mas-a-modo-de-despedida"><h2>Algunos tips más a modo de despedida</h2>
 <p>Virtualenwrapper es totalmente hookeable y extensible. Esta receta
 propone usar <em>skeleton</em> (que funciona como plugin de
 <a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/">virtualenvwrapper.project</a>)
@@ -594,14 +571,11 @@ comando principal de virtualenvwrapper <code class="docutils literal">mkvirtuale
 parámetros opcionales. Ejecutá <code class="docutils literal">mkproject_help</code> o <code class="docutils literal">mkvirtualenv <span class="pre">--help</span></code>
 para saber más.</p>
 <p>Y ya sabés ...</p>
-<div class="figure align-center">
-<img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png">
-</div>
-<hr class="docutils">
+<figure class="align-center"><img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"></figure><hr class="docutils">
 <blockquote>
 <p>Este artículo lo escribí originalmente para el <a class="reference external" href="http://python.org.ar/pyar/Recetario">Recetario de PyAr</a></p>
 </blockquote>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/migrando-issues-entre-proyectos-de-bitbucket/" class="u-url">Migrando issues entre proyectos de Bitbucket</a></h1>
@@ -636,51 +610,51 @@ para "postear" <em>issues</em></p>
 <p>Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
 proyecto y encontré <a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc">justo lo que estaba buscando</a>.</p>
 <p>Entonces bastó con instalar el fork de David Paz Reyes</p>
-<pre class="code bash"><a name="rest_code_396e75a7506c4a52b9207b66206d6ef2-1"></a>$ pip install git+https://github.com/davidmpaz/BitBucket-api.git
+<pre class="code bash"><a name="rest_code_4c0469835d2745f7b0b9c2e4e6b78d8b-1"></a>$ pip install git+https://github.com/davidmpaz/BitBucket-api.git
 </pre>
 <p>he hice un script que migra todo los issues en estado <em>new</em>
 del repo original (<code class="docutils literal">gpec</code>) al nuevo (<code class="docutils literal">gpec</code>) y los potenciales comentarios que tenga.
 Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
 agrego un comentario avisando que es un <em>issue migrado</em>.</p>
-<pre class="code python"><a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-3"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-4"></a><span class="kn">from</span> <span class="nn">bitbucket</span> <span class="kn">import</span> <span class="n">bitbucket</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-5"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-6"></a><span class="n">gpec</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec'</span><span class="p">)</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-7"></a><span class="n">gpec3</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec3'</span><span class="p">)</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-8"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-9"></a><span class="c1"># request original ISSUES</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-10"></a><span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issues</span><span class="p">()</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-11"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-12"></a><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">'issues'</span><span class="p">][:]:</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-13"></a>    <span class="n">original_id</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-14"></a>    <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'new'</span><span class="p">:</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-15"></a>        <span class="k">continue</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-16"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-17"></a>    <span class="c1"># and post to the new repo</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-18"></a>    <span class="n">ok</span><span class="p">,</span> <span class="n">new_issue</span> <span class="o">=</span> <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue</span><span class="p">(</span><span class="o">**</span><span class="n">issue</span><span class="p">)</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-19"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-20"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-21"></a>        <span class="nb">print</span> <span class="s1">'Fail migrating #</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">original_id</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-22"></a>        <span class="k">continue</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-23"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-24"></a>    <span class="n">new_id</span> <span class="o">=</span> <span class="n">new_issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-25"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-26"></a>    <span class="nb">print</span> <span class="s1">'Migrated #</span><span class="si">%d</span><span class="s1"> as #</span><span class="si">%d</span><span class="s1"> in the new project'</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-27"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-28"></a>    <span class="c1"># add a comment to mark the migration</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-29"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'reported_by'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-30"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">who</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="k">if</span> <span class="n">who</span> <span class="k">else</span> <span class="s1">'anonymous'</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-31"></a>    <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Issue migrated from the original repo. "</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-32"></a>            <span class="s2">"Was #</span><span class="si">%d</span><span class="s2"> reported by </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">who</span><span class="p">))</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-33"></a>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-34"></a>    <span class="c1"># migrate comments</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-35"></a>    <span class="n">result</span><span class="p">,</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issue_comments</span><span class="p">(</span><span class="n">original_id</span><span class="p">)</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-36"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">:</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-37"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]:</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-38"></a>            <span class="k">continue</span>
-<a name="rest_code_61a920d9e8c642ce9fce4457ed55ed50-39"></a>        <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_a867d5f9109044f3813e51e7614267a3-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-3"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-4"></a><span class="kn">from</span> <span class="nn">bitbucket</span> <span class="kn">import</span> <span class="n">bitbucket</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-5"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-6"></a><span class="n">gpec</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec'</span><span class="p">)</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-7"></a><span class="n">gpec3</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec3'</span><span class="p">)</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-8"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-9"></a><span class="c1"># request original ISSUES</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-10"></a><span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issues</span><span class="p">()</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-11"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-12"></a><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">'issues'</span><span class="p">][:]:</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-13"></a>    <span class="n">original_id</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-14"></a>    <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'new'</span><span class="p">:</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-15"></a>        <span class="k">continue</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-16"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-17"></a>    <span class="c1"># and post to the new repo</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-18"></a>    <span class="n">ok</span><span class="p">,</span> <span class="n">new_issue</span> <span class="o">=</span> <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue</span><span class="p">(</span><span class="o">**</span><span class="n">issue</span><span class="p">)</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-19"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-20"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-21"></a>        <span class="nb">print</span> <span class="s1">'Fail migrating #</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">original_id</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-22"></a>        <span class="k">continue</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-23"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-24"></a>    <span class="n">new_id</span> <span class="o">=</span> <span class="n">new_issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-25"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-26"></a>    <span class="nb">print</span> <span class="s1">'Migrated #</span><span class="si">%d</span><span class="s1"> as #</span><span class="si">%d</span><span class="s1"> in the new project'</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-27"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-28"></a>    <span class="c1"># add a comment to mark the migration</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-29"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'reported_by'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-30"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">who</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="k">if</span> <span class="n">who</span> <span class="k">else</span> <span class="s1">'anonymous'</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-31"></a>    <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Issue migrated from the original repo. "</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-32"></a>            <span class="s2">"Was #</span><span class="si">%d</span><span class="s2"> reported by </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">who</span><span class="p">))</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-33"></a>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-34"></a>    <span class="c1"># migrate comments</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-35"></a>    <span class="n">result</span><span class="p">,</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issue_comments</span><span class="p">(</span><span class="n">original_id</span><span class="p">)</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-36"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">:</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-37"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]:</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-38"></a>            <span class="k">continue</span>
+<a name="rest_code_a867d5f9109044f3813e51e7614267a3-39"></a>        <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
 </pre>
 <p>¡Disfruten!</p>
 </div>
@@ -710,8 +684,7 @@ como atraviesas tus documentos HTML, manejas eventos, realizas
 animaciones, y agregas interacción Ajax a tus páginas web. <strong>jQuery
 está diseñada para cambiar la manera en que escribes JavaScript</strong></p>
 </blockquote>
-<div class="section" id="necesitamos-otra-biblioteca">
-<h2>¿Necesitamos otra biblioteca?</h2>
+<section id="necesitamos-otra-biblioteca"><h2>¿Necesitamos otra biblioteca?</h2>
 <p>El <a class="reference external" href="http://dojotoolkit.org/">Toolkit Dojo</a> está maduro e incluye hasta
 el los hielos del whisky. Es ampliamente popular y muchas interfaces
 <a class="reference external" href="http://es.wikipedia.org/wiki/Interfaz_de_usuario">UI</a> fueron
@@ -724,9 +697,7 @@ si lo deseas. Tambiñen está <a class="reference external" href="posts/jquery-u
 library</a>. Y tenemos
 <a class="reference external" href="http://extjs.com">ExtJs</a>, un robusto framework de interfaz que se
 basa en Y!UI, Prototype, o jQuery.</p>
-</div>
-<div class="section" id="jquery">
-<h2>jQuery</h2>
+</section><section id="jquery"><h2>jQuery</h2>
 <p>Lo que nos trae a... jQuery. Sí, otro framework JavaScript. jQuery, sin
 embargo, es a mi criterio el más rápido y elegante del montón. Soporta
 CSS3, detección del navegador, encadenamiento de métodos, plugins, Ajax,
@@ -738,7 +709,7 @@ hacer con un par de líneas de código.</p>
 Ese efecto se logra con este sencillo código:</p>
 <pre class="literal-block">$("a.intro").click( function() {
     $("div.introtarget").toggle(100);return false;</pre>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ext4-superblock-failure-y-la-cola-del-diablo/" class="u-url">Ext4 superblock failure y la cola del Diablo</a></h1>
@@ -822,13 +793,13 @@ de nuevo. Mientras tanto, el Dios en el que no creo me pone
 en el camino de resultados de Google.</p>
 <p>"Ernesto, prabamos esto?" y no alcanzó a contestar
 antes de que esté poniendo los primeros comandos</p>
-<pre class="code bash"><a name="rest_code_f084ebbc7af54aee9b0059802611dbbe-1"></a>$ sudo mke2fs -n /dev/sda3
-<a name="rest_code_f084ebbc7af54aee9b0059802611dbbe-2"></a>
-<a name="rest_code_f084ebbc7af54aee9b0059802611dbbe-3"></a>Superblock backups stored on blocks:
-<a name="rest_code_f084ebbc7af54aee9b0059802611dbbe-4"></a><span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>
+<pre class="code bash"><a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-1"></a>$ sudo mke2fs -n /dev/sda3
+<a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-2"></a>
+<a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-3"></a>Superblock backups stored on blocks:
+<a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-4"></a><span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>
 </pre>
 <p>Me la juego con el primer backup:</p>
-<pre class="code bash"><a name="rest_code_d32d0a9e7d8b4bea97170421d7685c33-1"></a>sudo e2fsck -b <span class="m">32768</span> /dev/sda3
+<pre class="code bash"><a name="rest_code_3fb09c0992a746f4950c426af170fc1e-1"></a>sudo e2fsck -b <span class="m">32768</span> /dev/sda3
 </pre>
 <p>Cientos de  <code class="docutils literal">Y</code> <code class="docutils literal">Enter</code> para mensajes estilo <em>"está roto, desea repararlo?"</em>
 (no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
@@ -869,8 +840,7 @@ brazo.</p>
 <p>Hace unos días abría este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco más bonito.</p>
 <p>Este post incluye algunas notas sobre lo que he hecho hasta el momento.</p>
-<div class="section" id="github-nikola">
-<h2>Github ♥ Nikola</h2>
+<section id="github-nikola"><h2>Github ♥ Nikola</h2>
 <p>Este blog que estás leyendo está hospedado en <a class="reference external" href="http://pages.github.com">Github Pages</a> ,
 el servicio de hosting gratuito de contenido estático que ofrece Github.</p>
 <p>A diferencia de cuando se usa Gh-pages para proyectos, donde se sirve
@@ -891,9 +861,7 @@ git rm *    # sólo la primera vez
 git read-tree writing:output
 git commit -m 'deploying last build'
 git push</pre>
-</div>
-<div class="section" id="migrando-desde-spip">
-<h2>Migrando desde Spip</h2>
+</section><section id="migrando-desde-spip"><h2>Migrando desde Spip</h2>
 <p>Uno de los motivos que me llevaron a migrar desde <a class="reference external" href="http://www.spip.net">Spip</a> es que el markup
 que usa es <em>ad hoc</em> y muy feo. Algo así</p>
 <pre class="literal-block">{{{ Un intertítulo }}}
@@ -909,9 +877,7 @@ scrapping, limpieza y conversión a restructuredText usando el mágico
 . No es perfecto, pero está lo importante: contenidos, imágenes, adjuntos,
 convertido a restructuredText bastante decente que mejoraré poco a poco
 a mano.</p>
-</div>
-<div class="section" id="estilos">
-<h2>Estilos</h2>
+</section><section id="estilos"><h2>Estilos</h2>
 <p>Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras)
 que se ven bonitos. Sucede, en realidad, que la mayoría de las veces no
 venimos con <em>esa</em> habilidad y el esfuerzo que nos implica intentarlo
@@ -922,18 +888,14 @@ compartir sus estilos (y existe <a class="reference external" href="http://twitt
 incrementalmente.</p>
 <p>Por ahora tomé ideas y CSS de <a class="reference external" href="http://stevelosh.com">stevelosh.com</a> <a class="footnote-reference brackets" href="posts/notas-rapidas-de-una-mudanza/#id3" id="id1">1</a> y de la documentación
 de <a class="reference external" href="http://flask.pocoo.org/docs/">Flask</a> <a class="footnote-reference brackets" href="posts/notas-rapidas-de-una-mudanza/#id4" id="id2">2</a> basado en el theme <em>Readable</em> de <a class="reference external" href="http://bootswatch.com/">bootswatch.com</a></p>
-</div>
-<div class="section" id="disqus">
-<h2>Disqus</h2>
+</section><section id="disqus"><h2>Disqus</h2>
 <p>El blog viejo usaba <a class="reference external" href="http://disqus.com">Disqus</a>, con un <a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html">plugin</a> que hice hace algun tiempo.
 Para migrar los comentarios utilicé el método de subir un CSV con
 el formato que genera el mismo script de migración:</p>
 <pre class="literal-block">URL_POST_X_OLD, URL_POST_X_NEW
 URL_POST_Y_OLD, URL_POST_Y_NEW</pre>
 <p>En cuestión de minutos los (pocos) comentarios estaban migrados.</p>
-</div>
-<div class="section" id="redireccion">
-<h2>Redirección</h2>
+</section><section id="redireccion"><h2>Redirección</h2>
 <p>Como mantuve el slug de los viejos artículos, una redirección 301
 via .htaccess redirige del viejo blog al nuevo:</p>
 <pre class="literal-block"># nqnwebs.com blog rules
@@ -950,8 +912,7 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]<
 <dd>
 <p><a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE">https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE</a></p>
 </dd>
-</dl>
-</div>
+</dl></section>
 </div>
     </div>
     </article>
@@ -961,7 +922,7 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]<
             <li class="next"><a href="index-7.html" rel="next">Posts anteriores</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

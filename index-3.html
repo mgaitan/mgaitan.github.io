@@ -17,8 +17,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/index-3.html">
 <link rel="prev" href="index-4.html" type="text/html">
 <link rel="next" href="index-2.html" type="text/html">
@@ -66,7 +66,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -180,8 +180,7 @@ casetitos Compact VHS (que es el formato con el que funciona).</p>
 <p>Así que después de mucho patear la tarea, decidí conectar los cables y
 encontrar la forma de convertir en bytes los recuerdos archivados en
 esos casettes polvorientos.</p>
-<div class="section" id="lo-que-hice">
-<h2>Lo que hice</h2>
+<section id="lo-que-hice"><h2>Lo que hice</h2>
 <p>Primero, configurar la placa. El chip bt878 se usa en muchísimas
 sintonizadoras que tienen configuraciones diferentes. Para asignarle los
 correctos, se pasa un código <code class="docutils literal">card</code> que se obtiene de <a class="reference external" href="http://www.mjmwired.net/kernel/Documentation/video4linux/CARDLIST.bttv">esta
@@ -213,7 +212,7 @@ abajo, para evitar la distorción que producen los cabezales con las
 cintas viejas.</p>
 <p>El resultado es un video de unos 250kb/s de calidad más que aceptable.</p>
 <p>Por ejemplo, el casamiento de mi hermano Juan, en 1998:</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/learning-python-4th-edition/" class="u-url">Learning python, 4th Edition</a></h1>
@@ -274,8 +273,7 @@ a 4 millones.</p>
 
 sum([i for i in fibo(4000000) if i%2 == 0])</pre>
 <p>El resultado es 4613732.</p>
-<div class="section" id="explicacion">
-<h2>Explicación</h2>
+<section id="explicacion"><h2>Explicación</h2>
 <p>Fibonacci es el "hola mundo matemático" y Python luce su elegancia con
 este problema.</p>
 <p>El aspecto interesante de la función <strong>fibo()</strong> definida en el código de
@@ -295,7 +293,7 @@ función (el generador) sea invocado.</p>
 <p>Esto permite una recursividad con "<a class="reference external" href="http://en.wikipedia.org/wiki/Lazy_evaluation">evaluación
 perezosa</a>", mucho más
 eficiente en términos computacionales.</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/resolviendo-project-euler-con/" class="u-url">Resolviendo Project Euler con python</a></h1>
@@ -326,8 +324,7 @@ plantea obtener la suma de todos los multiplos de 3 o de 5 menores a
 <p>Lo resolví con esta pythonica (lo es?) línea:</p>
 <pre class="literal-block">sum([i for i in range(1000) if (i % 3 == 0 or i % 5==0)])</pre>
 <p>El resultado es 233168.</p>
-<div class="section" id="breve-explicacion">
-<h2>Breve explicación</h2>
+<section id="breve-explicacion"><h2>Breve explicación</h2>
 <p>Se basa en el uso de <a class="reference external" href="http://docs.python.org/tutorial/datastructures.html#list-comprehensions">list
 comprehensions</a>,
 una de las "joyas de la corona" de las características de Python.</p>
@@ -336,7 +333,7 @@ expresión seguida de uno a más <strong>for</strong> y una condicionalidad al f
 <p>La lista ** [i for i in range(1000) if (i % 3 == 0 or i % 5==0)]** se
 lee así: crear una lista con todos los elementos (expresión i) en el
 rango de 0 a 999 (for) cuyo resto de dividirlo por 3 o 5 sea 0 (if).</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/principios-para-un-freelancear/" class="u-url">Principios para un "freelancear" exitosamente</a></h1>
@@ -403,8 +400,7 @@ sitios, que tendrán los directorios con contenido propio (/squelettes,
 <p>Así, a la hora de actualizar SPIP sólo tenemos que actualizar una sola
 instalación, tarea que se vuelve trivial si además usamos
 <a class="reference external" href="posts/un-spip-para-muchos-sitios/blog/article/ultima-version-de-spip-por-svn">svn</a>.</p>
-<div class="section" id="requisito">
-<h2>Requisito</h2>
+<section id="requisito"><h2>Requisito</h2>
 <p>En general, la mutualización funciona sin muchos pormenores en un
 servidor LAMP, pero nuestro servidor de hospedaje debe permitir apuntar
 diferentes dominios a un mismo directorio publico.</p>
@@ -413,9 +409,7 @@ diferentes dominios a un mismo directorio publico.</p>
 <em>/home/tin/public_html/spip</em>.</p>
 <p>Es una configuración simple, pero no todos los servicios de hosting lo
 permiten.</p>
-</div>
-<div class="section" id="puesta-en-marcha">
-<h2>Puesta en marcha</h2>
+</section><section id="puesta-en-marcha"><h2>Puesta en marcha</h2>
 <table>
 <colgroup><col style="width: 100%"></colgroup>
 <tbody>
@@ -505,10 +499,7 @@ nuestros diferentes sitios mutualizados.</p>
 primero que aparecerá es una solicitud de contraseña, definida en array
 de configuración de mes_options.php (en el ejemplo, la contraseña es
 <em>miclave</em>)</p>
-<div class="figure align-center">
-<img alt="" src="posts/un-spip-para-muchos-sitios/local/cache-vignettes/L510xH303/Pantallazo-2-d2b75.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="posts/un-spip-para-muchos-sitios/local/cache-vignettes/L510xH303/Pantallazo-2-d2b75.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 134)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -520,9 +511,7 @@ SPIP.</p>
 <p>Hay que tener en cuenta que ahora los archivos para nuestro sitio
 estarán dentro de <em>/sites/dominio/</em> y es allí donde deberán subirse los
 esqueletos y demás.</p>
-</div>
-<div class="section" id="mutualizar-un-sitio-en-produccion">
-<h2>Mutualizar un sitio en producción</h2>
+</section><section id="mutualizar-un-sitio-en-produccion"><h2>Mutualizar un sitio en producción</h2>
 <p>¿Qué pasa si el sitio que quiero mutualizar ya está funcionando sobre un
 spip propio? No problem.</p>
 <p>Basta indicar (desde el panel, o solicitando al administrador del
@@ -533,10 +522,8 @@ sitio que queremos migrar) y mover alli las carpetas /config, /IMG,
 /squelettes, /local y /tmp (o crear una /tmp nueva) del SPIP en uso al
 nuevo directorio. [[Estas carpetas, bien podrian ser link simbólicos].
 Magia!</p>
-</div>
-<div class="section" id="conclusion">
-<h2>Conclusión</h2>
-</div>
+</section><section id="conclusion"><h2>Conclusión</h2>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/limitar-la-cantidad-de-caracteres/" class="u-url">Limitar la cantidad de caracteres de los comentarios</a></h1>
@@ -584,24 +571,19 @@ function limitChars(textid, limit, infodiv) {
          return true;
      }
 }</pre>
-<div class="section" id="intrucciones-para-spip">
-<h2>Intrucciones para SPIP</h2>
+<section id="intrucciones-para-spip"><h2>Intrucciones para SPIP</h2>
 <ol class="arabic simple">
 <li><p>Copiar el código</p></li>
 <li><p>Pegarlo luego de la baliza #INSERT_HEAD de tu cabecera</p></li>
 <li><p>(opcional) Cambiarle el límite (el número 200),</p></li>
 </ol>
 <p>¡Listo!</p>
-</div>
-<div class="section" id="intrucciones-generales">
-<h2>Intrucciones generales</h2>
+</section><section id="intrucciones-generales"><h2>Intrucciones generales</h2>
 <p>Es igual al anterior, sólo debes asegurarte que tiene en jquery en la
 página. Luego cambia el selector <code class="docutils literal">#texte</code> por el que corresponda al
 campo que querés limitar.</p>
-</div>
-<div class="section" id="ejemplo">
-<h2>Ejemplo</h2>
-</div>
+</section><section id="ejemplo"><h2>Ejemplo</h2>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ultima-version-de-spip-por-svn/" class="u-url">Ultima versión de Spip por SVN</a></h1>
@@ -645,8 +627,7 @@ corresponda con una "version oficial" tenemos que saber el número de ID.</p>
 una tabla donde se especifica esta correspondencia para cada nueva
 version, pero a decir verdad, es un engorro tener que ingresar sólo para
 averiguar un número. Mejor hagámoslo automático!</p>
-<div class="section" id="automatizando-la-obtencion-de-un-spip-oficial-por-svn">
-<h2>Automatizando la obtención de un SPIP oficial por SVN</h2>
+<section id="automatizando-la-obtencion-de-un-spip-oficial-por-svn"><h2>Automatizando la obtención de un SPIP oficial por SVN</h2>
 <pre class="literal-block">#!/bin/bash
 #script para una instalacion de spip a traves de svn
 
@@ -679,9 +660,7 @@ firefox http://localhost/~tin/$1/ecrire</pre>
 última modificación de <em>archivelist.txt</em> que es un archivo que se
 modifica en cada nuevo lanzamiento de paquete. ¡Es el dato que nos hacía
 falta!</p>
-</div>
-<div class="section" id="una-solucion-mas-genuina">
-<h2>Una solución más genuina</h2>
+</section><section id="una-solucion-mas-genuina"><h2>Una solución más genuina</h2>
 <p><strong>Atención</strong>: Ya me hicieron caso. <a class="reference external" href="blog/article/ultima-version-de-spip-por-svn#update">Ver
 actualización</a></p>
 <p>Aunque el hacking (como este) es sano y divertido (y a veces también
@@ -696,14 +675,12 @@ siempre al último.</p>
 <p>Esto, por ahora, no está implementado, pero ya hice llegar mi propuesta
 a <em>l’equipe</em> de SPIP, y <a class="reference external" href="http://article.gmane.org/gmane.comp.web.spip.devel/53503">lo están
 discutiendo</a></p>
-</div>
-<div class="section" id="actualizacion">
-<h2>Actualización</h2>
+</section><section id="actualizacion"><h2>Actualización</h2>
 <p>Gracias a <a class="reference external" href="http://my.opera.com/tech-nova/blog/">Gilles</a> el Dev Team
 adoptó mi propuesta y ahora existen Tags en el arbol SVN de spip. En
 particular,</p>
 <pre class="literal-block">svn co svn://trac.rezo.net/spip/tags/spip-2-stable</pre>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-numero-mi-primer-juego/" class="u-url">El Número, mi primer juego</a></h1>
@@ -752,8 +729,7 @@ weblog, aunque no sobre cuestiones técnicas.
 <p>Martín</p>
 </blockquote>
 <p>Mi "Hola Mundo" fue <strong>El Número</strong>.</p>
-<div class="section" id="mi-primer-juego">
-<h2>Mi primer juego</h2>
+<section id="mi-primer-juego"><h2>Mi primer juego</h2>
 <p>El Número es un juego de lógica y habilidad mental. Consiste en
 encontrar el número escondido (generado aleatoriamente) a través de la
 información</p>
@@ -766,9 +742,7 @@ número incógnita, pero no está en la posición correcta.</p>
 <p>Por ejemplo si el numero incógnita fuese el 1234 y se arriesga el 2031
 el resultado será de dos dígitos regulares (el 2 y el 1) y 1 dígito bien
 (el 3).</p>
-</div>
-<div class="section" id="descarga-e-instrucciones">
-<h2>Descarga e instrucciones</h2>
+</section><section id="descarga-e-instrucciones"><h2>Descarga e instrucciones</h2>
 <table>
 <colgroup><col style="width: 100%"></colgroup>
 <tbody>
@@ -787,7 +761,7 @@ chmod +x ./elnumero.py
 ./elnumero.py</pre>
 <p>Sobre Windows, asegurate tener instalado Python (cualquier versión
 elnumero.py</p>
-</div>
+</section>
 </div>
     </div>
     </article>
@@ -797,7 +771,7 @@ elnumero.py</p>
             <li class="next"><a href="index-2.html" rel="next">Posts anteriores</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

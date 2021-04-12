@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Metodologías ágiles)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/metodologias-agiles.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 May 2020 21:00:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes python</title><link>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Metodologías ágiles)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/metodologias-agiles.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Mon, 12 Apr 2021 18:06:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes python</title><link>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
 documentación está incompleto
 [&lt;a class="reference external" href="https://mgaitan.github.io/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Si bien el manifiesto ágil
@@ -23,7 +23,7 @@ casi todo proyecto conocido o por conocer.&lt;/p&gt;
 proyectito de morondanga&lt;/a&gt; que
 no tiene web propia ni nada, ¿dónde subimos la documentación generada?
 Veamos.&lt;/p&gt;
-&lt;div class="section" id="usando-readthedocs-org"&gt;
+&lt;section id="usando-readthedocs-org"&gt;
 &lt;h2&gt;Usando Readthedocs.org&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/"&gt;Read the docs&lt;/a&gt;
 es un sitio para hospedar documentación realizada con Sphinx. Sólo se
@@ -51,9 +51,9 @@ Para usuarios de GitHub la activación del "web hook" se explica
 &lt;li&gt;&lt;p&gt;Completás el campo de texto con la URL que te da ReadTheDocs en la
 página de descripción de tu proyecto (estándo logueado). Por ejemplo:&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 60)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
@@ -67,8 +67,8 @@ hay marcar desde la página de configuración del proyecto en RTFD.org,
 que instale en un virtualenv.&lt;/p&gt;
 &lt;p&gt;Para ver si hubo algún problema en la generación, podés fijarte en
 "build" donde te muestra el stdout y el stderr de la corrida de Sphinx.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="subir-la-docu-a-pypi"&gt;
+&lt;/section&gt;
+&lt;section id="subir-la-docu-a-pypi"&gt;
 &lt;h2&gt;Subir la docu a PyPi&lt;/h2&gt;
 &lt;p&gt;Una forma buenísima de compartir tu trabajo pythónico es a través del
 Python Package Index, &lt;a class="reference external" href="http://pypi.python.org/pypi"&gt;pypi&lt;/a&gt;, que es el
@@ -83,9 +83,9 @@ documentación&lt;/a&gt;. La forma canónica es ir a
 la página de administración de tu proyecto en PyPi y adjuntar un .zip
 con la documentación (que no necesariamente tiene que ser hecha con
 Sphinx)&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 93)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
@@ -112,8 +112,8 @@ $ python setup.py upload_sphinx&lt;/pre&gt;
 &lt;p&gt;Y docu subida a la dire
 &lt;em&gt;`http://packages.python.org/tu-proyecto &amp;lt;http://packages.python.org/tu-proyecto&amp;gt;`_&lt;/em&gt;
 . ¡&lt;a class="reference external" href="http://packages.python.org/CuevanaLinks/"&gt;Charaaán&lt;/a&gt;!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="usando-tu-repositorio-svn"&gt;
+&lt;/section&gt;
+&lt;section id="usando-tu-repositorio-svn"&gt;
 &lt;h2&gt;Usando tu repositorio SVN&lt;/h2&gt;
 &lt;p&gt;Si usas SVN y tu servidor lo permite, podés servir contenido estático
 (html y todo lo que produce y necesita Sphinx) directamente desde el
@@ -142,8 +142,8 @@ enable-auto-props = yes
 &lt;p&gt;Un ejemplo de esto es el &lt;a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html"&gt;reporte de mi proyecto
 integrador&lt;/a&gt;
 que está hospedado en Google Code&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="aprovechandote-de-github"&gt;
+&lt;/section&gt;
+&lt;section id="aprovechandote-de-github"&gt;
 &lt;h2&gt;Aprovechándote de GitHub&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://github.com"&gt;GitHub&lt;/a&gt; hospeda &lt;a class="reference external" href="http://pages.github.com/"&gt;páginas
 estáticas&lt;/a&gt;, tanto del desarrollador/a como
@@ -155,7 +155,7 @@ github&lt;/a&gt;
 de Luca Sbardella.
 &lt;img alt="image1" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>https://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;La manera más fácil para aprobar una tesis de ingeniería es mentir.
+&lt;/section&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>https://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;La manera más fácil para aprobar una tesis de ingeniería es mentir.
 Llenar páginas y páginas, preferentemente con tablas y viñetas, de
 contenidos vacuos y tediosos que seguramente nadie, mucho menos los
 evaluadores, leerán. Sólo hay que prestar atención a que sean muchas
@@ -189,9 +189,9 @@ corbata, hay que justificar con nombres que les suenen admirables. Hay
 que mencionar mucho IBM, Microsoft, C#, Intel. Esas son las voces que
 respetan, aunque sean pura
 &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Argumento_de_autoridad"&gt;falacia&lt;/a&gt;&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y/local/cache-vignettes/L510xH603/anti-bullying-charity-school-tie-small-59832-3938a.jpg"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 45)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;

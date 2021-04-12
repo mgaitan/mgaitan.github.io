@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/un-spip-para-muchos-sitios/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../limitar-la-cantidad-de-caracteres/" title="Limitar la cantidad de caracteres de los comentarios" type="text/html">
@@ -75,7 +75,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -122,8 +122,7 @@ sitios, que tendrán los directorios con contenido propio (/squelettes,
 <p>Así, a la hora de actualizar SPIP sólo tenemos que actualizar una sola
 instalación, tarea que se vuelve trivial si además usamos
 <a class="reference external" href="blog/article/ultima-version-de-spip-por-svn">svn</a>.</p>
-<div class="section" id="requisito">
-<h2>Requisito</h2>
+<section id="requisito"><h2>Requisito</h2>
 <p>En general, la mutualización funciona sin muchos pormenores en un
 servidor LAMP, pero nuestro servidor de hospedaje debe permitir apuntar
 diferentes dominios a un mismo directorio publico.</p>
@@ -132,9 +131,7 @@ diferentes dominios a un mismo directorio publico.</p>
 <em>/home/tin/public_html/spip</em>.</p>
 <p>Es una configuración simple, pero no todos los servicios de hosting lo
 permiten.</p>
-</div>
-<div class="section" id="puesta-en-marcha">
-<h2>Puesta en marcha</h2>
+</section><section id="puesta-en-marcha"><h2>Puesta en marcha</h2>
 <table>
 <colgroup><col style="width: 100%"></colgroup>
 <tbody>
@@ -224,10 +221,7 @@ nuestros diferentes sitios mutualizados.</p>
 primero que aparecerá es una solicitud de contraseña, definida en array
 de configuración de mes_options.php (en el ejemplo, la contraseña es
 <em>miclave</em>)</p>
-<div class="figure align-center">
-<img alt="" src="local/cache-vignettes/L510xH303/Pantallazo-2-d2b75.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="local/cache-vignettes/L510xH303/Pantallazo-2-d2b75.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 134)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -239,9 +233,7 @@ SPIP.</p>
 <p>Hay que tener en cuenta que ahora los archivos para nuestro sitio
 estarán dentro de <em>/sites/dominio/</em> y es allí donde deberán subirse los
 esqueletos y demás.</p>
-</div>
-<div class="section" id="mutualizar-un-sitio-en-produccion">
-<h2>Mutualizar un sitio en producción</h2>
+</section><section id="mutualizar-un-sitio-en-produccion"><h2>Mutualizar un sitio en producción</h2>
 <p>¿Qué pasa si el sitio que quiero mutualizar ya está funcionando sobre un
 spip propio? No problem.</p>
 <p>Basta indicar (desde el panel, o solicitando al administrador del
@@ -252,10 +244,8 @@ sitio que queremos migrar) y mover alli las carpetas /config, /IMG,
 /squelettes, /local y /tmp (o crear una /tmp nueva) del SPIP en uso al
 nuevo directorio. [[Estas carpetas, bien podrian ser link simbólicos].
 Magia!</p>
-</div>
-<div class="section" id="conclusion">
-<h2>Conclusión</h2>
-</div>
+</section><section id="conclusion"><h2>Conclusión</h2>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
@@ -286,7 +276,7 @@ Magia!</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

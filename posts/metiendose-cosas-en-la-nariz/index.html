@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/metiendose-cosas-en-la-nariz/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../creando-un-nuevo-proyecto-python/" title="Creando un nuevo proyecto Python" type="text/html">
@@ -75,7 +75,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -116,8 +116,7 @@ por paquetes, y viene con un montón de plugins incorporados.</p>
 <p>dice el eslogan y eso es lo que queremos: tests más fáciles de escribir,
 más rápidos de ejecutar.</p>
 <p>De plugins y opciones que potencian esta idea se trata este post.</p>
-<div class="section" id="nose-progressive">
-<h2>nose-progressive</h2>
+<section id="nose-progressive"><h2>nose-progressive</h2>
 <blockquote class="epigraph">
 <p>Ah, beautiful dots</p>
 <p class="attribution">—<a class="reference external" href="http://blog.mozilla.org/webdev/2011/04/14/a-humane-python-test-runner/">Erik Rose</a></p>
@@ -139,14 +138,12 @@ para mostrar errores y fallos <em>on the fly</em>.</p>
 tracebacks a la parte útil, e incluye colores usados con criterio
 (basada en la genial biblioteca <a class="reference external" href="https://pypi.python.org/pypi/blessings">blessing</a>, del mismo autor).</p>
 <p>Para instalarlo, lo de siempre:</p>
-<pre class="code bash"><a name="rest_code_10de5523dc384da8a816efb91e6e3e39-1"></a><span class="o">(</span>env<span class="o">)</span> $ pip install nose-progressive
+<pre class="code bash"><a name="rest_code_9734bbb61a4c4e92a4680332c84e72ea-1"></a><span class="o">(</span>env<span class="o">)</span> $ pip install nose-progressive
 </pre>
 <p>Para usarlo, agregar <code class="docutils literal"><span class="pre">--with-progressive</span></code> como parámetros de <code class="docutils literal">nosetests</code>,
 o bien, para usarlo siempre, configurarlo en <code class="docutils literal">.noserc</code> o en la
 variable <code class="docutils literal">NOSE_ARGS</code> de <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a></p>
-</div>
-<div class="section" id="django-nose">
-<h2>django-nose</h2>
+</section><section id="django-nose"><h2>django-nose</h2>
 <p>Si trabajás con Django esto quizas suene a perogrullada, pero <a class="reference external" href="https://github.com/jbalogh/django-nose">django-nose</a>
 es la vuelta de tuerca que faltaba para que la nariz brille en este entorno.
 Con django-nose por defecto sólo se corren los tests del proyecto y no
@@ -158,9 +155,7 @@ de tablas en cada corrida, ahorrando unos cuantos segundos de setup en aplicacio
 como muchos modelos. Por supuesto, si la base de datos cambia (porque
 se agregó un modelo o se se migró con <a class="reference external" href="http://south.aeracode.org/">South</a>) tenés que asegurarte
 que la variable está en 0 para que cree la última version</p>
-</div>
-<div class="section" id="with-id-failed">
-<h2>with-id + failed</h2>
+</section><section id="with-id-failed"><h2>with-id + failed</h2>
 <p>La opción <a class="reference external" href="https://nose.readthedocs.org/en/latest/usage.html?highlight=with-id#cmdoption--with-id">--with-id</a>
 (estrictamente el plugin <code class="docutils literal">TestId</code>, que viene en las baterías incluídas de nose)
 le asigna un número único a cada test ejecutado,
@@ -169,9 +164,7 @@ resultado de la última corrida.</p>
 <p>Lo bueno es que pasando <code class="docutils literal"><span class="pre">--with-id</span> <span class="pre">--failed</span></code> nose usa esa información
 y ejecuta solamente los tests que fallaron en la última corrida,
 permitiendo una rápida iteración <em>"falla/corrección"</em>.</p>
-</div>
-<div class="section" id="nose-selecttests">
-<h2>nose-selecttests</h2>
+</section><section id="nose-selecttests"><h2>nose-selecttests</h2>
 <p>Frecuentemente sucede que tenemos caso (una subclase de <code class="docutils literal">TestCase</code>)
 con muchas pruebas (métodos) que están lógicamente agrupadas
 porque comparten un setup, por ejemplo,
@@ -186,39 +179,36 @@ métodos.</p>
 <p>Por eso existe <a class="reference external" href="https://github.com/iElectric/nose-selecttests">nose-selecttests</a>, que permite filtrar pruebas con
 determinada subcadena en el nombre del método.</p>
 <p>Por ejemplo:</p>
-<pre class="code bash"><a name="rest_code_50deb61498424e4cb892996a991c59be-1"></a>$ djntest -v <span class="m">2</span> common/tests/test_sequence_diff.py
-<a name="rest_code_50deb61498424e4cb892996a991c59be-2"></a>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-7"></a>
-<a name="rest_code_50deb61498424e4cb892996a991c59be-8"></a>----------------------------------------------------------------------
-<a name="rest_code_50deb61498424e4cb892996a991c59be-9"></a>Ran <span class="m">4</span> tests in <span class="m">0</span>.375s
+<pre class="code bash"><a name="rest_code_ac1d127090a4441a9af0e01232bf2981-1"></a>$ djntest -v <span class="m">2</span> common/tests/test_sequence_diff.py
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-2"></a>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-7"></a>
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-8"></a>----------------------------------------------------------------------
+<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-9"></a>Ran <span class="m">4</span> tests <span class="k">in</span> <span class="m">0</span>.375s
 </pre>
 <p>En cambio:</p>
-<pre class="code bash"><a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-1"></a>$ djntest --select-tests<span class="o">=</span>differ -v <span class="m">2</span> apps/common/tests/test_sequence_diff.py
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-2"></a>
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-5"></a>----------------------------------------------------------------------
-<a name="rest_code_0e859c28a19a495ab8d1cf2763e83ab0-6"></a>Ran <span class="m">2</span> tests in <span class="m">0</span>.088s
-</pre>
-</div>
-<div class="section" id="django-tests-autocomplete">
-<h2>django-tests-autocomplete</h2>
+<pre class="code bash"><a name="rest_code_2d201b172d694a2595c43ec733fe6e60-1"></a>$ djntest --select-tests<span class="o">=</span>differ -v <span class="m">2</span> apps/common/tests/test_sequence_diff.py
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-2"></a>
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-5"></a>----------------------------------------------------------------------
+<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-6"></a>Ran <span class="m">2</span> tests <span class="k">in</span> <span class="m">0</span>.088s
+</pre></section><section id="django-tests-autocomplete"><h2>django-tests-autocomplete</h2>
 <p>Esta herramienta no es estrictamente un plugin de nose, sino un helper
 que aprovecha las posibilidades de bash para
 <a class="reference external" href="http://bash-completion.alioth.debian.org/">autocompletar</a> usando la tecla
 tab.</p>
 <p>¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:</p>
-<pre class="code bash"><a name="rest_code_5c90a797ea6a45888b01ffd5e1c8ac08-1"></a>$ nosetests path/to/test.py
+<pre class="code bash"><a name="rest_code_d3c450162a2048698734cd9497c8bfd8-1"></a>$ nosetests path/to/test.py
 </pre>
 <p>Pero también permite afinar la puntería y "meterse" adentro del módulo:</p>
-<pre class="code bash"><a name="rest_code_35b8d86de0a046b2aa996027124f1a57-1"></a>$ nosetests path/to/test.py:MyImportantTestCase
+<pre class="code bash"><a name="rest_code_8c3136c82927475384aa8194f7ffdc46-1"></a>$ nosetests path/to/test.py:MyImportantTestCase
 </pre>
 <p>E incluso adentro del testcase:</p>
-<pre class="code bash"><a name="rest_code_ce1824b943c443d6a18fafccb3dbe73d-1"></a>$ nosetests path/to/test.py:MyImportantTestCase.test_super_important
+<pre class="code bash"><a name="rest_code_3d441d0234534e75b54129b3d1a386a9-1"></a>$ nosetests path/to/test.py:MyImportantTestCase.test_super_important
 </pre>
 <p>Desde el <code class="docutils literal">:</code> en adelante estamos en Python y Bash ya no sabe autocompletar,
 salvo que usemos esta herramienta que instrospecciona y "alimenta" el
@@ -227,20 +217,16 @@ autocompleter.</p>
 <a class="reference external" href="https://github.com/machinalis/django-test-autocomplete#future-features">busca ayuda</a>
 para mejorarlo y generalizarlo.</p>
 <p>¿No sería buenísimo que esto estuviese built-in en nose? ¿Nos ayudarías?</p>
-</div>
-<div class="section" id="nose-timer">
-<h2>nose-timer</h2>
+</section><section id="nose-timer"><h2>nose-timer</h2>
 <p>¿Cuánto tiempo insume cada test? Instalá <a class="reference external" href="https://github.com/mahmoudimus/nose-timer/">nose-timer</a> y activalo (con <code class="docutils literal"><span class="pre">--with-timer</span></code>)
 para saber la respuesta.</p>
-</div>
-<div class="section" id="nose-ipdb">
-<h2>nose-ipdb</h2>
+</section><section id="nose-ipdb"><h2>nose-ipdb</h2>
 <p>nose tiene una opción <code class="docutils literal"><span class="pre">--pdb</span></code> (o la más estricta <code class="docutils literal"><span class="pre">--ipdb-failures</span></code>)
 que nos manda al debugger cuando un test falla o da error.</p>
 <p><a class="reference external" href="https://github.com/flavioamieiro/nose-ipdb">nose-ipdb</a> lo imita, pero usando el más pulenta de los debuggers: <a class="reference external" href="https://pypi.python.org/pypi/ipdb">ipdb</a>.</p>
 <p>Suficiente por hoy. Pero ¿me estoy perdiendo alguna cosa interesante
 para meter en mi nariz?</p>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
@@ -271,7 +257,7 @@ para meter en mi nariz?</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

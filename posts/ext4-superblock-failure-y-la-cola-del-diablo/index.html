@@ -17,8 +17,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/ext4-superblock-failure-y-la-cola-del-diablo/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../notas-rapidas-de-una-mudanza/" title="Notas rápidas de una mudanza" type="text/html">
@@ -74,7 +74,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -170,13 +170,13 @@ de nuevo. Mientras tanto, el Dios en el que no creo me pone
 en el camino de resultados de Google.</p>
 <p>"Ernesto, prabamos esto?" y no alcanzó a contestar
 antes de que esté poniendo los primeros comandos</p>
-<pre class="code bash"><a name="rest_code_f084ebbc7af54aee9b0059802611dbbe-1"></a>$ sudo mke2fs -n /dev/sda3
-<a name="rest_code_f084ebbc7af54aee9b0059802611dbbe-2"></a>
-<a name="rest_code_f084ebbc7af54aee9b0059802611dbbe-3"></a>Superblock backups stored on blocks:
-<a name="rest_code_f084ebbc7af54aee9b0059802611dbbe-4"></a><span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>
+<pre class="code bash"><a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-1"></a>$ sudo mke2fs -n /dev/sda3
+<a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-2"></a>
+<a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-3"></a>Superblock backups stored on blocks:
+<a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-4"></a><span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>
 </pre>
 <p>Me la juego con el primer backup:</p>
-<pre class="code bash"><a name="rest_code_d32d0a9e7d8b4bea97170421d7685c33-1"></a>sudo e2fsck -b <span class="m">32768</span> /dev/sda3
+<pre class="code bash"><a name="rest_code_3fb09c0992a746f4950c426af170fc1e-1"></a>sudo e2fsck -b <span class="m">32768</span> /dev/sda3
 </pre>
 <p>Cientos de  <code class="docutils literal">Y</code> <code class="docutils literal">Enter</code> para mensajes estilo <em>"está roto, desea repararlo?"</em>
 (no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
@@ -226,7 +226,7 @@ brazo.</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

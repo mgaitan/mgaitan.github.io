@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../el-numero-mi-primer-juego/" title="El Número, mi primer juego" type="text/html">
@@ -79,7 +79,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -135,8 +135,7 @@ corresponda con una "version oficial" tenemos que saber el número de ID.</p>
 una tabla donde se especifica esta correspondencia para cada nueva
 version, pero a decir verdad, es un engorro tener que ingresar sólo para
 averiguar un número. Mejor hagámoslo automático!</p>
-<div class="section" id="automatizando-la-obtencion-de-un-spip-oficial-por-svn">
-<h2>Automatizando la obtención de un SPIP oficial por SVN</h2>
+<section id="automatizando-la-obtencion-de-un-spip-oficial-por-svn"><h2>Automatizando la obtención de un SPIP oficial por SVN</h2>
 <pre class="literal-block">#!/bin/bash
 #script para una instalacion de spip a traves de svn
 
@@ -169,9 +168,7 @@ firefox http://localhost/~tin/$1/ecrire</pre>
 última modificación de <em>archivelist.txt</em> que es un archivo que se
 modifica en cada nuevo lanzamiento de paquete. ¡Es el dato que nos hacía
 falta!</p>
-</div>
-<div class="section" id="una-solucion-mas-genuina">
-<h2>Una solución más genuina</h2>
+</section><section id="una-solucion-mas-genuina"><h2>Una solución más genuina</h2>
 <p><strong>Atención</strong>: Ya me hicieron caso. <a class="reference external" href="../../blog/article/ultima-version-de-spip-por-svn#update">Ver
 actualización</a></p>
 <p>Aunque el hacking (como este) es sano y divertido (y a veces también
@@ -186,14 +183,12 @@ siempre al último.</p>
 <p>Esto, por ahora, no está implementado, pero ya hice llegar mi propuesta
 a <em>l’equipe</em> de SPIP, y <a class="reference external" href="http://article.gmane.org/gmane.comp.web.spip.devel/53503">lo están
 discutiendo</a></p>
-</div>
-<div class="section" id="actualizacion">
-<h2>Actualización</h2>
+</section><section id="actualizacion"><h2>Actualización</h2>
 <p>Gracias a <a class="reference external" href="http://my.opera.com/tech-nova/blog/">Gilles</a> el Dev Team
 adoptó mi propuesta y ahora existen Tags en el arbol SVN de spip. En
 particular,</p>
 <pre class="literal-block">svn co svn://trac.rezo.net/spip/tags/spip-2-stable</pre>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -228,7 +223,7 @@ particular,</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Linux)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 May 2020 21:00:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Veinteañero</title><link>https://mgaitan.github.io/posts/veinteanero/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobijó.
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Linux)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Mon, 12 Apr 2021 18:06:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Veinteañero</title><link>https://mgaitan.github.io/posts/veinteanero/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Suse 7.0 fue la primera distro Linux que mi gloriosa Pentium II cobijó.
 Al tiempo usé Mandrake, después Debian y desde su primera versión (2004)
 Ubuntu.&lt;/p&gt;
 &lt;p&gt;Un largo camino de aprendizaje... que alguna vez recorreré ;-)&lt;/p&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://mgaitan.github.io/posts/veinteanero/</guid><pubDate>Fri, 08 Apr 2011 11:47:13 GMT</pubDate></item><item><title>Video SIS 771/671 en Ubuntu</title><link>https://mgaitan.github.io/posts/video-sis-771-671-en-ubuntu/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="system-message"&gt;
@@ -254,7 +254,7 @@ casetitos Compact VHS (que es el formato con el que funciona).&lt;/p&gt;
 &lt;p&gt;Así que después de mucho patear la tarea, decidí conectar los cables y
 encontrar la forma de convertir en bytes los recuerdos archivados en
 esos casettes polvorientos.&lt;/p&gt;
-&lt;div class="section" id="lo-que-hice"&gt;
+&lt;section id="lo-que-hice"&gt;
 &lt;h2&gt;Lo que hice&lt;/h2&gt;
 &lt;p&gt;Primero, configurar la placa. El chip bt878 se usa en muchísimas
 sintonizadoras que tienen configuraciones diferentes. Para asignarle los
@@ -287,7 +287,7 @@ abajo, para evitar la distorción que producen los cabezales con las
 cintas viejas.&lt;/p&gt;
 &lt;p&gt;El resultado es un video de unos 250kb/s de calidad más que aceptable.&lt;/p&gt;
 &lt;p&gt;Por ejemplo, el casamiento de mi hermano Juan, en 1998:&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://mgaitan.github.io/posts/digitalizando-recuerdos-con/</guid><pubDate>Wed, 30 Sep 2009 17:56:40 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
+&lt;/section&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://mgaitan.github.io/posts/digitalizando-recuerdos-con/</guid><pubDate>Wed, 30 Sep 2009 17:56:40 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
 control de versiones Subversion.&lt;/p&gt;
 &lt;p&gt;A través de Subversion, podemos obtener la ultima version de desarrollo
 considerada estable&lt;/p&gt;
@@ -312,7 +312,7 @@ corresponda con una "version oficial" tenemos que saber el número de ID.&lt;/p&
 una tabla donde se especifica esta correspondencia para cada nueva
 version, pero a decir verdad, es un engorro tener que ingresar sólo para
 averiguar un número. Mejor hagámoslo automático!&lt;/p&gt;
-&lt;div class="section" id="automatizando-la-obtencion-de-un-spip-oficial-por-svn"&gt;
+&lt;section id="automatizando-la-obtencion-de-un-spip-oficial-por-svn"&gt;
 &lt;h2&gt;Automatizando la obtención de un SPIP oficial por SVN&lt;/h2&gt;
 &lt;pre class="literal-block"&gt;#!/bin/bash
 #script para una instalacion de spip a traves de svn
@@ -346,8 +346,8 @@ firefox http://localhost/~tin/$1/ecrire&lt;/pre&gt;
 última modificación de &lt;em&gt;archivelist.txt&lt;/em&gt; que es un archivo que se
 modifica en cada nuevo lanzamiento de paquete. ¡Es el dato que nos hacía
 falta!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="una-solucion-mas-genuina"&gt;
+&lt;/section&gt;
+&lt;section id="una-solucion-mas-genuina"&gt;
 &lt;h2&gt;Una solución más genuina&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Atención&lt;/strong&gt;: Ya me hicieron caso. &lt;a class="reference external" href="https://mgaitan.github.io/blog/article/ultima-version-de-spip-por-svn#update"&gt;Ver
 actualización&lt;/a&gt;&lt;/p&gt;
@@ -363,14 +363,14 @@ siempre al último.&lt;/p&gt;
 &lt;p&gt;Esto, por ahora, no está implementado, pero ya hice llegar mi propuesta
 a &lt;em&gt;l’equipe&lt;/em&gt; de SPIP, y &lt;a class="reference external" href="http://article.gmane.org/gmane.comp.web.spip.devel/53503"&gt;lo están
 discutiendo&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="actualizacion"&gt;
+&lt;/section&gt;
+&lt;section id="actualizacion"&gt;
 &lt;h2&gt;Actualización&lt;/h2&gt;
 &lt;p&gt;Gracias a &lt;a class="reference external" href="http://my.opera.com/tech-nova/blog/"&gt;Gilles&lt;/a&gt; el Dev Team
 adoptó mi propuesta y ahora existen Tags en el arbol SVN de spip. En
 particular,&lt;/p&gt;
 &lt;pre class="literal-block"&gt;svn co svn://trac.rezo.net/spip/tags/spip-2-stable&lt;/pre&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><category>spip</category><guid>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</guid><pubDate>Fri, 22 May 2009 03:19:54 GMT</pubDate></item><item><title>Piccola Radiolina</title><link>https://mgaitan.github.io/posts/piccola-radiolina/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/radiolina/"&gt;Radiolina&lt;/a&gt; es a mi jornada
+&lt;/section&gt;&lt;/div&gt;</description><category>Linux</category><category>spip</category><guid>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</guid><pubDate>Fri, 22 May 2009 03:19:54 GMT</pubDate></item><item><title>Piccola Radiolina</title><link>https://mgaitan.github.io/posts/piccola-radiolina/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/radiolina/"&gt;Radiolina&lt;/a&gt; es a mi jornada
 laboral lo que la Spika a la de mi abuelo, en aquellas mañanas de viñas
 mendocinas.&lt;/p&gt;
 &lt;p&gt;Es un simple script &lt;a class="reference external" href="http://es.wikipedia.org/wiki/bash"&gt;bash&lt;/a&gt; que se
@@ -391,7 +391,7 @@ creación de todas las tablas.&lt;/p&gt;
 &lt;p&gt;Para restaurar ese backup se hace directamente inyectando el sql al
 interprete de mysql.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos&lt;/pre&gt;
-&lt;div class="section" id="respaldar-solo-algunas-tablas-de-la-base"&gt;
+&lt;section id="respaldar-solo-algunas-tablas-de-la-base"&gt;
 &lt;h2&gt;Respaldar sólo algunas tablas de la base&lt;/h2&gt;
 &lt;p&gt;A menudo tenemos multiples sistemas instalados sobre la misma base de
 datos, Si sólo queremos respaldar algunas tablas bastaría enumerar las
@@ -403,7 +403,7 @@ sistema.&lt;/p&gt;
 &lt;p&gt;En ese caso, se puede usar el siguiente compando que respalda todas las
 tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":&lt;/p&gt;
 &lt;pre class="literal-block"&gt;mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &amp;gt; backup.sql&lt;/pre&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://mgaitan.github.io/posts/backup-selectivo-de-tablas-mysql/</guid><pubDate>Tue, 31 Mar 2009 12:37:49 GMT</pubDate></item><item><title>Auto Podcast</title><link>https://mgaitan.github.io/posts/auto-podcast/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://efectotabano.nqnwebs.com"&gt;Efecto Tábano&lt;/a&gt; es el programa radial
+&lt;/section&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://mgaitan.github.io/posts/backup-selectivo-de-tablas-mysql/</guid><pubDate>Tue, 31 Mar 2009 12:37:49 GMT</pubDate></item><item><title>Auto Podcast</title><link>https://mgaitan.github.io/posts/auto-podcast/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://efectotabano.nqnwebs.com"&gt;Efecto Tábano&lt;/a&gt; es el programa radial
 de mi amigo Fernando Barraza. Objetivamente, uno de los mejores
 programas radiales de Argentina.&lt;/p&gt;
 &lt;p&gt;Lamentablemente, desde que me vine a Córdoba tuve que conformarme con
@@ -416,7 +416,7 @@ escucharlo de 16 a 18hs, Necesitaba grabarlo para escucharlo offline.&lt;/p&gt;
 yo, dije... ¿por qué no grabar el programa directamente desde el
 servidor, y que cualquiera pueda bajarlo cuando quiera?&lt;/p&gt;
 &lt;p&gt;Aquí está mi podcaster automático para Efecto Tábano.&lt;/p&gt;
-&lt;div class="section" id="la-idea"&gt;
+&lt;section id="la-idea"&gt;
 &lt;h2&gt;La idea&lt;/h2&gt;
 &lt;p&gt;Todo se basa en el glorioso &lt;a class="reference external" href="http://mplayerhq.hu"&gt;Mplayer&lt;/a&gt;, Mplayer es
 capaz de reproducir casi cualquier formato en streaming.&lt;/p&gt;
@@ -429,8 +429,8 @@ comprimir a MP3 &lt;em&gt;on the fly&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Todo esto, claro, se ejecutará al horario del programa (y durante el
 tiempo que se indique, en este caso casi 2 horas) mediante una tarea
 &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Cron_(Unix)"&gt;cron&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="instalando-lo-necesario"&gt;
+&lt;/section&gt;
+&lt;section id="instalando-lo-necesario"&gt;
 &lt;h2&gt;Instalando lo necesario&lt;/h2&gt;
 &lt;p&gt;Como anticipé, hace falta mplayer y lame. Estos programas en general no
 se encuentran en el servidor (por ejemplo
@@ -461,8 +461,8 @@ cd lame-3.97
 make
 make install&lt;/pre&gt;
 &lt;p&gt;Con eso ya tendríamos los programas necesarios en &lt;strong&gt;./bin&lt;/strong&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="el-script-podcaster-efectotabano-sh"&gt;
+&lt;/section&gt;
+&lt;section id="el-script-podcaster-efectotabano-sh"&gt;
 &lt;h2&gt;El script podcaster-efectotabano.sh&lt;/h2&gt;
 &lt;pre class="literal-block"&gt;#!/bin/sh
 #
@@ -512,12 +512,12 @@ agregar luce así:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;09 12 * * 1-5 ~/bin/podcaster-efectotabano.sh&lt;/pre&gt;
 &lt;p&gt;Eso es todo. Todos los días, de lunes a viernes tendré mi programa para
 descargar.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="to-do"&gt;
+&lt;/section&gt;
+&lt;section id="to-do"&gt;
 &lt;h2&gt;TO DO&lt;/h2&gt;
 &lt;p&gt;Por supuesto, para que esto sea un
 &lt;a class="reference external" href="http://es.wikipedia.org/wiki/podcast"&gt;podcast&lt;/a&gt; le falta la
 sindicación. Por lo tanto, habría que agregar la tarea de injectar
 información pertinente en una base de datos del cual generar el XML de
 sindicación.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://mgaitan.github.io/posts/auto-podcast/</guid><pubDate>Sat, 21 Mar 2009 15:53:03 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://mgaitan.github.io/posts/auto-podcast/</guid><pubDate>Sat, 21 Mar 2009 15:53:03 GMT</pubDate></item></channel></rss>

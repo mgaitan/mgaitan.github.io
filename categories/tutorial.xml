@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre tutorial)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 May 2020 21:00:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deploy de Django con Circus, Chaussette y Nginx</title><link>https://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela &lt;a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/"&gt;WSGI&lt;/a&gt;, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre tutorial)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Mon, 12 Apr 2021 18:06:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deploy de Django con Circus, Chaussette y Nginx</title><link>https://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Aunque hay un pequeño mito al respecto, poner en producción una aplicación web hecha en Python no es tan complejo. Esa facilidad se debe a la estandarización de la pasarela &lt;a class="reference external" href="http://legacy.python.org/dev/peps/pep-3333/"&gt;WSGI&lt;/a&gt;, que define cómo se comunica (o se debería comunicar) una "app" (sea hecha con un framework o no) con un servidor web.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/"&gt;Leer más…&lt;/a&gt; (restan 7 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>circus</category><category>devop</category><category>django</category><category>python</category><category>tutorial</category><guid>https://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/</guid><pubDate>Thu, 12 Jun 2014 15:45:13 GMT</pubDate></item><item><title>Creando un nuevo proyecto Python</title><link>https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;¿Así que querés comenzar un nuevo proyecto usando Python?
 ¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
 proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
 proyectos ? Bien, te propongo esta receta.&lt;/p&gt;
-&lt;div class="section" id="las-herramientas"&gt;
+&lt;section id="las-herramientas"&gt;
 &lt;h2&gt;Las herramientas&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.virtualenv.org"&gt;Virtualenv&lt;/a&gt;:  es una herramienta para aislar tu entorno de
@@ -26,8 +26,8 @@ para iniciar un proyecto, generando la estructura básica necesaria. Es
 similar a &lt;a class="reference external" href="http://python.org.ar/pyar/PasteScript"&gt;PasteScript&lt;/a&gt; pero enfocado en esta
 tarea concreta, sin dependencias y compatible con Python 3.x&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="la-receta"&gt;
+&lt;/section&gt;
+&lt;section id="la-receta"&gt;
 &lt;h2&gt;La receta&lt;/h2&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p&gt;Instalá pip:&lt;/p&gt;
@@ -47,15 +47,15 @@ original (aparentemente desmantenida), que resuelve bugs importantes&lt;/p&gt;
 &lt;/div&gt;
 &lt;ol class="arabic" start="3"&gt;
 &lt;li&gt;&lt;p&gt;Configurá virtualenvwrapper&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-1"&gt;&lt;/a&gt;$ mkdir ~/.virtualenvs           &lt;span class="c1"&gt;# acá se van a guardar tus entornos virtuales&lt;/span&gt;
-&lt;a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-2"&gt;&lt;/a&gt;$ mkdir ~/proyectos              &lt;span class="c1"&gt;# acá se van a guardar tus proyectos&lt;/span&gt;
-&lt;a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-3"&gt;&lt;/a&gt;$ mkdir ~/.pip_download_cache     &lt;span class="c1"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_da18115c3ee74ed786867271b50cc5cf-1"&gt;&lt;/a&gt;$ mkdir ~/.virtualenvs           &lt;span class="c1"&gt;# acá se van a guardar tus entornos virtuales&lt;/span&gt;
+&lt;a name="rest_code_da18115c3ee74ed786867271b50cc5cf-2"&gt;&lt;/a&gt;$ mkdir ~/proyectos              &lt;span class="c1"&gt;# acá se van a guardar tus proyectos&lt;/span&gt;
+&lt;a name="rest_code_da18115c3ee74ed786867271b50cc5cf-3"&gt;&lt;/a&gt;$ mkdir ~/.pip_download_cache     &lt;span class="c1"&gt;# para no bajar paquetes cada vez&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Luego editá tu &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;~/.bashrc&lt;/span&gt;&lt;/code&gt; agregando las siguientes líneas&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
-&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
-&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-3"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
-&lt;a name="rest_code_fe79cd2c69864f719151972b68b0fe18-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.virtualenvs
+&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PROJECT_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/proyectos
+&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-3"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;VIRTUALENV_DISTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pip_download_cache
+&lt;a name="rest_code_e4411a1ada5c451daa88e600cc711864-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
 &lt;/pre&gt;&lt;p&gt;y recargá tus cambios:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;$ source ~/.bashrc&lt;/pre&gt;
 &lt;/li&gt;
@@ -81,15 +81,15 @@ lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
 &lt;em&gt;src/test&lt;/em&gt; al nivel de '/src/zaraza'&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="section" id="y-ahora"&gt;
+&lt;/section&gt;
+&lt;section id="y-ahora"&gt;
 &lt;h2&gt;¿Y ahora?&lt;/h2&gt;
 &lt;p&gt;Cada vez que quieras trabajar en tu proyecto &lt;em&gt;zaraza&lt;/em&gt; ejecutás:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;$ workon zaraza&lt;/pre&gt;
 &lt;p&gt;Para salir del virtualenv:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;(zaraza) $ deactivate&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="algunos-tips-mas-a-modo-de-despedida"&gt;
+&lt;/section&gt;
+&lt;section id="algunos-tips-mas-a-modo-de-despedida"&gt;
 &lt;h2&gt;Algunos tips más a modo de despedida&lt;/h2&gt;
 &lt;p&gt;Virtualenwrapper es totalmente hookeable y extensible. Esta receta
 propone usar &lt;em&gt;skeleton&lt;/em&gt; (que funciona como plugin de
@@ -102,11 +102,11 @@ comando principal de virtualenvwrapper &lt;code class="docutils literal"&gt;mkvi
 parámetros opcionales. Ejecutá &lt;code class="docutils literal"&gt;mkproject_help&lt;/code&gt; o &lt;code class="docutils literal"&gt;mkvirtualenv &lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/code&gt;
 para saber más.&lt;/p&gt;
 &lt;p&gt;Y ya sabés ...&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"&gt;
-&lt;/div&gt;
+&lt;/figure&gt;
 &lt;hr class="docutils"&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Este artículo lo escribí originalmente para el &lt;a class="reference external" href="http://python.org.ar/pyar/Recetario"&gt;Recetario de PyAr&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</guid><pubDate>Mon, 12 Nov 2012 03:34:23 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;&lt;/div&gt;</description><category>python</category><category>tutorial</category><guid>https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</guid><pubDate>Mon, 12 Nov 2012 03:34:23 GMT</pubDate></item></channel></rss>

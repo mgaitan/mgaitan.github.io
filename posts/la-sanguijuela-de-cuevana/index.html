@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/la-sanguijuela-de-cuevana/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../veinteanero/" title="Veinteañero" type="text/html">
@@ -81,7 +81,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -141,21 +141,15 @@ de <a class="reference external" href="http://www.cuevana.tv">Cuevana</a> y es l
 comandos</a>
 que permite buscar links y bajar subtitulos de contenidos específicos</p></li>
 </ol>
-<div class="figure align-center">
-<img alt="" src="local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 37)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
-<div class="section" id="para-que-sirve">
-<h2>Para qué sirve</h2>
+<section id="para-que-sirve"><h2>Para qué sirve</h2>
 <p>Por ejemplo, para bajar la temporada 4 completa de Mad Men, con
 subtitulos, se podría hacer esto:</p>
 <pre class="literal-block">$ cuevanalinks 'mad men' s04 -s &gt; madmen.txt &amp;&amp; tucan -d -i madmen.txt</pre>
-</div>
-<div class="section" id="instalacion">
-<h2>Instalación</h2>
+</section><section id="instalacion"><h2>Instalación</h2>
 <p>Para instalarlo, basta con usar <a class="reference external" href="http://www.pip-installer.org">pip</a></p>
 <pre class="literal-block">$ sudo pip install cuevanalinks</pre>
 <p>O con
@@ -167,9 +161,7 @@ ejecutar :</p>
 <pre class="literal-block">$ tar xvfz CuevanaLinks-0.1.tar.gz
 $ cd CuevanaLinks-0.1
 $ sudo python setup.py install</pre>
-</div>
-<div class="section" id="algunas-posibilidades-de-la-api">
-<h2>Algunas posibilidades de la API</h2>
+</section><section id="algunas-posibilidades-de-la-api"><h2>Algunas posibilidades de la API</h2>
 <p>El CLI por ahora sólo expone una parte pequeña de la API, pero hay
 varias posibilidades. Por ejemplo:</p>
 <pre class="literal-block">&gt;&gt;&gt; from cuevanalinks import cuevanaapi
@@ -196,9 +188,7 @@ u'El doctor Gregory House, especialista en el tratamiento de enfermedades infecc
  'http://www.filefactory.com/file/caf85b9']
 &gt;&gt;&gt; house7x1.subs
 {'ES': 'http://www.cuevana.tv/download_sub?file=s/sub/7888_ES.srt'}</pre>
-</div>
-<div class="section" id="lo-que-falta">
-<h2>Lo que falta</h2>
+</section><section id="lo-que-falta"><h2>Lo que falta</h2>
 <p>Si bien es lo más prolijito que he hecho, todavía está lejos de ser un
 trabajo completo, tanto en funcionalidades como en
 <a class="reference external" href="http://en.wikipedia.org/wiki/Software_Quality_Assurance">SQA</a></p>
@@ -210,9 +200,7 @@ cual tengo que aprender a usar
 manejo de múltiples resultados para una búsqueda. Actualmente devuelve
 el resultado "más relevante" sin anoticiar al usuario de otras opciones.</p>
 <p>También falta documentación! Veremos la próxima.</p>
-</div>
-<div class="section" id="comentarios-sugerencias-bugs">
-<h2>Comentarios, sugerencias, bugs</h2>
+</section><section id="comentarios-sugerencias-bugs"><h2>Comentarios, sugerencias, bugs</h2>
 <p>Todo aporte (ideas, código, etc.) es bienvenido. Si encuentran
 problemas,
 <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/issues">reportenlos</a>.</p>
@@ -220,7 +208,7 @@ problemas,
 que el funcionamiento del sitio no cambie o yo tenga mucho tiempo y
 ganas de andar parchando detrás. Por eso, si hay más interesados y
 usuarios, seguramente podremos hacerlo durar más.</p>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -254,7 +242,7 @@ usuarios, seguramente podremos hacerlo durar más.</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

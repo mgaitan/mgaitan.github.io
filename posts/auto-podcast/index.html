@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/auto-podcast/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../variar-o-no-variar-esa-es-la/" title="Variar o no variar, esa es la cuestión" type="text/html">
@@ -77,7 +77,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -121,8 +121,7 @@ escucharlo de 16 a 18hs, Necesitaba grabarlo para escucharlo offline.</p>
 yo, dije... ¿por qué no grabar el programa directamente desde el
 servidor, y que cualquiera pueda bajarlo cuando quiera?</p>
 <p>Aquí está mi podcaster automático para Efecto Tábano.</p>
-<div class="section" id="la-idea">
-<h2>La idea</h2>
+<section id="la-idea"><h2>La idea</h2>
 <p>Todo se basa en el glorioso <a class="reference external" href="http://mplayerhq.hu">Mplayer</a>, Mplayer es
 capaz de reproducir casi cualquier formato en streaming.</p>
 <p>Por supuesto, no habrá sonido en esa "reproducción" sobre el servidor,
@@ -134,9 +133,7 @@ comprimir a MP3 <em>on the fly</em>.</p>
 <p>Todo esto, claro, se ejecutará al horario del programa (y durante el
 tiempo que se indique, en este caso casi 2 horas) mediante una tarea
 <a class="reference external" href="http://es.wikipedia.org/wiki/Cron_(Unix)">cron</a></p>
-</div>
-<div class="section" id="instalando-lo-necesario">
-<h2>Instalando lo necesario</h2>
+</section><section id="instalando-lo-necesario"><h2>Instalando lo necesario</h2>
 <p>Como anticipé, hace falta mplayer y lame. Estos programas en general no
 se encuentran en el servidor (por ejemplo
 <a class="reference external" href="http://www.dreamhost.com/r.cgi?150740">Dreamhost</a>) así que hay que
@@ -166,9 +163,7 @@ cd lame-3.97
 make
 make install</pre>
 <p>Con eso ya tendríamos los programas necesarios en <strong>./bin</strong></p>
-</div>
-<div class="section" id="el-script-podcaster-efectotabano-sh">
-<h2>El script podcaster-efectotabano.sh</h2>
+</section><section id="el-script-podcaster-efectotabano-sh"><h2>El script podcaster-efectotabano.sh</h2>
 <pre class="literal-block">#!/bin/sh
 #
 # recorder — wrapper to pull remote audio stream and convert contents
@@ -217,15 +212,13 @@ agregar luce así:</p>
 <pre class="literal-block">09 12 * * 1-5 ~/bin/podcaster-efectotabano.sh</pre>
 <p>Eso es todo. Todos los días, de lunes a viernes tendré mi programa para
 descargar.</p>
-</div>
-<div class="section" id="to-do">
-<h2>TO DO</h2>
+</section><section id="to-do"><h2>TO DO</h2>
 <p>Por supuesto, para que esto sea un
 <a class="reference external" href="http://es.wikipedia.org/wiki/podcast">podcast</a> le falta la
 sindicación. Por lo tanto, habría que agregar la tarea de injectar
 información pertinente en una base de datos del cual generar el XML de
 sindicación.</p>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -259,7 +252,7 @@ sindicación.</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

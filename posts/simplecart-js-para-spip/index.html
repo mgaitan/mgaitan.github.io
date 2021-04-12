@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/simplecart-js-para-spip/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../modelos-de-negocio-floss-la/" title="Modelos de negocio FLOSS, la universidad, el sector privado y el Estado" type="text/html">
@@ -79,7 +79,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -118,8 +118,7 @@ implementar otros sistemas.</p>
 [<a class="reference external" href="../../blog/article/simplecart-js-para-spip#nb1">1</a>]. Lo usaré, espero que
 pronto, para vender los productos del <a class="reference external" href="http://www.agrupacionmazamorra.org.ar/taller-de-serigrafia-30">taller de serígrafía de
 Mazamorra</a>.</p>
-<div class="section" id="como-funciona">
-<h2>Cómo funciona</h2>
+<section id="como-funciona"><h2>Cómo funciona</h2>
 <p>Se instala como un plugin común y se configura mediante el plugin CFG.
 Por ahora sólo soporta PayPal como medio de pago, pero incluiré otros.</p>
 <p>SimpleCart usa simples señaladores html, que yo he convertido en
@@ -158,17 +157,13 @@ durante un tiempo aunque se abandone la página).</p>
 
 #SIMPLECART_CHECKOUT
 #SIMPLECART_EMPTY</pre>
-</div>
-<div class="section" id="como-agregar-productos">
-<h2>Cómo agregar productos</h2>
+</section><section id="como-agregar-productos"><h2>Cómo agregar productos</h2>
 <p>Muy simple. Se sube una imágen como documento definiendo su título y
 descripción y se la incrusta con el modelo <em>item</em>. El precio se indica
 con el parámetro <em>price</em>.</p>
 <p>Por ejemplo, el documento 111 se vuelve un item si se lo incluye así</p>
 <p><code class="docutils literal">&lt;item111|price=23.4&gt;</code></p>
-</div>
-<div class="section" id="un-atajo-mas">
-<h2>Un atajo más</h2>
+</section><section id="un-atajo-mas"><h2>Un atajo más</h2>
 <p>El código para el carrito de arriba lo incluí como un modelo para poder
 incrustarlo directamente desde la redacción de un artículo con
 <a href="#id2"><span class="problematic" id="id3">``</span></a>&lt;cart1&gt; <a href="#id4"><span class="problematic" id="id5">``</span></a>.</p>
@@ -180,18 +175,14 @@ incrustarlo directamente desde la redacción de un artículo con
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 73); <em><a href="#id5">backlink</a></em></p>
 <p>Inline literal start-string without end-string.</p>
 </div>
-</div>
-<div class="section" id="demostracion">
-<h2>Demostración</h2>
+</section><section id="demostracion"><h2>Demostración</h2>
 <p>Si alguien completa la transacción, lo interpretaré como una donación
 :D.</p>
-</div>
-<div class="section" id="descarga">
-<h2>Descarga</h2>
+</section><section id="descarga"><h2>Descarga</h2>
 <p>El plugin está en desarrollo sobre
 <a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart">spip-zone</a>.
 Podés hacer un ckeckout SVN</p>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -227,7 +218,7 @@ Podés hacer un ckeckout SVN</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

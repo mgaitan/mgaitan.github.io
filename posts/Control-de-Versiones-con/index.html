@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/Control-de-Versiones-con/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../spicasa-adjunta-fotos-de-picasa-a/" title="Spicasa: adjuntá fotos de picasa a un artículo" type="text/html">
@@ -84,7 +84,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -126,8 +126,7 @@ Spip</p>
 </blockquote>
 <p>Como tenía unos materiales de una charla que dí en la facu, lo comparto
 con el pueblo spipero.</p>
-<div class="section" id="subversion-un-software-de-control-de-versiones">
-<h2>Subversion, un software de control de versiones</h2>
+<section id="subversion-un-software-de-control-de-versiones"><h2>Subversion, un software de control de versiones</h2>
 <p><a class="reference external" href="http://subversion.tigris.org/">Subversion</a> es el software de control
 de versiones más popular de la actualidad. Es robusto, fácil de usar,
 multiplataforma, libre y gratuito.</p>
@@ -148,9 +147,7 @@ ejemplo, la notebook y la PC de escritorio).</p>
 <p>Trabajar en equipo es casi inviable a la vieja usanza. Imaginen
 proyectos de software grandes, como SPIP. Imposible. Hace falta ayuda:
 Subversion.</p>
-</div>
-<div class="section" id="como-funciona">
-<h2>¿Cómo funciona?</h2>
+</section><section id="como-funciona"><h2>¿Cómo funciona?</h2>
 <p>Es una aplicación cliente-servidor. El cliente se instala en nuestra/s
 computadoras y el servidor está, generalmente, online. A este servidor
 online se le denomina <strong>repositorio</strong>. A la copia local de los archivos,
@@ -174,10 +171,7 @@ son tres. <code class="docutils literal">update</code>, para actualizar la copia
 revisiones; <code class="docutils literal">commit</code> para enviar nuestras modificaciones locales al
 repositorio y crear una nueva revisión y <code class="docutils literal">add</code> para agregar un archivo
 que hemos creado, y aun no existe en el repositorio.</p></li>
-</ul>
-</div>
-<div class="section" id="un-ejemplo-con-spip-zone">
-<h2>Un ejemplo con SPIP-Zone</h2>
+</ul></section><section id="un-ejemplo-con-spip-zone"><h2>Un ejemplo con SPIP-Zone</h2>
 <p><a class="reference external" href="http://zone.spip.org">Spip-zone</a> tiene un servidor subversion
 (asociado al software <a class="reference external" href="http://trac.edgewall.org/">Trac</a> que es un
 gestor integral de proyectos de software) donde se puede alojar
@@ -185,8 +179,7 @@ cualquier contenido libre que tenga que ver con SPIP. Es abierto para
 lectura (podés hacer checkouts y updates anonimamente) pero necesitás
 ser usuario para hacer commits. Podés pedirle un user y pass a
 <a class="reference external" href="mailto:fil@nospam--.rezo.net">Fil</a>.</p>
-<div class="section" id="paso-0">
-<h3>Paso 0</h3>
+<section id="paso-0"><h3>Paso 0</h3>
 <p>Suponiendo que sos usuario con clave y password y querés compartir el
 desarrollo de tus squeletos, los <em>squelettes_maslindos</em> que están en la
 carpeta squelettes local (por poner un ejemplo).</p>
@@ -199,9 +192,7 @@ pide.</p>
 <pre class="literal-block">$ svn import ./squelettes  svn://zone.spip.org/spip-zone/_squelettes_/maslindos -m "importacion de los squeletos más lindos"</pre>
 <p>Si la importación salió bien, debería poder ver tus archivos en la
 dirección <a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos">http://zone.spip.org/trac/spip-zone/browser/_squelettes_/maslindos</a></p>
-</div>
-<div class="section" id="paso-1">
-<h3>Paso 1</h3>
+</section><section id="paso-1"><h3>Paso 1</h3>
 <p>Este es el paso inicial para aquellos que quieren probar algo
 que está en el repositorio, pero sin intenciones de enviar
 modificaciones (sólo lectura). Tambien deben hacerlo aquellos que sí lo
@@ -216,9 +207,7 @@ hacemo checkout a la dire del repo, definiendo que la copia local será
 <pre class="literal-block">svn://zone.spip.org/spip-zone/_squelettes_/maslindos</pre>
 <p>Por línea de comandos sería así:</p>
 <pre class="literal-block">$ svn checkout svn://zone.spip.org/spip-zone/_squelettes_/maslindos ./squelettes</pre>
-</div>
-<div class="section" id="pasos-2-y-3">
-<h3>Pasos 2 y 3</h3>
+</section><section id="pasos-2-y-3"><h3>Pasos 2 y 3</h3>
 <p>Listo, tenemos nuetra copia de trabajo. Cada vez que queramos actualizar
 a la ultima versión, parados sobre la carpeta, hacemos <strong>update</strong></p>
 <pre class="literal-block">$ svn  update</pre>
@@ -227,10 +216,7 @@ que hacer <strong>commit</strong></p>
 <pre class="literal-block">$ svn  update</pre>
 <p>En caso de agregar archivos, hay que indicarselo a Subversion.</p>
 <pre class="literal-block">$ svn  add archivo1 archivo2 *jpg</pre>
-</div>
-</div>
-<div class="section" id="un-video-vale-mas-que-mil-palabras">
-<h2>Un video vale más que mil palabras</h2>
+</section></section><section id="un-video-vale-mas-que-mil-palabras"><h2>Un video vale más que mil palabras</h2>
 <p>Un ejemplo de flujo de trabajo por línea de comandos</p>
 <div class="youtube-video">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/P0XIj1w21YU?rel=0&amp;wmode=transparent" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
@@ -238,8 +224,7 @@ que hacer <strong>commit</strong></p>
 <p>Y otro ejemplo usando una interfaz gráfica.</p>
 <div class="youtube-video">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/U3qVh9F6fv0?rel=0&amp;wmode=transparent" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
-</div>
-</div>
+</div></section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -274,7 +259,7 @@ que hacer <strong>commit</strong></p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

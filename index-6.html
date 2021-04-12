@@ -17,8 +17,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/index-6.html">
 <link rel="prev" href="index-7.html" type="text/html">
 <link rel="next" href="index-5.html" type="text/html">
@@ -66,7 +66,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -168,8 +168,7 @@ casi todo proyecto conocido o por conocer.</p>
 proyectito de morondanga</a> que
 no tiene web propia ni nada, ¿dónde subimos la documentación generada?
 Veamos.</p>
-<div class="section" id="usando-readthedocs-org">
-<h2>Usando Readthedocs.org</h2>
+<section id="usando-readthedocs-org"><h2>Usando Readthedocs.org</h2>
 <p><a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/">Read the docs</a>
 es un sitio para hospedar documentación realizada con Sphinx. Sólo se
 necesita indicarle el repositorio público del proyecto (svn, git,
@@ -196,10 +195,7 @@ Para usuarios de GitHub la activación del "web hook" se explica
 <li><p>Completás el campo de texto con la URL que te da ReadTheDocs en la
 página de descripción de tu proyecto (estándo logueado). Por ejemplo:</p></li>
 </ol>
-<div class="figure align-center">
-<img alt="" src="posts/compartiendo-documentacion-de/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="posts/compartiendo-documentacion-de/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 60)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -212,9 +208,7 @@ hay marcar desde la página de configuración del proyecto en RTFD.org,
 que instale en un virtualenv.</p>
 <p>Para ver si hubo algún problema en la generación, podés fijarte en
 "build" donde te muestra el stdout y el stderr de la corrida de Sphinx.</p>
-</div>
-<div class="section" id="subir-la-docu-a-pypi">
-<h2>Subir la docu a PyPi</h2>
+</section><section id="subir-la-docu-a-pypi"><h2>Subir la docu a PyPi</h2>
 <p>Una forma buenísima de compartir tu trabajo pythónico es a través del
 Python Package Index, <a class="reference external" href="http://pypi.python.org/pypi">pypi</a>, que es el
 índice que usan las herramientas <a class="reference external" href="http://www.pip-installer.org">pip</a> e
@@ -228,10 +222,7 @@ documentación</a>. La forma canónica es ir a
 la página de administración de tu proyecto en PyPi y adjuntar un .zip
 con la documentación (que no necesariamente tiene que ser hecha con
 Sphinx)</p>
-<div class="figure align-center">
-<img alt="" src="posts/compartiendo-documentacion-de/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="posts/compartiendo-documentacion-de/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 93)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -257,9 +248,7 @@ $ python setup.py upload_sphinx</pre>
 <p>Y docu subida a la dire
 <em>`http://packages.python.org/tu-proyecto &lt;http://packages.python.org/tu-proyecto&gt;`_</em>
 . ¡<a class="reference external" href="http://packages.python.org/CuevanaLinks/">Charaaán</a>!</p>
-</div>
-<div class="section" id="usando-tu-repositorio-svn">
-<h2>Usando tu repositorio SVN</h2>
+</section><section id="usando-tu-repositorio-svn"><h2>Usando tu repositorio SVN</h2>
 <p>Si usas SVN y tu servidor lo permite, podés servir contenido estático
 (html y todo lo que produce y necesita Sphinx) directamente desde el
 repositorio.</p>
@@ -287,9 +276,7 @@ enable-auto-props = yes
 <p>Un ejemplo de esto es el <a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">reporte de mi proyecto
 integrador</a>
 que está hospedado en Google Code</p>
-</div>
-<div class="section" id="aprovechandote-de-github">
-<h2>Aprovechándote de GitHub</h2>
+</section><section id="aprovechandote-de-github"><h2>Aprovechándote de GitHub</h2>
 <p><a class="reference external" href="http://github.com">GitHub</a> hospeda <a class="reference external" href="http://pages.github.com/">páginas
 estáticas</a>, tanto del desarrollador/a como
 de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
@@ -300,7 +287,7 @@ github</a>
 de Luca Sbardella.
 <img alt="image1" src="posts/compartiendo-documentacion-de/local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting">Usando
 github-tools</a>.</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/la-sanguijuela-de-cuevana/" class="u-url">La sanguijuela de cuevana</a></h1>
@@ -348,21 +335,15 @@ de <a class="reference external" href="http://www.cuevana.tv">Cuevana</a> y es l
 comandos</a>
 que permite buscar links y bajar subtitulos de contenidos específicos</p></li>
 </ol>
-<div class="figure align-center">
-<img alt="" src="posts/la-sanguijuela-de-cuevana/local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="posts/la-sanguijuela-de-cuevana/local/cache-vignettes/L510xH296/2011-04-09-173503_562x326_scrot-1fb6b.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 37)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
-<div class="section" id="para-que-sirve">
-<h2>Para qué sirve</h2>
+<section id="para-que-sirve"><h2>Para qué sirve</h2>
 <p>Por ejemplo, para bajar la temporada 4 completa de Mad Men, con
 subtitulos, se podría hacer esto:</p>
 <pre class="literal-block">$ cuevanalinks 'mad men' s04 -s &gt; madmen.txt &amp;&amp; tucan -d -i madmen.txt</pre>
-</div>
-<div class="section" id="instalacion">
-<h2>Instalación</h2>
+</section><section id="instalacion"><h2>Instalación</h2>
 <p>Para instalarlo, basta con usar <a class="reference external" href="http://www.pip-installer.org">pip</a></p>
 <pre class="literal-block">$ sudo pip install cuevanalinks</pre>
 <p>O con
@@ -374,9 +355,7 @@ ejecutar :</p>
 <pre class="literal-block">$ tar xvfz CuevanaLinks-0.1.tar.gz
 $ cd CuevanaLinks-0.1
 $ sudo python setup.py install</pre>
-</div>
-<div class="section" id="algunas-posibilidades-de-la-api">
-<h2>Algunas posibilidades de la API</h2>
+</section><section id="algunas-posibilidades-de-la-api"><h2>Algunas posibilidades de la API</h2>
 <p>El CLI por ahora sólo expone una parte pequeña de la API, pero hay
 varias posibilidades. Por ejemplo:</p>
 <pre class="literal-block">&gt;&gt;&gt; from cuevanalinks import cuevanaapi
@@ -403,9 +382,7 @@ u'El doctor Gregory House, especialista en el tratamiento de enfermedades infecc
  'http://www.filefactory.com/file/caf85b9']
 &gt;&gt;&gt; house7x1.subs
 {'ES': 'http://www.cuevana.tv/download_sub?file=s/sub/7888_ES.srt'}</pre>
-</div>
-<div class="section" id="lo-que-falta">
-<h2>Lo que falta</h2>
+</section><section id="lo-que-falta"><h2>Lo que falta</h2>
 <p>Si bien es lo más prolijito que he hecho, todavía está lejos de ser un
 trabajo completo, tanto en funcionalidades como en
 <a class="reference external" href="http://en.wikipedia.org/wiki/Software_Quality_Assurance">SQA</a></p>
@@ -417,9 +394,7 @@ cual tengo que aprender a usar
 manejo de múltiples resultados para una búsqueda. Actualmente devuelve
 el resultado "más relevante" sin anoticiar al usuario de otras opciones.</p>
 <p>También falta documentación! Veremos la próxima.</p>
-</div>
-<div class="section" id="comentarios-sugerencias-bugs">
-<h2>Comentarios, sugerencias, bugs</h2>
+</section><section id="comentarios-sugerencias-bugs"><h2>Comentarios, sugerencias, bugs</h2>
 <p>Todo aporte (ideas, código, etc.) es bienvenido. Si encuentran
 problemas,
 <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/issues">reportenlos</a>.</p>
@@ -427,7 +402,7 @@ problemas,
 que el funcionamiento del sitio no cambie o yo tenga mucho tiempo y
 ganas de andar parchando detrás. Por eso, si hay más interesados y
 usuarios, seguramente podremos hacerlo durar más.</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/veinteanero/" class="u-url">Veinteañero</a></h1>
@@ -502,10 +477,7 @@ corbata, hay que justificar con nombres que les suenen admirables. Hay
 que mencionar mucho IBM, Microsoft, C#, Intel. Esas son las voces que
 respetan, aunque sean pura
 <a class="reference external" href="http://es.wikipedia.org/wiki/Argumento_de_autoridad">falacia</a></p>
-<div class="figure align-center">
-<img alt="" src="posts/la-academia-las-practicas-agiles-y/local/cache-vignettes/L510xH603/anti-bullying-charity-school-tie-small-59832-3938a.jpg">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="posts/la-academia-las-practicas-agiles-y/local/cache-vignettes/L510xH603/anti-bullying-charity-school-tie-small-59832-3938a.jpg"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 45)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -588,8 +560,7 @@ conseguir un lacónico:</p>
 </blockquote>
 <p>Inmediatamente demostré que el lenguaje soez en arameo es un
 conocimiento latente.</p>
-<div class="section" id="a-modo-de-intro">
-<h2>A modo de intro</h2>
+<section id="a-modo-de-intro"><h2>A modo de intro</h2>
 <p>El PyCamp es un encuentro de la
 comunidad <a class="reference external" href="http://www.python.org.ar">Python Argentina</a>. Monos (y
 pronto monas) con laptops afiladas se juntan en el algun rincón del país
@@ -613,9 +584,7 @@ hacen los geeks cuando están divertidos.</p>
 <a class="reference external" href="http://www.cocos2d.org/">Cocos2d</a>, la
 <a class="reference external" href="http://python.org.ar/pyar/Proyectos/CDPedia">CDPedia</a> y
 <a class="reference external" href="http://www.taniquetil.com.ar/lalita/index.html">lalita</a>.</p>
-</div>
-<div class="section" id="mi-experiencia">
-<h2>Mi experiencia</h2>
+</section><section id="mi-experiencia"><h2>Mi experiencia</h2>
 <p>El PyCamp 2011, el cuarto consecutivo, se realizó en La Falda y fue el
 primero en el que participo. Sabía, por referencias, fotos y
 repositorios, de qué se trataba, pero como dice el adagio... <em>del dicho
@@ -657,9 +626,7 @@ geeks (Huguito — <a class="reference external" href="http://www.pilas-engine.c
 John, Achuni, todos) jugar como niños.</p>
 <img alt="/images/5575353897_b47ee-6529e.jpg" src="images/5575353897_b47ee-6529e.jpg"><p>Detalles faltan pero estos someros recuerdos sobran para afirmar que el
 balance es positivísimo.</p>
-</div>
-<div class="section" id="una-reflexion-final">
-<h2>Una reflexión final</h2>
+</section><section id="una-reflexion-final"><h2>Una reflexión final</h2>
 <p>PyCamp contrasta totalmente con los grises, aburridos y mediocres
 congresos académicos que en el ámbito universitario se difunden y en los
 que alguna vez he participado, donde los papelitos cuentan y donde
@@ -671,7 +638,7 @@ por el sobrenombre y no por el título, se admira el conocimiento pero
 más se festeja su colectivización, y eso lo saben (y lo disfrutan) los
 picantes y los tiernitos.</p>
 <p>Cuanta falta le hace a la universidad visiones y experiencias como esta.</p>
-</div>
+</section>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-quijote-del-software-libre/" class="u-url">El Quijote del Software Libre</a></h1>
@@ -847,10 +814,7 @@ tenemos un ancho de banda no muy ancho.</p>
 <a class="reference external" href="http://userscripts.org/scripts/source/98017.user.js">instalado</a> el
 script muestra links a la fuente original de descarga, justo abajo de
 los iconos de selección.</p>
-<div class="figure align-center">
-<img alt="" src="posts/yendo-a-las-fuentes-de-cuevana-tv/local/cache-vignettes/L510xH298/2011-02-28-011028_584x341_scrot-37636.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="posts/yendo-a-las-fuentes-de-cuevana-tv/local/cache-vignettes/L510xH298/2011-02-28-011028_584x341_scrot-37636.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 40)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -896,7 +860,7 @@ la burbuja .com ?</p>
             <li class="next"><a href="index-5.html" rel="next">Posts anteriores</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

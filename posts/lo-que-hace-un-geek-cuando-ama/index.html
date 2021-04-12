@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/lo-que-hace-un-geek-cuando-ama/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../cuevanalinks-ahora-para-seres/" title="Cuevanalinks, ahora para seres humanos" type="text/html">
@@ -79,7 +79,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -120,8 +120,7 @@ una <a class="reference external" href="http://www.textosypretextos.com.ar/Hurga
 complicada</a>,
 es lindo recordar cuanto uno es capaz de amar y ser amado. Y reirse,
 también, de cuán estúpido se puede ser en ese estado.</p>
-<div class="section" id="el-tatuaje-digital">
-<h2>El tatuaje digital</h2>
+<section id="el-tatuaje-digital"><h2>El tatuaje digital</h2>
 <p>Hay <a class="reference external" href="http://www.ascodevida.com/amor/42152">gestos de amor</a> que no
 miden consecuencias y son dificiles de comprender. Yo, por ejemplo,
 decidí "hackear" la BIOS de mi maquina recién comprada y poner una foto
@@ -140,9 +139,7 @@ Morocha cada mañana empezó a hacerse un momento gracioso pero incómodo.
 Para colmo, aun estando dispuesto a reinstalar Windows con este único
 propósito, aquel programita de Asus se me hizo inconseguible .</p>
 <p>Hasta que hoy, seis años despues, me animé a la cirugía.</p>
-</div>
-<div class="section" id="si-no-podes-cambiar-el-tatuaje-cambia-de-piel">
-<h2>Si no podés cambiar el tatuaje, cambiá de piel</h2>
+</section><section id="si-no-podes-cambiar-el-tatuaje-cambia-de-piel"><h2>Si no podés cambiar el tatuaje, cambiá de piel</h2>
 <p>Encontré un <a class="reference external" href="http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip">firmware
 actualizado</a>
 para la BIOS. Aunque no hubiera problemas con la que tenía, actualizarlo
@@ -154,31 +151,31 @@ D.O.S.. WTF!</p>
 <p>La
 <a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html">solución</a>
 es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a></p>
-<pre class="code bash"><a name="rest_code_768793e8b8c847faa866c1aebb81fa07-1"></a><span class="c1"># obtener una imagen booteable de freeDOS y montarla en un directorio</span>
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-2"></a>wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-3"></a>gunzip FDOEM.144.gz
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-4"></a>mkdir /tmp/floppy
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-5"></a>mount -t vfat -o loop FDOEM.144 /tmp/floppy
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-6"></a>
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-7"></a><span class="c1"># obtener la herramienta para actualizar el bios y la imagen, y moverlos</span>
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-8"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-9"></a>unzip AFUDOS211.zip
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-10"></a>mv AFUDOS.exe /tmp/floppy
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-11"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-12"></a>unzip K8n1011.zip
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-13"></a>mv <span class="m">1011</span>.rom /tmp/floppy
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-14"></a>
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-15"></a><span class="c1"># desmontar</span>
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-16"></a>umount /tmp/floppy
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-17"></a>
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-18"></a><span class="c1"># crear una ISO y grabar a un disco virgen</span>
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-19"></a><span class="c1"># (tambien se podría grabar a un pendrive)</span>
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-20"></a>mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
-<a name="rest_code_768793e8b8c847faa866c1aebb81fa07-21"></a>cdrecord -v bootcd.iso
+<pre class="code bash"><a name="rest_code_1358f883075d4a8584504a071fe622b6-1"></a><span class="c1"># obtener una imagen booteable de freeDOS y montarla en un directorio</span>
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-2"></a>wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-3"></a>gunzip FDOEM.144.gz
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-4"></a>mkdir /tmp/floppy
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-5"></a>mount -t vfat -o loop FDOEM.144 /tmp/floppy
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-6"></a>
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-7"></a><span class="c1"># obtener la herramienta para actualizar el bios y la imagen, y moverlos</span>
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-8"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-9"></a>unzip AFUDOS211.zip
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-10"></a>mv AFUDOS.exe /tmp/floppy
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-11"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-12"></a>unzip K8n1011.zip
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-13"></a>mv <span class="m">1011</span>.rom /tmp/floppy
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-14"></a>
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-15"></a><span class="c1"># desmontar</span>
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-16"></a>umount /tmp/floppy
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-17"></a>
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-18"></a><span class="c1"># crear una ISO y grabar a un disco virgen</span>
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-19"></a><span class="c1"># (tambien se podría grabar a un pendrive)</span>
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-20"></a>mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
+<a name="rest_code_1358f883075d4a8584504a071fe622b6-21"></a>cdrecord -v bootcd.iso
 </pre>
 <p>Reinciar, bootear el CD de FreeDOS y ejecutar:</p>
 <pre class="literal-block">afudos /i1011.rom</pre>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
@@ -209,7 +206,7 @@ es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../bienvenidos-al-tren/" title="Bievenidos al tren" type="text/html">
@@ -81,7 +81,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -115,8 +115,7 @@ navbar-light bg-light
 <p>Hace unos días abría este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco más bonito.</p>
 <p>Este post incluye algunas notas sobre lo que he hecho hasta el momento.</p>
-<div class="section" id="github-nikola">
-<h2>Github ♥ Nikola</h2>
+<section id="github-nikola"><h2>Github ♥ Nikola</h2>
 <p>Este blog que estás leyendo está hospedado en <a class="reference external" href="http://pages.github.com">Github Pages</a> ,
 el servicio de hosting gratuito de contenido estático que ofrece Github.</p>
 <p>A diferencia de cuando se usa Gh-pages para proyectos, donde se sirve
@@ -137,9 +136,7 @@ git rm *    # sólo la primera vez
 git read-tree writing:output
 git commit -m 'deploying last build'
 git push</pre>
-</div>
-<div class="section" id="migrando-desde-spip">
-<h2>Migrando desde Spip</h2>
+</section><section id="migrando-desde-spip"><h2>Migrando desde Spip</h2>
 <p>Uno de los motivos que me llevaron a migrar desde <a class="reference external" href="http://www.spip.net">Spip</a> es que el markup
 que usa es <em>ad hoc</em> y muy feo. Algo así</p>
 <pre class="literal-block">{{{ Un intertítulo }}}
@@ -155,9 +152,7 @@ scrapping, limpieza y conversión a restructuredText usando el mágico
 . No es perfecto, pero está lo importante: contenidos, imágenes, adjuntos,
 convertido a restructuredText bastante decente que mejoraré poco a poco
 a mano.</p>
-</div>
-<div class="section" id="estilos">
-<h2>Estilos</h2>
+</section><section id="estilos"><h2>Estilos</h2>
 <p>Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras)
 que se ven bonitos. Sucede, en realidad, que la mayoría de las veces no
 venimos con <em>esa</em> habilidad y el esfuerzo que nos implica intentarlo
@@ -168,18 +163,14 @@ compartir sus estilos (y existe <a class="reference external" href="http://twitt
 incrementalmente.</p>
 <p>Por ahora tomé ideas y CSS de <a class="reference external" href="http://stevelosh.com">stevelosh.com</a> <a class="footnote-reference brackets" href="#id3" id="id1">1</a> y de la documentación
 de <a class="reference external" href="http://flask.pocoo.org/docs/">Flask</a> <a class="footnote-reference brackets" href="#id4" id="id2">2</a> basado en el theme <em>Readable</em> de <a class="reference external" href="http://bootswatch.com/">bootswatch.com</a></p>
-</div>
-<div class="section" id="disqus">
-<h2>Disqus</h2>
+</section><section id="disqus"><h2>Disqus</h2>
 <p>El blog viejo usaba <a class="reference external" href="http://disqus.com">Disqus</a>, con un <a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html">plugin</a> que hice hace algun tiempo.
 Para migrar los comentarios utilicé el método de subir un CSV con
 el formato que genera el mismo script de migración:</p>
 <pre class="literal-block">URL_POST_X_OLD, URL_POST_X_NEW
 URL_POST_Y_OLD, URL_POST_Y_NEW</pre>
 <p>En cuestión de minutos los (pocos) comentarios estaban migrados.</p>
-</div>
-<div class="section" id="redireccion">
-<h2>Redirección</h2>
+</section><section id="redireccion"><h2>Redirección</h2>
 <p>Como mantuve el slug de los viejos artículos, una redirección 301
 via .htaccess redirige del viejo blog al nuevo:</p>
 <pre class="literal-block"># nqnwebs.com blog rules
@@ -196,8 +187,7 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]<
 <dd>
 <p><a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE">https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE</a></p>
 </dd>
-</dl>
-</div>
+</dl></section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -233,7 +223,7 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]<
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

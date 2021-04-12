@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/backup-selectivo-de-tablas-mysql/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../lorem-ipsum-para-spip/" title="Lorem Ipsum para Spip" type="text/html">
@@ -77,7 +77,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -116,8 +116,7 @@ creación de todas las tablas.</p>
 <p>Para restaurar ese backup se hace directamente inyectando el sql al
 interprete de mysql.</p>
 <pre class="literal-block">mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos</pre>
-<div class="section" id="respaldar-solo-algunas-tablas-de-la-base">
-<h2>Respaldar sólo algunas tablas de la base</h2>
+<section id="respaldar-solo-algunas-tablas-de-la-base"><h2>Respaldar sólo algunas tablas de la base</h2>
 <p>A menudo tenemos multiples sistemas instalados sobre la misma base de
 datos, Si sólo queremos respaldar algunas tablas bastaría enumerar las
 tablas luego del nombre de la base de datos</p>
@@ -128,7 +127,7 @@ sistema.</p>
 <p>En ese caso, se puede usar el siguiente compando que respalda todas las
 tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":</p>
 <pre class="literal-block">mysql -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos  -e 'show tables like "spip_%"' | grep -v Tables_in | xargs mysqldump -h SERVIDOR -u USUARIO -pPASSWORD base_de_datos &gt; backup.sql</pre>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -162,7 +161,7 @@ tablas con un prefijo, En este ejemplo, las que comienzan con "spip_":</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

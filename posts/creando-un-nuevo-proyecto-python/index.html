@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../migrando-issues-entre-proyectos-de-bitbucket/" title="Migrando issues entre proyectos de Bitbucket" type="text/html">
@@ -78,7 +78,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -114,8 +114,7 @@ navbar-light bg-light
 proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
 no se te arme lio de dependencias que colisionan con las de otros
 proyectos ? Bien, te propongo esta receta.</p>
-<div class="section" id="las-herramientas">
-<h2>Las herramientas</h2>
+<section id="las-herramientas"><h2>Las herramientas</h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.virtualenv.org">Virtualenv</a>:  es una herramienta para aislar tu entorno de
 desarrollo python. Es muy pero muy útil para evitar conflictos entre las
@@ -134,10 +133,7 @@ vez, una mejora sobre el módulo estándar <em>distutils</em>)</p></li>
 para iniciar un proyecto, generando la estructura básica necesaria. Es
 similar a <a class="reference external" href="http://python.org.ar/pyar/PasteScript">PasteScript</a> pero enfocado en esta
 tarea concreta, sin dependencias y compatible con Python 3.x</p></li>
-</ul>
-</div>
-<div class="section" id="la-receta">
-<h2>La receta</h2>
+</ul></section><section id="la-receta"><h2>La receta</h2>
 <ol class="arabic">
 <li>
 <p>Instalá pip:</p>
@@ -159,16 +155,16 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <ol class="arabic" start="3">
 <li>
 <p>Configurá virtualenvwrapper</p>
-<pre class="code bash"><a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-1"></a>$ mkdir ~/.virtualenvs           <span class="c1"># acá se van a guardar tus entornos virtuales</span>
-<a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-2"></a>$ mkdir ~/proyectos              <span class="c1"># acá se van a guardar tus proyectos</span>
-<a name="rest_code_8b6bffdd07e149aa8b54be70155d86e4-3"></a>$ mkdir ~/.pip_download_cache     <span class="c1"># para no bajar paquetes cada vez</span>
+<pre class="code bash"><a name="rest_code_da18115c3ee74ed786867271b50cc5cf-1"></a>$ mkdir ~/.virtualenvs           <span class="c1"># acá se van a guardar tus entornos virtuales</span>
+<a name="rest_code_da18115c3ee74ed786867271b50cc5cf-2"></a>$ mkdir ~/proyectos              <span class="c1"># acá se van a guardar tus proyectos</span>
+<a name="rest_code_da18115c3ee74ed786867271b50cc5cf-3"></a>$ mkdir ~/.pip_download_cache     <span class="c1"># para no bajar paquetes cada vez</span>
 </pre>
 <p>Luego editá tu <code class="docutils literal"><span class="pre">~/.bashrc</span></code> agregando las siguientes líneas</p>
-<pre class="code bash"><a name="rest_code_fe79cd2c69864f719151972b68b0fe18-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<a name="rest_code_fe79cd2c69864f719151972b68b0fe18-2"></a><span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
-<a name="rest_code_fe79cd2c69864f719151972b68b0fe18-3"></a><span class="nb">export</span> <span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
-<a name="rest_code_fe79cd2c69864f719151972b68b0fe18-4"></a><span class="nb">export</span> <span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
-<a name="rest_code_fe79cd2c69864f719151972b68b0fe18-5"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+<pre class="code bash"><a name="rest_code_e4411a1ada5c451daa88e600cc711864-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<a name="rest_code_e4411a1ada5c451daa88e600cc711864-2"></a><span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<a name="rest_code_e4411a1ada5c451daa88e600cc711864-3"></a><span class="nb">export</span> <span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
+<a name="rest_code_e4411a1ada5c451daa88e600cc711864-4"></a><span class="nb">export</span> <span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<a name="rest_code_e4411a1ada5c451daa88e600cc711864-5"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 </pre>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">$ source ~/.bashrc</pre>
@@ -196,17 +192,12 @@ del virtualenv, de modo que puedes importar <em>zaraza</em> desde cualquier
 lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
 <em>src/test</em> al nivel de '/src/zaraza'</p>
 </li>
-</ol>
-</div>
-<div class="section" id="y-ahora">
-<h2>¿Y ahora?</h2>
+</ol></section><section id="y-ahora"><h2>¿Y ahora?</h2>
 <p>Cada vez que quieras trabajar en tu proyecto <em>zaraza</em> ejecutás:</p>
 <pre class="literal-block">$ workon zaraza</pre>
 <p>Para salir del virtualenv:</p>
 <pre class="literal-block">(zaraza) $ deactivate</pre>
-</div>
-<div class="section" id="algunos-tips-mas-a-modo-de-despedida">
-<h2>Algunos tips más a modo de despedida</h2>
+</section><section id="algunos-tips-mas-a-modo-de-despedida"><h2>Algunos tips más a modo de despedida</h2>
 <p>Virtualenwrapper es totalmente hookeable y extensible. Esta receta
 propone usar <em>skeleton</em> (que funciona como plugin de
 <a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/">virtualenvwrapper.project</a>)
@@ -218,14 +209,11 @@ comando principal de virtualenvwrapper <code class="docutils literal">mkvirtuale
 parámetros opcionales. Ejecutá <code class="docutils literal">mkproject_help</code> o <code class="docutils literal">mkvirtualenv <span class="pre">--help</span></code>
 para saber más.</p>
 <p>Y ya sabés ...</p>
-<div class="figure align-center">
-<img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png">
-</div>
-<hr class="docutils">
+<figure class="align-center"><img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"></figure><hr class="docutils">
 <blockquote>
 <p>Este artículo lo escribí originalmente para el <a class="reference external" href="http://python.org.ar/pyar/Recetario">Recetario de PyAr</a></p>
 </blockquote>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -260,7 +248,7 @@ para saber más.</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

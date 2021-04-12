@@ -16,11 +16,12 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../el-mono-salta-entre-las-ramas/" title="El mono salta entre las ramas. El desarrollador también" type="text/html">
+<link rel="next" href="../custom-screen-layout-switcher-for-linux/" title="Screen layout switcher para Linux" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="move-imports, o cómo calmar el TOC de un pythonista">
 <meta property="og:url" content="https://mgaitan.github.io/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/">
@@ -76,7 +77,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -124,9 +125,7 @@ sus mañosas convenciones del lenguaje a cuestas. Una de ellas está <a href="ht
 <blockquote class="twitter-tweet">
 <p lang="en" dir="ltr">being a programmer, I'm too lazy to spend 8 hours mindlessly performing a function, but not too lazy to spend 16 hours automating it.</p>— Martín Gaitán (@tin_nqn_) <a href="https://twitter.com/tin_nqn_/status/1253521851894181889?ref_src=twsrc%5Etfw">April 24, 2020</a>
 </blockquote>
-
-<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-<p>Por ejemplo un módulo <code>path/to_refactor.py</code> con este contenido:</p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>Por ejemplo un módulo <code>path/to_refactor.py</code> con este contenido:</p>
 <pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
 
 <span class="k">def</span> <span class="nf">spam</span><span class="p">():</span>
@@ -139,11 +138,9 @@ sus mañosas convenciones del lenguaje a cuestas. Una de ellas está <a href="ht
     <span class="k">return</span> <span class="n">tan</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre>
 
-
 <p>se "refactoriza" con este comando</p>
 <pre class="code literal-block"><span></span><code>$ move-imports path/to_refactor.py --isort
 </code></pre>
-
 
 <p>y queda así:</p>
 <pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
@@ -156,7 +153,6 @@ sus mañosas convenciones del lenguaje a cuestas. Una de ellas está <a href="ht
 <span class="k">def</span> <span class="nf">ham</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">tan</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre>
-
 
 <p>El <code>--isort</code> es opcional pero muy recomendado, ya que le pasa <a href="https://github.com/timothycrosley/isort">isort</a> para juntar imports del mismo módulo, quitar repetidos y ordenarlos como el Zen manda.</p>
 <p>Un chichecito es que si encuentra que se puede marcar un import inline
@@ -174,7 +170,6 @@ se ve así</p>
  <span class="o">&lt;</span><span class="n">_ast</span><span class="o">.</span><span class="n">FunctionDef</span> <span class="n">at</span> <span class="mh">0x7f221c33d240</span><span class="o">&gt;</span><span class="p">]</span>
 </code></pre>
 
-
 <p>A nosotros nos importa encontrar los nodos tipo <code>ast.Import</code> y <code>ast.ImportFrom</code> que son los que corresponden a sentencias <code>import x</code> y <code>from x import y</code>.</p>
 <p>Podemos caminar todos los nodos recursivamente y obtener una gran lista plana
 de todos los nodos con <code>ast.walk(mod)</code> donde <code>mod</code> es el nodo inicial, el módulo.</p>
@@ -182,7 +177,6 @@ de todos los nodos con <code>ast.walk(mod)</code> donde <code>mod</code> es el n
 <pre class="code literal-block"><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">mod</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lineno</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="mi">2</span>
 </code></pre>
-
 
 <p>Podemos asumir que el bloque de líneas de código que componen un nodo termina justo antes de que empiece el que le sigue, así que es plausible una función que encuentre los segmentos (las lineas del source) donde hay <em>imports</em> y los recorte (es decir, reescriba el módulo sin esas lineas) y luego pegue todas las recortadas juntas justo a continuación de los imports que ya existen en la cabecera (o en la línea 1 si no había).</p>
 <p>Si bien Python 3.8 trae una función llamada <a href="https://docs.python.org/3/library/ast.html#ast.get_source_segment">get_source_segment</a> que sería útil para este fin, hay dos motivos para hacerlo por nuestra cuenta:</p>
@@ -203,6 +197,9 @@ de todos los nodos con <code>ast.walk(mod)</code> donde <code>mod</code> es el n
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../el-mono-salta-entre-las-ramas/" rel="prev" title="El mono salta entre las ramas. El desarrollador también">Post anterior</a>
+            </li>
+            <li class="next">
+                <a href="../custom-screen-layout-switcher-for-linux/" rel="next" title="Screen layout switcher para Linux">Siguiente post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
                         <div id="disqus_thread"></div>
@@ -225,7 +222,7 @@ de todos los nodos con <code>ast.walk(mod)</code> donde <code>mod</code> es el n
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

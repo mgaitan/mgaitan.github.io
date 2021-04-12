@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre spip)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/spip.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 May 2020 21:00:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre spip)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/spip.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Mon, 12 Apr 2021 18:06:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco más bonito.&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
-&lt;div class="section" id="github-nikola"&gt;
+&lt;section id="github-nikola"&gt;
 &lt;h2&gt;Github ♥ Nikola&lt;/h2&gt;
 &lt;p&gt;Este blog que estás leyendo está hospedado en &lt;a class="reference external" href="http://pages.github.com"&gt;Github Pages&lt;/a&gt; ,
 el servicio de hosting gratuito de contenido estático que ofrece Github.&lt;/p&gt;
@@ -24,8 +24,8 @@ git rm *    # sólo la primera vez
 git read-tree writing:output
 git commit -m 'deploying last build'
 git push&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="migrando-desde-spip"&gt;
+&lt;/section&gt;
+&lt;section id="migrando-desde-spip"&gt;
 &lt;h2&gt;Migrando desde Spip&lt;/h2&gt;
 &lt;p&gt;Uno de los motivos que me llevaron a migrar desde &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt; es que el markup
 que usa es &lt;em&gt;ad hoc&lt;/em&gt; y muy feo. Algo así&lt;/p&gt;
@@ -42,8 +42,8 @@ scrapping, limpieza y conversión a restructuredText usando el mágico
 . No es perfecto, pero está lo importante: contenidos, imágenes, adjuntos,
 convertido a restructuredText bastante decente que mejoraré poco a poco
 a mano.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="estilos"&gt;
+&lt;/section&gt;
+&lt;section id="estilos"&gt;
 &lt;h2&gt;Estilos&lt;/h2&gt;
 &lt;p&gt;Es mentira que a los ñoños no nos gustan las cosas (los blogs, entre otras)
 que se ven bonitos. Sucede, en realidad, que la mayoría de las veces no
@@ -55,8 +55,8 @@ compartir sus estilos (y existe &lt;a class="reference external" href="http://tw
 incrementalmente.&lt;/p&gt;
 &lt;p&gt;Por ahora tomé ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference brackets" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id3" id="id1"&gt;1&lt;/a&gt; y de la documentación
 de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference brackets" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id4" id="id2"&gt;2&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="disqus"&gt;
+&lt;/section&gt;
+&lt;section id="disqus"&gt;
 &lt;h2&gt;Disqus&lt;/h2&gt;
 &lt;p&gt;El blog viejo usaba &lt;a class="reference external" href="http://disqus.com"&gt;Disqus&lt;/a&gt;, con un &lt;a class="reference external" href="http://mgaitan.github.com/posts/disqus-para-spip.html"&gt;plugin&lt;/a&gt; que hice hace algun tiempo.
 Para migrar los comentarios utilicé el método de subir un CSV con
@@ -64,8 +64,8 @@ el formato que genera el mismo script de migración:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;URL_POST_X_OLD, URL_POST_X_NEW
 URL_POST_Y_OLD, URL_POST_Y_NEW&lt;/pre&gt;
 &lt;p&gt;En cuestión de minutos los (pocos) comentarios estaban migrados.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="redireccion"&gt;
+&lt;/section&gt;
+&lt;section id="redireccion"&gt;
 &lt;h2&gt;Redirección&lt;/h2&gt;
 &lt;p&gt;Como mantuve el slug de los viejos artículos, una redirección 301
 via .htaccess redirige del viejo blog al nuevo:&lt;/p&gt;
@@ -82,7 +82,7 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]&
 &lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>migration tools</category><category>nikola</category><category>spip</category><guid>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</guid><pubDate>Sun, 14 Oct 2012 22:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>https://mgaitan.github.io/posts/bienvenidos-al-tren/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hola!&lt;/p&gt;
+&lt;/section&gt;&lt;/div&gt;</description><category>migration tools</category><category>nikola</category><category>spip</category><guid>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</guid><pubDate>Sun, 14 Oct 2012 22:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>https://mgaitan.github.io/posts/bienvenidos-al-tren/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
 que explicaré más adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
@@ -125,7 +125,7 @@ implementar otros sistemas.&lt;/p&gt;
 [&lt;a class="reference external" href="https://mgaitan.github.io/blog/article/simplecart-js-para-spip#nb1"&gt;1&lt;/a&gt;]. Lo usaré, espero que
 pronto, para vender los productos del &lt;a class="reference external" href="http://www.agrupacionmazamorra.org.ar/taller-de-serigrafia-30"&gt;taller de serígrafía de
 Mazamorra&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="section" id="como-funciona"&gt;
+&lt;section id="como-funciona"&gt;
 &lt;h2&gt;Cómo funciona&lt;/h2&gt;
 &lt;p&gt;Se instala como un plugin común y se configura mediante el plugin CFG.
 Por ahora sólo soporta PayPal como medio de pago, pero incluiré otros.&lt;/p&gt;
@@ -165,16 +165,16 @@ durante un tiempo aunque se abandone la página).&lt;/p&gt;
 
 #SIMPLECART_CHECKOUT
 #SIMPLECART_EMPTY&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="como-agregar-productos"&gt;
+&lt;/section&gt;
+&lt;section id="como-agregar-productos"&gt;
 &lt;h2&gt;Cómo agregar productos&lt;/h2&gt;
 &lt;p&gt;Muy simple. Se sube una imágen como documento definiendo su título y
 descripción y se la incrusta con el modelo &lt;em&gt;item&lt;/em&gt;. El precio se indica
 con el parámetro &lt;em&gt;price&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Por ejemplo, el documento 111 se vuelve un item si se lo incluye así&lt;/p&gt;
 &lt;p&gt;&lt;code class="docutils literal"&gt;&amp;lt;item111|price=23.4&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="un-atajo-mas"&gt;
+&lt;/section&gt;
+&lt;section id="un-atajo-mas"&gt;
 &lt;h2&gt;Un atajo más&lt;/h2&gt;
 &lt;p&gt;El código para el carrito de arriba lo incluí como un modelo para poder
 incrustarlo directamente desde la redacción de un artículo con
@@ -187,18 +187,18 @@ incrustarlo directamente desde la redacción de un artículo con
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 73); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="demostracion"&gt;
+&lt;/section&gt;
+&lt;section id="demostracion"&gt;
 &lt;h2&gt;Demostración&lt;/h2&gt;
 &lt;p&gt;Si alguien completa la transacción, lo interpretaré como una donación
 :D.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="descarga"&gt;
+&lt;/section&gt;
+&lt;section id="descarga"&gt;
 &lt;h2&gt;Descarga&lt;/h2&gt;
 &lt;p&gt;El plugin está en desarrollo sobre
 &lt;a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart"&gt;spip-zone&lt;/a&gt;.
 Podés hacer un ckeckout SVN&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>E-Commerce</category><category>Javascript</category><category>spip</category><guid>https://mgaitan.github.io/posts/simplecart-js-para-spip/</guid><pubDate>Sun, 12 Sep 2010 16:34:44 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>https://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
+&lt;/section&gt;&lt;/div&gt;</description><category>E-Commerce</category><category>Javascript</category><category>spip</category><guid>https://mgaitan.github.io/posts/simplecart-js-para-spip/</guid><pubDate>Sun, 12 Sep 2010 16:34:44 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>https://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
 artículos podrían tener 200, ¿no?&lt;/p&gt;
 &lt;p&gt;Hay una forma fácil de limitar el largo permitido en un campo de texto
 mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
@@ -227,7 +227,7 @@ function limitChars(textid, limit, infodiv) {
          return true;
      }
 }&lt;/pre&gt;
-&lt;div class="section" id="intrucciones-para-spip"&gt;
+&lt;section id="intrucciones-para-spip"&gt;
 &lt;h2&gt;Intrucciones para SPIP&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;Copiar el código&lt;/p&gt;&lt;/li&gt;
@@ -235,16 +235,16 @@ function limitChars(textid, limit, infodiv) {
 &lt;li&gt;&lt;p&gt;(opcional) Cambiarle el límite (el número 200),&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;¡Listo!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="intrucciones-generales"&gt;
+&lt;/section&gt;
+&lt;section id="intrucciones-generales"&gt;
 &lt;h2&gt;Intrucciones generales&lt;/h2&gt;
 &lt;p&gt;Es igual al anterior, sólo debes asegurarte que tiene en jquery en la
 página. Luego cambia el selector &lt;code class="docutils literal"&gt;#texte&lt;/code&gt; por el que corresponda al
 campo que querés limitar.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="ejemplo"&gt;
+&lt;/section&gt;
+&lt;section id="ejemplo"&gt;
 &lt;h2&gt;Ejemplo&lt;/h2&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres/</guid><pubDate>Wed, 10 Jun 2009 09:41:37 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
+&lt;/section&gt;&lt;/div&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres/</guid><pubDate>Wed, 10 Jun 2009 09:41:37 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
 control de versiones Subversion.&lt;/p&gt;
 &lt;p&gt;A través de Subversion, podemos obtener la ultima version de desarrollo
 considerada estable&lt;/p&gt;
@@ -269,7 +269,7 @@ corresponda con una "version oficial" tenemos que saber el número de ID.&lt;/p&
 una tabla donde se especifica esta correspondencia para cada nueva
 version, pero a decir verdad, es un engorro tener que ingresar sólo para
 averiguar un número. Mejor hagámoslo automático!&lt;/p&gt;
-&lt;div class="section" id="automatizando-la-obtencion-de-un-spip-oficial-por-svn"&gt;
+&lt;section id="automatizando-la-obtencion-de-un-spip-oficial-por-svn"&gt;
 &lt;h2&gt;Automatizando la obtención de un SPIP oficial por SVN&lt;/h2&gt;
 &lt;pre class="literal-block"&gt;#!/bin/bash
 #script para una instalacion de spip a traves de svn
@@ -303,8 +303,8 @@ firefox http://localhost/~tin/$1/ecrire&lt;/pre&gt;
 última modificación de &lt;em&gt;archivelist.txt&lt;/em&gt; que es un archivo que se
 modifica en cada nuevo lanzamiento de paquete. ¡Es el dato que nos hacía
 falta!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="una-solucion-mas-genuina"&gt;
+&lt;/section&gt;
+&lt;section id="una-solucion-mas-genuina"&gt;
 &lt;h2&gt;Una solución más genuina&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Atención&lt;/strong&gt;: Ya me hicieron caso. &lt;a class="reference external" href="https://mgaitan.github.io/blog/article/ultima-version-de-spip-por-svn#update"&gt;Ver
 actualización&lt;/a&gt;&lt;/p&gt;
@@ -320,14 +320,14 @@ siempre al último.&lt;/p&gt;
 &lt;p&gt;Esto, por ahora, no está implementado, pero ya hice llegar mi propuesta
 a &lt;em&gt;l’equipe&lt;/em&gt; de SPIP, y &lt;a class="reference external" href="http://article.gmane.org/gmane.comp.web.spip.devel/53503"&gt;lo están
 discutiendo&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="actualizacion"&gt;
+&lt;/section&gt;
+&lt;section id="actualizacion"&gt;
 &lt;h2&gt;Actualización&lt;/h2&gt;
 &lt;p&gt;Gracias a &lt;a class="reference external" href="http://my.opera.com/tech-nova/blog/"&gt;Gilles&lt;/a&gt; el Dev Team
 adoptó mi propuesta y ahora existen Tags en el arbol SVN de spip. En
 particular,&lt;/p&gt;
 &lt;pre class="literal-block"&gt;svn co svn://trac.rezo.net/spip/tags/spip-2-stable&lt;/pre&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><category>spip</category><guid>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</guid><pubDate>Fri, 22 May 2009 03:19:54 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>https://mgaitan.github.io/posts/lorem-ipsum-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
+&lt;/section&gt;&lt;/div&gt;</description><category>Linux</category><category>spip</category><guid>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</guid><pubDate>Fri, 22 May 2009 03:19:54 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>https://mgaitan.github.io/posts/lorem-ipsum-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
 que se usa habitualmente en diseño gráfico en demostraciones de
 tipografías o de borradores de diseño para probar el diseño visual antes
 de insertar el texto final.&lt;/p&gt;
@@ -340,7 +340,7 @@ lo que en textos largos queda mucho mejor que repetir un mismo fragmento
 una y otra vez.&lt;/p&gt;
 &lt;p&gt;Hay muchos &lt;a class="reference external" href="http://www.lipsum.com/"&gt;generadores de texto Lorem Ipsum&lt;/a&gt;
 en internet, pero lo podemos hacer aún más fácil.&lt;/p&gt;
-&lt;div class="section" id="un-lorem-ipsum-automatico"&gt;
+&lt;section id="un-lorem-ipsum-automatico"&gt;
 &lt;h2&gt;Un Lorem Ipsum automático&lt;/h2&gt;
 &lt;p&gt;Con la ayuda del plugin &lt;a class="reference external" href="http://sanderkorvemaker.nl/jquery/jLorem.php"&gt;jQuery Lorem
 Ipsum&lt;/a&gt; de Sander Korve
@@ -360,24 +360,24 @@ del tamaño que queramos (por omisión, de 4 párrafos).&lt;/p&gt;
 &lt;/table&gt;
 &lt;p&gt;O por SVN:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;svn checkout svn://zone.spip.org/spip-zone/_plugins_/_test_/loremipsum&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="instalacion"&gt;
+&lt;/section&gt;
+&lt;section id="instalacion"&gt;
 &lt;h2&gt;Instalación&lt;/h2&gt;
 &lt;p&gt;La instalación es igual que con la de cualquier plugin: descomprimirlo
 en la carpeta &lt;em&gt;/plugins&lt;/em&gt; y activarlo.&lt;/p&gt;
 &lt;p&gt;Requiere además que los esqueletos tengan la baliza &lt;code class="docutils literal"&gt;#INSERT_HEAD&lt;/code&gt;
 dentro del header, ya que allí se incluirá el javascript necesario para
 su funcionamiento.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="funcionamiento-basico"&gt;
+&lt;/section&gt;
+&lt;section id="funcionamiento-basico"&gt;
 &lt;h2&gt;Funcionamiento básico&lt;/h2&gt;
 &lt;p&gt;La inclusión de un &lt;em&gt;Lorem Ipsum&lt;/em&gt; se basa en el modelo &lt;em&gt;lorem.html&lt;/em&gt;
 incluído con el plugin, por lo que hay dos maneras de llamarlo:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="-" src="https://mgaitan.github.io/posts/lorem-ipsum-para-spip/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; En el cuerpo (texto, descripción, etc) de un artículo: &lt;code class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image3" src="https://mgaitan.github.io/posts/lorem-ipsum-para-spip/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; Predefinido en un esqueleto: &lt;code class="docutils literal"&gt;#MODELE{lorem}&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;¡y listo!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="parametros"&gt;
+&lt;/section&gt;
+&lt;section id="parametros"&gt;
 &lt;h2&gt;Parámetros&lt;/h2&gt;
 &lt;p&gt;El modelo acepta algunos parámetros para configurar la longitud del
 texto. Por ejemplo &lt;code class="docutils literal"&gt;&amp;lt;lorem5&amp;gt;&lt;/code&gt; creará 5 párrafos.&lt;/p&gt;
@@ -392,14 +392,14 @@ que . Por ejemplo &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;[
 &lt;p&gt;&lt;img alt="image6" src="https://mgaitan.github.io/posts/lorem-ipsum-para-spip/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;strong&gt;ptags&lt;/strong&gt;: Permite agregar las etiquetas &amp;lt;code&amp;lt;&amp;gt;P&amp;lt;&amp;gt;/code&amp;gt;
 alrededor de cada párrafo. Los valores aceptados son &lt;strong&gt;true&lt;/strong&gt; o
 &lt;strong&gt;false&lt;/strong&gt;. Por omisión es &lt;strong&gt;true&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="una-astucia"&gt;
+&lt;/section&gt;
+&lt;section id="una-astucia"&gt;
 &lt;h2&gt;Una astucia&lt;/h2&gt;
 &lt;p&gt;Una forma de mostrar contenido en un artículo (o cualquier elemento) sin
 tener que editar cada artículo sólo para poner &lt;code class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/code&gt; es invocar el
 modelo siempre y cuando no exista contenido en la baliza&lt;/p&gt;
 &lt;p&gt;Por ejemplo [&lt;a class="reference external" href="https://mgaitan.github.io/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/lorem-ipsum-para-spip/</guid><pubDate>Thu, 26 Mar 2009 23:39:24 GMT</pubDate></item><item><title>Variar o no variar, esa es la cuestión</title><link>https://mgaitan.github.io/posts/variar-o-no-variar-esa-es-la/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace algunos días, en
+&lt;/section&gt;&lt;/div&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/lorem-ipsum-para-spip/</guid><pubDate>Thu, 26 Mar 2009 23:39:24 GMT</pubDate></item><item><title>Variar o no variar, esa es la cuestión</title><link>https://mgaitan.github.io/posts/variar-o-no-variar-esa-es-la/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace algunos días, en
 &lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;spip-es&lt;/a&gt; se planteó
 la duda de cómo controlar una cabecera diferente para algunas secciones
 en particular.&lt;/p&gt;
@@ -430,7 +430,7 @@ ejemplo). Además, hay que documentar bien qué se está haciendo, porque
 da lugar a errores cuando dos esqueletos "linkeados" intentan ser
 iguales.&lt;/p&gt;
 &lt;p&gt;Por suerte, hay varias otras maneras de resolver esto,&lt;/p&gt;
-&lt;div class="section" id="filtros-de-condicion-o-filtro-match"&gt;
+&lt;section id="filtros-de-condicion-o-filtro-match"&gt;
 &lt;h2&gt;Filtros de condición o filtro match&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://archives.rezo.net/spip-es.mbox/200903.mbox/%3C516299.21618.qm@web90607.mail.mud.yahoo.com%3E"&gt;Esta
 solución&lt;/a&gt;,
@@ -458,8 +458,8 @@ que hagamos nuestro festín.&lt;/p&gt;
 &lt;p&gt;El filtro devuelve &lt;strong&gt;VERDADERO&lt;/strong&gt; si el valor de #ID_RUBRIQUE empieza
 con 2, 4 o 6 y termina con nada. Que es, dicho de otra manera, lo que
 queremos.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="y-aun-mas-claro-bucles-como-filtros"&gt;
+&lt;/section&gt;
+&lt;section id="y-aun-mas-claro-bucles-como-filtros"&gt;
 &lt;h2&gt;Y aún más claro: bucles como filtros&lt;/h2&gt;
 &lt;p&gt;Las expresiones regulares &lt;em&gt;no son moco de pavo&lt;/em&gt;, diría mi abuela. Super
 potentes, pero poco escalables en la curva complejidad-comprensibilidad.&lt;/p&gt;
@@ -480,7 +480,7 @@ exclusiva&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Funciona, es más legible que cualquiera de las otras soluciones y además
 permite una clausula &lt;em&gt;ELSE&lt;/em&gt; mucho más accesible, simplemente usando la
 estructura completa del bucle.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>spip</category><guid>https://mgaitan.github.io/posts/variar-o-no-variar-esa-es-la/</guid><pubDate>Sun, 15 Mar 2009 23:03:38 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en spip</title><link>https://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
+&lt;/section&gt;&lt;/div&gt;</description><category>spip</category><guid>https://mgaitan.github.io/posts/variar-o-no-variar-esa-es-la/</guid><pubDate>Sun, 15 Mar 2009 23:03:38 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en spip</title><link>https://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
 #LOGO_* y los filtros |image_* son los más notorios) y
 frecuentemente necesitamos o queremos modificar este código autogenerado
 en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto

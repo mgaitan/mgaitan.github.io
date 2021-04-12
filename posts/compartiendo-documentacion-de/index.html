@@ -16,8 +16,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../la-sanguijuela-de-cuevana/" title="La sanguijuela de cuevana" type="text/html">
@@ -81,7 +81,7 @@ navbar-light bg-light
 </ul>
 <ul class="navbar-nav navbar-right">
 <li>            </li>
-<li class="nav-item"><a href="https://mgaitan.github.io/en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
             </ul>
@@ -136,8 +136,7 @@ casi todo proyecto conocido o por conocer.</p>
 proyectito de morondanga</a> que
 no tiene web propia ni nada, ¿dónde subimos la documentación generada?
 Veamos.</p>
-<div class="section" id="usando-readthedocs-org">
-<h2>Usando Readthedocs.org</h2>
+<section id="usando-readthedocs-org"><h2>Usando Readthedocs.org</h2>
 <p><a class="reference external" href="http://readthedocs.org/docs/read-the-docs/en/latest/">Read the docs</a>
 es un sitio para hospedar documentación realizada con Sphinx. Sólo se
 necesita indicarle el repositorio público del proyecto (svn, git,
@@ -164,10 +163,7 @@ Para usuarios de GitHub la activación del "web hook" se explica
 <li><p>Completás el campo de texto con la URL que te da ReadTheDocs en la
 página de descripción de tu proyecto (estándo logueado). Por ejemplo:</p></li>
 </ol>
-<div class="figure align-center">
-<img alt="" src="local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 60)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -180,9 +176,7 @@ hay marcar desde la página de configuración del proyecto en RTFD.org,
 que instale en un virtualenv.</p>
 <p>Para ver si hubo algún problema en la generación, podés fijarte en
 "build" donde te muestra el stdout y el stderr de la corrida de Sphinx.</p>
-</div>
-<div class="section" id="subir-la-docu-a-pypi">
-<h2>Subir la docu a PyPi</h2>
+</section><section id="subir-la-docu-a-pypi"><h2>Subir la docu a PyPi</h2>
 <p>Una forma buenísima de compartir tu trabajo pythónico es a través del
 Python Package Index, <a class="reference external" href="http://pypi.python.org/pypi">pypi</a>, que es el
 índice que usan las herramientas <a class="reference external" href="http://www.pip-installer.org">pip</a> e
@@ -196,10 +190,7 @@ documentación</a>. La forma canónica es ir a
 la página de administración de tu proyecto en PyPi y adjuntar un .zip
 con la documentación (que no necesariamente tiene que ser hecha con
 Sphinx)</p>
-<div class="figure align-center">
-<img alt="" src="local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png">
-</div>
-<div class="system-message">
+<figure class="align-center"><img alt="" src="local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"></figure><div class="system-message">
 <p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 93)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
 </div>
@@ -225,9 +216,7 @@ $ python setup.py upload_sphinx</pre>
 <p>Y docu subida a la dire
 <em>`http://packages.python.org/tu-proyecto &lt;http://packages.python.org/tu-proyecto&gt;`_</em>
 . ¡<a class="reference external" href="http://packages.python.org/CuevanaLinks/">Charaaán</a>!</p>
-</div>
-<div class="section" id="usando-tu-repositorio-svn">
-<h2>Usando tu repositorio SVN</h2>
+</section><section id="usando-tu-repositorio-svn"><h2>Usando tu repositorio SVN</h2>
 <p>Si usas SVN y tu servidor lo permite, podés servir contenido estático
 (html y todo lo que produce y necesita Sphinx) directamente desde el
 repositorio.</p>
@@ -255,9 +244,7 @@ enable-auto-props = yes
 <p>Un ejemplo de esto es el <a class="reference external" href="http://gpec2010.googlecode.com/svn/trunk/docs/_build/html/index.html">reporte de mi proyecto
 integrador</a>
 que está hospedado en Google Code</p>
-</div>
-<div class="section" id="aprovechandote-de-github">
-<h2>Aprovechándote de GitHub</h2>
+</section><section id="aprovechandote-de-github"><h2>Aprovechándote de GitHub</h2>
 <p><a class="reference external" href="http://github.com">GitHub</a> hospeda <a class="reference external" href="http://pages.github.com/">páginas
 estáticas</a>, tanto del desarrollador/a como
 de tus proyectos. Bien sirve eso para subir la documentación y eso hacen
@@ -268,7 +255,7 @@ github</a>
 de Luca Sbardella.
 <img alt="image1" src="local/cache-vignettes/L8xH11/puce-32883.gif"><a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting">Usando
 github-tools</a>.</p>
-</div>
+</section>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -304,7 +291,7 @@ github-tools</a>.</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2020         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
