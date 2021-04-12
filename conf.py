@@ -229,13 +229,14 @@ THEME_CONFIG = {
 #     )
 
 POSTS = (
-    ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.md", "posts", "post.tmpl"),
+    ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.ipynb", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.html", "posts", "post.tmpl"),
 )
 PAGES = (
+    ("stories/*.md", "", "story.tmpl"),
     ("stories/*.rst", "", "story.tmpl"),
     ("stories/*.txt", "", "story.tmpl"),
     # ("pages/*.rst", "pages", "page.tmpl"),
@@ -303,8 +304,8 @@ TIMEZONE = "America/Argentina/Cordoba"
 # 'markdown' is Markdown
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
-    "rest": ('.rst', '.txt'),
     "markdown": ('.md', '.mdown', '.markdown'),
+    "rest": ('.rst', '.txt'),
     "textile": ('.textile',),
     "txt2tags": ('.t2t',),
     "bbcode": ('.bb',),
