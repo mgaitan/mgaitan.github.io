@@ -10,4 +10,4 @@ jobs:
     - name: Checkout submodules
       uses: textbook/git-checkout-submodule-action@master
     - name: Build and Deploy Nikola
-      uses: getnikola/nikola-action@v2
+      uses: getnikola/nikola-action@v3
