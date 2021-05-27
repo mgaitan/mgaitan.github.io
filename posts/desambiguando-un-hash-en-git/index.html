@@ -114,23 +114,23 @@ su hash sha1</a> :</p>
 </blockquote>
 <!-- TEASER_END -->
 <p>Pero a veces soy demasiado vago, y Git deja de llevarse bien conmigo: Estaba en una rama con varios commits y quería volver al pasado, deshaciendo commits, pero llevando uno. Fácil: <code class="docutils literal">reset</code> + <code class="docutils literal"><span class="pre">cherry-pick</span></code>. Pero copié muy pocos caracteres del hash que quería <em>cherrypickear</em>:</p>
-<pre class="code bash"><a name="rest_code_c8b785a8b77a475aafe5f0efeb48bdef-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ git reset --hard 772dad9a775
-<a name="rest_code_c8b785a8b77a475aafe5f0efeb48bdef-2"></a>HEAD is now at 772dad9 making aqueous migration script more robust
-<a name="rest_code_c8b785a8b77a475aafe5f0efeb48bdef-3"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ git cherry-pick c4396
-<a name="rest_code_c8b785a8b77a475aafe5f0efeb48bdef-4"></a>error: short SHA1 c4396 is ambiguous.
-<a name="rest_code_c8b785a8b77a475aafe5f0efeb48bdef-5"></a>error: short SHA1 c4396 is ambiguous
-<a name="rest_code_c8b785a8b77a475aafe5f0efeb48bdef-6"></a>fatal: ambiguous argument <span class="s1">'c4396'</span>: unknown revision or path not <span class="k">in</span> the working tree.
-<a name="rest_code_c8b785a8b77a475aafe5f0efeb48bdef-7"></a>Use <span class="s1">'--'</span> to separate paths from revisions
-<a name="rest_code_c8b785a8b77a475aafe5f0efeb48bdef-8"></a><span class="o">(</span>cpi<span class="o">)</span>mgaitan@gutemberg:~/laburo/cpi/code/cpi_mrp$
+<pre class="code bash"><a id="rest_code_3691ca31d2f0452698edb98f4a549724-1" name="rest_code_3691ca31d2f0452698edb98f4a549724-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ git reset --hard 772dad9a775
+<a id="rest_code_3691ca31d2f0452698edb98f4a549724-2" name="rest_code_3691ca31d2f0452698edb98f4a549724-2"></a>HEAD is now at 772dad9 making aqueous migration script more robust
+<a id="rest_code_3691ca31d2f0452698edb98f4a549724-3" name="rest_code_3691ca31d2f0452698edb98f4a549724-3"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ git cherry-pick c4396
+<a id="rest_code_3691ca31d2f0452698edb98f4a549724-4" name="rest_code_3691ca31d2f0452698edb98f4a549724-4"></a>error: short SHA1 c4396 is ambiguous.
+<a id="rest_code_3691ca31d2f0452698edb98f4a549724-5" name="rest_code_3691ca31d2f0452698edb98f4a549724-5"></a>error: short SHA1 c4396 is ambiguous
+<a id="rest_code_3691ca31d2f0452698edb98f4a549724-6" name="rest_code_3691ca31d2f0452698edb98f4a549724-6"></a>fatal: ambiguous argument <span class="s1">'c4396'</span>: unknown revision or path not <span class="k">in</span> the working tree.
+<a id="rest_code_3691ca31d2f0452698edb98f4a549724-7" name="rest_code_3691ca31d2f0452698edb98f4a549724-7"></a>Use <span class="s1">'--'</span> to separate paths from revisions
+<a id="rest_code_3691ca31d2f0452698edb98f4a549724-8" name="rest_code_3691ca31d2f0452698edb98f4a549724-8"></a><span class="o">(</span>cpi<span class="o">)</span>mgaitan@gutemberg:~/laburo/cpi/code/cpi_mrp$
 </pre>
 <p>Recórcholis.</p>
 <p>Un poquito de bash y <em>git plumbing</em> al rescate:</p>
-<pre class="code bash"><a name="rest_code_016e64f4a843497e950c16e389acd499-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ <span class="k">for</span> <span class="nb">hash</span> <span class="k">in</span> c4396<span class="o">{{</span><span class="m">0</span>..9<span class="o">}</span>,<span class="o">{</span>a..f<span class="o">}}</span><span class="p">;</span> <span class="k">do</span> git cat-file -e <span class="nv">$hash</span> <span class="o">&amp;&amp;</span> git rev-parse <span class="nv">$hash</span><span class="p">;</span> <span class="k">done</span> <span class="m">2</span>&gt;/dev/nul
-<a name="rest_code_016e64f4a843497e950c16e389acd499-2"></a>c4396586273b2a9ea5eae46c4ab2d98e236e7792
-<a name="rest_code_016e64f4a843497e950c16e389acd499-3"></a>c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
+<pre class="code bash"><a id="rest_code_9324560ed4654049b9409375e1efd01d-1" name="rest_code_9324560ed4654049b9409375e1efd01d-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ <span class="k">for</span> <span class="nb">hash</span> <span class="k">in</span> c4396<span class="o">{{</span><span class="m">0</span>..9<span class="o">}</span>,<span class="o">{</span>a..f<span class="o">}}</span><span class="p">;</span> <span class="k">do</span> git cat-file -e <span class="nv">$hash</span> <span class="o">&amp;&amp;</span> git rev-parse <span class="nv">$hash</span><span class="p">;</span> <span class="k">done</span> <span class="m">2</span>&gt;/dev/nul
+<a id="rest_code_9324560ed4654049b9409375e1efd01d-2" name="rest_code_9324560ed4654049b9409375e1efd01d-2"></a>c4396586273b2a9ea5eae46c4ab2d98e236e7792
+<a id="rest_code_9324560ed4654049b9409375e1efd01d-3" name="rest_code_9324560ed4654049b9409375e1efd01d-3"></a>c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
 </pre>
 <p>Ahora tenemos el conjunto de hash con igual prefijo, y podemos revisarlos para ver cual era el que queriamos:</p>
-<pre class="code bash"><a name="rest_code_8d5a2d95c3654597b4b3a4ede24984bb-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ git show c4396586273b2a9ea5eae46c4ab2d98e236e7792
+<pre class="code bash"><a id="rest_code_6acaa54e26db47b6af9409f0ed4804d9-1" name="rest_code_6acaa54e26db47b6af9409f0ed4804d9-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$ git show c4396586273b2a9ea5eae46c4ab2d98e236e7792
 </pre>
 <p>Y ese era el que quería.</p>
 </div>

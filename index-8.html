@@ -175,73 +175,73 @@ investigué cómo funciona la nueva versión de cuevana.</p>
 <p><a class="reference external" href="http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula">http://www.cuevana.tv/player/sources?id=4773&amp;tipo=pelicula</a></p>
 </blockquote>
 <p>En código javascript inline define las fuentes disponibles para ese contenido</p>
-<pre class="code javascript"><a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-1"></a><span class="kd">var</span> <span class="nx">plugin_ver</span> <span class="o">=</span> <span class="mf">5</span><span class="p">,</span> <span class="nx">plugin_rev</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
-<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-2"></a><span class="kd">var</span> <span class="nx">actual_ver</span><span class="p">,</span> <span class="nx">actual_rev</span><span class="p">;</span>
-<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-3"></a>
-<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-4"></a><span class="kd">var</span> <span class="nx">sources</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-5"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-6"></a>        <span class="s2">"360"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uptobox"</span><span class="p">,</span> <span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"filebox"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">,</span> <span class="s2">"zalaa"</span><span class="p">],</span>
-<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-7"></a>        <span class="s2">"720"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">]</span>
-<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-8"></a>    <span class="p">}</span>
-<a name="rest_code_aeac0a623d824d94ba55a6775c7006c0-9"></a><span class="p">},</span> <span class="nx">sel_source</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<pre class="code javascript"><a id="rest_code_f56719698cb34c319b3f55d7b3247a45-1" name="rest_code_f56719698cb34c319b3f55d7b3247a45-1"></a><span class="kd">var</span> <span class="nx">plugin_ver</span> <span class="o">=</span> <span class="mf">5</span><span class="p">,</span> <span class="nx">plugin_rev</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<a id="rest_code_f56719698cb34c319b3f55d7b3247a45-2" name="rest_code_f56719698cb34c319b3f55d7b3247a45-2"></a><span class="kd">var</span> <span class="nx">actual_ver</span><span class="p">,</span> <span class="nx">actual_rev</span><span class="p">;</span>
+<a id="rest_code_f56719698cb34c319b3f55d7b3247a45-3" name="rest_code_f56719698cb34c319b3f55d7b3247a45-3"></a>
+<a id="rest_code_f56719698cb34c319b3f55d7b3247a45-4" name="rest_code_f56719698cb34c319b3f55d7b3247a45-4"></a><span class="kd">var</span> <span class="nx">sources</span> <span class="o">=</span> <span class="p">{</span>
+<a id="rest_code_f56719698cb34c319b3f55d7b3247a45-5" name="rest_code_f56719698cb34c319b3f55d7b3247a45-5"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="p">{</span>
+<a id="rest_code_f56719698cb34c319b3f55d7b3247a45-6" name="rest_code_f56719698cb34c319b3f55d7b3247a45-6"></a>        <span class="s2">"360"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uptobox"</span><span class="p">,</span> <span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"filebox"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">,</span> <span class="s2">"zalaa"</span><span class="p">],</span>
+<a id="rest_code_f56719698cb34c319b3f55d7b3247a45-7" name="rest_code_f56719698cb34c319b3f55d7b3247a45-7"></a>        <span class="s2">"720"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"uploadcore"</span><span class="p">,</span> <span class="s2">"vidbull"</span><span class="p">,</span> <span class="s2">"bayfiles"</span><span class="p">,</span> <span class="s2">"cramit"</span><span class="p">]</span>
+<a id="rest_code_f56719698cb34c319b3f55d7b3247a45-8" name="rest_code_f56719698cb34c319b3f55d7b3247a45-8"></a>    <span class="p">}</span>
+<a id="rest_code_f56719698cb34c319b3f55d7b3247a45-9" name="rest_code_f56719698cb34c319b3f55d7b3247a45-9"></a><span class="p">},</span> <span class="nx">sel_source</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 </pre>
 <p>La primer clave (en este caso <code class="docutils literal">2</code>, inglés) es el idioma del audio,
 y la segunda la calidad del video</p>
 <p>Luego define diferentes constates:</p>
-<pre class="code javascript"><a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-1"></a><span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-2"></a>    <span class="s1">'360'</span><span class="o">:</span> <span class="s1">'SD (360p)'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-3"></a>    <span class="s1">'480'</span><span class="o">:</span> <span class="s1">'SD (480p)'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-4"></a>    <span class="s1">'720'</span><span class="o">:</span> <span class="s1">'HD (720p)'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-5"></a>    <span class="s1">'1080'</span><span class="o">:</span> <span class="s1">'HD (1080p)'</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-6"></a><span class="p">};</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-7"></a><span class="kd">var</span> <span class="nx">labeli</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-8"></a>    <span class="s2">"1"</span><span class="o">:</span> <span class="s2">"Espa\u00f1ol"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-9"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="s2">"Ingl\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-10"></a>    <span class="s2">"3"</span><span class="o">:</span> <span class="s2">"Portugu\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-11"></a>    <span class="s2">"4"</span><span class="o">:</span> <span class="s2">"Alem\u00e1n"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-12"></a>    <span class="s2">"5"</span><span class="o">:</span> <span class="s2">"Franc\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-13"></a>    <span class="s2">"6"</span><span class="o">:</span> <span class="s2">"Coreano"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-14"></a>    <span class="s2">"7"</span><span class="o">:</span> <span class="s2">"Italiano"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-15"></a>    <span class="s2">"8"</span><span class="o">:</span> <span class="s2">"Tailand\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-16"></a>    <span class="s2">"9"</span><span class="o">:</span> <span class="s2">"Ruso"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-17"></a>    <span class="s2">"10"</span><span class="o">:</span> <span class="s2">"Mongol"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-18"></a>    <span class="s2">"11"</span><span class="o">:</span> <span class="s2">"Polaco"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-19"></a>    <span class="s2">"12"</span><span class="o">:</span> <span class="s2">"Esloveno"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-20"></a>    <span class="s2">"13"</span><span class="o">:</span> <span class="s2">"Sueco"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-21"></a>    <span class="s2">"14"</span><span class="o">:</span> <span class="s2">"Griego"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-22"></a>    <span class="s2">"15"</span><span class="o">:</span> <span class="s2">"Canton\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-23"></a>    <span class="s2">"16"</span><span class="o">:</span> <span class="s2">"Japon\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-24"></a>    <span class="s2">"17"</span><span class="o">:</span> <span class="s2">"Dan\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-25"></a>    <span class="s2">"18"</span><span class="o">:</span> <span class="s2">"Neerland\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-26"></a>    <span class="s2">"19"</span><span class="o">:</span> <span class="s2">"Hebreo"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-27"></a>    <span class="s2">"20"</span><span class="o">:</span> <span class="s2">"Serbio"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-28"></a>    <span class="s2">"21"</span><span class="o">:</span> <span class="s2">"\u00c1rabe"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-29"></a>    <span class="s2">"22"</span><span class="o">:</span> <span class="s2">"Hindi"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-30"></a>    <span class="s2">"23"</span><span class="o">:</span> <span class="s2">"Noruego"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-31"></a>    <span class="s2">"24"</span><span class="o">:</span> <span class="s2">"Turco"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-32"></a>    <span class="s2">"26"</span><span class="o">:</span> <span class="s2">"Mandar\u00edn"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-33"></a>    <span class="s2">"27"</span><span class="o">:</span> <span class="s2">"Nepal\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-34"></a>    <span class="s2">"28"</span><span class="o">:</span> <span class="s2">"Rumano"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-35"></a>    <span class="s2">"29"</span><span class="o">:</span> <span class="s2">"Iran\u00ed"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-36"></a>    <span class="s2">"30"</span><span class="o">:</span> <span class="s2">"Est\u00f3n"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-37"></a>    <span class="s2">"31"</span><span class="o">:</span> <span class="s2">"Bosnio"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-38"></a>    <span class="s2">"32"</span><span class="o">:</span> <span class="s2">"Checo"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-39"></a>    <span class="s2">"33"</span><span class="o">:</span> <span class="s2">"Croata"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-40"></a>    <span class="s2">"34"</span><span class="o">:</span> <span class="s2">"Fin\u00e9s"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-41"></a>    <span class="s2">"35"</span><span class="o">:</span> <span class="s2">"H\u00fanagro"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-42"></a>    <span class="s2">"36"</span><span class="o">:</span> <span class="s2">"Persa"</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-43"></a>    <span class="s2">"38"</span><span class="o">:</span> <span class="s2">"Indonesio"</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-44"></a><span class="p">};</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-45"></a><span class="kd">var</span> <span class="nx">labelh</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-46"></a>    <span class="s1">'filebox'</span><span class="o">:</span> <span class="s1">'Filebox'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-47"></a>    <span class="s1">'uptobox'</span><span class="o">:</span> <span class="s1">'Uptobox (NUEVO)'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-48"></a>    <span class="s1">'uploadcore'</span><span class="o">:</span> <span class="s1">'Uploadcore (NUEVO)'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-49"></a>    <span class="s1">'vidbull'</span><span class="o">:</span> <span class="s1">'Vidbull (NUEVO)'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-50"></a>    <span class="s1">'zalaa'</span><span class="o">:</span> <span class="s1">'Zalaa'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-51"></a>    <span class="s1">'cramit'</span><span class="o">:</span> <span class="s1">'Cramit'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-52"></a>    <span class="s1">'180upload'</span><span class="o">:</span> <span class="s1">'180upload'</span><span class="p">,</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-53"></a>    <span class="s1">'bayfiles'</span><span class="o">:</span> <span class="s1">'Bayfiles'</span>
-<a name="rest_code_55f4753cc05e4760bc4a9a9ae03286c0-54"></a><span class="p">};</span>
+<pre class="code javascript"><a id="rest_code_83c4035631d7450fbd79a452c468e0bc-1" name="rest_code_83c4035631d7450fbd79a452c468e0bc-1"></a><span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="p">{</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-2" name="rest_code_83c4035631d7450fbd79a452c468e0bc-2"></a>    <span class="s1">'360'</span><span class="o">:</span> <span class="s1">'SD (360p)'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-3" name="rest_code_83c4035631d7450fbd79a452c468e0bc-3"></a>    <span class="s1">'480'</span><span class="o">:</span> <span class="s1">'SD (480p)'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-4" name="rest_code_83c4035631d7450fbd79a452c468e0bc-4"></a>    <span class="s1">'720'</span><span class="o">:</span> <span class="s1">'HD (720p)'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-5" name="rest_code_83c4035631d7450fbd79a452c468e0bc-5"></a>    <span class="s1">'1080'</span><span class="o">:</span> <span class="s1">'HD (1080p)'</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-6" name="rest_code_83c4035631d7450fbd79a452c468e0bc-6"></a><span class="p">};</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-7" name="rest_code_83c4035631d7450fbd79a452c468e0bc-7"></a><span class="kd">var</span> <span class="nx">labeli</span> <span class="o">=</span> <span class="p">{</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-8" name="rest_code_83c4035631d7450fbd79a452c468e0bc-8"></a>    <span class="s2">"1"</span><span class="o">:</span> <span class="s2">"Espa\u00f1ol"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-9" name="rest_code_83c4035631d7450fbd79a452c468e0bc-9"></a>    <span class="s2">"2"</span><span class="o">:</span> <span class="s2">"Ingl\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-10" name="rest_code_83c4035631d7450fbd79a452c468e0bc-10"></a>    <span class="s2">"3"</span><span class="o">:</span> <span class="s2">"Portugu\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-11" name="rest_code_83c4035631d7450fbd79a452c468e0bc-11"></a>    <span class="s2">"4"</span><span class="o">:</span> <span class="s2">"Alem\u00e1n"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-12" name="rest_code_83c4035631d7450fbd79a452c468e0bc-12"></a>    <span class="s2">"5"</span><span class="o">:</span> <span class="s2">"Franc\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-13" name="rest_code_83c4035631d7450fbd79a452c468e0bc-13"></a>    <span class="s2">"6"</span><span class="o">:</span> <span class="s2">"Coreano"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-14" name="rest_code_83c4035631d7450fbd79a452c468e0bc-14"></a>    <span class="s2">"7"</span><span class="o">:</span> <span class="s2">"Italiano"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-15" name="rest_code_83c4035631d7450fbd79a452c468e0bc-15"></a>    <span class="s2">"8"</span><span class="o">:</span> <span class="s2">"Tailand\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-16" name="rest_code_83c4035631d7450fbd79a452c468e0bc-16"></a>    <span class="s2">"9"</span><span class="o">:</span> <span class="s2">"Ruso"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-17" name="rest_code_83c4035631d7450fbd79a452c468e0bc-17"></a>    <span class="s2">"10"</span><span class="o">:</span> <span class="s2">"Mongol"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-18" name="rest_code_83c4035631d7450fbd79a452c468e0bc-18"></a>    <span class="s2">"11"</span><span class="o">:</span> <span class="s2">"Polaco"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-19" name="rest_code_83c4035631d7450fbd79a452c468e0bc-19"></a>    <span class="s2">"12"</span><span class="o">:</span> <span class="s2">"Esloveno"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-20" name="rest_code_83c4035631d7450fbd79a452c468e0bc-20"></a>    <span class="s2">"13"</span><span class="o">:</span> <span class="s2">"Sueco"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-21" name="rest_code_83c4035631d7450fbd79a452c468e0bc-21"></a>    <span class="s2">"14"</span><span class="o">:</span> <span class="s2">"Griego"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-22" name="rest_code_83c4035631d7450fbd79a452c468e0bc-22"></a>    <span class="s2">"15"</span><span class="o">:</span> <span class="s2">"Canton\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-23" name="rest_code_83c4035631d7450fbd79a452c468e0bc-23"></a>    <span class="s2">"16"</span><span class="o">:</span> <span class="s2">"Japon\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-24" name="rest_code_83c4035631d7450fbd79a452c468e0bc-24"></a>    <span class="s2">"17"</span><span class="o">:</span> <span class="s2">"Dan\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-25" name="rest_code_83c4035631d7450fbd79a452c468e0bc-25"></a>    <span class="s2">"18"</span><span class="o">:</span> <span class="s2">"Neerland\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-26" name="rest_code_83c4035631d7450fbd79a452c468e0bc-26"></a>    <span class="s2">"19"</span><span class="o">:</span> <span class="s2">"Hebreo"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-27" name="rest_code_83c4035631d7450fbd79a452c468e0bc-27"></a>    <span class="s2">"20"</span><span class="o">:</span> <span class="s2">"Serbio"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-28" name="rest_code_83c4035631d7450fbd79a452c468e0bc-28"></a>    <span class="s2">"21"</span><span class="o">:</span> <span class="s2">"\u00c1rabe"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-29" name="rest_code_83c4035631d7450fbd79a452c468e0bc-29"></a>    <span class="s2">"22"</span><span class="o">:</span> <span class="s2">"Hindi"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-30" name="rest_code_83c4035631d7450fbd79a452c468e0bc-30"></a>    <span class="s2">"23"</span><span class="o">:</span> <span class="s2">"Noruego"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-31" name="rest_code_83c4035631d7450fbd79a452c468e0bc-31"></a>    <span class="s2">"24"</span><span class="o">:</span> <span class="s2">"Turco"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-32" name="rest_code_83c4035631d7450fbd79a452c468e0bc-32"></a>    <span class="s2">"26"</span><span class="o">:</span> <span class="s2">"Mandar\u00edn"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-33" name="rest_code_83c4035631d7450fbd79a452c468e0bc-33"></a>    <span class="s2">"27"</span><span class="o">:</span> <span class="s2">"Nepal\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-34" name="rest_code_83c4035631d7450fbd79a452c468e0bc-34"></a>    <span class="s2">"28"</span><span class="o">:</span> <span class="s2">"Rumano"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-35" name="rest_code_83c4035631d7450fbd79a452c468e0bc-35"></a>    <span class="s2">"29"</span><span class="o">:</span> <span class="s2">"Iran\u00ed"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-36" name="rest_code_83c4035631d7450fbd79a452c468e0bc-36"></a>    <span class="s2">"30"</span><span class="o">:</span> <span class="s2">"Est\u00f3n"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-37" name="rest_code_83c4035631d7450fbd79a452c468e0bc-37"></a>    <span class="s2">"31"</span><span class="o">:</span> <span class="s2">"Bosnio"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-38" name="rest_code_83c4035631d7450fbd79a452c468e0bc-38"></a>    <span class="s2">"32"</span><span class="o">:</span> <span class="s2">"Checo"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-39" name="rest_code_83c4035631d7450fbd79a452c468e0bc-39"></a>    <span class="s2">"33"</span><span class="o">:</span> <span class="s2">"Croata"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-40" name="rest_code_83c4035631d7450fbd79a452c468e0bc-40"></a>    <span class="s2">"34"</span><span class="o">:</span> <span class="s2">"Fin\u00e9s"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-41" name="rest_code_83c4035631d7450fbd79a452c468e0bc-41"></a>    <span class="s2">"35"</span><span class="o">:</span> <span class="s2">"H\u00fanagro"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-42" name="rest_code_83c4035631d7450fbd79a452c468e0bc-42"></a>    <span class="s2">"36"</span><span class="o">:</span> <span class="s2">"Persa"</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-43" name="rest_code_83c4035631d7450fbd79a452c468e0bc-43"></a>    <span class="s2">"38"</span><span class="o">:</span> <span class="s2">"Indonesio"</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-44" name="rest_code_83c4035631d7450fbd79a452c468e0bc-44"></a><span class="p">};</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-45" name="rest_code_83c4035631d7450fbd79a452c468e0bc-45"></a><span class="kd">var</span> <span class="nx">labelh</span> <span class="o">=</span> <span class="p">{</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-46" name="rest_code_83c4035631d7450fbd79a452c468e0bc-46"></a>    <span class="s1">'filebox'</span><span class="o">:</span> <span class="s1">'Filebox'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-47" name="rest_code_83c4035631d7450fbd79a452c468e0bc-47"></a>    <span class="s1">'uptobox'</span><span class="o">:</span> <span class="s1">'Uptobox (NUEVO)'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-48" name="rest_code_83c4035631d7450fbd79a452c468e0bc-48"></a>    <span class="s1">'uploadcore'</span><span class="o">:</span> <span class="s1">'Uploadcore (NUEVO)'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-49" name="rest_code_83c4035631d7450fbd79a452c468e0bc-49"></a>    <span class="s1">'vidbull'</span><span class="o">:</span> <span class="s1">'Vidbull (NUEVO)'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-50" name="rest_code_83c4035631d7450fbd79a452c468e0bc-50"></a>    <span class="s1">'zalaa'</span><span class="o">:</span> <span class="s1">'Zalaa'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-51" name="rest_code_83c4035631d7450fbd79a452c468e0bc-51"></a>    <span class="s1">'cramit'</span><span class="o">:</span> <span class="s1">'Cramit'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-52" name="rest_code_83c4035631d7450fbd79a452c468e0bc-52"></a>    <span class="s1">'180upload'</span><span class="o">:</span> <span class="s1">'180upload'</span><span class="p">,</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-53" name="rest_code_83c4035631d7450fbd79a452c468e0bc-53"></a>    <span class="s1">'bayfiles'</span><span class="o">:</span> <span class="s1">'Bayfiles'</span>
+<a id="rest_code_83c4035631d7450fbd79a452c468e0bc-54" name="rest_code_83c4035631d7450fbd79a452c468e0bc-54"></a><span class="p">};</span>
 </pre>
 <p>El usuario selecciona mediante un menú donde se define <code class="docutils literal">audio</code>, <code class="docutils literal">quality</code> y <code class="docutils literal">source</code>
 que se configuran como atributos data del link:</p>
@@ -269,27 +269,27 @@ la versión para Firefox desde <a class="reference external" href="http://www.cu
 Descomprimirlo con unzip y abrir el archivo <code class="docutils literal">content/cuevanastream.js</code></p>
 <p>La presencia de los parámetros <code class="docutils literal"><span class="pre">cid``y</span> ``ctipo</code> y una url de alguno de los servicios
 que usa Cuevana hace que se inyecte un javascript en la URL del servicio.</p>
-<pre class="code javascript"><a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-1"></a><span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/cid=/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ctipo=/i</span><span class="p">));</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-2"></a><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.)?bayfiles\.com/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-3"></a>    <span class="nx">addScript</span><span class="p">(</span><span class="s1">'bayfiles'</span><span class="p">);</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-4"></a><span class="p">}</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-5"></a>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-6"></a>    <span class="c1">// más servicios</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-7"></a>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-8"></a>  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i</span><span class="p">))</span> <span class="p">{</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-9"></a>    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-10"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'plugin_ok'</span><span class="p">;</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-11"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-version'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">);</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-12"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-revision'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">);</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-13"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-14"></a><span class="p">}</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-15"></a>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-16"></a><span class="kd">function</span> <span class="nx">addScript</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-17"></a>    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-18"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/javascript'</span><span class="p">);</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-19"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span> <span class="s1">'http://sc.cuevana.tv/player/scripts/5/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'.js'</span><span class="p">);</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-20"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-<a name="rest_code_6bcafe0e8a044936814e83df2afdb7f1-21"></a><span class="p">}</span>
+<pre class="code javascript"><a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-1" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-1"></a><span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/cid=/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/ctipo=/i</span><span class="p">));</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-2" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-2"></a><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.)?bayfiles\.com/i</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">loc</span><span class="p">)</span> <span class="p">{</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-3" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-3"></a>    <span class="nx">addScript</span><span class="p">(</span><span class="s1">'bayfiles'</span><span class="p">);</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-4" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-4"></a><span class="p">}</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-5" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-5"></a>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-6" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-6"></a>    <span class="c1">// más servicios</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-7" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-7"></a>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-8" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-8"></a>  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^http:\/\/(www\.|beta\.)?cuevana\.(com|co|tv|me)/i</span><span class="p">))</span> <span class="p">{</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-9" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-9"></a>    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-10" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-10"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'plugin_ok'</span><span class="p">;</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-11" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-11"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-version'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">);</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-12" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-12"></a>    <span class="nx">n</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-revision'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">);</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-13" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-13"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-14" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-14"></a><span class="p">}</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-15" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-15"></a>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-16" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-16"></a><span class="kd">function</span> <span class="nx">addScript</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-17" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-17"></a>    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-18" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-18"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/javascript'</span><span class="p">);</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-19" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-19"></a>    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span> <span class="s1">'http://sc.cuevana.tv/player/scripts/5/'</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">'.js'</span><span class="p">);</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-20" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-20"></a>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<a id="rest_code_d38f9ff2406642fa88bc0509c10d3c77-21" name="rest_code_d38f9ff2406642fa88bc0509c10d3c77-21"></a><span class="p">}</span>
 </pre>
 <p>En ese caso se inyecta el javascript:</p>
 <pre class="literal-block">http://sc.cuevana.tv/player/scripts/5/bayfiles.js</pre>
@@ -364,7 +364,7 @@ para mostrar errores y fallos <em>on the fly</em>.</p>
 tracebacks a la parte útil, e incluye colores usados con criterio
 (basada en la genial biblioteca <a class="reference external" href="https://pypi.python.org/pypi/blessings">blessing</a>, del mismo autor).</p>
 <p>Para instalarlo, lo de siempre:</p>
-<pre class="code bash"><a name="rest_code_9734bbb61a4c4e92a4680332c84e72ea-1"></a><span class="o">(</span>env<span class="o">)</span> $ pip install nose-progressive
+<pre class="code bash"><a id="rest_code_3ce386b1fb5f424a82dd5b11b531157f-1" name="rest_code_3ce386b1fb5f424a82dd5b11b531157f-1"></a><span class="o">(</span>env<span class="o">)</span> $ pip install nose-progressive
 </pre>
 <p>Para usarlo, agregar <code class="docutils literal"><span class="pre">--with-progressive</span></code> como parámetros de <code class="docutils literal">nosetests</code>,
 o bien, para usarlo siempre, configurarlo en <code class="docutils literal">.noserc</code> o en la
@@ -405,36 +405,36 @@ métodos.</p>
 <p>Por eso existe <a class="reference external" href="https://github.com/iElectric/nose-selecttests">nose-selecttests</a>, que permite filtrar pruebas con
 determinada subcadena en el nombre del método.</p>
 <p>Por ejemplo:</p>
-<pre class="code bash"><a name="rest_code_ac1d127090a4441a9af0e01232bf2981-1"></a>$ djntest -v <span class="m">2</span> common/tests/test_sequence_diff.py
-<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-2"></a>
-<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-7"></a>
-<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-8"></a>----------------------------------------------------------------------
-<a name="rest_code_ac1d127090a4441a9af0e01232bf2981-9"></a>Ran <span class="m">4</span> tests <span class="k">in</span> <span class="m">0</span>.375s
+<pre class="code bash"><a id="rest_code_d3b12dea74e24e0086f8c388da528d29-1" name="rest_code_d3b12dea74e24e0086f8c388da528d29-1"></a>$ djntest -v <span class="m">2</span> common/tests/test_sequence_diff.py
+<a id="rest_code_d3b12dea74e24e0086f8c388da528d29-2" name="rest_code_d3b12dea74e24e0086f8c388da528d29-2"></a>
+<a id="rest_code_d3b12dea74e24e0086f8c388da528d29-3" name="rest_code_d3b12dea74e24e0086f8c388da528d29-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_d3b12dea74e24e0086f8c388da528d29-4" name="rest_code_d3b12dea74e24e0086f8c388da528d29-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_d3b12dea74e24e0086f8c388da528d29-5" name="rest_code_d3b12dea74e24e0086f8c388da528d29-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_d3b12dea74e24e0086f8c388da528d29-6" name="rest_code_d3b12dea74e24e0086f8c388da528d29-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_d3b12dea74e24e0086f8c388da528d29-7" name="rest_code_d3b12dea74e24e0086f8c388da528d29-7"></a>
+<a id="rest_code_d3b12dea74e24e0086f8c388da528d29-8" name="rest_code_d3b12dea74e24e0086f8c388da528d29-8"></a>----------------------------------------------------------------------
+<a id="rest_code_d3b12dea74e24e0086f8c388da528d29-9" name="rest_code_d3b12dea74e24e0086f8c388da528d29-9"></a>Ran <span class="m">4</span> tests <span class="k">in</span> <span class="m">0</span>.375s
 </pre>
 <p>En cambio:</p>
-<pre class="code bash"><a name="rest_code_2d201b172d694a2595c43ec733fe6e60-1"></a>$ djntest --select-tests<span class="o">=</span>differ -v <span class="m">2</span> apps/common/tests/test_sequence_diff.py
-<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-2"></a>
-<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-5"></a>----------------------------------------------------------------------
-<a name="rest_code_2d201b172d694a2595c43ec733fe6e60-6"></a>Ran <span class="m">2</span> tests <span class="k">in</span> <span class="m">0</span>.088s
+<pre class="code bash"><a id="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-1" name="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-1"></a>$ djntest --select-tests<span class="o">=</span>differ -v <span class="m">2</span> apps/common/tests/test_sequence_diff.py
+<a id="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-2" name="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-2"></a>
+<a id="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-3" name="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-4" name="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-5" name="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-5"></a>----------------------------------------------------------------------
+<a id="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-6" name="rest_code_9769b691c58c4cac9acb3ca7ca27ef5d-6"></a>Ran <span class="m">2</span> tests <span class="k">in</span> <span class="m">0</span>.088s
 </pre></section><section id="django-tests-autocomplete"><h2>django-tests-autocomplete</h2>
 <p>Esta herramienta no es estrictamente un plugin de nose, sino un helper
 que aprovecha las posibilidades de bash para
 <a class="reference external" href="http://bash-completion.alioth.debian.org/">autocompletar</a> usando la tecla
 tab.</p>
 <p>¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:</p>
-<pre class="code bash"><a name="rest_code_d3c450162a2048698734cd9497c8bfd8-1"></a>$ nosetests path/to/test.py
+<pre class="code bash"><a id="rest_code_81a77c13127f4812bed527fbec45ee68-1" name="rest_code_81a77c13127f4812bed527fbec45ee68-1"></a>$ nosetests path/to/test.py
 </pre>
 <p>Pero también permite afinar la puntería y "meterse" adentro del módulo:</p>
-<pre class="code bash"><a name="rest_code_8c3136c82927475384aa8194f7ffdc46-1"></a>$ nosetests path/to/test.py:MyImportantTestCase
+<pre class="code bash"><a id="rest_code_24d26620a27d4acb9d95cac43e2ef660-1" name="rest_code_24d26620a27d4acb9d95cac43e2ef660-1"></a>$ nosetests path/to/test.py:MyImportantTestCase
 </pre>
 <p>E incluso adentro del testcase:</p>
-<pre class="code bash"><a name="rest_code_3d441d0234534e75b54129b3d1a386a9-1"></a>$ nosetests path/to/test.py:MyImportantTestCase.test_super_important
+<pre class="code bash"><a id="rest_code_dea49d62cf76478094bda46632906d66-1" name="rest_code_dea49d62cf76478094bda46632906d66-1"></a>$ nosetests path/to/test.py:MyImportantTestCase.test_super_important
 </pre>
 <p>Desde el <code class="docutils literal">:</code> en adelante estamos en Python y Bash ya no sabe autocompletar,
 salvo que usemos esta herramienta que instrospecciona y "alimenta" el
@@ -517,16 +517,16 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 <ol class="arabic" start="3">
 <li>
 <p>Configurá virtualenvwrapper</p>
-<pre class="code bash"><a name="rest_code_da18115c3ee74ed786867271b50cc5cf-1"></a>$ mkdir ~/.virtualenvs           <span class="c1"># acá se van a guardar tus entornos virtuales</span>
-<a name="rest_code_da18115c3ee74ed786867271b50cc5cf-2"></a>$ mkdir ~/proyectos              <span class="c1"># acá se van a guardar tus proyectos</span>
-<a name="rest_code_da18115c3ee74ed786867271b50cc5cf-3"></a>$ mkdir ~/.pip_download_cache     <span class="c1"># para no bajar paquetes cada vez</span>
+<pre class="code bash"><a id="rest_code_73abffc51668419f92c6960359307881-1" name="rest_code_73abffc51668419f92c6960359307881-1"></a>$ mkdir ~/.virtualenvs           <span class="c1"># acá se van a guardar tus entornos virtuales</span>
+<a id="rest_code_73abffc51668419f92c6960359307881-2" name="rest_code_73abffc51668419f92c6960359307881-2"></a>$ mkdir ~/proyectos              <span class="c1"># acá se van a guardar tus proyectos</span>
+<a id="rest_code_73abffc51668419f92c6960359307881-3" name="rest_code_73abffc51668419f92c6960359307881-3"></a>$ mkdir ~/.pip_download_cache     <span class="c1"># para no bajar paquetes cada vez</span>
 </pre>
 <p>Luego editá tu <code class="docutils literal"><span class="pre">~/.bashrc</span></code> agregando las siguientes líneas</p>
-<pre class="code bash"><a name="rest_code_e4411a1ada5c451daa88e600cc711864-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<a name="rest_code_e4411a1ada5c451daa88e600cc711864-2"></a><span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
-<a name="rest_code_e4411a1ada5c451daa88e600cc711864-3"></a><span class="nb">export</span> <span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
-<a name="rest_code_e4411a1ada5c451daa88e600cc711864-4"></a><span class="nb">export</span> <span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
-<a name="rest_code_e4411a1ada5c451daa88e600cc711864-5"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+<pre class="code bash"><a id="rest_code_cd4efd725cb04cc1946b454903c2b18a-1" name="rest_code_cd4efd725cb04cc1946b454903c2b18a-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<a id="rest_code_cd4efd725cb04cc1946b454903c2b18a-2" name="rest_code_cd4efd725cb04cc1946b454903c2b18a-2"></a><span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<a id="rest_code_cd4efd725cb04cc1946b454903c2b18a-3" name="rest_code_cd4efd725cb04cc1946b454903c2b18a-3"></a><span class="nb">export</span> <span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
+<a id="rest_code_cd4efd725cb04cc1946b454903c2b18a-4" name="rest_code_cd4efd725cb04cc1946b454903c2b18a-4"></a><span class="nb">export</span> <span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<a id="rest_code_cd4efd725cb04cc1946b454903c2b18a-5" name="rest_code_cd4efd725cb04cc1946b454903c2b18a-5"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 </pre>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">$ source ~/.bashrc</pre>
@@ -610,51 +610,51 @@ para "postear" <em>issues</em></p>
 <p>Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
 proyecto y encontré <a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc">justo lo que estaba buscando</a>.</p>
 <p>Entonces bastó con instalar el fork de David Paz Reyes</p>
-<pre class="code bash"><a name="rest_code_4c0469835d2745f7b0b9c2e4e6b78d8b-1"></a>$ pip install git+https://github.com/davidmpaz/BitBucket-api.git
+<pre class="code bash"><a id="rest_code_d411984470484547b33d7ace61c0d440-1" name="rest_code_d411984470484547b33d7ace61c0d440-1"></a>$ pip install git+https://github.com/davidmpaz/BitBucket-api.git
 </pre>
 <p>he hice un script que migra todo los issues en estado <em>new</em>
 del repo original (<code class="docutils literal">gpec</code>) al nuevo (<code class="docutils literal">gpec</code>) y los potenciales comentarios que tenga.
 Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
 agrego un comentario avisando que es un <em>issue migrado</em>.</p>
-<pre class="code python"><a name="rest_code_a867d5f9109044f3813e51e7614267a3-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-3"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-4"></a><span class="kn">from</span> <span class="nn">bitbucket</span> <span class="kn">import</span> <span class="n">bitbucket</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-5"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-6"></a><span class="n">gpec</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec'</span><span class="p">)</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-7"></a><span class="n">gpec3</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec3'</span><span class="p">)</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-8"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-9"></a><span class="c1"># request original ISSUES</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-10"></a><span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issues</span><span class="p">()</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-11"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-12"></a><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">'issues'</span><span class="p">][:]:</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-13"></a>    <span class="n">original_id</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-14"></a>    <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'new'</span><span class="p">:</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-15"></a>        <span class="k">continue</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-16"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-17"></a>    <span class="c1"># and post to the new repo</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-18"></a>    <span class="n">ok</span><span class="p">,</span> <span class="n">new_issue</span> <span class="o">=</span> <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue</span><span class="p">(</span><span class="o">**</span><span class="n">issue</span><span class="p">)</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-19"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-20"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-21"></a>        <span class="nb">print</span> <span class="s1">'Fail migrating #</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">original_id</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-22"></a>        <span class="k">continue</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-23"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-24"></a>    <span class="n">new_id</span> <span class="o">=</span> <span class="n">new_issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-25"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-26"></a>    <span class="nb">print</span> <span class="s1">'Migrated #</span><span class="si">%d</span><span class="s1"> as #</span><span class="si">%d</span><span class="s1"> in the new project'</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-27"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-28"></a>    <span class="c1"># add a comment to mark the migration</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-29"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'reported_by'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-30"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">who</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="k">if</span> <span class="n">who</span> <span class="k">else</span> <span class="s1">'anonymous'</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-31"></a>    <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Issue migrated from the original repo. "</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-32"></a>            <span class="s2">"Was #</span><span class="si">%d</span><span class="s2"> reported by </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">who</span><span class="p">))</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-33"></a>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-34"></a>    <span class="c1"># migrate comments</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-35"></a>    <span class="n">result</span><span class="p">,</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issue_comments</span><span class="p">(</span><span class="n">original_id</span><span class="p">)</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-36"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">:</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-37"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]:</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-38"></a>            <span class="k">continue</span>
-<a name="rest_code_a867d5f9109044f3813e51e7614267a3-39"></a>        <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
+<pre class="code python"><a id="rest_code_29aff3300e2447e59863f7992df0eff1-1" name="rest_code_29aff3300e2447e59863f7992df0eff1-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-2" name="rest_code_29aff3300e2447e59863f7992df0eff1-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-3" name="rest_code_29aff3300e2447e59863f7992df0eff1-3"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-4" name="rest_code_29aff3300e2447e59863f7992df0eff1-4"></a><span class="kn">from</span> <span class="nn">bitbucket</span> <span class="kn">import</span> <span class="n">bitbucket</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-5" name="rest_code_29aff3300e2447e59863f7992df0eff1-5"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-6" name="rest_code_29aff3300e2447e59863f7992df0eff1-6"></a><span class="n">gpec</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec'</span><span class="p">)</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-7" name="rest_code_29aff3300e2447e59863f7992df0eff1-7"></a><span class="n">gpec3</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec3'</span><span class="p">)</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-8" name="rest_code_29aff3300e2447e59863f7992df0eff1-8"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-9" name="rest_code_29aff3300e2447e59863f7992df0eff1-9"></a><span class="c1"># request original ISSUES</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-10" name="rest_code_29aff3300e2447e59863f7992df0eff1-10"></a><span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issues</span><span class="p">()</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-11" name="rest_code_29aff3300e2447e59863f7992df0eff1-11"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-12" name="rest_code_29aff3300e2447e59863f7992df0eff1-12"></a><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">'issues'</span><span class="p">][:]:</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-13" name="rest_code_29aff3300e2447e59863f7992df0eff1-13"></a>    <span class="n">original_id</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-14" name="rest_code_29aff3300e2447e59863f7992df0eff1-14"></a>    <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'new'</span><span class="p">:</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-15" name="rest_code_29aff3300e2447e59863f7992df0eff1-15"></a>        <span class="k">continue</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-16" name="rest_code_29aff3300e2447e59863f7992df0eff1-16"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-17" name="rest_code_29aff3300e2447e59863f7992df0eff1-17"></a>    <span class="c1"># and post to the new repo</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-18" name="rest_code_29aff3300e2447e59863f7992df0eff1-18"></a>    <span class="n">ok</span><span class="p">,</span> <span class="n">new_issue</span> <span class="o">=</span> <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue</span><span class="p">(</span><span class="o">**</span><span class="n">issue</span><span class="p">)</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-19" name="rest_code_29aff3300e2447e59863f7992df0eff1-19"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-20" name="rest_code_29aff3300e2447e59863f7992df0eff1-20"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-21" name="rest_code_29aff3300e2447e59863f7992df0eff1-21"></a>        <span class="nb">print</span> <span class="s1">'Fail migrating #</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">original_id</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-22" name="rest_code_29aff3300e2447e59863f7992df0eff1-22"></a>        <span class="k">continue</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-23" name="rest_code_29aff3300e2447e59863f7992df0eff1-23"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-24" name="rest_code_29aff3300e2447e59863f7992df0eff1-24"></a>    <span class="n">new_id</span> <span class="o">=</span> <span class="n">new_issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-25" name="rest_code_29aff3300e2447e59863f7992df0eff1-25"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-26" name="rest_code_29aff3300e2447e59863f7992df0eff1-26"></a>    <span class="nb">print</span> <span class="s1">'Migrated #</span><span class="si">%d</span><span class="s1"> as #</span><span class="si">%d</span><span class="s1"> in the new project'</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-27" name="rest_code_29aff3300e2447e59863f7992df0eff1-27"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-28" name="rest_code_29aff3300e2447e59863f7992df0eff1-28"></a>    <span class="c1"># add a comment to mark the migration</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-29" name="rest_code_29aff3300e2447e59863f7992df0eff1-29"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'reported_by'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-30" name="rest_code_29aff3300e2447e59863f7992df0eff1-30"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">who</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="k">if</span> <span class="n">who</span> <span class="k">else</span> <span class="s1">'anonymous'</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-31" name="rest_code_29aff3300e2447e59863f7992df0eff1-31"></a>    <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Issue migrated from the original repo. "</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-32" name="rest_code_29aff3300e2447e59863f7992df0eff1-32"></a>            <span class="s2">"Was #</span><span class="si">%d</span><span class="s2"> reported by </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">who</span><span class="p">))</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-33" name="rest_code_29aff3300e2447e59863f7992df0eff1-33"></a>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-34" name="rest_code_29aff3300e2447e59863f7992df0eff1-34"></a>    <span class="c1"># migrate comments</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-35" name="rest_code_29aff3300e2447e59863f7992df0eff1-35"></a>    <span class="n">result</span><span class="p">,</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issue_comments</span><span class="p">(</span><span class="n">original_id</span><span class="p">)</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-36" name="rest_code_29aff3300e2447e59863f7992df0eff1-36"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">:</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-37" name="rest_code_29aff3300e2447e59863f7992df0eff1-37"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]:</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-38" name="rest_code_29aff3300e2447e59863f7992df0eff1-38"></a>            <span class="k">continue</span>
+<a id="rest_code_29aff3300e2447e59863f7992df0eff1-39" name="rest_code_29aff3300e2447e59863f7992df0eff1-39"></a>        <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
 </pre>
 <p>¡Disfruten!</p>
 </div>
@@ -793,13 +793,13 @@ de nuevo. Mientras tanto, el Dios en el que no creo me pone
 en el camino de resultados de Google.</p>
 <p>"Ernesto, prabamos esto?" y no alcanzó a contestar
 antes de que esté poniendo los primeros comandos</p>
-<pre class="code bash"><a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-1"></a>$ sudo mke2fs -n /dev/sda3
-<a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-2"></a>
-<a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-3"></a>Superblock backups stored on blocks:
-<a name="rest_code_f7cf7babb82b47bfa6b42a8e44e59b42-4"></a><span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>
+<pre class="code bash"><a id="rest_code_2c674b73ccce47f48860a80c53397e6e-1" name="rest_code_2c674b73ccce47f48860a80c53397e6e-1"></a>$ sudo mke2fs -n /dev/sda3
+<a id="rest_code_2c674b73ccce47f48860a80c53397e6e-2" name="rest_code_2c674b73ccce47f48860a80c53397e6e-2"></a>
+<a id="rest_code_2c674b73ccce47f48860a80c53397e6e-3" name="rest_code_2c674b73ccce47f48860a80c53397e6e-3"></a>Superblock backups stored on blocks:
+<a id="rest_code_2c674b73ccce47f48860a80c53397e6e-4" name="rest_code_2c674b73ccce47f48860a80c53397e6e-4"></a><span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>
 </pre>
 <p>Me la juego con el primer backup:</p>
-<pre class="code bash"><a name="rest_code_3fb09c0992a746f4950c426af170fc1e-1"></a>sudo e2fsck -b <span class="m">32768</span> /dev/sda3
+<pre class="code bash"><a id="rest_code_28fe726ff9a34d56986c1a456d0ab391-1" name="rest_code_28fe726ff9a34d56986c1a456d0ab391-1"></a>sudo e2fsck -b <span class="m">32768</span> /dev/sda3
 </pre>
 <p>Cientos de  <code class="docutils literal">Y</code> <code class="docutils literal">Enter</code> para mensajes estilo <em>"está roto, desea repararlo?"</em>
 (no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse

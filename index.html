@@ -211,10 +211,10 @@ sea porque somos nosotros los que <em>checkouteamos</em> el branch
 de un compañero para probar algo.</p>
 <p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
 un alias del branch previo.</p>
-<pre class="code bash"><a name="rest_code_582fd6619c004fff9a69665393bdca9a-1"></a>$ git checkout master
-<a name="rest_code_582fd6619c004fff9a69665393bdca9a-2"></a>Switched to a new branch <span class="s1">'master'</span>
-<a name="rest_code_582fd6619c004fff9a69665393bdca9a-3"></a>$ git checkout -
-<a name="rest_code_582fd6619c004fff9a69665393bdca9a-4"></a>Switched to branch <span class="s1">'writing'</span>
+<pre class="code bash"><a id="rest_code_ff5ab1429325449fa77becbf9c009f15-1" name="rest_code_ff5ab1429325449fa77becbf9c009f15-1"></a>$ git checkout master
+<a id="rest_code_ff5ab1429325449fa77becbf9c009f15-2" name="rest_code_ff5ab1429325449fa77becbf9c009f15-2"></a>Switched to a new branch <span class="s1">'master'</span>
+<a id="rest_code_ff5ab1429325449fa77becbf9c009f15-3" name="rest_code_ff5ab1429325449fa77becbf9c009f15-3"></a>$ git checkout -
+<a id="rest_code_ff5ab1429325449fa77becbf9c009f15-4" name="rest_code_ff5ab1429325449fa77becbf9c009f15-4"></a>Switched to branch <span class="s1">'writing'</span>
 </pre>
 <p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
 y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>
@@ -570,7 +570,7 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
             <span class="n">current_text</span> <span class="o">=</span> <span class="n">current_text</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="s2">" "</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">times_texts</span>
 
-<span class="k">def</span> <span class="nf">find_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">times_texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=.</span><span class="mi">4</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">find_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">times_texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mf">.4</span><span class="p">):</span>
     <span class="sd">""" Finds all 'exact' (t_start, t_end) for a word """</span>
     <span class="n">matches</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
                <span class="k">for</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">text</span><span class="p">)</span> <span class="ow">in</span> <span class="n">times_texts</span><span class="p">]</span>

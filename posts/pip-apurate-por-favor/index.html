@@ -133,23 +133,23 @@ instala el paquete. El flag <code class="docutils literal"><span class="pre">--d
 cosa tediosa cuando tenemos que instalar frecuentemente (por ejemplo en distintos virtualenvs)
 la misma dependencia o cuando el uso de ancho de banda es limitado.</p>
 <p>Por ejemplo instalamos por primera vez <a class="reference external" href="http://lxml.de/">lxml</a> y vemos cuanto tarda.</p>
-<pre class="code bash"><a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$ <span class="nb">time</span> pip install lxml --download-cache<span class="o">=</span>~/.pip_download
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-2"></a>Downloading/unpacking lxml
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-3"></a>  Downloading lxml-3.1.1.tar.gz <span class="o">(</span><span class="m">3</span>.3MB<span class="o">)</span>: <span class="m">3</span>.3MB downloaded
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-4"></a>  Storing download <span class="k">in</span> cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-5"></a>  Running setup.py egg_info <span class="k">for</span> package lxml
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-6"></a>    Building lxml version <span class="m">3</span>.1.1.
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-7"></a>
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-8"></a>    <span class="o">[</span>... compilación<span class="o">]</span>
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-9"></a>
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-10"></a>
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-11"></a>Successfully installed lxml
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-12"></a>Cleaning up...
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-13"></a>
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-14"></a>real    2m58.276s
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-15"></a>user    0m38.822s
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-16"></a>sys 0m0.676s
-<a name="rest_code_4e164c2ffc9344f985edd91bae7e4a42-17"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$
+<pre class="code bash"><a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-1" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$ <span class="nb">time</span> pip install lxml --download-cache<span class="o">=</span>~/.pip_download
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-2" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-2"></a>Downloading/unpacking lxml
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-3" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-3"></a>  Downloading lxml-3.1.1.tar.gz <span class="o">(</span><span class="m">3</span>.3MB<span class="o">)</span>: <span class="m">3</span>.3MB downloaded
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-4" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-4"></a>  Storing download <span class="k">in</span> cache at /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-5" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-5"></a>  Running setup.py egg_info <span class="k">for</span> package lxml
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-6" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-6"></a>    Building lxml version <span class="m">3</span>.1.1.
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-7" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-7"></a>
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-8" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-8"></a>    <span class="o">[</span>... compilación<span class="o">]</span>
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-9" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-9"></a>
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-10" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-10"></a>
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-11" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-11"></a>Successfully installed lxml
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-12" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-12"></a>Cleaning up...
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-13" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-13"></a>
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-14" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-14"></a>real    2m58.276s
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-15" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-15"></a>user    0m38.822s
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-16" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-16"></a>sys 0m0.676s
+<a id="rest_code_3659417fd97d4700933b3a9d3a36c8a3-17" name="rest_code_3659417fd97d4700933b3a9d3a36c8a3-17"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$
 </pre>
 <p>¡3 minutos! Y eso que estoy en una conexión bastante rápida.</p>
 <div class="admonition tip">
@@ -163,27 +163,27 @@ por ejemplo.. code-block: bash</p>
 </div>
 <p>Pero sigamos: una vez cacheado, las siguientes veces que queramos instalar la misma versión de lxml
 no bajará <strong>el archivo</strong> de nuevo</p>
-<pre class="code bash"><a name="rest_code_f10c80bb62304af7ab47adc13541c71f-1"></a><span class="o">(</span>test2<span class="o">)</span>tin@traful:~/lab/test2$ <span class="nb">time</span> pip install lxml --download-cache<span class="o">=</span>~/.pip_download
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-2"></a>
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-3"></a>Downloading/unpacking lxml
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-4"></a>  Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-5"></a>  Running setup.py egg_info <span class="k">for</span> package lxml
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-6"></a>    Building lxml version <span class="m">3</span>.1.1.
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-7"></a>
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-8"></a>    <span class="o">[</span>... compilación<span class="o">]</span>
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-9"></a>
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-10"></a>Successfully installed lxml
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-11"></a>Cleaning up...
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-12"></a>
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-13"></a>real    2m30.624s
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-14"></a>user    0m38.966s
-<a name="rest_code_f10c80bb62304af7ab47adc13541c71f-15"></a>sys 0m0.504s
+<pre class="code bash"><a id="rest_code_f4bf697c705b41edb56e582577a4c30e-1" name="rest_code_f4bf697c705b41edb56e582577a4c30e-1"></a><span class="o">(</span>test2<span class="o">)</span>tin@traful:~/lab/test2$ <span class="nb">time</span> pip install lxml --download-cache<span class="o">=</span>~/.pip_download
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-2" name="rest_code_f4bf697c705b41edb56e582577a4c30e-2"></a>
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-3" name="rest_code_f4bf697c705b41edb56e582577a4c30e-3"></a>Downloading/unpacking lxml
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-4" name="rest_code_f4bf697c705b41edb56e582577a4c30e-4"></a>  Using download cache from /home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-5" name="rest_code_f4bf697c705b41edb56e582577a4c30e-5"></a>  Running setup.py egg_info <span class="k">for</span> package lxml
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-6" name="rest_code_f4bf697c705b41edb56e582577a4c30e-6"></a>    Building lxml version <span class="m">3</span>.1.1.
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-7" name="rest_code_f4bf697c705b41edb56e582577a4c30e-7"></a>
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-8" name="rest_code_f4bf697c705b41edb56e582577a4c30e-8"></a>    <span class="o">[</span>... compilación<span class="o">]</span>
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-9" name="rest_code_f4bf697c705b41edb56e582577a4c30e-9"></a>
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-10" name="rest_code_f4bf697c705b41edb56e582577a4c30e-10"></a>Successfully installed lxml
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-11" name="rest_code_f4bf697c705b41edb56e582577a4c30e-11"></a>Cleaning up...
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-12" name="rest_code_f4bf697c705b41edb56e582577a4c30e-12"></a>
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-13" name="rest_code_f4bf697c705b41edb56e582577a4c30e-13"></a>real    2m30.624s
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-14" name="rest_code_f4bf697c705b41edb56e582577a4c30e-14"></a>user    0m38.966s
+<a id="rest_code_f4bf697c705b41edb56e582577a4c30e-15" name="rest_code_f4bf697c705b41edb56e582577a4c30e-15"></a>sys 0m0.504s
 </pre>
 <p>Mejoró realmente poco. ¿que clase de caché es esta?
 Chusmeemos que hay en el directorio.</p>
-<pre class="code bash"><a name="rest_code_84bd181a8a734e81b267fa2f77383177-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$ ls ~/.pip_download_cache/ <span class="p">|</span> grep lxml
-<a name="rest_code_84bd181a8a734e81b267fa2f77383177-2"></a>https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-<a name="rest_code_84bd181a8a734e81b267fa2f77383177-3"></a>https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
+<pre class="code bash"><a id="rest_code_89b4de4074b94ed3addb7c6a5b2d6794-1" name="rest_code_89b4de4074b94ed3addb7c6a5b2d6794-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$ ls ~/.pip_download_cache/ <span class="p">|</span> grep lxml
+<a id="rest_code_89b4de4074b94ed3addb7c6a5b2d6794-2" name="rest_code_89b4de4074b94ed3addb7c6a5b2d6794-2"></a>https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+<a id="rest_code_89b4de4074b94ed3addb7c6a5b2d6794-3" name="rest_code_89b4de4074b94ed3addb7c6a5b2d6794-3"></a>https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
 </pre>
 <p>¿Caché de urls? <code class="docutils literal"><span class="pre">-download-cache</span></code> no evita todo el laburo de averiguar de dónde bajar,
 sino simplemente no baja si la url resultante ya existe (como nombre de un archivo)
@@ -198,18 +198,18 @@ usá <code class="docutils literal"><span class="pre">--download</span></code> p
 </blockquote>
 </section><section id="una-cache-sin-salir-a-la-red"><h2>Una caché sin salir a la red</h2>
 <p>Sigamosle la corriente al bueno de <a class="reference external" href="https://twitter.com/carljm">@carljm</a>:</p>
-<pre class="code bash"><a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-1"></a><span class="o">(</span>test3<span class="o">)</span>tin@traful:~/lab/test3$ <span class="nb">time</span> pip install --download<span class="o">=</span>~/.pip_packages lxml
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-2"></a>Downloading/unpacking lxml
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-3"></a>  Using download cache from /home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-4"></a>Saved /home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-5"></a>    <span class="o">[</span>...<span class="o">]</span>
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-6"></a>
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-7"></a>Successfully downloaded lxml
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-8"></a>Cleaning up...
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-9"></a>
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-10"></a>real    2m8.969s
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-11"></a>user    0m1.008s
-<a name="rest_code_317a98211a964e68b7b55e042dd6a8ed-12"></a>sys 0m0.136s
+<pre class="code bash"><a id="rest_code_69aa6538a9a2447680a71c4d027c873d-1" name="rest_code_69aa6538a9a2447680a71c4d027c873d-1"></a><span class="o">(</span>test3<span class="o">)</span>tin@traful:~/lab/test3$ <span class="nb">time</span> pip install --download<span class="o">=</span>~/.pip_packages lxml
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-2" name="rest_code_69aa6538a9a2447680a71c4d027c873d-2"></a>Downloading/unpacking lxml
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-3" name="rest_code_69aa6538a9a2447680a71c4d027c873d-3"></a>  Using download cache from /home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-4" name="rest_code_69aa6538a9a2447680a71c4d027c873d-4"></a>Saved /home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-5" name="rest_code_69aa6538a9a2447680a71c4d027c873d-5"></a>    <span class="o">[</span>...<span class="o">]</span>
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-6" name="rest_code_69aa6538a9a2447680a71c4d027c873d-6"></a>
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-7" name="rest_code_69aa6538a9a2447680a71c4d027c873d-7"></a>Successfully downloaded lxml
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-8" name="rest_code_69aa6538a9a2447680a71c4d027c873d-8"></a>Cleaning up...
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-9" name="rest_code_69aa6538a9a2447680a71c4d027c873d-9"></a>
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-10" name="rest_code_69aa6538a9a2447680a71c4d027c873d-10"></a>real    2m8.969s
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-11" name="rest_code_69aa6538a9a2447680a71c4d027c873d-11"></a>user    0m1.008s
+<a id="rest_code_69aa6538a9a2447680a71c4d027c873d-12" name="rest_code_69aa6538a9a2447680a71c4d027c873d-12"></a>sys 0m0.136s
 </pre>
 <p>¡Uff, 2 minutos en copiar un archivo que ya tenía bajado! (evidentemente lo que demora mucho
 es <em>averiguar</em> la versión del archivo a bajar)</p>
@@ -220,26 +220,26 @@ da con el paquete lxml a bajar haciendo el comando más verborrágico con
 <code class="docutils literal">pip install lxml <span class="pre">-vvv</span></code></p>
 </div>
 <p>En este caso, el caché es directamente el archivo:</p>
-<pre class="code bash"><a name="rest_code_f77898a43db546599a1f0eb9aca52965-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>mgaitan@traful:~/lab/test$ ls ~/.pip_packages/ <span class="p">|</span> grep lxml
-<a name="rest_code_f77898a43db546599a1f0eb9aca52965-2"></a>lxml-3.1.1.tar.gz
+<pre class="code bash"><a id="rest_code_2ff74741601a41d08694af4c724df1cf-1" name="rest_code_2ff74741601a41d08694af4c724df1cf-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>mgaitan@traful:~/lab/test$ ls ~/.pip_packages/ <span class="p">|</span> grep lxml
+<a id="rest_code_2ff74741601a41d08694af4c724df1cf-2" name="rest_code_2ff74741601a41d08694af4c724df1cf-2"></a>lxml-3.1.1.tar.gz
 </pre>
 <p>Por suerte, una vez cacheado el paquete de esta manera no tendremos
 que consultar el índice online las siguientes veces.</p>
-<pre class="code bash"><a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-1"></a><span class="o">(</span>test3<span class="o">)</span>mgaitan@traful:~/lab/test3$ <span class="nb">time</span> pip install --no-index --find-links<span class="o">=</span>~/.pip_packages lxml
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-2"></a>Ignoring indexes: https://pypi.python.org/simple/
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-3"></a>Downloading/unpacking lxml
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-4"></a>  Running setup.py egg_info <span class="k">for</span> package lxml
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-5"></a>    Building lxml version <span class="m">3</span>.1.1.
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-6"></a>
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-7"></a>    <span class="o">[</span>...<span class="o">]</span>
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-8"></a>
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-9"></a>
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-10"></a>Successfully installed lxml
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-11"></a>Cleaning up...
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-12"></a>
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-13"></a>real    0m38.944s
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-14"></a>user    0m38.338s
-<a name="rest_code_34da851acc7d440ebfb7769cd7f0b716-15"></a>sys 0m0.564s
+<pre class="code bash"><a id="rest_code_1a401309661f4c8fb32d8c82d706e817-1" name="rest_code_1a401309661f4c8fb32d8c82d706e817-1"></a><span class="o">(</span>test3<span class="o">)</span>mgaitan@traful:~/lab/test3$ <span class="nb">time</span> pip install --no-index --find-links<span class="o">=</span>~/.pip_packages lxml
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-2" name="rest_code_1a401309661f4c8fb32d8c82d706e817-2"></a>Ignoring indexes: https://pypi.python.org/simple/
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-3" name="rest_code_1a401309661f4c8fb32d8c82d706e817-3"></a>Downloading/unpacking lxml
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-4" name="rest_code_1a401309661f4c8fb32d8c82d706e817-4"></a>  Running setup.py egg_info <span class="k">for</span> package lxml
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-5" name="rest_code_1a401309661f4c8fb32d8c82d706e817-5"></a>    Building lxml version <span class="m">3</span>.1.1.
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-6" name="rest_code_1a401309661f4c8fb32d8c82d706e817-6"></a>
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-7" name="rest_code_1a401309661f4c8fb32d8c82d706e817-7"></a>    <span class="o">[</span>...<span class="o">]</span>
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-8" name="rest_code_1a401309661f4c8fb32d8c82d706e817-8"></a>
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-9" name="rest_code_1a401309661f4c8fb32d8c82d706e817-9"></a>
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-10" name="rest_code_1a401309661f4c8fb32d8c82d706e817-10"></a>Successfully installed lxml
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-11" name="rest_code_1a401309661f4c8fb32d8c82d706e817-11"></a>Cleaning up...
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-12" name="rest_code_1a401309661f4c8fb32d8c82d706e817-12"></a>
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-13" name="rest_code_1a401309661f4c8fb32d8c82d706e817-13"></a>real    0m38.944s
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-14" name="rest_code_1a401309661f4c8fb32d8c82d706e817-14"></a>user    0m38.338s
+<a id="rest_code_1a401309661f4c8fb32d8c82d706e817-15" name="rest_code_1a401309661f4c8fb32d8c82d706e817-15"></a>sys 0m0.564s
 </pre>
 <p>Ok, ya va mejor.</p>
 </section><section id="haciendo-que-la-cosa-vuele-no-recompiles-la-rueda"><h2>Haciendo que la cosa vuele: no recompiles la rueda</h2>
@@ -249,26 +249,26 @@ que es muchísimo más rápido que instalar desde fuentes (sobre todo en casos
 que se debe compilar, como lxml)</p>
 <p>Para usar wheel el paquete a bajar tiene que existir en dicho formato y todavía no abundan
 en PyPi asi que podemos armarlos localmente con el propio pip</p>
-<pre class="code bash"><a name="rest_code_2ff7c62d9b4c45c690af384458ef7a29-1"></a>pip wheel --wheel-dir<span class="o">=</span>./pip_packages lxml
+<pre class="code bash"><a id="rest_code_928673cfb3db4be7930ca4cab55503b6-1" name="rest_code_928673cfb3db4be7930ca4cab55503b6-1"></a>pip wheel --wheel-dir<span class="o">=</span>./pip_packages lxml
 </pre>
 <p>Eso es similar a usar <code class="docutils literal"><span class="pre">--download</span></code> pero además compila y empaqueta como
 un archivo <code class="docutils literal">.whl</code></p>
 <p>Para que pip acepte instalar estos archivos hay que usar <code class="docutils literal"><span class="pre">--use-wheel</span></code>
 y para que los busque localmente haremos:</p>
-<pre class="code bash"><a name="rest_code_1de5fda4a5c54821b81ea2b700154e89-1"></a>pip install --use-wheel --no-index --find-links<span class="o">=</span>~/.pip_packages lxml
+<pre class="code bash"><a id="rest_code_9d4f35a7c9f549e98ab7ddfa5cc24553-1" name="rest_code_9d4f35a7c9f549e98ab7ddfa5cc24553-1"></a>pip install --use-wheel --no-index --find-links<span class="o">=</span>~/.pip_packages lxml
 </pre>
 <p>¡Lo que tardó menos de 2 decimas de segundo! Un speedup del 90mil veces respecto al primer
 y canónico <code class="docutils literal">pip install lxml</code></p>
-<pre class="code text"><a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-1"></a>(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
-<a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-2"></a>Ignoring indexes: https://pypi.python.org/simple/
-<a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-3"></a>Downloading/unpacking lxml
-<a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-4"></a>Installing collected packages: lxml
-<a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-5"></a>Successfully installed lxml
-<a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-6"></a>Cleaning up...
-<a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-7"></a>
-<a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-8"></a>real    0m0.180s
-<a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-9"></a>user    0m0.152s
-<a name="rest_code_ba09cfd9aaec43f6a46cdae3dcf58fa9-10"></a>sys 0m0.024s
+<pre class="code text"><a id="rest_code_0860494cd7134275acbc3ab0667ae106-1" name="rest_code_0860494cd7134275acbc3ab0667ae106-1"></a>(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
+<a id="rest_code_0860494cd7134275acbc3ab0667ae106-2" name="rest_code_0860494cd7134275acbc3ab0667ae106-2"></a>Ignoring indexes: https://pypi.python.org/simple/
+<a id="rest_code_0860494cd7134275acbc3ab0667ae106-3" name="rest_code_0860494cd7134275acbc3ab0667ae106-3"></a>Downloading/unpacking lxml
+<a id="rest_code_0860494cd7134275acbc3ab0667ae106-4" name="rest_code_0860494cd7134275acbc3ab0667ae106-4"></a>Installing collected packages: lxml
+<a id="rest_code_0860494cd7134275acbc3ab0667ae106-5" name="rest_code_0860494cd7134275acbc3ab0667ae106-5"></a>Successfully installed lxml
+<a id="rest_code_0860494cd7134275acbc3ab0667ae106-6" name="rest_code_0860494cd7134275acbc3ab0667ae106-6"></a>Cleaning up...
+<a id="rest_code_0860494cd7134275acbc3ab0667ae106-7" name="rest_code_0860494cd7134275acbc3ab0667ae106-7"></a>
+<a id="rest_code_0860494cd7134275acbc3ab0667ae106-8" name="rest_code_0860494cd7134275acbc3ab0667ae106-8"></a>real    0m0.180s
+<a id="rest_code_0860494cd7134275acbc3ab0667ae106-9" name="rest_code_0860494cd7134275acbc3ab0667ae106-9"></a>user    0m0.152s
+<a id="rest_code_0860494cd7134275acbc3ab0667ae106-10" name="rest_code_0860494cd7134275acbc3ab0667ae106-10"></a>sys 0m0.024s
 </pre>
 <p>Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
 django, whatever) me los haces rodar para que pip vuele.</p>
