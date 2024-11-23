@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre spip)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/spip.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Thu, 27 May 2021 02:51:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre spip)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/spip.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2024 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Nov 2024 18:38:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notas rápidas de una mudanza</title><link>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Hace unos días abría este espacio prometiendo migrar contenidos y
 tratar de que se vea un poco más bonito.&lt;/p&gt;
 &lt;p&gt;Este post incluye algunas notas sobre lo que he hecho hasta el momento.&lt;/p&gt;
 &lt;section id="github-nikola"&gt;
@@ -53,8 +53,8 @@ preferimos ponerlo en otra cosa. No gusta, pero no es lo más importante.&lt;/p&
 muchos otros ñoños con sitios lindos y legibles que son tan amables de
 compartir sus estilos (y existe &lt;a class="reference external" href="http://twitter.github.com/bootstrap"&gt;bootstrap&lt;/a&gt;, claro) voy a ir intentándolo,
 incrementalmente.&lt;/p&gt;
-&lt;p&gt;Por ahora tomé ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="footnote-reference brackets" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id3" id="id1"&gt;1&lt;/a&gt; y de la documentación
-de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="footnote-reference brackets" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id4" id="id2"&gt;2&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Por ahora tomé ideas y CSS de &lt;a class="reference external" href="http://stevelosh.com"&gt;stevelosh.com&lt;/a&gt; &lt;a class="brackets" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#footnote-1" id="footnote-reference-1" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;1&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt; y de la documentación
+de &lt;a class="reference external" href="http://flask.pocoo.org/docs/"&gt;Flask&lt;/a&gt; &lt;a class="brackets" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#footnote-2" id="footnote-reference-2" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;2&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt; basado en el theme &lt;em&gt;Readable&lt;/em&gt; de &lt;a class="reference external" href="http://bootswatch.com/"&gt;bootswatch.com&lt;/a&gt;&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="disqus"&gt;
 &lt;h2&gt;Disqus&lt;/h2&gt;
@@ -74,21 +74,23 @@ RewriteCond %{HTTP_HOST} ^nqnwebs [nc]
 RewriteRule ^blog[/]?$ http://mgaitan.github.com/ [R=301]
 RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]&lt;/pre&gt;
 &lt;p&gt;¿Cómo se va viendo?&lt;/p&gt;
-&lt;dl class="footnote brackets"&gt;
-&lt;dt class="label" id="id3"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;dt class="label" id="id4"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#id2"&gt;2&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>migration tools</category><category>nikola</category><category>spip</category><guid>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</guid><pubDate>Sun, 14 Oct 2012 22:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>https://mgaitan.github.io/posts/bienvenidos-al-tren/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hola!&lt;/p&gt;
+&lt;aside class="footnote-list brackets"&gt;
+&lt;aside class="footnote brackets" id="footnote-1" role="doc-footnote"&gt;
+&lt;span class="label"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;&lt;a role="doc-backlink" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#footnote-reference-1"&gt;1&lt;/a&gt;&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default"&gt;https://bitbucket.org/sjl/stevelosh/src/6432040d5154/LICENSE?at=default&lt;/a&gt;&lt;/p&gt;
+&lt;/aside&gt;
+&lt;aside class="footnote brackets" id="footnote-2" role="doc-footnote"&gt;
+&lt;span class="label"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;&lt;a role="doc-backlink" href="https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/#footnote-reference-2"&gt;2&lt;/a&gt;&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE"&gt;https://github.com/mitsuhiko/flask-sphinx-themes/blob/master/LICENSE&lt;/a&gt;&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/aside&gt;
+&lt;/section&gt;</description><category>migration tools</category><category>nikola</category><category>spip</category><guid>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</guid><pubDate>Sun, 14 Oct 2012 22:23:44 GMT</pubDate></item><item><title>Bievenidos al tren</title><link>https://mgaitan.github.io/posts/bienvenidos-al-tren/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Hola!&lt;/p&gt;
 &lt;p&gt;Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
 en &lt;a class="reference external" href="http://nqnwebs.com/blog"&gt;http://nqnwebs.com/blog&lt;/a&gt; y utilizaba &lt;a class="reference external" href="http://www.spip.net"&gt;SPIP&lt;/a&gt;. Por diversas razones
 que explicaré más adelante, estoy migrandolo a &lt;a class="reference external" href="http://nikola.ralsina.com.ar"&gt;Nikola&lt;/a&gt; utilizando
 &lt;a class="reference external" href="http://github.com"&gt;Github&lt;/a&gt; como plataforma de versionado y hosting.&lt;/p&gt;
 &lt;p&gt;Espero que pronto esto esté más bonito y con contenido. También que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;&lt;/div&gt;</description><category>blog</category><category>nikola</category><category>python</category><category>spip</category><guid>https://mgaitan.github.io/posts/bienvenidos-al-tren/</guid><pubDate>Thu, 11 Oct 2012 04:15:00 GMT</pubDate></item><item><title>Disqus para spip</title><link>https://mgaitan.github.io/posts/disqus-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="https://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
+mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.&lt;/p&gt;</description><category>blog</category><category>nikola</category><category>python</category><category>spip</category><guid>https://mgaitan.github.io/posts/bienvenidos-al-tren/</guid><pubDate>Thu, 11 Oct 2012 04:15:00 GMT</pubDate></item><item><title>Disqus para spip</title><link>https://mgaitan.github.io/posts/disqus-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="https://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
 &lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y fácil de usar.&lt;/p&gt;
@@ -96,9 +98,6 @@ comentarios muy poderosa y fácil de usar.&lt;/p&gt;
 plugin&lt;/a&gt;
 para integrar Disqus a &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt;.&lt;/p&gt;
 &lt;table&gt;
-&lt;colgroup&gt;
-&lt;col style="width: 100%"&gt;
-&lt;/colgroup&gt;
 &lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;a class="reference external" href="https://mgaitan.github.io/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -117,7 +116,7 @@ shortname"&lt;/em&gt; (la identificación unica que asignamos al sitio donde
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportación de comentarios preexistentes,
 basta acceder a &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/code&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;&lt;/div&gt;</description><category>Software Libre</category><category>spip</category><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/disqus-para-spip/</guid><pubDate>Thu, 07 Jul 2011 04:45:06 GMT</pubDate></item><item><title>SimpleCart(js) para spip</title><link>https://mgaitan.github.io/posts/simplecart-js-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><category>Software Libre</category><category>spip</category><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/disqus-para-spip/</guid><pubDate>Thu, 07 Jul 2011 04:45:06 GMT</pubDate></item><item><title>SimpleCart(js) para spip</title><link>https://mgaitan.github.io/posts/simplecart-js-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
 muy sencillo íntegramente desarrollado en javascript. Permite realizar
 ventas mediante PayPal o Google Checkout y es muy extensible para
 implementar otros sistemas.&lt;/p&gt;
@@ -178,15 +177,15 @@ con el parámetro &lt;em&gt;price&lt;/em&gt;.&lt;/p&gt;
 &lt;h2&gt;Un atajo más&lt;/h2&gt;
 &lt;p&gt;El código para el carrito de arriba lo incluí como un modelo para poder
 incrustarlo directamente desde la redacción de un artículo con
-&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#id2"&gt;&lt;span class="problematic" id="id3"&gt;``&lt;/span&gt;&lt;/a&gt;&amp;lt;cart1&amp;gt; &lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#id4"&gt;&lt;span class="problematic" id="id5"&gt;``&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="system-message" id="id2"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 73); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#system-message-1"&gt;&lt;span class="problematic" id="problematic-1"&gt;``&lt;/span&gt;&lt;/a&gt;&amp;lt;cart1&amp;gt; &lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#system-message-2"&gt;&lt;span class="problematic" id="problematic-2"&gt;``&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;aside class="system-message" id="system-message-1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 73); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#problematic-1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="system-message" id="id4"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 73); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/aside&gt;
+&lt;aside class="system-message" id="system-message-2"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 73); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#problematic-2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;/section&gt;
 &lt;section id="demostracion"&gt;
 &lt;h2&gt;Demostración&lt;/h2&gt;
@@ -198,7 +197,7 @@ incrustarlo directamente desde la redacción de un artículo con
 &lt;p&gt;El plugin está en desarrollo sobre
 &lt;a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart"&gt;spip-zone&lt;/a&gt;.
 Podés hacer un ckeckout SVN&lt;/p&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>E-Commerce</category><category>Javascript</category><category>spip</category><guid>https://mgaitan.github.io/posts/simplecart-js-para-spip/</guid><pubDate>Sun, 12 Sep 2010 16:34:44 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>https://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
+&lt;/section&gt;</description><category>E-Commerce</category><category>Javascript</category><category>spip</category><guid>https://mgaitan.github.io/posts/simplecart-js-para-spip/</guid><pubDate>Sun, 12 Sep 2010 16:34:44 GMT</pubDate></item><item><title>Limitar la cantidad de caracteres de los comentarios</title><link>https://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Si Twitter funciona con 140 caracteres los comentarios a nuestros
 artículos podrían tener 200, ¿no?&lt;/p&gt;
 &lt;p&gt;Hay una forma fácil de limitar el largo permitido en un campo de texto
 mediante jQuery, que vaya mostrando de manera interactiva la cantidad de
@@ -244,7 +243,7 @@ campo que querés limitar.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="ejemplo"&gt;
 &lt;h2&gt;Ejemplo&lt;/h2&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres/</guid><pubDate>Wed, 10 Jun 2009 09:41:37 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
+&lt;/section&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres/</guid><pubDate>Wed, 10 Jun 2009 09:41:37 GMT</pubDate></item><item><title>Ultima versión de Spip por SVN</title><link>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Como sabemos, el desarrollo de SPIP se realiza a través del sistema de
 control de versiones Subversion.&lt;/p&gt;
 &lt;p&gt;A través de Subversion, podemos obtener la ultima version de desarrollo
 considerada estable&lt;/p&gt;
@@ -327,7 +326,7 @@ discutiendo&lt;/a&gt;&lt;/p&gt;
 adoptó mi propuesta y ahora existen Tags en el arbol SVN de spip. En
 particular,&lt;/p&gt;
 &lt;pre class="literal-block"&gt;svn co svn://trac.rezo.net/spip/tags/spip-2-stable&lt;/pre&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>Linux</category><category>spip</category><guid>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</guid><pubDate>Fri, 22 May 2009 03:19:54 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>https://mgaitan.github.io/posts/lorem-ipsum-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
+&lt;/section&gt;</description><category>Linux</category><category>spip</category><guid>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</guid><pubDate>Fri, 22 May 2009 03:19:54 GMT</pubDate></item><item><title>Lorem Ipsum para Spip</title><link>https://mgaitan.github.io/posts/lorem-ipsum-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/Lorem_ipsum"&gt;Lorem ipsum&lt;/a&gt; es el texto
 que se usa habitualmente en diseño gráfico en demostraciones de
 tipografías o de borradores de diseño para probar el diseño visual antes
 de insertar el texto final.&lt;/p&gt;
@@ -348,9 +347,6 @@ hice un modelo (instalable como plugin) que permite insertar un texto
 del tamaño que queramos (por omisión, de 4 párrafos).&lt;/p&gt;
 &lt;p&gt;Podés bajarlo desde acá:&lt;/p&gt;
 &lt;table&gt;
-&lt;colgroup&gt;
-&lt;col style="width: 100%"&gt;
-&lt;/colgroup&gt;
 &lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;a class="reference external" href="https://mgaitan.github.io/downloads/loremipsum.zip"&gt;|image1|&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -399,7 +395,7 @@ alrededor de cada párrafo. Los valores aceptados son &lt;strong&gt;true&lt;/str
 tener que editar cada artículo sólo para poner &lt;code class="docutils literal"&gt;&amp;lt;lorem&amp;gt;&lt;/code&gt; es invocar el
 modelo siempre y cuando no exista contenido en la baliza&lt;/p&gt;
 &lt;p&gt;Por ejemplo [&lt;a class="reference external" href="https://mgaitan.github.io/blog/article/lorem-ipsum-para-spip#nb2"&gt;2&lt;/a&gt;]:&lt;/p&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/lorem-ipsum-para-spip/</guid><pubDate>Thu, 26 Mar 2009 23:39:24 GMT</pubDate></item><item><title>Variar o no variar, esa es la cuestión</title><link>https://mgaitan.github.io/posts/variar-o-no-variar-esa-es-la/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Hace algunos días, en
+&lt;/section&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/lorem-ipsum-para-spip/</guid><pubDate>Thu, 26 Mar 2009 23:39:24 GMT</pubDate></item><item><title>Variar o no variar, esa es la cuestión</title><link>https://mgaitan.github.io/posts/variar-o-no-variar-esa-es-la/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Hace algunos días, en
 &lt;a class="reference external" href="http://listes.rezo.net/mailman/listinfo/spip-es"&gt;spip-es&lt;/a&gt; se planteó
 la duda de cómo controlar una cabecera diferente para algunas secciones
 en particular.&lt;/p&gt;
@@ -465,10 +461,10 @@ queremos.&lt;/p&gt;
 potentes, pero poco escalables en la curva complejidad-comprensibilidad.&lt;/p&gt;
 &lt;p&gt;Hay una solución que es muy útil, sencilla pero no trivial: usar un
 bucle como filtro.&lt;/p&gt;
-&lt;div class="system-message"&gt;
+&lt;aside class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 100)&lt;/p&gt;
 &lt;p&gt;Literal block expected; none found.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;La explicación es de la lógica de conjuntos: los criterios de un bucle
 funcionan como condiciones AND. Deben cumplirse todas. En este caso, el
 primer criterio &lt;code class="docutils literal"&gt;{id_rubrique IN (1,2,4)}&lt;/code&gt; exige que el id_rubrique
@@ -480,7 +476,7 @@ exclusiva&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Funciona, es más legible que cualquiera de las otras soluciones y además
 permite una clausula &lt;em&gt;ELSE&lt;/em&gt; mucho más accesible, simplemente usando la
 estructura completa del bucle.&lt;/p&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>spip</category><guid>https://mgaitan.github.io/posts/variar-o-no-variar-esa-es-la/</guid><pubDate>Sun, 15 Mar 2009 23:03:38 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en spip</title><link>https://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
+&lt;/section&gt;</description><category>spip</category><guid>https://mgaitan.github.io/posts/variar-o-no-variar-esa-es-la/</guid><pubDate>Sun, 15 Mar 2009 23:03:38 GMT</pubDate></item><item><title>Una mejor manera de controlar los atributos en spip</title><link>https://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Muchas balizas SPIP generan código HTML como salida (las balizas
 #LOGO_* y los filtros |image_* son los más notorios) y
 frecuentemente necesitamos o queremos modificar este código autogenerado
 en nuestros esqueletos. Hay diversos filtros para ayudarnos a esto
@@ -559,15 +555,15 @@ function attr($tag, $name){
 funciones propias" en la documentación sobre &lt;a class="reference external" href="https://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los/Agregar%20funciones%20propias"&gt;filtros de
 spip&lt;/a&gt;) y luego usa el filtro attr en
 tus esqueletos:&lt;/p&gt;
-&lt;div class="system-message"&gt;
+&lt;aside class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 94)&lt;/p&gt;
 &lt;p&gt;Literal block expected; none found.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;Hay algunos cambios que se puede hacer a esta función: pasar $args
 directamente a inserer_attribut y extraire_attribut en vez de las
 variables individuales, agregar un parámetro $value=FALSE que sólo sirva
 para la claridad de la documentación , y el mencionado, eliminar
-atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;&lt;/div&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los/</guid><pubDate>Thu, 12 Mar 2009 08:29:35 GMT</pubDate></item><item><title>Personalizar el texto de #INTRODUCTION</title><link>https://mgaitan.github.io/posts/personalizar-el-texto-de/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Desde la versión 1.4, SPIP tiene una baliza calculada &lt;code class="docutils literal"&gt;#INTRODUCTION&lt;/code&gt;
+atributos cuando se pase por ejemplo NULL como parámetro.&lt;/p&gt;</description><category>jQuery</category><category>spip</category><guid>https://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los/</guid><pubDate>Thu, 12 Mar 2009 08:29:35 GMT</pubDate></item><item><title>Personalizar el texto de #INTRODUCTION</title><link>https://mgaitan.github.io/posts/personalizar-el-texto-de/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Desde la versión 1.4, SPIP tiene una baliza calculada &lt;code class="docutils literal"&gt;#INTRODUCTION&lt;/code&gt;
 que como su nombre indica, sirve para presentar una introducción al
 artículo completo.&lt;/p&gt;
 &lt;p&gt;En la &lt;a class="reference external" href="http://www.spip.net/es_article116.html"&gt;documentación explica&lt;/a&gt;&lt;/p&gt;
@@ -579,12 +575,12 @@ texto).&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;En la versión 1.92 se incorporó otro atajo para indicar el largo del
 texto mostrado (sobrecargando los 600 caracteres por omisión).&lt;/p&gt;
-&lt;p&gt;Así, &lt;a href="https://mgaitan.github.io/posts/personalizar-el-texto-de/#id1"&gt;&lt;span class="problematic" id="id2"&gt;``&lt;/span&gt;&lt;/a&gt;#INTRODUCTION{150} `` mostrará la descripción, si existe, o los
+&lt;p&gt;Así, &lt;a href="https://mgaitan.github.io/posts/personalizar-el-texto-de/#system-message-1"&gt;&lt;span class="problematic" id="problematic-1"&gt;``&lt;/span&gt;&lt;/a&gt;#INTRODUCTION{150} `` mostrará la descripción, si existe, o los
 primeros 150 caracteres del epigrafe y/o el texto.&lt;/p&gt;
-&lt;div class="system-message" id="id1"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 15); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/personalizar-el-texto-de/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;aside class="system-message" id="system-message-1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 15); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/personalizar-el-texto-de/#problematic-1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;Pero con la versión 2 llegó por fin un control más profundo para los
 redactores. Es posible definir cual es el texto que se mostrará con
 #INTRODUCTION encerrandolo entre la etiquetas &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;intro&amp;gt;...&amp;lt;/intro&amp;gt;&lt;/span&gt;&lt;/code&gt; en
@@ -601,4 +597,4 @@ seccion, allí se vería el texto&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Esta oración es la introducción al articulo. Y acá sigue mi artículo
 completo.&lt;/p&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><category>spip</category><guid>https://mgaitan.github.io/posts/personalizar-el-texto-de/</guid><pubDate>Tue, 10 Mar 2009 12:38:44 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;</description><category>spip</category><guid>https://mgaitan.github.io/posts/personalizar-el-texto-de/</guid><pubDate>Tue, 10 Mar 2009 12:38:44 GMT</pubDate></item></channel></rss>

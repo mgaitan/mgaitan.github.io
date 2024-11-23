@@ -6,12 +6,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Charlas y cursos | tin_nqn</title>
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../assets/css/all.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -19,7 +16,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/charlas/">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="Charlas y cursos">
 <meta property="og:url" content="https://mgaitan.github.io/charlas/">
@@ -76,6 +73,10 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
+        <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
+    </li>
+
                 
             </ul>
 </div>
@@ -90,8 +91,7 @@ navbar-light bg-light
 
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<section id="diez-consejos-para-un-mejor-software-de-cientifico-s"><h2>Diez consejos para un mejor software (de) científico(s)</h2>
+    <section id="diez-consejos-para-un-mejor-software-de-cientifico-s"><h2>Diez consejos para un mejor software (de) científico(s)</h2>
 <blockquote>
 <p>En <a class="reference external" href="http://phasety.com">Phasety</a> he lidiado (y aprendido) con el código escrito por científicos.
 Mentes brillantes, expertas en su campo de investigación, tienen como herramienta principal un lenguaje
@@ -102,23 +102,28 @@ simples y consejos prácticos para que la programación científica de cada día
 más efectiva, mantenible y entendible.</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>presentación</dt>
+<dt>presentación<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://mgaitan.github.io/10consejos/index.html">ver online</a></p>
 </dd>
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="https://github.com/mgaitan/10consejos">https://github.com/mgaitan/10consejos</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p>Scipycon Argentina 2014</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Universidad Nacional del Sur, Bahía Blanca, Argentina</p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>22 de octubre de 2014</p>
 </dd>
@@ -128,19 +133,23 @@ más efectiva, mantenible y entendible.</p>
 <p>Un curso de Python orientado a estudiantes de ingenieria, ingenieros e investigadores.</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="https://github.com/mgaitan/curso-python-cientifico">https://github.com/mgaitan/curso-python-cientifico</a>&gt;</p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p>Scipycon Argentina 2014</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Universidad Nacional del Sur, Bahía Blanca, Argentina</p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>22 de octubre de 2014</p>
 </dd>
@@ -153,46 +162,56 @@ usando (¡y creando!) tecnología. Pero ¿Cuáles problemas debemos resolver?
 Y ya que sabemos resolver problemas ¿Podemos ayudarle a Messi a ganar el Mundial?</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://mgaitan.github.io/ganar_el_mundial/">http://mgaitan.github.io/ganar_el_mundial/</a></p>
 </dd>
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://github.com/mgaitan/ganar_el_mundial/">http://github.com/mgaitan/ganar_el_mundial/</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p>Ciclo de charlas "Ingeniería y emprendedorismo", (Gradiente - La Bisagra)</p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>15 de abril de 2014</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Facultad de Ciencias Exáctas, Físicas y Naturales, Córdoba, Argentina</p>
 </dd>
 </dl></section><hr class="docutils">
 <section id="introduccion-a-git"><h2>Introducción a Git</h2>
 <dl class="field-list simple">
-<dt>presentación</dt>
+<dt>presentación<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://mgaitan.github.io/intro-git/index.html">http://mgaitan.github.io/intro-git/index.html</a></p>
 </dd>
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="https://github.com/mgaitan/intro-git">https://github.com/mgaitan/intro-git</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p>8vas Jornadas de Software Libre de la UNNOBA</p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>29 de Noviembre de 2013</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Universidad Nacional del Noroeste de la Provincia de Buenos Aires, Junín, Buenos Aires.</p>
 </dd>
@@ -203,23 +222,28 @@ Y ya que sabemos resolver problemas ¿Podemos ayudarle a Messi a ganar el Mundia
 Una charla sobre python idiomático: características de este lenguaje para expresar de forma simple, elegante y potente.</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://mgaitan.github.com/pythonicidad/">http://mgaitan.github.com/pythonicidad/</a></p>
 </dd>
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://github.com/mgaitan/pythonicidad/">http://github.com/mgaitan/pythonicidad/</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://ar.pycon.org/2013">PyCon Argentina 2013</a></p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Viernes 25 de octubre de 2013</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Rosario, Argentina</p>
 </dd>
@@ -242,38 +266,46 @@ código en lenguajes HDL sintetizables y hacer tu sueño
 realidad: ¡hacer hardware con Python!</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://mgaitan.github.com/myhdl-talk/">http://mgaitan.github.com/myhdl-talk/</a></p>
 </dd>
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://github.com/mgaitan/myhdl-talk/">http://github.com/mgaitan/myhdl-talk/</a></p>
 </dd>
 </dl>
 <section id="presentaciones"><h3>Presentaciones</h3>
 <dl class="field-list simple">
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://ar.pycon.org/2012">PyCon Argentina 2012</a></p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Sábado 17 de junio de 2012</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Univesidad Nacional de Quilmes, Bernal, Buenos Aires</p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://www.pyday.com.ar/cordoba2011/">PyDay Córdoba 2011</a></p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Sábado 30 de abril de 2011</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Universidad Tecnológica Nacional - Sede Córdoba</p>
 </dd>
@@ -285,23 +317,28 @@ que se banquen un desarrollo de largo plazo. Además permite
 utilizar una arquitectura MVC de manera fácil.</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://mgaitan.github.com/enaml-talk/">http://mgaitan.github.com/enaml-talk/</a></p>
 </dd>
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://github.com/mgaitan/enaml-talk/">http://github.com/mgaitan/enaml-talk/</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://ar.pycon.org/2012">PyCon Argentina 2012</a></p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Viernes 16 de junio de 2012</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Univesidad Nacional de Quilmes, Bernal, Buenos Aires</p>
 </dd>
@@ -314,38 +351,46 @@ su "cultura de la documentación". La charla dará ideas, herramientas,
 servicios y demás yerbas para ser un pythonista de ley, documentado.</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://mgaitan.github.io/charla__doc__/presentacion.html">http://mgaitan.github.io/charla__doc__/presentacion.html</a></p>
 </dd>
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://github.com/mgaitan/charla__doc__/">http://github.com/mgaitan/charla__doc__/</a></p>
 </dd>
 </dl>
-<section id="id2"><h3>Presentaciones</h3>
+<section id="presentaciones-1"><h3>Presentaciones</h3>
 <dl class="field-list simple">
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://utpl.edu.ec/isummit2012/">III Conferencia Internacional de Tecnología iSummit Loxa 2012</a></p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Viernes 26 de octubre de 2012</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Universidad Técnica Particular de Loja, Ecuador</p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://pydaycba.com.ar/">PyDay Córdoba 2012</a></p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Sábado 15 de septiembre de 2012</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>FaMAF, Universidad Nacional de Córdoba</p>
 </dd>
@@ -359,24 +404,29 @@ la <a class="reference external" href="http://www.utpl.edu.ec/">Universidad Téc
 Ecuador.</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://mgaitan.github.com/curso-django/slides/dia1.html">Dia 1</a> y
 <a class="reference external" href="http://mgaitan.github.com/curso-django/slides/dia2.html">Dia 2</a></p>
 </dd>
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="https://github.com/mgaitan/curso-django">https://github.com/mgaitan/curso-django</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://utpl.edu.ec/isummit2012/">III Conferencia Internacional de Tecnología iSummit Loxa 2012</a></p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Lunes 22 y Miércoles 24 de octubre, 2012</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Loja, Ecuador</p>
 </dd>
@@ -387,23 +437,28 @@ Ecuador.</p>
 <a class="reference external" href="http://packages.python.org/pyquery/">PyQuery</a> es una biblioteca que trae la API de selectores y traversing de jQuery a Python</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://nqnwebs.github.com/pyquery-lightning-talk/pyquery-lt.html">http://nqnwebs.github.com/pyquery-lightning-talk/pyquery-lt.html</a></p>
 </dd>
-<dt>repo</dt>
+<dt>repo<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="https://github.com/nqnwebs/pyquery-lightning-talk">https://github.com/nqnwebs/pyquery-lightning-talk</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://ar.pycon.org/2011">PyCon Argentina 2011</a></p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Viernes 23 de septiembre de 2011</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Universidad Nacional del Noroeste de la Provincia de Buenos Aires,
 Junín, Prov. de Buenos Aires</p>
@@ -421,15 +476,18 @@ y de código (funciones, generadores, clases).</p>
 de numpy y matplotlib y se enfoca en distintos módulos útiles de la biblioteca estándar.</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p>Curso de capacitación para profesores y estudiantes avanzados de FCEFyN, UNC</p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Noviembre de 2010</p>
 </dd>
-<dt>repositorio</dt>
+<dt>repositorio<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="https://github.com/mgaitan/python-ingenieria">https://github.com/mgaitan/python-ingenieria</a></p>
 </dd>
@@ -444,19 +502,23 @@ logging, historial, accesos al sistema, etc.</p>
 Ver instrucciones en <code class="docutils literal">README.rst</code></p>
 </blockquote>
 <dl class="field-list simple">
-<dt>repositorio</dt>
+<dt>repositorio<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="https://github.com/nqnwebs/IPython-interactive-talk/">https://github.com/nqnwebs/IPython-interactive-talk/</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://ar.pycon.org/2010">PyCon Argentina 2010</a></p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Viernes 15 de octubre de 2010</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>Universidad Siglo XXI, Córdoba, Argentina</p>
 </dd>
@@ -471,27 +533,33 @@ Operativos II, Paradigmas de programación y mi proyecto integrador
 en curso"</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p>Conferencias de Ingeniería en Computación, Electrónica y Biomédica 2010</p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Jueves 7 de Octubre de 2010</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>FCEFyN, Universidad Nacional de Córdoba</p>
 </dd>
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html">http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html</a></p>
 </dd>
-<dt>fuentes</dt>
+<dt>fuentes<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/alosbifes.tar.gz">http://lab.nqnwebs.com/charlas/alosbifes/alosbifes.tar.gz</a></p>
 </dd>
-<dt>post</dt>
+<dt>post<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="../posts/charla-python-a-los-bifes.html">/posts/charla-python-a-los-bifes.html</a></p>
 </dd>
@@ -509,27 +577,33 @@ Libre</a>, realizadas en Córdoba, en
 2007.</p>
 </blockquote>
 <dl class="field-list simple">
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="../downloads/ojotas_copia_.odp">/downloads/ojotas_copia_.odp</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p>3º Jornadas Abiertas de Ingeniería en Computación</p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>Miércoles 15 de abril de 2009</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>FCEFyN, Universidad Nacional de Córdoba</p>
 </dd>
-<dt>post</dt>
+<dt>post<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="../posts/charla-ser-freelance-como-trabajar.html">/posts/charla-ser-freelance-como-trabajar.html</a></p>
 </dd>
-<dt>video</dt>
+<dt>video<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=3pKPg11qBvM">https://www.youtube.com/watch?v=3pKPg11qBvM</a></p>
 </dd>
@@ -545,38 +619,42 @@ clientes, tanto en GNU/Linux como en Windows.</p>
 </blockquote>
 <p>Charla preparada y presentada junto a Pablo Martínez</p>
 <dl class="field-list simple">
-<dt>diapositivas</dt>
+<dt>diapositivas<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="../downloads/charla-svn.pdf">/downloads/charla-svn.pdf</a></p>
 </dd>
-<dt>evento</dt>
+<dt>evento<span class="colon">:</span>
+</dt>
 <dd>
 <p>1ras Conferencias Abiertas de Ingeniería en Computación</p>
 </dd>
-<dt>fecha</dt>
+<dt>fecha<span class="colon">:</span>
+</dt>
 <dd>
 <p>5 de junio de 2007</p>
 </dd>
-<dt>lugar</dt>
+<dt>lugar<span class="colon">:</span>
+</dt>
 <dd>
 <p>FCEFyN, Universidad Nacional de Córdoba</p>
 </dd>
-<dt>post</dt>
+<dt>post<span class="colon">:</span>
+</dt>
 <dd>
 <p><a class="reference external" href="../posts/Control-de-Versiones-con.html">/posts/Control-de-Versiones-con.html</a></p>
 </dd>
 </dl></section>
 </div>
-    </div>
     
 </article><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
-            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../assets/js/all.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

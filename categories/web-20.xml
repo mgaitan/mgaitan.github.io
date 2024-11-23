@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Web 2.0)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/web-20.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Thu, 27 May 2021 02:51:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>https://mgaitan.github.io/posts/como-volver-a-compartir-desde/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="admonition important"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Web 2.0)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/web-20.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2024 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Nov 2024 18:38:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cómo volver a compartir desde Google Reader</title><link>https://mgaitan.github.io/posts/como-volver-a-compartir-desde/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;aside class="admonition important"&gt;
 &lt;p class="admonition-title"&gt;Importante&lt;/p&gt;
 &lt;p&gt;El pipe tiene un problema con las fechas y quedó deactualizado
 cuando cambió en el html de G+. En su defecto hice este pequeño
 &lt;a class="reference external" href="https://gist.github.com/2886591"&gt;scrapper&lt;/a&gt; que es lo que uso
 en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;Textos y Pretextos&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;Desde hace muchísimo tengo en &lt;a class="reference external" href="http://www.textospretextos.com.ar"&gt;mi otro
 blog&lt;/a&gt; una sección que se llama &lt;em&gt;"De
 por ahí, cosas que me parecieron interesantes"&lt;/em&gt;. Es un feed de links a
@@ -13,9 +13,9 @@ contenidos de toda índole (política, literatura, cine, fotografía,
 deportes, programación: intereses anchos) con un brevisimo extracto como
 descripción que fui alimentando de diversas formas a lo largo del
 tiempo: usé
-&lt;a class="reference external" href="http://delicious.com/nqnwebs,%20use%20%20%5Besto%20%20-%3Ehttp://sourceforge.net/projects/linkwalla/"&gt;delicious&lt;/a&gt;,
+&lt;a class="reference external" href="http://delicious.com/nqnwebs,%20use%20%20[esto%20%20-%3Ehttp://sourceforge.net/projects/linkwalla/"&gt;delicious&lt;/a&gt;,
 usé mi
-&lt;a class="reference external" href="http://twitter.com/nqnwebs).%20Pero%20cuando%20%5BGoogle%20Reader-%3Ehttp://reader.google.com"&gt;twitter&lt;/a&gt;
+&lt;a class="reference external" href="http://twitter.com/nqnwebs).%20Pero%20cuando%20[Google%20Reader-%3Ehttp://reader.google.com"&gt;twitter&lt;/a&gt;
 incorporó la opción de "Compartir" se convirtió en la manera por
 defecto: si algo me gustaba, un click en compartir y listo. Eso permitia
 que otros usuarios de Reader que me "seguian" pudieran ver mis posts
@@ -63,7 +63,7 @@ cuestión.&lt;/p&gt;
 &lt;figure class="align-center"&gt;
 &lt;img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"&gt;
 &lt;/figure&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/como-volver-a-compartir-desde/</guid><pubDate>Thu, 12 Jan 2012 00:37:21 GMT</pubDate></item><item><title>Disqus para spip</title><link>https://mgaitan.github.io/posts/disqus-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="https://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
+&lt;/section&gt;</description><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/como-volver-a-compartir-desde/</guid><pubDate>Thu, 12 Jan 2012 00:37:21 GMT</pubDate></item><item><title>Disqus para spip</title><link>https://mgaitan.github.io/posts/disqus-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="https://mgaitan.github.io/images/disqus-newlod23a-8b781.gif"&gt;
 &lt;p&gt;Hace tiempo me interesa el servicio
 &lt;a class="reference external" href="http://www.disqus.com"&gt;disqus.com&lt;/a&gt; que provee una plataforma de
 comentarios muy poderosa y fácil de usar.&lt;/p&gt;
@@ -71,9 +71,6 @@ comentarios muy poderosa y fácil de usar.&lt;/p&gt;
 plugin&lt;/a&gt;
 para integrar Disqus a &lt;a class="reference external" href="http://www.spip.net"&gt;Spip&lt;/a&gt;.&lt;/p&gt;
 &lt;table&gt;
-&lt;colgroup&gt;
-&lt;col style="width: 100%"&gt;
-&lt;/colgroup&gt;
 &lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;a class="reference external" href="https://mgaitan.github.io/downloads/disqus.zip"&gt;Plugin Disqus para SPIP version 0.1&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -92,7 +89,7 @@ shortname"&lt;/em&gt; (la identificación unica que asignamos al sitio donde
 usaremos Diqus).&lt;/p&gt;
 &lt;p&gt;Para generar el XML con la exportación de comentarios preexistentes,
 basta acceder a &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;/?page=export_comments_to_disqus&lt;/span&gt;&lt;/code&gt; y luego importar
-ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;&lt;/div&gt;</description><category>Software Libre</category><category>spip</category><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/disqus-para-spip/</guid><pubDate>Thu, 07 Jul 2011 04:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
+ese archivo desde el panel de Disqus (Tools -&amp;gt; Import/Export )&lt;/p&gt;</description><category>Software Libre</category><category>spip</category><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/disqus-para-spip/</guid><pubDate>Thu, 07 Jul 2011 04:45:06 GMT</pubDate></item><item><title>Yahoo! Pipes como por un tubo</title><link>https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com"&gt;Yahoo! Pipes&lt;/a&gt; es una una herramienta web
 interactiva para agregar y manipular feeds RSS (y otras fuentes de
 datos) a nuestro antojo de forma sencilla y asequible para cualquiera.&lt;/p&gt;
 &lt;p&gt;Es un entorno de programación visual online. La programación visual es
@@ -120,10 +117,10 @@ Mazamorra&lt;/a&gt;:&lt;/p&gt;
 &lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/local/cache-vignettes/L510xH321/Pantallazo-90218.png"&gt;
 &lt;/figure&gt;
-&lt;div class="system-message"&gt;
+&lt;aside class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 36)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;El resultado puede verse (y clonarse) &lt;a class="reference external" href="http://pipes.yahoo.com/mazamorra/rss_todo"&gt;desde
 aquí&lt;/a&gt;&lt;/p&gt;
 &lt;/section&gt;
@@ -145,10 +142,10 @@ quiero. &lt;a class="reference external" href="http://pipes.yahoo.com/mazamorra/
 &lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/local/cache-vignettes/L465xH360/pipes2-4a406.png"&gt;
 &lt;/figure&gt;
-&lt;div class="system-message"&gt;
+&lt;aside class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 61)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;/section&gt;
 &lt;section id="ejemplo-en-video"&gt;
 &lt;h2&gt;Ejemplo en video&lt;/h2&gt;
@@ -163,4 +160,4 @@ centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
 pequeño ’screencast’ que explica cómo recuperar las categorías (la
 de desarrollo web, en particular) que se ha cargado Feedburner…&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>spip</category><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/</guid><pubDate>Mon, 23 Feb 2009 22:23:40 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>spip</category><category>Web 2.0</category><guid>https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/</guid><pubDate>Mon, 23 Feb 2009 22:23:40 GMT</pubDate></item></channel></rss>

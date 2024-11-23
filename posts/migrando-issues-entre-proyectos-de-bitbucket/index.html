@@ -6,12 +6,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Migrando issues entre proyectos de Bitbucket | tin_nqn</title>
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -19,7 +16,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../jquery-una-introduccion/" title="Jquery, una introducción" type="text/html">
 <link rel="next" href="../creando-un-nuevo-proyecto-python/" title="Creando un nuevo proyecto Python" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
@@ -81,6 +78,10 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
+        <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
+    </li>
+
                 
             </ul>
 </div>
@@ -101,16 +102,16 @@ navbar-light bg-light
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2012-11-10T00:09:24-03:00" itemprop="datePublished" title="2012-11-10 00:09">2012-11-10 00:09</time></a>
             </p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/migrando-issues-entre-proyectos-de-bitbucket.html">Comentarios</a>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/migrando-issues-entre-proyectos-de-bitbucket.html">Comentarios</a>
 
 
-            
-        </p>
-</div>
+                    </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">El código de este artículo está disponible en </a></p>
+
+        </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Hace un tiempo conté <a class="reference external" href="../de-mercurial-a-git-limpieza.html">como migré un repositorio Mercurial a Git</a> .
+    <p>Hace un tiempo conté <a class="reference external" href="../de-mercurial-a-git-limpieza.html">como migré un repositorio Mercurial a Git</a> .
 Se trataba de un proyecto hospedado en <a class="reference external" href="http://bitbucket.org">Bitbucket</a> y para cambiar
 de DVCS tuve que crear un proyecto nuevo, que tambien hospedamos
 allí porque somos pobretones y nos da repos privados gratis.
@@ -126,54 +127,53 @@ para "postear" <em>issues</em></p>
 <p>Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
 proyecto y encontré <a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc">justo lo que estaba buscando</a>.</p>
 <p>Entonces bastó con instalar el fork de David Paz Reyes</p>
-<pre class="code bash"><a id="rest_code_d411984470484547b33d7ace61c0d440-1" name="rest_code_d411984470484547b33d7ace61c0d440-1"></a>$ pip install git+https://github.com/davidmpaz/BitBucket-api.git
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_4ab8804a8e3c4c09ad35458294104fd7-1" name="rest_code_4ab8804a8e3c4c09ad35458294104fd7-1" href="#rest_code_4ab8804a8e3c4c09ad35458294104fd7-1"></a>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/davidmpaz/BitBucket-api.git
+</pre></div>
 <p>he hice un script que migra todo los issues en estado <em>new</em>
 del repo original (<code class="docutils literal">gpec</code>) al nuevo (<code class="docutils literal">gpec</code>) y los potenciales comentarios que tenga.
 Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
 agrego un comentario avisando que es un <em>issue migrado</em>.</p>
-<pre class="code python"><a id="rest_code_29aff3300e2447e59863f7992df0eff1-1" name="rest_code_29aff3300e2447e59863f7992df0eff1-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-2" name="rest_code_29aff3300e2447e59863f7992df0eff1-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-3" name="rest_code_29aff3300e2447e59863f7992df0eff1-3"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-4" name="rest_code_29aff3300e2447e59863f7992df0eff1-4"></a><span class="kn">from</span> <span class="nn">bitbucket</span> <span class="kn">import</span> <span class="n">bitbucket</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-5" name="rest_code_29aff3300e2447e59863f7992df0eff1-5"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-6" name="rest_code_29aff3300e2447e59863f7992df0eff1-6"></a><span class="n">gpec</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec'</span><span class="p">)</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-7" name="rest_code_29aff3300e2447e59863f7992df0eff1-7"></a><span class="n">gpec3</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec3'</span><span class="p">)</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-8" name="rest_code_29aff3300e2447e59863f7992df0eff1-8"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-9" name="rest_code_29aff3300e2447e59863f7992df0eff1-9"></a><span class="c1"># request original ISSUES</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-10" name="rest_code_29aff3300e2447e59863f7992df0eff1-10"></a><span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issues</span><span class="p">()</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-11" name="rest_code_29aff3300e2447e59863f7992df0eff1-11"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-12" name="rest_code_29aff3300e2447e59863f7992df0eff1-12"></a><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">'issues'</span><span class="p">][:]:</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-13" name="rest_code_29aff3300e2447e59863f7992df0eff1-13"></a>    <span class="n">original_id</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-14" name="rest_code_29aff3300e2447e59863f7992df0eff1-14"></a>    <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'new'</span><span class="p">:</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-15" name="rest_code_29aff3300e2447e59863f7992df0eff1-15"></a>        <span class="k">continue</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-16" name="rest_code_29aff3300e2447e59863f7992df0eff1-16"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-17" name="rest_code_29aff3300e2447e59863f7992df0eff1-17"></a>    <span class="c1"># and post to the new repo</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-18" name="rest_code_29aff3300e2447e59863f7992df0eff1-18"></a>    <span class="n">ok</span><span class="p">,</span> <span class="n">new_issue</span> <span class="o">=</span> <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue</span><span class="p">(</span><span class="o">**</span><span class="n">issue</span><span class="p">)</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-19" name="rest_code_29aff3300e2447e59863f7992df0eff1-19"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-20" name="rest_code_29aff3300e2447e59863f7992df0eff1-20"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-21" name="rest_code_29aff3300e2447e59863f7992df0eff1-21"></a>        <span class="nb">print</span> <span class="s1">'Fail migrating #</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">original_id</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-22" name="rest_code_29aff3300e2447e59863f7992df0eff1-22"></a>        <span class="k">continue</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-23" name="rest_code_29aff3300e2447e59863f7992df0eff1-23"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-24" name="rest_code_29aff3300e2447e59863f7992df0eff1-24"></a>    <span class="n">new_id</span> <span class="o">=</span> <span class="n">new_issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-25" name="rest_code_29aff3300e2447e59863f7992df0eff1-25"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-26" name="rest_code_29aff3300e2447e59863f7992df0eff1-26"></a>    <span class="nb">print</span> <span class="s1">'Migrated #</span><span class="si">%d</span><span class="s1"> as #</span><span class="si">%d</span><span class="s1"> in the new project'</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-27" name="rest_code_29aff3300e2447e59863f7992df0eff1-27"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-28" name="rest_code_29aff3300e2447e59863f7992df0eff1-28"></a>    <span class="c1"># add a comment to mark the migration</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-29" name="rest_code_29aff3300e2447e59863f7992df0eff1-29"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'reported_by'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-30" name="rest_code_29aff3300e2447e59863f7992df0eff1-30"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">who</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="k">if</span> <span class="n">who</span> <span class="k">else</span> <span class="s1">'anonymous'</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-31" name="rest_code_29aff3300e2447e59863f7992df0eff1-31"></a>    <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Issue migrated from the original repo. "</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-32" name="rest_code_29aff3300e2447e59863f7992df0eff1-32"></a>            <span class="s2">"Was #</span><span class="si">%d</span><span class="s2"> reported by </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">who</span><span class="p">))</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-33" name="rest_code_29aff3300e2447e59863f7992df0eff1-33"></a>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-34" name="rest_code_29aff3300e2447e59863f7992df0eff1-34"></a>    <span class="c1"># migrate comments</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-35" name="rest_code_29aff3300e2447e59863f7992df0eff1-35"></a>    <span class="n">result</span><span class="p">,</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issue_comments</span><span class="p">(</span><span class="n">original_id</span><span class="p">)</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-36" name="rest_code_29aff3300e2447e59863f7992df0eff1-36"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">:</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-37" name="rest_code_29aff3300e2447e59863f7992df0eff1-37"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]:</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-38" name="rest_code_29aff3300e2447e59863f7992df0eff1-38"></a>            <span class="k">continue</span>
-<a id="rest_code_29aff3300e2447e59863f7992df0eff1-39" name="rest_code_29aff3300e2447e59863f7992df0eff1-39"></a>        <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-1" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-1" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-2" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-2" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-3" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-3" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-3"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-4" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-4" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-4"></a><span class="kn">from</span> <span class="nn">bitbucket</span> <span class="kn">import</span> <span class="n">bitbucket</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-5" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-5" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-5"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-6" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-6" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-6"></a><span class="n">gpec</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec'</span><span class="p">)</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-7" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-7" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-7"></a><span class="n">gpec3</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec3'</span><span class="p">)</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-8" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-8" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-8"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-9" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-9" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-9"></a><span class="c1"># request original ISSUES</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-10" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-10" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-10"></a><span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issues</span><span class="p">()</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-11" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-11" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-11"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-12" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-12" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-12"></a><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">'issues'</span><span class="p">][:]:</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-13" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-13" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-13"></a>    <span class="n">original_id</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-14" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-14" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-14"></a>    <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'new'</span><span class="p">:</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-15" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-15" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-15"></a>        <span class="k">continue</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-16" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-16" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-16"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-17" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-17" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-17"></a>    <span class="c1"># and post to the new repo</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-18" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-18" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-18"></a>    <span class="n">ok</span><span class="p">,</span> <span class="n">new_issue</span> <span class="o">=</span> <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue</span><span class="p">(</span><span class="o">**</span><span class="n">issue</span><span class="p">)</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-19" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-19" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-19"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-20" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-20" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-20"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-21" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-21" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-21"></a>        <span class="nb">print</span> <span class="s1">'Fail migrating #</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">original_id</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-22" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-22" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-22"></a>        <span class="k">continue</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-23" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-23" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-23"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-24" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-24" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-24"></a>    <span class="n">new_id</span> <span class="o">=</span> <span class="n">new_issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-25" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-25" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-25"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-26" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-26" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-26"></a>    <span class="nb">print</span> <span class="s1">'Migrated #</span><span class="si">%d</span><span class="s1"> as #</span><span class="si">%d</span><span class="s1"> in the new project'</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-27" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-27" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-27"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-28" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-28" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-28"></a>    <span class="c1"># add a comment to mark the migration</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-29" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-29" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-29"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'reported_by'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-30" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-30" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-30"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">who</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="k">if</span> <span class="n">who</span> <span class="k">else</span> <span class="s1">'anonymous'</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-31" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-31" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-31"></a>    <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Issue migrated from the original repo. "</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-32" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-32" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-32"></a>            <span class="s2">"Was #</span><span class="si">%d</span><span class="s2"> reported by </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">who</span><span class="p">))</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-33" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-33" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-33"></a>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-34" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-34" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-34"></a>    <span class="c1"># migrate comments</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-35" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-35" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-35"></a>    <span class="n">result</span><span class="p">,</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issue_comments</span><span class="p">(</span><span class="n">original_id</span><span class="p">)</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-36" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-36" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-36"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">:</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-37" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-37" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-37"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]:</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-38" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-38" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-38"></a>            <span class="k">continue</span>
+<a id="rest_code_801a34ad9c45452eaeb010a1f086d2b6-39" name="rest_code_801a34ad9c45452eaeb010a1f086d2b6-39" href="#rest_code_801a34ad9c45452eaeb010a1f086d2b6-39"></a>        <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
 <p>¡Disfruten!</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/migraciones/" rel="tag">migraciones</a></li>
@@ -188,7 +188,7 @@ agrego un comentario avisando que es un <em>issue migrado</em>.</p>
                 <a href="../creando-un-nuevo-proyecto-python/" rel="next" title="Creando un nuevo proyecto Python">Siguiente post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
-                        <div id="disqus_thread"></div>
+                    <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
             disqus_url="https://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/",
@@ -208,13 +208,13 @@ agrego un comentario avisando que es un <em>issue migrado</em>.</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
-            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

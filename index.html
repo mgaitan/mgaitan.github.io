@@ -7,12 +7,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="description" content="&gt;&gt;&gt; me.geek.post()">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>tin_nqn</title>
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="assets/css/all.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -20,8 +17,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/">
-<link rel="next" href="index-10.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/custom-screen-layout-switcher-for-linux/" type="text/html">
+<link rel="next" href="index-20.html" type="text/html">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/custom-screen-layout-switcher-for-linux/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -89,41 +86,40 @@ navbar-light bg-light
             <a href="posts/custom-screen-layout-switcher-for-linux/" rel="bookmark">
             <time class="published dt-published" datetime="2021-04-12T13:52:34-03:00" itemprop="datePublished" title="2021-04-12 13:52">2021-04-12 13:52</time></a>
             </p>
-                <p class="commentline">            <a href="posts/custom-screen-layout-switcher-for-linux/#disqus_thread" data-disqus-identifier="cache/posts/custom-screen-layout-switcher-for-linux.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/custom-screen-layout-switcher-for-linux/#disqus_thread" data-disqus-identifier="cache/posts/custom-screen-layout-switcher-for-linux.html">Comentarios</a>
 
 
         </p>
 </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>Mi setup de trabajo consiste en la laptop (Lenovo x1 del 2015), un monitor externo de 22" y un combo teclado + mouse inalambrico <a href="https://www.cotodigital3.com.ar/sitios/cdigi/producto/-teclado-top-house-wireless-combo-mouse-kb592gcm/_/A-00484043-00484043-200">del supermercado</a>. Actualmente estoy usando <a href="https://pop.system76.com/">Pop!_OS</a></p>
+    <p>Mi setup de trabajo consiste en la laptop (Lenovo x1 del 2015), un monitor externo de 22" y un combo teclado + mouse inalambrico <a href="https://www.cotodigital3.com.ar/sitios/cdigi/producto/-teclado-top-house-wireless-combo-mouse-kb592gcm/_/A-00484043-00484043-200">del supermercado</a>. Actualmente estoy usando <a href="https://pop.system76.com/">Pop!_OS</a></p>
 <p>El monitor está en un <a href="https://www.oneboxsolutions.com.ar/producto/ob-lcd12/">brazo</a> que me permite acomodarlo y girarlo en cualquier posición. El brazo está en una pequeña alzada que me permite ganar unos 13cm de altura, de manera que puedo usarlo para hacer standup desk junto con mi mesita. </p>
 <blockquote class="twitter-tweet">
 <p lang="es" dir="ltr">Hoy terminé mí mesita para trabajar parado. Con el brazo para monitor suplementado la altura queda bastante razonable y también puedo usarla con el tele vía chromecast <a href="https://t.co/O6RLKogCO7">pic.twitter.com/O6RLKogCO7</a></p>— Martín Gaitán (@tin_nqn_) <a href="https://twitter.com/tin_nqn_/status/1304951373482647553?ref_src=twsrc%5Etfw">September 13, 2020</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>Trato de trabajar al menos la mitad del día parado y a veces me voy con la compu a otra parte de la casa. Así que todo el tiempo estoy cambiando la configuración de la/s pantalla/s. Hacer esta tarea a mano me llevaba mucho tiempo y además es dificilisima la motricidad con el mouse si la pantalla está girada.  </p>
 <p>Dentro del soporte de "funciones avanzadas de teclado" de los linux modernos está "switch-monitor". Gnome mapea esta funcion con <code>&lt;Super&gt;+P</code> además de la tecla especial del teclado. </p>
-<pre class="code literal-block"><span></span><code>$ gsettings get org.gnome.mutter.keybindings switch-monitor
-<span class="o">[</span><span class="s1">'&lt;Super&gt;p'</span>, <span class="s1">'XF86Display'</span><span class="o">]</span>
-</code></pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>gsettings<span class="w"> </span>get<span class="w"> </span>org.gnome.mutter.keybindings<span class="w"> </span>switch-monitor
+<span class="o">[</span><span class="s1">'&lt;Super&gt;p'</span>,<span class="w"> </span><span class="s1">'XF86Display'</span><span class="o">]</span>
+</pre></div>
 
 <p>El problema con esta funcionalidad es que los modos están predefinidos: monitores espejados, sólo externa, sólo integrada o ambas "unidas" pero asumiendo ambas horizontales y el monitor izquierdo a la derecha (y el mio queda a la izquierda de la laptop). </p>
 <p><a href="https://twitter.com/tin_nqn_/status/1380947297777901570">Pregunté en twitter</a> y varios amigos me apuntaron a la herramienta 
 <a href="https://christian.amsuess.com/tools/arandr/">arandr</a> que permite hacer las mismas configuraciones de pantallas que la herramienta de Gnome (de manera manual y visual) con la diferencia de que los modos definidos se pueden guardar como un comando de xrandr. Por ejemplo este setup de ambas pantallas encendidas y horizontales </p>
 <p><img alt="arandr example" src="https://user-images.githubusercontent.com/2355719/114436452-b7c04780-9b9b-11eb-9b0f-1c7bc1c2da04.png"></p>
 <p>se guarda desde arandr (¡y se puede abrir para editar!) como un script </p>
-<pre class="code literal-block"><span></span><code><span class="p">(</span><span class="n">blog</span><span class="p">)</span><span class="w"> </span><span class="n">tin</span><span class="nv">@pop</span><span class="o">-</span><span class="nl">os</span><span class="p">:</span><span class="o">~/</span><span class="p">.</span><span class="n">screenlayout</span><span class="err">$</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="mi">2</span><span class="n">horizontal</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span>
-<span class="err">#!</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span><span class="w"></span>
+<div class="code"><pre class="code literal-block"><span class="p">(</span><span class="n">blog</span><span class="p">)</span><span class="w"> </span><span class="n">tin</span><span class="nv">@pop</span><span class="o">-</span><span class="nl">os</span><span class="p">:</span><span class="o">~/</span><span class="p">.</span><span class="n">screenlayout</span><span class="err">$</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="mi">2</span><span class="n">horizontal</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span>
+<span class="err">#!</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span>
 <span class="n">xrandr</span><span class="w"> </span><span class="c1">--output eDP-1 --mode 1920x1080 --pos 1920x283 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --primary --mode 1920x1080 --pos 0x0 --rotate normal</span>
-</code></pre>
+</pre></div>
 
 <p>Asi es que definí con esa herramienta los modos frecuentes que uso</p>
-<pre class="code literal-block"><span></span><code>~/.screenlayout$ ls *.sh
+<div class="code"><pre class="code literal-block">~/.screenlayout$ ls *.sh
 2horizontal.sh  ext-horizontal.sh  ext-vertical.sh  lapt-solo.sh
-</code></pre>
+</pre></div>
 
 <p>Lo que quería luego era un atajo de teclado que me permitiera rotar entre esos modos. Hice un script en python que lo dejé en la misma carpeta</p>
-<pre class="code literal-block"><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<div class="code"><pre class="code literal-block"><span class="ch">#!/usr/bin/env python3</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -148,18 +144,17 @@ navbar-light bg-light
 <span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="s1">'.last'</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">))</span>
 
 <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">)])</span>
-</code></pre>
+</pre></div>
 
 <p>Este <code>switcher.py</code> busca todos los archivos <code>.sh</code> en la misma carpeta y ejecuta el que sigue al ultimo ejecutado, que se guarda en un archivo <code>.last</code> (si no existe, el primer modo será el primero listado). </p>
 <p>Decidí deshabilitar el atajo por default </p>
-<pre class="code literal-block"><span></span><code>$ gsettings <span class="nb">set</span> org.gnome.mutter.keybindings switch-monitor <span class="s2">"['XF86Display']</span>
-</code></pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>gsettings<span class="w"> </span><span class="nb">set</span><span class="w"> </span>org.gnome.mutter.keybindings<span class="w"> </span>switch-monitor<span class="w"> </span><span class="s2">"['XF86Display']</span>
+</pre></div>
 
 <p>y agregué un shortcut que ejecuta <code>~/.screenlayout/switcher</code> con <code>Ctrl + Super + P</code> (en gnome: Configuración -&gt; Keyboard -&gt; Combinación de teclas -&gt; Customize Shortcuts -&gt; Combinación Personalizada )</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/2355719/114437517-0a4e3380-9b9d-11eb-8847-1d6ebdd61f16.png"></p>
 <p>Ahora puedo pararme cuando quiera, levantar y girar el monitor y apretar 
 <code>Ctrl + Super + P</code> las veces necesarias hasta que quede como quiero. </p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/" class="u-url">move-imports, o cómo calmar el TOC de un pythonista</a></h1>
         <div class="metadata">
@@ -170,7 +165,7 @@ navbar-light bg-light
             <a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/" rel="bookmark">
             <time class="published dt-published" datetime="2020-05-12T16:13:41-03:00" itemprop="datePublished" title="2020-05-12 16:13">2020-05-12 16:13</time></a>
             </p>
-                <p class="commentline">            <a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/#disqus_thread" data-disqus-identifier="cache/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/#disqus_thread" data-disqus-identifier="cache/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista.html">Comentarios</a>
 
 
         </p>
@@ -197,7 +192,7 @@ sus mañosas convenciones del lenguaje a cuestas. Una de ellas está <a href="ht
             <a href="posts/el-mono-salta-entre-las-ramas/" rel="bookmark">
             <time class="published dt-published" datetime="2020-04-30T01:59:00-03:00" itemprop="datePublished" title="2020-04-30 01:59">2020-04-30 01:59</time></a>
             </p>
-                <p class="commentline">            <a href="posts/el-mono-salta-entre-las-ramas/#disqus_thread" data-disqus-identifier="cache/posts/el-mono-salta-entre-las-ramas.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/el-mono-salta-entre-las-ramas/#disqus_thread" data-disqus-identifier="cache/posts/el-mono-salta-entre-las-ramas.html">Comentarios</a>
 
 
         </p>
@@ -211,11 +206,11 @@ sea porque somos nosotros los que <em>checkouteamos</em> el branch
 de un compañero para probar algo.</p>
 <p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
 un alias del branch previo.</p>
-<pre class="code bash"><a id="rest_code_ff5ab1429325449fa77becbf9c009f15-1" name="rest_code_ff5ab1429325449fa77becbf9c009f15-1"></a>$ git checkout master
-<a id="rest_code_ff5ab1429325449fa77becbf9c009f15-2" name="rest_code_ff5ab1429325449fa77becbf9c009f15-2"></a>Switched to a new branch <span class="s1">'master'</span>
-<a id="rest_code_ff5ab1429325449fa77becbf9c009f15-3" name="rest_code_ff5ab1429325449fa77becbf9c009f15-3"></a>$ git checkout -
-<a id="rest_code_ff5ab1429325449fa77becbf9c009f15-4" name="rest_code_ff5ab1429325449fa77becbf9c009f15-4"></a>Switched to branch <span class="s1">'writing'</span>
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-1" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-1" href="posts/el-mono-salta-entre-las-ramas/#rest_code_602e2cedbe0746a0a417096c2b3bc52c-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+<a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-2" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-2" href="posts/el-mono-salta-entre-las-ramas/#rest_code_602e2cedbe0746a0a417096c2b3bc52c-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span><span class="s1">'master'</span>
+<a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-3" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-3" href="posts/el-mono-salta-entre-las-ramas/#rest_code_602e2cedbe0746a0a417096c2b3bc52c-3"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-
+<a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-4" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-4" href="posts/el-mono-salta-entre-las-ramas/#rest_code_602e2cedbe0746a0a417096c2b3bc52c-4"></a>Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">'writing'</span>
+</pre></div>
 <p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
 y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>
 <p>El problema es que si no nos acordamos el nombre del branch, mucho menos
@@ -232,7 +227,7 @@ podriamos acordarnos el orden cronológico en el que lo usamos.</p>
             <a href="posts/miau-cuando-el-gato-dice-la-verdad/" rel="bookmark">
             <time class="published dt-published" datetime="2018-05-09T16:36:18-03:00" itemprop="datePublished" title="2018-05-09 16:36">2018-05-09 16:36</time></a>
             </p>
-                <p class="commentline">            <a href="posts/miau-cuando-el-gato-dice-la-verdad/#disqus_thread" data-disqus-identifier="cache/posts/miau-cuando-el-gato-dice-la-verdad.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/miau-cuando-el-gato-dice-la-verdad/#disqus_thread" data-disqus-identifier="cache/posts/miau-cuando-el-gato-dice-la-verdad.html">Comentarios</a>
 
 
         </p>
@@ -258,7 +253,7 @@ podriamos acordarnos el orden cronológico en el que lo usamos.</p>
             <a href="posts/el-padronazo-cordobes/" rel="bookmark">
             <time class="published dt-published" datetime="2015-10-13T19:04:48-03:00" itemprop="datePublished" title="2015-10-13 19:04">2015-10-13 19:04</time></a>
             </p>
-                <p class="commentline">            <a href="posts/el-padronazo-cordobes/#disqus_thread" data-disqus-identifier="cache/posts/el-padronazo-cordobes.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/el-padronazo-cordobes/#disqus_thread" data-disqus-identifier="cache/posts/el-padronazo-cordobes.html">Comentarios</a>
 
 
         </p>
@@ -278,985 +273,21 @@ podriamos acordarnos el orden cronológico en el que lo usamos.</p>
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion/" class="u-url">Curso de Python para ciencias e ingeniería, nueva edición</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion/" rel="bookmark">
-            <time class="published dt-published" datetime="2015-08-19T17:50:09-03:00" itemprop="datePublished" title="2015-08-19 17:50">2015-08-19 17:50</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion/#disqus_thread" data-disqus-identifier="cache/posts/curso-de-python-para-ingenierias-y-ciencias-nueva-edicion.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<img alt="/images/Newsletter4-Banner_20120705_12-44-50-800.jpg" src="images/Newsletter4-Banner_20120705_12-44-50-800.jpg"><div class="admonition attention">
-<p class="admonition-title">¡Atención!</p>
-<p>¿Estás interesado en que dicte este curso, de manera intensiva, en tu laboratorio o empresa? <a class="reference external" href="http://mgaitan.github.io/about.html#contacto">Contactame</a>.</p>
-</div>
-<p>Está abierta la inscripción para el nuevo dictado de mi curso de <strong>introducción a Python para ciencias e ingenierías</strong>, en la <strong>Facultad de Ciencias Exáctas, Físicas y Naturales</strong> de la Universidad Nacional de Córdoba (aprobado como curso de extensión - <a class="reference external" href="http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015">Resolución 1272/2015</a>, bajo el nombre "Python como herramienta para la ingeniería") desde el <strong>miércoles 14 de ocubre de 18 a 22hs</strong>,  durante 5 semanas.</p>
-<p>Este curso una versión mejorada del que <a class="reference external" href="posts/python-para-ciencia-e-ingenieria.html">dicté</a> en la Facultad de Matemática, Física y Astronomía en mayo pasado, avalado como curso de extensión (<a class="reference external" href="http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015">Resolución HCD 107/2015</a>)</p>
-<p>El precio está absolutamente subsidiado por las ganas de que más ingenieros e investigadores programen Python. No te demores en <a class="reference external" href="http://goo.gl/forms/cQszya0Sdi">anotarte</a> , <strong>los cupos son muy limitados</strong>!</p>
-<p>Se entregarán certificados a quienes completen asistencia.</p>
-<p class="more"><a href="posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion/">Leer más…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/python-para-ciencia-e-ingenieria/" class="u-url">Curso de Python para ñoños</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/python-para-ciencia-e-ingenieria/" rel="bookmark">
-            <time class="published dt-published" datetime="2015-04-06T10:46:36-03:00" itemprop="datePublished" title="2015-04-06 10:46">2015-04-06 10:46</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/python-para-ciencia-e-ingenieria/#disqus_thread" data-disqus-identifier="cache/posts/python-para-ciencia-e-ingenieria.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p class="alert alert-success"><strong>¡Los cupos irán a sorteo!</strong> Anotate. Si no entrás para en esta edición, quedás anotado para la próxima que será muy pronto.</p>
-<p>La demanda nos desbordó. En menos de 2 dias tenemos inscriptos para llenar dos veces el laboratorio que tenemos disponible! Algunos ya están averiguando la disponibilidad del Estadio Kempes para hacer el próximo.</p>
-<p>Como recién hoy (martes 7 de abril) se realizó la difusión oficial desde FaMAF, la decisión
-de los organizadores es permitir la inscripción de todos los interesados y hacer un sorteo de las 25 plazas
-aranceladas y otro para las 15 plazas gratuitas reservadas para estudiantes de grado de FaMAF.</p>
-<p>La justificación de un sorteo en vez de tomar el orden de inscripción la dió el Dr. Nicolás Wolovick, que junto al Dr. Pedro Pury fueron los gestores para que el curso se oficializara, con un argumento democráticamente ñoño:</p>
-<blockquote>
-<p>Estar conectado 24/7 por 3G, recibir el tweet, e inscribirse, no es justo, es una condición de posibilidad que no todos tienen. La distribución uniforme es la que mayor entropía tiene :)</p>
-</blockquote>
-<p>Si estás interesado, es importante que te inscribas a través del <a class="reference external" href="http://goo.gl/forms/kB7jkXHLyf">formulario</a>.
-Así tendremos una lista bien grande de "argumentos" para reeditar el curso lo más pronto posible.</p>
-<p>Otra posibilidad es que averigües <span class="strike">hagas lobby</span> en tu empresa o laboratorio sobre la posibilidad de realizar el curso <em>in house</em> y, si tienen interés, <a class="reference external" href="about.html">lo charlamos</a>.</p>
-<hr class="docutils">
-<img alt="/images/Newsletter4-Banner_20120705_12-44-50-800.jpg" src="images/Newsletter4-Banner_20120705_12-44-50-800.jpg"><p>A partir del 29 de abril voy a dar el curso <a class="reference external" href="https://github.com/mgaitan/curso-python-cientifico">Introducción a Python para ciencias e ingenierías</a> en la Facultad de Matemática, Astronomía y Física (<a class="reference external" href="http://famaf.unc.edu.ar/">FaMAF</a>) de la Universidad Nacional de Córdoba.</p>
-<p>Este curso es una versión revisada y extendida del que dí en la <a class="reference external" href="http://scipycon.com.ar/">ScipyCon Argentina 2014</a> y durará 8 clases de 2hs cada una. Será los miércoles de 18hs a 20hs en el laboratorio de computación de la facultad. No hace falta contar con equipo propio y el único pre-requisito es tener nociones básicas de programación en cualquier lenguaje.</p>
-<p>El costo del curso es $400. Hay becas para estudiantes de grado de FaMAF.</p>
-<p>Acá está el <a class="reference external" href="http://goo.gl/forms/kB7jkXHLyf">formulario de pre-inscripción (LOS CUPOS IRAN A SORTEO)</a>.</p>
-<p>El curso está reconocido como Curso de Extensión de FaMAF (Res. HCD 107/2015) y
-se entregarán certificados oficiales a quienes completen asistencia y participación.</p>
-<p class="alert alert-warning"><strong>Atención</strong> Los cupos son muy limitados!</p>
-<p class="more"><a href="posts/python-para-ciencia-e-ingenieria/">Leer más…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-python, scrapping" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/sergio-massa-y-lagente/" class="u-url">Sergio Massa y #LaGente</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/sergio-massa-y-lagente/" rel="bookmark">
-            <time class="published dt-published" datetime="2015-03-13T00:56:43-03:00" itemprop="datePublished" title="2015-03-13 00:56">2015-03-13 00:56</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/sergio-massa-y-lagente/#disqus_thread" data-disqus-identifier="cache/posts/sergio-massa-y-lagente.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Anoche me reí mucho con el hashtag <a href="https://twitter.com/search?q=%23lagente&amp;src=typd">#LaGente</a>, que se viralizó mientras Alejandro Fantino entrevistaba, una vez más, al inefable candidato presidencial Sergio Massa.</p>
-<blockquote class="twitter-tweet" lang="es">
-<p>"Me comprometo no ante vos, ante <a href="https://twitter.com/hashtag/LaGente?src=hash">#LaGente</a>". Lo harta que me tiene este tipo no tiene nombre.</p>— Fenicia  (@zeinicienta) <a href="https://twitter.com/zeinicienta/status/575858399021264896">marzo 12, 2015</a>
-</blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><blockquote class="twitter-tweet" lang="es">
-<p>Es insoportable la cantidad de frases hechas y lugares comunes que tira <a href="https://twitter.com/SergioMassa">@SergioMassa</a>. Demagogo berreta. <a href="https://twitter.com/hashtag/LaGente?src=hash">#LaGente</a></p>— Javier Smaldone (@mis2centavos) <a href="https://twitter.com/mis2centavos/status/575850582386343938">marzo 12, 2015</a>
-</blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><blockquote class="twitter-tweet" lang="es">
-<p>Quiero contar la cantidad de veces que +a dice <a href="https://twitter.com/hashtag/LaGente?src=hash">#LaGente</a></p>— memorex (@memorex) <a href="https://twitter.com/memorex/status/575847833565163521">marzo 12, 2015</a>
-</blockquote>
-<p>Me acordé entonces de un <a href="http://zulko.github.io/blog/2014/06/21/some-more-videogreping-with-python/">post de Zulko</a>, cuyo blog es un compilado de gemas ñoñamente divertidas. Allí muestra cómo recortar automáticamente los pedacitos de un video que mencionen una palabra o frase, basándose en las marcas de tiempo del archivo de subtítulos, utilizando su maravillosa biblioteca <a href="http://zulko.github.io/moviepy/">Moviepy</a> y un poco de Python. Más o menos lo que hace <a href="https://github.com/antiboredom/videogrep">videogrep</a>, pero más prolijo.</p>
-<p>La herramienta <a href="http://rg3.github.io/youtube-dl/">youtube-dl</a> (que también es genial y hecha en Python), permite no sólo bajar videos de youtube y los subtitulos existentes, sino que también puede bajar el "subtitulo automático". En general son bastante malos pero es suficientemente efectivo para encontrar pequeñas frases.</p>
-<h3 id='Todo-sea-por-"la-gente":-manos-a-la-obra'>Todo sea por "la gente": manos a la obra<a class="anchor-link" href="posts/sergio-massa-y-lagente/#Todo-sea-por-%22la-gente%22:-manos-a-la-obra">¶</a>
-</h3>
-<p>Lo primero que necesitamos es una lista de videos donde Sergio Massa hable. Hice una <a href="https://www.youtube.com/results?search_query=entrevista+sergio+massa">búsqueda</a>, decidí ignorar algunos (parodias, por ejemplo) y generé una lista. Hay varias maneras de obtener este listado de las primeras paginas de resultados, yo utilicé el rústico y efectivo webscrapping:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyquery</span> <span class="kn">import</span> <span class="n">PyQuery</span>
-<span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">skip</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'M0yuFHbhYLY'</span><span class="p">,</span><span class="s1">'TLmMh9Qvmic'</span><span class="p">,</span> <span class="s1">'rY4Hwvn6GlA'</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="n">pq</span> <span class="o">=</span> <span class="n">PyQuery</span><span class="p">(</span><span class="s1">'https://www.youtube.com/results?search_query=entrevista+sergio+massa&amp;page=</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="n">page</span><span class="p">)</span>
-    <span class="n">pq</span><span class="o">.</span><span class="n">make_links_absolute</span><span class="p">()</span>
-    <span class="n">links</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">pq</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'href'</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">pq</span><span class="p">(</span><span class="s1">'a.yt-uix-tile-link'</span><span class="p">)</span> <span class="k">if</span> <span class="n">pq</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'href'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'v='</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">skip</span><span class="p">])</span>
-<span class="n">links</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[1]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>['https://www.youtube.com/watch?v=8pP8G3fSAcY',
- 'https://www.youtube.com/watch?v=g6QSwxUo1aw',
- 'https://www.youtube.com/watch?v=_9FN6CI8fD4',
- 'https://www.youtube.com/watch?v=5wqwNDpkZOo',
- 'https://www.youtube.com/watch?v=V865E4mBiHU',
- 'https://www.youtube.com/watch?v=TPrGNJnMS9U',
- 'https://www.youtube.com/watch?v=SVTl11hG9Gs',
- 'https://www.youtube.com/watch?v=Df_dwb5XHQM',
- 'https://www.youtube.com/watch?v=sptBkyfq1VU',
- 'https://www.youtube.com/watch?v=tzjz1xrNu3k',
- 'https://www.youtube.com/watch?v=k-CGbuOo8do',
- 'https://www.youtube.com/watch?v=_L-B_wHsEec',
- 'https://www.youtube.com/watch?v=iFOABIQdo9Q',
- 'https://www.youtube.com/watch?v=WOlRIKGrBWY',
- 'https://www.youtube.com/watch?v=a-mCgN6W9ek',
- 'https://www.youtube.com/watch?v=x5vhchv3zAY',
- 'https://www.youtube.com/watch?v=bi5eK7i59w0',
- 'https://www.youtube.com/watch?v=VNHV3D_6o4E',
- 'https://www.youtube.com/watch?v=MWVZ6JDU9V8',
- 'https://www.youtube.com/watch?v=v-JmdgVZqVc',
- 'https://www.youtube.com/watch?v=FBFHpdxsyYU',
- 'https://www.youtube.com/watch?v=WXmTc83l1sQ',
- 'https://www.youtube.com/watch?v=GfNgds5vS60',
- 'https://www.youtube.com/watch?v=UHRa34A6rDg',
- 'https://www.youtube.com/watch?v=xVU-EjnuksU',
- 'https://www.youtube.com/watch?v=-IXymTZZM6o',
- 'https://www.youtube.com/watch?v=tzvwDTPyTHQ',
- 'https://www.youtube.com/watch?v=a19z6EVWpQ4',
- 'https://www.youtube.com/watch?v=rAOvF8X_nzM',
- 'https://www.youtube.com/watch?v=wtvl4esdMGU',
- 'https://www.youtube.com/watch?v=1YPHDDH1Az0',
- 'https://www.youtube.com/watch?v=w7TnghsrJUo',
- 'https://www.youtube.com/watch?v=qBT-6HpSrwc',
- 'https://www.youtube.com/watch?v=JM-xblTxLGc',
- 'https://www.youtube.com/watch?v=kMymsVsmETY',
- 'https://www.youtube.com/watch?v=K1-dfiVfbOI',
- 'https://www.youtube.com/watch?v=VnoiHVlR-So',
- 'https://www.youtube.com/watch?v=hMTzJyLiXE4',
- 'https://www.youtube.com/watch?v=VGQPNQ1Bhkg',
- 'https://www.youtube.com/watch?v=0oR4z7SsY14',
- 'https://www.youtube.com/watch?v=Cl4r8h_Hlak',
- 'https://www.youtube.com/watch?v=gJFmek-YgYo',
- 'https://www.youtube.com/watch?v=9VQ7Ov5W_tM',
- 'https://www.youtube.com/watch?v=rKwKImVrYu4',
- 'https://www.youtube.com/watch?v=LJwj9SHC9EU',
- 'https://www.youtube.com/watch?v=-08OEpFThiw',
- 'https://www.youtube.com/watch?v=BPJBl5y2P2g',
- 'https://www.youtube.com/watch?v=MvkXlg9ZbL4',
- 'https://www.youtube.com/watch?v=7KgIa4fX_Ng',
- 'https://www.youtube.com/watch?v=upNLrHtzeBI',
- 'https://www.youtube.com/watch?v=Y-norf1BKAs',
- 'https://www.youtube.com/watch?v=QMvAl_fxQSA',
- 'https://www.youtube.com/watch?v=3os_uXUOvcM',
- 'https://www.youtube.com/watch?v=ZE_aChIEELo',
- 'https://www.youtube.com/watch?v=iKI-8ceuR-A',
- 'https://www.youtube.com/watch?v=CASdYLquQII',
- 'https://www.youtube.com/watch?v=5cvyi1CcpYs',
- 'https://www.youtube.com/watch?v=NVEw-YIAy5A',
- 'https://www.youtube.com/watch?v=yMXn04-GQTY',
- 'https://www.youtube.com/watch?v=RCCzZGcGg5k',
- 'https://www.youtube.com/watch?v=FqMFKGsXLOE',
- 'https://www.youtube.com/watch?v=MVOvQb8KBm0',
- 'https://www.youtube.com/watch?v=ENvWfMwnJ_0',
- 'https://www.youtube.com/watch?v=bs7xGm293Vs',
- 'https://www.youtube.com/watch?v=7OvrK-U-axI',
- 'https://www.youtube.com/watch?v=VHeWqPqs4vo',
- 'https://www.youtube.com/watch?v=nVOEi9FESn8',
- 'https://www.youtube.com/watch?v=eikTWAvFwTE',
- 'https://www.youtube.com/watch?v=BU2amn3QdWk',
- 'https://www.youtube.com/watch?v=GiB1pOuEvqg',
- 'https://www.youtube.com/watch?v=GAPN17lTJ9c',
- 'https://www.youtube.com/watch?v=4Ja1uZbMM8E',
- 'https://www.youtube.com/watch?v=F1dAfCR4rc0',
- 'https://www.youtube.com/watch?v=334O9xh-CQY',
- 'https://www.youtube.com/watch?v=KgNmw3sJ0g8',
- 'https://www.youtube.com/watch?v=-SQSue4-PLk',
- 'https://www.youtube.com/watch?v=HPE4PHlYySo']</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Luego, el paso lento: bajar los videos. Al parecer, Youtube no genera un subtitulo automático para videos demasiado largo, así que limité hasta 30 minutos.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-    <span class="o">!</span>youtube-dl --write-auto-sub --sub-lang es --max-filesize <span class="m">30</span>.00m <span class="o">{</span>link<span class="o">}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Con el material crudo disponible (aunque puede ser que no se hayan encontrado subtitulos para todos los videos), podemos copiar descaradamente partes del código de Zulko (levemente adaptado)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span> 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">moviepy.editor</span> <span class="kn">import</span> <span class="n">VideoFileClip</span><span class="p">,</span> <span class="n">concatenate</span><span class="p">,</span> <span class="n">TextClip</span><span class="p">,</span> <span class="n">CompositeVideoClip</span>
-
-
-<span class="k">def</span> <span class="nf">convert_time</span><span class="p">(</span><span class="n">timestring</span><span class="p">):</span>
-    <span class="sd">""" Converts a string into seconds """</span>
-    <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d+'</span><span class="p">,</span> <span class="n">timestring</span><span class="p">)]</span>
-    <span class="k">return</span> <span class="mi">3600</span> <span class="o">*</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">60</span><span class="o">*</span><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span>
-
-
-<span class="k">def</span> <span class="nf">get_time_texts</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-
-    <span class="n">times_texts</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">current_times</span> <span class="p">,</span> <span class="n">current_text</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">""</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-        <span class="n">times</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">"[0-9]*:[0-9]*:[0-9]*,[0-9]*"</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">times</span> <span class="o">!=</span> <span class="p">[]:</span>
-            <span class="n">current_times</span> <span class="o">=</span> <span class="p">[</span><span class="n">convert_time</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">]</span>
-        <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">:</span>
-            <span class="n">times_texts</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">current_times</span><span class="p">,</span> <span class="n">current_text</span><span class="p">))</span>
-            <span class="n">current_times</span><span class="p">,</span> <span class="n">current_text</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">""</span>
-        <span class="k">elif</span> <span class="n">current_times</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">current_text</span> <span class="o">=</span> <span class="n">current_text</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="s2">" "</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">times_texts</span>
-
-<span class="k">def</span> <span class="nf">find_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">times_texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mf">.4</span><span class="p">):</span>
-    <span class="sd">""" Finds all 'exact' (t_start, t_end) for a word """</span>
-    <span class="n">matches</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-               <span class="k">for</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">text</span><span class="p">)</span> <span class="ow">in</span> <span class="n">times_texts</span><span class="p">]</span>
-    <span class="k">return</span> <span class="p">[(</span><span class="n">t1</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">-</span> <span class="n">padding</span><span class="p">,</span>
-             <span class="n">t1</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">+</span> <span class="n">padding</span><span class="p">)</span>
-             <span class="k">for</span> <span class="n">m</span><span class="p">,((</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">),</span><span class="n">text</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">matches</span><span class="p">,</span> <span class="n">times_texts</span><span class="p">)</span>
-             <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)]</span>
-
-
-<span class="k">def</span> <span class="nf">get_subclips</span><span class="p">(</span><span class="n">video_path</span><span class="p">,</span> <span class="n">cuts</span><span class="p">):</span>   
-    <span class="n">video</span> <span class="o">=</span> <span class="n">VideoFileClip</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">video</span><span class="o">.</span><span class="n">subclip</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="n">cuts</span><span class="p">]</span>
-
-
-<span class="k">def</span> <span class="nf">get_all_subclips_for</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">'*.mp4'</span><span class="p">,</span> <span class="n">sub_ext</span><span class="o">=</span><span class="s1">'.es.srt'</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="n">subclips</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">mp4</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
-        <span class="n">sub</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">mp4</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sub_ext</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">times</span> <span class="o">=</span> <span class="n">find_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">get_time_texts</span><span class="p">(</span><span class="n">sub</span><span class="p">))</span>
-        <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
-            <span class="c1"># ignore video if it hasn't subtitle</span>
-            <span class="k">continue</span>
-        <span class="n">cuts</span> <span class="o">=</span> <span class="n">get_subclips</span><span class="p">(</span><span class="n">mp4</span><span class="p">,</span> <span class="n">times</span><span class="p">)</span>
-        <span class="n">subclips</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">cuts</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">shuffle</span><span class="p">:</span>
-        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">subclips</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">subclips</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>La función <code>get_all_subclip</code> recibe la frase a buscar y devuelve un listado de segmentos donde, muy probablemente, se pronuncia.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gente</span> <span class="o">=</span> <span class="n">get_all_subclips_for</span><span class="p">(</span><span class="s1">'la gente'</span><span class="p">)</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">gente</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>77</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>El problema es que aunque es muy probable que sea Sergio Massa el que diga "la gente" en sus entrevistas, a veces es el entrevistador, a veces youtube entendió mal al desgrabar y a veces el código recortador la pifia. Por este motivo hay que descartar los segmentos que no sirven.</p>
-<p>Se me ocurrió hacerlo visualmente: los pegué todos, superponiendo el índice al que corresponde cada segmento, para luego anotar los que no sirven y filtrarlos en otra pasada.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_preview</span><span class="p">(</span><span class="n">subclips</span><span class="p">):</span>
-    <span class="n">subclips_</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">clip</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subclips</span><span class="p">):</span>
-        <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">TextClip</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
-        <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">txt_clip</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="s1">'center'</span><span class="p">)</span><span class="o">.</span><span class="n">set_duration</span><span class="p">(</span><span class="n">clip</span><span class="o">.</span><span class="n">duration</span><span class="p">)</span>
-        <span class="n">clip</span> <span class="o">=</span> <span class="n">CompositeVideoClip</span><span class="p">([</span><span class="n">clip</span><span class="p">,</span> <span class="n">txt_clip</span><span class="p">])</span>
-        <span class="n">subclips_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clip</span><span class="p">)</span>
-
-    <span class="n">final</span> <span class="o">=</span> <span class="n">concatenate</span><span class="p">(</span><span class="n">subclips_</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'compose'</span><span class="p">)</span>
-    <span class="n">final</span><span class="o">.</span><span class="n">write_videofile</span><span class="p">(</span><span class="s1">'preview.webm'</span><span class="p">,</span> <span class="n">codec</span><span class="o">=</span><span class="s1">'libvpx'</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>    
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">make_preview</span><span class="p">(</span><span class="n">gente</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[MoviePy] &gt;&gt;&gt;&gt; Building video preview.webm
-[MoviePy] Writing audio in previewTEMP_MPY_wvf_snd.ogg
-[MoviePy] Done.
-[MoviePy] Writing video preview.webm
-[MoviePy] Done.
-[MoviePy] &gt;&gt;&gt;&gt; Video ready: preview.webm 
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>El <a href="http://youtu.be/LU76nVlBqdE">resultado</a> me permitió hacer el tamizado</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ignore</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">74</span><span class="p">]</span>
-<span class="n">subclips_cleaned</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gente</span><span class="p">)</span> <span class="k">if</span> <span class="n">j</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ignore</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Aunque no tengo idea de edición de videos, y porque de verdad creo que es un demamogo impresentable que no debería presidir ni una junta vecinal, quería darle un toque final, con una pequeña frase</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">moviepy.video.tools.segmenting</span> <span class="kn">import</span> <span class="n">findObjects</span>
-
-<span class="k">def</span> <span class="nf">arrive</span><span class="p">(</span><span class="n">screenpos</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">nletters</span><span class="p">):</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-    <span class="k">return</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">screenpos</span><span class="o">-</span><span class="mi">400</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">d</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">0.2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
-
-<span class="n">screensize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">360</span><span class="p">)</span>
-<span class="n">txtClip</span> <span class="o">=</span> <span class="n">TextClip</span><span class="p">(</span><span class="s1">'Yn tragr ab rf obyhqn'</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'rot13'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">"Amiri-Bold"</span><span class="p">,</span> <span class="n">kerning</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">cvc</span> <span class="o">=</span> <span class="n">CompositeVideoClip</span><span class="p">(</span> <span class="p">[</span><span class="n">txtClip</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="s1">'center'</span><span class="p">)],</span>
-                        <span class="n">size</span><span class="o">=</span><span class="n">screensize</span><span class="p">)</span>
-
-<span class="n">letters</span> <span class="o">=</span> <span class="n">findObjects</span><span class="p">(</span><span class="n">cvc</span><span class="p">)</span> <span class="c1"># a list of ImageClips</span>
-
-<span class="k">def</span> <span class="nf">moveLetters</span><span class="p">(</span><span class="n">letters</span><span class="p">,</span> <span class="n">funcpos</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span> <span class="n">letter</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="n">funcpos</span><span class="p">(</span><span class="n">letter</span><span class="o">.</span><span class="n">screenpos</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">letters</span><span class="p">)))</span>
-              <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">letters</span><span class="p">)]</span>
-
-<span class="n">ending</span> <span class="o">=</span> <span class="n">CompositeVideoClip</span><span class="p">(</span><span class="n">moveLetters</span><span class="p">(</span><span class="n">letters</span><span class="p">,</span> <span class="n">arrive</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="n">screensize</span><span class="p">)</span><span class="o">.</span><span class="n">subclip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># le damos una mezcladita más</span>
-<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">subclips_cleaned</span><span class="p">)</span>
-<span class="n">subclips_cleaned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ending</span><span class="p">)</span>
-<span class="n">make_final</span><span class="p">(</span><span class="n">subclips_cleaned</span><span class="p">,</span> <span class="s1">'massa_lagente_final.webm'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[MoviePy] &gt;&gt;&gt;&gt; Building video massa_lagente_final.webm
-[MoviePy] Writing audio in massa_lagente_finalTEMP_MPY_wvf_snd.ogg
-[MoviePy] Done.
-[MoviePy] Writing video massa_lagente_final.webm
-[MoviePy] Done.
-[MoviePy] &gt;&gt;&gt;&gt; Video ready: massa_lagente_final.webm 
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Y este es el resultado:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ssXSLUVNz8o" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/hombres-machistas-involuntariamente/" class="u-url">Formas en que los hombres de tecnología son involuntariamente sexistas</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/hombres-machistas-involuntariamente/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-12-04T19:23:44-03:00" itemprop="datePublished" title="2014-12-04 19:23">2014-12-04 19:23</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/hombres-machistas-involuntariamente/#disqus_thread" data-disqus-identifier="cache/posts/hombres_machistas.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="admonition attention">
-<p class="admonition-title">¡Atención!</p>
-<p>esta es una traducción del artículo
-<a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/">Ways Men In Tech Are Unintentionally Sexist</a> de <a class="reference external" href="http://notapattern.net/author/codebykat/">Kat Hagan</a></p>
-</div>
-<section id="formas-en-que-los-hombres-de-tecnologia-son-involuntariamente-sexistas"><h2>Formas en que los hombres de tecnología son involuntariamente sexistas</h2>
-<p>Un amigo publicó esto en twitter:</p>
-<p>Realmente respeto</p>
-<p>I really respect the amount of self-awareness it takes to ask that
-question! It’s easy to disavow the trolls sending rape and death
-threats, but it takes much more courage to acknowledge that you might be
-perpetuating harmful attitudes in less-obvious ways.</p>
-<p>[Author's Note: I felt like it was important to establish some context,
-but you can also skip the 101-level discussion and jump right to <a class="reference external" href="posts/hombres-machistas-involuntariamente/#the-list">the
-list</a>.]</p>
-<p>This question hints at two important concepts: implicit biases and
-microaggressions.</p>
-<p>We have all internalized harmful stereotypes about women — it’s part of
-growing up in a culture that inculcates gender roles from a very early
-age. Our culture has deeply-embedded patriarchal power structures (ditto
-racist and classist and ableist and transphobic and homophobic and so
-on…) that we all absorb and have to intentionally question and
-deprogram. We all, regardless of our background or our conscious
-beliefs, have <a class="reference external" href="https://implicit.harvard.edu/implicit/">implicit
-biases</a>that affect the way
-we see the world.</p>
-<p>Groups that are dominated by one sort of person tend to develop ways of
-talking and thinking that implicitly center the identities and
-experiences of that one sort of person, which becomes a
-self-perpetuating cycle, because it communicates to outsiders that they
-are different (at best; unwelcome interlopers or second-class citizens,
-at worst). It can introduce, or exacerbate, the further self-fulfilling
-prophecies of <a class="reference external" href="http://en.wikipedia.org/wiki/Impostor_syndrome">impostor
-syndrome</a>
-and <a class="reference external" href="http://en.wikipedia.org/wiki/Stereotype_threat">stereotype
-threat</a>. It can put
-pressure on people to <a class="reference external" href="https://medium.com/@katelosse/paul-graham-and-the-manic-pixie-dream-hacker-ba8349e64e60">conform to a certain
-type</a>
-in order to succeed.</p>
-<p>This context is the heart of why inclusive language matters, why a
-seemingly-harmless joke <a class="reference external" href="http://www.huffingtonpost.ca/toula-foscolos/sexist-jokes-women_b_4815632.html">isn’t that
-harmless</a>,
-and why small things seem to sometimes get blown out of proportion.</p>
-<p>Which brings us
-to <a class="reference external" href="https://en.wikipedia.org/wiki/Microaggression_theory">microaggressions</a>:
-“social exchanges in which a member of a dominant culture says or does
-something, often accidentally, and without intended malice, that
-belittles and alienates a member of a marginalized group.”</p>
-<p>These are little things. Things that many people do without thinking
-about them and certainly without intending anything by them. Things that
-individually are meaningless, but in aggregate set the tone of an entire
-community.</p>
-<p>Little things reinforce stereotypes and implicit biases instead of
-challenging them. They insulate members of the dominant group from
-having to confront their own biases. They communicate underlying
-attitudes and community norms. Language may or may not shape the way we
-think, but it is a powerful signal about what sort of behavior is and is
-not acceptable, and what your personal expectations are.</p>
-<p>Worse, those little things can subtly reinforce the attitudes of actual
-abusers and signal that they are welcome in our community. (Example:
-<a class="reference external" href="http://www.liberateyourself.co.uk/survivors/you-are-not-alone-personal-experiences/to-all-those-men-who-dont-think-the-rape-jokes-are-a-problem/">rape jokes are seen as tacit nods of approval by actual
-rapists</a>.)</p>
-<p>Communication is tricky even on the best of days; the best defense
-against misunderstandings is to develop a finely-tuned sense of empathy,
-and try to notice as much as possible what we’re doing that might create
-distance from someone else and keep us from questioning our own
-assumptions about the world.</p>
-<p>Sometimes it’s hard to see these things without getting defensive, or
-going too far down the road of guilt and excessive self-flagellation. I
-think it’s important to realize that every single one of us makes this
-kind of mistake, no one is immune. The determination of character, in my
-opinion, isn’t whether you slip up, but what you do about it afterward.</p>
-<p>If you care about others, nothing feels worse than realizing you
-accidentally <a class="reference external" href="http://www.patheos.com/blogs/sarahoverthemoon/2013/07/privilege-oppression-being-nice/">stepped on someone else’s
-foot</a>. I
-really think it’s a natural reaction to bristle a bit, to try to
-minimize it, to protect ourselves from feeling bad. Once I recognized
-that defensiveness as a natural part of the process, it was much easier
-for me to realize I was doing it, then apologize and move on instead of
-digging myself deeper. It takes practice.</p>
-<p>The good news, though, is that little things are easy to change.
-Personally I believe that if you can change the outward tone of a
-culture, you stand a good chance of changing the actual beliefs and
-attitudes of that culture.</p>
-<p>Caveats: not everyone notices or cares about every single thing on this
-list, and I’ve probably missed some that my own privilege blinds me to.
-This is a list specifically focused on sexist microaggressions; while
-some of the things on this list might also apply to, for instance,
-transfolk or non-binary folks or people of color, I can’t claim to speak
-for anyone other than myself.</p>
-<p>The post is written as “things <em>men</em> do”, because that’s the question
-that was asked, but of course anyone can (and does) perpetuate harmful
-stereotypes.</p>
-<p>Finally, this list is written for those who, like me, try to err on the
-side of being maximally-inclusive. Many of these things are common in
-our culture, and while I try to model good behavior, I don’t correct
-others’ usage unless they ask. I consider this an application of the
-<a class="reference external" href="http://en.wikipedia.org/wiki/Robustness_principle">robustness
-principle</a>.</p>
-<p>So, without further ado.</p>
-</section><hr class="docutils">
-<section id="using-guys-to-mean-people"><h2>1. Using “guys” to mean “people”.</h2>
-<p>I fear I’m earning a bit of a reputation for this one among my
-colleagues, as I sometimes good-naturedly respond to “Hey guys,
-[question]?” with “I’m not a guy, but [answer]”. Yes, most people intend
-this in a gender-neutral way; no, it is <a class="reference external" href="http://msmagazine.com/blog/2013/09/06/a-guy-is-a-man-is-a-guy/">not actually
-gender-neutral</a>.
-If you think about it, “guys” is only gender-neutral in a situation
-where <a class="reference external" href="http://faculty.georgetown.edu/tannend/nyt062093.htm">maleness is the assumed
-default</a>.</p>
-<p>Many women don’t notice or mind this, but to some in our male-dominated
-field it can be <a class="reference external" href="http://geekfeminism.org/2013/12/23/whats-wrong-with-assuming-that-programmers-are-male/">a tiny, pointed
-reminder</a>
-of the extra work they have to do just to fit in, be seen, be taken
-seriously.</p>
-<p>Personally, it can also make me wonder if I’m being seen at all; I often
-read a message to a mailing list, or in a chat room, that begins “hey
-guys” and wonder whether the speaker realizes that not everyone on the
-list is a man. Worse, I worry it sends the wrong message to other women
-who might observe the exchange. For instance, if a woman was thinking of
-getting involved in WordPress development, could all the “guys” messages
-on the wp-hackers list make her think there aren’t any women in that
-community?</p>
-<p>Don’t do the “guys and girls” thing either, which is marginally better
-but still makes it feel like an afterthought. Try: “folks”, “y’all”,
-“everyone”, “team”, “channel”, or just “awesome people”. :) If my own
-experience is any indication, it’ll sound weird for a month or two and
-then become normal.</p>
-<p>Relatedly, <a class="reference external" href="https://alexgaynor.net/2013/nov/30/gender-neutral-language-faq/">avoid assuming male users in your
-documentation</a>.
-Just stop worrying and <a class="reference external" href="http://motivatedgrammar.wordpress.com/2009/09/10/singular-they-and-the-many-reasons-why-its-correct/">embrace the singular
-“they”</a>.</p>
-</section><section id="similarly-girls-for-women"><h2>2. Similarly: “girls” for “women”.</h2>
-<p>Yes, I know it’s the best we have as an informal analogue to “guys”, but
-it <a class="reference external" href="http://thecurrentconscience.com/blog/2013/02/01/referring-to-women-as-girls/">infantilizes
-women</a>
-and sounds patronizing. It might subconsciously encourage us to take
-women less seriously. In general, “girl” should be used to refer to
-female children only. Like “guys”, this will sound weird for about a
-month and will then become normal.</p>
-<p>Some folks are reclaiming “lady” for informal usage, but I’ve found that
-can be a bit loaded (personally, I don’t think of myself as a lady; when
-I was a child, my grandfather would reprimand me for wearing jeans or
-climbing trees, because those things were “unladylike”). YMMV, but for
-people you don’t know well, I would stick to “women”.</p>
-</section><section id="mom-as-an-example-of-a-non-technical-user"><h2>3. “Mom” as an example of a non-technical user.</h2>
-<p>I know: your mom, like a lot of people, may not be very good with
-computers. (<em>My</em> mom, on the other hand, while she doesn’t really give
-herself credit for it, is quite good at figuring computer stuff out. She
-programmed with punchcards in college and can do things with Excel that
-I have no idea how to do. It’s my dad who always needs computer help.)</p>
-<p>This tired old trope erases the vast number of computer-literate women
-who happen to be mothers, as well as encouraging condescension. Again,
-the context here is a society and a professional field where women
-already struggle to be taken seriously; no need to pile on.</p>
-<p>This trope has its own <a class="reference external" href="http://geekfeminism.wikia.com/wiki/So_simple,_your_mother_could_do_it">article on the Geek Feminism
-Wiki</a>,
-which suggests alternatives: “When the purpose of the statement is to
-convey the idea that something is “really simple”, ideal nouns will
-refer to non-human or purely technical categories, such as cat,
-non-technical user, Ubuntu user, or “newbie.””</p>
-</section><section id="using-avatars-that-are-male-by-default"><h2>4. Using avatars that are male by default.</h2>
-<p>If the default (or unset) avatar on your site reads as male, you’re
-making an implicit statement that your “normal” user is male and anyone
-else is an exception. Personally, I think <a class="reference external" href="http://molly.is/saying/no-more-put-a-skirt-on-it/">using a non-gendered (even
-non-human) avatar</a>
-can really showcase an app’s creativity.</p>
-</section><section id="describing-software-or-algorithms-as-sexy-hot-etc"><h2>5. Describing software or algorithms as “sexy”, “hot”, etc.</h2>
-<p>By sexualizing something that does not need to be sexualized, you’re
-creating a college-frat-boy type environment, as well as
-implicitly conflating quality with sexual attractiveness. If I work with
-you, I want to know that you’re enough of an adult to be able to
-appreciate something (or someone) without wanting to fornicate with it.</p>
-<p>Anyhow, it’s vague. What is so great about it? Is it really efficient,
-does it solve a problem in a new way, does it scale really well, does it
-have a great UI?</p>
-<p>Related: Referring to hardware (or cars, or whatever) by female names or
-pronouns. Yeah, okay, grand naval tradition and all that, but it’s still
-kind of weird. Can you not tell the difference between women and
-objects?</p>
-</section><section id="assuming-women-they-meet-are-in-non-technical-roles"><h2>6. Assuming women they meet are in non-technical roles.</h2>
-<p>If you meet a woman in a professional setting, like a conference (or the
-afterparty!), your first assumption should be that she’s there because
-she’s interested in the material. This seems obvious, but most women
-have had the unfortunate experience of being assumed to be “the
-marketing chick” or there with a boyfriend.</p>
-<p>Under no circumstances should you ask a woman to prove her technical
-knowledge to you (even in jest).</p>
-<p>Additionally, there’s a lot of implicit misogyny when you feign surprise
-upon discovering that a conventionally-attractive or feminine-presenting
-woman is also a geek. If you tell a woman approvingly that she’s “one of
-the guys” or “not like other women”, well, I’m gonna go out on a limb
-and say you’ve got some assumptions you need to rethink. (And I’m saying
-that as a woman who was proud to be called both of those things at one
-point.)</p>
-<p>So, don’t say something like “Wow, I would never guessed you were a
-nerd!” Technical women often have to <a class="reference external" href="http://www.popsugar.com/tech/What-Women-Technology-Wear-34985907">walk a fine
-line</a>
-between looking properly “nerdy” (at the risk of coming across
-as sloppy) and looking put-together (but risking being taken less
-seriously).</p>
-</section><section id="fetishizing-hot-geek-girls"><h2>7. Fetishizing “hot geek girls”.</h2>
-<p>It’s not a compliment to get comments like “Wow, a beautiful woman who’s
-also into kernel hacking?? Will you marry me?”</p>
-<p>Rule of thumb: Don’t say anything you wouldn’t say to a man! It’s
-disrespectful to focus on someone’s appearance instead of their
-accomplishments.</p>
-<p>The “fake marriage proposal” is extra weird because it’s grounded in a
-measure of success predicated on one’s desirability as a sexual or
-romantic partner. Women are people in their own right and have value
-independent of their relationships to men. A radical idea, I know.</p>
-<p>An unsolicited “I find you attractive!” remark isn’t a compliment, it’s
-a <a class="reference external" href="http://captainawkward.com/2014/06/06/notes-from-a-boner/">note from a
-boner</a>. I
-think it’s pretty safe to say that the vast majority of women in
-technical careers didn’t get into them in order to serve as eye candy or
-find a date.</p>
-<p>We don’t want to be singled out and given extra attention
-because “ooooh, a woman!”. Yes, being a woman in tech has its unique
-challenges, but no one wants to feel like they’re only getting attention
-because of their gender. We want to be treated normally, like human
-beings who happen to share some perfectly ordinary and normal interests
-with you.</p>
-</section><section id="denigrating-things-by-comparing-them-to-women-or-femininity"><h2>8. Denigrating things by comparing them to women or femininity.</h2>
-<p>Don’t casually accuse someone of being “girly” or a “pussy”, or say that
-they “fight like a girl”, or make fun of them for liking “chick flicks”.
-Stop policing <em>masculinity</em> with comments about men who cross the line
-into “too feminine”.</p>
-<p>Be on guard for unnecessarily-gendered terms
-(<a class="reference external" href="http://disabledfeminists.com/2009/10/13/ableist-word-profile-hysterical/">hysterical</a>,
-shrill, “man up”, “grow a pair”, ballsy). Notice how those examples are
-all predicated on the assumption that acting like a man is inherently
-good, and acting like a woman is inherently bad?</p>
-<p>Those are some of the most overt ones, but this kind of thing is weirdly
-common. I recently called out a cyclist friend for referring to the
-lowest gear as the “<a class="reference external" href="http://forums.mtbr.com/beginners-corner/why-called-granny-gear-807335.html">granny
-gear</a>”.</p>
-</section><section id="stereotyping-womens-needs-or-ignoring-them"><h2>9. Stereotyping women’s needs… or ignoring them.</h2>
-<p><a class="reference external" href="http://happynicetimepeople.com/goldman-sachs-ladies-tech-event-probably-want-nail-files/">Emery boards as conference
-swag</a>?
-Really? Protip: Women use battery packs and stickers too.</p>
-<p>Conversely, many apps just outright ignore features that
-disproportionately affect female users (like the <a class="reference external" href="http://ntlk.net/2014/09/26/why-cant-you-track-periods-in-apples-health-app/">conspicuous absence of
-period tracking
-functionality</a>
-in the Apple’s new Health app). The whole issue of <a class="reference external" href="http://geekfeminism.wikia.com/wiki/T-shirts">swag
-t-shirts</a> is a big one in
-this category.</p>
-<p>Which brings us neatly to…</p>
-</section><section id="using-dark-ui-patterns"><h2>10. Using dark UI patterns.</h2>
-<p>If you write software that <a class="reference external" href="http://www.theatlantic.com/technology/archive/2014/10/the-unsafety-net-how-social-media-turned-against-women/381261/">enables harassment and
-stalking</a>,
-or makes it difficult for users to protect their personal information,
-you’re disproportionately driving women off of your platform or making
-them do extra work. Respecting user’s privacy and emphasizing consent in
-software design is fundamentally an issue of equality — not just gender,
-but across the board.</p>
-<p>Watch out for requirements, such as “real name” policies, that <a class="reference external" href="http://geekfeminism.wikia.com/wiki/Who_is_harmed_by_a_%22Real_Names%22_policy%3F">unfairly
-impact marginalized
-groups</a>.
-Commit to writing software that embodies <a class="reference external" href="http://modelviewculture.com/pieces/the-fantasy-and-abuse-of-the-manipulable-user">affirmative
-consent</a>.</p>
-</section><section id="repeating-generalizations-about-gender-essentialism"><h2>11. Repeating generalizations about gender essentialism.</h2>
-<p>“Women just aren’t interested in programming/math/logic.” This is a
-thing that people really think, and <a class="reference external" href="http://www.thewire.com/technology/2013/08/explaining-fascination-explaining-why-there-are-no-female-programmers/68538/">say out
-loud</a>.
-Statistically, <a class="reference external" href="http://www.slideshare.net/terriko/how-does-biology-explain-the-low-numbers-of-women-in-cs-hint-it-doesnt">the variation between individuals dwarfs any biological
-differences</a>,
-and perpetuating these stereotypes has a <a class="reference external" href="http://recode.net/2014/10/09/neurosexism-brains-gender-and-tech/">real, harmful
-effect</a>.</p>
-<p>Even complimentary stereotypes, like “women are better at communicating”
-or “women have a better eye for design” contribute to the problem
-by encouraging a “men are from Mars, women are from Venus” approach to
-gender. This is also known as <a class="reference external" href="http://www.forbes.com/sites/dailymuse/2014/02/24/women-are-kind-and-men-are-strong-how-benevolent-sexism-hurts-us-all/">benevolent
-sexism</a>.</p>
-<p>Similarly, don’t reduce the gender gap in tech to a problem of “getting
-more women into the pipeline”. The reality is that women leave the
-industry at every stage of their careers. Solving the pipeline problem
-is necessary, but <a class="reference external" href="https://medium.com/@jocelyngoldfein/techs-meritocracy-problem-a6e5e0a56157">not a magic
-bullet</a>.</p>
-<p>On the flip side, don’t excuse bad behavior with “<a class="reference external" href="http://www.psychologytoday.com/blog/gender-and-schooling/201403/the-danger-boys-will-be-boys">boys will be
-boys</a>”
-type excuses. Dismantling gender stereotypes is also about having more
-respect for men — believing they are <a class="reference external" href="http://www.kieranstrange.com/dear-men-you-need-feminism-too/">just as capable of empathy and
-self-restraint</a>
-as any other adult human being.</p>
-</section><section id="assuming-every-woman-in-tech-feels-the-same-way-and-or-wants-to-discuss-her-experiences-as-a-woman-in-tech"><h2>12. Assuming every woman in tech feels the same way and/or wants to discuss her experiences “as a woman in tech”.</h2>
-<p>We’re not a monolith, we can’t all speak for each other, and we often
-want to just talk about our work instead of being seen as women first.
-See the Ada Initiative’s great post, <a class="reference external" href="http://adainitiative.org/2014/03/breaking-the-unicorn-law-stop-asking-women-in-open-techculture-about-women-in-open-techculture/">Breaking The Unicorn
-Law</a>.</p>
-</section><section id="staying-quiet-when-other-men-do-these-things"><h2>13. Staying quiet when other men do these things.</h2>
-<p>Finally: this is <a class="reference external" href="http://www.ashedryden.com/blog/the-responsibility-of-diversity">everybody’s
-work</a>.
-It’s not just the responsibility of those affected to speak up — we all
-play a part in setting the standards for the communities we’re a part
-of. Leigh Honeywell has <a class="reference external" href="http://hypatia.ca/2014/08/05/what-you-can-do/">a great
-post</a> about how each of
-us can help, in the infosec world or anywhere else:</p>
-<blockquote>
-<p>We aren’t doomed to being the harassment and sexual assault capital
-of the tech world. We can make a difference. And it starts with each
-one of us standing up for what we think is right, in the moment when
-it happens.</p>
-</blockquote>
-<p>The concept of “privilege” seems to often come across as an insult, but
-I think it’s also a statement that you have power in a particular
-situation, and it’s possible to use that power for good. Those with more
-privilege have the power to amplify the voices of others, to challenge
-the status quo without fearing the consequences of speaking up.</p>
-<hr class="docutils">
-<p>Anyhow, that’s what I’ve got. These things serve as a starting point, an
-MVP, if you will. It’s certainly possible to do more, if you’re willing
-to devote the time and energy, but these suggestions are the
-“low-hanging fruit”: small, simple changes that will build the
-foundation for a better tech culture.</p>
-<p>Other great posts along these lines:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="http://geekfeminism.wikia.com/wiki/Resources_for_allies">Geek Feminism: Resources for
-Allies</a></p></li>
-<li><p><a class="reference external" href="http://juliepagano.com/blog/2014/05/10/so-you-want-to-be-an-ally/">Julie Pagano: So You Want To Be An
-Ally</a></p></li>
-<li><p><a class="reference external" href="http://www.xyonline.net/content/tools-white-guys-who-are-working-social-change%E2%80%A6-and-other-people-socialized-society-based-do">Tools for White Guys who are Working for Social Change… and other
-people socialized in a society based on
-domination</a></p></li>
-<li><p><a class="reference external" href="http://www.anamardoll.com/2012/11/deconstruction-how-to-be-male-ally.html">Deconstruction: How To Be A Male
-Ally</a></p></li>
-<li><p><a class="reference external" href="http://www.laurenbacon.com/what-men-and-everyone-really-can-do-to-support-gender-equity-in-tech/">What Men (And Everyone, Really) Can Do to Support Gender Equity in
-Tech</a></p></li>
-</ul>
-<p>Thoughts? Please comment or
-<a class="reference external" href="https://www.twitter.com/wirehead2501">tweet</a> at me! You can also
-check out my saved links on
-<a class="reference external" href="https://pinboard.in/u:wirehead">Pinboard</a> (basically a firehose of
-everything I read online).</p>
-<section id="share-this"><h3>Share this:</h3>
-<ul class="simple">
-<li><p><a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/?share=twitter&amp;nb=1">Twitter1K+</a></p></li>
-<li><p><a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/?share=facebook&amp;nb=1">Facebook1K+</a></p></li>
-<li><p><a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/?share=google-plus-1&amp;nb=1">Google</a></p></li>
-<li>
-</li>
-</ul></section><section id="like-this"><h3>Like this:</h3>
-<p>Like Loading...</p>
-<p>This entry was tagged
-<a class="reference external" href="http://notapattern.net/tag/feminism/">feminism</a>. Bookmark the
-<a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/">permalink</a>.</p>
-</section></section>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/las-cosas-chiquitas/" class="u-url">Las cosas chiquitas que cambian el mundo</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/las-cosas-chiquitas/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-12-04T19:23:44-03:00" itemprop="datePublished" title="2014-12-04 19:23">2014-12-04 19:23</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/las-cosas-chiquitas/#disqus_thread" data-disqus-identifier="cache/posts/donar-asamblea-campo.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Tengo dos weblogs. Este es en el que escribo artículos técnicos o que tienen que ver de alguna manera con mi profesión. <a class="reference external" href="http://www.textosypretextos.com.ar">Textos y pretextos</a> es igual de personal, pero me sale —me sale cada vez menos, tristemente— de otras tripas, quizás para otro público.</p>
-<p>Sin embargo, quiero hacer una excepción con este post, porque probablemente tenga más alcance aquí y es algo que me atraviesa todas las facetas: las ganas de hacer de este que pisamos, un mejor mundo.</p>
-</div>
-<p>Desde el 2005, a las poquitas semanas de haberme venido a vivir a Córdoba, hasta no sé que día del 2012, cada sábado de todas las semanas del año, me tomé dos bondis (o uno, cuando me iba a pata hasta el centro), para llegar a Campo de La Ribera. <em>Mazamorra</em>, la <em>agrupación</em>, fue mi espacio de militancia, mi usina de amistad, mi cobijo del dar y recibir. Sobre todo del recibir.</p>
-<iframe width="560" height="315" src="//www.youtube.com/embed/elcqGWJKt3c" frameborder="0" allowfullscreen></iframe><p class="more"><a href="posts/las-cosas-chiquitas/">Leer más…</a></p>
-</div>
-    </div>
     </article>
 </div>
         <ul class="pager postindexpager clearfix">
-<li class="next"><a href="index-10.html" rel="next">Posts anteriores</a></li>
+<li class="next"><a href="index-20.html" rel="next">Posts anteriores</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
         </script><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
-            <script src="assets/js/jquery.min.js"></script><script src="assets/js/popper.min.js"></script><script src="assets/js/bootstrap.min.js"></script><script src="assets/js/baguetteBox.min.js"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="assets/js/all.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

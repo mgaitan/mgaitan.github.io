@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Metodologías ágiles)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/metodologias-agiles.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Thu, 27 May 2021 02:51:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes python</title><link>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre Metodologías ágiles)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/metodologias-agiles.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2024 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Nov 2024 18:38:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Compartiendo documentación de paquetes python</title><link>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Sabido es, aunque muchas veces se ignora, que un software sin
 documentación está incompleto
 [&lt;a class="reference external" href="https://mgaitan.github.io/blog/article/compartiendo-documentacion-de#nb1"&gt;1&lt;/a&gt;].&lt;/p&gt;
 &lt;p&gt;Si bien el manifiesto ágil
@@ -35,10 +35,10 @@ través de Sphinx.&lt;/p&gt;
 &lt;p&gt;Estrictamente, usando rtfd.org (como le dicen &lt;a class="reference external" href="http://www.urbandictionary.com/define.php?term=RTFD&amp;amp;defid=2281638"&gt;los
 amigos&lt;/a&gt;)
 ni siquiera hace falta tener Sphinx instalado localmente.&lt;/p&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 31); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;aside class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 31); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/#aca-1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Duplicate explicit target name: "acá".&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;Más aun, por defecto actualiza diariamente, pero se puede utilizar un
 "hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
 al repo, de manera de tener la documentación actualizada al instante.
@@ -54,10 +54,10 @@ página de descripción de tu proyecto (estándo logueado). Por ejemplo:&lt;/p&g
 &lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"&gt;
 &lt;/figure&gt;
-&lt;div class="system-message"&gt;
+&lt;aside class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 60)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;Y listo. Tu docu al instante.&lt;/p&gt;
 &lt;p&gt;Como el sitio genera el html en vez de servir una versión generada
 previamente, la documentación que requiere introspección del código (
@@ -86,10 +86,10 @@ Sphinx)&lt;/p&gt;
 &lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"&gt;
 &lt;/figure&gt;
-&lt;div class="system-message"&gt;
+&lt;aside class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 93)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;Pero si usamos Sphinx hay una manera más fácil, manteniendosé en el
 "ecosistema" de desarrollo: usar esta &lt;a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload/"&gt;extension de
 setuptools&lt;/a&gt; que
@@ -124,11 +124,11 @@ archivo.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;$ svn propset svn:mime-type 'text/html' FILENAME
 $ svn propset svn:mime-type 'image/jpeg' FILENAME&lt;/pre&gt;
 &lt;p&gt;Para que esto se haga automático, se puede modificar el archivo de
-configuración &lt;a href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/#id3"&gt;&lt;span class="problematic" id="id4"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
-&lt;div class="system-message" id="id3"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 144); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+configuración &lt;a href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/#system-message-1"&gt;&lt;span class="problematic" id="problematic-1"&gt;``&lt;/span&gt;&lt;/a&gt;~/.subversion/config ``&lt;/p&gt;
+&lt;aside class="system-message" id="system-message-1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 144); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/#problematic-1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;pre class="literal-block"&gt;[miscellany]
 enable-auto-props = yes
 
@@ -155,7 +155,7 @@ github&lt;/a&gt;
 de Luca Sbardella.
 &lt;img alt="image1" src="https://mgaitan.github.io/posts/compartiendo-documentacion-de/local/cache-vignettes/L8xH11/puce-32883.gif"&gt; &lt;a class="reference external" href="http://dinoboff.github.com/github-tools/overview.html#documentation-hosting"&gt;Usando
 github-tools&lt;/a&gt;.&lt;/p&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>https://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;La manera más fácil para aprobar una tesis de ingeniería es mentir.
+&lt;/section&gt;</description><category>Metodologías ágiles</category><category>python</category><category>Software Libre</category><guid>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</guid><pubDate>Sun, 10 Apr 2011 22:16:38 GMT</pubDate></item><item><title>La academia, las prácticas ágiles y el UML</title><link>https://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;La manera más fácil para aprobar una tesis de ingeniería es mentir.
 Llenar páginas y páginas, preferentemente con tablas y viñetas, de
 contenidos vacuos y tediosos que seguramente nadie, mucho menos los
 evaluadores, leerán. Sólo hay que prestar atención a que sean muchas
@@ -192,10 +192,10 @@ respetan, aunque sean pura
 &lt;figure class="align-center"&gt;
 &lt;img alt="" src="https://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y/local/cache-vignettes/L510xH603/anti-bullying-charity-school-tie-small-59832-3938a.jpg"&gt;
 &lt;/figure&gt;
-&lt;div class="system-message"&gt;
+&lt;aside class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 45)&lt;/p&gt;
 &lt;p&gt;Explicit markup ends without a blank line; unexpected unindent.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;Yo justifiqué
 &lt;a class="reference external" href="http://code.google.com/p/gpec2010/source/browse/trunk/docs/metodologia.rst?spec=svn232&amp;amp;r=232#92"&gt;así&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -242,4 +242,4 @@ Lamentablemente UML no aborda este problema y en cambio parece
 obsesionado por las minucias en una parodia de distracción
 académica.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><category>Metodologías ágiles</category><guid>https://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y/</guid><pubDate>Wed, 06 Apr 2011 09:21:23 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;</description><category>Metodologías ágiles</category><guid>https://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y/</guid><pubDate>Wed, 06 Apr 2011 09:21:23 GMT</pubDate></item></channel></rss>

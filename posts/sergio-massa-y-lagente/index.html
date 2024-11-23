@@ -6,12 +6,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sergio Massa y #LaGente | tin_nqn</title>
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -19,7 +16,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/sergio-massa-y-lagente/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../las-cosas-chiquitas/" title="Las cosas chiquitas que cambian el mundo" type="text/html">
 <link rel="next" href="../python-para-ciencia-e-ingenieria/" title="Curso de Python para ñoños" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
@@ -76,6 +73,10 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
+        <li class="nav-item">
+    <a href="index.ipynb" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
+    </li>
+
                 
             </ul>
 </div>
@@ -96,16 +97,16 @@ navbar-light bg-light
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2015-03-13T00:56:43-03:00" itemprop="datePublished" title="2015-03-13 00:56">2015-03-13 00:56</time></a>
             </p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/sergio-massa-y-lagente.html">Comentarios</a>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/sergio-massa-y-lagente.html">Comentarios</a>
 
 
-            
-        </p>
-</div>
+                    </p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink">El código de este artículo está disponible en </a></p>
+
+        </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
+    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -114,18 +115,17 @@ navbar-light bg-light
 <blockquote class="twitter-tweet" lang="es">
 <p>"Me comprometo no ante vos, ante <a href="https://twitter.com/hashtag/LaGente?src=hash">#LaGente</a>". Lo harta que me tiene este tipo no tiene nombre.</p>— Fenicia  (@zeinicienta) <a href="https://twitter.com/zeinicienta/status/575858399021264896">marzo 12, 2015</a>
 </blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><blockquote class="twitter-tweet" lang="es">
+<script async="" charset="utf-8" src="//platform.twitter.com/widgets.js"></script><blockquote class="twitter-tweet" lang="es">
 <p>Es insoportable la cantidad de frases hechas y lugares comunes que tira <a href="https://twitter.com/SergioMassa">@SergioMassa</a>. Demagogo berreta. <a href="https://twitter.com/hashtag/LaGente?src=hash">#LaGente</a></p>— Javier Smaldone (@mis2centavos) <a href="https://twitter.com/mis2centavos/status/575850582386343938">marzo 12, 2015</a>
 </blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><blockquote class="twitter-tweet" lang="es">
+<script async="" charset="utf-8" src="//platform.twitter.com/widgets.js"></script><blockquote class="twitter-tweet" lang="es">
 <p>Quiero contar la cantidad de veces que +a dice <a href="https://twitter.com/hashtag/LaGente?src=hash">#LaGente</a></p>— memorex (@memorex) <a href="https://twitter.com/memorex/status/575847833565163521">marzo 12, 2015</a>
 </blockquote>
 <p>Me acordé entonces de un <a href="http://zulko.github.io/blog/2014/06/21/some-more-videogreping-with-python/">post de Zulko</a>, cuyo blog es un compilado de gemas ñoñamente divertidas. Allí muestra cómo recortar automáticamente los pedacitos de un video que mencionen una palabra o frase, basándose en las marcas de tiempo del archivo de subtítulos, utilizando su maravillosa biblioteca <a href="http://zulko.github.io/moviepy/">Moviepy</a> y un poco de Python. Más o menos lo que hace <a href="https://github.com/antiboredom/videogrep">videogrep</a>, pero más prolijo.</p>
 <p>La herramienta <a href="http://rg3.github.io/youtube-dl/">youtube-dl</a> (que también es genial y hecha en Python), permite no sólo bajar videos de youtube y los subtitulos existentes, sino que también puede bajar el "subtitulo automático". En general son bastante malos pero es suficientemente efectivo para encontrar pequeñas frases.</p>
-<h3 id='Todo-sea-por-"la-gente":-manos-a-la-obra'>Todo sea por "la gente": manos a la obra<a class="anchor-link" href="#Todo-sea-por-%22la-gente%22:-manos-a-la-obra">¶</a>
+<h3 id="Todo-sea-por-%22la-gente%22:-manos-a-la-obra">Todo sea por "la gente": manos a la obra<a class="anchor-link" href="#Todo-sea-por-%22la-gente%22:-manos-a-la-obra">¶</a>
 </h3>
 <p>Lo primero que necesitamos es una lista de videos donde Sergio Massa hable. Hice una <a href="https://www.youtube.com/results?search_query=entrevista+sergio+massa">búsqueda</a>, decidí ignorar algunos (parodias, por ejemplo) y generé una lista. Hay varias maneras de obtener este listado de las primeras paginas de resultados, yo utilicé el rústico y efectivo webscrapping:</p>
-
 </div>
 </div>
 </div>
@@ -133,8 +133,8 @@ navbar-light bg-light
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyquery</span> <span class="kn">import</span> <span class="n">PyQuery</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyquery</span> <span class="kn">import</span> <span class="n">PyQuery</span>
 <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">skip</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'M0yuFHbhYLY'</span><span class="p">,</span><span class="s1">'TLmMh9Qvmic'</span><span class="p">,</span> <span class="s1">'rY4Hwvn6GlA'</span><span class="p">)</span>
 
@@ -144,22 +144,13 @@ navbar-light bg-light
     <span class="n">links</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">pq</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'href'</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">pq</span><span class="p">(</span><span class="s1">'a.yt-uix-tile-link'</span><span class="p">)</span> <span class="k">if</span> <span class="n">pq</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'href'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'v='</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">skip</span><span class="p">])</span>
 <span class="n">links</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[1]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[1]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>['https://www.youtube.com/watch?v=8pP8G3fSAcY',
  'https://www.youtube.com/watch?v=g6QSwxUo1aw',
@@ -239,12 +230,9 @@ navbar-light bg-light
  'https://www.youtube.com/watch?v=-SQSue4-PLk',
  'https://www.youtube.com/watch?v=HPE4PHlYySo']</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -252,7 +240,6 @@ navbar-light bg-light
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Luego, el paso lento: bajar los videos. Al parecer, Youtube no genera un subtitulo automático para videos demasiado largo, así que limité hasta 30 minutos.</p>
-
 </div>
 </div>
 </div>
@@ -260,15 +247,13 @@ navbar-light bg-light
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-    <span class="o">!</span>youtube-dl --write-auto-sub --sub-lang es --max-filesize <span class="m">30</span>.00m <span class="o">{</span>link<span class="o">}</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+    <span class="o">!</span>youtube-dl<span class="w"> </span>--write-auto-sub<span class="w"> </span>--sub-lang<span class="w"> </span>es<span class="w"> </span>--max-filesize<span class="w"> </span><span class="m">30</span>.00m<span class="w"> </span><span class="o">{</span>link<span class="o">}</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -276,7 +261,6 @@ navbar-light bg-light
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Con el material crudo disponible (aunque puede ser que no se hayan encontrado subtitulos para todos los videos), podemos copiar descaradamente partes del código de Zulko (levemente adaptado)</p>
-
 </div>
 </div>
 </div>
@@ -284,8 +268,8 @@ navbar-light bg-light
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span> 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -293,7 +277,7 @@ navbar-light bg-light
 
 
 <span class="k">def</span> <span class="nf">convert_time</span><span class="p">(</span><span class="n">timestring</span><span class="p">):</span>
-    <span class="sd">""" Converts a string into seconds """</span>
+<span class="w">    </span><span class="sd">""" Converts a string into seconds """</span>
     <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d+'</span><span class="p">,</span> <span class="n">timestring</span><span class="p">)]</span>
     <span class="k">return</span> <span class="mi">3600</span> <span class="o">*</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">60</span><span class="o">*</span><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span>
 
@@ -316,7 +300,7 @@ navbar-light bg-light
     <span class="k">return</span> <span class="n">times_texts</span>
 
 <span class="k">def</span> <span class="nf">find_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">times_texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mf">.4</span><span class="p">):</span>
-    <span class="sd">""" Finds all 'exact' (t_start, t_end) for a word """</span>
+<span class="w">    </span><span class="sd">""" Finds all 'exact' (t_start, t_end) for a word """</span>
     <span class="n">matches</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
                <span class="k">for</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">text</span><span class="p">)</span> <span class="ow">in</span> <span class="n">times_texts</span><span class="p">]</span>
     <span class="k">return</span> <span class="p">[(</span><span class="n">t1</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">-</span> <span class="n">padding</span><span class="p">,</span>
@@ -345,11 +329,9 @@ navbar-light bg-light
         <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">subclips</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">subclips</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -357,7 +339,6 @@ navbar-light bg-light
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>La función <code>get_all_subclip</code> recibe la frase a buscar y devuelve un listado de segmentos donde, muy probablemente, se pronuncia.</p>
-
 </div>
 </div>
 </div>
@@ -365,35 +346,23 @@ navbar-light bg-light
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gente</span> <span class="o">=</span> <span class="n">get_all_subclips_for</span><span class="p">(</span><span class="s1">'la gente'</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">gente</span> <span class="o">=</span> <span class="n">get_all_subclips_for</span><span class="p">(</span><span class="s1">'la gente'</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">gente</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[4]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>77</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -402,7 +371,6 @@ navbar-light bg-light
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>El problema es que aunque es muy probable que sea Sergio Massa el que diga "la gente" en sus entrevistas, a veces es el entrevistador, a veces youtube entendió mal al desgrabar y a veces el código recortador la pifia. Por este motivo hay que descartar los segmentos que no sirven.</p>
 <p>Se me ocurrió hacerlo visualmente: los pegué todos, superponiendo el índice al que corresponde cada segmento, para luego anotar los que no sirven y filtrarlos en otra pasada.</p>
-
 </div>
 </div>
 </div>
@@ -410,8 +378,8 @@ navbar-light bg-light
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_preview</span><span class="p">(</span><span class="n">subclips</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_preview</span><span class="p">(</span><span class="n">subclips</span><span class="p">):</span>
     <span class="n">subclips_</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">clip</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subclips</span><span class="p">):</span>
         <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">TextClip</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
@@ -422,33 +390,24 @@ navbar-light bg-light
     <span class="n">final</span> <span class="o">=</span> <span class="n">concatenate</span><span class="p">(</span><span class="n">subclips_</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'compose'</span><span class="p">)</span>
     <span class="n">final</span><span class="o">.</span><span class="n">write_videofile</span><span class="p">(</span><span class="s1">'preview.webm'</span><span class="p">,</span> <span class="n">codec</span><span class="o">=</span><span class="s1">'libvpx'</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>    
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">make_preview</span><span class="p">(</span><span class="n">gente</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">make_preview</span><span class="p">(</span><span class="n">gente</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[MoviePy] &gt;&gt;&gt;&gt; Building video preview.webm
 [MoviePy] Writing audio in previewTEMP_MPY_wvf_snd.ogg
@@ -460,10 +419,8 @@ navbar-light bg-light
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -471,7 +428,6 @@ navbar-light bg-light
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>El <a href="http://youtu.be/LU76nVlBqdE">resultado</a> me permitió hacer el tamizado</p>
-
 </div>
 </div>
 </div>
@@ -479,15 +435,13 @@ navbar-light bg-light
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ignore</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">74</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ignore</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">74</span><span class="p">]</span>
 <span class="n">subclips_cleaned</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gente</span><span class="p">)</span> <span class="k">if</span> <span class="n">j</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ignore</span><span class="p">]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -495,7 +449,6 @@ navbar-light bg-light
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Aunque no tengo idea de edición de videos, y porque de verdad creo que es un demamogo impresentable que no debería presidir ni una junta vecinal, quería darle un toque final, con una pequeña frase</p>
-
 </div>
 </div>
 </div>
@@ -503,8 +456,8 @@ navbar-light bg-light
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">moviepy.video.tools.segmenting</span> <span class="kn">import</span> <span class="n">findObjects</span>
 
 <span class="k">def</span> <span class="nf">arrive</span><span class="p">(</span><span class="n">screenpos</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">nletters</span><span class="p">):</span>
@@ -525,36 +478,27 @@ navbar-light bg-light
 
 <span class="n">ending</span> <span class="o">=</span> <span class="n">CompositeVideoClip</span><span class="p">(</span><span class="n">moveLetters</span><span class="p">(</span><span class="n">letters</span><span class="p">,</span> <span class="n">arrive</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="n">screensize</span><span class="p">)</span><span class="o">.</span><span class="n">subclip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># le damos una mezcladita más</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># le damos una mezcladita más</span>
 <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">subclips_cleaned</span><span class="p">)</span>
 <span class="n">subclips_cleaned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ending</span><span class="p">)</span>
 <span class="n">make_final</span><span class="p">(</span><span class="n">subclips_cleaned</span><span class="p">,</span> <span class="s1">'massa_lagente_final.webm'</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[MoviePy] &gt;&gt;&gt;&gt; Building video massa_lagente_final.webm
 [MoviePy] Writing audio in massa_lagente_finalTEMP_MPY_wvf_snd.ogg
@@ -566,10 +510,8 @@ navbar-light bg-light
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -577,7 +519,7 @@ navbar-light bg-light
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Y este es el resultado:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ssXSLUVNz8o" frameborder="0" allowfullscreen></iframe>
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ssXSLUVNz8o" width="560"></iframe>
 </div>
 </div>
 </div>
@@ -585,14 +527,11 @@ navbar-light bg-light
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </div>
@@ -604,7 +543,7 @@ navbar-light bg-light
                 <a href="../python-para-ciencia-e-ingenieria/" rel="next" title="Curso de Python para ñoños">Siguiente post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
-                        <div id="disqus_thread"></div>
+                    <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
             disqus_url="https://mgaitan.github.io/posts/sergio-massa-y-lagente/",
@@ -626,13 +565,13 @@ navbar-light bg-light
         </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
         </script></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
-            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

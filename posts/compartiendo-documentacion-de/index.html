@@ -6,12 +6,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Compartiendo documentación de paquetes python | tin_nqn</title>
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -19,7 +16,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/compartiendo-documentacion-de/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../la-sanguijuela-de-cuevana/" title="La sanguijuela de cuevana" type="text/html">
 <link rel="next" href="../pep-20-el-zen-del-barca/" title="Pep 20: El Zen del Barça" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
@@ -83,6 +80,10 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
+        <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
+    </li>
+
                 
             </ul>
 </div>
@@ -103,16 +104,16 @@ navbar-light bg-light
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2011-04-10T19:16:38-03:00" itemprop="datePublished" title="2011-04-10 19:16">2011-04-10 19:16</time></a>
             </p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/compartiendo-documentacion-de.html">Comentarios</a>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/compartiendo-documentacion-de.html">Comentarios</a>
 
 
-            
-        </p>
-</div>
+                    </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">El código de este artículo está disponible en </a></p>
+
+        </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Sabido es, aunque muchas veces se ignora, que un software sin
+    <p>Sabido es, aunque muchas veces se ignora, que un software sin
 documentación está incompleto
 [<a class="reference external" href="../../blog/article/compartiendo-documentacion-de#nb1">1</a>].</p>
 <p>Si bien el manifiesto ágil
@@ -147,11 +148,9 @@ través de Sphinx.</p>
 <p>Estrictamente, usando rtfd.org (como le dicen <a class="reference external" href="http://www.urbandictionary.com/define.php?term=RTFD&amp;defid=2281638">los
 amigos</a>)
 ni siquiera hace falta tener Sphinx instalado localmente.</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 31); <em><a href="#id2">backlink</a></em></p>
+<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 31); <em><a href="#aca-1">backlink</a></em></p>
 <p>Duplicate explicit target name: "acá".</p>
-</div>
-<p>Más aun, por defecto actualiza diariamente, pero se puede utilizar un
+</aside><p>Más aun, por defecto actualiza diariamente, pero se puede utilizar un
 "hook" para indicarle que actulice cuando "pusheamos" (o "commiteamos")
 al repo, de manera de tener la documentación actualizada al instante.
 Para usuarios de GitHub la activación del "web hook" se explica
@@ -163,11 +162,9 @@ Para usuarios de GitHub la activación del "web hook" se explica
 <li><p>Completás el campo de texto con la URL que te da ReadTheDocs en la
 página de descripción de tu proyecto (estándo logueado). Por ejemplo:</p></li>
 </ol>
-<figure class="align-center"><img alt="" src="local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"></figure><div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 60)</p>
+<figure class="align-center"><img alt="" src="local/cache-vignettes/L295xH73/2011-04-10-221400_295x73_scrot-15220.png"></figure><aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 60)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
-</div>
-<p>Y listo. Tu docu al instante.</p>
+</aside><p>Y listo. Tu docu al instante.</p>
 <p>Como el sitio genera el html en vez de servir una versión generada
 previamente, la documentación que requiere introspección del código (
 todas las directivas `` .. auto* :: `` de Sphinx) este debe poder
@@ -190,11 +187,9 @@ documentación</a>. La forma canónica es ir a
 la página de administración de tu proyecto en PyPi y adjuntar un .zip
 con la documentación (que no necesariamente tiene que ser hecha con
 Sphinx)</p>
-<figure class="align-center"><img alt="" src="local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"></figure><div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 93)</p>
+<figure class="align-center"><img alt="" src="local/cache-vignettes/L510xH111/2011-04-10-223417_605x131_scrot-d5e1d.png"></figure><aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 93)</p>
 <p>Explicit markup ends without a blank line; unexpected unindent.</p>
-</div>
-<p>Pero si usamos Sphinx hay una manera más fácil, manteniendosé en el
+</aside><p>Pero si usamos Sphinx hay una manera más fácil, manteniendosé en el
 "ecosistema" de desarrollo: usar esta <a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload/">extension de
 setuptools</a> que
 permite generar el html a través Sphinx y subirlo automáticamente. Se
@@ -226,12 +221,10 @@ archivo.</p>
 <pre class="literal-block">$ svn propset svn:mime-type 'text/html' FILENAME
 $ svn propset svn:mime-type 'image/jpeg' FILENAME</pre>
 <p>Para que esto se haga automático, se puede modificar el archivo de
-configuración <a href="#id3"><span class="problematic" id="id4">``</span></a>~/.subversion/config ``</p>
-<div class="system-message" id="id3">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 144); <em><a href="#id4">backlink</a></em></p>
+configuración <a href="#system-message-1"><span class="problematic" id="problematic-1">``</span></a>~/.subversion/config ``</p>
+<aside class="system-message" id="system-message-1"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 144); <em><a href="#problematic-1">backlink</a></em></p>
 <p>Inline literal start-string without end-string.</p>
-</div>
-<pre class="literal-block">[miscellany]
+</aside><pre class="literal-block">[miscellany]
 enable-auto-props = yes
 
 [auto-props]
@@ -257,7 +250,6 @@ de Luca Sbardella.
 github-tools</a>.</p>
 </section>
 </div>
-    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/metodologias-agiles/" rel="tag">Metodologías ágiles</a></li>
             <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
@@ -271,7 +263,7 @@ github-tools</a>.</p>
                 <a href="../pep-20-el-zen-del-barca/" rel="next" title="Pep 20: El Zen del Barça">Siguiente post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
-                        <div id="disqus_thread"></div>
+                    <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
             disqus_url="https://mgaitan.github.io/posts/compartiendo-documentacion-de/",
@@ -291,13 +283,13 @@ github-tools</a>.</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
-            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

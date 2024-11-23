@@ -6,12 +6,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>El mono salta entre las ramas. El desarrollador también | tin_nqn</title>
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -19,7 +16,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../miau-cuando-el-gato-dice-la-verdad/" title="Miau: cuando el gato dice la verdad" type="text/html">
 <link rel="next" href="../move-imports-o-como-calmar-el-toc-de-un-pythonista/" title="move-imports, o cómo calmar el TOC de un pythonista" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
@@ -78,6 +75,10 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
+        <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
+    </li>
+
                 
             </ul>
 </div>
@@ -98,27 +99,27 @@ navbar-light bg-light
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2020-04-30T01:59:00-03:00" itemprop="datePublished" title="2020-04-30 01:59">2020-04-30 01:59</time></a>
             </p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/el-mono-salta-entre-las-ramas.html">Comentarios</a>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/el-mono-salta-entre-las-ramas.html">Comentarios</a>
 
 
-            
-        </p>
-</div>
+                    </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">El código de este artículo está disponible en </a></p>
+
+        </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Cuando laburamos con git, necesitamos frecuentemente cambiar
+    <p>Cuando laburamos con git, necesitamos frecuentemente cambiar
 de rama, sea porque estamos haciendo un feature mientras esperamos
 que alguien haga review de otra cosa y eventualmente pide algo,
 sea porque somos nosotros los que <em>checkouteamos</em> el branch
 de un compañero para probar algo.</p>
 <p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
 un alias del branch previo.</p>
-<pre class="code bash"><a id="rest_code_ff5ab1429325449fa77becbf9c009f15-1" name="rest_code_ff5ab1429325449fa77becbf9c009f15-1"></a>$ git checkout master
-<a id="rest_code_ff5ab1429325449fa77becbf9c009f15-2" name="rest_code_ff5ab1429325449fa77becbf9c009f15-2"></a>Switched to a new branch <span class="s1">'master'</span>
-<a id="rest_code_ff5ab1429325449fa77becbf9c009f15-3" name="rest_code_ff5ab1429325449fa77becbf9c009f15-3"></a>$ git checkout -
-<a id="rest_code_ff5ab1429325449fa77becbf9c009f15-4" name="rest_code_ff5ab1429325449fa77becbf9c009f15-4"></a>Switched to branch <span class="s1">'writing'</span>
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-1" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-1" href="#rest_code_602e2cedbe0746a0a417096c2b3bc52c-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+<a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-2" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-2" href="#rest_code_602e2cedbe0746a0a417096c2b3bc52c-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span><span class="s1">'master'</span>
+<a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-3" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-3" href="#rest_code_602e2cedbe0746a0a417096c2b3bc52c-3"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-
+<a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-4" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-4" href="#rest_code_602e2cedbe0746a0a417096c2b3bc52c-4"></a>Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">'writing'</span>
+</pre></div>
 <p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
 y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>
 <p>El problema es que si no nos acordamos el nombre del branch, mucho menos
@@ -130,7 +131,7 @@ en las que venis trabajando (las 10 últimas por defecto o <code class="docutils
 y checkoutear la que querés rapidamente pasando el índice.</p>
 <p>En mi día a día lo uso un montón asi que quizas les sirve.</p>
 <script src="https://gist.github.com/ba1e4e252b90a7fd4a4eb9e1742e94fb.js"></script><noscript>
-<pre class="literal-block">#!/usr/bin/env python
+<pre class="literal-block">#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 List the most recent branches you have been working on, and checkout any of them.
@@ -148,7 +149,7 @@ You can pass -n &lt;number&gt; to see more.
 $ git recent-branches
 1 - feature/EN-634
 2 - feature/en-583_3
-3 - master
+3 * master
 4 - HOTFIX/spotify
 5 - tests_factories
 6 - feature/en-583_2
@@ -163,15 +164,15 @@ $ git recent-branches 5
 Switched to branch 'tests_factories'
 Your branch is up to date with 'origin/tests_factories'.
 
+In the list, the row with "*" (instead "-") is the current branch.
 """
 
 import argparse
+import re
 import subprocess
 from collections import OrderedDict
 
-import re
-
-pattern = re.compile(r"checkout: moving from (.*) to")
+pattern = re.compile(r"checkout: moving from ([A-Za-z0-9_\/\-\.]+) to")
 
 parser = argparse.ArgumentParser(description="Recent branches")
 parser.add_argument("index", type=int, nargs="?", help="Move to the i-th branch in the list")
@@ -180,24 +181,29 @@ parser.add_argument("--force", "-f", action="store_true", help="Force checkout")
 
 args = parser.parse_args()
 
-output = subprocess.check_output(["git", "reflog"])
+output = subprocess.check_output(["git", "reflog"], text=True)
 
 # OrderedList.fromkeys(list).keys() works as a filter of repeated items in list
 # keeping the first occurrence of them. A poor-man sorted set.
-branches = list(OrderedDict.fromkeys(re.findall(pattern, output.decode("utf8"))).keys())
+branches = list(OrderedDict.fromkeys(re.findall(pattern, output)).keys())
+
 
 if args.index:
-    cmd = ["git", "checkout"]
+    # use sw instead switch if available
+    # install sw from https://gist.github.com/mgaitan/d9a3523d79cd5f9fbfd626f646f0560b
+    use_sw = subprocess.call(["git", "sw"], stderr=subprocess.DEVNULL) == 2 and not args.force
+
+    cmd = ["git", "sw" if use_sw else "switch"]
     if args.force:
         cmd.append("-f")
     cmd.append(branches[args.index - 1])
     subprocess.call(cmd)
 else:
+    current = subprocess.check_output(["git", "branch", "--show-current"], text=True).strip()
     for i, branch in enumerate(branches[: args.limit], 1):
-        print("{} - {}".format(i, branch))
+        print(f"{i} {'*' if current == branch else '-'} {branch}")
 </pre>
 </noscript>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
@@ -207,7 +213,7 @@ else:
                 <a href="../move-imports-o-como-calmar-el-toc-de-un-pythonista/" rel="next" title="move-imports, o cómo calmar el TOC de un pythonista">Siguiente post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
-                        <div id="disqus_thread"></div>
+                    <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
             disqus_url="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/",
@@ -227,13 +233,13 @@ else:
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
-            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

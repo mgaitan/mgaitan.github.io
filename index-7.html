@@ -7,12 +7,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="description" content="&gt;&gt;&gt; me.geek.post()">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>tin_nqn (posts antiguos, página 7) | tin_nqn</title>
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="assets/css/all.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -22,7 +19,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="canonical" href="https://mgaitan.github.io/index-7.html">
 <link rel="prev" href="index-8.html" type="text/html">
 <link rel="next" href="index-6.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -81,555 +78,430 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/bienvenidos-al-tren/" class="u-url">Bievenidos al tren</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/preparados-listos-en-un-rato/" class="u-url">Preparados, listos... en un rato</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
             </span></p>
             <p class="dateline">
-            <a href="posts/bienvenidos-al-tren/" rel="bookmark">
-            <time class="published dt-published" datetime="2012-10-11T01:15:00-03:00" itemprop="datePublished" title="2012-10-11 01:15">2012-10-11 01:15</time></a>
+            <a href="posts/preparados-listos-en-un-rato/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-07-13T06:51:43-03:00" itemprop="datePublished" title="2010-07-13 06:51">2010-07-13 06:51</time></a>
             </p>
-                <p class="commentline">            <a href="posts/bienvenidos-al-tren/#disqus_thread" data-disqus-identifier="cache/posts/1.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/preparados-listos-en-un-rato/#disqus_thread" data-disqus-identifier="cache/posts/preparados-listos-en-un-rato.html">Comentarios</a>
 
 
         </p>
 </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>Hola!</p>
-<p>Este blog está en pleno proceso de mudanza y metamorfosis. Antes estaba
-en <a class="reference external" href="http://nqnwebs.com/blog">http://nqnwebs.com/blog</a> y utilizaba <a class="reference external" href="http://www.spip.net">SPIP</a>. Por diversas razones
-que explicaré más adelante, estoy migrandolo a <a class="reference external" href="http://nikola.ralsina.com.ar">Nikola</a> utilizando
-<a class="reference external" href="http://github.com">Github</a> como plataforma de versionado y hosting.</p>
-<p>Espero que pronto esto esté más bonito y con contenido. También que la
-mudanza y el cambio de herramienta (y paradigma) me ayude a escribir más.</p>
-</div>
+    <p>Hace aproximadamente dos meses que estoy trabajando en lo que será mi
+proyecto final, para recibir el título de <a class="reference external" href="http://computacion.efn.uncor.edu">ingeniero en
+computación</a>.</p>
+<p>El proyecto es una aplicación de uso "científico y académico"
+implementada en Python que sirve para obtener diagramas de equilibro
+termodinámico entre fases fluidas de sistemas binarios. Toda la batahola
+está en <a class="reference external" href="http://code.google.com/p/gpec2010">este repo</a>.</p>
+<p>En concreto, el proyecto se circunscribe a la generación y [análisis
+sintáctico] de archivos de texto con el que la aplicación se comunica
+con los programas que implementan los algoritmos de cálculo, que están
+implementados en Fortran, y son, literalmente, unas cajas negras.
+Se procesan esos archivos para obtener arrays con los que se plotean las distintas
+curvas.</p>
+<p>Utilizo principalmente <a class="reference external" href="http://wxpython.org">wxPython</a>,
+<a class="reference external" href="http://matplotlib.sourceforge.net">Matplotlib</a> y
+<a class="reference external" href="http://numpy.scipy.org">Numpy</a>. Vale destacar, ya que mucho de
+un trabajo final es documentación, que escribo en
+<a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>,
+renderizando con <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a>.</p>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/de-mercurial-a-git-limpieza/" class="u-url">De mercurial a git, limpieza mediante</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/video-sis-771-671-en-ubuntu/" class="u-url">Video SIS 771/671 en Ubuntu</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
             </span></p>
             <p class="dateline">
-            <a href="posts/de-mercurial-a-git-limpieza/" rel="bookmark">
-            <time class="published dt-published" datetime="2012-07-02T17:39:11-03:00" itemprop="datePublished" title="2012-07-02 17:39">2012-07-02 17:39</time></a>
+            <a href="posts/video-sis-771-671-en-ubuntu/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-05-10T16:10:25-03:00" itemprop="datePublished" title="2010-05-10 16:10">2010-05-10 16:10</time></a>
             </p>
-                <p class="commentline">            <a href="posts/de-mercurial-a-git-limpieza/#disqus_thread" data-disqus-identifier="cache/posts/de-mercurial-a-git-limpieza.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/video-sis-771-671-en-ubuntu/#disqus_thread" data-disqus-identifier="cache/posts/video-sis-771-671-en-ubuntu.html">Comentarios</a>
 
 
         </p>
 </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>Cuando decidí dar el salto desde Subversion a un DVCS estuve leyendo
-muchos posts comparativos entre las dos opciones más relevantes, Git y
-Mercurial. Había que elegir entre <a class="reference external" href="http://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/">Mc Gyver o James
-Bond</a>
-decía uno, entre <a class="reference external" href="http://www.ericsink.com/entries/hg_denzel.html">Denzel Washington y Wesley
-Snipes</a> y la
-comparación jocosa entre estos dos grandes softwares se volvió una
-especie de meme tácito.</p>
-<p>Sabía que, a fin de cuentas, tenía que probarlos y ver cual encajaba
-mejor para mis necesidades de "solo developer". En el medio leí <a class="reference external" href="http://hginit.com/">Hg
-Init</a> del gran divulgador Joel Spolsky y, víctima
-de semejante labia, me sumergí para ese lado.</p>
-<p>Mi flujo de trabajo era bastante básico pero suficiente y superador de
-subvesion. Comparado con lo que había probado de Git era mucho menos
-verbósico (no podía entender la necesidad de Git hacer <code class="docutils literal">add</code> cada vez
-que quería commitear un archivo modificado) y
-<a class="reference external" href="http://bitbucket.org">Bitbucket</a> daba no sólo hospedaje gratuito para
-repositorios públicos sino también para potenciales desarrollos privados
-(cosa que GitHub, su equivalente — siendo benévolo con bitbucket — para
-Git, no daba).</p>
-<p>Con el tiempo empecé a compatir <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks">algunos
-proyectitos</a> con otros
-desarrolladores y mi inexperiencia en Mercurial me empezó a jugar en
-contra. Y justo cuando necesitaba ponerme a aprender más profundamente
-Hg, entre a laburar, muy a gusto, en
-<a class="reference external" href="http://machinalis.com">Machinalis</a> (qué vago, nunca conté nada por
-acá) donde usamos Git para el control de versiones de los proyectos,
-implementando <a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/">esta política de ramificación y
-mezcla</a>.</p>
-<p>Resultó entonces que en poquito tiempo ya sabía mucho más de Git que de
-Mercurial (con la ventaja de tenerlo a Daniel Moisset cerca para apagar
-algunos incendios que encendí las primeras semanas).</p>
-<p>Para más señales, Atlassian, la empresa detras de Bitbucket y principal
-referente de Mercurial (junto con Selenic, la creadora), comenzó a
-ofrecer Git (sin descartar mercurial) como sistema DVCS (comiéndose
-alguna que otra gastada porque alguna vez comunicó una noticia parecida
-como broma del dia de los inocentes).</p>
-<p>Asi que llegó el dia que decidí mudar un proyecto en Mercurial a Git.
-Atenti: las razones no son técnicas. No tengo suficiente conocimiento de
-Mercurial (ni de Git) para decir que uno es mejor que el otro por tales
-razones. Sólo es *mi experiencia*, que vino un poco por obligación. Y
-sí, también, siguiendo un poco a la manada. Proyectos de la envergadura
-de Django han migrado a Git (y, particularmente, a GitHub)</p>
-<section id="la-limpieza"><h2>La limpieza</h2>
-<p>Soy de esos que se mudan seguido. "¿Asi que si te renuevo contrato me
-aumentas 30 % el alquiler e igual te tengo que pagar comisión sin que
-hagas nada? ¡Andá a cagar!" puedo imaginarme dialogando con algun agente
-inmobiliario.</p>
-<p>Esta no era la excepción y debía mudar un repositorio mercurial que a su
-vez había sido mudado (en realidad, exportado desde el último commit, y
-arrancando de 0) desde
-<a class="reference external" href="http://code.google.com/p/gpec2010/">subversion</a>.</p>
-<p>El detalle es que el repositorio original, y por ende el nuevo en
-mercurial, tenia un montón de datos de documentación que era,
-basicamente, todos los fuentes y muchos de los archivos generados del
-reporte escrito de mi tesis.</p>
-<p>El primer changeset en el flamante mercurial consistió en borrar todo
-esa información innecesaria, pero que seguía allí, en el historial (uno
-110Mb de datos que no necesitaba).</p>
-<p>Así que ya que ahora iba a mudarme de nuevo, queria tirar a la basura
-todas esas cajas de papeles que había metido en un caja y, si bien no la
-veía, me ocupaban el placard.</p>
-<p>Despues de darle vueltas, <a class="reference external" href="http://stackoverflow.com/questions/2684898/mercurial-remove-history#8819813">encontré una
-punta</a>
-usando la extensión <a class="reference external" href="http://mercurial.selenic.com/wiki/ConvertExtension#Converting_from_Mercurial">hg convert para obtener un subconjunto de repo
-original</a>,
-por ejemplo, partiendo de un determinado cambio.</p>
-<ol class="arabic">
-<li>
-<p>Primero, activar la extensión editando <code class="docutils literal"><span class="pre">~/.hgrc</span></code>:</p>
-<pre class="literal-block">[extensions]
-convert =</pre>
-</li>
-<li>
-<p>¡Tirar las cajas del placard!</p>
-<pre class="literal-block">$ hg convert --config convert.hg.startrev=1 repo_hg_orig/ repo_hg_liviano/</pre>
-</li>
-</ol>
-<p>En mi caso yo queria todo desde la revision 1. <strong>Atenti</strong>: como explica,
-esto genera un repo totalmente nuevo, con ids distintos para los
-changesets, de modo que no se puede mantener "sincronizados" ambos con
-el mismo cambio (al menos no de manera directa).</p>
-</section><section id="la-mudanza"><h2>La mudanza</h2>
-<p>Contra todo pronóstico fruto de mi prejuicio y desidia, migrar a git fue
-extremadamente fácil usando
-<a class="reference external" href="http://repo.or.cz/w/fast-export.git">hg-fast-export</a>.</p>
-<ol class="arabic">
-<li>
-<p>Obtener los scripts</p>
-<pre class="literal-block">$ git clone git://repo.or.cz/fast-export.git</pre>
-</li>
-<li>
-<p>Convertir!</p>
-<pre class="literal-block">$ mkdir repo_git
-$ cd repo_git
-$ git init
-$ ~/fast-export/hg-fast-export.sh -r ~/repo_hg_liviano/ --force</pre>
-</li>
-</ol>
-<p>¡Charánnnn...!</p>
-<p>El flag <code class="docutils literal"><span class="pre">--force</span></code> era necesario en mi caso porque, como explica el
-<a class="reference external" href="http://repo.or.cz/w/fast-export.git/blob_plain/master:/hg-fast-export.txt">readme.txt</a>
-<em>"hg-fast-export supports multiple branches but only named branches with
-exaclty one head each..."</em>.</p>
-<p>El resultado fue un repo git que ocupa el 5% (5.6mb) que el mercurial
-original que sin perder la historia útil.</p>
-<p>Parafraseando a Lito, <em>si la historia la escriben los que ganan</em> ...
-¿ganamos ?</p>
-<div class="youtube-video">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3mkhn6oiqCM?rel=0&amp;wmode=transparent" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
-</div></section>
-</div>
+    <aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 5); <em><a href="posts/video-sis-771-671-en-ubuntu/#este-xorg-conf-1">backlink</a></em></p>
+<p>Duplicate explicit target name: "este xorg.conf".</p>
+</aside><p>Esto es una ayuda memoria para mi yo dubitativo del futuro: para hacer
+funcionar el video de la notebook que es <strong>SiS 671/771</strong> en <strong>Ubuntu</strong>
+(a partir de la versión 9.10) instalar <a class="reference external" href="posts/video-sis-771-671-en-ubuntu/IMG/deb/xorg-driver-sis671_0-9_i386.deb">este
+paquete</a> y [STRIKEOUT:<a class="reference external" href="posts/video-sis-771-671-en-ubuntu/IMG/bin/xorg.bin">este
+xorg.conf</a>] <a class="reference external" href="posts/video-sis-771-671-en-ubuntu/IMG/bin/xorg-2.bin">este xorg.conf</a>.</p>
+<p>Para pantalla dual con LCD externo a resolución full 1280x1024</p>
+<pre class="literal-block"># /etc/X11/xorg.conf (Xorg X Window System server configuration file)
+#
+# This file was generated by fll_xorgconfig, the F.U.L.L.S.T.O.R.Y.
+# Xorg Configuration tool.
+#
+# Edit this file with caution, and see the xorg.conf(5) manual page.
+# (Type "man xorg.conf" at the shell prompt.)
+#
+Section "ServerLayout"
+    Identifier  "Xorg Configured"
+    Screen      "Screen 0"
+EndSection
+
+#Section "ServerFlags"
+#   Option      "AllowMouseOpenFail"    "true"
+#   Option      "DontZap"       "false"
+#EndSection
+
+Section "Device"
+    Identifier  "Device 0"
+    Driver      "sis671"
+    #Driver     "vesa"
+    BoardName   "Silicon Integrated Systems [SiS] 771/671 PCIE VGA Display Adapter"
+    Option      "EnableSisCtrl" "yes"
+    Option      "DRI" "off"
+    Option      "MergedFBAuto" "true"
+    Option      "MergedNonRectangular" "on"
+    Option      "Merged DPI" "100 100"
+    Option      "MetaModes" "1280x1024-1280x800 640x460-640x460 1280x800-1280x1024"
+    BusID       "PCI:1:0:0"
+EndSection
+
+Section "Monitor"
+    Identifier  "Monitor 0"
+    ModelName   "Default Monitor"
+    HorizSync   28-96
+    VertRefresh 50-75
+    # 640x350 @ 85.00 Hz (GTF) hsync: 31.28 kHz; pclk: 25.02 MHz
+    Modeline "640x350"  25.02  640 656 720 800  350 351 354 368  -HSync +Vsync
+    # 640x400 @ 85.00 Hz (GTF) hsync: 35.78 kHz; pclk: 29.20 MHz
+    Modeline "640x400"  29.20  640 664 728 816  400 401 404 421  -HSync +Vsync
+    # 640x480 @ 60.00 Hz (GTF) hsync: 29.82 kHz; pclk: 23.86 MHz
+    Modeline "640x480"  23.86  640 656 720 800  480 481 484 497  -HSync +Vsync
+    # 640x480 @ 72.00 Hz (GTF) hsync: 36.07 kHz; pclk: 29.43 MHz
+    Modeline "640x480"  29.43  640 664 728 816  480 481 484 501  -HSync +Vsync
+    # 640x480 @ 75.00 Hz (GTF) hsync: 37.65 kHz; pclk: 30.72 MHz
+    Modeline "640x480"  30.72  640 664 728 816  480 481 484 502  -HSync +Vsync
+    # 640x480 @ 85.00 Hz (GTF) hsync: 42.92 kHz; pclk: 35.71 MHz
+    Modeline "640x480"  35.71  640 672 736 832  480 481 484 505  -HSync +Vsync
+    # 640x480 @ 100.00 Hz (GTF) hsync: 50.90 kHz; pclk: 43.16 MHz
+    Modeline "640x480"  43.16  640 680 744 848  480 481 484 509  -HSync +Vsync
+    # 720x400 @ 85.00 Hz (GTF) hsync: 35.78 kHz; pclk: 32.64 MHz
+    Modeline "720x400"  32.64  720 744 816 912  400 401 404 421  -HSync +Vsync
+    # 768x576 @ 60.00 Hz (GTF) hsync: 35.82 kHz; pclk: 34.96 MHz
+    Modeline "768x576"  34.96  768 792 872 976  576 577 580 597  -HSync +Vsync
+    # 768x576 @ 72.00 Hz (GTF) hsync: 43.27 kHz; pclk: 42.93 MHz
+    Modeline "768x576"  42.93  768 800 880 992  576 577 580 601  -HSync +Vsync
+    # 768x576 @ 75.00 Hz (GTF) hsync: 45.15 kHz; pclk: 45.51 MHz
+    Modeline "768x576"  45.51  768 808 888 1008  576 577 580 602  -HSync +Vsync
+    # 768x576 @ 85.00 Hz (GTF) hsync: 51.42 kHz; pclk: 51.84 MHz
+    Modeline "768x576"  51.84  768 808 888 1008  576 577 580 605  -HSync +Vsync
+    # 768x576 @ 100.00 Hz (GTF) hsync: 61.10 kHz; pclk: 62.57 MHz
+    Modeline "768x576"  62.57  768 816 896 1024  576 577 580 611  -HSync +Vsync
+    # 800x600 @ 56.00 Hz (GTF) hsync: 34.72 kHz; pclk: 35.55 MHz
+    Modeline "800x600"  35.55  800 832 912 1024  600 601 604 620  -HSync +Vsync
+    # 800x600 @ 60.00 Hz (GTF) hsync: 37.32 kHz; pclk: 38.22 MHz
+    Modeline "800x600"  38.22  800 832 912 1024  600 601 604 622  -HSync +Vsync
+    # 800x600 @ 72.00 Hz (GTF) hsync: 45.07 kHz; pclk: 46.87 MHz
+    Modeline "800x600"  46.87  800 840 920 1040  600 601 604 626  -HSync +Vsync
+    # 800x600 @ 75.00 Hz (GTF) hsync: 47.02 kHz; pclk: 48.91 MHz
+    Modeline "800x600"  48.91  800 840 920 1040  600 601 604 627  -HSync +Vsync
+    # 800x600 @ 85.00 Hz (GTF) hsync: 53.55 kHz; pclk: 56.55 MHz
+    Modeline "800x600"  56.55  800 840 928 1056  600 601 604 630  -HSync +Vsync
+    # 800x600 @ 100.00 Hz (GTF) hsync: 63.60 kHz; pclk: 68.18 MHz
+    Modeline "800x600"  68.18  800 848 936 1072  600 601 604 636  -HSync +Vsync
+    # 1024x600 @ 60.00 Hz (GTF) hsync: 37.32 kHz; pclk: 48.96 MHz
+    Modeline "1024x600"  48.96  1024 1064 1168 1312  600 601 604 622  -HSync +Vsync
+    # 1024x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 64.11 MHz
+    Modeline "1024x768"  64.11  1024 1080 1184 1344  768 769 772 795  -HSync +Vsync
+    # 1024x768 @ 70.00 Hz (GTF) hsync: 56.00 kHz; pclk: 76.16 MHz
+    Modeline "1024x768"  76.16  1024 1080 1192 1360  768 769 772 800  -HSync +Vsync
+    # 1024x768 @ 75.00 Hz (GTF) hsync: 60.15 kHz; pclk: 81.80 MHz
+    Modeline "1024x768"  81.80  1024 1080 1192 1360  768 769 772 802  -HSync +Vsync
+    # 1024x768 @ 85.00 Hz (GTF) hsync: 68.60 kHz; pclk: 94.39 MHz
+    Modeline "1024x768"  94.39  1024 1088 1200 1376  768 769 772 807  -HSync +Vsync
+    # 1024x768 @ 100.00 Hz (GTF) hsync: 81.40 kHz; pclk: 113.31 MHz
+    Modeline "1024x768"  113.31  1024 1096 1208 1392  768 769 772 814  -HSync +Vsync
+    # 1152x864 @ 75.00 Hz (GTF) hsync: 67.65 kHz; pclk: 104.99 MHz
+    Modeline "1152x864"  104.99  1152 1224 1352 1552  864 865 868 902  -HSync +Vsync
+    # 1152x864 @ 60.00 Hz (GTF) hsync: 53.70 kHz; pclk: 81.62 MHz
+    Modeline "1152x864"  81.62  1152 1216 1336 1520  864 865 868 895  -HSync +Vsync
+    # 1152x864 @ 85.00 Hz (GTF) hsync: 77.10 kHz; pclk: 119.65 MHz
+    Modeline "1152x864"  119.65  1152 1224 1352 1552  864 865 868 907  -HSync +Vsync
+    # 1152x864 @ 100.00 Hz (GTF) hsync: 91.50 kHz; pclk: 143.47 MHz
+    Modeline "1152x864"  143.47  1152 1232 1360 1568  864 865 868 915  -HSync +Vsync
+    # 1152x900 @ 77.00 Hz (GTF) hsync: 72.46 kHz; pclk: 112.45 MHz
+    Modeline "1152x900"  112.45  1152 1224 1352 1552  900 901 904 941  -HSync +Vsync
+    # 1152x900 @ 66.00 Hz (GTF) hsync: 61.71 kHz; pclk: 94.79 MHz
+    Modeline "1152x900"  94.79  1152 1224 1344 1536  900 901 904 935  -HSync +Vsync
+    # 1280x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 80.14 MHz
+    Modeline "1280x768"  80.14  1280 1344 1480 1680  768 769 772 795  -HSync +Vsync
+    # 1280x800 @ 60.00 Hz (GTF) hsync: 49.68 kHz; pclk: 83.46 MHz
+    Modeline "1280x800"  83.46  1280 1344 1480 1680  800 801 804 828  -HSync +Vsync
+    # 1280x960 @ 60.00 Hz (GTF) hsync: 59.64 kHz; pclk: 102.10 MHzx
+    Modeline "1280x960"  102.10  1280 1360 1496 1712  960 961 964 994  -HSync +Vsync
+    # 1280x960 @ 72.00 Hz (GTF) hsync: 72.07 kHz; pclk: 124.54 MHz
+    Modeline "1280x960"  124.54  1280 1368 1504 1728  960 961 964 1001  -HSync +Vsync
+    # 1280x960 @ 75.00 Hz (GTF) hsync: 75.15 kHz; pclk: 129.86 MHz
+    Modeline "1280x960"  129.86  1280 1368 1504 1728  960 961 964 1002  -HSync +Vsync
+    # 1280x960 @ 85.00 Hz (GTF) hsync: 85.68 kHz; pclk: 149.43 MHz
+    Modeline "1280x960"  149.43  1280 1376 1512 1744  960 961 964 1008  -HSync +Vsync
+    # 1280x960 @ 100.00 Hz (GTF) hsync: 101.70 kHz; pclk: 178.99 MHz
+    Modeline "1280x960"  178.99  1280 1376 1520 1760  960 961 964 1017  -HSync +Vsync
+    # 1280x1024 @ 60.00 Hz (GTF) hsync: 63.60 kHz; pclk: 108.88 MHz
+    Modeline "1280x1024"  108.88  1280 1360 1496 1712  1024 1025 1028 1060  -HSync +Vsync
+    # 1280x1024 @ 67.00 Hz (GTF) hsync: 71.29 kHz; pclk: 123.19 MHz
+    Modeline "1280x1024"  123.19  1280 1368 1504 1728  1024 1025 1028 1064  -HSync +Vsync
+    # 1280x1024 @ 75.00 Hz (GTF) hsync: 80.17 kHz; pclk: 138.54 MHz
+    Modeline "1280x1024"  138.54  1280 1368 1504 1728  1024 1025 1028 1069  -HSync +Vsync
+    # 1280x1024 @ 76.00 Hz (GTF) hsync: 81.32 kHz; pclk: 141.82 MHz
+    Modeline "1280x1024"  141.82  1280 1376 1512 1744  1024 1025 1028 1070  -HSync +Vsync
+    # 1280x1024 @ 85.00 Hz (GTF) hsync: 91.38 kHz; pclk: 159.36 MHz
+    Modeline "1280x1024"  159.36  1280 1376 1512 1744  1024 1025 1028 1075  -HSync +Vsync
+    # 1280x1024 @ 100.00 Hz (GTF) hsync: 108.50 kHz; pclk: 190.96 MHz
+    Modeline "1280x1024"  190.96  1280 1376 1520 1760  1024 1025 1028 1085  -HSync +Vsync
+    # 1368x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 85.86 MHz
+    Modeline "1368x768"  85.86  1368 1440 1584 1800  768 769 772 795  -HSync +Vsync
+    # 1440x900 @ 60.00 Hz (GTF) hsync: 55.92 kHz; pclk: 106.47 MHz
+    Modeline "1440x900"  106.47  1440 1520 1672 1904  900 901 904 932  -HSync +Vsync
+    # 1400x1050 @ 60.00 Hz (GTF) hsync: 65.22 kHz; pclk: 122.61 MHz
+    Modeline "1400x1050"  122.61  1400 1488 1640 1880  1050 1051 1054 1087  -HSync +Vsync
+    # 1400x1050 @ 72.00 Hz (GTF) hsync: 78.77 kHz; pclk: 149.34 MHz
+    Modeline "1400x1050"  149.34  1400 1496 1648 1896  1050 1051 1054 1094  -HSync +Vsync
+    # 1400x1050 @ 75.00 Hz (GTF) hsync: 82.20 kHz; pclk: 155.85 MHz
+    Modeline "1400x1050"  155.85  1400 1496 1648 1896  1050 1051 1054 1096  -HSync +Vsync
+    # 1400x1050 @ 85.00 Hz (GTF) hsync: 93.76 kHz; pclk: 179.26 MHz
+    Modeline "1400x1050"  179.26  1400 1504 1656 1912  1050 1051 1054 1103  -HSync +Vsync
+    # 1400x1050 @ 100.00 Hz (GTF) hsync: 111.20 kHz; pclk: 214.39 MHz
+    Modeline "1400x1050"  214.39  1400 1512 1664 1928  1050 1051 1054 1112  -HSync +Vsync
+    # 1440x900 @ 60.00 Hz (GTF) hsync: 55.92 kHz; pclk: 106.47 MHz
+    Modeline "1440x900"  106.47  1440 1520 1672 1904  900 901 904 932  -HSync +Vsync
+    # 1600x1200 @ 60.00 Hz (GTF) hsync: 74.52 kHz; pclk: 160.96 MHz
+    Modeline "1600x1200"  160.96  1600 1704 1880 2160  1200 1201 1204 1242  -HSync +Vsync
+    # 1600x1200 @ 65.00 Hz (GTF) hsync: 80.99 kHz; pclk: 176.23 MHz
+    Modeline "1600x1200"  176.23  1600 1712 1888 2176  1200 1201 1204 1246  -HSync +Vsync
+    # 1600x1200 @ 70.00 Hz (GTF) hsync: 87.43 kHz; pclk: 190.25 MHz
+    Modeline "1600x1200"  190.25  1600 1712 1888 2176  1200 1201 1204 1249  -HSync +Vsync
+    # 1600x1200 @ 75.00 Hz (GTF) hsync: 93.97 kHz; pclk: 205.99 MHz
+    Modeline "1600x1200"  205.99  1600 1720 1896 2192  1200 1201 1204 1253  -HSync +Vsync
+    # 1600x1200 @ 85.00 Hz (GTF) hsync: 107.10 kHz; pclk: 234.76 MHz
+    Modeline "1600x1200"  234.76  1600 1720 1896 2192  1200 1201 1204 1260  -HSync +Vsync
+    # 1600x1200 @ 100.00 Hz (GTF) hsync: 127.10 kHz; pclk: 280.64 MHz
+    Modeline "1600x1200"  280.64  1600 1728 1904 2208  1200 1201 1204 1271  -HSync +Vsync
+    # 1680x1050 @ 60.00 Hz (GTF) hsync: 65.22 kHz; pclk: 147.14 MHz
+    Modeline "1680x1050"  147.14  1680 1784 1968 2256  1050 1051 1054 1087  -HSync +Vsync
+    # 1792x1344 @ 60.00 Hz (GTF) hsync: 83.46 kHz; pclk: 202.97 MHz
+    Modeline "1792x1344"  202.97  1792 1920 2112 2432  1344 1345 1348 1391  -HSync +Vsync
+    # 1792x1344 @ 75.00 Hz (GTF) hsync: 105.23 kHz; pclk: 259.27 MHz
+    Modeline "1792x1344"  259.27  1792 1928 2128 2464  1344 1345 1348 1403  -HSync +Vsync
+    # 1856x1392 @ 60.00 Hz (GTF) hsync: 86.46 kHz; pclk: 218.57 MHz
+    Modeline "1856x1392"  218.57  1856 1992 2192 2528  1392 1393 1396 1441  -HSync +Vsync
+    # 1856x1392 @ 75.00 Hz (GTF) hsync: 108.97 kHz; pclk: 277.23 MHz
+    Modeline "1856x1392"  277.23  1856 2000 2200 2544  1392 1393 1396 1453  -HSync +Vsync
+    # 1920x1200 @ 60.00 Hz (GTF) hsync: 74.52 kHz; pclk: 193.16 MHz
+    Modeline "1920x1200"  193.16  1920 2048 2256 2592  1200 1201 1204 1242  -HSync +Vsync
+    # 1920x1440 @ 60.00 Hz (GTF) hsync: 89.40 kHz; pclk: 234.59 MHz
+    Modeline "1920x1440"  234.59  1920 2064 2272 2624  1440 1441 1444 1490  -HSync +Vsync
+    # 1920x1440 @ 75.00 Hz (GTF) hsync: 112.73 kHz; pclk: 297.59 MHz
+    Modeline "1920x1440"  297.59  1920 2072 2280 2640  1440 1441 1444 1503  -HSync +Vsync
+EndSection
+
+Section "Screen"
+    Identifier  "Screen 0"
+    Monitor     "Monitor 0"
+    DefaultColorDepth 24
+    SubSection "Display"
+        Depth   24
+        Modes   "1200x800"
+    EndSubSection
+EndSection
+
+Section "Extensions"
+    Option  "Composite" "off"</pre>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/como-volver-a-compartir-desde/" class="u-url">Cómo volver a compartir desde Google Reader</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/un-gran-lenguaje-una-gran/" class="u-url">Un gran lenguaje, una gran comunidad</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
             </span></p>
             <p class="dateline">
-            <a href="posts/como-volver-a-compartir-desde/" rel="bookmark">
-            <time class="published dt-published" datetime="2012-01-11T21:37:21-03:00" itemprop="datePublished" title="2012-01-11 21:37">2012-01-11 21:37</time></a>
+            <a href="posts/un-gran-lenguaje-una-gran/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-03-23T20:44:28-03:00" itemprop="datePublished" title="2010-03-23 20:44">2010-03-23 20:44</time></a>
             </p>
-                <p class="commentline">            <a href="posts/como-volver-a-compartir-desde/#disqus_thread" data-disqus-identifier="cache/posts/como-volver-a-compartir-desde.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/un-gran-lenguaje-una-gran/#disqus_thread" data-disqus-identifier="cache/posts/un-gran-lenguaje-una-gran.html">Comentarios</a>
 
 
         </p>
 </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<div class="admonition important">
-<p class="admonition-title">Importante</p>
-<p>El pipe tiene un problema con las fechas y quedó deactualizado
-cuando cambió en el html de G+. En su defecto hice este pequeño
-<a class="reference external" href="https://gist.github.com/2886591">scrapper</a> que es lo que uso
-en <a class="reference external" href="http://www.textospretextos.com.ar">Textos y Pretextos</a></p>
-</div>
-<p>Desde hace muchísimo tengo en <a class="reference external" href="http://www.textospretextos.com.ar">mi otro
-blog</a> una sección que se llama <em>"De
-por ahí, cosas que me parecieron interesantes"</em>. Es un feed de links a
-contenidos de toda índole (política, literatura, cine, fotografía,
-deportes, programación: intereses anchos) con un brevisimo extracto como
-descripción que fui alimentando de diversas formas a lo largo del
-tiempo: usé
-<a class="reference external" href="http://delicious.com/nqnwebs,%20use%20%20%5Besto%20%20-%3Ehttp://sourceforge.net/projects/linkwalla/">delicious</a>,
-usé mi
-<a class="reference external" href="http://twitter.com/nqnwebs).%20Pero%20cuando%20%5BGoogle%20Reader-%3Ehttp://reader.google.com">twitter</a>
-incorporó la opción de "Compartir" se convirtió en la manera por
-defecto: si algo me gustaba, un click en compartir y listo. Eso permitia
-que otros usuarios de Reader que me "seguian" pudieran ver mis posts
-compartidos pero a la vez generaba un feed rss que alimentaba la sección
-de mi blog.</p>
-<p>Con la aparición de Google+ aquella simple y muy usada funcionalidad se
-vió desplazada por el botón "+1" y por un "compartir" engañoso que sólo
-permite compartir en Google+</p>
-<p>Para colmo, cuando uno hace "+1" en algun contenido (dentro de Google
-Reader o en cualquier lado donde esté el botón) se lista en una <a class="reference external" href="https://plus.google.com/102449284377784435533/plusones/p/pub">página
-publica</a>
-pero que <strong>no tiene feed RSS</strong>! . Larry Page,
-(<a class="reference external" href="https://twitter.com/#!/nqnwebs/status/154772127139102720">doblemente</a>)
-te odio.</p>
-<section id="frustracion-colectiva"><h2>Frustración colectiva</h2>
-<p>La bronca por los cambios en Reader no es sólo mia, sino que generó una
-<a class="reference external" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&amp;formkey=dE16SFVla3JFZ1lwTkxGRWN2SkZtb2c6MA#gid=0">petición</a>
-firmada por más de
-<a class="reference external" href="http://www.bdkeller.com/2011/10/save-google-reader/">13000</a> usuarios
-que manifiestan que "algunos ven estos cambios como un intento errado
-para forzarnos a usar Google Plus, pero nosotros amamos la utilidad,
-simplicidad y funcionalidades sociales limitadas que ofrece Google
-Reader".</p>
-<p>Mientras tanto, muchos
-(<a class="reference external" href="http://www.theatlanticwire.com/technology/2011/10/how-survive-switch-google-reader-google/44069/">1</a>,
-<a class="reference external" href="https://github.com/jtwebman/GooglePlusToRSSFeed">2</a>,
-<a class="reference external" href="http://plus-one-feed-generator.appspot.com/">3</a>) intentan parchar el
-atropello.</p>
-</section><section id="mi-solucion"><h2>Mi solución</h2>
-<p>"¿Así que no me dejás compartir donde yo quiera, el algoritmo de tu
-madre!?" vociferé, y no sin premeditación agarré <a class="reference external" href="posts/como-volver-a-compartir-desde/blog/article/yahoo-pipes-como-por-un-tubo">Yahoo!
-Pipes</a> (una genialidad, hay
-que decirlo) para scrappearlos a puro golpe de mouse y sin salir del
-navegador. El resultado fue <a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.info?_id=770fc166fd07a0f6e67fe63f513b05dc">este
-pipe</a>
-del que se puede obtener, por ejemplo, un <a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;_render=rss&amp;google_plus_id=102449284377784435533">feed RSS 2.0 de mis
-+1s</a>
-. Podés obtener el feed de otros usuarios así:</p>
-<p><code class="docutils literal"><span class="pre">http://pipes.yahoo.com/pipes/pipe.run?_id=770fc166fd07a0f6e67fe63f513b05dc&amp;_render=rss&amp;google_plus_id=[GOOGLE_PLUS_ID]</span></code>
-donde <code class="docutils literal">[GOOGLE_PLUS_ID]</code> es el numero de identificación del usuario en
-cuestión.</p>
-<figure class="align-center"><img alt="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH139/google-plus-user-profile-id-f8dfc.png"></figure></section>
-</div>
+    <p>Python es un gran lenguaje de programación, y como tal se merece <a class="reference external" href="http://python.org.ar">la
+comunidad que tiene</a>, donde expertos y novatos
+se sienten parte.</p>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/lo-que-hace-un-geek-cuando-ama/" class="u-url">Lo que hace un geek cuando ama</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/hemisferio-derecho/" class="u-url">Hemisferio derecho</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
             </span></p>
             <p class="dateline">
-            <a href="posts/lo-que-hace-un-geek-cuando-ama/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-11-11T20:43:47-03:00" itemprop="datePublished" title="2011-11-11 20:43">2011-11-11 20:43</time></a>
+            <a href="posts/hemisferio-derecho/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-12-11T11:44:32-03:00" itemprop="datePublished" title="2009-12-11 11:44">2009-12-11 11:44</time></a>
             </p>
-                <p class="commentline">            <a href="posts/lo-que-hace-un-geek-cuando-ama/#disqus_thread" data-disqus-identifier="cache/posts/lo-que-hace-un-geek-cuando-ama.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/hemisferio-derecho/#disqus_thread" data-disqus-identifier="cache/posts/hemisferio-derecho.html">Comentarios</a>
 
 
         </p>
 </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>Mi computadora de escritorio, la primera que compré trabajando como
-desarrollador de software, es del 2005. La "morocha", una AMD64 con
-placa madre <a class="reference external" href="http://www.asus.com/Motherboards/AMD_Socket_754/K8N">Asus
-K8N</a> que se la
-sigue bancando.</p>
-<img alt="/images/1110133923_20ebd-30987.jpg" class="align-center" src="images/1110133923_20ebd-30987.jpg"><p>Aquel año me enamoré, no por primera vez, pero sí mucho. Aunque resultó
-una <a class="reference external" href="http://www.textosypretextos.com.ar/Hurgando-en-el-Gmail">historia
-complicada</a>,
-es lindo recordar cuanto uno es capaz de amar y ser amado. Y reirse,
-también, de cuán estúpido se puede ser en ese estado.</p>
-<section id="el-tatuaje-digital"><h2>El tatuaje digital</h2>
-<p>Hay <a class="reference external" href="http://www.ascodevida.com/amor/42152">gestos de amor</a> que no
-miden consecuencias y son dificiles de comprender. Yo, por ejemplo,
-decidí "hackear" la BIOS de mi maquina recién comprada y poner una foto
-de aquella mujer amada como pantalla de splash, esa que se muestra apenas
-se enciende la computadora, mucho antes de cargar cualquier sistema
-operativo.</p>
-<p>Si bien por entonces ya usaba linux, para hacer esto usé una aplicación
-oficial de Asus que venía en el Windows instalado, que pronto, a falta
-de espacio en disco y necesidad, desapareció.</p>
-<p>La historia siguió, por supuesto. Aquel amor terminó pero esa imagen
-quedó allí, tatuada. Mientras vivía solo mucho no me importaba, quizas
-porque reiniciaba muy poco la computadora, quizas porque uno naturaliza
-una cicatriz hasta volverse indiferente.</p>
-<p>Cuando un amor nuevo llegó y más tarde la convivencia, encender la
-Morocha cada mañana empezó a hacerse un momento gracioso pero incómodo.
-Para colmo, aun estando dispuesto a reinstalar Windows con este único
-propósito, aquel programita de Asus se me hizo inconseguible .</p>
-<p>Hasta que hoy, seis años despues, me animé a la cirugía.</p>
-</section><section id="si-no-podes-cambiar-el-tatuaje-cambia-de-piel"><h2>Si no podés cambiar el tatuaje, cambiá de piel</h2>
-<p>Encontré un <a class="reference external" href="http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip">firmware
-actualizado</a>
-para la BIOS. Aunque no hubiera problemas con la que tenía, actualizarlo
-traería el splash original de Asus.</p>
-<p>El problema, felación habitual a Microsoft de las fabricantes de
-hardware, es que <a class="reference external" href="http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip">la utilidad para actualizar
-BIOS</a> es para
-D.O.S.. WTF!</p>
-<p>La
-<a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html">solución</a>
-es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a></p>
-<pre class="code bash"><a id="rest_code_2036997ed46e468daa743b5e71a93e2f-1" name="rest_code_2036997ed46e468daa743b5e71a93e2f-1"></a><span class="c1"># obtener una imagen booteable de freeDOS y montarla en un directorio</span>
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-2" name="rest_code_2036997ed46e468daa743b5e71a93e2f-2"></a>wget http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-3" name="rest_code_2036997ed46e468daa743b5e71a93e2f-3"></a>gunzip FDOEM.144.gz
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-4" name="rest_code_2036997ed46e468daa743b5e71a93e2f-4"></a>mkdir /tmp/floppy
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-5" name="rest_code_2036997ed46e468daa743b5e71a93e2f-5"></a>mount -t vfat -o loop FDOEM.144 /tmp/floppy
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-6" name="rest_code_2036997ed46e468daa743b5e71a93e2f-6"></a>
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-7" name="rest_code_2036997ed46e468daa743b5e71a93e2f-7"></a><span class="c1"># obtener la herramienta para actualizar el bios y la imagen, y moverlos</span>
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-8" name="rest_code_2036997ed46e468daa743b5e71a93e2f-8"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-9" name="rest_code_2036997ed46e468daa743b5e71a93e2f-9"></a>unzip AFUDOS211.zip
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-10" name="rest_code_2036997ed46e468daa743b5e71a93e2f-10"></a>mv AFUDOS.exe /tmp/floppy
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-11" name="rest_code_2036997ed46e468daa743b5e71a93e2f-11"></a>wget http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-12" name="rest_code_2036997ed46e468daa743b5e71a93e2f-12"></a>unzip K8n1011.zip
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-13" name="rest_code_2036997ed46e468daa743b5e71a93e2f-13"></a>mv <span class="m">1011</span>.rom /tmp/floppy
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-14" name="rest_code_2036997ed46e468daa743b5e71a93e2f-14"></a>
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-15" name="rest_code_2036997ed46e468daa743b5e71a93e2f-15"></a><span class="c1"># desmontar</span>
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-16" name="rest_code_2036997ed46e468daa743b5e71a93e2f-16"></a>umount /tmp/floppy
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-17" name="rest_code_2036997ed46e468daa743b5e71a93e2f-17"></a>
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-18" name="rest_code_2036997ed46e468daa743b5e71a93e2f-18"></a><span class="c1"># crear una ISO y grabar a un disco virgen</span>
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-19" name="rest_code_2036997ed46e468daa743b5e71a93e2f-19"></a><span class="c1"># (tambien se podría grabar a un pendrive)</span>
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-20" name="rest_code_2036997ed46e468daa743b5e71a93e2f-20"></a>mkisofs -o bootcd.iso -b FDOEM.144 FDOEM.144
-<a id="rest_code_2036997ed46e468daa743b5e71a93e2f-21" name="rest_code_2036997ed46e468daa743b5e71a93e2f-21"></a>cdrecord -v bootcd.iso
-</pre>
-<p>Reinciar, bootear el CD de FreeDOS y ejecutar:</p>
-<pre class="literal-block">afudos /i1011.rom</pre>
-</section>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/cuevanalinks-ahora-para-seres/" class="u-url">Cuevanalinks, ahora para seres humanos</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/cuevanalinks-ahora-para-seres/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-08-03T08:51:21-03:00" itemprop="datePublished" title="2011-08-03 08:51">2011-08-03 08:51</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/cuevanalinks-ahora-para-seres/#disqus_thread" data-disqus-identifier="cache/posts/cuevanalinks-ahora-para-seres.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="admonition important">
-<p class="admonition-title">Importante</p>
-<p>Cuevanlinks está desmantenido y con los cambios en cuevana.tv ya no
-funciona. No es complicado actualizarlo, pero yo no tengo tiempo.
-¿Querés revivir el proyecto? <a class="reference external" href="https://bitbucket.org/tin_nqn/cuevanalinks/fork">Forkealo</a>!</p>
-</div>
-<p>Un colega al que no conozco personalmente, <a class="reference external" href="http://mguillech.blogspot.com/">Martín
-Chikilian</a>, se ofreció a desarrollar
-una interfaz gráfica para
-<a class="reference external" href="posts/cuevanalinks-ahora-para-seres/blog/article/la-sanguijuela-de-cuevana">Cuevanalinks</a>.</p>
-<p>Luego de algunos dias y teniendo una paciencia descomunal para soportar
-siempre nuevos requerimientos de mi parte, obtuvo una versión de
-Cuevanalinks-GUI, basado en <a class="reference external" href="http://es.wikipedia.org/wiki/PyQt">PyQt</a></p>
-<figure class="align-center"><img alt="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png" src="http://nqnwebs.com/local/cache-vignettes/L510xH411/2011-08-03-115827_693x558_scrot-0e6d2.png"></figure><p>Todavía está en desarrollo (hay algunos bugcitos y decisiones de diseño
-que no resolvemos del todo) pero ya ofrece ciertas ventajas sobre la
-versión para línea de comandos:</p>
-<ul class="simple">
-<li><p>Permite elegir qué se descarga cuando se hace una búsqueda de
-películas</p></li>
-<li><p>Te deja armar una cola de descargas de muchas cosas distintas
-haciendo muchas busquedas</p></li>
-<li><p>Y, lo más importante, lo puede instalar y usar un ser humano
-normal. :D</p></li>
-</ul>
-<p>Para Windows, hay un instalador de la versión 0.5dev (el dev denota que
-está en desarrollo, se entiende) que se puede descargar desde acá:</p>
-<div class="admonition important">
-<p class="admonition-title">Importante</p>
-<p><a class="reference external" href="downloads/cuevanalinks-0.5dev-installer.exe">cuevanalinks-0.5dev-installer.exe</a></p>
-<p>para Windows XP o superior</p>
-</div>
-<p>Para los linuxeros, Martín puso <a class="reference external" href="http://mguillech.blogspot.com/2011/08/cuevanalinks-gui-available.html">algunas
-instrucciones</a>
-para hacerlo andar desde los fuentes.</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/disqus-para-spip/" class="u-url">Disqus para spip</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/disqus-para-spip/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-07-07T01:45:06-03:00" itemprop="datePublished" title="2011-07-07 01:45">2011-07-07 01:45</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/disqus-para-spip/#disqus_thread" data-disqus-identifier="cache/posts/disqus-para-spip.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<img alt="/images/disqus-newlod23a-8b781.gif" class="align-right" src="images/disqus-newlod23a-8b781.gif"><p>Hace tiempo me interesa el servicio
-<a class="reference external" href="http://www.disqus.com">disqus.com</a> que provee una plataforma de
-comentarios muy poderosa y fácil de usar.</p>
-<p>Comencé un <a class="reference external" href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/disqus">pequeño
-plugin</a>
-para integrar Disqus a <a class="reference external" href="http://www.spip.net">Spip</a>.</p>
-<table>
-<colgroup><col style="width: 100%"></colgroup>
-<tbody><tr>
-<td><p><a class="reference external" href="downloads/disqus.zip">Plugin Disqus para SPIP version 0.1</a></p></td>
-</tr></tbody>
-</table>
-<p>Por ahora tiene dos componentes básicos:</p>
-<ol class="arabic simple">
-<li><p>Un esqueleto inc-forum.html que reemplaza el esqueleto por defecto de
-SPIP (y su formulario) por Disqus</p></li>
-<li><p>Un esqueleto para exportar comentarios existentes (genera un XML
-importable a traves del panel de disqus)</p></li>
-</ol>
-<p>La configuración se realiza a través de una página (requiere el <a class="reference external" href="http://plugins.spip.net/CFG">plugin
-CFG</a>) donde se define el <em>"Disqus
-shortname"</em> (la identificación unica que asignamos al sitio donde
-usaremos Diqus).</p>
-<p>Para generar el XML con la exportación de comentarios preexistentes,
-basta acceder a <code class="docutils literal"><span class="pre">/?page=export_comments_to_disqus</span></code> y luego importar
-ese archivo desde el panel de Disqus (Tools -&gt; Import/Export )</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/cdpedia-0-7-disponible/" class="u-url">CDPedia 0.7 disponible</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/cdpedia-0-7-disponible/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-07-01T11:00:00-03:00" itemprop="datePublished" title="2011-07-01 11:00">2011-07-01 11:00</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/cdpedia-0-7-disponible/#disqus_thread" data-disqus-identifier="cache/posts/cdpedia-0-7-disponible.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<img alt="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg" class="align-left" src="http://nqnwebs.com/local/cache-vignettes/L150xH150/CDPediaactiob9e9-2f95e-07976.jpg"><p><a class="reference external" href="http://www.python.org.ar">Python Argentina</a> se complace en informar que está
-disponible la <a class="reference external" href="http://cdpedia.python.org.ar/">versión 0.7 de CDPedia</a>
-, un proyecto de la comunidad para disponer de los contenidos de
-<a class="reference external" href="http://es.wikipedia.org">Wikipedia en español</a> sin acceso a internet,
-usando un CD o DVD como soporte de la información.</p>
-<p>La imágen de CD (.iso) se puede descargar desde acá:</p>
-<div class="admonition important">
-<p class="admonition-title">Importante</p>
-<blockquote>
-<p><a class="reference external" href="downloads/cdpedia-CD-0.7.iso">CDPedia 0.7</a>
-CD 701Mb - 93500 artículos, 10% de imágenes</p>
+    <blockquote class="epigraph">
+<p>This is perhaps the most beautiful time in human history;
+it is really pregnant with all kinds of creative possibilities made
+possible by science and technology which now constitute the slave of man,
+if man is not enslaved by it.*</p>
+<p class="attribution">—<a class="reference external" href="http://es.wikipedia.org/wiki/Jonas_Salk">Jonas Salk</a></p>
 </blockquote>
-<dl class="simple">
-<dt><a class="reference external" href="downloads/cdpedia-DVD5-0.7.iso">CDPedia 0.7 DVD</a></dt>
-<dd>
-<p>DVD 4.4gb - Todos los artículos (886 mil), 45% de imágenes.</p>
-</dd>
-</dl>
-</div>
-<p>Más información en
-<a class="reference external" href="http://cdpedia.python.org.ar/">http://cdpedia.python.org.ar/</a></p>
-<p>Esta versión de CDPedia es la que se distribuirá a todas las escuelas de
-Argentina a través de <a class="reference external" href="http://wikipediaenelaula.educ.ar/">Educ.ar</a>
-[<a class="reference external" href="blog/article/cdpedia-0-7-disponible#nb1">1</a>]</p>
-<p>Felicitaciones a todos los
-<a class="reference external" href="http://code.google.com/p/cdpedia/source/browse/trunk/resources/general_info/AUTORES.txt">colaboradores</a>
-por este logro de la comunidad. En especial, a
-<a class="reference external" href="http://twitter.com/#!/dmascialino">Diego</a>,
-<a class="reference external" href="http://twitter.com/#!/spiccinini">SAn</a>,
-<a class="reference external" href="http://www.taniquetil.com.ar/plog/">Facu</a> y
-<a class="reference external" href="http://protocultura.net/">Alecu</a> que son los principales</p>
-</div>
+<p>No sólo de la técnica vive el hombre.</p>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/revista-orsai-no-3-en-cordoba/" class="u-url">Revista Orsai Nº 3 en Córdoba</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/monetizar-pagos-virtuales-en/" class="u-url">Monetizar pagos virtuales en Argentina sin costo</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
             </span></p>
             <p class="dateline">
-            <a href="posts/revista-orsai-no-3-en-cordoba/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-06-10T15:18:13-03:00" itemprop="datePublished" title="2011-06-10 15:18">2011-06-10 15:18</time></a>
+            <a href="posts/monetizar-pagos-virtuales-en/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-12-02T15:34:05-03:00" itemprop="datePublished" title="2009-12-02 15:34">2009-12-02 15:34</time></a>
             </p>
-                <p class="commentline">            <a href="posts/revista-orsai-no-3-en-cordoba/#disqus_thread" data-disqus-identifier="cache/posts/revista-orsai-no-3-en-cordoba.html">Comentarios</a>
+                <p class="commentline">        <a href="posts/monetizar-pagos-virtuales-en/#disqus_thread" data-disqus-identifier="cache/posts/monetizar-pagos-virtuales-en.html">Comentarios</a>
 
 
         </p>
 </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>De nuevo soy distribuidor de la <a class="reference external" href="http://orsai.es">Orsai</a> en la ciudad
-de Córdoba. Si estás interesado date una vuelta por <a class="reference external" href="http://textosypretextos.com.ar/Reserva-Orsai-3-en-Cordoba">esta
-página</a></p>
-<img alt="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg" class="align-center" src="http://nqnwebs.com/local/cache-vignettes/L450xH267/orsai3-145d6.jpg">
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/charla-myhdl-de-python-al-siliicio/" class="u-url">Charla: MyHDL, de python al silicio</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/charla-myhdl-de-python-al-siliicio/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-06-06T12:27:44-03:00" itemprop="datePublished" title="2011-06-06 12:27">2011-06-06 12:27</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/charla-myhdl-de-python-al-siliicio/#disqus_thread" data-disqus-identifier="cache/posts/charla-myhdl-de-python-al-siliicio.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>[Sigo <a class="reference external" href="posts/me-recibi-el-mes-pasado.html">publicando cosas</a> con
-delay de meses]</p>
-<p>El sábado 30 de mayo se realizó el <a class="reference external" href="http://www.pyday.com.ar/cordoba2011">PyDay Córdoba
-2011</a> con la participación de más
-de 200 personas y casi 20 charlas en dos salas simultáneas. Un éxito
-rotundo organizado por <a class="reference external" href="http://jbcabral.wordpress.com/">Juan</a> y un
-gran equipo de colaboradores/as . Felicitaciones.</p>
-<section id="mi-participacion"><h2>Mi participación</h2>
-<p>Participé dando una charla sobre <a class="reference external" href="http://myhdl.org">MyHDL</a>, un paquete
-que convierte Python en un <a class="reference external" href="http://en.wikipedia.org/wiki/Hardware_description_language">lenguaje para describir
-hardware</a>
-(HDL).</p>
-<ul class="simple">
-<li><p>Las diapositivas <a class="reference external" href="http://mgaitan.github.com/myhdl-talk/">se pueden ver
-acá</a></p></li>
-<li><p><a class="reference external" href="https://github.com/mgaitan/myhdl-talk">Repo</a></p></li>
-</ul>
-<p>Usé MyHDL para hacer
-<a class="reference external" href="https://github.com/mgaitan/pymips/tree/pipeline">pymips</a>, una
-implementación de un <a class="reference external" href="http://en.wikipedia.org/wiki/DLX">procesador DLX</a>
-completo como trabajo final de la asignatura Arquitectura de Computadoras.
-Pueden leer un poco más sobre el trabajo en <a class="reference external" href="https://github.com/mgaitan/pymips/raw/pipeline/docs/informe.pdf">el
-informe</a>
-que presenté.</p>
+    <p>Para los trabajadores online freelance (programadores, diseñadores,
+traductores, etc) trabajar para el exterior es un objetivo primordial.
+Aunque en algunos sectores la competencia es leonina y se pauperizan los
+honorarios, el tipo de cambio del peso respecto a otra monedas fuertes
+hace que siga siendo muy provechoso.</p>
+<p>En traducción, que tiene un sistema de presupuesto lineal basado en
+cantidad de palabras del texto del idioma origen, es fácil cuantificar
+la diferencia. En Argentina se cobra entre $0,10 y $0,15 (pesos
+argentinos) por palabra, mientras que en europa se cobra entre 0.05 € y
+0.07€. O sea, se gana hasta el triple por realizar el mismo trabajo.</p>
+<p>El problema, al menos desde Argentina, es cobrar. Aquí comparto mi
+experiencia esperando ayudar a otros.</p>
+<section id="de-adsense-a-la-billetera"><h2>De Adsense a la billetera</h2>
+<p><img alt="image0" src="images/google-adsenf60e-93be1.jpg">
+Una forma simple y rápida pero bastante onerosa es <a class="reference external" href="http://www.westernunion.com">Western
+Union</a>. Es un servicio de transferencias
+de dinero persona a persona (física o jurídica), con sedes en casi todo
+el mundo. Tiene dos tipos de servicio: Quick Cash y 24 horas.</p>
+<p>Western Union tiene multiples instancias de lucro, que lo vuelven un
+ser. Se le cobra entre el 2.5 y 5% al emisor (desde Europa a Argentina
+el límite de transferencia es 500€) y además, el receptor cobra en
+moneda local a un tipo de cambio definido por WU que siempre está entre
+un 3 y 6% por debajo del tipo de cambio del dia. Sobre todo los días que
+hay corridas en suba, el tipo de cambio queda desfasado (tiene una
+actualización muy lenta) y es un mal momento para cobrar.</p>
+<p><img alt="image1" src="images/Western-Unioa5aa-91e5e.jpg">
+Existe una forma de salvar este cargo solapado para el receptor: si el
+envío es tipo Quick Cash y en dólares estadounidenses, se puede retirar
+en dólares en los locales Western Union de los supermercados <strong>Walmart</strong>
+(que es el representante oficial de WU en Argentina). Este servicio no
+tiene costo para el receptor.</p>
+<p>Esto es muy útil para quienes utilizan <strong>Google Adsense</strong> en sus sitios
+web, ya que Google ofrece este servicio de pago. Basta anotar el número
+de transferencia (MCU) y documento en mano aclarar en Wester Union de
+Walmart que queremos cobrar en dólares.</p>
+<p>Mucho más fácil, rápido y sin perder un sope que pedir el cheque y
+venderlo en una financiera.</p>
+</section><section id="cobrar-del-extranjero"><h2>Cobrar del extranjero</h2>
+<p><img alt="image2" src="images/paypal_logog8b6f-21423.gif">
+Internacionalmente está casi estandarizado el uso de
+<a class="reference external" href="http://www.paypal.com">Paypal</a> como medio de pago de honorarios (y
+casi cualquier otro tipo de transacción en internet) pero este sistema
+no tiene integración con el sistema bancario argentino lo cual complica
+la tarea de monetizar los fondos.</p>
+<p>Además, un usuario no puede cargar crédito a su cuenta paypal con una
+tarjeta de crédito, aunque esta sea válida internacionalmente. Un
+detalle que complica a quienes quieren comprar o donar en el extranjero.</p>
+<p>Sin embargo, Paypal sigue siendo interesante para todos los que
+necesitamos cobrar desde el extranjero. Además de facilitarle la vida al
+emisor (cliente) que seguramente ya está acostumbrado a este sistema,
+<strong>la transferencia entre cuentas paypal personales no tiene costo</strong>.
+Esto significa que si el cliente tiene una cuenta paypal con fondos (que
+en la mayoría de los paises pudo haber cargado con tarjeta o desde su
+cuenta bancaria sin costo) la transacción total es gratuita. Además, la
+operación es instantánea.</p>
+<p>Si el cliente envia el dinero a través de paypal pero habiendolo cargado
+desde una cuenta bancaria o tarjeta de crédito específicamente para
+dicha transacción, el costo de la operanción es 3,4% + 0,30 USD. El
+emisor decide quien abona este cargo.</p>
+<p>Una observación importante es que predeterminadamente las cuentas PayPal
+son en una moneda principal (en dólares estadounidenses para Argentina)
+y al recibir un pago en otra moneda (euros, por ejemplo) la conversión
+de divisa se realiza al tipo de cambio del día con una retención del
+2.5%. El tipo de cambio es actualizado 2 veces por día.</p>
+<p>Una sólución es abrir cuentas en distintas monedas. En vez de convertir
+el pago a la divisa principal, se mantiene en nuestra cuenta en la
+moneda en que se recibió. Cuando necesitamos realizar un pago o
+transferencia en esta moneda, nos ahorraremos tener que reconvertirla
+nuevamente (ahorrando un 5% en total). Claro que a la hora de monetizar
+los fondos se deberán convertir, pero esto se puede hacer en cualquier
+momento que creamos conveniente.</p>
+<p>Paypal aclara que ofrece este servicio (Multiples divisas) para
+facilitar el comercio electrónico internacional y no debe utilizarse con
+fines especulativos. Pero los timberos decidirán.</p>
+</section><section id="de-paypal-a-la-billetera"><h2>De Paypal a la billetera</h2>
+<table><tbody><tr>
+<td><p><a class="reference external" href="images/logo_xoomgif23e5.gif">|image4|</a></p></td>
+</tr></tbody></table>
+<p>Pero, como decía un amigo, la plata no es plata hasta que no sirve para
+comprar fernet en la despensa.</p>
+<p>Como dije más arriba, no se puede asociar una cuenta bancaria argentina
+una cuenta Paypal (ni para añadir ni para retirar fondos). Esto deja
+como única alternativa oficial para retirar fondos el envio de un
+cheque.</p>
+<p>Paypal envia un cheque via correo postal certificado por el monto que
+solicitemos con un costo de u$s 15 fijo, independientemente del monto
+retirado. El envío para Argentina se realiza a través de Ocasa, y tiene
+una demora aproximada de 10 días hábiles.</p>
+<p>El problema es que este cheque tampoco se puede cobrar en ningún banco,
+por lo que hay que venderlo en una financiera o agencia de viajes, que
+cobran una comisión de entre el 2 y el 5%.</p>
+<p>Por suerte existe <a class="reference external" href="http://www.xoom.com">xoom.com</a>. Es un servicio de
+transferencia de dinero que intenta competir con Western Union, pero a
+diferencia de este, la operación se realiza únicamente online, el
+destino puede ser una cuenta bancaria argentina o efectivo en pesos o
+dólares, y, hete aquí la clave, <a href="posts/monetizar-pagos-virtuales-en/#system-message-1"><span class="problematic" id="problematic-1">**</span></a>el origen de los fondos puede ser una
+cuenta Paypal. **</p>
+<aside class="system-message" id="system-message-1"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 118); <em><a href="posts/monetizar-pagos-virtuales-en/#problematic-1">backlink</a></em></p>
+<p>Inline strong start-string without end-string.</p>
+</aside><p>Problema solucionado: nos hacemos una transferencia a nosotros mismos,
+retirando fondos de Paypal y enviandolos a nuestra cuenta bancaria, o
+mejor, en dólares que se cobran en cualquier sucursal de Banco Francés.</p>
+<p>A diferencia de Wester Union, los cargos de servicio no son porcentuales
+fijos sino que <a class="reference external" href="https://www.xoom.com/sendmoneynow/money-transfer-fees">están tabulados en
+rangos</a> del
+monto enviado lo que significa un ahorro considerable en montos grandes.
+Para cifras montos menores a u$s500, el costo de servicio ronda le 4.5%</p>
+<p><img alt="image5" src="images/Banco-Francecef9-62220.jpg">
+Además hay que considerar que al cobrar en pesos, Xoom realiza una
+conversión de divisa a un tipo de cambio que, al igual que Wester Union,
+está un par de puntos por debajo de la cotización de mercado. La opción
+de cobrar en dolares evita esta pérdida, pero tiene un cargo de servicio
+un 40% mayor, lo que significa un costo de operación real del más de 6%.</p>
+<p><img alt="image6" src="images/RMNlogopng-33050-8dd22.jpg">
+Pero hay una forma de salvar esta plata, que convertida a pesos
+seguramente significarán varios fernés: <strong>conseguir un código de
+descuento</strong>. <a class="reference external" href="http://www.retailmenot.com/view/xoom.com">Retailmenot</a>
+suele tener cupones válidos, ¡de hasta el 100%!</p>
+<p>Conclusión: si cobramos desde Paypal (entre cuentas personales) y
+retiramos los fondos a través de Xoom.com en dólares consiguiendo un
+cupón del 100%, tendremos toda nuestra platita en el bolsillo, en
+dólares y sin perder nada en el camino.</p>
 </section>
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/me-recibi-el-mes-pasado/" class="u-url">Me recibí (el mes pasado)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/me-recibi-el-mes-pasado/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-06-03T23:32:50-03:00" itemprop="datePublished" title="2011-06-03 23:32">2011-06-03 23:32</time></a>
-            </p>
-                <p class="commentline">            <a href="posts/me-recibi-el-mes-pasado/#disqus_thread" data-disqus-identifier="cache/posts/me-recibi-el-mes-pasado.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Oh, cuantos planes elucubrados para cuando ya no tuviera un exámen
-cercano para obstaculizar la felicidad. Y resulta que ahora, que ya no
-tengo, tampoco encuentro el tiempo de empezar a darle forma de realidad
-a esos planes.</p>
-<p>Esta es la información: el 12 de mayo pasado me recibí de Ingeniero en
-Computación.</p>
-</div>
-    </div>
     </article>
 </div>
         <ul class="pager postindexpager clearfix">
@@ -637,13 +509,13 @@ Computación.</p>
             <li class="next"><a href="index-6.html" rel="next">Posts anteriores</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
-            <script src="assets/js/jquery.min.js"></script><script src="assets/js/popper.min.js"></script><script src="assets/js/bootstrap.min.js"></script><script src="assets/js/baguetteBox.min.js"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="assets/js/all.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

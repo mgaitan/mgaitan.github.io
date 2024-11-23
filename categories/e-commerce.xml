@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre E-Commerce)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/e-commerce.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Thu, 27 May 2021 02:51:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Integración de DineroMail en SimpleCart (js)</title><link>https://mgaitan.github.io/posts/integracion-de-dineromail-en/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Continuando con el &lt;a class="reference external" href="https://mgaitan.github.io/posts/integracion-de-dineromail-en/blog/article/simplecart-js-para-spip"&gt;artículo
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre E-Commerce)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/e-commerce.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2024 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Nov 2024 18:38:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Integración de DineroMail en SimpleCart (js)</title><link>https://mgaitan.github.io/posts/integracion-de-dineromail-en/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Continuando con el &lt;a class="reference external" href="https://mgaitan.github.io/posts/integracion-de-dineromail-en/blog/article/simplecart-js-para-spip"&gt;artículo
 anterior&lt;/a&gt; hay tener en cuenta
 que cuando decimos "sistema de e-commerce &lt;strong&gt;simple&lt;/strong&gt;" implica que tiene
 que ser simple también para el comprador.&lt;/p&gt;
@@ -11,9 +11,6 @@ extranjero — , y es bastante engorroso sacarla. Además, quizas lo más
 importante, no aceptan pagos la mayoría de las monedas locales
 latinoamericanas.&lt;/p&gt;
 &lt;table&gt;
-&lt;colgroup&gt;
-&lt;col style="width: 100%"&gt;
-&lt;/colgroup&gt;
 &lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;a class="reference external" href="https://mgaitan.github.io/images/dineromail_pagos.jpg"&gt;|image1|&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -34,10 +31,10 @@ GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Instalación rápida&lt;/h2&gt;
 &lt;p&gt;Obviamente, se incluye el código javascript en la cabecera de la página
 HTML.&lt;/p&gt;
-&lt;div class="system-message"&gt;
+&lt;aside class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 40)&lt;/p&gt;
 &lt;p&gt;Literal block expected; none found.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;y se definen, al menos, las variables requeridas:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;&amp;lt;/root&amp;gt;&lt;/pre&gt;
 &lt;p&gt;¡Listo! Al hacer Checkout, el contenido del carrito será enviado a
@@ -80,10 +77,10 @@ ejemplo para permitir Pago Fácil, Rápipago y Visa en 1, 3 y 6 cuotas:
 &lt;strong&gt;Nota:&lt;/strong&gt; Todas las variables son atributos del objeto &lt;code class="docutils literal"&gt;simpleCart&lt;/code&gt;,
 por ejemplo &lt;code class="docutils literal"&gt;simpleCart.dmSellerName = "Vendedor Loco";&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Además se puede asignar un código de producto al item.&lt;/p&gt;
-&lt;div class="system-message"&gt;
+&lt;aside class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 92)&lt;/p&gt;
 &lt;p&gt;Literal block expected; none found.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;El valor ’X18A’ se envía a DineroMail para futuros controles del
 vendedor.&lt;/p&gt;
 &lt;p&gt;Es todo por ahora. ¡A vender!&lt;/p&gt;
@@ -93,12 +90,12 @@ vendedor.&lt;/p&gt;
 &lt;p&gt;Agregué unos selectores asociados al evento "click" para permitir
 cambiar dinámicamente el método de pago, de manera de darle más libertad
 al comprador.&lt;/p&gt;
-&lt;p&gt;Basta con declarar un elemento que acepte el evento &lt;a href="https://mgaitan.github.io/posts/integracion-de-dineromail-en/#id1"&gt;&lt;span class="problematic" id="id2"&gt;``&lt;/span&gt;&lt;/a&gt;onclick `` y
+&lt;p&gt;Basta con declarar un elemento que acepte el evento &lt;a href="https://mgaitan.github.io/posts/integracion-de-dineromail-en/#system-message-1"&gt;&lt;span class="problematic" id="problematic-1"&gt;``&lt;/span&gt;&lt;/a&gt;onclick `` y
 asociarlo a alguna de estas clases&lt;/p&gt;
-&lt;div class="system-message" id="id1"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 104); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/integracion-de-dineromail-en/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;aside class="system-message" id="system-message-1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 104); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/integracion-de-dineromail-en/#problematic-1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;class
 descripción
 simpleCart_to_paypal
@@ -109,7 +106,7 @@ simpleCart_to_dineromail
 Activa Google Checkout como medio de pago
 Un ejemplo de uso podría ser:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;Elija su método de pago&lt;/pre&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>E-Commerce</category><category>Javascript</category><guid>https://mgaitan.github.io/posts/integracion-de-dineromail-en/</guid><pubDate>Tue, 14 Sep 2010 20:31:00 GMT</pubDate></item><item><title>SimpleCart(js) para spip</title><link>https://mgaitan.github.io/posts/simplecart-js-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
+&lt;/section&gt;</description><category>E-Commerce</category><category>Javascript</category><guid>https://mgaitan.github.io/posts/integracion-de-dineromail-en/</guid><pubDate>Tue, 14 Sep 2010 20:31:00 GMT</pubDate></item><item><title>SimpleCart(js) para spip</title><link>https://mgaitan.github.io/posts/simplecart-js-para-spip/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;&lt;a class="reference external" href="http://simplecartjs.com/"&gt;SimpleCart&lt;/a&gt; es un sistema para e-commerce
 muy sencillo íntegramente desarrollado en javascript. Permite realizar
 ventas mediante PayPal o Google Checkout y es muy extensible para
 implementar otros sistemas.&lt;/p&gt;
@@ -170,15 +167,15 @@ con el parámetro &lt;em&gt;price&lt;/em&gt;.&lt;/p&gt;
 &lt;h2&gt;Un atajo más&lt;/h2&gt;
 &lt;p&gt;El código para el carrito de arriba lo incluí como un modelo para poder
 incrustarlo directamente desde la redacción de un artículo con
-&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#id2"&gt;&lt;span class="problematic" id="id3"&gt;``&lt;/span&gt;&lt;/a&gt;&amp;lt;cart1&amp;gt; &lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#id4"&gt;&lt;span class="problematic" id="id5"&gt;``&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="system-message" id="id2"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 73); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#system-message-1"&gt;&lt;span class="problematic" id="problematic-1"&gt;``&lt;/span&gt;&lt;/a&gt;&amp;lt;cart1&amp;gt; &lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#system-message-2"&gt;&lt;span class="problematic" id="problematic-2"&gt;``&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;aside class="system-message" id="system-message-1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 73); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#problematic-1"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="system-message" id="id4"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 73); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/aside&gt;
+&lt;aside class="system-message" id="system-message-2"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 73); &lt;em&gt;&lt;a href="https://mgaitan.github.io/posts/simplecart-js-para-spip/#problematic-2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;/section&gt;
 &lt;section id="demostracion"&gt;
 &lt;h2&gt;Demostración&lt;/h2&gt;
@@ -190,4 +187,4 @@ incrustarlo directamente desde la redacción de un artículo con
 &lt;p&gt;El plugin está en desarrollo sobre
 &lt;a class="reference external" href="http://svn.spip.org/trac/spip-zone/browser/_plugins_/simplecart"&gt;spip-zone&lt;/a&gt;.
 Podés hacer un ckeckout SVN&lt;/p&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>E-Commerce</category><category>Javascript</category><category>spip</category><guid>https://mgaitan.github.io/posts/simplecart-js-para-spip/</guid><pubDate>Sun, 12 Sep 2010 16:34:44 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>E-Commerce</category><category>Javascript</category><category>spip</category><guid>https://mgaitan.github.io/posts/simplecart-js-para-spip/</guid><pubDate>Sun, 12 Sep 2010 16:34:44 GMT</pubDate></item></channel></rss>

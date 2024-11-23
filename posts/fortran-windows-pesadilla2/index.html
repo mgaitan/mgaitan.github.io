@@ -6,12 +6,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fortran + Windows = pesadilla^2 | tin_nqn</title>
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -19,14 +16,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/fortran-windows-pesadilla2/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../apuntes-pamejorar-el-chamuio-escrito/" title="Apuntes pa'mejorar el chamuio (escrito)" type="text/html">
 <link rel="next" href="../un-procesador-de-restructuredtext/" title="Un procesador de reStructuredText" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="Fortran + Windows = pesadilla^2">
 <meta property="og:url" content="https://mgaitan.github.io/posts/fortran-windows-pesadilla2/">
 <meta property="og:description" content="Hace bastante que no escribo en este blog y no es porque tengo otro, sino, principalmente, porque estoy con muchísimo trabajo.
-Hace casi un mes dejé 1 de trabajar en Machinalis, una de las empresas má">
+Hace casi un mes dejé [1] de trabajar en Machinalis, una de las empresas ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-08-24T11:11:45-03:00">
 <meta name="twitter:card" content="summary">
@@ -76,6 +73,10 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
+        <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
+    </li>
+
                 
             </ul>
 </div>
@@ -96,17 +97,17 @@ navbar-light bg-light
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2013-08-24T11:11:45-03:00" itemprop="datePublished" title="2013-08-24 11:11">2013-08-24 11:11</time></a>
             </p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/fortran-windows-pesadilla2.html">Comentarios</a>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/fortran-windows-pesadilla2.html">Comentarios</a>
 
 
-            
-        </p>
-</div>
+                    </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">El código de este artículo está disponible en </a></p>
+
+        </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Hace bastante que no escribo en este blog y no es porque tengo <a class="reference external" href="http://www.textosypretextos.com.ar">otro</a>, sino, principalmente, porque estoy con muchísimo trabajo.</p>
-<p>Hace casi un mes dejé <a class="footnote-reference brackets" href="#id4" id="id1">1</a> de trabajar en <a class="reference external" href="http://machinalis.com">Machinalis</a>, una de las empresas más pythónicamente grosas del mundo mundial <a class="footnote-reference brackets" href="#id5" id="id2">2</a>, en la que inevitablemente aprendí muchísimo
+    <p>Hace bastante que no escribo en este blog y no es porque tengo <a class="reference external" href="http://www.textosypretextos.com.ar">otro</a>, sino, principalmente, porque estoy con muchísimo trabajo.</p>
+<p>Hace casi un mes dejé <a class="brackets" href="#footnote-1" id="footnote-reference-1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> de trabajar en <a class="reference external" href="http://machinalis.com">Machinalis</a>, una de las empresas más pythónicamente grosas del mundo mundial <a class="brackets" href="#footnote-2" id="footnote-reference-2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, en la que inevitablemente aprendí muchísimo
 (y eso que me esforcé ;-)), hice amigos y laburé en proyectos de una escala y complejidad a la que nunca podría haber aspirado como un "freelance <em>che pibe</em> programador".</p>
 <p>Ahora laburo fulltime (o sea: el triple) en <a class="reference external" href="http://phasety.com">Phasety</a>, el proyecto que estamos creando junto a Martín Cismondi, director de mi proyecto integrador de grado hace algunos años ("ingeniero en computación", dice el pelpa) y hoy socio. Cismondi es doctor en ingeniería
 química y uno de los especialistas más reputados a nivel mundial en el área "equilibro de fases", que es, básicamente, modelar el comportamiento termodinámico de un fluido mediante algoritmos numéricos.</p>
@@ -143,17 +144,15 @@ Modificarlo para que linkee estáticamente con <em>libgcc</em> y <em>libgfortran
 %~f0\..\..\MinGW\bin\gfortran.exe -static-libgcc -static-libgfortran %*</pre>
 </li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Consejo</p>
+<aside class="admonition tip"><p class="admonition-title">Consejo</p>
 <p>podés bajar todos los archivos mencionados desde el paso 3 al 5
 (para 32bits) desde <a class="reference external" href="https://docs.google.com/file/d/0Bx300vaUNYn1cDVva0FGaEFQTFE/edit?usp=sharing">este zip</a></p>
-</div>
-<ol class="arabic" start="3">
+</aside><ol class="arabic" start="3">
 <li>
 <p>Instalar lapack y blas</p>
 <p>Aún cuando la única virtud de Fortran es ser eficiente para operaciones basadas en arrays, <a class="reference external" href="http://www.nsc.liu.se/~boein/f77to90/a5.html">no trae</a> una biblioteca estándar incorporada de "alto nivel".</p>
 <p>Para no tener que reinventar (<em>"copypastear"</em>) subrutinas todo el tiempo, se linkea con bibliotecas de terceros que, en general, utilizan una nomenclatura común para las
-signaturas. <a class="footnote-reference brackets" href="#id6" id="id3">3</a></p>
+signaturas. <a class="brackets" href="#footnote-3" id="footnote-reference-3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p>
 <p><a class="reference external" href="http://netlib.org/lapack">Lapack</a> es la más completa y mantenida biblioteca libre para álgebra lineal, incluyendo rutinas de resolución de sistemas de ecuaciones lineales, factorización de matrices,
 etc. Se basa a su vez en la biblioteca BLAS
 que implementa las rutinas de más bajo nivel como rotación y producto de matrices.</p>
@@ -186,85 +185,75 @@ implementados en fortran</p></li>
 <p>Como ejemplo,  podés probar con esta subrutina que hace lo mismo que
 <code class="docutils literal">numpy.linalg.solve</code> (resolver un sistema lineal Ax=b), basada en la rutina <code class="docutils literal">SGESV</code>
 de lapack (para simple precisión).</p>
-<pre class="code fortran"><a id="rest_code_f256ac19660149a281e5847571d2ec00-1" name="rest_code_f256ac19660149a281e5847571d2ec00-1"></a><span class="k">subroutine </span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-2" name="rest_code_f256ac19660149a281e5847571d2ec00-2"></a>    <span class="k">implicit none</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-3" name="rest_code_f256ac19660149a281e5847571d2ec00-3"></a>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-4" name="rest_code_f256ac19660149a281e5847571d2ec00-4"></a>    <span class="c">! solving the matrix equation A*x=b using LAPACK</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-5" name="rest_code_f256ac19660149a281e5847571d2ec00-5"></a>    <span class="c">! declarations, notice single precision</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-6" name="rest_code_f256ac19660149a281e5847571d2ec00-6"></a>    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-7" name="rest_code_f256ac19660149a281e5847571d2ec00-7"></a>    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-8" name="rest_code_f256ac19660149a281e5847571d2ec00-8"></a>    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-9" name="rest_code_f256ac19660149a281e5847571d2ec00-9"></a>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-10" name="rest_code_f256ac19660149a281e5847571d2ec00-10"></a>    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">pivot</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">ok</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-11" name="rest_code_f256ac19660149a281e5847571d2ec00-11"></a>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-12" name="rest_code_f256ac19660149a281e5847571d2ec00-12"></a>    <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">n</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-13" name="rest_code_f256ac19660149a281e5847571d2ec00-13"></a>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-14" name="rest_code_f256ac19660149a281e5847571d2ec00-14"></a>    <span class="c">! find the solution using the LAPACK routine SGESV</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-15" name="rest_code_f256ac19660149a281e5847571d2ec00-15"></a>    <span class="k">call </span><span class="n">SGESV</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">pivot</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">ok</span><span class="p">)</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-16" name="rest_code_f256ac19660149a281e5847571d2ec00-16"></a>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-17" name="rest_code_f256ac19660149a281e5847571d2ec00-17"></a>    <span class="c">! copy the vector x</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-18" name="rest_code_f256ac19660149a281e5847571d2ec00-18"></a>    <span class="n">x</span> <span class="o">=</span> <span class="n">b</span>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-19" name="rest_code_f256ac19660149a281e5847571d2ec00-19"></a>
-<a id="rest_code_f256ac19660149a281e5847571d2ec00-20" name="rest_code_f256ac19660149a281e5847571d2ec00-20"></a><span class="k">end subroutine</span>
-</pre>
+<div class="code"><pre class="code fortran"><a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-1" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-1" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-1"></a><span class="k">subroutine </span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-2" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-2" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-2"></a><span class="w">    </span><span class="k">implicit none</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-3" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-3" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-3"></a>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-4" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-4" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-4"></a><span class="w">    </span><span class="c">! solving the matrix equation A*x=b using LAPACK</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-5" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-5" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-5"></a><span class="w">    </span><span class="c">! declarations, notice single precision</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-6" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-6" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-6"></a><span class="w">    </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">A</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-7" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-7" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-7"></a><span class="w">    </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">b</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-8" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-8" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-8"></a><span class="w">    </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-9" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-9" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-9"></a>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-10" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-10" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-10"></a><span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">pivot</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">ok</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-11" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-11" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-11"></a>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-12" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-12" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-12"></a><span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-13" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-13" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-13"></a>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-14" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-14" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-14"></a><span class="w">    </span><span class="c">! find the solution using the LAPACK routine SGESV</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-15" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-15" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-15"></a><span class="w">    </span><span class="k">call </span><span class="n">SGESV</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">pivot</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ok</span><span class="p">)</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-16" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-16" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-16"></a>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-17" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-17" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-17"></a><span class="w">    </span><span class="c">! copy the vector x</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-18" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-18" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-18"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-19" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-19" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-19"></a>
+<a id="rest_code_eea603dce3de4a7c872f3120d5bf856a-20" name="rest_code_eea603dce3de4a7c872f3120d5bf856a-20" href="#rest_code_eea603dce3de4a7c872f3120d5bf856a-20"></a><span class="k">end subroutine</span>
+</pre></div>
 <p>Lo guardamos en un archivo llamado <code class="docutils literal">linalg.f90</code> y compilamos:</p>
 <pre class="literal-block">$ f2py --compiler=mingw32 -llapack -m linalg -c linalg.f90</pre>
 <p>Se creeará un archivo <code class="docutils literal">linalg.pyd</code> que es importable desde Python.</p>
-<pre class="code python"><a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-1" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">linalg</span> <span class="kn">import</span> <span class="n">solve</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-2" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-2"></a>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-3" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">solve</span><span class="err">?</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-4" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-4"></a><span class="n">Type</span><span class="p">:</span>       <span class="n">fortran</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-5" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-5"></a><span class="n">String</span> <span class="n">Form</span><span class="p">:</span><span class="o">&lt;</span><span class="n">fortran</span> <span class="nb">object</span><span class="o">&gt;</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-6" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-6"></a><span class="n">Docstring</span><span class="p">:</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-7" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-7"></a><span class="n">solve</span> <span class="o">-</span> <span class="n">Function</span> <span class="n">signature</span><span class="p">:</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-8" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-8"></a>  <span class="n">x</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,[</span><span class="n">n</span><span class="p">])</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-9" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-9"></a><span class="n">Required</span> <span class="n">arguments</span><span class="p">:</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-10" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-10"></a>  <span class="n">a</span> <span class="p">:</span> <span class="nb">input</span> <span class="n">rank</span><span class="o">-</span><span class="mi">2</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span> <span class="k">with</span> <span class="n">bound</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-11" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-11"></a>  <span class="n">b</span> <span class="p">:</span> <span class="nb">input</span> <span class="n">rank</span><span class="o">-</span><span class="mi">1</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span> <span class="k">with</span> <span class="n">bound</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-12" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-12"></a><span class="n">Optional</span> <span class="n">arguments</span><span class="p">:</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-13" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-13"></a>  <span class="n">n</span> <span class="o">:=</span> <span class="n">shape</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="nb">input</span> <span class="nb">int</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-14" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-14"></a><span class="n">Return</span> <span class="n">objects</span><span class="p">:</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-15" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-15"></a>  <span class="n">x</span> <span class="p">:</span> <span class="n">rank</span><span class="o">-</span><span class="mi">1</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span> <span class="k">with</span> <span class="n">bounds</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-16" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-16"></a>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-17" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-17"></a><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">numpy</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-18" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-18"></a>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-19" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-19"></a><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">A</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-20" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-20"></a>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-21" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-21"></a><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-22" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-22"></a>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-23" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-23"></a><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-24" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-24"></a>
-<a id="rest_code_7912eefdc3de438f91fb293d0a1a014c-25" name="rest_code_7912eefdc3de438f91fb293d0a1a014c-25"></a><span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.19565217</span><span class="p">,</span>  <span class="mf">0.47826087</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">)</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-1" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-1" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">linalg</span> <span class="kn">import</span> <span class="n">solve</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-2" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-2" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-2"></a>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-3" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-3" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">solve</span><span class="err">?</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-4" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-4" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-4"></a><span class="n">Type</span><span class="p">:</span>       <span class="n">fortran</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-5" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-5" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-5"></a><span class="n">String</span> <span class="n">Form</span><span class="p">:</span><span class="o">&lt;</span><span class="n">fortran</span> <span class="nb">object</span><span class="o">&gt;</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-6" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-6" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-6"></a><span class="n">Docstring</span><span class="p">:</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-7" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-7" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-7"></a><span class="n">solve</span> <span class="o">-</span> <span class="n">Function</span> <span class="n">signature</span><span class="p">:</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-8" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-8" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-8"></a>  <span class="n">x</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,[</span><span class="n">n</span><span class="p">])</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-9" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-9" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-9"></a><span class="n">Required</span> <span class="n">arguments</span><span class="p">:</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-10" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-10" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-10"></a>  <span class="n">a</span> <span class="p">:</span> <span class="nb">input</span> <span class="n">rank</span><span class="o">-</span><span class="mi">2</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span> <span class="k">with</span> <span class="n">bound</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-11" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-11" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-11"></a>  <span class="n">b</span> <span class="p">:</span> <span class="nb">input</span> <span class="n">rank</span><span class="o">-</span><span class="mi">1</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span> <span class="k">with</span> <span class="n">bound</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-12" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-12" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-12"></a><span class="n">Optional</span> <span class="n">arguments</span><span class="p">:</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-13" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-13" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-13"></a>  <span class="n">n</span> <span class="o">:=</span> <span class="n">shape</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="nb">input</span> <span class="nb">int</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-14" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-14" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-14"></a><span class="n">Return</span> <span class="n">objects</span><span class="p">:</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-15" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-15" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-15"></a>  <span class="n">x</span> <span class="p">:</span> <span class="n">rank</span><span class="o">-</span><span class="mi">1</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span> <span class="k">with</span> <span class="n">bounds</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-16" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-16" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-16"></a>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-17" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-17" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-17"></a><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">numpy</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-18" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-18" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-18"></a>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-19" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-19" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-19"></a><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">A</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-20" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-20" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-20"></a>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-21" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-21" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-21"></a><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-22" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-22" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-22"></a>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-23" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-23" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-23"></a><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-24" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-24" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-24"></a>
+<a id="rest_code_37fa4847c4f94ec7890791e93bdcb642-25" name="rest_code_37fa4847c4f94ec7890791e93bdcb642-25" href="#rest_code_37fa4847c4f94ec7890791e93bdcb642-25"></a><span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.19565217</span><span class="p">,</span>  <span class="mf">0.47826087</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">)</span>
+</pre></div>
 <p>Que es lo mismo que</p>
-<pre class="code python"><a id="rest_code_67873921ce224ad9bdd150a5ec6656ee-1" name="rest_code_67873921ce224ad9bdd150a5ec6656ee-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<a id="rest_code_67873921ce224ad9bdd150a5ec6656ee-2" name="rest_code_67873921ce224ad9bdd150a5ec6656ee-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.19565217</span><span class="p">,</span>  <span class="mf">0.47826087</span><span class="p">])</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_38cc77ddbb0142f2998620e89d5cc767-1" name="rest_code_38cc77ddbb0142f2998620e89d5cc767-1" href="#rest_code_38cc77ddbb0142f2998620e89d5cc767-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a id="rest_code_38cc77ddbb0142f2998620e89d5cc767-2" name="rest_code_38cc77ddbb0142f2998620e89d5cc767-2" href="#rest_code_38cc77ddbb0142f2998620e89d5cc767-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.19565217</span><span class="p">,</span>  <span class="mf">0.47826087</span><span class="p">])</span>
+</pre></div>
 <p>¡Salud!</p>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
+<aside class="admonition note"><p class="admonition-title">Nota</p>
 <p>por supuesto, queda resolver lo del IDE (especialmente el debugger)
 sin el cual los cientificosprogramadores Fortran se quedan rengos.
 Cualquier recomendación es bienvenida.</p>
-</div>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd>
+</aside><aside class="footnote-list brackets"><aside class="footnote brackets" id="footnote-1" role="doc-footnote"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
 <p>o "terminé de dejar", porque estaba part-time desde septiembre de 2012.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd>
+</aside><aside class="footnote brackets" id="footnote-2" role="doc-footnote"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-2">2</a><span class="fn-bracket">]</span></span>
 <p>lo de "empresa pythónica", lo digo <a class="reference external" href="http://www.python.org/dev/peps/pep-0020/">en serio</a></p>
-</dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd>
+</aside><aside class="footnote brackets" id="footnote-3" role="doc-footnote"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-3">3</a><span class="fn-bracket">]</span></span>
 <p>La <a class="reference external" href="http://software.intel.com/en-us/intel-mkl">MLK</a> de Intel es una biblioteca matemática optimizada para procesadores
 de esta firma. En la parte de algebra lineal utiliza la misma API de Lapack, pero
 no es libre y sale 500 verdes :).</p>
-</dd>
-</dl></section>
+</aside></aside></section>
 </div>
-    </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../apuntes-pamejorar-el-chamuio-escrito/" rel="prev" title="Apuntes pa'mejorar el chamuio (escrito)">Post anterior</a>
@@ -273,7 +262,7 @@ no es libre y sale 500 verdes :).</p>
                 <a href="../un-procesador-de-restructuredtext/" rel="next" title="Un procesador de reStructuredText">Siguiente post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
-                        <div id="disqus_thread"></div>
+                    <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
             disqus_url="https://mgaitan.github.io/posts/fortran-windows-pesadilla2/",
@@ -293,13 +282,13 @@ no es libre y sale 500 verdes :).</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
-            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

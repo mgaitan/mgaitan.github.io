@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Thu, 27 May 2021 02:51:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Screen layout switcher para Linux</title><link>https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Mi setup de trabajo consiste en la laptop (Lenovo x1 del 2015), un monitor externo de 22" y un combo teclado + mouse inalambrico &lt;a href="https://www.cotodigital3.com.ar/sitios/cdigi/producto/-teclado-top-house-wireless-combo-mouse-kb592gcm/_/A-00484043-00484043-200"&gt;del supermercado&lt;/a&gt;. Actualmente estoy usando &lt;a href="https://pop.system76.com/"&gt;Pop!_OS&lt;/a&gt;&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2024 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Nov 2024 18:38:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Screen layout switcher para Linux</title><link>https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Mi setup de trabajo consiste en la laptop (Lenovo x1 del 2015), un monitor externo de 22" y un combo teclado + mouse inalambrico &lt;a href="https://www.cotodigital3.com.ar/sitios/cdigi/producto/-teclado-top-house-wireless-combo-mouse-kb592gcm/_/A-00484043-00484043-200"&gt;del supermercado&lt;/a&gt;. Actualmente estoy usando &lt;a href="https://pop.system76.com/"&gt;Pop!_OS&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;El monitor está en un &lt;a href="https://www.oneboxsolutions.com.ar/producto/ob-lcd12/"&gt;brazo&lt;/a&gt; que me permite acomodarlo y girarlo en cualquier posición. El brazo está en una pequeña alzada que me permite ganar unos 13cm de altura, de manera que puedo usarlo para hacer standup desk junto con mi mesita. &lt;/p&gt;
 &lt;blockquote class="twitter-tweet"&gt;&lt;p lang="es" dir="ltr"&gt;Hoy terminé mí mesita para trabajar parado. Con el brazo para monitor suplementado la altura queda bastante razonable y también puedo usarla con el tele vía chromecast &lt;a href="https://t.co/O6RLKogCO7"&gt;pic.twitter.com/O6RLKogCO7&lt;/a&gt;&lt;/p&gt;— Martín Gaitán (@tin_nqn_) &lt;a href="https://twitter.com/tin_nqn_/status/1304951373482647553?ref_src=twsrc%5Etfw"&gt;September 13, 2020&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 
 &lt;p&gt;Trato de trabajar al menos la mitad del día parado y a veces me voy con la compu a otra parte de la casa. Así que todo el tiempo estoy cambiando la configuración de la/s pantalla/s. Hacer esta tarea a mano me llevaba mucho tiempo y además es dificilisima la motricidad con el mouse si la pantalla está girada.  &lt;/p&gt;
 &lt;p&gt;Dentro del soporte de "funciones avanzadas de teclado" de los linux modernos está "switch-monitor". Gnome mapea esta funcion con &lt;code&gt;&amp;lt;Super&amp;gt;+P&lt;/code&gt; además de la tecla especial del teclado. &lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ gsettings get org.gnome.mutter.keybindings switch-monitor
-&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;Super&amp;gt;p'&lt;/span&gt;, &lt;span class="s1"&gt;'XF86Display'&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;gsettings&lt;span class="w"&gt; &lt;/span&gt;get&lt;span class="w"&gt; &lt;/span&gt;org.gnome.mutter.keybindings&lt;span class="w"&gt; &lt;/span&gt;switch-monitor
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;Super&amp;gt;p'&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'XF86Display'&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;El problema con esta funcionalidad es que los modos están predefinidos: monitores espejados, sólo externa, sólo integrada o ambas "unidas" pero asumiendo ambas horizontales y el monitor izquierdo a la derecha (y el mio queda a la izquierda de la laptop). &lt;/p&gt;
 &lt;p&gt;&lt;a href="https://twitter.com/tin_nqn_/status/1380947297777901570"&gt;Pregunté en twitter&lt;/a&gt; y varios amigos me apuntaron a la herramienta 
 &lt;a href="https://christian.amsuess.com/tools/arandr/"&gt;arandr&lt;/a&gt; que permite hacer las mismas configuraciones de pantallas que la herramienta de Gnome (de manera manual y visual) con la diferencia de que los modos definidos se pueden guardar como un comando de xrandr. Por ejemplo este setup de ambas pantallas encendidas y horizontales &lt;/p&gt;
 &lt;p&gt;&lt;img alt="arandr example" src="https://user-images.githubusercontent.com/2355719/114436452-b7c04780-9b9b-11eb-9b0f-1c7bc1c2da04.png"&gt;&lt;/p&gt;
 &lt;p&gt;se guarda desde arandr (¡y se puede abrir para editar!) como un script &lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tin&lt;/span&gt;&lt;span class="nv"&gt;@pop&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;os&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;screenlayout&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;horizontal&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="err"&gt;#!&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tin&lt;/span&gt;&lt;span class="nv"&gt;@pop&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;os&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;screenlayout&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;horizontal&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#!&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;
 &lt;span class="n"&gt;xrandr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;--output eDP-1 --mode 1920x1080 --pos 1920x283 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --primary --mode 1920x1080 --pos 0x0 --rotate normal&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Asi es que definí con esa herramienta los modos frecuentes que uso&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.screenlayout$ ls *.sh
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;~/.screenlayout$ ls *.sh
 2horizontal.sh  ext-horizontal.sh  ext-vertical.sh  lapt-solo.sh
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Lo que quería luego era un atajo de teclado que me permitiera rotar entre esos modos. Hice un script en python que lo dejé en la misma carpeta&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/env python3&lt;/span&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="ch"&gt;#!/usr/bin/env python3&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;
@@ -51,17 +51,17 @@
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;folder&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="s1"&gt;'.last'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 
 &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;&lt;span class="p"&gt;)])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Este &lt;code&gt;switcher.py&lt;/code&gt; busca todos los archivos &lt;code&gt;.sh&lt;/code&gt; en la misma carpeta y ejecuta el que sigue al ultimo ejecutado, que se guarda en un archivo &lt;code&gt;.last&lt;/code&gt; (si no existe, el primer modo será el primero listado). &lt;/p&gt;
 &lt;p&gt;Decidí deshabilitar el atajo por default &lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ gsettings &lt;span class="nb"&gt;set&lt;/span&gt; org.gnome.mutter.keybindings switch-monitor &lt;span class="s2"&gt;"['XF86Display']&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;gsettings&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;org.gnome.mutter.keybindings&lt;span class="w"&gt; &lt;/span&gt;switch-monitor&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"['XF86Display']&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;y agregué un shortcut que ejecuta &lt;code&gt;~/.screenlayout/switcher&lt;/code&gt; con &lt;code&gt;Ctrl + Super + P&lt;/code&gt; (en gnome: Configuración -&amp;gt; Keyboard -&amp;gt; Combinación de teclas -&amp;gt; Customize Shortcuts -&amp;gt; Combinación Personalizada )&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image" src="https://user-images.githubusercontent.com/2355719/114437517-0a4e3380-9b9d-11eb-8847-1d6ebdd61f16.png"&gt;&lt;/p&gt;
 &lt;p&gt;Ahora puedo pararme cuando quiera, levantar y girar el monitor y apretar 
-&lt;code&gt;Ctrl + Super + P&lt;/code&gt; las veces necesarias hasta que quede como quiero. &lt;/p&gt;&lt;/div&gt;</description><guid>https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/</guid><pubDate>Mon, 12 Apr 2021 16:52:34 GMT</pubDate></item><item><title>move-imports, o cómo calmar el TOC de un pythonista</title><link>https://mgaitan.github.io/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Una historia de éxito: un grupito pequeño de programadores (o quizas sólo uno)
+&lt;code&gt;Ctrl + Super + P&lt;/code&gt; las veces necesarias hasta que quede como quiero. &lt;/p&gt;</description><guid>https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/</guid><pubDate>Mon, 12 Apr 2021 16:52:34 GMT</pubDate></item><item><title>move-imports, o cómo calmar el TOC de un pythonista</title><link>https://mgaitan.github.io/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Una historia de éxito: un grupito pequeño de programadores (o quizas sólo uno)
 a pura pasión, café y feedback de sus usuarios mete miles de lineas de código
 que logran hacer funcionar un negocio.&lt;/p&gt;
 &lt;p&gt;Parte del éxito, supongamos, es porque el sistema está hecho en Python, que se eligió porque es versátil y pragmático para obtener resultados rápidos.
@@ -76,15 +76,16 @@ sea porque somos nosotros los que &lt;em&gt;checkouteamos&lt;/em&gt; el branch
 de un compañero para probar algo.&lt;/p&gt;
 &lt;p&gt;Ir y volver entre ramas es fácil porque basta usar &lt;cite&gt;-&lt;/cite&gt; que es
 un alias del branch previo.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a id="rest_code_ff5ab1429325449fa77becbf9c009f15-1" name="rest_code_ff5ab1429325449fa77becbf9c009f15-1"&gt;&lt;/a&gt;$ git checkout master
-&lt;a id="rest_code_ff5ab1429325449fa77becbf9c009f15-2" name="rest_code_ff5ab1429325449fa77becbf9c009f15-2"&gt;&lt;/a&gt;Switched to a new branch &lt;span class="s1"&gt;'master'&lt;/span&gt;
-&lt;a id="rest_code_ff5ab1429325449fa77becbf9c009f15-3" name="rest_code_ff5ab1429325449fa77becbf9c009f15-3"&gt;&lt;/a&gt;$ git checkout -
-&lt;a id="rest_code_ff5ab1429325449fa77becbf9c009f15-4" name="rest_code_ff5ab1429325449fa77becbf9c009f15-4"&gt;&lt;/a&gt;Switched to branch &lt;span class="s1"&gt;'writing'&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;git checkout -&lt;/code&gt; es equivalente a la forma general &lt;code class="docutils literal"&gt;git checkout &lt;span class="pre"&gt;@{-1}&lt;/span&gt;&lt;/code&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-1" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-1" href="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/#rest_code_602e2cedbe0746a0a417096c2b3bc52c-1"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;checkout&lt;span class="w"&gt; &lt;/span&gt;master
+&lt;a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-2" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-2" href="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/#rest_code_602e2cedbe0746a0a417096c2b3bc52c-2"&gt;&lt;/a&gt;Switched&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;branch&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'master'&lt;/span&gt;
+&lt;a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-3" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-3" href="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/#rest_code_602e2cedbe0746a0a417096c2b3bc52c-3"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;checkout&lt;span class="w"&gt; &lt;/span&gt;-
+&lt;a id="rest_code_602e2cedbe0746a0a417096c2b3bc52c-4" name="rest_code_602e2cedbe0746a0a417096c2b3bc52c-4" href="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/#rest_code_602e2cedbe0746a0a417096c2b3bc52c-4"&gt;&lt;/a&gt;Switched&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;branch&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'writing'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class="docutils literal"&gt;git checkout -&lt;/code&gt; es equivalente a la forma general &lt;code class="docutils literal"&gt;git checkout &lt;span class="pre"&gt;@{-1}&lt;/span&gt;&lt;/code&gt;
 y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.&lt;/p&gt;
 &lt;p&gt;El problema es que si no nos acordamos el nombre del branch, mucho menos
 podriamos acordarnos el orden cronológico en el que lo usamos.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/"&gt;Leer más…&lt;/a&gt; (restan 1 minutos)&lt;/p&gt;&lt;/div&gt;</description><guid>https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/</guid><pubDate>Thu, 30 Apr 2020 04:59:00 GMT</pubDate></item><item><title>Miau: cuando el gato dice la verdad</title><link>https://mgaitan.github.io/posts/miau-cuando-el-gato-dice-la-verdad/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Cuando se cumplieron los primeros 7 meses de su gestión, el presidente Macri dió &lt;a class="reference external" href="https://www.youtube.com/watch?v=Jp8_BXkTqXk"&gt;una entrevista exclusiva&lt;/a&gt; a periodistas del canal Telefé. Horas después apareció este video en las redes, cuyo autor o autora desconozco:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/"&gt;Leer más…&lt;/a&gt; (restan 2 minutos)&lt;/p&gt;&lt;/div&gt;</description><guid>https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/</guid><pubDate>Thu, 30 Apr 2020 04:59:00 GMT</pubDate></item><item><title>Miau: cuando el gato dice la verdad</title><link>https://mgaitan.github.io/posts/miau-cuando-el-gato-dice-la-verdad/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Cuando se cumplieron los primeros 7 meses de su gestión, el presidente Macri dió &lt;a class="reference external" href="https://www.youtube.com/watch?v=Jp8_BXkTqXk"&gt;una entrevista exclusiva&lt;/a&gt; a periodistas del canal Telefé. Horas después apareció este video en las redes, cuyo autor o autora desconozco:&lt;/p&gt;
 &lt;div class="video-container"&gt;
   &lt;iframe src="https://www.youtube.com/embed/C8e6Fibx0k0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;&lt;p&gt;Ahí estaba el humor, el fruto más gozoso del ingenio popular, para salvarnos a carcajadas. No para evadirnos de la realidad sino, al contrario, para vencerla, para enfrentar la amargura que algunas certezas traen (ya sabíamos a esa altura, con devaluación a precios y tarifazos en curso, que las advertencias no habían sido una "campaña del miedo"). Pero era aún más: era un ejemplo de ese humor que enuncia verdades difíciles de escuchar de otra manera.&lt;/p&gt;
@@ -98,10 +99,10 @@ podriamos acordarnos el orden cronológico en el que lo usamos.&lt;/p&gt;
 &lt;p&gt;En este contexto, el portal de noticias &lt;a href="http://www.cba24n.com.ar"&gt;Cba24N&lt;/a&gt;, perteneciente al grupo de Servicios de Radio y Televisión (SRT) de la Universidad Nacional de Córdoba, nos ha invitado a realizar análisis de datos "en vivo" el próximo 25 de octubre, día de las elecciones nacionales.&lt;/p&gt;
 &lt;p&gt;Hay muchas &lt;a href="https://hackdash.org/dashboards/odc2015"&gt;ideas para ese día&lt;/a&gt; que ojalá podamos llevar adelante, aunque vale resaltar (&lt;strike&gt;atajarse&lt;/strike&gt;) que se trata de una tarea totalmente voluntaria . Mientras tanto, el domingo pasado me dediqué a jugar con algunas agregaciones sobre el padrón de Córdoba para encontrar "notas de color" analizando nombres y apellidos de los votantes&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/el-padronazo-cordobes/"&gt;Leer más…&lt;/a&gt; (restan 13 minutos)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>dataviz</category><category>opendata</category><category>pandas</category><guid>https://mgaitan.github.io/posts/el-padronazo-cordobes/</guid><pubDate>Tue, 13 Oct 2015 22:04:48 GMT</pubDate></item><item><title>Curso de Python para ciencias e ingeniería, nueva edición</title><link>https://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;img alt="/images/Newsletter4-Banner_20120705_12-44-50-800.jpg" src="https://mgaitan.github.io/images/Newsletter4-Banner_20120705_12-44-50-800.jpg"&gt;
-&lt;div class="admonition attention"&gt;
+&lt;aside class="admonition attention"&gt;
 &lt;p class="admonition-title"&gt;¡Atención!&lt;/p&gt;
 &lt;p&gt;¿Estás interesado en que dicte este curso, de manera intensiva, en tu laboratorio o empresa? &lt;a class="reference external" href="http://mgaitan.github.io/about.html#contacto"&gt;Contactame&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;Está abierta la inscripción para el nuevo dictado de mi curso de &lt;strong&gt;introducción a Python para ciencias e ingenierías&lt;/strong&gt;, en la &lt;strong&gt;Facultad de Ciencias Exáctas, Físicas y Naturales&lt;/strong&gt; de la Universidad Nacional de Córdoba (aprobado como curso de extensión - &lt;a class="reference external" href="http://www.digesto.unc.edu.ar/cefn/decanato/resolucion/1272_2015"&gt;Resolución 1272/2015&lt;/a&gt;, bajo el nombre "Python como herramienta para la ingeniería") desde el &lt;strong&gt;miércoles 14 de ocubre de 18 a 22hs&lt;/strong&gt;,  durante 5 semanas.&lt;/p&gt;
 &lt;p&gt;Este curso una versión mejorada del que &lt;a class="reference external" href="https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria.html"&gt;dicté&lt;/a&gt; en la Facultad de Matemática, Física y Astronomía en mayo pasado, avalado como curso de extensión (&lt;a class="reference external" href="http://www.digesto.unc.edu.ar/famaf/honorable-consejo-directivo/resolucion/107_2015/?searchterm=107/2015"&gt;Resolución HCD 107/2015&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;El precio está absolutamente subsidiado por las ganas de que más ingenieros e investigadores programen Python. No te demores en &lt;a class="reference external" href="http://goo.gl/forms/cQszya0Sdi"&gt;anotarte&lt;/a&gt; , &lt;strong&gt;los cupos son muy limitados&lt;/strong&gt;!&lt;/p&gt;
@@ -127,20 +128,18 @@ Así tendremos una lista bien grande de "argumentos" para reeditar el curso lo m
 &lt;p&gt;El curso está reconocido como Curso de Extensión de FaMAF (Res. HCD 107/2015) y
 se entregarán certificados oficiales a quienes completen asistencia y participación.&lt;/p&gt;
 &lt;p class="alert alert-warning"&gt;&lt;strong&gt;Atención&lt;/strong&gt; Los cupos son muy limitados!&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/"&gt;Leer más…&lt;/a&gt; (restan 3 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>ciencia</category><category>curso</category><category>python</category><guid>https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/</guid><pubDate>Mon, 06 Apr 2015 13:46:36 GMT</pubDate></item><item><title>Sergio Massa y #LaGente</title><link>https://mgaitan.github.io/posts/sergio-massa-y-lagente/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/"&gt;Leer más…&lt;/a&gt; (restan 3 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>ciencia</category><category>curso</category><category>python</category><guid>https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/</guid><pubDate>Mon, 06 Apr 2015 13:46:36 GMT</pubDate></item><item><title>Sergio Massa y #LaGente</title><link>https://mgaitan.github.io/posts/sergio-massa-y-lagente/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Anoche me reí mucho con el hashtag &lt;a href="https://twitter.com/search?q=%23lagente&amp;amp;src=typd"&gt;#LaGente&lt;/a&gt;, que se viralizó mientras Alejandro Fantino entrevistaba, una vez más, al inefable candidato presidencial Sergio Massa.&lt;/p&gt;
 &lt;blockquote class="twitter-tweet" lang="es"&gt;&lt;p&gt;"Me comprometo no ante vos, ante &lt;a href="https://twitter.com/hashtag/LaGente?src=hash"&gt;#LaGente&lt;/a&gt;". Lo harta que me tiene este tipo no tiene nombre.&lt;/p&gt;— Fenicia  (@zeinicienta) &lt;a href="https://twitter.com/zeinicienta/status/575858399021264896"&gt;marzo 12, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-
+&lt;script async="" charset="utf-8" src="//platform.twitter.com/widgets.js"&gt;&lt;/script&gt;
 &lt;blockquote class="twitter-tweet" lang="es"&gt;&lt;p&gt;Es insoportable la cantidad de frases hechas y lugares comunes que tira &lt;a href="https://twitter.com/SergioMassa"&gt;@SergioMassa&lt;/a&gt;. Demagogo berreta. &lt;a href="https://twitter.com/hashtag/LaGente?src=hash"&gt;#LaGente&lt;/a&gt;&lt;/p&gt;— Javier Smaldone (@mis2centavos) &lt;a href="https://twitter.com/mis2centavos/status/575850582386343938"&gt;marzo 12, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-
-&lt;blockquote class="twitter-tweet" lang="es"&gt;&lt;p&gt;Quiero contar la cantidad de veces que +a dice &lt;a href="https://twitter.com/hashtag/LaGente?src=hash"&gt;#LaGente&lt;/a&gt;&lt;/p&gt;— memorex (@memorex) &lt;a href="https://twitter.com/memorex/status/575847833565163521"&gt;marzo 12, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;p&gt;Me acordé entonces de un &lt;a href="http://zulko.github.io/blog/2014/06/21/some-more-videogreping-with-python/"&gt;post de Zulko&lt;/a&gt;, cuyo blog es un compilado de gemas ñoñamente divertidas. Allí muestra cómo recortar automáticamente los pedacitos de un video que mencionen una palabra o frase, basándose en las marcas de tiempo del archivo de subtítulos, utilizando su maravillosa biblioteca &lt;a href="http://zulko.github.io/moviepy/"&gt;Moviepy&lt;/a&gt; y un poco de Python. Más o menos lo que hace &lt;a href="https://github.com/antiboredom/videogrep"&gt;videogrep&lt;/a&gt;, pero más prolijo.&lt;/p&gt;
+&lt;script async="" charset="utf-8" src="//platform.twitter.com/widgets.js"&gt;&lt;/script&gt;
+&lt;blockquote class="twitter-tweet" lang="es"&gt;&lt;p&gt;Quiero contar la cantidad de veces que +a dice &lt;a href="https://twitter.com/hashtag/LaGente?src=hash"&gt;#LaGente&lt;/a&gt;&lt;/p&gt;— memorex (@memorex) &lt;a href="https://twitter.com/memorex/status/575847833565163521"&gt;marzo 12, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;Me acordé entonces de un &lt;a href="http://zulko.github.io/blog/2014/06/21/some-more-videogreping-with-python/"&gt;post de Zulko&lt;/a&gt;, cuyo blog es un compilado de gemas ñoñamente divertidas. Allí muestra cómo recortar automáticamente los pedacitos de un video que mencionen una palabra o frase, basándose en las marcas de tiempo del archivo de subtítulos, utilizando su maravillosa biblioteca &lt;a href="http://zulko.github.io/moviepy/"&gt;Moviepy&lt;/a&gt; y un poco de Python. Más o menos lo que hace &lt;a href="https://github.com/antiboredom/videogrep"&gt;videogrep&lt;/a&gt;, pero más prolijo.&lt;/p&gt;
 &lt;p&gt;La herramienta &lt;a href="http://rg3.github.io/youtube-dl/"&gt;youtube-dl&lt;/a&gt; (que también es genial y hecha en Python), permite no sólo bajar videos de youtube y los subtitulos existentes, sino que también puede bajar el "subtitulo automático". En general son bastante malos pero es suficientemente efectivo para encontrar pequeñas frases.&lt;/p&gt;
-&lt;h3 id='Todo-sea-por-"la-gente":-manos-a-la-obra'&gt;Todo sea por "la gente": manos a la obra&lt;a class="anchor-link" href="https://mgaitan.github.io/posts/sergio-massa-y-lagente/#Todo-sea-por-%22la-gente%22:-manos-a-la-obra"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Lo primero que necesitamos es una lista de videos donde Sergio Massa hable. Hice una &lt;a href="https://www.youtube.com/results?search_query=entrevista+sergio+massa"&gt;búsqueda&lt;/a&gt;, decidí ignorar algunos (parodias, por ejemplo) y generé una lista. Hay varias maneras de obtener este listado de las primeras paginas de resultados, yo utilicé el rústico y efectivo webscrapping:&lt;/p&gt;
-
+&lt;h3 id="Todo-sea-por-%22la-gente%22:-manos-a-la-obra"&gt;Todo sea por "la gente": manos a la obra&lt;a class="anchor-link" href="https://mgaitan.github.io/posts/sergio-massa-y-lagente/#Todo-sea-por-%22la-gente%22:-manos-a-la-obra"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Lo primero que necesitamos es una lista de videos donde Sergio Massa hable. Hice una &lt;a href="https://www.youtube.com/results?search_query=entrevista+sergio+massa"&gt;búsqueda&lt;/a&gt;, decidí ignorar algunos (parodias, por ejemplo) y generé una lista. Hay varias maneras de obtener este listado de las primeras paginas de resultados, yo utilicé el rústico y efectivo webscrapping:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -148,8 +147,8 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pyquery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;PyQuery&lt;/span&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pyquery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;PyQuery&lt;/span&gt;
 &lt;span class="n"&gt;links&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;span class="n"&gt;skip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'M0yuFHbhYLY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'TLmMh9Qvmic'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'rY4Hwvn6GlA'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -159,22 +158,13 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
     &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extend&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'href'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'a.yt-uix-tile-link'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;pq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'href'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'v='&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;skip&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="n"&gt;links&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
-
-
 &lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
-
-
-
-
+&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
 &lt;div class="output_text output_subarea output_execute_result"&gt;
 &lt;pre&gt;['https://www.youtube.com/watch?v=8pP8G3fSAcY',
  'https://www.youtube.com/watch?v=g6QSwxUo1aw',
@@ -254,18 +244,14 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
  'https://www.youtube.com/watch?v=-SQSue4-PLk',
  'https://www.youtube.com/watch?v=HPE4PHlYySo']&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;/div&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Luego, el paso lento: bajar los videos. Al parecer, Youtube no genera un subtitulo automático para videos demasiado largo, así que limité hasta 30 minutos.&lt;/p&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -273,21 +259,18 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;link&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="o"&gt;!&lt;/span&gt;youtube-dl --write-auto-sub --sub-lang es --max-filesize &lt;span class="m"&gt;30&lt;/span&gt;.00m &lt;span class="o"&gt;{&lt;/span&gt;link&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;link&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="o"&gt;!&lt;/span&gt;youtube-dl&lt;span class="w"&gt; &lt;/span&gt;--write-auto-sub&lt;span class="w"&gt; &lt;/span&gt;--sub-lang&lt;span class="w"&gt; &lt;/span&gt;es&lt;span class="w"&gt; &lt;/span&gt;--max-filesize&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;30&lt;/span&gt;.00m&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;link&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Con el material crudo disponible (aunque puede ser que no se hayan encontrado subtitulos para todos los videos), podemos copiar descaradamente partes del código de Zulko (levemente adaptado)&lt;/p&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -295,8 +278,8 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt; 
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt; 
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;glob&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
@@ -304,7 +287,7 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;convert_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;timestring&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;""" Converts a string into seconds """&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;""" Converts a string into seconds """&lt;/span&gt;
     &lt;span class="n"&gt;nums&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'\d+'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;timestring&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;3600&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;nums&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;
 
@@ -327,7 +310,7 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;times_texts&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;find_word&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;times_texts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;padding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;.4&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;""" Finds all 'exact' (t_start, t_end) for a word """&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;""" Finds all 'exact' (t_start, t_end) for a word """&lt;/span&gt;
     &lt;span class="n"&gt;matches&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
                &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;times_texts&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -356,17 +339,14 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
         &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shuffle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;subclips&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;La función &lt;code&gt;get_all_subclip&lt;/code&gt; recibe la frase a buscar y devuelve un listado de segmentos donde, muy probablemente, se pronuncia.&lt;/p&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -374,42 +354,29 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;gente&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_all_subclips_for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'la gente'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;gente&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_all_subclips_for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'la gente'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gente&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
-
-
 &lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
-
-
-
-
+&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
 &lt;div class="output_text output_subarea output_execute_result"&gt;
 &lt;pre&gt;77&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;/div&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;El problema es que aunque es muy probable que sea Sergio Massa el que diga "la gente" en sus entrevistas, a veces es el entrevistador, a veces youtube entendió mal al desgrabar y a veces el código recortador la pifia. Por este motivo hay que descartar los segmentos que no sirven.&lt;/p&gt;
 &lt;p&gt;Se me ocurrió hacerlo visualmente: los pegué todos, superponiendo el índice al que corresponde cada segmento, para luego anotar los que no sirven y filtrarlos en otra pasada.&lt;/p&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -417,8 +384,8 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;make_preview&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;make_preview&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;subclips_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clip&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;txt_clip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TextClip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;70&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'white'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -429,33 +396,24 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
     &lt;span class="n"&gt;final&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;concatenate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'compose'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;final&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write_videofile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'preview.webm'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;codec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'libvpx'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fps&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;make_preview&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gente&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;make_preview&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gente&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
-
-
 &lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
+&lt;div class="prompt"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[MoviePy] &amp;gt;&amp;gt;&amp;gt;&amp;gt; Building video preview.webm
 [MoviePy] Writing audio in previewTEMP_MPY_wvf_snd.ogg
@@ -467,16 +425,13 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;El &lt;a href="http://youtu.be/LU76nVlBqdE"&gt;resultado&lt;/a&gt; me permitió hacer el tamizado&lt;/p&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -484,21 +439,18 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ignore&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;36&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;38&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;41&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;44&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;56&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;61&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;62&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;66&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;73&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;74&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ignore&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;36&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;38&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;41&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;44&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;56&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;61&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;62&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;66&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;73&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;74&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;subclips_cleaned&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gente&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;ignore&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Aunque no tengo idea de edición de videos, y porque de verdad creo que es un demamogo impresentable que no debería presidir ni una junta vecinal, quería darle un toque final, con una pequeña frase&lt;/p&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -506,8 +458,8 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;moviepy.video.tools.segmenting&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;findObjects&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;arrive&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;screenpos&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;nletters&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -528,36 +480,27 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 
 &lt;span class="n"&gt;ending&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CompositeVideoClip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;moveLetters&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;letters&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrive&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;screensize&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subclip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# le damos una mezcladita más&lt;/span&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# le damos una mezcladita más&lt;/span&gt;
 &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shuffle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips_cleaned&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;subclips_cleaned&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ending&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;make_final&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subclips_cleaned&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'massa_lagente_final.webm'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
-
-
 &lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
+&lt;div class="prompt"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[MoviePy] &amp;gt;&amp;gt;&amp;gt;&amp;gt; Building video massa_lagente_final.webm
 [MoviePy] Writing audio in massa_lagente_finalTEMP_MPY_wvf_snd.ogg
@@ -569,16 +512,14 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Y este es el resultado:&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ssXSLUVNz8o" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ssXSLUVNz8o" width="560"&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -586,19 +527,17 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://mgaitan.github.io/posts/sergio-massa-y-lagente/</guid><pubDate>Fri, 13 Mar 2015 03:56:43 GMT</pubDate></item><item><title>Formas en que los hombres de tecnología son involuntariamente sexistas</title><link>https://mgaitan.github.io/posts/hombres-machistas-involuntariamente/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="admonition attention"&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><guid>https://mgaitan.github.io/posts/sergio-massa-y-lagente/</guid><pubDate>Fri, 13 Mar 2015 03:56:43 GMT</pubDate></item><item><title>Formas en que los hombres de tecnología son involuntariamente sexistas</title><link>https://mgaitan.github.io/posts/hombres-machistas-involuntariamente/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;aside class="admonition attention"&gt;
 &lt;p class="admonition-title"&gt;¡Atención!&lt;/p&gt;
 &lt;p&gt;esta es una traducción del artículo
 &lt;a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/"&gt;Ways Men In Tech Are Unintentionally Sexist&lt;/a&gt; de &lt;a class="reference external" href="http://notapattern.net/author/codebykat/"&gt;Kat Hagan&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;section id="formas-en-que-los-hombres-de-tecnologia-son-involuntariamente-sexistas"&gt;
 &lt;h2&gt;Formas en que los hombres de tecnología son involuntariamente sexistas&lt;/h2&gt;
 &lt;p&gt;Un amigo publicó esto en twitter:&lt;/p&gt;
@@ -972,10 +911,10 @@ everything I read online).&lt;/p&gt;
 &lt;a class="reference external" href="http://notapattern.net/tag/feminism/"&gt;feminism&lt;/a&gt;. Bookmark the
 &lt;a class="reference external" href="http://notapattern.net/2014/10/14/ways-men-in-tech-are-unintentionally-sexist/"&gt;permalink&lt;/a&gt;.&lt;/p&gt;
 &lt;/section&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>draft</category><guid>https://mgaitan.github.io/posts/hombres-machistas-involuntariamente/</guid><pubDate>Thu, 04 Dec 2014 22:23:44 GMT</pubDate></item><item><title>Las cosas chiquitas que cambian el mundo</title><link>https://mgaitan.github.io/posts/las-cosas-chiquitas/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;div class="admonition note"&gt;
+&lt;/section&gt;</description><category>draft</category><guid>https://mgaitan.github.io/posts/hombres-machistas-involuntariamente/</guid><pubDate>Thu, 04 Dec 2014 22:23:44 GMT</pubDate></item><item><title>Las cosas chiquitas que cambian el mundo</title><link>https://mgaitan.github.io/posts/las-cosas-chiquitas/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;aside class="admonition note"&gt;
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Tengo dos weblogs. Este es en el que escribo artículos técnicos o que tienen que ver de alguna manera con mi profesión. &lt;a class="reference external" href="http://www.textosypretextos.com.ar"&gt;Textos y pretextos&lt;/a&gt; es igual de personal, pero me sale —me sale cada vez menos, tristemente— de otras tripas, quizás para otro público.&lt;/p&gt;
 &lt;p&gt;Sin embargo, quiero hacer una excepción con este post, porque probablemente tenga más alcance aquí y es algo que me atraviesa todas las facetas: las ganas de hacer de este que pisamos, un mejor mundo.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/aside&gt;
 &lt;p&gt;Desde el 2005, a las poquitas semanas de haberme venido a vivir a Córdoba, hasta no sé que día del 2012, cada sábado de todas las semanas del año, me tomé dos bondis (o uno, cuando me iba a pata hasta el centro), para llegar a Campo de La Ribera. &lt;em&gt;Mazamorra&lt;/em&gt;, la &lt;em&gt;agrupación&lt;/em&gt;, fue mi espacio de militancia, mi usina de amistad, mi cobijo del dar y recibir. Sobre todo del recibir.&lt;/p&gt;
 &lt;iframe width="560" height="315" src="//www.youtube.com/embed/elcqGWJKt3c" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/las-cosas-chiquitas/"&gt;Leer más…&lt;/a&gt; (restan 2 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>donar</category><category>solidaridad</category><guid>https://mgaitan.github.io/posts/las-cosas-chiquitas/</guid><pubDate>Thu, 04 Dec 2014 22:23:44 GMT</pubDate></item></channel></rss>

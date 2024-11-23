@@ -6,12 +6,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Screen layout switcher para Linux | tin_nqn</title>
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -19,7 +16,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../move-imports-o-como-calmar-el-toc-de-un-pythonista/" title="move-imports, o cómo calmar el TOC de un pythonista" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="Screen layout switcher para Linux">
@@ -75,6 +72,10 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
+        <li class="nav-item">
+    <a href="index.md" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
+    </li>
+
                 
             </ul>
 </div>
@@ -95,43 +96,43 @@ navbar-light bg-light
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2021-04-12T13:52:34-03:00" itemprop="datePublished" title="2021-04-12 13:52">2021-04-12 13:52</time></a>
             </p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/custom-screen-layout-switcher-for-linux.html">Comentarios</a>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/custom-screen-layout-switcher-for-linux.html">Comentarios</a>
 
 
-            
-        </p>
-</div>
+                    </p>
+<p class="sourceline"><a href="index.md" class="sourcelink">El código de este artículo está disponible en </a></p>
+
+        </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Mi setup de trabajo consiste en la laptop (Lenovo x1 del 2015), un monitor externo de 22" y un combo teclado + mouse inalambrico <a href="https://www.cotodigital3.com.ar/sitios/cdigi/producto/-teclado-top-house-wireless-combo-mouse-kb592gcm/_/A-00484043-00484043-200">del supermercado</a>. Actualmente estoy usando <a href="https://pop.system76.com/">Pop!_OS</a></p>
+    <p>Mi setup de trabajo consiste en la laptop (Lenovo x1 del 2015), un monitor externo de 22" y un combo teclado + mouse inalambrico <a href="https://www.cotodigital3.com.ar/sitios/cdigi/producto/-teclado-top-house-wireless-combo-mouse-kb592gcm/_/A-00484043-00484043-200">del supermercado</a>. Actualmente estoy usando <a href="https://pop.system76.com/">Pop!_OS</a></p>
 <p>El monitor está en un <a href="https://www.oneboxsolutions.com.ar/producto/ob-lcd12/">brazo</a> que me permite acomodarlo y girarlo en cualquier posición. El brazo está en una pequeña alzada que me permite ganar unos 13cm de altura, de manera que puedo usarlo para hacer standup desk junto con mi mesita. </p>
 <blockquote class="twitter-tweet">
 <p lang="es" dir="ltr">Hoy terminé mí mesita para trabajar parado. Con el brazo para monitor suplementado la altura queda bastante razonable y también puedo usarla con el tele vía chromecast <a href="https://t.co/O6RLKogCO7">pic.twitter.com/O6RLKogCO7</a></p>— Martín Gaitán (@tin_nqn_) <a href="https://twitter.com/tin_nqn_/status/1304951373482647553?ref_src=twsrc%5Etfw">September 13, 2020</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>Trato de trabajar al menos la mitad del día parado y a veces me voy con la compu a otra parte de la casa. Así que todo el tiempo estoy cambiando la configuración de la/s pantalla/s. Hacer esta tarea a mano me llevaba mucho tiempo y además es dificilisima la motricidad con el mouse si la pantalla está girada.  </p>
 <p>Dentro del soporte de "funciones avanzadas de teclado" de los linux modernos está "switch-monitor". Gnome mapea esta funcion con <code>&lt;Super&gt;+P</code> además de la tecla especial del teclado. </p>
-<pre class="code literal-block"><span></span><code>$ gsettings get org.gnome.mutter.keybindings switch-monitor
-<span class="o">[</span><span class="s1">'&lt;Super&gt;p'</span>, <span class="s1">'XF86Display'</span><span class="o">]</span>
-</code></pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>gsettings<span class="w"> </span>get<span class="w"> </span>org.gnome.mutter.keybindings<span class="w"> </span>switch-monitor
+<span class="o">[</span><span class="s1">'&lt;Super&gt;p'</span>,<span class="w"> </span><span class="s1">'XF86Display'</span><span class="o">]</span>
+</pre></div>
 
 <p>El problema con esta funcionalidad es que los modos están predefinidos: monitores espejados, sólo externa, sólo integrada o ambas "unidas" pero asumiendo ambas horizontales y el monitor izquierdo a la derecha (y el mio queda a la izquierda de la laptop). </p>
 <p><a href="https://twitter.com/tin_nqn_/status/1380947297777901570">Pregunté en twitter</a> y varios amigos me apuntaron a la herramienta 
 <a href="https://christian.amsuess.com/tools/arandr/">arandr</a> que permite hacer las mismas configuraciones de pantallas que la herramienta de Gnome (de manera manual y visual) con la diferencia de que los modos definidos se pueden guardar como un comando de xrandr. Por ejemplo este setup de ambas pantallas encendidas y horizontales </p>
 <p><img alt="arandr example" src="https://user-images.githubusercontent.com/2355719/114436452-b7c04780-9b9b-11eb-9b0f-1c7bc1c2da04.png"></p>
 <p>se guarda desde arandr (¡y se puede abrir para editar!) como un script </p>
-<pre class="code literal-block"><span></span><code><span class="p">(</span><span class="n">blog</span><span class="p">)</span><span class="w"> </span><span class="n">tin</span><span class="nv">@pop</span><span class="o">-</span><span class="nl">os</span><span class="p">:</span><span class="o">~/</span><span class="p">.</span><span class="n">screenlayout</span><span class="err">$</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="mi">2</span><span class="n">horizontal</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span>
-<span class="err">#!</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span><span class="w"></span>
+<div class="code"><pre class="code literal-block"><span class="p">(</span><span class="n">blog</span><span class="p">)</span><span class="w"> </span><span class="n">tin</span><span class="nv">@pop</span><span class="o">-</span><span class="nl">os</span><span class="p">:</span><span class="o">~/</span><span class="p">.</span><span class="n">screenlayout</span><span class="err">$</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="mi">2</span><span class="n">horizontal</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span>
+<span class="err">#!</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span>
 <span class="n">xrandr</span><span class="w"> </span><span class="c1">--output eDP-1 --mode 1920x1080 --pos 1920x283 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --primary --mode 1920x1080 --pos 0x0 --rotate normal</span>
-</code></pre>
+</pre></div>
 
 <p>Asi es que definí con esa herramienta los modos frecuentes que uso</p>
-<pre class="code literal-block"><span></span><code>~/.screenlayout$ ls *.sh
+<div class="code"><pre class="code literal-block">~/.screenlayout$ ls *.sh
 2horizontal.sh  ext-horizontal.sh  ext-vertical.sh  lapt-solo.sh
-</code></pre>
+</pre></div>
 
 <p>Lo que quería luego era un atajo de teclado que me permitiera rotar entre esos modos. Hice un script en python que lo dejé en la misma carpeta</p>
-<pre class="code literal-block"><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<div class="code"><pre class="code literal-block"><span class="ch">#!/usr/bin/env python3</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -156,25 +157,24 @@ navbar-light bg-light
 <span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="s1">'.last'</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">))</span>
 
 <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">)])</span>
-</code></pre>
+</pre></div>
 
 <p>Este <code>switcher.py</code> busca todos los archivos <code>.sh</code> en la misma carpeta y ejecuta el que sigue al ultimo ejecutado, que se guarda en un archivo <code>.last</code> (si no existe, el primer modo será el primero listado). </p>
 <p>Decidí deshabilitar el atajo por default </p>
-<pre class="code literal-block"><span></span><code>$ gsettings <span class="nb">set</span> org.gnome.mutter.keybindings switch-monitor <span class="s2">"['XF86Display']</span>
-</code></pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>gsettings<span class="w"> </span><span class="nb">set</span><span class="w"> </span>org.gnome.mutter.keybindings<span class="w"> </span>switch-monitor<span class="w"> </span><span class="s2">"['XF86Display']</span>
+</pre></div>
 
 <p>y agregué un shortcut que ejecuta <code>~/.screenlayout/switcher</code> con <code>Ctrl + Super + P</code> (en gnome: Configuración -&gt; Keyboard -&gt; Combinación de teclas -&gt; Customize Shortcuts -&gt; Combinación Personalizada )</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/2355719/114437517-0a4e3380-9b9d-11eb-8847-1d6ebdd61f16.png"></p>
 <p>Ahora puedo pararme cuando quiera, levantar y girar el monitor y apretar 
 <code>Ctrl + Super + P</code> las veces necesarias hasta que quede como quiero. </p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../move-imports-o-como-calmar-el-toc-de-un-pythonista/" rel="prev" title="move-imports, o cómo calmar el TOC de un pythonista">Post anterior</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
-                        <div id="disqus_thread"></div>
+                    <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
             disqus_url="https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/",
@@ -194,13 +194,13 @@ navbar-light bg-light
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
-            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {
