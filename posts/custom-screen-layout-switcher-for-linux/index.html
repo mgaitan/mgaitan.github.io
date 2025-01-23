@@ -18,6 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="canonical" href="https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/">
 <!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
 <link rel="prev" href="../move-imports-o-como-calmar-el-toc-de-un-pythonista/" title="move-imports, o cómo calmar el TOC de un pythonista" type="text/html">
+<link rel="next" href="../svg-animados-para-tus-demos-de-programas-cli/" title="SVG animados para tus demos de programas CLI" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="Screen layout switcher para Linux">
 <meta property="og:url" content="https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/">
@@ -133,9 +134,9 @@ navbar-light bg-light
 
 <p>Lo que quería luego era un atajo de teclado que me permitiera rotar entre esos modos. Hice un script en python que lo dejé en la misma carpeta</p>
 <div class="code"><pre class="code literal-block"><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
 <span class="n">folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
 <span class="n">layouts</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">folder</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'*.sh'</span><span class="p">)))</span>  <span class="c1"># roundrobin over the layouts. </span>
@@ -173,6 +174,9 @@ navbar-light bg-light
 <li class="previous">
                 <a href="../move-imports-o-como-calmar-el-toc-de-un-pythonista/" rel="prev" title="move-imports, o cómo calmar el TOC de un pythonista">Post anterior</a>
             </li>
+            <li class="next">
+                <a href="../svg-animados-para-tus-demos-de-programas-cli/" rel="next" title="SVG animados para tus demos de programas CLI">Siguiente post</a>
+            </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
                     <div id="disqus_thread"></div>
         <script>
@@ -194,7 +198,7 @@ navbar-light bg-light
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

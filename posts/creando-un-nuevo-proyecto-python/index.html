@@ -154,16 +154,16 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 </aside><ol class="arabic" start="3">
 <li>
 <p>Configurá virtualenvwrapper</p>
-<div class="code"><pre class="code bash"><a id="rest_code_6932bf7611f04c579ec48da9d62d93e5-1" name="rest_code_6932bf7611f04c579ec48da9d62d93e5-1" href="#rest_code_6932bf7611f04c579ec48da9d62d93e5-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.virtualenvs<span class="w">           </span><span class="c1"># acá se van a guardar tus entornos virtuales</span>
-<a id="rest_code_6932bf7611f04c579ec48da9d62d93e5-2" name="rest_code_6932bf7611f04c579ec48da9d62d93e5-2" href="#rest_code_6932bf7611f04c579ec48da9d62d93e5-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/proyectos<span class="w">              </span><span class="c1"># acá se van a guardar tus proyectos</span>
-<a id="rest_code_6932bf7611f04c579ec48da9d62d93e5-3" name="rest_code_6932bf7611f04c579ec48da9d62d93e5-3" href="#rest_code_6932bf7611f04c579ec48da9d62d93e5-3"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.pip_download_cache<span class="w">     </span><span class="c1"># para no bajar paquetes cada vez</span>
+<div class="code"><pre class="code bash"><a id="rest_code_e8685b020c8b42899948736fde6d38ef-1" name="rest_code_e8685b020c8b42899948736fde6d38ef-1" href="#rest_code_e8685b020c8b42899948736fde6d38ef-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.virtualenvs<span class="w">           </span><span class="c1"># acá se van a guardar tus entornos virtuales</span>
+<a id="rest_code_e8685b020c8b42899948736fde6d38ef-2" name="rest_code_e8685b020c8b42899948736fde6d38ef-2" href="#rest_code_e8685b020c8b42899948736fde6d38ef-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/proyectos<span class="w">              </span><span class="c1"># acá se van a guardar tus proyectos</span>
+<a id="rest_code_e8685b020c8b42899948736fde6d38ef-3" name="rest_code_e8685b020c8b42899948736fde6d38ef-3" href="#rest_code_e8685b020c8b42899948736fde6d38ef-3"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.pip_download_cache<span class="w">     </span><span class="c1"># para no bajar paquetes cada vez</span>
 </pre></div>
 <p>Luego editá tu <code class="docutils literal"><span class="pre">~/.bashrc</span></code> agregando las siguientes líneas</p>
-<div class="code"><pre class="code bash"><a id="rest_code_1b51de038b6d44f6a53a2ff276705853-1" name="rest_code_1b51de038b6d44f6a53a2ff276705853-1" href="#rest_code_1b51de038b6d44f6a53a2ff276705853-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<a id="rest_code_1b51de038b6d44f6a53a2ff276705853-2" name="rest_code_1b51de038b6d44f6a53a2ff276705853-2" href="#rest_code_1b51de038b6d44f6a53a2ff276705853-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
-<a id="rest_code_1b51de038b6d44f6a53a2ff276705853-3" name="rest_code_1b51de038b6d44f6a53a2ff276705853-3" href="#rest_code_1b51de038b6d44f6a53a2ff276705853-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
-<a id="rest_code_1b51de038b6d44f6a53a2ff276705853-4" name="rest_code_1b51de038b6d44f6a53a2ff276705853-4" href="#rest_code_1b51de038b6d44f6a53a2ff276705853-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
-<a id="rest_code_1b51de038b6d44f6a53a2ff276705853-5" name="rest_code_1b51de038b6d44f6a53a2ff276705853-5" href="#rest_code_1b51de038b6d44f6a53a2ff276705853-5"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
+<div class="code"><pre class="code bash"><a id="rest_code_425dc57d22e44ea88636a68ceca0b6c3-1" name="rest_code_425dc57d22e44ea88636a68ceca0b6c3-1" href="#rest_code_425dc57d22e44ea88636a68ceca0b6c3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<a id="rest_code_425dc57d22e44ea88636a68ceca0b6c3-2" name="rest_code_425dc57d22e44ea88636a68ceca0b6c3-2" href="#rest_code_425dc57d22e44ea88636a68ceca0b6c3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<a id="rest_code_425dc57d22e44ea88636a68ceca0b6c3-3" name="rest_code_425dc57d22e44ea88636a68ceca0b6c3-3" href="#rest_code_425dc57d22e44ea88636a68ceca0b6c3-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
+<a id="rest_code_425dc57d22e44ea88636a68ceca0b6c3-4" name="rest_code_425dc57d22e44ea88636a68ceca0b6c3-4" href="#rest_code_425dc57d22e44ea88636a68ceca0b6c3-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<a id="rest_code_425dc57d22e44ea88636a68ceca0b6c3-5" name="rest_code_425dc57d22e44ea88636a68ceca0b6c3-5" href="#rest_code_425dc57d22e44ea88636a68ceca0b6c3-5"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
 </pre></div>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">$ source ~/.bashrc</pre>
@@ -246,7 +246,7 @@ para saber más.</p>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

@@ -109,7 +109,7 @@ navbar-light bg-light
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="cell border-box-sizing text_cell rendered" id="cell-id=baf10a27">
+    <div class="cell border-box-sizing text_cell rendered" id="cell-id=7f199c63">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -126,7 +126,7 @@ navbar-light bg-light
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=8027bd32">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=e9e9b134">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -137,7 +137,7 @@ navbar-light bg-light
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=a480ac28">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=b4f0d4cf">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -146,7 +146,7 @@ navbar-light bg-light
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=3bcdea80">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=9f9e36df">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
@@ -205,7 +205,7 @@ class Player(models.Model):
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=3907c55a">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d3abe0d0">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -214,13 +214,13 @@ class Player(models.Model):
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=04fe82df">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=7a7ce62f">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyquery</span> <span class="kn">import</span> <span class="n">PyQuery</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyquery</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyQuery</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span>
 <span class="n">pq</span> <span class="o">=</span> <span class="n">PyQuery</span><span class="p">(</span><span class="s1">'http://en.wikipedia.org/wiki/2014_FIFA_World_Cup_squads'</span><span class="p">)</span>
 <span class="n">pq</span><span class="o">.</span><span class="n">make_links_absolute</span><span class="p">()</span>
 </pre></div>
@@ -238,7 +238,7 @@ class Player(models.Model):
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=7053cf7f">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=78e60ada">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
@@ -571,7 +571,7 @@ class Player(models.Model):
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=7bc0b8b0">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=9f7128c8">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -580,12 +580,12 @@ class Player(models.Model):
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=6f2f556c">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=ffb2c917">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">parse_squad</span><span class="p">(</span><span class="n">squad</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">parse_squad</span><span class="p">(</span><span class="n">squad</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
     <span class="n">country</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Country</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">pq</span><span class="p">(</span><span class="n">squad</span><span class="p">)</span><span class="o">.</span><span class="n">prev</span><span class="p">()</span><span class="o">.</span><span class="n">prev</span><span class="p">()</span><span class="o">.</span><span class="n">prev</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
     <span class="nb">print</span> <span class="s2">"Parsing"</span><span class="p">,</span> <span class="n">country</span>
     <span class="n">team</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Team</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="n">country</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">)</span>
@@ -608,7 +608,7 @@ class Player(models.Model):
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=29d7ac87">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=e584a2c3">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
@@ -848,7 +848,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=4d73af7d">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=b2651c3f">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
@@ -869,7 +869,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=9cd956c7">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=311ed45e">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -878,7 +878,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=d6bc2291">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=f4b99841">
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
@@ -1060,7 +1060,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=4c1e99af">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=75634df1">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
@@ -1081,12 +1081,12 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=39aabb9e">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=47a0a009">
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="n">fecha</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d</span><span class="si">{4}</span><span class="s1">\-\d</span><span class="si">{2}</span><span class="s1">\-\d</span><span class="si">{2}</span><span class="s1">'</span><span class="p">,</span> <span class="n">messi</span><span class="p">(</span><span class="s1">'table.infobox'</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">fecha</span>
 </pre></div>
@@ -1104,7 +1104,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=8b388a2c">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=1b5e9796">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1113,14 +1113,14 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=413779e4">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=6d60ef81">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
-<span class="k">def</span> <span class="nf">fill_player</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fill_player</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
     <span class="c1"># print 'Retriving data for %s (%d)' % (player, player.id)</span>
     <span class="n">pq</span> <span class="o">=</span> <span class="n">PyQuery</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
     <span class="n">pq</span><span class="o">.</span><span class="n">make_links_absolute</span><span class="p">()</span>
@@ -1145,7 +1145,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=aeef0bfc">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=d1b3736c">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
@@ -1157,7 +1157,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=ad2b23f1">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=cadde245">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1169,12 +1169,12 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=3f4bb451">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=242476f1">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
 <span class="n">viejo</span> <span class="o">=</span> <span class="n">Player</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">date_of_birth__isnull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">'date_of_birth'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">joven</span> <span class="o">=</span> <span class="n">Player</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">date_of_birth__isnull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">'-date_of_birth'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
@@ -1182,7 +1182,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=f038178f">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=99a5a0d9">
 <div class="input">
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
@@ -1208,7 +1208,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=8d585d76">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=4827c1d4">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1218,18 +1218,18 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=41134aae">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=90a9341c">
 <div class="input">
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xkcd</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">team_age</span><span class="p">(</span><span class="n">team</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">team_age</span><span class="p">(</span><span class="n">team</span><span class="p">):</span>
     <span class="n">players</span> <span class="o">=</span> <span class="n">team</span><span class="o">.</span><span class="n">player_set</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">date_of_birth__isnull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">media</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">players</span><span class="p">))</span> <span class="o">/</span> <span class="n">players</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="n">younger</span> <span class="o">=</span> <span class="n">age</span><span class="p">(</span><span class="n">players</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">'-date_of_birth'</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
@@ -1260,7 +1260,7 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=73711ef4">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=f26acbc8">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1269,12 +1269,12 @@ Parsing</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=9bcd4e07">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=542fbd5c">
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Q</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.db.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Q</span>
 
 <span class="n">mundial</span> <span class="o">=</span> <span class="n">Q</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">31</span><span class="p">):</span>
@@ -1369,7 +1369,7 @@ Kim Jin-Su de South Korea cumple el 13/6
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=034dde33">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=7afe4229">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1379,7 +1379,7 @@ Kim Jin-Su de South Korea cumple el 13/6
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=4be57a88">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=2972eafb">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
@@ -1405,12 +1405,12 @@ Edgar Salli de Cameroon es el jugador más  con 1.63 m
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=e9efd9ee">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=bc999915">
 <div class="input">
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">team_height</span><span class="p">(</span><span class="n">team</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">team_height</span><span class="p">(</span><span class="n">team</span><span class="p">):</span>
     <span class="n">players</span> <span class="o">=</span> <span class="n">team</span><span class="o">.</span><span class="n">player_set</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">height__isnull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">media</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">height</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">players</span><span class="p">])</span> <span class="o">/</span> <span class="n">players</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="n">petiso</span> <span class="o">=</span> <span class="n">players</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">'height'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">height</span>
@@ -1439,7 +1439,7 @@ Edgar Salli de Cameroon es el jugador más  con 1.63 m
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=0897e1b0">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=53c5cbb5">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1449,12 +1449,12 @@ Edgar Salli de Cameroon es el jugador más  con 1.63 m
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=eaa05503">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=57a8e473">
 <div class="input">
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">team_apps</span><span class="p">(</span><span class="n">team</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">team_apps</span><span class="p">(</span><span class="n">team</span><span class="p">):</span>
     <span class="n">players</span> <span class="o">=</span> <span class="n">team</span><span class="o">.</span><span class="n">player_set</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">national_team_apps__isnull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">media</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">national_team_apps</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">players</span><span class="p">])</span> <span class="o">/</span> <span class="n">players</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="n">nuevito</span> <span class="o">=</span> <span class="n">players</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">'national_team_apps'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">national_team_apps</span>
@@ -1482,7 +1482,7 @@ Edgar Salli de Cameroon es el jugador más  con 1.63 m
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=85820e56">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=7c7c1fa8">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1492,12 +1492,12 @@ Edgar Salli de Cameroon es el jugador más  con 1.63 m
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=71b82cdd">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=6edec1e2">
 <div class="input">
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">team_ataque</span><span class="p">(</span><span class="n">team</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">team_ataque</span><span class="p">(</span><span class="n">team</span><span class="p">):</span>
     <span class="n">players</span> <span class="o">=</span> <span class="n">team</span><span class="o">.</span><span class="n">player_set</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s1">'FW'</span><span class="p">,</span> <span class="n">national_team_goals__isnull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">media</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">national_team_goals</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">players</span><span class="p">])</span> <span class="o">/</span> <span class="n">players</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="n">funes_mori</span> <span class="o">=</span> <span class="n">players</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">'national_team_goals'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -1576,7 +1576,7 @@ South Korea. Máximo goleador: Park Chu-Young (24). Más perro: Kim Shin-Wook (3
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=64e60804">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=665492bb">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1625,7 +1625,7 @@ South Korea. Máximo goleador: Park Chu-Young (24). Más perro: Kim Shin-Wook (3
         </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
         </script></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

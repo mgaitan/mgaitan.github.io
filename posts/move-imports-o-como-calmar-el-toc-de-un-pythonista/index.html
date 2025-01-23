@@ -127,15 +127,15 @@ sus mañosas convenciones del lenguaje a cuestas. Una de ellas está <a href="ht
 <p lang="en" dir="ltr">being a programmer, I'm too lazy to spend 8 hours mindlessly performing a function, but not too lazy to spend 16 hours automating it.</p>— Martín Gaitán (@tin_nqn_) <a href="https://twitter.com/tin_nqn_/status/1253521851894181889?ref_src=twsrc%5Etfw">April 24, 2020</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>Por ejemplo un módulo <code>path/to_refactor.py</code> con este contenido:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sin</span>
 
-<span class="k">def</span> <span class="nf">spam</span><span class="p">():</span>
-    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span>
-    <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">spam</span><span class="p">():</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">cos</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dt</span>
     <span class="k">return</span> <span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">cos</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">ham</span><span class="p">():</span>
-    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">tan</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ham</span><span class="p">():</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">tan</span>
     <span class="k">return</span> <span class="n">tan</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -144,14 +144,14 @@ sus mañosas convenciones del lenguaje a cuestas. Una de ellas está <a href="ht
 </pre></div>
 
 <p>y queda así:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">tan</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">tan</span>
 
 
-<span class="k">def</span> <span class="nf">spam</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">spam</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">cos</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">ham</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ham</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">tan</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -222,7 +222,7 @@ de todos los nodos con <code>ast.walk(mod)</code> donde <code>mod</code> es el n
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

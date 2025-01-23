@@ -78,7 +78,36 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion/" class="u-url">Curso de Python para ciencias e ingeniería, nueva edición</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-padronazo-cordobes/" class="u-url">El padronazo cordobés</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/el-padronazo-cordobes/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-10-13T19:04:48-03:00" itemprop="datePublished" title="2015-10-13 19:04">2015-10-13 19:04</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/el-padronazo-cordobes/#disqus_thread" data-disqus-identifier="cache/posts/el-padronazo-cordobes.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://opendatacordoba.org/">Open Data Córdoba</a> es un colectivo abierto y multidisciplinario sin fines de lucro cuyo objetivo principal es difundir y transparentar el uso de la tecnología y los datos masivos para beneficio del conjunto de la sociedad, especialmente en la provincia de Córdoba.</p>
+<p>El grupo <a href="http://opendatacordoba.org/blog/democracia-con-codigos-asi-nacio-opendatacordoba/">nació</a> en época de elecciones, intentando echar un manto de luz a las sospechas fundadas de desprolijidades en el escrutinio provisorio de las legislativas de 2013. Luego de muchas otras iniciativas y bastante perseverancia docente de algunos de nuestros compañeros, nuestra contribución ha empezado a ser reconocida desde los medios locales, algunas agrupaciones políticas y otras organizaciones de la sociedad civil que abogan por la transparencia y el fortalecimiento de las instituciones.</p>
+<p>En este contexto, el portal de noticias <a href="http://www.cba24n.com.ar">Cba24N</a>, perteneciente al grupo de Servicios de Radio y Televisión (SRT) de la Universidad Nacional de Córdoba, nos ha invitado a realizar análisis de datos "en vivo" el próximo 25 de octubre, día de las elecciones nacionales.</p>
+<p>Hay muchas <a href="https://hackdash.org/dashboards/odc2015">ideas para ese día</a> que ojalá podamos llevar adelante, aunque vale resaltar (<strike>atajarse</strike>) que se trata de una tarea totalmente voluntaria . Mientras tanto, el domingo pasado me dediqué a jugar con algunas agregaciones sobre el padrón de Córdoba para encontrar "notas de color" analizando nombres y apellidos de los votantes</p>
+<p class="more"><a href="posts/el-padronazo-cordobes/">Leer más…</a></p>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion/" class="u-url">Curso de Python para ciencias e ingeniería, nueva edición</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -185,7 +214,7 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyquery</span> <span class="kn">import</span> <span class="n">PyQuery</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyquery</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyQuery</span>
 <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">skip</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'M0yuFHbhYLY'</span><span class="p">,</span><span class="s1">'TLmMh9Qvmic'</span><span class="p">,</span> <span class="s1">'rY4Hwvn6GlA'</span><span class="p">)</span>
 
@@ -320,20 +349,20 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span> 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">moviepy.editor</span> <span class="kn">import</span> <span class="n">VideoFileClip</span><span class="p">,</span> <span class="n">concatenate</span><span class="p">,</span> <span class="n">TextClip</span><span class="p">,</span> <span class="n">CompositeVideoClip</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">moviepy.editor</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoFileClip</span><span class="p">,</span> <span class="n">concatenate</span><span class="p">,</span> <span class="n">TextClip</span><span class="p">,</span> <span class="n">CompositeVideoClip</span>
 
 
-<span class="k">def</span> <span class="nf">convert_time</span><span class="p">(</span><span class="n">timestring</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_time</span><span class="p">(</span><span class="n">timestring</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">""" Converts a string into seconds """</span>
     <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d+'</span><span class="p">,</span> <span class="n">timestring</span><span class="p">)]</span>
     <span class="k">return</span> <span class="mi">3600</span> <span class="o">*</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">60</span><span class="o">*</span><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span>
 
 
-<span class="k">def</span> <span class="nf">get_time_texts</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_time_texts</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
@@ -350,7 +379,7 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
             <span class="n">current_text</span> <span class="o">=</span> <span class="n">current_text</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="s2">" "</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">times_texts</span>
 
-<span class="k">def</span> <span class="nf">find_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">times_texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mf">.4</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">times_texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mf">.4</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">""" Finds all 'exact' (t_start, t_end) for a word """</span>
     <span class="n">matches</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
                <span class="k">for</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">text</span><span class="p">)</span> <span class="ow">in</span> <span class="n">times_texts</span><span class="p">]</span>
@@ -360,12 +389,12 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
              <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)]</span>
 
 
-<span class="k">def</span> <span class="nf">get_subclips</span><span class="p">(</span><span class="n">video_path</span><span class="p">,</span> <span class="n">cuts</span><span class="p">):</span>   
+<span class="k">def</span><span class="w"> </span><span class="nf">get_subclips</span><span class="p">(</span><span class="n">video_path</span><span class="p">,</span> <span class="n">cuts</span><span class="p">):</span>   
     <span class="n">video</span> <span class="o">=</span> <span class="n">VideoFileClip</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">video</span><span class="o">.</span><span class="n">subclip</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="n">cuts</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">get_all_subclips_for</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">'*.mp4'</span><span class="p">,</span> <span class="n">sub_ext</span><span class="o">=</span><span class="s1">'.es.srt'</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_all_subclips_for</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">'*.mp4'</span><span class="p">,</span> <span class="n">sub_ext</span><span class="o">=</span><span class="s1">'.es.srt'</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="n">subclips</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">mp4</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
         <span class="n">sub</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">mp4</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sub_ext</span>
@@ -430,7 +459,7 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_preview</span><span class="p">(</span><span class="n">subclips</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_preview</span><span class="p">(</span><span class="n">subclips</span><span class="p">):</span>
     <span class="n">subclips_</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">clip</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subclips</span><span class="p">):</span>
         <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">TextClip</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
@@ -508,10 +537,10 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">moviepy.video.tools.segmenting</span> <span class="kn">import</span> <span class="n">findObjects</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">moviepy.video.tools.segmenting</span><span class="w"> </span><span class="kn">import</span> <span class="n">findObjects</span>
 
-<span class="k">def</span> <span class="nf">arrive</span><span class="p">(</span><span class="n">screenpos</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">nletters</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">arrive</span><span class="p">(</span><span class="n">screenpos</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">nletters</span><span class="p">):</span>
     <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">d</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
     <span class="k">return</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">screenpos</span><span class="o">-</span><span class="mi">400</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">d</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">0.2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
@@ -523,7 +552,7 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 
 <span class="n">letters</span> <span class="o">=</span> <span class="n">findObjects</span><span class="p">(</span><span class="n">cvc</span><span class="p">)</span> <span class="c1"># a list of ImageClips</span>
 
-<span class="k">def</span> <span class="nf">moveLetters</span><span class="p">(</span><span class="n">letters</span><span class="p">,</span> <span class="n">funcpos</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">moveLetters</span><span class="p">(</span><span class="n">letters</span><span class="p">,</span> <span class="n">funcpos</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span> <span class="n">letter</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="n">funcpos</span><span class="p">(</span><span class="n">letter</span><span class="o">.</span><span class="n">screenpos</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">letters</span><span class="p">)))</span>
               <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">letters</span><span class="p">)]</span>
 
@@ -595,7 +624,7 @@ se entregarán certificados oficiales a quienes completen asistencia y participa
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
         </script><!--End of body content--><footer id="footer">
-            Contents © 2024         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
