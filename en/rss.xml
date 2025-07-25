@@ -1,19 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/en/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 Jul 2025 12:38:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Automatic dependencies management for Python scripts with autopep723</title><link>https://mgaitan.github.io/en/posts/dependencias-automaticas-scripts-python-autopep723/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Have you ever wished you could run a Python script without worrying about installing its dependencies first?&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/en/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 Jul 2025 12:44:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Automatic dependencies management for Python scripts with autopep723</title><link>https://mgaitan.github.io/en/posts/dependencias-automaticas-scripts-python-autopep723/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Have you ever wished you could run a Python script without worrying about installing its dependencies first?&lt;/p&gt;
 &lt;p&gt;We've all been there. You need to hack a small piece of code, maybe your LLM friend gives you a useful Python script you want to try, or you found something on Stack Overflow (God rest its soul) or gist. But if you try to run it directly:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="ne"&gt;ModuleNotFoundError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="s1"&gt;'your_experiment_dependency'&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then begins the bureaucracy of checking which packages you need, with the aggravating factor that many times the name with which it is installed does not correspond to the name that is imported, dealing with version conflicts and overloading your environment.&lt;/p&gt;
 &lt;p&gt;If everyone agrees that Python is a pragmatic and elegant language that's ideal for scripts, why does this part have to be complicated?&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://mgaitan.github.io/en/posts/dependencias-automaticas-scripts-python-autopep723/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>automation</category><category>dependencies</category><category>pep723</category><category>python</category><category>uv</category><guid>https://mgaitan.github.io/en/posts/dependencias-automaticas-scripts-python-autopep723/</guid><pubDate>Fri, 25 Jul 2025 11:00:00 GMT</pubDate></item><item><title>We are nerds, we are cheesy</title><link>https://mgaitan.github.io/en/posts/test/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=a4ed01ad"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/en/posts/dependencias-automaticas-scripts-python-autopep723/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>automation</category><category>dependencies</category><category>pep723</category><category>python</category><category>uv</category><guid>https://mgaitan.github.io/en/posts/dependencias-automaticas-scripts-python-autopep723/</guid><pubDate>Fri, 25 Jul 2025 11:00:00 GMT</pubDate></item><item><title>Animated SVGs for your CLI program demos</title><link>https://mgaitan.github.io/en/posts/animated-svgs-for-your-cli-program-demos/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;Want to show off how cool your command-line program is with a demo of real-world usage? Want to avoid your demo easily becoming outdated? Want to include the demo on sites that don't allow videos or JavaScript, like GitHub or Pypi &lt;code&gt;README&lt;/code&gt; files?&lt;/p&gt;
+&lt;p&gt;Animated SVGs generated programmatically are the solution! They are embedded like a normal image but are lighter than GIFs, play automatically on the same page, don't require JavaScript, and keep the text sharp regardless of zoom.&lt;/p&gt;
+&lt;p&gt;Plus, automating your demos gives you total control and lets you programmatically regenerate the visual result when the CLI changes or you want to make changes.&lt;/p&gt;
+&lt;p&gt;As an example, here's a demo of a little program I made recently called &lt;a href="https://github.com/mgaitan/cuitonline"&gt;cuitonline&lt;/a&gt; which looks like this for its 0.1 version:&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;img width="90%" src="https://raw.githubusercontent.com/mgaitan/cuitonline/refs/tags/0.1/demo/usage.svg"&gt;
+&lt;/p&gt;
+
+&lt;h3&gt;How do we do it?&lt;/h3&gt;
+&lt;p&gt;We're going to use the following tools, all open source.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/veracioux/tuterm"&gt;tuterm&lt;/a&gt;&lt;/strong&gt;: It's a bash tool for creating demos of CLI programs. You define a "script" (in the best sense of the word) that lets you control the commands that are executed (for real!) in the console, what comment to show, and what other auxiliary commands to run.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;uvx&lt;/strong&gt;: It's the equivalent of &lt;code&gt;pipx&lt;/code&gt; for &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt;. We use it to run &lt;code&gt;asciinema&lt;/code&gt; managing dependencies and installing it in a virtual environment automatically.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.asciinema.org/manual/cli/"&gt;asciinema&lt;/a&gt;&lt;/strong&gt;: Records terminal sessions and saves them in a text format. By default, these files are uploaded and shared through &lt;a href="https://asciinema.org/"&gt;asciinema.org&lt;/a&gt;, which is great, but the player requires JavaScript, which limits its use. That's why we convert it to SVG.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/marionebl/svg-term-cli"&gt;svg-term-cli&lt;/a&gt;&lt;/strong&gt;: Converts asciinema recordings into animated SVGs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Step by step&lt;/h3&gt;
+&lt;h4&gt;1. Write the script&lt;/h4&gt;
+&lt;p&gt;Following the example of &lt;code&gt;cuitonline&lt;/code&gt; shown above. I named the &lt;code&gt;tuterm&lt;/code&gt; script &lt;code&gt;usage.tutorial&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="c1"&gt;# file: &amp;gt; cuitonline_usage&lt;/span&gt;
+prompt&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-ne&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"\033[1;35m\$ \033[0;33m"&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+configure&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;DELAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.02
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;DELAY_PROMPT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.2
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;COLOR_MESSAGE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'1;32'&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+run&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;M&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Buscar por CUIT"&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;c&lt;span class="w"&gt; &lt;/span&gt;cuitonline&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;-22293909-8
+&lt;span class="w"&gt; &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;M&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Buscar por DNI"&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;c&lt;span class="w"&gt; &lt;/span&gt;cuitonline&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10433615&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;M&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Busca por nombre"&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;c&lt;span class="w"&gt; &lt;/span&gt;cuitonline&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"messi lionel andres"&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;clear
+&lt;span class="w"&gt; &lt;/span&gt;M&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Obtiene la página 2 de los resultados"&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;c&lt;span class="w"&gt; &lt;/span&gt;cuitonline&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"juan jose gonzalez"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-p2
+&lt;span class="w"&gt; &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Lines that start with &lt;code&gt;M&lt;/code&gt; are the comments. &lt;code&gt;c&lt;/code&gt; are commands that will be seen, and the rest are commands that will be executed but are not shown being typed.&lt;/p&gt;
+&lt;h4&gt;2. Record the terminal session&lt;/h4&gt;
+&lt;p&gt;Use asciinema to record the session while tuterm runs your demo:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;uvx&lt;span class="w"&gt; &lt;/span&gt;asciinema&lt;span class="w"&gt; &lt;/span&gt;rec&lt;span class="w"&gt; &lt;/span&gt;--overwrite&lt;span class="w"&gt; &lt;/span&gt;-c&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'tuterm usage.tutorial --mode demo'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;usage.cast
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;3. Convert the recording into an animated SVG&lt;/h4&gt;
+&lt;p&gt;With svg-term-cli we define the appearance of the "console" and convert the recording into an animated SVG:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;svg-term&lt;span class="w"&gt; &lt;/span&gt;--window&lt;span class="w"&gt; &lt;/span&gt;--width&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;75&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--height&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;24&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--padding&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--in&lt;span class="w"&gt; &lt;/span&gt;usage.cast&lt;span class="w"&gt; &lt;/span&gt;--out&lt;span class="w"&gt; &lt;/span&gt;usage.svg
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;4. Add the generated SVG to your &lt;code&gt;README.md&lt;/code&gt; file&lt;/h4&gt;
+&lt;p&gt;For example, if you upload it to &lt;code&gt;/demo/usage.svg&lt;/code&gt; of your repo,&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&amp;lt;p align="center"&amp;gt;
+&amp;lt;img width="90%" src="https://raw.githubusercontent.com/&amp;lt;user&amp;gt;/&amp;lt;repo&amp;gt;/refs/heads/main/demo/usage.svg" /&amp;gt;
+&amp;lt;/p&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And that's it! Now you have an animated, sharp, and programmatically maintainable demo for your CLI program directly in your GitHub README. 😎&lt;/p&gt;</description><guid>https://mgaitan.github.io/en/posts/animated-svgs-for-your-cli-program-demos/</guid><pubDate>Thu, 23 Jan 2025 19:02:18 GMT</pubDate></item><item><title>We are nerds, we are cheesy</title><link>https://mgaitan.github.io/en/posts/test/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=af7606ad"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="We-are-nerds,-we-are-cheesy-:)"&gt;We are nerds, we are cheesy :)&lt;a class="anchor-link" href="https://mgaitan.github.io/en/posts/test/#We-are-nerds,-we-are-cheesy-:)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;by &lt;a href="https://twitter.com/tin_nqn_"&gt;&lt;code&gt;@tin_nqn_&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=e955acee"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=f3e5b446"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -27,7 +97,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=85e84e79"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=511cfd9a"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -80,7 +150,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=e91ad3d6"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=81981834"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -104,7 +174,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=3d1a8851"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=fe3ece5a"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
