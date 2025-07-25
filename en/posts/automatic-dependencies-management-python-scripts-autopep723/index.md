@@ -1,6 +1,6 @@
 <!--
 .. title: Automatic dependencies management for Python scripts with autopep723
-.. slug: dependencias-automaticas-scripts-python-autopep723
+.. slug: automatic-dependencies-management-python-scripts-autopep723
 .. date: 2025-07-25 8:00:00 UTC-03:00
 .. tags: python, uv, pep723, dependencies, automation
 .. category: tools
