@@ -57,7 +57,7 @@ de modo que el propio script declare sus dependencias y sea "autocontenido".
 
 ```python
 # /// script
-# requires-python = ">=3.8"
+# requires-python = ">=3.12"
 # dependencies = [
 #     "httpx",
 #     "pandas",

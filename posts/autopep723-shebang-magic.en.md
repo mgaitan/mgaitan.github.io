@@ -55,7 +55,7 @@ A better step is to include a comment in the header of the script in the format 
 
 ```python
 # /// script
-# requires-python = ">=3.8"
+# requires-python = ">=3.12"
 # dependencies = [
 #     "httpx",
 #     "pandas",
