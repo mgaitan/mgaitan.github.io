@@ -77,10 +77,6 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
-        <li class="nav-item">
-    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
-    </li>
-
                 
             </ul>
 </div>
@@ -104,10 +100,9 @@ navbar-light bg-light
                 <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/pip_rapido.html">Comentarios</a>
 
 
-                    </p>
-<p class="sourceline"><a href="index.rst" class="sourcelink">El código de este artículo está disponible en </a></p>
-
-        </div>
+            
+        </p>
+</div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p><a class="reference external" href="http://pip-installer.org/">pip</a>  es una herramienta esencial
@@ -134,23 +129,23 @@ instala el paquete. El flag <code class="docutils literal"><span class="pre">--d
 cosa tediosa cuando tenemos que instalar frecuentemente (por ejemplo en distintos virtualenvs)
 la misma dependencia o cuando el uso de ancho de banda es limitado.</p>
 <p>Por ejemplo instalamos por primera vez <a class="reference external" href="http://lxml.de/">lxml</a> y vemos cuanto tarda.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-1" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-1" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>lxml<span class="w"> </span>--download-cache<span class="o">=</span>~/.pip_download
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-2" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-2" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-2"></a>Downloading/unpacking<span class="w"> </span>lxml
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-3" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-3" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-3"></a><span class="w">  </span>Downloading<span class="w"> </span>lxml-3.1.1.tar.gz<span class="w"> </span><span class="o">(</span><span class="m">3</span>.3MB<span class="o">)</span>:<span class="w"> </span><span class="m">3</span>.3MB<span class="w"> </span>downloaded
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-4" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-4" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-4"></a><span class="w">  </span>Storing<span class="w"> </span>download<span class="w"> </span><span class="k">in</span><span class="w"> </span>cache<span class="w"> </span>at<span class="w"> </span>/home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-5" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-5" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-5"></a><span class="w">  </span>Running<span class="w"> </span>setup.py<span class="w"> </span>egg_info<span class="w"> </span><span class="k">for</span><span class="w"> </span>package<span class="w"> </span>lxml
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-6" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-6" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-6"></a><span class="w">    </span>Building<span class="w"> </span>lxml<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.1.1.
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-7" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-7" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-7"></a>
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-8" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-8" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-8"></a><span class="w">    </span><span class="o">[</span>...<span class="w"> </span>compilación<span class="o">]</span>
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-9" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-9" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-9"></a>
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-10" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-10" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-10"></a>
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-11" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-11" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-11"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>lxml
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-12" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-12" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-12"></a>Cleaning<span class="w"> </span>up...
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-13" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-13" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-13"></a>
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-14" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-14" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-14"></a>real<span class="w">    </span>2m58.276s
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-15" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-15" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-15"></a>user<span class="w">    </span>0m38.822s
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-16" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-16" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-16"></a>sys<span class="w"> </span>0m0.676s
-<a id="rest_code_9e99f0bd64034035a1b34d6059ce97e6-17" name="rest_code_9e99f0bd64034035a1b34d6059ce97e6-17" href="#rest_code_9e99f0bd64034035a1b34d6059ce97e6-17"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$
+<div class="code"><pre class="code bash"><a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-1" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-1" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>lxml<span class="w"> </span>--download-cache<span class="o">=</span>~/.pip_download
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-2" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-2" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-2"></a>Downloading/unpacking<span class="w"> </span>lxml
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-3" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-3" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-3"></a><span class="w">  </span>Downloading<span class="w"> </span>lxml-3.1.1.tar.gz<span class="w"> </span><span class="o">(</span><span class="m">3</span>.3MB<span class="o">)</span>:<span class="w"> </span><span class="m">3</span>.3MB<span class="w"> </span>downloaded
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-4" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-4" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-4"></a><span class="w">  </span>Storing<span class="w"> </span>download<span class="w"> </span><span class="k">in</span><span class="w"> </span>cache<span class="w"> </span>at<span class="w"> </span>/home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-5" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-5" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-5"></a><span class="w">  </span>Running<span class="w"> </span>setup.py<span class="w"> </span>egg_info<span class="w"> </span><span class="k">for</span><span class="w"> </span>package<span class="w"> </span>lxml
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-6" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-6" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-6"></a><span class="w">    </span>Building<span class="w"> </span>lxml<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.1.1.
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-7" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-7" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-7"></a>
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-8" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-8" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-8"></a><span class="w">    </span><span class="o">[</span>...<span class="w"> </span>compilación<span class="o">]</span>
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-9" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-9" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-9"></a>
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-10" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-10" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-10"></a>
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-11" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-11" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-11"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>lxml
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-12" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-12" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-12"></a>Cleaning<span class="w"> </span>up...
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-13" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-13" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-13"></a>
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-14" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-14" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-14"></a>real<span class="w">    </span>2m58.276s
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-15" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-15" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-15"></a>user<span class="w">    </span>0m38.822s
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-16" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-16" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-16"></a>sys<span class="w"> </span>0m0.676s
+<a id="rest_code_b2df92509fb749cebaf2ea51c1b79546-17" name="rest_code_b2df92509fb749cebaf2ea51c1b79546-17" href="#rest_code_b2df92509fb749cebaf2ea51c1b79546-17"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$
 </pre></div>
 <p>¡3 minutos! Y eso que estoy en una conexión bastante rápida.</p>
 <aside class="admonition tip"><p class="admonition-title">Consejo</p>
@@ -162,27 +157,27 @@ por ejemplo.. code-block: bash</p>
 </blockquote>
 </aside><p>Pero sigamos: una vez cacheado, las siguientes veces que queramos instalar la misma versión de lxml
 no bajará <strong>el archivo</strong> de nuevo</p>
-<div class="code"><pre class="code bash"><a id="rest_code_3d939e3e81794683a084b50519dd2c96-1" name="rest_code_3d939e3e81794683a084b50519dd2c96-1" href="#rest_code_3d939e3e81794683a084b50519dd2c96-1"></a><span class="o">(</span>test2<span class="o">)</span>tin@traful:~/lab/test2$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>lxml<span class="w"> </span>--download-cache<span class="o">=</span>~/.pip_download
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-2" name="rest_code_3d939e3e81794683a084b50519dd2c96-2" href="#rest_code_3d939e3e81794683a084b50519dd2c96-2"></a>
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-3" name="rest_code_3d939e3e81794683a084b50519dd2c96-3" href="#rest_code_3d939e3e81794683a084b50519dd2c96-3"></a>Downloading/unpacking<span class="w"> </span>lxml
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-4" name="rest_code_3d939e3e81794683a084b50519dd2c96-4" href="#rest_code_3d939e3e81794683a084b50519dd2c96-4"></a><span class="w">  </span>Using<span class="w"> </span>download<span class="w"> </span>cache<span class="w"> </span>from<span class="w"> </span>/home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-5" name="rest_code_3d939e3e81794683a084b50519dd2c96-5" href="#rest_code_3d939e3e81794683a084b50519dd2c96-5"></a><span class="w">  </span>Running<span class="w"> </span>setup.py<span class="w"> </span>egg_info<span class="w"> </span><span class="k">for</span><span class="w"> </span>package<span class="w"> </span>lxml
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-6" name="rest_code_3d939e3e81794683a084b50519dd2c96-6" href="#rest_code_3d939e3e81794683a084b50519dd2c96-6"></a><span class="w">    </span>Building<span class="w"> </span>lxml<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.1.1.
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-7" name="rest_code_3d939e3e81794683a084b50519dd2c96-7" href="#rest_code_3d939e3e81794683a084b50519dd2c96-7"></a>
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-8" name="rest_code_3d939e3e81794683a084b50519dd2c96-8" href="#rest_code_3d939e3e81794683a084b50519dd2c96-8"></a><span class="w">    </span><span class="o">[</span>...<span class="w"> </span>compilación<span class="o">]</span>
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-9" name="rest_code_3d939e3e81794683a084b50519dd2c96-9" href="#rest_code_3d939e3e81794683a084b50519dd2c96-9"></a>
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-10" name="rest_code_3d939e3e81794683a084b50519dd2c96-10" href="#rest_code_3d939e3e81794683a084b50519dd2c96-10"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>lxml
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-11" name="rest_code_3d939e3e81794683a084b50519dd2c96-11" href="#rest_code_3d939e3e81794683a084b50519dd2c96-11"></a>Cleaning<span class="w"> </span>up...
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-12" name="rest_code_3d939e3e81794683a084b50519dd2c96-12" href="#rest_code_3d939e3e81794683a084b50519dd2c96-12"></a>
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-13" name="rest_code_3d939e3e81794683a084b50519dd2c96-13" href="#rest_code_3d939e3e81794683a084b50519dd2c96-13"></a>real<span class="w">    </span>2m30.624s
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-14" name="rest_code_3d939e3e81794683a084b50519dd2c96-14" href="#rest_code_3d939e3e81794683a084b50519dd2c96-14"></a>user<span class="w">    </span>0m38.966s
-<a id="rest_code_3d939e3e81794683a084b50519dd2c96-15" name="rest_code_3d939e3e81794683a084b50519dd2c96-15" href="#rest_code_3d939e3e81794683a084b50519dd2c96-15"></a>sys<span class="w"> </span>0m0.504s
+<div class="code"><pre class="code bash"><a id="rest_code_6c045adf2f6b494b831700737c68c222-1" name="rest_code_6c045adf2f6b494b831700737c68c222-1" href="#rest_code_6c045adf2f6b494b831700737c68c222-1"></a><span class="o">(</span>test2<span class="o">)</span>tin@traful:~/lab/test2$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>lxml<span class="w"> </span>--download-cache<span class="o">=</span>~/.pip_download
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-2" name="rest_code_6c045adf2f6b494b831700737c68c222-2" href="#rest_code_6c045adf2f6b494b831700737c68c222-2"></a>
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-3" name="rest_code_6c045adf2f6b494b831700737c68c222-3" href="#rest_code_6c045adf2f6b494b831700737c68c222-3"></a>Downloading/unpacking<span class="w"> </span>lxml
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-4" name="rest_code_6c045adf2f6b494b831700737c68c222-4" href="#rest_code_6c045adf2f6b494b831700737c68c222-4"></a><span class="w">  </span>Using<span class="w"> </span>download<span class="w"> </span>cache<span class="w"> </span>from<span class="w"> </span>/home/tin/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-5" name="rest_code_6c045adf2f6b494b831700737c68c222-5" href="#rest_code_6c045adf2f6b494b831700737c68c222-5"></a><span class="w">  </span>Running<span class="w"> </span>setup.py<span class="w"> </span>egg_info<span class="w"> </span><span class="k">for</span><span class="w"> </span>package<span class="w"> </span>lxml
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-6" name="rest_code_6c045adf2f6b494b831700737c68c222-6" href="#rest_code_6c045adf2f6b494b831700737c68c222-6"></a><span class="w">    </span>Building<span class="w"> </span>lxml<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.1.1.
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-7" name="rest_code_6c045adf2f6b494b831700737c68c222-7" href="#rest_code_6c045adf2f6b494b831700737c68c222-7"></a>
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-8" name="rest_code_6c045adf2f6b494b831700737c68c222-8" href="#rest_code_6c045adf2f6b494b831700737c68c222-8"></a><span class="w">    </span><span class="o">[</span>...<span class="w"> </span>compilación<span class="o">]</span>
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-9" name="rest_code_6c045adf2f6b494b831700737c68c222-9" href="#rest_code_6c045adf2f6b494b831700737c68c222-9"></a>
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-10" name="rest_code_6c045adf2f6b494b831700737c68c222-10" href="#rest_code_6c045adf2f6b494b831700737c68c222-10"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>lxml
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-11" name="rest_code_6c045adf2f6b494b831700737c68c222-11" href="#rest_code_6c045adf2f6b494b831700737c68c222-11"></a>Cleaning<span class="w"> </span>up...
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-12" name="rest_code_6c045adf2f6b494b831700737c68c222-12" href="#rest_code_6c045adf2f6b494b831700737c68c222-12"></a>
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-13" name="rest_code_6c045adf2f6b494b831700737c68c222-13" href="#rest_code_6c045adf2f6b494b831700737c68c222-13"></a>real<span class="w">    </span>2m30.624s
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-14" name="rest_code_6c045adf2f6b494b831700737c68c222-14" href="#rest_code_6c045adf2f6b494b831700737c68c222-14"></a>user<span class="w">    </span>0m38.966s
+<a id="rest_code_6c045adf2f6b494b831700737c68c222-15" name="rest_code_6c045adf2f6b494b831700737c68c222-15" href="#rest_code_6c045adf2f6b494b831700737c68c222-15"></a>sys<span class="w"> </span>0m0.504s
 </pre></div>
 <p>Mejoró realmente poco. ¿que clase de caché es esta?
 Chusmeemos que hay en el directorio.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_0326d242984149058bcf7c49cefa56da-1" name="rest_code_0326d242984149058bcf7c49cefa56da-1" href="#rest_code_0326d242984149058bcf7c49cefa56da-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$<span class="w"> </span>ls<span class="w"> </span>~/.pip_download_cache/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>lxml
-<a id="rest_code_0326d242984149058bcf7c49cefa56da-2" name="rest_code_0326d242984149058bcf7c49cefa56da-2" href="#rest_code_0326d242984149058bcf7c49cefa56da-2"></a>https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-<a id="rest_code_0326d242984149058bcf7c49cefa56da-3" name="rest_code_0326d242984149058bcf7c49cefa56da-3" href="#rest_code_0326d242984149058bcf7c49cefa56da-3"></a>https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
+<div class="code"><pre class="code bash"><a id="rest_code_8cf016106fcf47e48220e58766a537fc-1" name="rest_code_8cf016106fcf47e48220e58766a537fc-1" href="#rest_code_8cf016106fcf47e48220e58766a537fc-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>tin@traful:~/lab/test$<span class="w"> </span>ls<span class="w"> </span>~/.pip_download_cache/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>lxml
+<a id="rest_code_8cf016106fcf47e48220e58766a537fc-2" name="rest_code_8cf016106fcf47e48220e58766a537fc-2" href="#rest_code_8cf016106fcf47e48220e58766a537fc-2"></a>https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+<a id="rest_code_8cf016106fcf47e48220e58766a537fc-3" name="rest_code_8cf016106fcf47e48220e58766a537fc-3" href="#rest_code_8cf016106fcf47e48220e58766a537fc-3"></a>https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz.content-type
 </pre></div>
 <p>¿Caché de urls? <code class="docutils literal"><span class="pre">-download-cache</span></code> no evita todo el laburo de averiguar de dónde bajar,
 sino simplemente no baja si la url resultante ya existe (como nombre de un archivo)
@@ -197,18 +192,18 @@ usá <code class="docutils literal"><span class="pre">--download</span></code> p
 </blockquote>
 </section><section id="una-cache-sin-salir-a-la-red"><h2>Una caché sin salir a la red</h2>
 <p>Sigamosle la corriente al bueno de <a class="reference external" href="https://twitter.com/carljm">@carljm</a>:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-1" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-1" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-1"></a><span class="o">(</span>test3<span class="o">)</span>tin@traful:~/lab/test3$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--download<span class="o">=</span>~/.pip_packages<span class="w"> </span>lxml
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-2" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-2" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-2"></a>Downloading/unpacking<span class="w"> </span>lxml
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-3" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-3" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-3"></a><span class="w">  </span>Using<span class="w"> </span>download<span class="w"> </span>cache<span class="w"> </span>from<span class="w"> </span>/home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-4" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-4" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-4"></a>Saved<span class="w"> </span>/home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-5" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-5" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-5"></a><span class="w">    </span><span class="o">[</span>...<span class="o">]</span>
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-6" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-6" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-6"></a>
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-7" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-7" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-7"></a>Successfully<span class="w"> </span>downloaded<span class="w"> </span>lxml
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-8" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-8" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-8"></a>Cleaning<span class="w"> </span>up...
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-9" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-9" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-9"></a>
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-10" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-10" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-10"></a>real<span class="w">    </span>2m8.969s
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-11" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-11" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-11"></a>user<span class="w">    </span>0m1.008s
-<a id="rest_code_de80138dfcc04726b9631fe517c4e7fc-12" name="rest_code_de80138dfcc04726b9631fe517c4e7fc-12" href="#rest_code_de80138dfcc04726b9631fe517c4e7fc-12"></a>sys<span class="w"> </span>0m0.136s
+<div class="code"><pre class="code bash"><a id="rest_code_d06ca99bef164664a06e5e48c3776f08-1" name="rest_code_d06ca99bef164664a06e5e48c3776f08-1" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-1"></a><span class="o">(</span>test3<span class="o">)</span>tin@traful:~/lab/test3$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--download<span class="o">=</span>~/.pip_packages<span class="w"> </span>lxml
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-2" name="rest_code_d06ca99bef164664a06e5e48c3776f08-2" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-2"></a>Downloading/unpacking<span class="w"> </span>lxml
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-3" name="rest_code_d06ca99bef164664a06e5e48c3776f08-3" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-3"></a><span class="w">  </span>Using<span class="w"> </span>download<span class="w"> </span>cache<span class="w"> </span>from<span class="w"> </span>/home/mgaitan/.pip_download_cache/https%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fl%2Flxml%2Flxml-3.1.1.tar.gz
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-4" name="rest_code_d06ca99bef164664a06e5e48c3776f08-4" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-4"></a>Saved<span class="w"> </span>/home/mgaitan/.pip_packages/lxml-3.1.1.tar.gz
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-5" name="rest_code_d06ca99bef164664a06e5e48c3776f08-5" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-5"></a><span class="w">    </span><span class="o">[</span>...<span class="o">]</span>
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-6" name="rest_code_d06ca99bef164664a06e5e48c3776f08-6" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-6"></a>
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-7" name="rest_code_d06ca99bef164664a06e5e48c3776f08-7" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-7"></a>Successfully<span class="w"> </span>downloaded<span class="w"> </span>lxml
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-8" name="rest_code_d06ca99bef164664a06e5e48c3776f08-8" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-8"></a>Cleaning<span class="w"> </span>up...
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-9" name="rest_code_d06ca99bef164664a06e5e48c3776f08-9" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-9"></a>
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-10" name="rest_code_d06ca99bef164664a06e5e48c3776f08-10" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-10"></a>real<span class="w">    </span>2m8.969s
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-11" name="rest_code_d06ca99bef164664a06e5e48c3776f08-11" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-11"></a>user<span class="w">    </span>0m1.008s
+<a id="rest_code_d06ca99bef164664a06e5e48c3776f08-12" name="rest_code_d06ca99bef164664a06e5e48c3776f08-12" href="#rest_code_d06ca99bef164664a06e5e48c3776f08-12"></a>sys<span class="w"> </span>0m0.136s
 </pre></div>
 <p>¡Uff, 2 minutos en copiar un archivo que ya tenía bajado! (evidentemente lo que demora mucho
 es <em>averiguar</em> la versión del archivo a bajar)</p>
@@ -217,26 +212,26 @@ es <em>averiguar</em> la versión del archivo a bajar)</p>
 da con el paquete lxml a bajar haciendo el comando más verborrágico con
 <code class="docutils literal">pip install lxml <span class="pre">-vvv</span></code></p>
 </aside><p>En este caso, el caché es directamente el archivo:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_fb42b8c247974e92b5d39b68967dbdae-1" name="rest_code_fb42b8c247974e92b5d39b68967dbdae-1" href="#rest_code_fb42b8c247974e92b5d39b68967dbdae-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>mgaitan@traful:~/lab/test$<span class="w"> </span>ls<span class="w"> </span>~/.pip_packages/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>lxml
-<a id="rest_code_fb42b8c247974e92b5d39b68967dbdae-2" name="rest_code_fb42b8c247974e92b5d39b68967dbdae-2" href="#rest_code_fb42b8c247974e92b5d39b68967dbdae-2"></a>lxml-3.1.1.tar.gz
+<div class="code"><pre class="code bash"><a id="rest_code_f0320aa3d4c343c3a19305ce6a6486cf-1" name="rest_code_f0320aa3d4c343c3a19305ce6a6486cf-1" href="#rest_code_f0320aa3d4c343c3a19305ce6a6486cf-1"></a><span class="o">(</span><span class="nb">test</span><span class="o">)</span>mgaitan@traful:~/lab/test$<span class="w"> </span>ls<span class="w"> </span>~/.pip_packages/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>lxml
+<a id="rest_code_f0320aa3d4c343c3a19305ce6a6486cf-2" name="rest_code_f0320aa3d4c343c3a19305ce6a6486cf-2" href="#rest_code_f0320aa3d4c343c3a19305ce6a6486cf-2"></a>lxml-3.1.1.tar.gz
 </pre></div>
 <p>Por suerte, una vez cacheado el paquete de esta manera no tendremos
 que consultar el índice online las siguientes veces.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-1" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-1" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-1"></a><span class="o">(</span>test3<span class="o">)</span>mgaitan@traful:~/lab/test3$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class="w"> </span>--find-links<span class="o">=</span>~/.pip_packages<span class="w"> </span>lxml
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-2" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-2" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-2"></a>Ignoring<span class="w"> </span>indexes:<span class="w"> </span>https://pypi.python.org/simple/
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-3" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-3" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-3"></a>Downloading/unpacking<span class="w"> </span>lxml
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-4" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-4" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-4"></a><span class="w">  </span>Running<span class="w"> </span>setup.py<span class="w"> </span>egg_info<span class="w"> </span><span class="k">for</span><span class="w"> </span>package<span class="w"> </span>lxml
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-5" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-5" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-5"></a><span class="w">    </span>Building<span class="w"> </span>lxml<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.1.1.
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-6" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-6" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-6"></a>
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-7" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-7" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-7"></a><span class="w">    </span><span class="o">[</span>...<span class="o">]</span>
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-8" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-8" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-8"></a>
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-9" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-9" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-9"></a>
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-10" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-10" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-10"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>lxml
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-11" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-11" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-11"></a>Cleaning<span class="w"> </span>up...
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-12" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-12" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-12"></a>
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-13" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-13" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-13"></a>real<span class="w">    </span>0m38.944s
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-14" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-14" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-14"></a>user<span class="w">    </span>0m38.338s
-<a id="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-15" name="rest_code_6bdf4e6a207140db80c7bb3510f86a0a-15" href="#rest_code_6bdf4e6a207140db80c7bb3510f86a0a-15"></a>sys<span class="w"> </span>0m0.564s
+<div class="code"><pre class="code bash"><a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-1" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-1" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-1"></a><span class="o">(</span>test3<span class="o">)</span>mgaitan@traful:~/lab/test3$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class="w"> </span>--find-links<span class="o">=</span>~/.pip_packages<span class="w"> </span>lxml
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-2" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-2" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-2"></a>Ignoring<span class="w"> </span>indexes:<span class="w"> </span>https://pypi.python.org/simple/
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-3" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-3" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-3"></a>Downloading/unpacking<span class="w"> </span>lxml
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-4" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-4" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-4"></a><span class="w">  </span>Running<span class="w"> </span>setup.py<span class="w"> </span>egg_info<span class="w"> </span><span class="k">for</span><span class="w"> </span>package<span class="w"> </span>lxml
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-5" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-5" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-5"></a><span class="w">    </span>Building<span class="w"> </span>lxml<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.1.1.
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-6" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-6" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-6"></a>
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-7" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-7" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-7"></a><span class="w">    </span><span class="o">[</span>...<span class="o">]</span>
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-8" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-8" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-8"></a>
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-9" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-9" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-9"></a>
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-10" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-10" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-10"></a>Successfully<span class="w"> </span>installed<span class="w"> </span>lxml
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-11" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-11" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-11"></a>Cleaning<span class="w"> </span>up...
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-12" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-12" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-12"></a>
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-13" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-13" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-13"></a>real<span class="w">    </span>0m38.944s
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-14" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-14" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-14"></a>user<span class="w">    </span>0m38.338s
+<a id="rest_code_a603e1a1c701464180a682e9ec7a0e90-15" name="rest_code_a603e1a1c701464180a682e9ec7a0e90-15" href="#rest_code_a603e1a1c701464180a682e9ec7a0e90-15"></a>sys<span class="w"> </span>0m0.564s
 </pre></div>
 <p>Ok, ya va mejor.</p>
 </section><section id="haciendo-que-la-cosa-vuele-no-recompiles-la-rueda"><h2>Haciendo que la cosa vuele: no recompiles la rueda</h2>
@@ -246,26 +241,26 @@ que es muchísimo más rápido que instalar desde fuentes (sobre todo en casos
 que se debe compilar, como lxml)</p>
 <p>Para usar wheel el paquete a bajar tiene que existir en dicho formato y todavía no abundan
 en PyPi asi que podemos armarlos localmente con el propio pip</p>
-<div class="code"><pre class="code bash"><a id="rest_code_7c0460afd8804850ab588178139479a1-1" name="rest_code_7c0460afd8804850ab588178139479a1-1" href="#rest_code_7c0460afd8804850ab588178139479a1-1"></a>pip<span class="w"> </span>wheel<span class="w"> </span>--wheel-dir<span class="o">=</span>./pip_packages<span class="w"> </span>lxml
+<div class="code"><pre class="code bash"><a id="rest_code_884231443b6343c396de2651fa93ba2b-1" name="rest_code_884231443b6343c396de2651fa93ba2b-1" href="#rest_code_884231443b6343c396de2651fa93ba2b-1"></a>pip<span class="w"> </span>wheel<span class="w"> </span>--wheel-dir<span class="o">=</span>./pip_packages<span class="w"> </span>lxml
 </pre></div>
 <p>Eso es similar a usar <code class="docutils literal"><span class="pre">--download</span></code> pero además compila y empaqueta como
 un archivo <code class="docutils literal">.whl</code></p>
 <p>Para que pip acepte instalar estos archivos hay que usar <code class="docutils literal"><span class="pre">--use-wheel</span></code>
 y para que los busque localmente haremos:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_832fdb5e019c40bf9fcaa015502e967e-1" name="rest_code_832fdb5e019c40bf9fcaa015502e967e-1" href="#rest_code_832fdb5e019c40bf9fcaa015502e967e-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--use-wheel<span class="w"> </span>--no-index<span class="w"> </span>--find-links<span class="o">=</span>~/.pip_packages<span class="w"> </span>lxml
+<div class="code"><pre class="code bash"><a id="rest_code_8bc3e7a70dd248b4ac8947fc74f587bb-1" name="rest_code_8bc3e7a70dd248b4ac8947fc74f587bb-1" href="#rest_code_8bc3e7a70dd248b4ac8947fc74f587bb-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--use-wheel<span class="w"> </span>--no-index<span class="w"> </span>--find-links<span class="o">=</span>~/.pip_packages<span class="w"> </span>lxml
 </pre></div>
 <p>¡Lo que tardó menos de 2 decimas de segundo! Un speedup del 90mil veces respecto al primer
 y canónico <code class="docutils literal">pip install lxml</code></p>
-<div class="code"><pre class="code text"><a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-1" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-1" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-1"></a>(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
-<a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-2" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-2" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-2"></a>Ignoring indexes: https://pypi.python.org/simple/
-<a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-3" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-3" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-3"></a>Downloading/unpacking lxml
-<a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-4" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-4" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-4"></a>Installing collected packages: lxml
-<a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-5" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-5" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-5"></a>Successfully installed lxml
-<a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-6" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-6" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-6"></a>Cleaning up...
-<a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-7" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-7" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-7"></a>
-<a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-8" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-8" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-8"></a>real    0m0.180s
-<a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-9" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-9" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-9"></a>user    0m0.152s
-<a id="rest_code_39f1a90ad2444f46a238a5cae50c1845-10" name="rest_code_39f1a90ad2444f46a238a5cae50c1845-10" href="#rest_code_39f1a90ad2444f46a238a5cae50c1845-10"></a>sys 0m0.024s
+<div class="code"><pre class="code text"><a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-1" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-1" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-1"></a>(test)tin@morochita:~/lab/test$ time pip install --use-wheel --no-index --find-links=. lxml
+<a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-2" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-2" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-2"></a>Ignoring indexes: https://pypi.python.org/simple/
+<a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-3" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-3" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-3"></a>Downloading/unpacking lxml
+<a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-4" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-4" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-4"></a>Installing collected packages: lxml
+<a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-5" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-5" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-5"></a>Successfully installed lxml
+<a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-6" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-6" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-6"></a>Cleaning up...
+<a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-7" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-7" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-7"></a>
+<a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-8" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-8" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-8"></a>real    0m0.180s
+<a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-9" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-9" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-9"></a>user    0m0.152s
+<a id="rest_code_dddbd55a67ac4819aab1e018d31cffbb-10" name="rest_code_dddbd55a67ac4819aab1e018d31cffbb-10" href="#rest_code_dddbd55a67ac4819aab1e018d31cffbb-10"></a>sys 0m0.024s
 </pre></div>
 <p>Asi que ya sabés: todos esos paquetes que instalás en cada entorno (quizas ipython,
 django, whatever) me los haces rodar para que pip vuele.</p>

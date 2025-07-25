@@ -77,10 +77,6 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
-        <li class="nav-item">
-    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
-    </li>
-
                 
             </ul>
 </div>
@@ -104,10 +100,9 @@ navbar-light bg-light
                 <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/creando-un-nuevo-proyecto-python.html">Comentarios</a>
 
 
-                    </p>
-<p class="sourceline"><a href="index.rst" class="sourcelink">El código de este artículo está disponible en </a></p>
-
-        </div>
+            
+        </p>
+</div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>¿Así que querés comenzar un nuevo proyecto usando Python?
@@ -154,16 +149,16 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 </aside><ol class="arabic" start="3">
 <li>
 <p>Configurá virtualenvwrapper</p>
-<div class="code"><pre class="code bash"><a id="rest_code_6cf229873b344229a258ce0c774275c8-1" name="rest_code_6cf229873b344229a258ce0c774275c8-1" href="#rest_code_6cf229873b344229a258ce0c774275c8-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.virtualenvs<span class="w">           </span><span class="c1"># acá se van a guardar tus entornos virtuales</span>
-<a id="rest_code_6cf229873b344229a258ce0c774275c8-2" name="rest_code_6cf229873b344229a258ce0c774275c8-2" href="#rest_code_6cf229873b344229a258ce0c774275c8-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/proyectos<span class="w">              </span><span class="c1"># acá se van a guardar tus proyectos</span>
-<a id="rest_code_6cf229873b344229a258ce0c774275c8-3" name="rest_code_6cf229873b344229a258ce0c774275c8-3" href="#rest_code_6cf229873b344229a258ce0c774275c8-3"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.pip_download_cache<span class="w">     </span><span class="c1"># para no bajar paquetes cada vez</span>
+<div class="code"><pre class="code bash"><a id="rest_code_5a231e06a83e4caab2eecb8f714fd225-1" name="rest_code_5a231e06a83e4caab2eecb8f714fd225-1" href="#rest_code_5a231e06a83e4caab2eecb8f714fd225-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.virtualenvs<span class="w">           </span><span class="c1"># acá se van a guardar tus entornos virtuales</span>
+<a id="rest_code_5a231e06a83e4caab2eecb8f714fd225-2" name="rest_code_5a231e06a83e4caab2eecb8f714fd225-2" href="#rest_code_5a231e06a83e4caab2eecb8f714fd225-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/proyectos<span class="w">              </span><span class="c1"># acá se van a guardar tus proyectos</span>
+<a id="rest_code_5a231e06a83e4caab2eecb8f714fd225-3" name="rest_code_5a231e06a83e4caab2eecb8f714fd225-3" href="#rest_code_5a231e06a83e4caab2eecb8f714fd225-3"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.pip_download_cache<span class="w">     </span><span class="c1"># para no bajar paquetes cada vez</span>
 </pre></div>
 <p>Luego editá tu <code class="docutils literal"><span class="pre">~/.bashrc</span></code> agregando las siguientes líneas</p>
-<div class="code"><pre class="code bash"><a id="rest_code_7bb778dfd28b4e87804ad73815feddf0-1" name="rest_code_7bb778dfd28b4e87804ad73815feddf0-1" href="#rest_code_7bb778dfd28b4e87804ad73815feddf0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<a id="rest_code_7bb778dfd28b4e87804ad73815feddf0-2" name="rest_code_7bb778dfd28b4e87804ad73815feddf0-2" href="#rest_code_7bb778dfd28b4e87804ad73815feddf0-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
-<a id="rest_code_7bb778dfd28b4e87804ad73815feddf0-3" name="rest_code_7bb778dfd28b4e87804ad73815feddf0-3" href="#rest_code_7bb778dfd28b4e87804ad73815feddf0-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
-<a id="rest_code_7bb778dfd28b4e87804ad73815feddf0-4" name="rest_code_7bb778dfd28b4e87804ad73815feddf0-4" href="#rest_code_7bb778dfd28b4e87804ad73815feddf0-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
-<a id="rest_code_7bb778dfd28b4e87804ad73815feddf0-5" name="rest_code_7bb778dfd28b4e87804ad73815feddf0-5" href="#rest_code_7bb778dfd28b4e87804ad73815feddf0-5"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
+<div class="code"><pre class="code bash"><a id="rest_code_0fd9b407ce1d409baf18718cef87ee8a-1" name="rest_code_0fd9b407ce1d409baf18718cef87ee8a-1" href="#rest_code_0fd9b407ce1d409baf18718cef87ee8a-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<a id="rest_code_0fd9b407ce1d409baf18718cef87ee8a-2" name="rest_code_0fd9b407ce1d409baf18718cef87ee8a-2" href="#rest_code_0fd9b407ce1d409baf18718cef87ee8a-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<a id="rest_code_0fd9b407ce1d409baf18718cef87ee8a-3" name="rest_code_0fd9b407ce1d409baf18718cef87ee8a-3" href="#rest_code_0fd9b407ce1d409baf18718cef87ee8a-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
+<a id="rest_code_0fd9b407ce1d409baf18718cef87ee8a-4" name="rest_code_0fd9b407ce1d409baf18718cef87ee8a-4" href="#rest_code_0fd9b407ce1d409baf18718cef87ee8a-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<a id="rest_code_0fd9b407ce1d409baf18718cef87ee8a-5" name="rest_code_0fd9b407ce1d409baf18718cef87ee8a-5" href="#rest_code_0fd9b407ce1d409baf18718cef87ee8a-5"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
 </pre></div>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">$ source ~/.bashrc</pre>

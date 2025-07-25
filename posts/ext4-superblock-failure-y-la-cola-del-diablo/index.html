@@ -73,10 +73,6 @@ navbar-light bg-light
 <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
-        <li class="nav-item">
-    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
-    </li>
-
                 
             </ul>
 </div>
@@ -100,10 +96,9 @@ navbar-light bg-light
                 <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/ext4-superblock-failure-y-la-cola-del-diablo.html">Comentarios</a>
 
 
-                    </p>
-<p class="sourceline"><a href="index.rst" class="sourcelink">El código de este artículo está disponible en </a></p>
-
-        </div>
+            
+        </p>
+</div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>Domingo, ciudad de Guayaquil, todo dispuesto para salir a
@@ -171,13 +166,13 @@ de nuevo. Mientras tanto, el Dios en el que no creo me pone
 en el camino de resultados de Google.</p>
 <p>"Ernesto, prabamos esto?" y no alcanzó a contestar
 antes de que esté poniendo los primeros comandos</p>
-<div class="code"><pre class="code bash"><a id="rest_code_a76a2b0307f045f7b03daf4b7da0467d-1" name="rest_code_a76a2b0307f045f7b03daf4b7da0467d-1" href="#rest_code_a76a2b0307f045f7b03daf4b7da0467d-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>mke2fs<span class="w"> </span>-n<span class="w"> </span>/dev/sda3
-<a id="rest_code_a76a2b0307f045f7b03daf4b7da0467d-2" name="rest_code_a76a2b0307f045f7b03daf4b7da0467d-2" href="#rest_code_a76a2b0307f045f7b03daf4b7da0467d-2"></a>
-<a id="rest_code_a76a2b0307f045f7b03daf4b7da0467d-3" name="rest_code_a76a2b0307f045f7b03daf4b7da0467d-3" href="#rest_code_a76a2b0307f045f7b03daf4b7da0467d-3"></a>Superblock<span class="w"> </span>backups<span class="w"> </span>stored<span class="w"> </span>on<span class="w"> </span>blocks:
-<a id="rest_code_a76a2b0307f045f7b03daf4b7da0467d-4" name="rest_code_a76a2b0307f045f7b03daf4b7da0467d-4" href="#rest_code_a76a2b0307f045f7b03daf4b7da0467d-4"></a><span class="m">32768</span>,<span class="w"> </span><span class="m">98304</span>,<span class="w"> </span><span class="m">163840</span>,<span class="w"> </span><span class="m">229376</span>,<span class="w"> </span><span class="m">294912</span>,<span class="w"> </span><span class="m">819200</span>,<span class="w"> </span><span class="m">884736</span>,<span class="w"> </span><span class="m">1605632</span>,<span class="w"> </span><span class="m">2654208</span>
+<div class="code"><pre class="code bash"><a id="rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-1" name="rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-1" href="#rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>mke2fs<span class="w"> </span>-n<span class="w"> </span>/dev/sda3
+<a id="rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-2" name="rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-2" href="#rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-2"></a>
+<a id="rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-3" name="rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-3" href="#rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-3"></a>Superblock<span class="w"> </span>backups<span class="w"> </span>stored<span class="w"> </span>on<span class="w"> </span>blocks:
+<a id="rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-4" name="rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-4" href="#rest_code_e30f2d3f512d4334a1ed4ffb2ebe18c0-4"></a><span class="m">32768</span>,<span class="w"> </span><span class="m">98304</span>,<span class="w"> </span><span class="m">163840</span>,<span class="w"> </span><span class="m">229376</span>,<span class="w"> </span><span class="m">294912</span>,<span class="w"> </span><span class="m">819200</span>,<span class="w"> </span><span class="m">884736</span>,<span class="w"> </span><span class="m">1605632</span>,<span class="w"> </span><span class="m">2654208</span>
 </pre></div>
 <p>Me la juego con el primer backup:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_bf9df5d2439f41e69e3e76a9336fcd17-1" name="rest_code_bf9df5d2439f41e69e3e76a9336fcd17-1" href="#rest_code_bf9df5d2439f41e69e3e76a9336fcd17-1"></a>sudo<span class="w"> </span>e2fsck<span class="w"> </span>-b<span class="w"> </span><span class="m">32768</span><span class="w"> </span>/dev/sda3
+<div class="code"><pre class="code bash"><a id="rest_code_263b8f140bcd4902a235454d9c9db5a4-1" name="rest_code_263b8f140bcd4902a235454d9c9db5a4-1" href="#rest_code_263b8f140bcd4902a235454d9c9db5a4-1"></a>sudo<span class="w"> </span>e2fsck<span class="w"> </span>-b<span class="w"> </span><span class="m">32768</span><span class="w"> </span>/dev/sda3
 </pre></div>
 <p>Cientos de  <code class="docutils literal">Y</code> <code class="docutils literal">Enter</code> para mensajes estilo <em>"está roto, desea repararlo?"</em>
 (no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
