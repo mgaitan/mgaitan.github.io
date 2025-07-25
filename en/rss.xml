@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/en/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 19:56:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>We are nerds, we are cheesy</title><link>https://mgaitan.github.io/en/posts/test/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=16ba7897"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/en/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 Jul 2025 12:38:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Automatic dependencies management for Python scripts with autopep723</title><link>https://mgaitan.github.io/en/posts/dependencias-automaticas-scripts-python-autopep723/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Have you ever wished you could run a Python script without worrying about installing its dependencies first?&lt;/p&gt;
+&lt;p&gt;We've all been there. You need to hack a small piece of code, maybe your LLM friend gives you a useful Python script you want to try, or you found something on Stack Overflow (God rest its soul) or gist. But if you try to run it directly:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="ne"&gt;ModuleNotFoundError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="s1"&gt;'your_experiment_dependency'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then begins the bureaucracy of checking which packages you need, with the aggravating factor that many times the name with which it is installed does not correspond to the name that is imported, dealing with version conflicts and overloading your environment.&lt;/p&gt;
+&lt;p&gt;If everyone agrees that Python is a pragmatic and elegant language that's ideal for scripts, why does this part have to be complicated?&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/en/posts/dependencias-automaticas-scripts-python-autopep723/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>automation</category><category>dependencies</category><category>pep723</category><category>python</category><category>uv</category><guid>https://mgaitan.github.io/en/posts/dependencias-automaticas-scripts-python-autopep723/</guid><pubDate>Fri, 25 Jul 2025 11:00:00 GMT</pubDate></item><item><title>We are nerds, we are cheesy</title><link>https://mgaitan.github.io/en/posts/test/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=a4ed01ad"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="We-are-nerds,-we-are-cheesy-:)"&gt;We are nerds, we are cheesy :)&lt;a class="anchor-link" href="https://mgaitan.github.io/en/posts/test/#We-are-nerds,-we-are-cheesy-:)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;by &lt;a href="https://twitter.com/tin_nqn_"&gt;&lt;code&gt;@tin_nqn_&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=3c6d3ebd"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=e955acee"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -20,7 +27,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=d0bf6579"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=85e84e79"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -73,7 +80,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=1c86cc12"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=e91ad3d6"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -97,7 +104,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=ebf30659"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=3d1a8851"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
