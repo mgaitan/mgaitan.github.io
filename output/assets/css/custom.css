@@ -69,7 +69,7 @@ h1 a, h1 a:hover{
     margin-right: 35px;
 }
 
-ul.nav li a {
+ul.navbar-nav li a {
     height: 60px;
     color: #404040;
     font-family: sans-serif;
@@ -77,13 +77,17 @@ ul.nav li a {
     text-transform: uppercase;
 }
 
-ul.nav li a:hover {
+ul.navbar-nav li a:hover {
     text-decoration: underline;
 }
 
 .navbar-nav > li > a {
     padding-bottom: 20px;
     padding-top: 20px;
+}
+
+a.logo:hover {
+    text-decoration: none;
 }
 
 #blog-title {
@@ -108,7 +112,6 @@ ul.nav li a:hover {
 .metadata p:before, .postlist .listdate:before {
     content: "";
 }
-
 
 .metadata {
     margin-top: -20px;
@@ -136,6 +139,11 @@ ul.nav li a:hover {
 div.ps p {
     font-size: 1em;
     font-style: italic;
+}
+
+
+div.text_cell > div.input_prompt {
+    display: none;
 }
 
 div.prompt {

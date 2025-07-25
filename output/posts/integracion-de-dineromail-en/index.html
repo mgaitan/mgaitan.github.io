@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 " lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Integración de DineroMail en SimpleCart (js) | tin_nqn  </title>
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
-<link rel="canonical" href="http://mgaitan.github.io/posts/integracion-de-dineromail-en/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integración de DineroMail en SimpleCart (js) | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/posts/integracion-de-dineromail-en/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../simplecart-js-para-spip/" title="SimpleCart(js) para spip" type="text/html">
+<link rel="next" href="../charla-python-a-los-bifes/" title="Charla: python a los bifes" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="Integración de DineroMail en SimpleCart (js)">
-<meta property="og:url" content="http://mgaitan.github.io/posts/integracion-de-dineromail-en/">
+<meta property="og:url" content="https://mgaitan.github.io/posts/integracion-de-dineromail-en/">
 <meta property="og:description" content='Continuando con el artículo
 anterior hay tener en cuenta
 que cuando decimos "sistema de e-commerce simple" implica que tiene
@@ -33,50 +35,52 @@ En Argentina (y varios otros pais'>
 <meta name="twitter:creator:id" content="40654511">
 </head>
 <body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-static-top" role="navigation"><div class="container">
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
 <!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://mgaitan.github.io/">
+        <a class="logo" href="../../">
 
-                <div id="blog-title">
+            <div id="blog-title">
                     tin_nqn
                     <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
-                </div>
-            </a>
-        </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-<li>
-<a href="../../about.html">Sobre mí</a>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Sobre mí</a>
                 </li>
-<li>
-<a href="../../charlas.html">Charlas</a>
+<li class="nav-item">
+<a href="../../charlas/" class="nav-link">Charlas</a>
                 </li>
-<li>
-<a href="../../archive.html">Archivos</a>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archivos</a>
                 </li>
-<li>
-<a href="../../categories/index.html">Categorías</a>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Categorías</a>
                 </li>
-<li>
-<a href="../../rss.xml">RSS</a>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS</a>
 
                 
             </li>
 </ul>
-<ul class="nav navbar-nav navbar-right">
+<ul class="navbar-nav navbar-right">
 <li>            </li>
-<li><a href="../../en/" rel="alternate" hreflang="en">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+        <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
+    </li>
 
                 
             </ul>
@@ -84,26 +88,30 @@ En Argentina (y varios otros pais'>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><div class="container">
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
-        <div class="row">
-
-            <div class="col-md-offset-2 col-md-8">
-            
+        
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Integración de DineroMail en SimpleCart (js)</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2010-09-14T17:31:00-03:00" itemprop="datePublished" title="Fecha de publicación: 14/09/10 17:31:00">14/09/10 17:31:00</time></a></p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/integracion-de-dineromail-en.html">Comments</a>
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2010-09-14T17:31:00-03:00" itemprop="datePublished" title="2010-09-14 17:31">2010-09-14 17:31</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/integracion-de-dineromail-en.html">Comentarios</a>
 
 
-        </p>
-</div>
+                    </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">El código de este artículo está disponible en </a></p>
+
+        </div>
+        
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Continuando con el <a class="reference external" href="blog/article/simplecart-js-para-spip">artículo
+    <p>Continuando con el <a class="reference external" href="blog/article/simplecart-js-para-spip">artículo
 anterior</a> hay tener en cuenta
 que cuando decimos "sistema de e-commerce <strong>simple</strong>" implica que tiene
 que ser simple también para el comprador.</p>
@@ -114,12 +122,9 @@ en una cuenta de esas — salvo que sea un pago efectuado desde el
 extranjero — , y es bastante engorroso sacarla. Además, quizas lo más
 importante, no aceptan pagos la mayoría de las monedas locales
 latinoamericanas.</p>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td><a class="reference external" href="../../images/dineromail_pagos.jpg">|image1|</a></td>
-</tr></tbody>
-</table>
+<table><tbody><tr>
+<td><p><a class="reference external" href="../../images/dineromail_pagos.jpg">|image1|</a></p></td>
+</tr></tbody></table>
 <p>Por eso he integrado a <a class="reference external" href="http://simplecartjs.com/">SimpleCart (js)</a> el
 sistema de pagos virtuales <a class="reference external" href="http://dineromail.com/">Dineromail.com</a>
 que es similar a los otros pero orientado al mercado latinoamericano. Se
@@ -131,22 +136,16 @@ sobre SPIP, por lo que puede ser útil para usarlo independientemente o
 integrarlo con otro CMS.</p>
 <p>El código está <a class="reference external" href="http://github.com/nqnwebs/simplecart-js">disponible en
 GitHub</a></p>
-<div class="section" id="instalacion-rapida">
-<h2>Instalación rápida</h2>
+<section id="instalacion-rapida"><h2>Instalación rápida</h2>
 <p>Obviamente, se incluye el código javascript en la cabecera de la página
 HTML.</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 40)</p>
-Literal block expected; none found.</div>
-<p>y se definen, al menos, las variables requeridas:</p>
-<pre class="literal-block">
-&lt;/root&gt;
-</pre>
+<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 40)</p>
+<p>Literal block expected; none found.</p>
+</aside><p>y se definen, al menos, las variables requeridas:</p>
+<pre class="literal-block">&lt;/root&gt;</pre>
 <p>¡Listo! Al hacer Checkout, el contenido del carrito será enviado a
 DineroMail para procesar el pago.</p>
-</div>
-<div class="section" id="otros-parametros">
-<h2>Otros parámetros</h2>
+</section><section id="otros-parametros"><h2>Otros parámetros</h2>
 <p>El carrito de DineroMail tiene muchísimos parámetros opcionales que en
 su mayoría he omitido. Mirá el <a class="reference external" href="https://ar.dineromail.com/content/Integraci%C3%B3n-AR.pdf">manual de
 integración</a>
@@ -178,28 +177,24 @@ dmPaymentMethods
 Cadena de medios de pago permitidos. Por defecto elige todos los medios
 disponibles para el país, pero se puede configurar específicamente. Por
 ejemplo para permitir Pago Fácil, Rápipago y Visa en 1, 3 y 6 cuotas:
-<tt class="docutils literal">ar_dm;ar_pagofacil;ar_rapipago;ar_visa,1,3,6</tt>
-<strong>Nota:</strong> Todas las variables son atributos del objeto <tt class="docutils literal">simpleCart</tt>,
-por ejemplo <tt class="docutils literal">simpleCart.dmSellerName = "Vendedor Loco";</tt></p>
+<code class="docutils literal">ar_dm;ar_pagofacil;ar_rapipago;ar_visa,1,3,6</code>
+<strong>Nota:</strong> Todas las variables son atributos del objeto <code class="docutils literal">simpleCart</code>,
+por ejemplo <code class="docutils literal">simpleCart.dmSellerName = "Vendedor Loco";</code></p>
 <p>Además se puede asignar un código de producto al item.</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 92)</p>
-Literal block expected; none found.</div>
-<p>El valor ’X18A’ se envía a DineroMail para futuros controles del
+<aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 92)</p>
+<p>Literal block expected; none found.</p>
+</aside><p>El valor ’X18A’ se envía a DineroMail para futuros controles del
 vendedor.</p>
 <p>Es todo por ahora. ¡A vender!</p>
-</div>
-<div class="section" id="actualizacion">
-<h2>Actualización</h2>
+</section><section id="actualizacion"><h2>Actualización</h2>
 <p>Agregué unos selectores asociados al evento "click" para permitir
 cambiar dinámicamente el método de pago, de manera de darle más libertad
 al comprador.</p>
-<p>Basta con declarar un elemento que acepte el evento <a href="#id1"><span class="problematic" id="id2">``</span></a>onclick `` y
+<p>Basta con declarar un elemento que acepte el evento <a href="#system-message-1"><span class="problematic" id="problematic-1">``</span></a>onclick `` y
 asociarlo a alguna de estas clases</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 104); <em><a href="#id2">backlink</a></em></p>
-Inline literal start-string without end-string.</div>
-<p>class
+<aside class="system-message" id="system-message-1"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 104); <em><a href="#problematic-1">backlink</a></em></p>
+<p>Inline literal start-string without end-string.</p>
+</aside><p>class
 descripción
 simpleCart_to_paypal
 Activa PayPal como medio de pago
@@ -208,24 +203,9 @@ Activa Google Checkout como medio de pago
 simpleCart_to_dineromail
 Activa Google Checkout como medio de pago
 Un ejemplo de uso podría ser:</p>
-<pre class="literal-block">
-Elija su método de pago
-</pre>
+<pre class="literal-block">Elija su método de pago</pre>
+</section>
 </div>
-</div>
-    </div>
-
-
-
-   <hr>
-<div class="ps">
-            <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
-    <p>El código de este artículo está disponible en  <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/integracion-de-dineromail-en.rst" id="sourcelink">github</a>. ¿Encontraste un error? Por favor,  <a href="https://github.com/mgaitan/mgaitan.github.com/edit/writing/posts/integracion-de-dineromail-en.rst" id="sourcelink">enviame un pull request</a>.</p>
-    </div>
-
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/e-commerce/" rel="tag">E-Commerce</a></li>
             <li><a class="tag p-category" href="../../categories/javascript/" rel="tag">Javascript</a></li>
@@ -237,11 +217,11 @@ Elija su método de pago
             <li class="next">
                 <a href="../charla-python-a-los-bifes/" rel="next" title="Charla: python a los bifes">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
-                        <div id="disqus_thread"></div>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+                    <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
-            disqus_url="http://mgaitan.github.io/posts/integracion-de-dineromail-en/",
+            disqus_url="https://mgaitan.github.io/posts/integracion-de-dineromail-en/",
         disqus_title="Integraci\u00f3n de DineroMail en SimpleCart (js)",
         disqus_identifier="cache/posts/integracion-de-dineromail-en.html",
         disqus_config = function () {
@@ -257,21 +237,20 @@ Elija su método de pago
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer>
-                Contents © 2018         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
-<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
-                
-            </footer>
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
 </div>
-        </div>
-        <!--End of body content-->
-
-
-    </div>
 </div>
 
-            <script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 
         if(jQuery('html').attr('lang') === 'es'){

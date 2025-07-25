@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 " lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Yahoo! Pipes como por un tubo | tin_nqn  </title>
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
-<link rel="canonical" href="http://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><script src="../../assets/js/jquery.min.js"></script><meta name="author" content="Martín Gaitán">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yahoo! Pipes como por un tubo | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../esqueletos-accion/" title="Esqueletos Acción" type="text/html">
+<link rel="next" href="../mostrar-u-ocultar-contenido-facil/" title="Mostrar u ocultar contenido, fácil" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="Yahoo! Pipes como por un tubo">
-<meta property="og:url" content="http://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/">
+<meta property="og:url" content="https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/">
 <meta property="og:description" content="Yahoo! Pipes es una una herramienta web
 interactiva para agregar y manipular feeds RSS (y otras fuentes de
 datos) a nuestro antojo de forma sencilla y asequible para cualquiera.
@@ -32,50 +34,52 @@ Es un entorno de progr">
 <meta name="twitter:creator:id" content="40654511">
 </head>
 <body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-static-top" role="navigation"><div class="container">
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
 <!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://mgaitan.github.io/">
+        <a class="logo" href="../../">
 
-                <div id="blog-title">
+            <div id="blog-title">
                     tin_nqn
                     <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
-                </div>
-            </a>
-        </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-<li>
-<a href="../../about.html">Sobre mí</a>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Sobre mí</a>
                 </li>
-<li>
-<a href="../../charlas.html">Charlas</a>
+<li class="nav-item">
+<a href="../../charlas/" class="nav-link">Charlas</a>
                 </li>
-<li>
-<a href="../../archive.html">Archivos</a>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archivos</a>
                 </li>
-<li>
-<a href="../../categories/index.html">Categorías</a>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Categorías</a>
                 </li>
-<li>
-<a href="../../rss.xml">RSS</a>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS</a>
 
                 
             </li>
 </ul>
-<ul class="nav navbar-nav navbar-right">
+<ul class="navbar-nav navbar-right">
 <li>            </li>
-<li><a href="../../en/" rel="alternate" hreflang="en">English</a></li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+        <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">El código de este artículo está disponible en </a>
+    </li>
 
                 
             </ul>
@@ -83,26 +87,30 @@ Es un entorno de progr">
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><div class="container">
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
-        <div class="row">
-
-            <div class="col-md-offset-2 col-md-8">
-            
+        
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Yahoo! Pipes como por un tubo</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Martín Gaitán</span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2009-02-23T20:23:40-02:00" itemprop="datePublished" title="Fecha de publicación: 23/02/09 20:23:40">23/02/09 20:23:40</time></a></p>
-                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/yahoo-pipes-como-por-un-tubo.html">Comments</a>
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2009-02-23T20:23:40-02:00" itemprop="datePublished" title="2009-02-23 20:23">2009-02-23 20:23</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/yahoo-pipes-como-por-un-tubo.html">Comentarios</a>
 
 
-        </p>
-</div>
+                    </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">El código de este artículo está disponible en </a></p>
+
+        </div>
+        
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p><a class="reference external" href="http://pipes.yahoo.com">Yahoo! Pipes</a> es una una herramienta web
+    <p><a class="reference external" href="http://pipes.yahoo.com">Yahoo! Pipes</a> es una una herramienta web
 interactiva para agregar y manipular feeds RSS (y otras fuentes de
 datos) a nuestro antojo de forma sencilla y asequible para cualquiera.</p>
 <p>Es un entorno de programación visual online. La programación visual es
@@ -118,8 +126,7 @@ resultado en una salida final.</p>
 personalizado que contiene únicamente lo que se quiera tener, por
 ejemplo el resultado de mezclar y flitrar dos o más fuentes de
 información.</p>
-<div class="section" id="aplicandolo-a-spip">
-<h2>Aplicandolo a SPIP</h2>
+<section id="aplicandolo-a-spip"><h2>Aplicandolo a SPIP</h2>
 <p>Frecuentemente queremos ofrecer un canal RSS que provea tanto las breves
 como los artículos. SPIP maneja estos objetos independientemente y es
 muy dificil hacer un esqueleto que los mezcle (hay que trabajar con
@@ -127,17 +134,11 @@ pilas en PHP). Con Yahoo! Pipes es tan sencillo como mezclar los dos (o
 más) feeds.</p>
 <p>Esto lo hice en el sitio <a class="reference external" href="http://www.agrupacionmazamorra.com.ar">Agrupación
 Mazamorra</a>:</p>
-<div class="figure align-center">
-<img alt="" src="local/cache-vignettes/L510xH321/Pantallazo-90218.png">
-</div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 36)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-<p>El resultado puede verse (y clonarse) <a class="reference external" href="http://pipes.yahoo.com/mazamorra/rss_todo">desde
+<figure class="align-center"><img alt="" src="local/cache-vignettes/L510xH321/Pantallazo-90218.png"></figure><aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 36)</p>
+<p>Explicit markup ends without a blank line; unexpected unindent.</p>
+</aside><p>El resultado puede verse (y clonarse) <a class="reference external" href="http://pipes.yahoo.com/mazamorra/rss_todo">desde
 aquí</a></p>
-</div>
-<div class="section" id="mas-ejemplos">
-<h2>Más ejemplos</h2>
+</section><section id="mas-ejemplos"><h2>Más ejemplos</h2>
 <p>Pero mezclar feeds no es la única posibilidad. De hecho, Pipes es tan
 potente que permite obtener datos parseando un sitio web que no tenga un
 canal RSS o Atom disponible (pero eso es un uso muy avanzado y lo
@@ -151,40 +152,22 @@ que a este autor,</p>
 <p>Fácil: Busco el feed de la sección donde se publican sus columnas,
 filtro con la palabra clave ’Casciari’, y me libro de todo lo que no
 quiero. <a class="reference external" href="http://pipes.yahoo.com/mazamorra/casciari">Aquí el resultado</a></p>
-<div class="figure align-center">
-<img alt="" src="local/cache-vignettes/L465xH360/pipes2-4a406.png">
-</div>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 61)</p>
-Explicit markup ends without a blank line; unexpected unindent.</div>
-</div>
-<div class="section" id="ejemplo-en-video">
-<h2>Ejemplo en video</h2>
+<figure class="align-center"><img alt="" src="local/cache-vignettes/L465xH360/pipes2-4a406.png"></figure><aside class="system-message"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 61)</p>
+<p>Explicit markup ends without a blank line; unexpected unindent.</p>
+</aside></section><section id="ejemplo-en-video"><h2>Ejemplo en video</h2>
 <p>Un screencast de <a class="reference external" href="http://obm.corcoles.net">otro blog más</a></p>
 <blockquote>
-Un cierto blog no ofrece los RSS filtrados por categorías. O por
+<p>Un cierto blog no ofrece los RSS filtrados por categorías. O por
 autores. O por ‘tags’. O queremos el RSS de un sitio, eliminando,
 por ejemplo, todas las entradas que hablen de petanca o del chucho
 del autor. Vamos, que nos gustaría filtrar el RSS de acuerdo con
 algún criterio propio. Para eso (y para bastantes más cosas, pero
 centrémonos en esto) sirve Yahoo! Pipes. Para los interesados, un
 pequeño ’screencast’ que explica cómo recuperar las categorías (la
-de desarrollo web, en particular) que se ha cargado Feedburner…</blockquote>
+de desarrollo web, en particular) que se ha cargado Feedburner…</p>
+</blockquote>
+</section>
 </div>
-</div>
-    </div>
-
-
-
-   <hr>
-<div class="ps">
-            <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">También disponible en:</h3>
-        </div>
-
-    <p>El código de este artículo está disponible en  <a href="https://github.com/mgaitan/mgaitan.github.com/blob/writing/posts/yahoo-pipes-como-por-un-tubo.rst" id="sourcelink">github</a>. ¿Encontraste un error? Por favor,  <a href="https://github.com/mgaitan/mgaitan.github.com/edit/writing/posts/yahoo-pipes-como-por-un-tubo.rst" id="sourcelink">enviame un pull request</a>.</p>
-    </div>
-
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/spip/" rel="tag">spip</a></li>
             <li><a class="tag p-category" href="../../categories/web-20/" rel="tag">Web 2.0</a></li>
@@ -196,11 +179,11 @@ de desarrollo web, en particular) que se ha cargado Feedburner…</blockquote>
             <li class="next">
                 <a href="../mostrar-u-ocultar-contenido-facil/" rel="next" title="Mostrar u ocultar contenido, fácil">Siguiente post</a>
             </li>
-        </ul></nav></aside><section class="comments"><h2>Comentarios</h2>
-                        <div id="disqus_thread"></div>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+                    <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
-            disqus_url="http://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/",
+            disqus_url="https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/",
         disqus_title="Yahoo! Pipes como por un tubo",
         disqus_identifier="cache/posts/yahoo-pipes-como-por-un-tubo.html",
         disqus_config = function () {
@@ -216,21 +199,20 @@ de desarrollo web, en particular) que se ha cargado Feedburner…</blockquote>
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer>
-                Contents © 2018         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
-<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
-                
-            </footer>
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
 </div>
-        </div>
-        <!--End of body content-->
-
-
-    </div>
 </div>
 
-            <script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 
         if(jQuery('html').attr('lang') === 'es'){
