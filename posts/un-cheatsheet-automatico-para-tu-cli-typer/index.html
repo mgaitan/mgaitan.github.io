@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un cheatsheet automático para tu CLI Typer | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/posts/un-cheatsheet-automatico-para-tu-cli-typer/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../dependencias-automaticas-scripts-python-autopep723/" title="Depedencias automáticas en scripts Python con autopep723" type="text/html">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Un cheatsheet automático para tu CLI Typer">
+<meta property="og:url" content="https://mgaitan.github.io/posts/un-cheatsheet-automatico-para-tu-cli-typer/">
+<meta property="og:description" content="Typer es gran framework de CLIs del mismo autor que creó FastAPI. Permite crear interfaces de línea de comandos robustas e intuitivas basándose en anotaciones sobre los argumentos de funciones. Sin ha">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-10-30T19:18:39-03:00">
+<meta property="article:tag" content="cli">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+<link rel="alternate" hreflang="en" href="../../en/posts/an-automatic-cheatsheet-for-your-typer-cli/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="logo" href="../../">
+
+            <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Sobre mí</a>
+                </li>
+<li class="nav-item">
+<a href="../../charlas/" class="nav-link">Charlas</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archivos</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Categorías</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>            </li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Un cheatsheet automático para tu CLI Typer</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2025-10-30T19:18:39-03:00" itemprop="datePublished" title="2025-10-30 19:18">2025-10-30 19:18</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/un-cheatsheet-automatico-para-tu-cli-typer.html">Comentarios</a>
+
+
+            
+        </p>
+</div>
+                <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+                <p><a href="../../en/posts/an-automatic-cheatsheet-for-your-typer-cli/" rel="alternate" hreflang="en">English</a></p>
+        </div>
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p><a href="https://typer.tiangolo.com/">Typer</a> es gran framework de CLIs del mismo autor que creó <a href="https://fastapi.tiangolo.com/">FastAPI</a>. Permite crear interfaces de línea de comandos robustas e intuitivas basándose en anotaciones sobre los argumentos de funciones. Sin hacer mucho esfuerzo te ofrece autocompletado y ayuda en línea de comandos, que de paso se ve muy bonita al estar basada en <a href="https://rich.readthedocs.io/">rich</a>.</p>
+<p>También permite facilmente registrar grupos de comandos y subcomandos, lo que facilita la organización y mantenimiento de aplicaciones grandes. Pero, ¿qué pasa cuando tu aplicación crece, con múltiples subcomandos, grupos y opciones anidadas?</p>
+<p>Para los usuarios (¡o incluso para vos mismo después de un tiempo!), puede ser un desafío recordar todos los comandos disponibles, sus funciones y cómo interactúan. La ayuda integrada y la documentación son clave, pero <strong>¿no sería fantástico tener un "mapa" en vivo de tu aplicación, accesible directamente desde la terminal?</strong></p>
+<p>¡Acá es donde entra <a href="https://github.com/mgaitan/typer-cheatsheet-command">typer-cheatsheet-command</a>!</p>
+<!-- TEASER_END -->
+
+<p><code>typer-cheatsheet-command</code> es una pequeña biblioteca que escribí que te permite agregar un subcomando <code>cheatsheet</code> a tu programa basado en Typer. Este comando instrospecciona la aplicación y genera una  representación en formato de árbol de todos tus comandos y subcomandos.</p>
+<p>Por ejemplo, una aplicación Typer llamada <code>typer-cheatsheet-demo</code> tiene algunos comandos y subcomandos:</p>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span><span class="w"> </span><span class="nn">typer</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Typer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"demo"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"demo"</span><span class="p">)</span>
+
+<span class="n">users_app</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Typer</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">"Manage users in the system."</span><span class="p">)</span>
+
+<span class="nd">@users_app</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"add"</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_user</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Adds a new user."""</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Adding user: </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nd">@users_app</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">"delete"</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">delete_user</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Deletes an existing user."""</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Deleting user: </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">add_typer</span><span class="p">(</span><span class="n">users_app</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"users"</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_report</span><span class="p">(</span><span class="n">month</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Generates a monthly report.</span>
+<span class="sd">    """</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Generating report for </span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">configure</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Configure application settings.</span>
+<span class="sd">    """</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Configuring application..."</span><span class="p">)</span>
+
+<span class="c1"># Register the cheatsheet command</span>
+<span class="n">register_cheatsheet_command</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</pre></div>
+
+<p>Gracias a la última linea, al ejecutar tu aplicación, el comando <code>cheatsheet</code> estará disponible:</p>
+<div class="code"><pre class="code literal-block">typer-cheatsheet-demo<span class="w"> </span>cheatsheet
+</pre></div>
+
+<p>Verás una salida similar a esta:</p>
+<p><img alt="Cheatsheet" src="../../images/cli_2025-10-30.svg"></p>
+<p>¿Tenés comandos ocultos que quieres ver? Simplemente agregá la opción <code>--show-all</code>:</p>
+<p>Por defecto, el comando se registra como <code>cheatsheet</code>. Si querés usar un nombre diferente para el subcomando, podés definir explícitamente:</p>
+<div class="code"><pre class="code literal-block"><span class="n">register_cheatsheet_command</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">command_name</span><span class="o">=</span><span class="s2">"cheat"</span><span class="p">)</span>
+</pre></div>
+
+<h3>Cómo funciona</h3>
+<p>Una función de registro recibe la app y el nombre del comando, y luego registra el comando provisto en la aplicación. La función instrospecciona los comandos y subcomandos registrados en la aplicación y genera una representación en formato de árbol, usando el widget <a href="https://rich.readthedocs.io/en/latest/tree.html">Tree de rich</a>.</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/cli/" rel="tag">cli</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../dependencias-automaticas-scripts-python-autopep723/" rel="prev" title="Depedencias automáticas en scripts Python con autopep723">Post anterior</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+                    <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="https://mgaitan.github.io/posts/un-cheatsheet-automatico-para-tu-cli-typer/",
+        disqus_title="Un cheatsheet autom\u00e1tico para tu CLI Typer",
+        disqus_identifier="cache/posts/un-cheatsheet-automatico-para-tu-cli-typer.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

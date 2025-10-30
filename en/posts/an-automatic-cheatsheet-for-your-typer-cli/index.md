@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-If you work with [Typer](https://typer.tiangolo.com/), the excellent CLI builder from the same author who created [FastAPI](https://fastapi.tiangolo.com/). It allows you to create robust and intuitive command-line interfaces based on annotations on function arguments.
+[Typer](https://typer.tiangolo.com/) is an excellent CLI framework from the same author who created [FastAPI](https://fastapi.tiangolo.com/). It allows you to create robust and intuitive command-line interfaces based on annotations on function arguments.
 
 Without doing anything, it offers autocompletion and command-line help, which also looks very nice as it is based on [rich](https://rich.readthedocs.io/).
 
@@ -60,8 +60,8 @@ def configure():
 
 # Register the cheatsheet command
 register_cheatsheet_command(app)
-
 ```
+
 
 Thanks to the last line, when you run your application, the `cheatsheet` command will be available:
 
@@ -77,10 +77,11 @@ Do you have hidden commands you want to see? Simply add the `--show-all` option:
 
 By default, the command is registered as `cheatsheet`. If you want to use a different name for the subcommand, you can explicitly define it:
 
+
 ```python
 register_cheatsheet_command(app, command_name="cheat")
 ```
 
 ## How it works
 
-A registration function receives the app and the command name, and then registers the provided command in the application. The function introspects the commands and subcommands registered in the application and generates a tree-format representation, using the [Tree widget from rich](https://rich.readthedocs.io/en/latest/tree.html).
+A registration function receives the app and the command name, and then registers the provided command in the application. The function introspects the commands and subcommands registered in the application and generates a tree-format representation, using the  [Tree widget from rich](https://rich.readthedocs.io/en/latest/tree.html).

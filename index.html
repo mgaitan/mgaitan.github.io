@@ -17,8 +17,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/">
-<link rel="next" href="index-20.html" type="text/html">
-<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/dependencias-automaticas-scripts-python-autopep723/" type="text/html">
+<link rel="next" href="index-21.html" type="text/html">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/un-cheatsheet-automatico-para-tu-cli-typer/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -77,7 +77,30 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/dependencias-automaticas-scripts-python-autopep723/" class="u-url">Depedencias automáticas en scripts Python con autopep723</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/un-cheatsheet-automatico-para-tu-cli-typer/" class="u-url">Un cheatsheet automático para tu CLI Typer</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/un-cheatsheet-automatico-para-tu-cli-typer/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-10-30T19:18:39-03:00" itemprop="datePublished" title="2025-10-30 19:18">2025-10-30 19:18</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/un-cheatsheet-automatico-para-tu-cli-typer/#disqus_thread" data-disqus-identifier="cache/posts/un-cheatsheet-automatico-para-tu-cli-typer.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><a href="https://typer.tiangolo.com/">Typer</a> es gran framework de CLIs del mismo autor que creó <a href="https://fastapi.tiangolo.com/">FastAPI</a>. Permite crear interfaces de línea de comandos robustas e intuitivas basándose en anotaciones sobre los argumentos de funciones. Sin hacer mucho esfuerzo te ofrece autocompletado y ayuda en línea de comandos, que de paso se ve muy bonita al estar basada en <a href="https://rich.readthedocs.io/">rich</a>.</p>
+<p>También permite facilmente registrar grupos de comandos y subcomandos, lo que facilita la organización y mantenimiento de aplicaciones grandes. Pero, ¿qué pasa cuando tu aplicación crece, con múltiples subcomandos, grupos y opciones anidadas?</p>
+<p>Para los usuarios (¡o incluso para vos mismo después de un tiempo!), puede ser un desafío recordar todos los comandos disponibles, sus funciones y cómo interactúan. La ayuda integrada y la documentación son clave, pero <strong>¿no sería fantástico tener un "mapa" en vivo de tu aplicación, accesible directamente desde la terminal?</strong></p>
+<p>¡Acá es donde entra <a href="https://github.com/mgaitan/typer-cheatsheet-command">typer-cheatsheet-command</a>!</p>
+<p class="more"><a href="posts/un-cheatsheet-automatico-para-tu-cli-typer/">Leer más…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/dependencias-automaticas-scripts-python-autopep723/" class="u-url">Depedencias automáticas en scripts Python con autopep723</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -296,45 +319,10 @@ sus mañosas convenciones del lenguaje a cuestas. Una de ellas está <a href="ht
 <p class="more"><a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/">Leer más…</a></p>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-mono-salta-entre-las-ramas/" class="u-url">El mono salta entre las ramas. El desarrollador también</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/el-mono-salta-entre-las-ramas/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-04-30T01:59:00-03:00" itemprop="datePublished" title="2020-04-30 01:59">2020-04-30 01:59</time></a>
-            </p>
-                <p class="commentline">        <a href="posts/el-mono-salta-entre-las-ramas/#disqus_thread" data-disqus-identifier="cache/posts/el-mono-salta-entre-las-ramas.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Cuando laburamos con git, necesitamos frecuentemente cambiar
-de rama, sea porque estamos haciendo un feature mientras esperamos
-que alguien haga review de otra cosa y eventualmente pide algo,
-sea porque somos nosotros los que <em>checkouteamos</em> el branch
-de un compañero para probar algo.</p>
-<p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
-un alias del branch previo.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_9091e7cc5c96432ca62e8159adda2bde-1" name="rest_code_9091e7cc5c96432ca62e8159adda2bde-1" href="posts/el-mono-salta-entre-las-ramas/#rest_code_9091e7cc5c96432ca62e8159adda2bde-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
-<a id="rest_code_9091e7cc5c96432ca62e8159adda2bde-2" name="rest_code_9091e7cc5c96432ca62e8159adda2bde-2" href="posts/el-mono-salta-entre-las-ramas/#rest_code_9091e7cc5c96432ca62e8159adda2bde-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span><span class="s1">'master'</span>
-<a id="rest_code_9091e7cc5c96432ca62e8159adda2bde-3" name="rest_code_9091e7cc5c96432ca62e8159adda2bde-3" href="posts/el-mono-salta-entre-las-ramas/#rest_code_9091e7cc5c96432ca62e8159adda2bde-3"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-
-<a id="rest_code_9091e7cc5c96432ca62e8159adda2bde-4" name="rest_code_9091e7cc5c96432ca62e8159adda2bde-4" href="posts/el-mono-salta-entre-las-ramas/#rest_code_9091e7cc5c96432ca62e8159adda2bde-4"></a>Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">'writing'</span>
-</pre></div>
-<p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
-y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>
-<p>El problema es que si no nos acordamos el nombre del branch, mucho menos
-podriamos acordarnos el orden cronológico en el que lo usamos.</p>
-<p class="more"><a href="posts/el-mono-salta-entre-las-ramas/">Leer más…</a></p>
-</div>
-    </div>
     </article>
 </div>
         <ul class="pager postindexpager clearfix">
-<li class="next"><a href="index-20.html" rel="next">Posts anteriores</a></li>
+<li class="next"><a href="index-21.html" rel="next">Posts anteriores</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
             Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
