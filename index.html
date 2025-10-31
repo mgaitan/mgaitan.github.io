@@ -18,7 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/">
 <link rel="next" href="index-21.html" type="text/html">
-<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/un-cheatsheet-automatico-para-tu-cli-typer/" type="text/html">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/ignorando-cambios-en-git-localmente/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -77,7 +77,31 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/un-cheatsheet-automatico-para-tu-cli-typer/" class="u-url">Un cheatsheet automático para tu CLI Typer</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ignorando-cambios-en-git-localmente/" class="u-url">Ignorando cambios en git localmente</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/ignorando-cambios-en-git-localmente/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-10-31T14:19:23-03:00" itemprop="datePublished" title="2025-10-31 14:19">2025-10-31 14:19</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/ignorando-cambios-en-git-localmente/#disqus_thread" data-disqus-identifier="cache/posts/ignorando-cambios-en-git-localmente.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Es bien conocido que en un repositorio de git podemos usar un archivo <a href="https://git-scm.com/docs/gitignore"><code>.gitignore</code></a> para omitir el seguimiento de archivos que no queremos que se suban (se "empujen") al repositorio remoto. Si un archivo coincide con el patrón de un <code>.gitignore</code>, entonces no se mostrará en un <code>git status</code> para añadir sus eventuales cambios a un commit.</p>
+<p>Típicamente se usan para ignorar directorios donde se instalan dependencias (e.g. el virtualenv para proyectos Python generalmente instalado en <code>.venv</code>), archivos temporales generados por el intérprete o compilador, archivos específicos para IDEs, etc.</p>
+<p>Son tan comunes que GitHub ofrece <a href="https://github.com/github/gitignore">plantillas de gitignore</a> curadas para distintos lenguajes de programación, y herramientas específicas para inicializar proyectos como <a href="https://docs.astral.sh/uv/concepts/projects/init/">uv init</a> generan un <code>.gitignore</code> básico como parte del <em>boilerplate</em>.</p>
+<p>Un <code>.gitignore</code> forma parte del proyecto (está commiteado) y es importante que esté en el repositorio para que todos los colaboradores tengan la misma configuración.</p>
+<p>¿Pero qué pasa si queremos ignorar archivos solo localmente?</p>
+<p class="more"><a href="posts/ignorando-cambios-en-git-localmente/">Leer más…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/un-cheatsheet-automatico-para-tu-cli-typer/" class="u-url">Un cheatsheet automático para tu CLI Typer</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -291,33 +315,6 @@ run<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <p><img alt="image" src="https://user-images.githubusercontent.com/2355719/114437517-0a4e3380-9b9d-11eb-8847-1d6ebdd61f16.png"></p>
 <p>Ahora puedo pararme cuando quiera, levantar y girar el monitor y apretar 
 <code>Ctrl + Super + P</code> las veces necesarias hasta que quede como quiero. </p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/" class="u-url">move-imports, o cómo calmar el TOC de un pythonista</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-05-12T16:13:41-03:00" itemprop="datePublished" title="2020-05-12 16:13">2020-05-12 16:13</time></a>
-            </p>
-                <p class="commentline">        <a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/#disqus_thread" data-disqus-identifier="cache/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Una historia de éxito: un grupito pequeño de programadores (o quizas sólo uno)
-a pura pasión, café y feedback de sus usuarios mete miles de lineas de código
-que logran hacer funcionar un negocio.</p>
-<p>Parte del éxito, supongamos, es porque el sistema está hecho en Python, que se eligió porque es versátil y pragmático para obtener resultados rápidos.
-Pero se sabe: en el vértigo la pasión, el feedback y el café no cabían muchas elegancias ni había tiempo para estilos o convenciones. <em>Caminante no hay camino, se hace camino al andar</em>, dijo Machado, refiriéndose a la deuda técnica que toman las startups en sus inicios.</p>
-<p>El negocio comienza a crecer, hay más demandas de los clientes y la cosa está tan fea que algo, alguito, hay que mejorar. Como, por suerte, la cosa va bien, se contratan nuevos programadores que tengan experiencia en Python específicamente. Y estos nuevos programadores experimentados, los <em>pythonistas</em>, vienen con
-sus mañosas convenciones del lenguaje a cuestas. Una de ellas está <a href="https://pep8.org#imports">tallada en piedra</a>: salvo ineludibles excepciones, <strong>los <em>imports</em> van en la cabecera del módulo y en un orden en particular</strong>.</p>
-<p>Hay justificación, dicen los pythonistas. Simplificar la lectura, saber a simple vista de qué depende un módulo, tener bloques de código más chicos, no repetirse. Pero, aceptémoslo, es un <a href="https://es.wikipedia.org/wiki/Trastorno_obsesivo-compulsivo">TOC</a>.</p>
-<p class="more"><a href="posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/">Leer más…</a></p>
-</div>
     </div>
     </article>
 </div>
