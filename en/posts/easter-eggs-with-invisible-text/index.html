@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Easter eggs in your code with invisible text | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../../rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/en/posts/easter-eggs-with-invisible-text/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../ignoring-changes-in-git-locally/" title="Ignoring git changes locally" type="text/html">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Easter eggs in your code with invisible text">
+<meta property="og:url" content="https://mgaitan.github.io/en/posts/easter-eggs-with-invisible-text/">
+<meta property="og:description" content='According to (spanish) Wikipedia, an "easter egg" is
+
+... is a hidden message or capability embedded in movies, television series, ..., software programs, or video games. Among programmers, there seem'>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-10-31T17:18:17-03:00">
+<meta property="article:tag" content="easter-egg">
+<meta property="article:tag" content="gist">
+<meta property="article:tag" content="humor">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+<link rel="alternate" hreflang="es" href="../../../posts/easter-eggs-con-texto-invisible/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="logo" href="../../">
+
+            <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about" class="nav-link">About me</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archive</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>            </li>
+<li class="nav-item"><a href="../../../" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Easter eggs in your code with invisible text</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2025-10-31T17:18:17-03:00" itemprop="datePublished" title="2025-10-31 17:18">2025-10-31 17:18</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/easter-eggs-con-texto-invisible.html">Comments</a>
+
+
+            
+        </p>
+</div>
+                <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">Also available in:</h3>
+                <p><a href="../../../posts/easter-eggs-con-texto-invisible/" rel="alternate" hreflang="es">Español</a></p>
+        </div>
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>According to (spanish) Wikipedia, <a href="https://es.wikipedia.org/wiki/Huevo_de_Pascua_(virtual)">an "easter egg" is</a></p>
+<blockquote>
+<p>... is a hidden message or capability embedded in movies, television series, ..., software programs, or video games. Among programmers, there seems to be a drive to leave a personal mark, almost an artistic touch on an intellectual product that is by nature standard and functional. These days, Easter eggs aim to entertain, seek new job opportunities, pay tribute to executives, or amuse programmers.</p>
+</blockquote>
+<p>I have no idea who convinced that gullible Wikipedian that software is "standard and functional", but it is true that the urge for software Easter eggs is almost as old as software itself.</p>
+<p>Here is a technique I discovered back in kindergarten, when we would draw with lemon juice so that later, magically, the scribble would be revealed by the teacher's lighter (she was probably smoking in the blocks' corner).</p>
+<p>So let’s see how to write invisible (digital) text: lemon juice’s Unicode counterpart.</p>
+<!-- TEASER_END -->
+
+<h3>What are zero-width characters?</h3>
+<p>There is a group of special Unicode characters that occupy no visible space. The most common ones are:</p>
+<table>
+<thead><tr>
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>U+200B</code></td>
+<td style="text-align: left;">Zero Width Space (ZWSP)</td>
+<td style="text-align: left;">behaves like an “invisible” space</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>U+200C</code></td>
+<td style="text-align: left;">Zero Width Non-Joiner (ZWNJ)</td>
+<td style="text-align: left;">prevents joining characters in some scripts</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>U+200D</code></td>
+<td style="text-align: left;">Zero Width Joiner (ZWJ)</td>
+<td style="text-align: left;">does the opposite: forces characters to join</td>
+</tr>
+</tbody>
+</table>
+<p>These non-printing characters are used, for example, in typesetting systems as control characters or to compose ligatures in alphabets such as Persian or Arabic.</p>
+<p>But we can abuse their invisibility and give them a different purpose: use them as bits to encode the sequence of characters of our (visible) text.</p>
+<p>If we take any text, convert it to bytes (UTF-8), then to bits, and finally replace each bit with the corresponding character, we end up with a string of invisible characters. When we decode it again, we recover the original message. We can define, for example, that</p>
+<ul>
+<li>ZWSP → <code>0</code>
+</li>
+<li>ZWNJ → <code>1</code>
+</li>
+</ul>
+<p>That way we can <strong>embed invisible messages</strong> in comments, strings, or at the end of files without breaking anything. It is a humble steganography trick.</p>
+<h3>Minimal example in Python 🐍</h3>
+<p>This snippet shows how to go from text → sequence of invisible characters → text again:</p>
+<div class="code"><pre class="code literal-block"><span class="n">ZW0</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u200b</span><span class="s2">"</span>  <span class="c1"># Zero Width Space -&gt; bit 0</span>
+<span class="n">ZW1</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u200c</span><span class="s2">"</span>  <span class="c1"># Zero Width Non-Joiner -&gt; bit 1</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">encode_to_zw</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">byte</span><span class="si">:</span><span class="s2">08b</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span>
+        <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s2">"01"</span><span class="p">,</span> <span class="n">ZW0</span> <span class="o">+</span> <span class="n">ZW1</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">decode_from_zw</span><span class="p">(</span><span class="n">zw_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">bits</span> <span class="o">=</span> <span class="n">zw_text</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">ZW0</span> <span class="o">+</span> <span class="n">ZW1</span><span class="p">,</span> <span class="s2">"01"</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">bits</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">8</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bits</span><span class="p">),</span> <span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">)</span>
+
+<span class="n">secret</span> <span class="o">=</span> <span class="s2">"🎵 Hidden music"</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="n">encode_to_zw</span><span class="p">(</span><span class="n">secret</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Invisible payload:"</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>   <span class="c1"># looks empty</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Recovered:"</span><span class="p">,</span> <span class="n">decode_from_zw</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span>
+</pre></div>
+
+<p>Output:</p>
+<div class="code"><pre class="code literal-block"><span class="n">Invisible</span><span class="w"> </span><span class="n">payload</span><span class="p">:</span><span class="w"> </span><span class="err">​‌​‍</span><span class="w"> </span><span class="o">...</span>
+<span class="n">Recovered</span><span class="p">:</span><span class="w"> </span><span class="err">🎵</span><span class="w"> </span><span class="n">Hidden</span><span class="w"> </span><span class="n">music</span>
+</pre></div>
+
+<p>So how do you use it as an Easter egg?</p>
+<ol>
+<li>Generate your invisible payload with the snippet above.</li>
+<li>Paste it at the end of an innocent comment or line in your code:
+   <code>python
+   # NOTE: nothing to see here. ​‌​‍ ...</code>
+</li>
+<li>Only whoever knows the trick—or investigates it (maybe the other person reading this blog)—will be able to recover it with the decoding script.</li>
+</ol>
+<h3>Automate it and go bigger</h3>
+<p>The manual method is fine for playing around, but if you want to hide messages across many files or search for them throughout an entire repository, a more powerful script helps.</p>
+<p>So I asked my <strike>friend</strike> intern LLM to help me build a tool I called <a href="https://gist.github.com/mgaitan/53c3b2988b7e6e7a7c2215e0bee8138b">zw_secret.py</a>.</p>
+<ul>
+<li>Injects invisible messages into one or more files (<code>zw_secret inject -m "message"</code>).</li>
+<li>Decodes them from files or entire directories (<code>zw_secret decode path/</code>).</li>
+<li>Uses <code>re</code> and <code>concurrent.futures</code> to scan large codebases quickly.</li>
+</ul>
+<p>I'll leave it to you to decode this innocent-looking message:</p>
+<script src="https://gist.github.com/mgaitan/d5bdb88a10dfa6b65f10c3e41a269651.js?file=example.txt"></script><div class="code"><pre class="code literal-block"><span class="go">wget https://gist.github.com/mgaitan/d5bdb88a10dfa6b65f10c3e41a269651/raw/01a2e33154384bf47ae256aa72b25f05e8c112ae/example.txt</span>
+<span class="go">uv run https://gist.githubusercontent.com/mgaitan/53c3b2988b7e6e7a7c2215e0bee8138b/raw/e253f635f65d97de72d856ad240b45c3192438b4/zw_secret.py decode example.txt</span>
+</pre></div>
+
+<p>PS: This is more of a joke (or a technique for making them). Don't abuse it by putting long messages in your work project, as you'll introduce noise and greatly increase file sizes.</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/easter-egg/" rel="tag">easter-egg</a></li>
+            <li><a class="tag p-category" href="../../categories/gist/" rel="tag">gist</a></li>
+            <li><a class="tag p-category" href="../../categories/humor/" rel="tag">humor</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../ignoring-changes-in-git-locally/" rel="prev" title="Ignoring git changes locally">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="https://mgaitan.github.io/en/posts/easter-eggs-with-invisible-text/",
+        disqus_title="Easter eggs in your code with invisible text",
+        disqus_identifier="cache/posts/easter-eggs-con-texto-invisible.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

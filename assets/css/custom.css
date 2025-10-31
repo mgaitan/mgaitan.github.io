@@ -1,32 +1,37 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700);
 
 body {
- margin-top: 0px;
+    margin-top: 0px;
 }
 
 p {
-    font-family: 'PT Serif', Georgia,Cambria,"Times New Roman",Times,serif;
+    font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 21px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.4;
 }
 
-h1, h2, h3, h4, h5, h6 {
- font-family: 'PT Serif', Georgia,Cambria,"Times New Roman",Times,serif;
- font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 700;
 }
 
 h1 {
-  font-size: 40px;
+    font-size: 40px;
 }
 
 a {
     color: #2a6496;
-
 }
 
-h1 a, h1 a:hover{
+h1 a,
+h1 a:hover {
     color: #404040;
 }
 
@@ -53,7 +58,7 @@ h1 a, h1 a:hover{
     min-height: 60px;
     color: #000;
     background-color: rgba(235, 235, 235, 0.95);
-    border-color: #D7D7D7;
+    border-color: #d7d7d7;
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
@@ -91,7 +96,7 @@ a.logo:hover {
 }
 
 #blog-title {
-    font-family: 'PT Serif';
+    font-family: "PT Serif";
     font-weight: 700;
     font-size: 25px;
     padding-bottom: 5px;
@@ -109,7 +114,8 @@ a.logo:hover {
     padding-left: 2px;
 }
 
-.metadata p:before, .postlist .listdate:before {
+.metadata p:before,
+.postlist .listdate:before {
     content: "";
 }
 
@@ -123,7 +129,8 @@ a.logo:hover {
     color: #999;
 }
 
-.byline, .commentline {
+.byline,
+.commentline {
     display: none !important;
 }
 
@@ -140,7 +147,6 @@ div.ps p {
     font-size: 1em;
     font-style: italic;
 }
-
 
 div.text_cell > div.input_prompt {
     display: none;
@@ -171,22 +177,25 @@ div.prompt {
     text-decoration: line-through;
 }
 
-
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%; /*16:9*/
-  padding-top: 30px;
-  padding-left: 10px;
-  height: 0;
-  overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%; /*16:9*/
+    padding-top: 30px;
+    padding-left: 10px;
+    height: 0;
+    overflow: hidden;
 }
 
 .video-container iframe,
 .video-container object,
 .video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+blockquote {
+    margin-left: 1rem;
 }
