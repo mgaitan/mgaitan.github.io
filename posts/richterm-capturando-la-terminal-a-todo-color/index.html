@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>richterm, capturando la terminal a todo color | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/posts/richterm-capturando-la-terminal-a-todo-color/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../easter-eggs-con-texto-invisible/" title="Easter-eggs en tu código con texto invisible" type="text/html">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="richterm, capturando la terminal a todo color">
+<meta property="og:url" content="https://mgaitan.github.io/posts/richterm-capturando-la-terminal-a-todo-color/">
+<meta property="og:description" content="Siempre estoy haciendo programitas de línea de comando y siempre quiero mostrar como se ve el resultado de algun comando. Si bien es texto que puedo copiar y pegar, muchas veces prefiero tomar captura">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-11-03T22:26:32-03:00">
+<meta property="article:tag" content="cli">
+<meta property="article:tag" content="rich">
+<meta property="article:tag" content="terminal">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="logo" href="../../">
+
+            <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Sobre mí</a>
+                </li>
+<li class="nav-item">
+<a href="../../charlas/" class="nav-link">Charlas</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archivos</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Categorías</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>            </li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">richterm, capturando la terminal a todo color</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2025-11-03T22:26:32-03:00" itemprop="datePublished" title="2025-11-03 22:26">2025-11-03 22:26</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/richterm-capturando-la-terminal-a-todo-color.html">Comentarios</a>
+
+
+            
+        </p>
+</div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Siempre estoy haciendo programitas de línea de comando y siempre quiero mostrar como se ve el resultado de algun comando. Si bien es texto que puedo copiar y pegar, muchas veces prefiero tomar capturas de pantalla de la terminal para mostrar como se ve el resultado, especialmente si tiene colores o algun formato especial.</p>
+<p>Cuando estaba escribiendo <a href="https://mgaitan.github.io/posts/un-cheatsheet-automatico-para-tu-cli-typer/">este post</a> necesitaba una captura, y encontré una manera de hacerlo:</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">Tired of taking manual screenshots for CLI examples?<br>Try this:<br><br>$ alias rich-capture='uvx rich-codex --no-search --skip-git-checks --use-pty --no-confirm --img-paths cli_$(date -I).svg --command'<br><br>Then use it as a wrapper of your command. Eg. <br>$ rich-capture "uv run -m rich" <a href="https://t.co/U18Dr7p2Df">pic.twitter.com/U18Dr7p2Df</a></p>— Martín Gaitán ⭐⭐⭐ (@tin_nqn_) <a href="https://twitter.com/tin_nqn_/status/1983986531972116685?ref_src=twsrc%5Etfw">October 30, 2025</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>x.com//1983986531972116685</p>
+<p>El truco que propuse ahí es usar <a href="https://ewels.github.io/rich-codex/">rich-codex</a> pero, a decir verdad, la CLI de esta herramienta es un bastante complicada para este caso súper común: sólo quiero ejecutar un comando y quedarme con un SVG listo para incrustar en un post o en la documentación.</p>
+<p>Así que me armé una mini herramienta más simple: <a href="https://github.com/mgaitan/richterm"><strong>richterm</strong></a>.</p>
+<!-- TEASER_END -->
+
+<h4>¿Qué hace?</h4>
+<p>Ejecutás <code>richterm &lt;comando&gt;</code> y te genera <code>rich_term_&lt;timestamp&gt;.svg</code> con la salida ANSI, respetando todos los colores. También escribe la salida en <code>stdout</code> así el flujo normal de la terminal no se rompe.</p>
+<p>En su caso más trivial, no tenés que acordarte de ninguna opción exótica. Ejemplo rápido:</p>
+<div class="code"><pre class="code literal-block">uvx<span class="w"> </span>richterm<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>rich.tree
+</pre></div>
+
+<p>Listo, SVG fresquito en el directorio actual. Se ve así:</p>
+<object data="../../images/rich_term_20251103_222031.svg" type="image/svg+xml" width="80%" title="rich.tree"></object>
+
+<p>Tip: Para incrustar en markdown/html, en vez de una etiqueta <code>&lt;img&gt;</code> preferí, si podés, usar <code>&lt;object data="&lt;path&gt;" type="image/svg+xml"&gt;&lt;/object&gt;</code> así las referencias inline de fuentes del svg funcionan, resolviendo las ligaduras.</p>
+<p>Si preferís instalarlo:</p>
+<div class="code"><pre class="code literal-block">uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>richterm
+</pre></div>
+
+<p>Opciones mínimas:</p>
+<ul>
+<li>
+<code>-o archivo.svg</code> si querés controlar el nombre.</li>
+<li>
+<code>--prompt</code> para tunear el prompt con markup de Rich. Por ejemplo:</li>
+</ul>
+<p><code>uvx richterm --prompt "[bold green]λ " git status --short</code>
+- <code>--hide-command</code> si querés ocultar la línea de comando del render.</p>
+<h3>richterm como extensión de Sphinx</h3>
+<p>Además del CLI funciona como una extension de Sphinx, agregando la directiva <code>richterm::</code>.</p>
+<p>En <a href="http://mgaitan.github.io/richterm">la docu</a> uso la extensión incluída. En <code>conf.py</code> agregás <code>"richterm.sphinxext"</code> y listo. Después en cualquier página podés poner:</p>
+<div class="code"><pre class="code literal-block"><span class="gh">```richterm:: uv run -m rich</span>
+<span class="gh">```</span>
+</pre></div>
+
+<p>O su equivalente markdown si usás <a href="https://myst-parser.readthedocs.io/en/latest/">myst-parser</a>:</p>
+<div class="code"><pre class="code literal-block">```{richterm} uv run -m rich
+```
+</pre></div>
+
+<p>Cuando compiles tu proyecto Sphinx ejecutará el comando e incrustará el SVG resultante en el HTML. Cero esfuerzo.</p>
+<h4>¿Cómo funciona?</h4>
+<p>Usa subprocess para ejecutar el comando y capturar la salida. Luego rich's <a href="https://rich.readthedocs.io/en/stable/reference/text.html#rich.text.Text.from_ansi"><code>from_ansi()</code></a> para interpretar potenicales códigos ANSI y <a href="https://rich.readthedocs.io/en/stable/reference/console.html#rich.console.Console.export_svg">export_svg()</a> para guardar el svg.</p>
+<p>El repo es <a href="https://github.com/mgaitan/richterm">github.com/mgaitan/richterm</a>. Feedbacks, issues, PRs ¡todo bienvenido! 🎨</p>
+<p>PS: Si querés algo un poquito más sofisticado (¡svg animados!) fijate <a href="https://mgaitan.github.io/posts/svg-animados-para-tus-demos-de-programas-cli/">este otro post</a></p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/cli/" rel="tag">cli</a></li>
+            <li><a class="tag p-category" href="../../categories/rich/" rel="tag">rich</a></li>
+            <li><a class="tag p-category" href="../../categories/terminal/" rel="tag">terminal</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../easter-eggs-con-texto-invisible/" rel="prev" title="Easter-eggs en tu código con texto invisible">Post anterior</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+                    <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="https://mgaitan.github.io/posts/richterm-capturando-la-terminal-a-todo-color/",
+        disqus_title="richterm, capturando la terminal a todo color",
+        disqus_identifier="cache/posts/richterm-capturando-la-terminal-a-todo-color.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

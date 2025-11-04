@@ -78,7 +78,94 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/custom-screen-layout-switcher-for-linux/" class="u-url">Screen layout switcher para Linux</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/svg-animados-para-tus-demos-de-programas-cli/" class="u-url">SVG animados para tus demos de programas CLI</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/svg-animados-para-tus-demos-de-programas-cli/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-01-23T16:02:18-03:00" itemprop="datePublished" title="2025-01-23 16:02">2025-01-23 16:02</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/svg-animados-para-tus-demos-de-programas-cli/#disqus_thread" data-disqus-identifier="cache/posts/svg-animados-para-tus-demos-de-programas-cli.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>¿Querés mostrar lo piola que es tu programa de línea de comandos con una demo de un uso real? ¿Querés evitar que la demo quede desactualizada facilmente? ¿Querés incluir la demo en sitios que no permiten videos ni javascript como los <code>README</code> de Github o Pypi? </p>
+<p>¡Los SVG animados generados programáticamente son la solución! Se incrustan como una imágen normal pero son más livianos que los GIFs, se reproducen automáticamente en la misma página, no requieren javascript y mantienen el texto nítido sin importar el zoom. </p>
+<p>Además, automatizar tus demos te permite tener control total y regenerar el resultado visual de manera programática cuando la CLI cambie o quieras hacer cambios. </p>
+<p>Como ejemplo, acá la demo un programita que hice hace poco llamado <a href="https://github.com/mgaitan/cuitonline">cuitonline</a> que luce así para su versión 0.1: </p>
+<p align="center">
+<img width="90%" src="https://raw.githubusercontent.com/mgaitan/cuitonline/refs/tags/0.1/demo/usage.svg"></p>
+
+<h3>¿Cómo lo hacemos?</h3>
+<p>Vamos a utilizar las siguientes herramientas, todas open source. </p>
+<p><strong><a href="https://github.com/veracioux/tuterm">tuterm</a></strong>: Es una herramienta bash para crear demos de programas CLI. Se define un "script" (en el mejor sentido de la palabra) que permite controlar los comandos que se ejecutan (¡de verdad!) en la consola, que comentario mostrar y qué otros comandos auxiliares ejecutar. </p>
+<ul>
+<li>
+<p><strong>uvx</strong>: Es el equivalente a <code>pipx</code> de <a href="https://github.com/astral-sh/uv">uv</a>. Lo usamos para ejecutar <code>asciinema</code> gestionando las dependencias e instalandolo en un entorno virtual automáticamente. </p>
+</li>
+<li>
+<p><strong><a href="https://docs.asciinema.org/manual/cli/">asciinema</a></strong>: Graba sesiones de terminal y las guarda en un formato de texto. Por defecto estos archivos se suben y se comparten a traves de <a href="https://asciinema.org/">asciinema.org</a>, que es genial pero el reproductor requiere javascript lo que limita su uso. Por eso lo convertimos a SVG.  </p>
+</li>
+<li>
+<p><strong><a href="https://github.com/marionebl/svg-term-cli">svg-term-cli</a></strong>: Convierte grabaciones de asciinema en SVGs animados. </p>
+</li>
+</ul>
+<h3>Paso a paso</h3>
+<h4>1. Escribe el script</h4>
+<p>Siguiendo el ejemplo de <code>cuitonline</code> mostrado arriba. El script de <code>tuterm</code> lo llameé <code>usage.tutorial</code> con el siguiente contenido:</p>
+<div class="code"><pre class="code literal-block"><span class="c1"># file: &gt; cuitonline_usage</span>
+prompt<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-ne<span class="w"> </span><span class="s2">"\033[1;35m\$ \033[0;33m"</span>
+<span class="o">}</span>
+configure<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w"> </span><span class="nv">DELAY</span><span class="o">=</span><span class="m">0</span>.02
+<span class="w"> </span><span class="nv">DELAY_PROMPT</span><span class="o">=</span><span class="m">0</span>.2
+<span class="w"> </span><span class="nv">COLOR_MESSAGE</span><span class="o">=</span><span class="s1">'1;32'</span>
+<span class="o">}</span>
+
+run<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w"> </span>M<span class="w"> </span><span class="s2">"Buscar por CUIT"</span>
+<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="m">20</span>-22293909-8
+<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w"> </span>M<span class="w"> </span><span class="s2">"Buscar por DNI"</span>
+<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="m">10433615</span>
+<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w"> </span>M<span class="w"> </span><span class="s2">"Busca por nombre"</span>
+<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="s2">"messi lionel andres"</span>
+<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="w"> </span>clear
+<span class="w"> </span>M<span class="w"> </span><span class="s2">"Obtiene la página 2 de los resultados"</span>
+<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="s2">"juan jose gonzalez"</span><span class="w"> </span>-p2
+<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>Las líneas que empiezan por <code>M</code> son los comentarios. <code>c</code> son comandos que se van a ver, y el resto son comandos que se van a ejecutar pero no se muestran tipeados. </p>
+<h4>2. Graba la sesión de la terminal</h4>
+<p>Utiliza asciinema para grabar la sesión mientras tuterm ejecuta tu demo:</p>
+<div class="code"><pre class="code literal-block">uvx<span class="w"> </span>asciinema<span class="w"> </span>rec<span class="w"> </span>--overwrite<span class="w"> </span>-c<span class="w"> </span><span class="s1">'tuterm usage.tutorial --mode demo'</span><span class="w"> </span>usage.cast
+</pre></div>
+
+<h4>3. Convierte la grabación en un SVG animado</h4>
+<p>Con svg-term-cli definimos el aspecto de la "consola" y convertimos la grabación en un SVG animado:</p>
+<div class="code"><pre class="code literal-block">svg-term<span class="w"> </span>--window<span class="w"> </span>--width<span class="w"> </span><span class="m">75</span><span class="w"> </span>--height<span class="w"> </span><span class="m">24</span><span class="w"> </span>--padding<span class="w"> </span><span class="m">1</span><span class="w"> </span>--in<span class="w"> </span>usage.cast<span class="w"> </span>--out<span class="w"> </span>usage.svg
+</pre></div>
+
+<h4>4. Añade el SVG generado en tu archivo <code>README.md</code>
+</h4>
+<p>Por ejemplo si lo subis a <code>/demo/usage.svg</code> de tu repo, </p>
+<div class="code"><pre class="code literal-block">&lt;p align="center"&gt;
+&lt;img width="90%" src="https://raw.githubusercontent.com/&lt;user&gt;/&lt;repo&gt;/refs/heads/main/demo/usage.svg" /&gt;
+&lt;/p&gt;
+</pre></div>
+
+<p>¡Y listo! Ahora tenés una demo animada, nítida y mantenible programáticamente para tu programa CLI directamente en tu README de GitHub. 😎</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/custom-screen-layout-switcher-for-linux/" class="u-url">Screen layout switcher para Linux</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -207,10 +294,10 @@ sea porque somos nosotros los que <em>checkouteamos</em> el branch
 de un compañero para probar algo.</p>
 <p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
 un alias del branch previo.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_14894ae29b6b466092680e52e356f45e-1" name="rest_code_14894ae29b6b466092680e52e356f45e-1" href="posts/el-mono-salta-entre-las-ramas/#rest_code_14894ae29b6b466092680e52e356f45e-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
-<a id="rest_code_14894ae29b6b466092680e52e356f45e-2" name="rest_code_14894ae29b6b466092680e52e356f45e-2" href="posts/el-mono-salta-entre-las-ramas/#rest_code_14894ae29b6b466092680e52e356f45e-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span><span class="s1">'master'</span>
-<a id="rest_code_14894ae29b6b466092680e52e356f45e-3" name="rest_code_14894ae29b6b466092680e52e356f45e-3" href="posts/el-mono-salta-entre-las-ramas/#rest_code_14894ae29b6b466092680e52e356f45e-3"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-
-<a id="rest_code_14894ae29b6b466092680e52e356f45e-4" name="rest_code_14894ae29b6b466092680e52e356f45e-4" href="posts/el-mono-salta-entre-las-ramas/#rest_code_14894ae29b6b466092680e52e356f45e-4"></a>Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">'writing'</span>
+<div class="code"><pre class="code bash"><a id="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-1" name="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-1" href="posts/el-mono-salta-entre-las-ramas/#rest_code_2b39a1ee3cd445d78cdddf40ca79d189-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+<a id="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-2" name="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-2" href="posts/el-mono-salta-entre-las-ramas/#rest_code_2b39a1ee3cd445d78cdddf40ca79d189-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span><span class="s1">'master'</span>
+<a id="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-3" name="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-3" href="posts/el-mono-salta-entre-las-ramas/#rest_code_2b39a1ee3cd445d78cdddf40ca79d189-3"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-
+<a id="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-4" name="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-4" href="posts/el-mono-salta-entre-las-ramas/#rest_code_2b39a1ee3cd445d78cdddf40ca79d189-4"></a>Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">'writing'</span>
 </pre></div>
 <p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
 y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>

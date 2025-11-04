@@ -18,7 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/">
 <link rel="next" href="index-21.html" type="text/html">
-<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/easter-eggs-con-texto-invisible/" type="text/html">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/richterm-capturando-la-terminal-a-todo-color/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -77,7 +77,34 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/easter-eggs-con-texto-invisible/" class="u-url">Easter-eggs en tu código con texto invisible</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/richterm-capturando-la-terminal-a-todo-color/" class="u-url">richterm, capturando la terminal a todo color</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/richterm-capturando-la-terminal-a-todo-color/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-11-03T22:26:32-03:00" itemprop="datePublished" title="2025-11-03 22:26">2025-11-03 22:26</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/richterm-capturando-la-terminal-a-todo-color/#disqus_thread" data-disqus-identifier="cache/posts/richterm-capturando-la-terminal-a-todo-color.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Siempre estoy haciendo programitas de línea de comando y siempre quiero mostrar como se ve el resultado de algun comando. Si bien es texto que puedo copiar y pegar, muchas veces prefiero tomar capturas de pantalla de la terminal para mostrar como se ve el resultado, especialmente si tiene colores o algun formato especial.</p>
+<p>Cuando estaba escribiendo <a href="https://mgaitan.github.io/posts/un-cheatsheet-automatico-para-tu-cli-typer/">este post</a> necesitaba una captura, y encontré una manera de hacerlo:</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">Tired of taking manual screenshots for CLI examples?<br>Try this:<br><br>$ alias rich-capture='uvx rich-codex --no-search --skip-git-checks --use-pty --no-confirm --img-paths cli_$(date -I).svg --command'<br><br>Then use it as a wrapper of your command. Eg. <br>$ rich-capture "uv run -m rich" <a href="https://t.co/U18Dr7p2Df">pic.twitter.com/U18Dr7p2Df</a></p>— Martín Gaitán ⭐⭐⭐ (@tin_nqn_) <a href="https://twitter.com/tin_nqn_/status/1983986531972116685?ref_src=twsrc%5Etfw">October 30, 2025</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>x.com//1983986531972116685</p>
+<p>El truco que propuse ahí es usar <a href="https://ewels.github.io/rich-codex/">rich-codex</a> pero, a decir verdad, la CLI de esta herramienta es un bastante complicada para este caso súper común: sólo quiero ejecutar un comando y quedarme con un SVG listo para incrustar en un post o en la documentación.</p>
+<p>Así que me armé una mini herramienta más simple: <a href="https://github.com/mgaitan/richterm"><strong>richterm</strong></a>.</p>
+<p class="more"><a href="posts/richterm-capturando-la-terminal-a-todo-color/">Leer más…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/easter-eggs-con-texto-invisible/" class="u-url">Easter-eggs en tu código con texto invisible</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -176,93 +203,6 @@ pero es verdad que la pulsión por poner huevos de pascua en el software es casi
 <p>Si todo el mundo coincide en que Python es un lenguaje pragmático y elegante que resulta ideal para scripts, ¿por qué esta parte tiene que ser complicada?</p>
 <p class="more"><a href="posts/dependencias-automaticas-scripts-python-autopep723/">Leer más…</a></p>
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/svg-animados-para-tus-demos-de-programas-cli/" class="u-url">SVG animados para tus demos de programas CLI</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/svg-animados-para-tus-demos-de-programas-cli/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-01-23T16:02:18-03:00" itemprop="datePublished" title="2025-01-23 16:02">2025-01-23 16:02</time></a>
-            </p>
-                <p class="commentline">        <a href="posts/svg-animados-para-tus-demos-de-programas-cli/#disqus_thread" data-disqus-identifier="cache/posts/svg-animados-para-tus-demos-de-programas-cli.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>¿Querés mostrar lo piola que es tu programa de línea de comandos con una demo de un uso real? ¿Querés evitar que la demo quede desactualizada facilmente? ¿Querés incluir la demo en sitios que no permiten videos ni javascript como los <code>README</code> de Github o Pypi? </p>
-<p>¡Los SVG animados generados programáticamente son la solución! Se incrustan como una imágen normal pero son más livianos que los GIFs, se reproducen automáticamente en la misma página, no requieren javascript y mantienen el texto nítido sin importar el zoom. </p>
-<p>Además, automatizar tus demos te permite tener control total y regenerar el resultado visual de manera programática cuando la CLI cambie o quieras hacer cambios. </p>
-<p>Como ejemplo, acá la demo un programita que hice hace poco llamado <a href="https://github.com/mgaitan/cuitonline">cuitonline</a> que luce así para su versión 0.1: </p>
-<p align="center">
-<img width="90%" src="https://raw.githubusercontent.com/mgaitan/cuitonline/refs/tags/0.1/demo/usage.svg"></p>
-
-<h3>¿Cómo lo hacemos?</h3>
-<p>Vamos a utilizar las siguientes herramientas, todas open source. </p>
-<p><strong><a href="https://github.com/veracioux/tuterm">tuterm</a></strong>: Es una herramienta bash para crear demos de programas CLI. Se define un "script" (en el mejor sentido de la palabra) que permite controlar los comandos que se ejecutan (¡de verdad!) en la consola, que comentario mostrar y qué otros comandos auxiliares ejecutar. </p>
-<ul>
-<li>
-<p><strong>uvx</strong>: Es el equivalente a <code>pipx</code> de <a href="https://github.com/astral-sh/uv">uv</a>. Lo usamos para ejecutar <code>asciinema</code> gestionando las dependencias e instalandolo en un entorno virtual automáticamente. </p>
-</li>
-<li>
-<p><strong><a href="https://docs.asciinema.org/manual/cli/">asciinema</a></strong>: Graba sesiones de terminal y las guarda en un formato de texto. Por defecto estos archivos se suben y se comparten a traves de <a href="https://asciinema.org/">asciinema.org</a>, que es genial pero el reproductor requiere javascript lo que limita su uso. Por eso lo convertimos a SVG.  </p>
-</li>
-<li>
-<p><strong><a href="https://github.com/marionebl/svg-term-cli">svg-term-cli</a></strong>: Convierte grabaciones de asciinema en SVGs animados. </p>
-</li>
-</ul>
-<h3>Paso a paso</h3>
-<h4>1. Escribe el script</h4>
-<p>Siguiendo el ejemplo de <code>cuitonline</code> mostrado arriba. El script de <code>tuterm</code> lo llameé <code>usage.tutorial</code> con el siguiente contenido:</p>
-<div class="code"><pre class="code literal-block"><span class="c1"># file: &gt; cuitonline_usage</span>
-prompt<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-ne<span class="w"> </span><span class="s2">"\033[1;35m\$ \033[0;33m"</span>
-<span class="o">}</span>
-configure<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w"> </span><span class="nv">DELAY</span><span class="o">=</span><span class="m">0</span>.02
-<span class="w"> </span><span class="nv">DELAY_PROMPT</span><span class="o">=</span><span class="m">0</span>.2
-<span class="w"> </span><span class="nv">COLOR_MESSAGE</span><span class="o">=</span><span class="s1">'1;32'</span>
-<span class="o">}</span>
-
-run<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w"> </span>M<span class="w"> </span><span class="s2">"Buscar por CUIT"</span>
-<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="m">20</span>-22293909-8
-<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
-<span class="w"> </span>M<span class="w"> </span><span class="s2">"Buscar por DNI"</span>
-<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="m">10433615</span>
-<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
-<span class="w"> </span>M<span class="w"> </span><span class="s2">"Busca por nombre"</span>
-<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="s2">"messi lionel andres"</span>
-<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
-<span class="w"> </span>clear
-<span class="w"> </span>M<span class="w"> </span><span class="s2">"Obtiene la página 2 de los resultados"</span>
-<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="s2">"juan jose gonzalez"</span><span class="w"> </span>-p2
-<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
-<span class="o">}</span>
-</pre></div>
-
-<p>Las líneas que empiezan por <code>M</code> son los comentarios. <code>c</code> son comandos que se van a ver, y el resto son comandos que se van a ejecutar pero no se muestran tipeados. </p>
-<h4>2. Graba la sesión de la terminal</h4>
-<p>Utiliza asciinema para grabar la sesión mientras tuterm ejecuta tu demo:</p>
-<div class="code"><pre class="code literal-block">uvx<span class="w"> </span>asciinema<span class="w"> </span>rec<span class="w"> </span>--overwrite<span class="w"> </span>-c<span class="w"> </span><span class="s1">'tuterm usage.tutorial --mode demo'</span><span class="w"> </span>usage.cast
-</pre></div>
-
-<h4>3. Convierte la grabación en un SVG animado</h4>
-<p>Con svg-term-cli definimos el aspecto de la "consola" y convertimos la grabación en un SVG animado:</p>
-<div class="code"><pre class="code literal-block">svg-term<span class="w"> </span>--window<span class="w"> </span>--width<span class="w"> </span><span class="m">75</span><span class="w"> </span>--height<span class="w"> </span><span class="m">24</span><span class="w"> </span>--padding<span class="w"> </span><span class="m">1</span><span class="w"> </span>--in<span class="w"> </span>usage.cast<span class="w"> </span>--out<span class="w"> </span>usage.svg
-</pre></div>
-
-<h4>4. Añade el SVG generado en tu archivo <code>README.md</code>
-</h4>
-<p>Por ejemplo si lo subis a <code>/demo/usage.svg</code> de tu repo, </p>
-<div class="code"><pre class="code literal-block">&lt;p align="center"&gt;
-&lt;img width="90%" src="https://raw.githubusercontent.com/&lt;user&gt;/&lt;repo&gt;/refs/heads/main/demo/usage.svg" /&gt;
-&lt;/p&gt;
-</pre></div>
-
-<p>¡Y listo! Ahora tenés una demo animada, nítida y mantenible programáticamente para tu programa CLI directamente en tu README de GitHub. 😎</p>
     </div>
     </article>
 </div>
