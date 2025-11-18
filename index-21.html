@@ -78,7 +78,33 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/svg-animados-para-tus-demos-de-programas-cli/" class="u-url">SVG animados para tus demos de programas CLI</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/dependencias-automaticas-scripts-python-autopep723/" class="u-url">Depedencias automáticas en scripts Python con autopep723</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/dependencias-automaticas-scripts-python-autopep723/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-07-25T08:00:00-03:00" itemprop="datePublished" title="2025-07-25 08:00">2025-07-25 08:00</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/dependencias-automaticas-scripts-python-autopep723/#disqus_thread" data-disqus-identifier="cache/posts/autopep723-shebang-magic.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>¿Alguna vez has deseado poder ejecutar un script de Python sin preocuparte por instalar sus dependencias primero?</p>
+<p>Todos hemos estado ahí. Necesitas hackear un pequeño fragmento de código, tu LLM amigo te da un script de Python útil o encontraste uno en Stack Overflow (Dios te tenga en la gloria) o Gist. Pero si lo intentas ejecutar directamente:</p>
+<div class="code"><pre class="code literal-block"><span class="n">ModuleNotFoundError</span><span class="p">:</span><span class="w"> </span><span class="n">No</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="nn">named</span><span class="w"> </span><span class="c">'your_experiment_dependency'</span>
+</pre></div>
+
+<p>Entonces comienza la burocracia de verificar qué paquetes necesitas, con el agravante de que muchas veces el nombre con el que se instala no corresponde con el nombre que se importa), lidiar con conflictos de versiones y sobrecargar tu entorno.</p>
+<p>Si todo el mundo coincide en que Python es un lenguaje pragmático y elegante que resulta ideal para scripts, ¿por qué esta parte tiene que ser complicada?</p>
+<p class="more"><a href="posts/dependencias-automaticas-scripts-python-autopep723/">Leer más…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/svg-animados-para-tus-demos-de-programas-cli/" class="u-url">SVG animados para tus demos de programas CLI</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -294,10 +320,10 @@ sea porque somos nosotros los que <em>checkouteamos</em> el branch
 de un compañero para probar algo.</p>
 <p>Ir y volver entre ramas es fácil porque basta usar <cite>-</cite> que es
 un alias del branch previo.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-1" name="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-1" href="posts/el-mono-salta-entre-las-ramas/#rest_code_2b39a1ee3cd445d78cdddf40ca79d189-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
-<a id="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-2" name="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-2" href="posts/el-mono-salta-entre-las-ramas/#rest_code_2b39a1ee3cd445d78cdddf40ca79d189-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span><span class="s1">'master'</span>
-<a id="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-3" name="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-3" href="posts/el-mono-salta-entre-las-ramas/#rest_code_2b39a1ee3cd445d78cdddf40ca79d189-3"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-
-<a id="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-4" name="rest_code_2b39a1ee3cd445d78cdddf40ca79d189-4" href="posts/el-mono-salta-entre-las-ramas/#rest_code_2b39a1ee3cd445d78cdddf40ca79d189-4"></a>Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">'writing'</span>
+<div class="code"><pre class="code bash"><a id="rest_code_616ea8595cb4483098151486c83726c0-1" name="rest_code_616ea8595cb4483098151486c83726c0-1" href="posts/el-mono-salta-entre-las-ramas/#rest_code_616ea8595cb4483098151486c83726c0-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+<a id="rest_code_616ea8595cb4483098151486c83726c0-2" name="rest_code_616ea8595cb4483098151486c83726c0-2" href="posts/el-mono-salta-entre-las-ramas/#rest_code_616ea8595cb4483098151486c83726c0-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span><span class="s1">'master'</span>
+<a id="rest_code_616ea8595cb4483098151486c83726c0-3" name="rest_code_616ea8595cb4483098151486c83726c0-3" href="posts/el-mono-salta-entre-las-ramas/#rest_code_616ea8595cb4483098151486c83726c0-3"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-
+<a id="rest_code_616ea8595cb4483098151486c83726c0-4" name="rest_code_616ea8595cb4483098151486c83726c0-4" href="posts/el-mono-salta-entre-las-ramas/#rest_code_616ea8595cb4483098151486c83726c0-4"></a>Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">'writing'</span>
 </pre></div>
 <p><code class="docutils literal">git checkout -</code> es equivalente a la forma general <code class="docutils literal">git checkout <span class="pre">@{-1}</span></code>
 y si cambiamos el -1 por -N volveremos al enésimo branch en que estuvimos.</p>
