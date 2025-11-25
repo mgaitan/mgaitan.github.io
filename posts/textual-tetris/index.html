@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Una autopsia amable de un port de Tetris hecho con Textual">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>textual-tetris, un tetris en la terminal | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/posts/textual-tetris/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../analizando-la-migracion-intraprovincial-en-cordoba/" title="Analizando la migración intraprovincial en Córdoba" type="text/html">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="textual-tetris, un tetris en la terminal">
+<meta property="og:url" content="https://mgaitan.github.io/posts/textual-tetris/">
+<meta property="og:description" content="Una autopsia amable de un port de Tetris hecho con Textual">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-11-24T22:38:00-03:00">
+<meta property="article:tag" content="juegos">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="terminal">
+<meta property="article:tag" content="textual">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="logo" href="../../">
+
+            <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Sobre mí</a>
+                </li>
+<li class="nav-item">
+<a href="../../charlas/" class="nav-link">Charlas</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archivos</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Categorías</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>            </li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">textual-tetris, un tetris en la terminal</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2025-11-24T22:38:00-03:00" itemprop="datePublished" title="2025-11-24 22:38">2025-11-24 22:38</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/textual-tetris.html">Comentarios</a>
+
+
+            
+        </p>
+</div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Como <a href="https://x.com/tin_nqn_/status/1978823177837912528">sigo sin empleo</a> priorizando la búsqueda de salud mental, dedico mi tiempo ñoño a dos loables tareas: </p>
+<ol>
+<li>Colaborar con organizaciones que necesitan soluciones tecnológicas pero no tienen el presupuesto para competir con el mercado por mis conocimientos. </li>
+<li>La que compete a este post: aprender cosas nuevas implementando ideas viejas del <code>TO DO</code> permanente que <a href="https://github.com/mgaitan/mgaitan/issues">anoto acá</a>), para las que rara vez encontraba el tiempo.    </li>
+</ol>
+<p>Esta vez quería aprender un poco sobre <a href="https://textual.textualize.io/">Textual</a> (hermano mayor de <a href="https://rich.readthedocs.io/en/stable/">rich</a>), el gran framework en Python para hacer interfaces gráficas basadas en texto, las famosas <a href="https://en.wikipedia.org/wiki/Text-based_user_interface">TUIs</a>. </p>
+<p>Y ya que estaba, aprendí a hacer un Tetris que es bastante digno de jugar, no se ve taaan feo, y <a href="https://github.com/mgaitan/textual-tetris/blob/392744f6275160e5b8512e7f9f76b3a2e388fb4a/textris.py">actualmente tiene menos de 600 líneas</a> contando los comentarios y se ve así:</p>
+<p><img alt="" src="../../images/textual-tetris.png"></p>
+<p>Pero una probadita vale más que mil capturas: abrí una terminal y si tenés <a href="https://docs.astral.sh/uv/">uv</a> instalado (¡deberías!) ejecutá:</p>
+<div class="code"><pre class="code literal-block"><span class="go">uvx textual-tetris </span>
+</pre></div>
+
+<p>Y ya estás jugando Tetris!</p>
+<!-- TEASER_END -->
+
+<h3>Un paseo por mi implementación</h3>
+<p>Tetris no es un juego cualquiera. Es una ícono de la cultura popular, un producto que tuvo valor geopolítico (no se pierdan <a href="https://cenital.com/la-invencion-del-tetris/">este newsletter de Tomás Aguerre</a> al respecto) y una pasión obsesiva para quienes lo juegan y lo programan. </p>
+<p>Hay <a href="https://github.com/search?q=tetris&amp;type=repositories">miles de versiones</a> en decenas de lenguajes de programación. Desde una versión <a href="https://en.wikipedia.org/wiki/Code_golf">code golf</a> en Javascript que <a href="](https:/blog.jay.vg/golf/tetris.html)">entra completamente en 351 bytes</a>, uno <a href="https://github.com/programble/tetrasm">en esamblador que bootea como sistema operativo)</a> y hasta hay uno implemnentado <a href="https://th0mas.nl/2025/01/12/tetris-in-a-pdf/">en un archivo PDF!</a>. </p>
+<p>El que hice yo es mucho más clásico pero tiene algunos detalles de implementación que me gustaría comentar. </p>
+<p>Por ejemplo tomé <a href="https://github.com/olemb/tetris/">la idea de Ole Martin Bjørndalen</a> de códificar los tetrominós en sus distintas posiciones posibles como un conjunto de coordenadas hexadecimales dentro de una malla 4x4.  </p>
+<p>Acá armé un videito para explicarlo: </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6b1sauBX35g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>En el código se ve así:</p>
+<div class="code"><pre class="code literal-block"><span class="n">PIECES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"O"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"color"</span><span class="p">:</span> <span class="s2">"yellow"</span><span class="p">,</span> <span class="s2">"codes"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"56a9"</span><span class="p">,</span> <span class="s2">"6a95"</span><span class="p">,</span> <span class="s2">"a956"</span><span class="p">,</span> <span class="s2">"956a"</span><span class="p">]},</span>
+    <span class="s2">"I"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"color"</span><span class="p">:</span> <span class="s2">"cyan"</span><span class="p">,</span> <span class="s2">"codes"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"4567"</span><span class="p">,</span> <span class="s2">"26ae"</span><span class="p">,</span> <span class="s2">"ba98"</span><span class="p">,</span> <span class="s2">"d951"</span><span class="p">]},</span>
+    <span class="c1"># ...</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TetrisPiece</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]):</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+            <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+            <span class="n">coords</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">coords</span>
+</pre></div>
+
+<p>Esa <code>property</code> nos da coordenadas relativas de la pieza en la rotación dada por <code>self.code</code>, que luego se suman a una posición <code>x, y</code> de la pieza relativa al tablero para calcular la posición absoluta de las celdas a pintar. Si estas coordenadas caben en las dimensiones del tablero, entonces la celda pasa de mostrarse como dos espacios en blanco a dos "█" (full <a href="https://en.wikipedia.org/wiki/Block_Elements">block char</a>) del color de la pieza. </p>
+<div class="code"><pre class="code literal-block">      <span class="k">for</span> <span class="n">board_x</span><span class="p">,</span> <span class="n">board_y</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">blocks</span><span class="p">:</span>
+          <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">board_x</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_width</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">board_y</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_height</span><span class="p">:</span>
+              <span class="n">display_board</span><span class="p">[</span><span class="n">board_y</span><span class="p">][</span><span class="n">board_x</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">color</span>
+
+      <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">display_board</span><span class="p">:</span>
+          <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+              <span class="k">if</span> <span class="n">cell</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                  <span class="n">text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"  "</span><span class="p">)</span>
+              <span class="k">else</span><span class="p">:</span>
+                  <span class="n">text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"██"</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="sa">f</span><span class="s2">"bold </span><span class="si">{</span><span class="n">cell</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+<p>Rotar una pieza es basicamente cambiar un código por el que le sigue y volver a empezar cuando se acaban. Es lo que se conoce como un "round-robin". </p>
+<p>Originalmente llevaba registro del índice de la rotación que se calcula como el módulo.</p>
+<div class="code"><pre class="code literal-block">    <span class="bp">self</span><span class="o">.</span><span class="n">rotation</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rotation</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="p">)</span>
+</pre></div>
+
+<p>Luego cambie (simplifiqué?) a usar <code>collections.deque</code> que ya tiene los metodos de rotacion. </p>
+<div class="code"><pre class="code literal-block"><span class="k">class</span><span class="w"> </span><span class="nc">TetrisPiece</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">piece_type</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">codes</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">PIECES</span><span class="p">[</span><span class="n">piece_type</span><span class="p">][</span><span class="s2">"codes"</span><span class="p">])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">undo_rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<p>El <code>undo_rotate</code> es necesario porque cuando llega la directiva de rotar la pieza actual en el tablero, se calcula si hay colisiones antes de mostrarla, y si hay colisiones, se necesita revertir la rotación. Para quien juega esto es equivalente a "no se puede rotar" </p>
+<div class="code"><pre class="code literal-block"><span class="k">def</span><span class="w"> </span><span class="nf">rotate_piece</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Rotate the current piece"""</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">rotate</span><span class="p">()</span>
+
+    <span class="c1"># Check if rotation causes collision</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_collision</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">undo_rotate</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">update_display</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+
+<p>El mismo criterio de intentar/deshacer si colisiona es para los movimiento.s   Así es <code>move_piece</code>: </p>
+<div class="code"><pre class="code literal-block"><span class="k">def</span><span class="w"> </span><span class="nf">move_piece</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+    <span class="n">old_x</span><span class="p">,</span> <span class="n">old_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">y</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">dy</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_collision</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">old_x</span><span class="p">,</span> <span class="n">old_y</span>
+        <span class="k">if</span> <span class="n">dy</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lock_piece</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">update_display</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+
+<p>Pero que es una colisión? Geometría discreta:</p>
+<div class="code"><pre class="code literal-block"><span class="k">def</span><span class="w"> </span><span class="nf">check_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">board_x</span><span class="p">,</span> <span class="n">board_y</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">blocks</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">board_x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">board_x</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_width</span> <span class="ow">or</span> <span class="n">board_y</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_height</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">board_y</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="p">[</span><span class="n">board_y</span><span class="p">][</span><span class="n">board_x</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+
+<p>Al bajar (<code>dy &gt; 0</code>), si chocamos se llama a <code>lock_piece</code>: fija los colores en la grilla, limpia líneas completas y le avisa a la <code>App</code>. Eso contesta la clásica “¿por qué no puedo seguir bajando?”: porque la función probó el movimiento y chocó contra un borde o un bloque previamente fijado.</p>
+<h3>Widgets, bindings y magia "Textual"</h3>
+<p>Una app Textual se compone de <a href="https://textual.textualize.io/widget_gallery/">widgets</a> (botones, inputs, options, etc.) que pueden agruparse en containers <code>Container</code>. Todos los widgets y los contenedores pueden estar asociados a un estilo de (pseudo) CSS. </p>
+<p>La compisición para este Tetris es bastante autoexplicativa </p>
+<div class="code"><pre class="code literal-block">    <span class="k">def</span><span class="w"> </span><span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ComposeResult</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"game-container"</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">Label</span><span class="p">(</span><span class="s2">"🎮 TETRIS 🕹"</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"title"</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">Horizontal</span><span class="p">():</span>
+                <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"board-container"</span><span class="p">):</span>
+                    <span class="k">yield</span> <span class="n">TetrisBoard</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"board"</span><span class="p">)</span>
+                    <span class="k">yield</span> <span class="n">Static</span><span class="p">(</span><span class="s2">"GAME OVER</span><span class="se">\n</span><span class="s2">Press R to restart"</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"game-over-overlay"</span><span class="p">)</span>
+                <span class="k">with</span> <span class="n">Vertical</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"sidebar"</span><span class="p">):</span>
+                    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"next-piece-container"</span><span class="p">):</span>
+                        <span class="k">yield</span> <span class="n">NextPieceWidget</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"next-piece"</span><span class="p">)</span>
+                    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"score-container"</span><span class="p">):</span>
+                        <span class="k">yield</span> <span class="n">ScoreWidget</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"score-widget"</span><span class="p">)</span>
+                    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"controls"</span><span class="p">):</span>
+                        <span class="k">yield</span> <span class="n">Label</span><span class="p">(</span><span class="s2">"CONTROLS"</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">"section-title"</span><span class="p">)</span>
+                        <span class="k">yield</span> <span class="n">Label</span><span class="p">(</span><span class="s2">"↑/W: Rotate"</span><span class="p">)</span>
+                        <span class="k">yield</span> <span class="n">Label</span><span class="p">(</span><span class="s2">"←/A: Move Left"</span><span class="p">)</span>
+                        <span class="k">yield</span> <span class="n">Label</span><span class="p">(</span><span class="s2">"→/D: Move Right"</span><span class="p">)</span>
+                        <span class="k">yield</span> <span class="n">Label</span><span class="p">(</span><span class="s2">"↓/S: Move Down"</span><span class="p">)</span>
+                        <span class="k">yield</span> <span class="n">Label</span><span class="p">(</span><span class="s2">"Space: Drop"</span><span class="p">)</span>
+                        <span class="k">yield</span> <span class="n">Label</span><span class="p">(</span><span class="s2">"Ctrl+Q: Quit"</span><span class="p">)</span>
+</pre></div>
+
+<p>Todos los widgets "custom" que definí, <code>TetrisBoard</code>, <code>NextPieceWidget</code> y <code>ScoreWidget</code>,  heredan de <code>Static</code> que es el widget más básico, no "reactivo", pero que obviamente se puede renderizar multiples veces para actualizar su contenido. </p>
+<p>Esa actualización sucede en algunos eventos en este caso de teclado y de un timer que controla la caída automática de las piezas (textual tambien soporta eventos de mouse). El puente entre los eventos y la lógica está en <code>TetrisApp.BINDINGS</code>:</p>
+<div class="code"><pre class="code literal-block"><span class="n">BINDINGS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"left,a"</span><span class="p">,</span> <span class="s2">"move_left"</span><span class="p">,</span> <span class="s2">"Move Left"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"right,d"</span><span class="p">,</span> <span class="s2">"move_right"</span><span class="p">,</span> <span class="s2">"Move Right"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"down,s"</span><span class="p">,</span> <span class="s2">"move_down"</span><span class="p">,</span> <span class="s2">"Move Down"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"up,w"</span><span class="p">,</span> <span class="s2">"rotate"</span><span class="p">,</span> <span class="s2">"Rotate"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"space"</span><span class="p">,</span> <span class="s2">"hard_drop"</span><span class="p">,</span> <span class="s2">"Drop"</span><span class="p">),</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</pre></div>
+
+<p>Cada <em>binding</em> mapea combinaciones de teclas a <code>action_*</code>. Cuando Textual detecta el evento de una combinación, invoca <code>action_move_left</code>, <code>action_hard_drop</code>, etc. ¡Excelente API de desarrollo en mis libros!</p>
+<p>Y hay un chiche. Cuando se pierde, además de hacer visible el cartelito de "Game over" (que en realidad está siempre pero oculto), el método a cargo tambien <a href="https://textual.textualize.io/guide/actions/#dynamic-actions">desactiva varios bindings dinámicamente</a>, asi no podes mover nada. Esta desconexión de eventos a acciones evita ensuciar los métodos con un chequeo (<code>if not self.game_over: ...</code>). </p>
+<p>Dicho sea de paso, la documentación de Textual es increíblemente buena, recomiendo leerla aun si todavía no tenés proyecto. </p>
+<h3>¡Ponele los puntos!</h3>
+<p>Cuando una pieza ya no puede caer más (hay una colisión en un movimiento manual o automático hacia abajo), se llama al método <code>on_piece_locked</code></p>
+<div class="code"><pre class="code literal-block">    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_collision</span><span class="p">():</span>
+        <span class="c1"># Revert move</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_piece</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">old_x</span><span class="p">,</span> <span class="n">old_y</span>
+        <span class="c1"># If we were moving down, lock the piece in place</span>
+        <span class="k">if</span> <span class="n">dy</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lock_piece</span><span class="p">()</span>
+</pre></div>
+
+<p>Este método es el que suma puntaje, calcula si se pasa de nivel, lo que a la su vez 
+aumenta la velocidad de caída de las piezas.</p>
+<div class="code"><pre class="code literal-block"><span class="n">line_score</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">800</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cleared_lines</span><span class="p">,</span> <span class="n">cleared_lines</span> <span class="o">*</span> <span class="mi">200</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">line_score</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="k">if</span> <span class="n">cleared_lines</span> <span class="k">else</span> <span class="mi">10</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">lines_cleared</span> <span class="o">+=</span> <span class="n">cleared_lines</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines_cleared</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines_per_level</span><span class="p">)</span>
+</pre></div>
+
+<p>La duración de la pausa entre cada paso de descenso automático (a.k.a. velocidad de caída libre) es una funcion exponencial inversa del nivel </p>
+<!--$$
+t_{\text{drop}}(L) = \max\!\Bigl(0.02,\;\bigl(0.8 - 0.007(L-1)\bigr)^{\,L-1}\Bigr)
+$$-->
+
+<p><img alt="" src="https://quicklatex.com/cache3/71/ql_357031cd1c3bcd37e352da356333a171_l3.png"></p>
+<p>que graficado se ve así:</p>
+<p><img alt="velocidad" src="../../images/drop_interval_levels_xkcd.png"></p>
+<p>¿De dónde saqué esa formula estrambótica?  De la <a href="https://archive.org/details/2009-tetris-variant-concepts_202201/2009%20Tetris%20Design%20Guideline/page/20/mode/2up">guía oficial de diseño de Tetris</a>, por supuesto. </p>
+<p>Si querés todas las recomendaciones de esa guía para tu Tetris clone, hay una <a href="https://pypi.org/project/tetris/">biblioteca Python que lo implementa en serio</a>. </p>
+<h3>¿Y qué queda pendiente?</h3>
+<p>La UI es medio pelo, seamos sinceros. Muy copado Textual, pero acomodar las cosas en la pantalla sigue dependiendo de saber un poco de CSS y ya sabemos como somos los pythonistas con ese asunto. Y los LLMs <a href="https://x.com/ralsina/status/1991205490781573430">tampoco ayudan mucho con esto</a>. </p>
+<div class="tenor-gif-embed" data-postid="12014506" data-share-method="host" data-aspect-ratio="1.33333" data-width="60%">
+<a href="https://tenor.com/view/family-guy-css-open-window-annoyed-pissed-gif-12014506">Family Guy Css GIF</a>from <a href="https://tenor.com/search/family+guy-gifs">Family Guy GIFs</a>
+</div>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script><p>El código probablemente se puede hacer un poco más prolijo. Por ejemplo hay algo de lógica repetida entre el render del tablero y el del widget de la pieza siguiente. </p>
+<p>La manera de recomenzar un juego es un poco bruta (lanza un nuevo proceso!). No hay acción para pausar. Y sobre todo, hace falta la posibilidad de repetir los boards para jugar de a dos (o más!) jugadoras/es, que es la más enérgica petición de mi más hábil usuaria, mi hija Ema de 10 años. </p>
+<p>¡Espero sus comentarios, sugerencias y pull requests!</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/juegos/" rel="tag">juegos</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/terminal/" rel="tag">terminal</a></li>
+            <li><a class="tag p-category" href="../../categories/textual/" rel="tag">textual</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../analizando-la-migracion-intraprovincial-en-cordoba/" rel="prev" title="Analizando la migración intraprovincial en Córdoba">Post anterior</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+                    <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="https://mgaitan.github.io/posts/textual-tetris/",
+        disqus_title="textual-tetris, un tetris en la terminal",
+        disqus_identifier="cache/posts/textual-tetris.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

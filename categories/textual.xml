@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn (Posts sobre textual)</title><link>https://mgaitan.github.io/</link><description></description><atom:link href="https://mgaitan.github.io/categories/textual.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2025 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 25 Nov 2025 01:49:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>textual-tetris, un tetris en la terminal</title><link>https://mgaitan.github.io/posts/textual-tetris/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Como &lt;a href="https://x.com/tin_nqn_/status/1978823177837912528"&gt;sigo sin empleo&lt;/a&gt; priorizando la búsqueda de salud mental, dedico mi tiempo ñoño a dos loables tareas: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Colaborar con organizaciones que necesitan soluciones tecnológicas pero no tienen el presupuesto para competir con el mercado por mis conocimientos. &lt;/li&gt;
+&lt;li&gt;La que compete a este post: aprender cosas nuevas implementando ideas viejas del &lt;code&gt;TO DO&lt;/code&gt; permanente que &lt;a href="https://github.com/mgaitan/mgaitan/issues"&gt;anoto acá&lt;/a&gt;), para las que rara vez encontraba el tiempo.    &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Esta vez quería aprender un poco sobre &lt;a href="https://textual.textualize.io/"&gt;Textual&lt;/a&gt; (hermano mayor de &lt;a href="https://rich.readthedocs.io/en/stable/"&gt;rich&lt;/a&gt;), el gran framework en Python para hacer interfaces gráficas basadas en texto, las famosas &lt;a href="https://en.wikipedia.org/wiki/Text-based_user_interface"&gt;TUIs&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Y ya que estaba, aprendí a hacer un Tetris que es bastante digno de jugar, no se ve taaan feo, y &lt;a href="https://github.com/mgaitan/textual-tetris/blob/392744f6275160e5b8512e7f9f76b3a2e388fb4a/textris.py"&gt;actualmente tiene menos de 600 líneas&lt;/a&gt; contando los comentarios y se ve así:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://mgaitan.github.io/images/textual-tetris.png"&gt;&lt;/p&gt;
+&lt;p&gt;Pero una probadita vale más que mil capturas: abrí una terminal y si tenés &lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt; instalado (¡deberías!) ejecutá:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="go"&gt;uvx textual-tetris &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Y ya estás jugando Tetris!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/textual-tetris/"&gt;Leer más…&lt;/a&gt; (restan 7 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>juegos</category><category>python</category><category>terminal</category><category>textual</category><guid>https://mgaitan.github.io/posts/textual-tetris/</guid><pubDate>Tue, 25 Nov 2025 01:38:00 GMT</pubDate></item></channel></rss>
