@@ -74,7 +74,39 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/easter-eggs-with-invisible-text/" class="u-url">Easter eggs in your code with invisible text</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/textual-tetris/" class="u-url">textual-tetris, a Tetris in the terminal</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/textual-tetris/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-11-24T22:38:00-03:00" itemprop="datePublished" title="2025-11-24 22:38">2025-11-24 22:38</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/textual-tetris/#disqus_thread" data-disqus-identifier="cache/posts/textual-tetris.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Since I <a href="https://x.com/tin_nqn_/status/1978823177837912528">remain unemployed</a> while prioritizing my search for mental health, I spend my nerdy time on two worthwhile tasks:</p>
+<ol>
+<li>Collaborating with organizations that need technological solutions but do not have the budget to compete in the market for my skills.</li>
+<li>The one relevant to this post: learning new things by implementing old ideas from the permanent <code>TO DO</code> list I <a href="https://github.com/mgaitan/mgaitan/issues">keep here</a>, the ones I almost never found time for.</li>
+</ol>
+<p>This time I wanted to learn a bit about <a href="https://textual.textualize.io/">Textual</a> (the elder sibling of <a href="https://rich.readthedocs.io/en/stable/">rich</a>), an excellent Python framework for building <a href="https://en.wikipedia.org/wiki/Text-based_user_interface">text-based users interfaces</a>.</p>
+<p>And while I was at it, I learned how to make a Tetris clone that is pretty decent to play, does not look <em>that</em> ugly, and <a href="https://github.com/mgaitan/textual-tetris/blob/392744f6275160e5b8512e7f9f76b3a2e388fb4a/textris.py">currently sits at under 600 lines of Python code</a>, comments included. It looks like this:</p>
+<p><img alt="" src="../images/textual-tetris.png"></p>
+<p>But a taste is worth more than a thousand screenshots: open a terminal and, if you have <a href="https://docs.astral.sh/uv/">uv</a> installed (you should!), run:</p>
+<div class="code"><pre class="code literal-block"><span class="go">uvx textual-tetris</span>
+</pre></div>
+
+<p>And you are already playing Tetris!</p>
+<p class="more"><a href="posts/textual-tetris/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/easter-eggs-with-invisible-text/" class="u-url">Easter eggs in your code with invisible text</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -173,92 +205,6 @@ navbar-light bg-light
 <p>If everyone agrees that Python is a pragmatic and elegant language that's ideal for scripts, why does this part have to be complicated?</p>
 <p class="more"><a href="posts/automatic-dependencies-management-python-scripts-autopep723/">Read more…</a></p>
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/animated-svgs-for-your-cli-program-demos/" class="u-url">Animated SVGs for your CLI program demos</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/animated-svgs-for-your-cli-program-demos/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-01-23T16:02:18-03:00" itemprop="datePublished" title="2025-01-23 16:02">2025-01-23 16:02</time></a>
-            </p>
-                <p class="commentline">        <a href="posts/animated-svgs-for-your-cli-program-demos/#disqus_thread" data-disqus-identifier="cache/posts/svg-animados-para-tus-demos-de-programas-cli.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>Want to show off how cool your command-line program is with a demo of real-world usage? Want to avoid your demo easily becoming outdated? Want to include the demo on sites that don't allow videos or JavaScript, like GitHub or Pypi <code>README</code> files?</p>
-<p>Animated SVGs generated programmatically are the solution! They are embedded like a normal image but are lighter than GIFs, play automatically on the same page, don't require JavaScript, and keep the text sharp regardless of zoom.</p>
-<p>Plus, automating your demos gives you total control and lets you programmatically regenerate the visual result when the CLI changes or you want to make changes.</p>
-<p>As an example, here's a demo of a little program I made recently called <a href="https://github.com/mgaitan/cuitonline">cuitonline</a> which looks like this for its 0.1 version:</p>
-<p align="center">
-<img width="90%" src="https://raw.githubusercontent.com/mgaitan/cuitonline/refs/tags/0.1/demo/usage.svg"></p>
-
-<h3>How do we do it?</h3>
-<p>We're going to use the following tools, all open source.</p>
-<p><strong><a href="https://github.com/veracioux/tuterm">tuterm</a></strong>: It's a bash tool for creating demos of CLI programs. You define a "script" (in the best sense of the word) that lets you control the commands that are executed (for real!) in the console, what comment to show, and what other auxiliary commands to run.</p>
-<ul>
-<li>
-<p><strong>uvx</strong>: It's the equivalent of <code>pipx</code> for <a href="https://github.com/astral-sh/uv">uv</a>. We use it to run <code>asciinema</code> managing dependencies and installing it in a virtual environment automatically.</p>
-</li>
-<li>
-<p><strong><a href="https://docs.asciinema.org/manual/cli/">asciinema</a></strong>: Records terminal sessions and saves them in a text format. By default, these files are uploaded and shared through <a href="https://asciinema.org/">asciinema.org</a>, which is great, but the player requires JavaScript, which limits its use. That's why we convert it to SVG.</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/marionebl/svg-term-cli">svg-term-cli</a></strong>: Converts asciinema recordings into animated SVGs.</p>
-</li>
-</ul>
-<h3>Step by step</h3>
-<h4>1. Write the script</h4>
-<p>Following the example of <code>cuitonline</code> shown above. I named the <code>tuterm</code> script <code>usage.tutorial</code> with the following content:</p>
-<div class="code"><pre class="code literal-block"><span class="c1"># file: &gt; cuitonline_usage</span>
-prompt<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-ne<span class="w"> </span><span class="s2">"\033[1;35m\$ \033[0;33m"</span>
-<span class="o">}</span>
-configure<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w"> </span><span class="nv">DELAY</span><span class="o">=</span><span class="m">0</span>.02
-<span class="w"> </span><span class="nv">DELAY_PROMPT</span><span class="o">=</span><span class="m">0</span>.2
-<span class="w"> </span><span class="nv">COLOR_MESSAGE</span><span class="o">=</span><span class="s1">'1;32'</span>
-<span class="o">}</span>
-
-run<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w"> </span>M<span class="w"> </span><span class="s2">"Buscar por CUIT"</span>
-<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="m">20</span>-22293909-8
-<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
-<span class="w"> </span>M<span class="w"> </span><span class="s2">"Buscar por DNI"</span>
-<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="m">10433615</span>
-<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
-<span class="w"> </span>M<span class="w"> </span><span class="s2">"Busca por nombre"</span>
-<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="s2">"messi lionel andres"</span>
-<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
-<span class="w"> </span>clear
-<span class="w"> </span>M<span class="w"> </span><span class="s2">"Obtiene la página 2 de los resultados"</span>
-<span class="w"> </span>c<span class="w"> </span>cuitonline<span class="w"> </span><span class="s2">"juan jose gonzalez"</span><span class="w"> </span>-p2
-<span class="w"> </span>sleep<span class="w"> </span><span class="m">3</span>
-<span class="o">}</span>
-</pre></div>
-
-<p>Lines that start with <code>M</code> are the comments. <code>c</code> are commands that will be seen, and the rest are commands that will be executed but are not shown being typed.</p>
-<h4>2. Record the terminal session</h4>
-<p>Use asciinema to record the session while tuterm runs your demo:</p>
-<div class="code"><pre class="code literal-block">uvx<span class="w"> </span>asciinema<span class="w"> </span>rec<span class="w"> </span>--overwrite<span class="w"> </span>-c<span class="w"> </span><span class="s1">'tuterm usage.tutorial --mode demo'</span><span class="w"> </span>usage.cast
-</pre></div>
-
-<h4>3. Convert the recording into an animated SVG</h4>
-<p>With svg-term-cli we define the appearance of the "console" and convert the recording into an animated SVG:</p>
-<div class="code"><pre class="code literal-block">svg-term<span class="w"> </span>--window<span class="w"> </span>--width<span class="w"> </span><span class="m">75</span><span class="w"> </span>--height<span class="w"> </span><span class="m">24</span><span class="w"> </span>--padding<span class="w"> </span><span class="m">1</span><span class="w"> </span>--in<span class="w"> </span>usage.cast<span class="w"> </span>--out<span class="w"> </span>usage.svg
-</pre></div>
-
-<h4>4. Add the generated SVG to your <code>README.md</code> file</h4>
-<p>For example, if you upload it to <code>/demo/usage.svg</code> of your repo,</p>
-<div class="code"><pre class="code literal-block">&lt;p align="center"&gt;
-&lt;img width="90%" src="https://raw.githubusercontent.com/&lt;user&gt;/&lt;repo&gt;/refs/heads/main/demo/usage.svg" /&gt;
-&lt;/p&gt;
-</pre></div>
-
-<p>And that's it! Now you have an animated, sharp, and programmatically maintainable demo for your CLI program directly in your GitHub README. 😎</p>
     </div>
     </article>
 </div>
