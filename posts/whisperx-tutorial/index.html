@@ -115,12 +115,14 @@ navbar-light bg-light
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://github.com/m-bain/whisperX">WhisperX</a> es una canalización avanzada de reconocimiento de voz construida sobre Whisper, el modelo ASR de código abierto de OpenAI. Funciona en PyTorch y, aunque puede operar sobre CPU, el rendimiento mejora muchísimo con una GPU compatible con CUDA (es decir, NVIDIA). WhisperX mejora al modelo original con una alineación más precisa y veloz, soporte para modelos más grandes y diarización opcional mediante HuggingFace. El resultado son transcripciones de alta calidad con marcas de tiempo a nivel de palabra e identificación clara de cada hablante.</p>
-<p>Mi notebook no tiene una GPU con CUDA, así que ejecuto WhisperX en Google Colab y este es un tutorial corto de cómo lo configuro y uso en ese entorno en la nube.</p>
+<p><a href="https://github.com/m-bain/whisperX">WhisperX</a> es un pipeline avanzado de reconocimiento de voz construida sobre Whisper, el modelo ASR de código abierto de OpenAI. Funciona en PyTorch y, aunque puede operar sobre CPU, el rendimiento mejora muchísimo con una GPU compatible con CUDA (es decir, NVIDIA). WhisperX mejora al modelo original con una alineación más precisa y veloz, soporte para modelos más grandes y diferenciación de voces (diarización) opcional. El resultado son transcripciones de alta calidad con marcas de tiempo a nivel de palabra e identificación clara de cada hablante y asegura ser hasta 70x más rápìdo que el modelo original</p>
+<p>Mi compu no tiene una GPU con soporte para CUDA, así que ejecuto WhisperX en Google Colab y este es un tutorial corto de cómo lo configuro y uso en ese entorno en la nube.</p>
 <!-- TEASER_END -->
 <h3 id="Instalaci%C3%B3n-y-configuraci%C3%B3n-de-WhisperX">Instalación y configuración de WhisperX<a class="anchor-link" href="#Instalaci%C3%B3n-y-configuraci%C3%B3n-de-WhisperX">¶</a>
 </h3>
-<p>Primero vamos a crear un entorno virtual aislado para no depender de las bibliotecas preinstaladas en Colab.</p>
+<p>Primero asegurate de que estás usando un entorno de ejecución basado en GPU. Podés configurarlo en "Entorno de ejecución" → "Cambiar tipo de entorno de ejecución" y elegir un acelerador de hardware.</p>
+<p><img alt="Configuración de entorno de ejecución en Colab" src="../../images/colab-runtime.png"></p>
+<p>Luego crearemos un entorno virtual aislado para no depender de las bibliotecas preinstaladas en Colab.</p>
 </div>
 </div>
 </div>

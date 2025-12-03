@@ -134,7 +134,7 @@ para mostrar errores y fallos <em>on the fly</em>.</p>
 tracebacks a la parte útil, e incluye colores usados con criterio
 (basada en la genial biblioteca <a class="reference external" href="https://pypi.python.org/pypi/blessings">blessing</a>, del mismo autor).</p>
 <p>Para instalarlo, lo de siempre:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_bf450a6cfac34837a6812ac1acd12aa7-1" name="rest_code_bf450a6cfac34837a6812ac1acd12aa7-1" href="#rest_code_bf450a6cfac34837a6812ac1acd12aa7-1"></a><span class="o">(</span>env<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nose-progressive
+<div class="code"><pre class="code bash"><a id="rest_code_8a487e1d0b8849c0810544aea9b2cbf4-1" name="rest_code_8a487e1d0b8849c0810544aea9b2cbf4-1" href="#rest_code_8a487e1d0b8849c0810544aea9b2cbf4-1"></a><span class="o">(</span>env<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nose-progressive
 </pre></div>
 <p>Para usarlo, agregar <code class="docutils literal"><span class="pre">--with-progressive</span></code> como parámetros de <code class="docutils literal">nosetests</code>,
 o bien, para usarlo siempre, configurarlo en <code class="docutils literal">.noserc</code> o en la
@@ -175,23 +175,23 @@ métodos.</p>
 <p>Por eso existe <a class="reference external" href="https://github.com/iElectric/nose-selecttests">nose-selecttests</a>, que permite filtrar pruebas con
 determinada subcadena en el nombre del método.</p>
 <p>Por ejemplo:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-1" name="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-1" href="#rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-1"></a>$<span class="w"> </span>djntest<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span><span class="w"> </span>common/tests/test_sequence_diff.py
-<a id="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-2" name="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-2" href="#rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-2"></a>
-<a id="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-3" name="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-3" href="#rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-4" name="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-4" href="#rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-5" name="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-5" href="#rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-6" name="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-6" href="#rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-7" name="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-7" href="#rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-7"></a>
-<a id="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-8" name="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-8" href="#rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-8"></a>----------------------------------------------------------------------
-<a id="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-9" name="rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-9" href="#rest_code_ef160e3c5c08435b9a4ad5c53f12c4f8-9"></a>Ran<span class="w"> </span><span class="m">4</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.375s
+<div class="code"><pre class="code bash"><a id="rest_code_15b38a0c435646809b90ab01d1e1c96c-1" name="rest_code_15b38a0c435646809b90ab01d1e1c96c-1" href="#rest_code_15b38a0c435646809b90ab01d1e1c96c-1"></a>$<span class="w"> </span>djntest<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span><span class="w"> </span>common/tests/test_sequence_diff.py
+<a id="rest_code_15b38a0c435646809b90ab01d1e1c96c-2" name="rest_code_15b38a0c435646809b90ab01d1e1c96c-2" href="#rest_code_15b38a0c435646809b90ab01d1e1c96c-2"></a>
+<a id="rest_code_15b38a0c435646809b90ab01d1e1c96c-3" name="rest_code_15b38a0c435646809b90ab01d1e1c96c-3" href="#rest_code_15b38a0c435646809b90ab01d1e1c96c-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_15b38a0c435646809b90ab01d1e1c96c-4" name="rest_code_15b38a0c435646809b90ab01d1e1c96c-4" href="#rest_code_15b38a0c435646809b90ab01d1e1c96c-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_15b38a0c435646809b90ab01d1e1c96c-5" name="rest_code_15b38a0c435646809b90ab01d1e1c96c-5" href="#rest_code_15b38a0c435646809b90ab01d1e1c96c-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_15b38a0c435646809b90ab01d1e1c96c-6" name="rest_code_15b38a0c435646809b90ab01d1e1c96c-6" href="#rest_code_15b38a0c435646809b90ab01d1e1c96c-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_15b38a0c435646809b90ab01d1e1c96c-7" name="rest_code_15b38a0c435646809b90ab01d1e1c96c-7" href="#rest_code_15b38a0c435646809b90ab01d1e1c96c-7"></a>
+<a id="rest_code_15b38a0c435646809b90ab01d1e1c96c-8" name="rest_code_15b38a0c435646809b90ab01d1e1c96c-8" href="#rest_code_15b38a0c435646809b90ab01d1e1c96c-8"></a>----------------------------------------------------------------------
+<a id="rest_code_15b38a0c435646809b90ab01d1e1c96c-9" name="rest_code_15b38a0c435646809b90ab01d1e1c96c-9" href="#rest_code_15b38a0c435646809b90ab01d1e1c96c-9"></a>Ran<span class="w"> </span><span class="m">4</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.375s
 </pre></div>
 <p>En cambio:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_997fb7e054bb4e738eb9490b6ed43a64-1" name="rest_code_997fb7e054bb4e738eb9490b6ed43a64-1" href="#rest_code_997fb7e054bb4e738eb9490b6ed43a64-1"></a>$<span class="w"> </span>djntest<span class="w"> </span>--select-tests<span class="o">=</span>differ<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span><span class="w"> </span>apps/common/tests/test_sequence_diff.py
-<a id="rest_code_997fb7e054bb4e738eb9490b6ed43a64-2" name="rest_code_997fb7e054bb4e738eb9490b6ed43a64-2" href="#rest_code_997fb7e054bb4e738eb9490b6ed43a64-2"></a>
-<a id="rest_code_997fb7e054bb4e738eb9490b6ed43a64-3" name="rest_code_997fb7e054bb4e738eb9490b6ed43a64-3" href="#rest_code_997fb7e054bb4e738eb9490b6ed43a64-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_997fb7e054bb4e738eb9490b6ed43a64-4" name="rest_code_997fb7e054bb4e738eb9490b6ed43a64-4" href="#rest_code_997fb7e054bb4e738eb9490b6ed43a64-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_997fb7e054bb4e738eb9490b6ed43a64-5" name="rest_code_997fb7e054bb4e738eb9490b6ed43a64-5" href="#rest_code_997fb7e054bb4e738eb9490b6ed43a64-5"></a>----------------------------------------------------------------------
-<a id="rest_code_997fb7e054bb4e738eb9490b6ed43a64-6" name="rest_code_997fb7e054bb4e738eb9490b6ed43a64-6" href="#rest_code_997fb7e054bb4e738eb9490b6ed43a64-6"></a>Ran<span class="w"> </span><span class="m">2</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.088s
+<div class="code"><pre class="code bash"><a id="rest_code_78850245993b4c59ac2332ebfa85e6f5-1" name="rest_code_78850245993b4c59ac2332ebfa85e6f5-1" href="#rest_code_78850245993b4c59ac2332ebfa85e6f5-1"></a>$<span class="w"> </span>djntest<span class="w"> </span>--select-tests<span class="o">=</span>differ<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span><span class="w"> </span>apps/common/tests/test_sequence_diff.py
+<a id="rest_code_78850245993b4c59ac2332ebfa85e6f5-2" name="rest_code_78850245993b4c59ac2332ebfa85e6f5-2" href="#rest_code_78850245993b4c59ac2332ebfa85e6f5-2"></a>
+<a id="rest_code_78850245993b4c59ac2332ebfa85e6f5-3" name="rest_code_78850245993b4c59ac2332ebfa85e6f5-3" href="#rest_code_78850245993b4c59ac2332ebfa85e6f5-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_78850245993b4c59ac2332ebfa85e6f5-4" name="rest_code_78850245993b4c59ac2332ebfa85e6f5-4" href="#rest_code_78850245993b4c59ac2332ebfa85e6f5-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_78850245993b4c59ac2332ebfa85e6f5-5" name="rest_code_78850245993b4c59ac2332ebfa85e6f5-5" href="#rest_code_78850245993b4c59ac2332ebfa85e6f5-5"></a>----------------------------------------------------------------------
+<a id="rest_code_78850245993b4c59ac2332ebfa85e6f5-6" name="rest_code_78850245993b4c59ac2332ebfa85e6f5-6" href="#rest_code_78850245993b4c59ac2332ebfa85e6f5-6"></a>Ran<span class="w"> </span><span class="m">2</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.088s
 </pre></div>
 </section><section id="django-tests-autocomplete"><h2>django-tests-autocomplete</h2>
 <p>Esta herramienta no es estrictamente un plugin de nose, sino un helper
@@ -199,13 +199,13 @@ que aprovecha las posibilidades de bash para
 <a class="reference external" href="http://bash-completion.alioth.debian.org/">autocompletar</a> usando la tecla
 tab.</p>
 <p>¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_5bbdbe7166294ba380dc53edc204594e-1" name="rest_code_5bbdbe7166294ba380dc53edc204594e-1" href="#rest_code_5bbdbe7166294ba380dc53edc204594e-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py
+<div class="code"><pre class="code bash"><a id="rest_code_022dc91cd95f4056a3156cdd956df15a-1" name="rest_code_022dc91cd95f4056a3156cdd956df15a-1" href="#rest_code_022dc91cd95f4056a3156cdd956df15a-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py
 </pre></div>
 <p>Pero también permite afinar la puntería y "meterse" adentro del módulo:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_7ea2a08e774149e5b66a3c883881dec5-1" name="rest_code_7ea2a08e774149e5b66a3c883881dec5-1" href="#rest_code_7ea2a08e774149e5b66a3c883881dec5-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py:MyImportantTestCase
+<div class="code"><pre class="code bash"><a id="rest_code_b455c5ebd5cc4f129099b33d57be6909-1" name="rest_code_b455c5ebd5cc4f129099b33d57be6909-1" href="#rest_code_b455c5ebd5cc4f129099b33d57be6909-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py:MyImportantTestCase
 </pre></div>
 <p>E incluso adentro del testcase:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_3ead71f1c19d43b88bc46a303024d47e-1" name="rest_code_3ead71f1c19d43b88bc46a303024d47e-1" href="#rest_code_3ead71f1c19d43b88bc46a303024d47e-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py:MyImportantTestCase.test_super_important
+<div class="code"><pre class="code bash"><a id="rest_code_733c4f52b60f4fab949faa1c23c60a86-1" name="rest_code_733c4f52b60f4fab949faa1c23c60a86-1" href="#rest_code_733c4f52b60f4fab949faa1c23c60a86-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py:MyImportantTestCase.test_super_important
 </pre></div>
 <p>Desde el <code class="docutils literal">:</code> en adelante estamos en Python y Bash ya no sabe autocompletar,
 salvo que usemos esta herramienta que instrospecciona y "alimenta" el
