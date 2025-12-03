@@ -18,7 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/">
 <link rel="next" href="index-22.html" type="text/html">
-<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/textual-tetris/" type="text/html">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/whisperx-tutorial/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -77,7 +77,34 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/textual-tetris/" class="u-url">textual-tetris, un tetris en la terminal</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/whisperx-tutorial/" class="u-url">Cómo usar WhisperX en Google Colab (2025)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/whisperx-tutorial/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-03T10:15:20-03:00" itemprop="datePublished" title="2025-12-03 10:15">2025-12-03 10:15</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/whisperx-tutorial/#disqus_thread" data-disqus-identifier="cache/posts/whisperX_tutorial.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://github.com/m-bain/whisperX">WhisperX</a> es una canalización avanzada de reconocimiento de voz construida sobre Whisper, el modelo ASR de código abierto de OpenAI. Funciona en PyTorch y, aunque puede operar sobre CPU, el rendimiento mejora muchísimo con una GPU compatible con CUDA (es decir, NVIDIA). WhisperX mejora al modelo original con una alineación más precisa y veloz, soporte para modelos más grandes y diarización opcional mediante HuggingFace. El resultado son transcripciones de alta calidad con marcas de tiempo a nivel de palabra e identificación clara de cada hablante.</p>
+<p>Mi notebook no tiene una GPU con CUDA, así que ejecuto WhisperX en Google Colab y este es un tutorial corto de cómo lo configuro y uso en ese entorno en la nube.</p>
+<p class="more"><a href="posts/whisperx-tutorial/">Leer más…</a></p>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/textual-tetris/" class="u-url">textual-tetris, un tetris en la terminal</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -183,36 +210,14 @@ pero es verdad que la pulsión por poner huevos de pascua en el software es casi
 <p class="more"><a href="posts/easter-eggs-con-texto-invisible/">Leer más…</a></p>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ignorando-cambios-en-git-localmente/" class="u-url">Ignorando cambios en git localmente</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/ignorando-cambios-en-git-localmente/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-10-31T14:19:23-03:00" itemprop="datePublished" title="2025-10-31 14:19">2025-10-31 14:19</time></a>
-            </p>
-                <p class="commentline">        <a href="posts/ignorando-cambios-en-git-localmente/#disqus_thread" data-disqus-identifier="cache/posts/ignorando-cambios-en-git-localmente.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Es bien conocido que en un repositorio de git podemos usar un archivo <a href="https://git-scm.com/docs/gitignore"><code>.gitignore</code></a> para omitir el seguimiento de archivos que no queremos que se suban (se "empujen") al repositorio remoto. Si un archivo coincide con el patrón de un <code>.gitignore</code>, entonces no se mostrará en un <code>git status</code> para añadir sus eventuales cambios a un commit.</p>
-<p>Típicamente se usan para ignorar directorios donde se instalan dependencias (e.g. el virtualenv para proyectos Python generalmente instalado en <code>.venv</code>), archivos temporales generados por el intérprete o compilador, archivos específicos para IDEs, etc.</p>
-<p>Son tan comunes que GitHub ofrece <a href="https://github.com/github/gitignore">plantillas de gitignore</a> curadas para distintos lenguajes de programación, y herramientas específicas para inicializar proyectos como <a href="https://docs.astral.sh/uv/concepts/projects/init/">uv init</a> generan un <code>.gitignore</code> básico como parte del <em>boilerplate</em>.</p>
-<p>Un <code>.gitignore</code> forma parte del proyecto (está commiteado) y es importante que esté en el repositorio para que todos los colaboradores tengan la misma configuración.</p>
-<p>¿Pero qué pasa si queremos ignorar archivos solo localmente?</p>
-<p class="more"><a href="posts/ignorando-cambios-en-git-localmente/">Leer más…</a></p>
-</div>
-    </div>
     </article>
 </div>
         <ul class="pager postindexpager clearfix">
 <li class="next"><a href="index-22.html" rel="next">Posts anteriores</a></li>
         </ul>
-<script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+<script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script><!--End of body content--><footer id="footer">
             Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>

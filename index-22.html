@@ -78,7 +78,31 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/un-cheatsheet-automatico-para-tu-cli-typer/" class="u-url">Un cheatsheet automático para tu CLI Typer</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ignorando-cambios-en-git-localmente/" class="u-url">Ignorando cambios en git localmente</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/ignorando-cambios-en-git-localmente/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-10-31T14:19:23-03:00" itemprop="datePublished" title="2025-10-31 14:19">2025-10-31 14:19</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/ignorando-cambios-en-git-localmente/#disqus_thread" data-disqus-identifier="cache/posts/ignorando-cambios-en-git-localmente.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Es bien conocido que en un repositorio de git podemos usar un archivo <a href="https://git-scm.com/docs/gitignore"><code>.gitignore</code></a> para omitir el seguimiento de archivos que no queremos que se suban (se "empujen") al repositorio remoto. Si un archivo coincide con el patrón de un <code>.gitignore</code>, entonces no se mostrará en un <code>git status</code> para añadir sus eventuales cambios a un commit.</p>
+<p>Típicamente se usan para ignorar directorios donde se instalan dependencias (e.g. el virtualenv para proyectos Python generalmente instalado en <code>.venv</code>), archivos temporales generados por el intérprete o compilador, archivos específicos para IDEs, etc.</p>
+<p>Son tan comunes que GitHub ofrece <a href="https://github.com/github/gitignore">plantillas de gitignore</a> curadas para distintos lenguajes de programación, y herramientas específicas para inicializar proyectos como <a href="https://docs.astral.sh/uv/concepts/projects/init/">uv init</a> generan un <code>.gitignore</code> básico como parte del <em>boilerplate</em>.</p>
+<p>Un <code>.gitignore</code> forma parte del proyecto (está commiteado) y es importante que esté en el repositorio para que todos los colaboradores tengan la misma configuración.</p>
+<p>¿Pero qué pasa si queremos ignorar archivos solo localmente?</p>
+<p class="more"><a href="posts/ignorando-cambios-en-git-localmente/">Leer más…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/un-cheatsheet-automatico-para-tu-cli-typer/" class="u-url">Un cheatsheet automático para tu CLI Typer</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
