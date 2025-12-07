@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="How I packaged a Rust crate as a Python wheel using PyO3 and maturin, and what I learned along the way.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expanding the Python universe with Rust | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../../rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/en/posts/expanding-the-python-universe-with-rust/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../whisperx-tutorial/" title="How to use WhisperX in Google Colab (2025)" type="text/html">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Expanding the Python universe with Rust">
+<meta property="og:url" content="https://mgaitan.github.io/en/posts/expanding-the-python-universe-with-rust/">
+<meta property="og:description" content="How I packaged a Rust crate as a Python wheel using PyO3 and maturin, and what I learned along the way.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-12-07T14:15:23-03:00">
+<meta property="article:tag" content="bindings">
+<meta property="article:tag" content="maturin">
+<meta property="article:tag" content="pyo3">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="rust">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+<link rel="alternate" hreflang="es" href="../../../posts/ampliando-el-universo-python-con-rust/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="logo" href="../../">
+
+            <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about" class="nav-link">About me</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archive</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>            </li>
+<li class="nav-item"><a href="../../../" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Expanding the Python universe with Rust</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-07T14:15:23-03:00" itemprop="datePublished" title="2025-12-07 14:15">2025-12-07 14:15</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/ampliando-el-universo-python-con-rust.html">Comments</a>
+
+
+            
+        </p>
+</div>
+                <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">Also available in:</h3>
+                <p><a href="../../../posts/ampliando-el-universo-python-con-rust/" rel="alternate" hreflang="es">Español</a></p>
+        </div>
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>My wife Natalia, among many <a href="https://www.instagram.com/natinadibuja/">other talents she has</a>, is a German-to-Spanish translator and, besides freelancing, works as a researcher and lecturer at the Universidad Nacional de Córdoba, Argentina.</p>
+<p>Probably because foreign languages are almost as hard for me as dancing or singing (sorry to my colleagues who have had--and will have--to suffer through my spoken English), I have deep admiration for polyglots. Not for the mere ability to swap words or produce more vowel sounds, but for the power to know and feel different universes. That is what <a href="https://borgestodoelanio.blogspot.com/2017/01/jorges-luis-borges-el-oficio-de-traducir.html">Jorge L. Borges was complaining about</a> when someone mangled one of his tales with a translation:</p>
+<blockquote>
+<p>According to dictionaries, languages are repertoires of synonyms, but they are not. Bilingual dictionaries make you believe that every word in one language can be replaced by another word in a different language. The mistake is ignoring that each language is a way of feeling the universe.</p>
+</blockquote>
+<p>I extrapolate that admiration for polyglotism--the art of widening your vital universe--to people who know many programming languages deeply. They bring ideas from one universe to the next, bursting bubbles, prejudices, blind spots. They propose new ways and limits, taking inspiration from here to create over there. Python would not exist without that kind of people. Long live those "Marco Polos" who connect universes.</p>
+<p>Since I'm ambitious (but not quite dedicated enough) to open a small window into the Rust universe, I compensate for my slowness and distraction with tools and shortcuts.</p>
+<p>This is a simple way to expand my Python universe with a "Marco Polo" who knows the Rust world and can open a window to that <a href="https://crates.io/">other realm full of possibilities</a>.</p>
+<!-- TEASER_END -->
+
+<h3>Bridging universes: maturin and PyO3, crates as Python packages</h3>
+<p>Rust is famous for performance and safety. Python for versatility, simplicity, and pragmatism. Why not take high-performance Rust libraries and use them from Python? Writing the minimal amount of "glue" that lets you reuse software from one language in another is called a <a href="https://en.wikipedia.org/wiki/Language_binding">binding</a>, and for this pair of languages it's pretty straightforward thanks to <a href="https://www.maturin.rs/">maturin</a> and <a href="https://pyo3.rs/latest/">PyO3</a>.</p>
+<p>Maturin is a CLI tool and a "Python builder" (think uv_build or setuptools) that takes a Rust library (a crate) and packages it into a wheel you can import from Python. PyO3 is the glue library you add to the target crate: it provides the APIs to expose Rust functions, classes, and types as if they were Python objects.</p>
+<p>Sound like a big challenge if you barely know Rust? Turns out it isn't that hard, so let me share an example. I forked a crate called <a href="https://github.com/astral-sh/astral-tl">astral-tl</a> (itself a fork of <a href="https://github.com/y21/tl">tl</a>), an HTML parser comparable to the ubiquitous <a href="https://pypi.org/project/beautifulsoup4/">BeautifulSoup</a> or <a href="https://pypi.org/project/pyquery/">pyquery</a>. It's the library <a href="https://github.com/astral-sh/uv/">uv</a> uses when you pass <a href="https://docs.astral.sh/uv/reference/settings/#find-links">--find-links</a> to locate URLs for packages that aren't on PyPI.</p>
+<p>If you want to skip the details, the Pythonized result is <a href="https://github.com/mgaitan/tl-parser">here</a>, and <a href="https://github.com/astral-sh/astral-tl/compare/v0.7.11...mgaitan:tl-parser:python-v0.7.11">this is the full diff</a> I added.</p>
+<h3>Preparing the crate for PyO3/maturin</h3>
+<h4>1. PyO3 behind a feature flag</h4>
+<p>In <code>Cargo.toml</code> (Rust's equivalent of <code>pyproject.toml</code>) I added PyO3 as an optional dependency and gated it behind a <code>python</code> feature flag, so everything I added is only compiled when passing <code>-F python</code> to Cargo/maturin.</p>
+<div class="code"><pre class="code literal-block"><span class="k">[features]</span>
+<span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"pyo3"</span><span class="p">]</span>
+
+<span class="k">[dependencies]</span>
+<span class="n">pyo3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"0.27.2"</span><span class="p">,</span><span class="w"> </span><span class="n">optional</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"extension-module"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">[lib]</span>
+<span class="n">crate-type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"rlib"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cdylib"</span><span class="p">]</span>
+</pre></div>
+
+<p>In <code>crate-type</code>, <code>rlib</code> is the default static library Rust produces, which is all the crate originally defined. I added <code>cdylib</code>, indicating that it can also produce a shared library, which is what Python loads as an extension module.</p>
+<h4>2. Metadata for maturin</h4>
+<p>Here's the tricky part. The library is named <code>tl</code> and I wanted to keep that namespace (<code>import tl</code>), but there is already <a href="https://pypi.org/project/tl/">a package with that name on PyPI</a>. So I needed to differentiate them: the wheel is called <code>tl-parser</code>, but once installed you still <code>import tl</code>.</p>
+<p>That distinction lives in your metadata files:</p>
+<div class="code"><pre class="code literal-block"><span class="c1"># Cargo.toml</span>
+<span class="k">[package.metadata.maturin]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tl-parser"</span>
+<span class="n">python-source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"python"</span>
+
+<span class="c1"># pyproject.toml</span>
+<span class="k">[tool.maturin]</span>
+<span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"python"</span><span class="p">]</span>
+<span class="n">python-source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"python"</span>
+<span class="n">module-name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tl"</span>
+<span class="n">python-packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tl"</span><span class="p">]</span>
+</pre></div>
+
+<p>There's also a tiny bit of Python glue in <code>python/tl/__init__.py</code> that re-exports the native <code>tl</code> module (the compiled binary), so in Python we can simply <code>import tl</code>.</p>
+<h4>3. Define the Python-facing API</h4>
+<p>This is the "laborious" part: you have to write a bit of Rust, but thankfully our LLM friends (Skynet, remember I called you friend when the day arrives) can help a lot.</p>
+<p>The trick is to use the <a href="https://pyo3.rs/latest/macros.html">macros PyO3 provides</a>, which generate code at compile time.</p>
+<ul>
+<li>
+<code>#[pymodule] pub(crate) fn tl(...)</code> creates the native <code>tl</code> module.</li>
+<li>
+<code>#[pyclass(module = "tl", name = "DOM")]</code> and <code>#[pyclass(module = "tl", name = "Element")]</code> expose structs.</li>
+<li>
+<code>#[pymethods]</code> on each struct defines their Python methods.</li>
+</ul>
+<p>A trimmed-down version of <a href="https://github.com/mgaitan/tl-parser/blob/python-v0.7.11/src/python.rs"><code>src/python.rs</code></a>:</p>
+<div class="code"><pre class="code literal-block"><span class="cp">#[pymodule]</span>
+<span class="k">pub</span><span class="p">(</span><span class="k">crate</span><span class="p">)</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">tl</span><span class="p">(</span><span class="n">_py</span><span class="p">:</span><span class="w"> </span><span class="nc">Python</span><span class="o">&lt;'</span><span class="nb">_</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">Bound</span><span class="o">&lt;'</span><span class="nb">_</span><span class="p">,</span><span class="w"> </span><span class="n">PyModule</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">PyResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">m</span><span class="p">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">wrap_pyfunction</span><span class="o">!</span><span class="p">(</span><span class="n">parse</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="o">?</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="n">m</span><span class="p">.</span><span class="n">add_class</span><span class="p">::</span><span class="o">&lt;</span><span class="n">PyDom</span><span class="o">&gt;</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="n">m</span><span class="p">.</span><span class="n">add_class</span><span class="p">::</span><span class="o">&lt;</span><span class="n">PyElement</span><span class="o">&gt;</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span>
+<span class="p">}</span>
+
+<span class="cp">#[pyfunction]</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="n">html</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">PyResult</span><span class="o">&lt;</span><span class="n">PyDom</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="cp">#[pyclass(module = </span><span class="s">"tl"</span><span class="cp">, name = </span><span class="s">"DOM"</span><span class="cp">)]</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">PyDom</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">dom</span><span class="p">:</span><span class="w"> </span><span class="nc">Arc</span><span class="o">&lt;</span><span class="n">VDomGuard</span><span class="o">&gt;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="cp">#[pymethods]</span>
+<span class="k">impl</span><span class="w"> </span><span class="n">PyDom</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">get_element_by_id</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;</span><span class="n">PyElement</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">get_elements_by_class_name</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">class_name</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">PyElement</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">query_selector</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">selector</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">PyResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">PyElement</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">children</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">PyElement</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">outer_html</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">#[pyclass(module = </span><span class="s">"tl"</span><span class="cp">, name = </span><span class="s">"Element"</span><span class="cp">)]</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">PyElement</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">dom</span><span class="p">:</span><span class="w"> </span><span class="nc">Arc</span><span class="o">&lt;</span><span class="n">VDomGuard</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">handle</span><span class="p">:</span><span class="w"> </span><span class="nc">NodeHandle</span><span class="w"> </span><span class="p">}</span>
+
+<span class="cp">#[pymethods]</span>
+<span class="k">impl</span><span class="w"> </span><span class="n">PyElement</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">inner_text</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">PyResult</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">inner_html</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">PyResult</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">outer_html</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">PyResult</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">PyResult</span><span class="o">&lt;</span><span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">get_attribute</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">PyResult</span><span class="o">&lt;</span><span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">children</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">PyResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">PyElement</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>To expose more APIs you just repeat the pattern: wrap each public Rust method you want to expose in a PyO3 function/method that performs the necessary type and lifetime conversions.</p>
+<p>Conventions I followed: I prefixed the exposed structs with <code>Py</code> (<code>PyDom</code>, <code>PyElement</code>) so the Rust names don't collide with the internal types (<code>VDom</code>, <code>Node</code>). The <code>module = "tl"</code> attribute pins the namespace Python sees. And the <code>#[cfg(feature = "python")] mod python;</code> in <code>lib.rs</code> ensures this module is only compiled when the feature flag is enabled.</p>
+<h4>4. Documentation for Python</h4>
+<p>PyO3 takes Rust doc comments (<code>///</code>) and automatically turns them into Python docstrings. You can use <code>#[pyo3(text_signature = "(self, arg)")]</code> to show a proper signature when people call <code>help()</code> in Python. For longer docs, keep the comments right above the Rust method--they end up in <code>__doc__</code>.</p>
+<h4>5. Build and install</h4>
+<p>To test the package locally you can build it in development mode:</p>
+<div class="code"><pre class="code literal-block">uv<span class="w"> </span>run<span class="w"> </span>maturin<span class="w"> </span>develop<span class="w"> </span>-F<span class="w"> </span>python
+</pre></div>
+
+<p>And voilà, time to try it:</p>
+<div class="code"><pre class="code literal-block"><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span><span class="w"> </span><span class="nn">tl</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">dom</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">'&lt;div&gt;&lt;/div&gt;&lt;p class="a b"&gt;hey&lt;/p&gt;&lt;p&gt;&lt;/p&gt;'</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">element</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">get_elements_by_class_name</span><span class="p">(</span><span class="s1">'a'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">element</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">Element</span> <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">element</span><span class="o">.</span><span class="n">inner_text</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="s1">'hey'</span>
+</pre></div>
+
+<h3>A workflow to automate wheel publishing</h3>
+<p>Rust and Python are both cross-platform, and maturin leans into that strength by letting you build wheels for every combination of Python versions, operating systems, architectures, and <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABIs</a> (via <a href="https://github.com/pypa/manylinux">manylinux</a>) that you care about. Think Python 3.14 on Linux x86_64, or Python 3.13 on macOS 11 arm64; lots of flavors for the same release!</p>
+<p>To make that manageable without provisioning runners for each target, there's an <a href="https://github.com/PyO3/maturin-action">official GitHub Action</a> that builds the desired matrix (configurable) and relies on <a href="https://rust-lang.github.io/rustup/cross-compilation.html">Rust cross-compilation</a> and <a href="https://quay.io/organization/pypa">manylinux's images</a> under the hood to produce every wheel.</p>
+<p>The workflow lives at <a href="https://github.com/mgaitan/tl-parser/blob/python-v0.7.11/.github/workflows/python-wheels.yml"><code>./github/workflows/python-wheels.yml</code></a>. It uses a matrix of Python 3.12–3.14 × {Linux, Windows, macOS x86_64/arm64}. Once the wheels are generated, they are uploaded as artifacts, and a follow-up job bundles them all and attaches them to a GitHub release.</p>
+<p>I didn't push anything to PyPI (this is still an experiment and the Python API isn't feature-complete), but you can install straight from the release's static page via <a href="https://docs.astral.sh/uv/reference/settings/#find-links">--find-links</a>. For example:</p>
+<div class="code"><pre class="code literal-block"><span class="go">uv run --with=tl-parser --find-links=https://github.com/mgaitan/tl-parser/releases/expanded_assets/python-v0.7.11 python</span>
+</pre></div>
+
+<h3>A quick benchmark (because why not)</h3>
+<p>While the goal here was to learn the toolchain to turn Rust crates into Python packages, I was curious about the resulting performance. If Astral's <code>uv</code> depends on this library--and they maintain it themselves--it must be blazing fast, right?</p>
+<p>I asked Codex for a <a href="https://gist.github.com/mgaitan/0c4a49a16c825c1993a3ec3064035718">basic benchmark</a> comparing <code>tl</code> with <code>BeautifulSoup</code> (default parser and <code>lxml</code>) and <code>pyquery</code>.</p>
+<div class="code"><pre class="code literal-block">uv run https://gist.github.com/mgaitan/0c4a49a16c825c1993a3ec3064035718/raw/3eb295405f0cf71cadce856c018c94e3dd39dfe8/benchmark.py
+</pre></div>
+
+<p>The result surprised me:</p>
+<table class="table table-striped">
+<thead><tr>
+<th>metric</th>
+            <th>tl.parse</th>
+            <th>BeautifulSoup (html.parser)</th>
+            <th>BeautifulSoup (lxml)</th>
+            <th>PyQuery</th>
+        </tr></thead>
+<tbody>
+<tr>
+<td>parse</td>
+            <td>0.353 ms</td>
+            <td>50.681 ms</td>
+            <td>51.144 ms</td>
+            <td>3.864 ms</td>
+        </tr>
+<tr>
+<td>title_text</td>
+            <td>0.033 ms</td>
+            <td>0.011 ms</td>
+            <td>0.013 ms</td>
+            <td>0.057 ms</td>
+        </tr>
+<tr>
+<td>class_lookup</td>
+            <td>0.021 ms</td>
+            <td>2.957 ms</td>
+            <td>4.124 ms</td>
+            <td>0.070 ms</td>
+        </tr>
+<tr>
+<td>id_lookup</td>
+            <td>0.007 ms</td>
+            <td>0.029 ms</td>
+            <td>0.038 ms</td>
+            <td>0.064 ms</td>
+        </tr>
+<tr>
+<td>css_query</td>
+            <td>0.037 ms</td>
+            <td>9.456 ms</td>
+            <td>9.786 ms</td>
+            <td>0.130 ms</td>
+        </tr>
+</tbody>
+</table>
+<p>The <code>tl</code> API isn't as complete as the others yet; it only lets you extract nodes and attributes (not mutate them), but if you're doing heavy web scraping it might already be useful. <a href="https://github.com/mgaitan/tl-parser">PRs welcome</a>!</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/bindings/" rel="tag">bindings</a></li>
+            <li><a class="tag p-category" href="../../categories/maturin/" rel="tag">maturin</a></li>
+            <li><a class="tag p-category" href="../../categories/pyo3/" rel="tag">pyo3</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/rust/" rel="tag">rust</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../whisperx-tutorial/" rel="prev" title="How to use WhisperX in Google Colab (2025)">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="https://mgaitan.github.io/en/posts/expanding-the-python-universe-with-rust/",
+        disqus_title="Expanding the Python universe with Rust",
+        disqus_identifier="cache/posts/ampliando-el-universo-python-con-rust.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
