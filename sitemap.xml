@@ -7,1125 +7,1175 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://mgaitan.github.io/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2004/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2005/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2008/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2009/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2010/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2011/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2012/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2013/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2014/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2015/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2018/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2020/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2021/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/2025/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/about/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/about/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/archive.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/android/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/automation/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/bindings/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/blog/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/cat_desarrollo/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/categories/cat_development/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/cat_projects/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/cat_proyectos/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/cat_scripts/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/cat_tools/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/charla/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/categories/ci/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/ciencia/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/circus/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/cli/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/categories/copier/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/cuevana/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/curso/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/data-science/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/dataviz/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/dependencies/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/desarrollo-web/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/descargas/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/devop/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/django/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/categories/docs/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/documentos/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/donar/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/draft/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/e-commerce/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/easter-egg/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/emprendedorismo/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/empresa/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/etl/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/gist/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/git/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/gitignore/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/google-colab/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/hardware/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/humor/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/ideas/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/inteligencia-artificial/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/javascript/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/jquery/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/juegos/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/linux/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/llm/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/maturin/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/metodologias-agiles/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/migraciones/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/migration-tools/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/myhdl/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/nikola/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/opendata/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/padrones-electorales/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/pandas/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/pep723/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/pip/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/preciosa/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/pycon2013/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/pyo3/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/python/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/reconocimiento-de-voz/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/rich/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/rust/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/sankey/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/scrapping/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/scripts/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/software-libre/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/solidaridad/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/spip/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/terminal/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/textual/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/til/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/categories/tooling/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/transcripcion/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/tutorial/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/uv/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/visualizacion/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/web-20/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/categories/whisperx/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/charlas/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/2013/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/2014/</loc>
-  <lastmod>2025-12-07T17:35:00Z</lastmod>
+  <lastmod>2025-12-09T19:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/2025/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/about/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/archive.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/asr/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/automation/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/bindings/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/cat_development/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/cat_projects/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/cat_scripts/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/cat_tools/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/en/categories/ci/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/cli/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/en/categories/copier/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/dependencies/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/en/categories/docs/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/easter-egg/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/games/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/gist/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/git/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/gitignore/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/google-colab/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/humor/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/maturin/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/pep723/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/pyo3/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/python/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/rust/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/speech-to-text/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/terminal/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/textual/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/til/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/en/categories/tooling/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/tutorial/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/uv/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/categories/whisperx/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/index-1.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/en/index-2.html</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/posts/an-automatic-cheatsheet-for-your-typer-cli/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/un-cheatsheet-automatico-para-tu-cli-typer/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/posts/animated-svgs-for-your-cli-program-demos/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/svg-animados-para-tus-demos-de-programas-cli/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/posts/automatic-dependencies-management-python-scripts-autopep723/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/dependencias-automaticas-scripts-python-autopep723/" />
  </url>
  <url>
+  <loc>https://mgaitan.github.io/en/posts/custom-python-project-template/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/plantilla-personalizada-proyectos-python/" />
+ </url>
+ <url>
   <loc>https://mgaitan.github.io/en/posts/easter-eggs-with-invisible-text/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/easter-eggs-con-texto-invisible/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/posts/expanding-the-python-universe-with-rust/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/ampliando-el-universo-python-con-rust/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/posts/ignoring-changes-in-git-locally/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/ignorando-cambios-en-git-localmente/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/posts/test/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/posts/textual-tetris/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/textual-tetris/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/posts/the-reStructuredText-processor/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/un-procesador-de-restructuredtext/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/en/posts/whisperx-tutorial/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://mgaitan.github.io/posts/whisperx-tutorial/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-1.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-10.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-11.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-12.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-13.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-14.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-15.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-16.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-17.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-18.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-19.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-2.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-20.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-21.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-22.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-3.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-4.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-5.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-6.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-7.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-8.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/index-9.html</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/Control-de-Versiones-con/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/Esqueletos-de-aten-org-ar/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/ampliando-el-universo-python-con-rust/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/expanding-the-python-universe-with-rust/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/analizando-la-migracion-intraprovincial-en-cordoba/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/apuntes-del-pycamp-2011/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/apuntes-pamejorar-el-chamuio-escrito/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/auto-podcast/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/backup-selectivo-de-tablas-mysql/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/basta-de-ie6/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/bienvenidos-al-tren/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/bonito-feito-pero-efectivo/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/c-automatico/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/cdpedia-0-7-disponible/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/charla-myhdl-de-python-al-siliicio/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/charla-python-a-los-bifes/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/charla-ser-freelance-como-trabajar/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/como-funciona-cuevana/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/como-volver-a-compartir-desde/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/compartiendo-documentacion-de/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/covertura-de-los-oscars-2011/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/cuevanalinks-ahora-para-seres/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/curso-de-python-para-ciencias-e-ingenieria-nueva-edicion/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/custom-screen-layout-switcher-for-linux/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/de-mercurial-a-git-limpieza/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/de-otra-galaxia/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/deja-que-el-servidor-trabaje-por/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/dependencias-automaticas-scripts-python-autopep723/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/automatic-dependencies-management-python-scripts-autopep723/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/deploy-de-django-con-circus-chaussette-nginx/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/desambiguando-un-hash-en-git/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/digitalizando-recuerdos-con/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/disqus-para-spip/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/django-dash-hace-una-aplicacion/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/easter-eggs-con-texto-invisible/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/easter-eggs-with-invisible-text/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/el-lenguaje-de-los-lenguajes/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/el-mono-salta-entre-las-ramas/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/el-numero-mi-primer-juego/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/el-padronazo-cordobes/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/el-quijote-del-software-libre/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/esqueletos-accion/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/ext4-superblock-failure-y-la-cola-del-diablo/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/fortran-windows-pesadilla2/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/gpec-2010-el-poster/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/grosa/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/hemisferio-derecho/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/hola-preciosa/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/hombres-machistas-involuntariamente/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/ignorando-cambios-en-git-localmente/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/ignoring-changes-in-git-locally/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/integracion-de-dineromail-en/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/ipython-la-interactividad-al-poder/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/jQuery-una-introduccion/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/jquery-una-introduccion/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/la-academia-las-practicas-agiles-y/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/la-pythonicidad-al-palo/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/la-sanguijuela-de-cuevana/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/las-cosas-chiquitas/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/learning-python-4th-edition/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/limitar-la-cantidad-de-caracteres/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/lo-que-hace-un-geek-cuando-ama/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/lo-siento-por-vos/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/lorem-ipsum-para-spip/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/los-numeros-del-mundial/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/mantener-el-scroll-vertical-de-wx/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/me-cago-en-vos-afip/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/me-recibi-el-mes-pasado/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/metiendose-cosas-en-la-nariz/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/miau-cuando-el-gato-dice-la-verdad/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/migrando-issues-entre-proyectos-de-bitbucket/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/mirar-tu-smartphone-para-cuidar/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/modelos-de-negocio-floss-la/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/monetizar-pagos-virtuales-en/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/mostrar-u-ocultar-contenido-facil/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/move-imports-o-como-calmar-el-toc-de-un-pythonista/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/no-al-fraude-en-cordoba-ayudanos/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/no-al-fraude-en-cordoba-nuevo-analisis/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/notas-rapidas-de-una-mudanza/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/pep-20-el-zen-del-barca/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/personalizar-el-texto-de/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/piccola-radiolina/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/pip-apurate-por-favor/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mgaitan.github.io/posts/plantilla-personalizada-proyectos-python/</loc>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/custom-python-project-template/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/preparados-listos-en-un-rato/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/principios-para-un-freelancear/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/project-euler-problema-2/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/pyconar-2010-el-orgullo-de/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/python-para-ciencia-e-ingenieria/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/referenciar-figuras-por-numero-en/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/resolviendo-project-euler-con/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/revista-orsai-no-3-en-cordoba/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/richterm-capturando-la-terminal-a-todo-color/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/scrapping-de-pdf-con-ipython-y-pdftotext/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/sergio-massa-y-lagente/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/simplecart-js-para-spip/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/spicasa-adjunta-fotos-de-picasa-a/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/spip-el-Gestor-de-Contenidos/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/suscribirse-a-los-comentarios-por/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/svg-animados-para-tus-demos-de-programas-cli/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/animated-svgs-for-your-cli-program-demos/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/textual-tetris/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/textual-tetris/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/travis-ci-para-compilar-y-deployar-tu-blog/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/ultima-version-de-spip-por-svn/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/un-cheatsheet-automatico-para-tu-cli-typer/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/an-automatic-cheatsheet-for-your-typer-cli/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/un-gran-lenguaje-una-gran/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/un-procesador-de-restructuredtext/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/the-reStructuredText-processor/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/un-spip-para-muchos-sitios/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/una-introduccion-a-python/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/una-mejor-manera-de-controlar-los/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/usando-pubsub-para-una-panel-de/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/variar-o-no-variar-esa-es-la/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/veinteanero/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/video-sis-771-671-en-ubuntu/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/voto-electronico-e-ingenieros/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/whisperx-tutorial/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://mgaitan.github.io/en/posts/whisperx-tutorial/" />
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/yahoo-pipes-como-por-un-tubo/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://mgaitan.github.io/posts/yendo-a-las-fuentes-de-cuevana-tv/</loc>
-  <lastmod>2025-12-07T17:36:00Z</lastmod>
+  <lastmod>2025-12-09T19:08:00Z</lastmod>
  </url>
 </urlset>

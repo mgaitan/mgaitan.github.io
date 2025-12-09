@@ -78,7 +78,34 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/easter-eggs-con-texto-invisible/" class="u-url">Easter-eggs en tu código con texto invisible</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/richterm-capturando-la-terminal-a-todo-color/" class="u-url">richterm, capturando la terminal a todo color</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/richterm-capturando-la-terminal-a-todo-color/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-11-03T22:26:32-03:00" itemprop="datePublished" title="2025-11-03 22:26">2025-11-03 22:26</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/richterm-capturando-la-terminal-a-todo-color/#disqus_thread" data-disqus-identifier="cache/posts/richterm-capturando-la-terminal-a-todo-color.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Siempre estoy haciendo programitas de línea de comando y siempre quiero mostrar como se ve el resultado de algun comando. Si bien es texto que puedo copiar y pegar, muchas veces prefiero tomar capturas de pantalla de la terminal para mostrar como se ve el resultado, especialmente si tiene colores o algun formato especial.</p>
+<p>Cuando estaba escribiendo <a href="https://mgaitan.github.io/posts/un-cheatsheet-automatico-para-tu-cli-typer/">este post</a> necesitaba una captura, y encontré una manera de hacerlo:</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">Tired of taking manual screenshots for CLI examples?<br>Try this:<br><br>$ alias rich-capture='uvx rich-codex --no-search --skip-git-checks --use-pty --no-confirm --img-paths cli_$(date -I).svg --command'<br><br>Then use it as a wrapper of your command. Eg. <br>$ rich-capture "uv run -m rich" <a href="https://t.co/U18Dr7p2Df">pic.twitter.com/U18Dr7p2Df</a></p>— Martín Gaitán ⭐⭐⭐ (@tin_nqn_) <a href="https://twitter.com/tin_nqn_/status/1983986531972116685?ref_src=twsrc%5Etfw">October 30, 2025</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>x.com//1983986531972116685</p>
+<p>El truco que propuse ahí es usar <a href="https://ewels.github.io/rich-codex/">rich-codex</a> pero, a decir verdad, la CLI de esta herramienta es un bastante complicada para este caso súper común: sólo quiero ejecutar un comando y quedarme con un SVG listo para incrustar en un post o en la documentación.</p>
+<p>Así que me armé una mini herramienta más simple: <a href="https://github.com/mgaitan/richterm"><strong>richterm</strong></a>.</p>
+<p class="more"><a href="posts/richterm-capturando-la-terminal-a-todo-color/">Leer más…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/easter-eggs-con-texto-invisible/" class="u-url">Easter-eggs en tu código con texto invisible</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán

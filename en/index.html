@@ -17,7 +17,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/en/">
-<link rel="next" href="index-1.html" type="text/html">
+<link rel="next" href="index-2.html" type="text/html">
 <!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
@@ -74,7 +74,146 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/expanding-the-python-universe-with-rust/" class="u-url">Expanding the Python universe with Rust</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/custom-python-project-template/" class="u-url">My Custom Template for Python Projects</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/custom-python-project-template/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-08T18:30:00-03:00" itemprop="datePublished" title="2025-12-08 18:30">2025-12-08 18:30</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/custom-python-project-template/#disqus_thread" data-disqus-identifier="cache/posts/plantilla-personalizada-proyectos-python.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>Python is a pragmatic programming language and asks for very little to get started. A text file with valid code, conventionally ending in <code>.py</code> and forming a “module” in Python jargon, is already a small program (a script); we run it with <code>python &lt;file&gt;</code> and we are done. But when that simple piece of code needs to grow into more files or deserves to be distributed —maybe because it will be a dependency of another project or simply because someone else might benefit— then it needs some structure and metadata.</p>
+<p>That is not exclusive to Python: when you start a software project there is always a basic set of files and structures that serve as a starting point; the minimum set of files, folders, configs, and "basic" code you need when you want to share code as an app or library: the project boilerplate. The boilerplate does not define logic, but it does lay the technical foundation—often based on conventions and sometimes on personal taste—on which everything else will be built.</p>
+<p>This article details the decisions I made for the template and automated scaffolding I created for my projects, based on <a href="https://copier.readthedocs.io/en/stable/">Copier</a>.</p>
+<p>In short:</p>
+<ul>
+<li>🐍 Modern Python package (3.12+)</li>
+<li>📦 Build and dependency management with <a href="https://docs.astral.sh/uv/">uv</a>, split by groups (dev/qa/docs)</li>
+<li>🧹 Linting and formatting via <a href="https://docs.astral.sh/ruff/">Ruff</a> with a broad set of rules enabled</li>
+<li>✅ Type checking via <a href="https://github.com/astral-sh/ty">ty</a>
+</li>
+<li>🧪 Tests with <a href="https://docs.pytest.org/en/stable/">pytest</a>, <a href="https://coverage.readthedocs.io/en/latest/">coverage.py</a> and extensions</li>
+<li>📚 Docs with <a href="https://www.sphinx-doc.org/en/master/">Sphinx</a>, <a href="https://myst-parser.readthedocs.io/en/stable/">MyST</a> and a few extensions, deployed to <a href="https://pages.github.com/">GitHub Pages</a>
+</li>
+<li>🤖 GitHub project creation automated through <a href="https://cli.github.com/">GitHub CLI</a>
+</li>
+<li>⚙️ CI workflow on <a href="https://github.com/features/actions">GitHub Actions</a>
+</li>
+<li>🚀 Automated releases via <a href="https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/">Trusted Publishing</a>
+</li>
+<li>🧠 Sensible defaults via introspection to minimize answers in the initial questionnaire</li>
+<li>🛠️ Makefile with shortcuts for common tasks</li>
+<li>📄 Generation of generic docs such as LICENSE/CODE_OF_CONDUCT/AGENTS.md, etc.</li>
+<li>🌀 Initial setup of the development environment and git repo</li>
+<li>♻️ Projects updatable with <a href="https://copier.readthedocs.io/en/stable/updating/"><code>copier update</code></a>
+</li>
+</ul>
+<p>And a bunch more details I am surely forgetting.</p>
+<p>If you want to try it, it is at <a href="https://github.com/mgaitan/python-package-copier-template">mgaitan/python-package-copier-template</a> and you can spin up a project like this:</p>
+<div class="code"><pre class="code literal-block"><span class="go">uvx --with=copier-template-extensions copier copy --trust "gh:mgaitan/python-package-copier-template" /path/to/your/new/project</span>
+</pre></div>
+
+<h3>Minimal Bootstrapping in Python</h3>
+<p>A minimal boilerplate for a current Python project—installable and distributable—can be created with <code>[uv init --package](https://docs.astral.sh/uv/concepts/projects/init/#packaged-applications)</code> (heavily inspired by <code>cargo init</code> for Rust):</p>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>uv<span class="w"> </span>init<span class="w"> </span>demo-project<span class="w"> </span>--package<span class="w"> </span>
+<span class="go">Initialized project `demo-project` at `/home/tin/lab/demo-project`</span>
+</pre></div>
+
+<p>That yields:</p>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>tree<span class="w"> </span>demo-project/
+<span class="go">demo-project/</span>
+<span class="go">├── pyproject.toml</span>
+<span class="go">├── README.md</span>
+<span class="go">└── src</span>
+<span class="go">    └── demo_project</span>
+<span class="go">        └── __init__.py</span>
+
+<span class="go">3 directories, 3 files</span>
+<span class="gp">$ </span>cat<span class="w"> </span>demo-project/pyproject.toml<span class="w"> </span>
+<span class="go">[project]</span>
+<span class="go">name = "demo-project"</span>
+<span class="go">version = "0.1.0"</span>
+<span class="go">description = "Add your description here"</span>
+<span class="go">readme = "README.md"</span>
+<span class="go">authors = [</span>
+<span class="go">    { name = "Martín Gaitán", email = "gaitan@gmail.com" }</span>
+<span class="go">]</span>
+<span class="go">requires-python = "&gt;=3.14"</span>
+<span class="go">dependencies = []</span>
+
+<span class="go">[project.scripts]</span>
+<span class="go">demo-project = "demo_project:main"</span>
+
+<span class="go">[build-system]</span>
+<span class="go">requires = ["uv_build&gt;=0.9.9,&lt;0.10.0"]</span>
+<span class="go">build-backend = "uv_build"</span>
+</pre></div>
+
+<p>This boilerplate declares <code>demo-project</code> as a CLI, mapped to a <code>main</code> function that is just a placeholder for your code.</p>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>demo-project/
+<span class="gp">$ </span>cat<span class="w"> </span>src/demo_project/__init__.py<span class="w"> </span>
+<span class="go">def main() -&gt; None:</span>
+<span class="go">    print("Hello from demo-project!")</span>
+
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>demo-project
+<span class="go">Using CPython 3.14.0</span>
+<span class="go">Creating virtual environment at: .venv</span>
+<span class="go">Installed 1 package in 6ms</span>
+<span class="go">Hello from demo-project!</span>
+</pre></div>
+
+<p>If you install your program with <code>uv tool install .</code>, you can run <code>demo-project</code> from any directory.</p>
+<p>But again, this is <strong>the bare minimum</strong>. Any respectable project defines unit tests (and how to run them), configures linters with style rules, ideally has docs, declares auxiliary dev dependencies, has a CI workflow, is versioned with git, and even includes badges in the README header. Which test framework do we use? How do we generate docs? Will the project use a <a href="https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/">src/ layout or flat</a>?</p>
+<p>That is a lot of decisions to make (which can change over time) and a lot of work to implement by hand. Even more so when we get used to doing things one way and want the same setup across projects.</p>
+<p>This is where the concept of <em>scaffolding</em> comes in: generating boilerplate from templates that you can edit centrally. The most generic and trivial way to do this is to <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository">mark a repository on GitHub as a “template”</a> so that when you start a project you begin from the template repo’s <code>HEAD</code> state instead of an empty repo (but without forking it).</p>
+<p>But starting a project is not just creating boilerplate; it is also preparing the dev environment, initializing the repo, creating the project on GitHub and maybe pushing an initial commit, checking that the package name you chose is not already taken, etc. All that project bootstrapping also implies repetitive, time-consuming tasks. Let’s automate them!</p>
+<p>In Python, the best-known scaffolding + bootstrapping tool is <a href="https://cookiecutter.readthedocs.io/">cookiecutter</a>. Although it is written in Python (templates are defined with <a href="https://jinja.palletsprojects.com/en/stable/">Jinja</a>), it is not limited to Python projects—there are <a href="https://github.com/search?q=cookiecutter&amp;type=repositories">cookiecutter templates for almost anything</a>!</p>
+<p><code>cookiecutter</code> is great, but it handles the initial bootstrapping only. What happens when conventions change or we adopt a new preference? For instance, I used <a href="https://mgaitan.github.io/posts/metiendose-cosas-en-la-nariz/">Nose</a> long ago as a testing framework and runner, and now I use pytest. Python itself replaced <code>setup.py</code> with <code>pyproject.toml</code>, and the canonical default builder moved from setuptools to</p>
+<p>And so on.</p>
+<p>Again, if we have many projects, changing the same thing in many places is boring and repetitive work.</p>
+<p>That is why my template is based on <a href="https://copier.readthedocs.io/en/stable/">Copier</a>. In many respects it is similar to cookiecutter (there is a <a href="https://copier.readthedocs.io/en/stable/comparisons/">comparison table</a>), but it also supports <a href="https://copier.readthedocs.io/en/stable/updating/">updates</a> to generated projects, meaning any project created from the template can apply new features with a single command.</p>
+<h3>My <strike>body</strike> template, my call</h3>
+<p>The template assumes Python 3.12+ with a <code>src/</code> layout and unified config in <code>pyproject.toml</code>. The build backend is <a href="https://docs.astral.sh/uv/concepts/build-backend/">uv_build</a>, which is more than enough for “pure Python” projects (no compiled extensions). It declares an (optional) entrypoint script using <a href="https://docs.python.org/3/library/argparse.html"><code>argparse</code></a> and includes <code>--version</code> and <code>--help</code>.</p>
+<p>Obviously I use <code>uv</code> to manage dependencies and the environment. While the initial project does not declare runtime dependencies (no “domain logic” yet <sup id="fnref:1"><a class="footnote-ref" href="posts/custom-python-project-template/#fn:1">1</a></sup>), I do declare several <a href="https://github.com/mgaitan/copier-uv/blob/6751063f461775b31514ef86dc595d0774cf126f/project/pyproject.toml.jinja#L98-L120"><code>dependency-groups</code></a>, a mechanism defined in <a href="https://peps.python.org/pep-0735/">PEP 735</a> that organizes dependencies into sets by purpose—e.g., test, docs, etc.—avoiding everything being lumped into main dependencies and making partial installs easier depending on environment or task. This lets us, for example, install only doc dependencies when building docs (saving precious CI time), or run QA with ruff without installing dev-only tools like ipdb. When <code>uv</code> installs or syncs dependencies (e.g., via <code>uv sync</code>) it looks for the <code>"dev"</code> group by default; in my template that is a meta-group that includes test, QA, and other extras.</p>
+<p><a href="https://docs.astral.sh/ruff/">ruff</a>, as mentioned, is the canonical linter right now. From the same creators of uv (also written in Rust), its performance is uncanny. It covers linting (replacing flake8, isort, and dozens of plugins) and formatting (replacing the trailblazing <a href="https://black.readthedocs.io/en/stable/">black</a>) with a 120-character line limit (the 79 <a href="https://pep8.org/#maximum-line-length">recommended in PEP 8</a> feel too short on today’s screens) and a <a href="https://github.com/mgaitan/copier-uv/blob/6751063f461775b31514ef86dc595d0774cf126f/project/pyproject.toml.jinja#L39-L65">broad set of rules enabled</a>. Most rules have autofix (and when they do not, the agents take care of it), so it keeps a consistent Pythonic style that minimizes bugs. I might enable <a href="https://docs.astral.sh/ruff/rules/#flake8-errmsg-em">even more rules</a> later: if it is free, automatic, and fast, I want them all.</p>
+<p>The package includes inline typing and ships the <code>py.typed</code> marker (<a href="https://peps.python.org/pep-0561/">PEP 561</a>). Type checks run with <a href="https://github.com/astral-sh/ty">ty</a>, another Astral tool that is still alpha but already usable for new projects.</p>
+<p>The <strong>unit testing</strong> stack uses the de facto standard <a href="https://docs.pytest.org/en/stable/">pytest</a> and <a href="https://coverage.readthedocs.io/en/7.13.0/">coverage.py</a> via <a href="https://pytest-cov.readthedocs.io/en/latest/readme.html">pytest-cov</a> (configured with a 100% threshold), plus plugins for <a href="https://pytest-mock.readthedocs.io/en/latest/index.html">generic mocks</a> and <a href="https://github.com/pytest-dev/pytest-freezer">dates</a>. While we could use <a href="https://docs.python.org/3/library/unittest.mock.html"><code>unittest.mock</code></a> from the stdlib, I like the <code>mocker</code> fixture because it does not force context managers for patching. As the Zen says, “Flat is better than nested.”</p>
+<p>For a brand-new project with undefined scope there may not be much to document (maybe the <code>README</code> is enough), but having the scaffolding ready makes it trivial once there is something to write. So the template includes a <code>docs/</code> folder with the starter structure. I could have used <a href="https://www.mkdocs.org/">MkDocs</a>, which is increasingly popular, but I stuck to classic <a href="https://www.sphinx-doc.org/">Sphinx</a> using <a href="https://myst-parser.readthedocs.io/">MyST parser</a> to write in <strong>Markdown</strong> (I <a href="https://mgaitan.github.io/en/posts/the-reStructuredText-processor/">used to like reStructuredText</a> but I know <a href="posts/custom-python-project-template/(https:/ia.net/topics/markdown-and-the-slow-fade-of-the-formatting-fetish)">a champion</a> when I see one). I include a couple of my Sphinx extensions already configured: <a href="https://github.com/mgaitan/sphinxcontrib-mermaid">sphinx-mermaid</a> for diagrams and <a href="https://github.com/mgaitan/richterm">richterm</a> to embed "captures".</p>
+<p>After creating the initial code, it <a href="https://github.com/mgaitan/copier-uv/blob/6751063f461775b31514ef86dc595d0774cf126f/copier.yml#L15-L20">run a few automatic tasks</a>. For example, the first <code>uv sync</code> installs dev dependencies, and a first commit is created with <code>git</code>. Then, if <a href="https://cli.github.com/">GitHub CLI</a> is installed (highly recommended), the repo is created on GitHub, pushed, and the first workflow is launched without manual steps.</p>
+<p>The generated tests and the QA checks (ruff/ty) run in a <strong>CI workflow</strong> triggered on every push or PR, running tests on a Python version matrix. The tools are configured to emit errors or warnings as <a href="https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-error-message">GitHub annotations</a> so you can navigate them in context.</p>
+<p>Another workflow handles releases. The typical release flow starts with <code>make bump</code> + <code>make release</code> (bump the version, commit, and start a GitHub release). The workflow detects that event, builds wheels (via <code>uv build</code>) and attaches them to the GitHub release, and also uses <a href="https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/">Trusted Publishing</a> to upload the new version directly to PyPI. It also builds and updates the docs served from GitHub Pages (if the repo is public).</p>
+<p>The traditional way to upload packages to PyPI involved tools like <a href="https://github.com/pypa/twine">twine</a> that require a token or user/password. Trusted Publishing, instead, manages authentication dynamically (using <a href="https://openid.net/developers/how-connect-works/">OIDC</a>), so there are no secrets to manage (or rotate). Because PyPI’s API still does not expose endpoints for this registration, the only manual step—done once—is to register <a href="https://docs.pypi.org/trusted-publishers/adding-a-publisher/">the package and the workflow</a>. In my case the workflow is <code>cd.yml</code> and I leave the environment blank.</p>
+<p>When you run Copier with a template, it launches a questionnaire: package name, author, GitHub user, that sort of thing. I automated whatever I could to provide sensible defaults so you answer as little as possible. For example, the project name is inferred from the target directory, author name/email come from git, and the GitHub user from the API via GitHub CLI.</p>
+<p>A lesson learned: many times I came up with a project name only to realize at publish time that it was taken (my recent <a href="https://mgaitan.github.io/posts/textual-tetris/">textual-tetris</a> was originally “textris,” but <a href="https://pypi.org/project/textris">someone beat me to it</a>). So the wizard checks whether the package name is available on PyPI with a simple web query and, if it is taken, suggests a suffix.</p>
+<p>In the generated project I defined a <code>Makefile</code> with shortcuts for “day-to-day.” For example, if you want to build the docs locally as <code>epub</code>, you do not need to remember the Sphinx arguments; just run <code>make docs-epub</code> (there is also a <code>make help</code>). While there are newer tools like <a href="https://github.com/casey/just">just</a> or <a href="https://github.com/jdx/mise">mise</a> (there is also <a href="https://www.pyinvoke.org/">invoke</a> but I abhor it), the 50-year-old <code>make</code> is ubiquitous and sufficient for these humble needs. Targets like <code>qa</code>, <code>test</code>, <code>docs</code>, and <code>release</code> wrap long commands and keep a uniform interface for recurring tasks.</p>
+<p>Alongside code, the template generates the usual copy-paste documents like <code>LICENSE</code> and <code>CODE_OF_CONDUCT.md</code> (from the <a href="https://www.contributor-covenant.org/">Contributor Covenant</a>). I also include an <a href="https://agents.md/">AGENTS.md</a> with basic instructions so code agents understand the working context and preferences.</p>
+<h4>Updates with Copier</h4>
+<p>Perhaps Copier’s most interesting feature is that it can update projects that already exist, because any self-respecting programmer has principles—but changes them over time.</p>
+<p>I recommend the interview with Jairo Llopis (one of Copier’s maintainers) in this <a href="https://www.pythonpodcast.com/episodepage/project-scaffolding-that-evolves-with-your-software-using-copier">podcast</a> where he describes Copier as a “project life cycle management tool,” as opposed to a traditional scaffolding tool.</p>
+<p>When everything is ready in the generated project, Copier leaves a small <code>.copier-answers.yml</code> file with metadata about the template used and the variables (the answers to the initial questionnaire). If there are updates in the template (by default it looks for tags), running <code>uvx copier update</code> is enough to apply them (or at least try) to the project, even if the project has changed.</p>
+<p>The mechanism is not trivial: it involves extracting and applying diffs (remember, the template and the project are completely separate repos with no shared history). It is summarized in this diagram from the docs:</p>
+<p><a href="https://mermaid.live/edit#pako:eNqlVcuOmzAU_RXL1UgTlWSSTF4w1WyabVftqqWqPHAhNGAjY6rSJP_ea2wnQFGldrwA-_qc--IYn2gkYqABTSUrD-TTPuQhv7sjHK0Vmf73CLmCosyZgm8SSnEfUrcmel1lSsgmpJMOLqqlBK4Q-qCK8sHZ373I53u7RxRLJ32WflTjJLN144S8lOI7RApTSoE7jjW2lERCdfCIC_cDZJUJbuiOfMvTwexOD3VgeYIQ_SJFht1VEOsQY9i6jPU2wu1s1CMryzwbQ7WZx1mSEAvp55vUeY4k_WqIpWoK4_E1s17AkBvUFxfJ9aOTP8n4FDsdmU6jsShVxtOJXr4lsubY9upYEZayjIf0a8gjhDCpndoZUYKkoIjOvEXo7Bvcb983c8j1FCswlolVKMTpKxVK7OgpFT0-k3OaKRLlgsOZDPX5zzwjQ511n-XUY4jAQX8Jor_KtX1n0lOsCz1QYuvBNvVvkLNpbClhar47SrsTQkv1Vlwv8FiEDqYVuYYYuTjEoAMjiOuwOtOIwaEYQp14NLQVxNAVac3tflvvsCPu8PwBuA3Tp24y9mANfVlzr7uiUqPt1efPSrdSTQ6vkm6Us6raQ0Je8AweX4SMQaJbKY4QvJnP508W4trlmao9k2OH9EQ9WoAsWBbjJXDSBeKv-gAFhDTAaQwJq3P8L4T8glBWK_Gx4RENlKzBo1LU6YEGCcsrXJkg-4xh9YWDlIx_FqK7pMGJ_qTBcrmcPe4ed6vVeudv5_7Kow0NFtvZFlfrjb_119v18uLRXy19PvOXi9V242_mi91ysfN9Dy8tnbaNjjrHgt6LmivtBt1BrK-ZD-aCa--5y2-R6D_y"><img alt="" src="https://mermaid.ink/img/pako:eNqlVcuOmzAU_RXL1UgTlWSSTF4w1WyabVftqqWqPHAhNGAjY6rSJP_ea2wnQFGldrwA-_qc--IYn2gkYqABTSUrD-TTPuQhv7sjHK0Vmf73CLmCosyZgm8SSnEfUrcmel1lSsgmpJMOLqqlBK4Q-qCK8sHZ373I53u7RxRLJ32WflTjJLN144S8lOI7RApTSoE7jjW2lERCdfCIC_cDZJUJbuiOfMvTwexOD3VgeYIQ_SJFht1VEOsQY9i6jPU2wu1s1CMryzwbQ7WZx1mSEAvp55vUeY4k_WqIpWoK4_E1s17AkBvUFxfJ9aOTP8n4FDsdmU6jsShVxtOJXr4lsubY9upYEZayjIf0a8gjhDCpndoZUYKkoIjOvEXo7Bvcb983c8j1FCswlolVKMTpKxVK7OgpFT0-k3OaKRLlgsOZDPX5zzwjQ511n-XUY4jAQX8Jor_KtX1n0lOsCz1QYuvBNvVvkLNpbClhar47SrsTQkv1Vlwv8FiEDqYVuYYYuTjEoAMjiOuwOtOIwaEYQp14NLQVxNAVac3tflvvsCPu8PwBuA3Tp24y9mANfVlzr7uiUqPt1efPSrdSTQ6vkm6Us6raQ0Je8AweX4SMQaJbKY4QvJnP508W4trlmao9k2OH9EQ9WoAsWBbjJXDSBeKv-gAFhDTAaQwJq3P8L4T8glBWK_Gx4RENlKzBo1LU6YEGCcsrXJkg-4xh9YWDlIx_FqK7pMGJ_qTBcrmcPe4ed6vVeudv5_7Kow0NFtvZFlfrjb_119v18uLRXy19PvOXi9V242_mi91ysfN9Dy8tnbaNjjrHgt6LmivtBt1BrK-ZD-aCa--5y2-R6D_y?type=png"></a></p>
+<h3>No Silver Bullet</h3>
+<p>I have been using Python for many years and have seen conventions and tools change. Packaging in particular has been a long-standing hassle that other tech communities have mocked. Fortunately, we now have robust standards, and the arrival of <code>uv</code> seems to have settled the debate.</p>
+<p>Still, as seen above, there are many decisions here that I may revisit over time. If you agree with many of them but not all, and editing directly in the generated project is not enough (maybe you do not care about <code>Makefile</code> because you use Windows—delete the file and move on), then fork the template and make your own flavor. That is exactly what I did: my template started as a fork of <a href="https://github.com/pawamoy/copier-uv">this one</a>.</p>
+<p>Hope it helps and long live the Free Software!</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Just as in recent years we have been <a href="https://www.xataka.com/aplicaciones/se-acabaron-terminos-como-esclavo-lista-negra-linux-desarrolladores-tendran-que-usar-lenguaje-inclusivo">revisiting and politicizing language</a> in our industry—trying to avoid sexist, enslaving, or militaristic terms—we should also stop seeing software purely in capitalist terms. I am looking at you, “business logic.” <a class="footnote-backref" href="posts/custom-python-project-template/#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/expanding-the-python-universe-with-rust/" class="u-url">Expanding the Python universe with Rust</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -186,34 +325,10 @@ navbar-light bg-light
 <p class="more"><a href="posts/easter-eggs-with-invisible-text/">Read more…</a></p>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ignoring-changes-in-git-locally/" class="u-url">Ignoring git changes locally</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/ignoring-changes-in-git-locally/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-10-31T14:19:23-03:00" itemprop="datePublished" title="2025-10-31 14:19">2025-10-31 14:19</time></a>
-            </p>
-                <p class="commentline">        <a href="posts/ignoring-changes-in-git-locally/#disqus_thread" data-disqus-identifier="cache/posts/ignorando-cambios-en-git-localmente.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>It is well known that in a git repository we can use a <a href="https://git-scm.com/docs/gitignore"><code>.gitignore</code></a> file to skip tracking files we do not want to push to the remote repository. If a file matches a <code>.gitignore</code> pattern, it will not appear in <code>git status</code> when you want to add its changes to a commit.</p>
-<p>They are typically used to ignore directories where dependencies are installed (e.g. the virtualenv for Python projects, usually found in <code>.venv</code>), temporary files generated by the interpreter or compiler, IDE-specific files, and so on.</p>
-<p>They are so common that GitHub offers <a href="https://github.com/github/gitignore">gitignore templates</a> curated for different programming languages, and tools such as <a href="https://docs.astral.sh/uv/concepts/projects/init/">uv init</a> generate a basic <code>.gitignore</code> as part of the boilerplate.</p>
-<p>A <code>.gitignore</code> is part of the project (it is committed), and it is important to keep it in the repository so that every collaborator shares the same configuration.</p>
-<p>But what if we want to ignore files only locally?</p>
-<p class="more"><a href="posts/ignoring-changes-in-git-locally/">Read more…</a></p>
-</div>
-    </div>
     </article>
 </div>
         <ul class="pager postindexpager clearfix">
-<li class="next"><a href="index-1.html" rel="next">Older posts</a></li>
+<li class="next"><a href="index-2.html" rel="next">Older posts</a></li>
         </ul>
 <script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});

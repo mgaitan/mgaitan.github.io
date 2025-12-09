@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2025 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Sun, 07 Dec 2025 17:36:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ampliando el universo Python con Rust</title><link>https://mgaitan.github.io/posts/ampliando-el-universo-python-con-rust/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Mi compañera Natalia, entre muchos &lt;a href="https://www.instagram.com/natinadibuja/"&gt;otros talentos que tiene&lt;/a&gt;, es traductora de alemán a español y además de traducir de manera independiente, es investigadora y docente en la Universidad Nacional de Córdoba.  &lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tin_nqn</title><link>https://mgaitan.github.io/</link><description>&gt;&gt;&gt; me.geek.post()</description><atom:link href="https://mgaitan.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2025 &lt;a href="mailto:gaitan@gmail.com"&gt;Martín Gaitán&lt;/a&gt; </copyright><lastBuildDate>Tue, 09 Dec 2025 19:08:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mi plantilla personalizada para proyectos Python</title><link>https://mgaitan.github.io/posts/plantilla-personalizada-proyectos-python/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Python, como el lenguaje pragmático que es, no exige mucho para empezar. Un archivo de texto con código válido, que por convención lleva la extensión &lt;code&gt;.py&lt;/code&gt; y constituye un "módulo" en la jerga &lt;em&gt;pythónica&lt;/em&gt;, ya es un pequeño programa (un &lt;em&gt;script&lt;/em&gt;); lo ejecutamos con &lt;code&gt;python &amp;lt;archivo&amp;gt;&lt;/code&gt; y a cobrar. Pero cuando esa simple pieza de código necesita crecer a más archivos o merece ser distribuida, quizás porque será dependencia de otro proyecto o simplemente porque consideramos que a alguien le servirá, entonces necesita algo de estructura y metadatos. &lt;/p&gt;
+&lt;p&gt;Esto no es algo exclusivo de Python: cuando se comienza un proyecto de software siempre hay una serie de archivos y estructuras básicas que sirven como punto de partida; el conjunto mínimo de archivos y carpetas, configuraciones y código "básico" que se necesita cuando se desea compartir el código como una aplicación o biblioteca: el &lt;em&gt;boilerplate&lt;/em&gt; de un proyecto. El boilerplate no define lógica, pero sí establece la base técnica, muchas veces basada en convenciones y otras en gustos personales, sobre la cual se construirá todo lo demás. &lt;/p&gt;
+&lt;p&gt;Este artículo detalla las decisiones que hice para la plantilla e inicialización automatizada (el "bootstrapping") que uso para mis proyectos, basada en la herramienta &lt;a href="https://copier.readthedocs.io/en/stable/"&gt;Copier&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Si querés probar, la plantilla está en &lt;a href="https://github.com/mgaitan/python-package-copier-template"&gt;mgaitan/python-package-copier-template&lt;/a&gt; y podés crear un proyecto nuevo a partir de ella así:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="go"&gt;uvx --with=copier-template-extensions copier copy --trust "gh:mgaitan/python-package-copier-template" /path/to/your/new/project&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Lo destacado:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🐍 Paquete Python moderno (+3.12) con configuración centralizada en &lt;code&gt;pyproject.toml&lt;/code&gt;. &lt;/li&gt;
+&lt;li&gt;📦 Build y gestión de dependencias con &lt;a href="https://astral.sh/uv"&gt;uv&lt;/a&gt;, distinguidas por grupos (dev/qa/docs). &lt;/li&gt;
+&lt;li&gt;🧹 Linter y formateado vía &lt;a href="https://docs.astral.sh/ruff/"&gt;Ruff&lt;/a&gt; con un conjunto amplio de reglas habilitadas.&lt;/li&gt;
+&lt;li&gt;✅ Type checking vía &lt;a href="https://github.com/astral-sh/ty"&gt;ty&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;🧪 Tests con &lt;a href="https://docs.pytest.org/en/stable/"&gt;pytest&lt;/a&gt;, &lt;a href="https://coverage.readthedocs.io/en/latest/"&gt;coverage.py&lt;/a&gt; y otras extensiones&lt;/li&gt;
+&lt;li&gt;📚 Documentación con &lt;a href="https://www.sphinx-doc.org/en/master/"&gt;Sphinx&lt;/a&gt;, &lt;a href="https://myst-parser.readthedocs.io/en/stable/"&gt;MyST&lt;/a&gt; y algunas extensiones, desplegada en &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🤖 Automatización de la creación de proyecto en GitHub vía &lt;a href="https://cli.github.com/"&gt;GitHub CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⚙️ Workflow de CI en &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🚀 Workflow para releases automáticos vía &lt;a href="https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/"&gt;Trusted Publishing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🧠 Defaults vía introspección para minimizar las decisiones durante el cuestionario inicial &lt;/li&gt;
+&lt;li&gt;🛠️ Makefile con algunos atajos para tareas comunes&lt;/li&gt;
+&lt;li&gt;📄 Generación de documentos genéricos como LICENSE/CODE_OF_CONDUCTS/AGENTS.md, etc. &lt;/li&gt;
+&lt;li&gt;🌀 Setup inicial del entorno de desarrollo y repositorio git&lt;/li&gt;
+&lt;li&gt;♻️ Proyectos actualizables con &lt;a href="https://copier.readthedocs.io/en/stable/updating/"&gt;&lt;code&gt;copier update&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Y muchos más detalles que me estoy olvidando ahora. &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/plantilla-personalizada-proyectos-python/"&gt;Leer más…&lt;/a&gt; (restan 10 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>ci</category><category>copier</category><category>docs</category><category>python</category><category>tooling</category><category>uv</category><guid>https://mgaitan.github.io/posts/plantilla-personalizada-proyectos-python/</guid><pubDate>Mon, 08 Dec 2025 21:30:00 GMT</pubDate></item><item><title>Ampliando el universo Python con Rust</title><link>https://mgaitan.github.io/posts/ampliando-el-universo-python-con-rust/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;div&gt;&lt;p&gt;Mi compañera Natalia, entre muchos &lt;a href="https://www.instagram.com/natinadibuja/"&gt;otros talentos que tiene&lt;/a&gt;, es traductora de alemán a español y además de traducir de manera independiente, es investigadora y docente en la Universidad Nacional de Córdoba.  &lt;/p&gt;
 &lt;p&gt;Probablemente porque a mí los idiomas me resultan un desafío casi tan infranqueable como el baile o el canto 
 (perdonen los y las colegas que han tenido y tendrán que lidiar mi inglés oral) le tengo una profunda admiración a las personas que saben muchos idiomas, 
 pero no en la mera habilidad de reemplazar unas palabras por otras o producir más sonidos vocales, sino el de conocer y sentir en lo más profundo los distintos universos. Es el sentido en el que &lt;a href="https://borgestodoelanio.blogspot.com/2017/01/jorges-luis-borges-el-oficio-de-traducir.html"&gt;Borges se quejaba&lt;/a&gt; de una mala traducción que le hicieron: &lt;/p&gt;
@@ -59,74 +84,4 @@ pero es verdad que la pulsión por poner huevos de pascua en el software es casi
 
 &lt;p&gt;Entonces comienza la burocracia de verificar qué paquetes necesitas, con el agravante de que muchas veces el nombre con el que se instala no corresponde con el nombre que se importa), lidiar con conflictos de versiones y sobrecargar tu entorno.&lt;/p&gt;
 &lt;p&gt;Si todo el mundo coincide en que Python es un lenguaje pragmático y elegante que resulta ideal para scripts, ¿por qué esta parte tiene que ser complicada?&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/dependencias-automaticas-scripts-python-autopep723/"&gt;Leer más…&lt;/a&gt; (restan 3 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>automation</category><category>dependencies</category><category>pep723</category><category>python</category><category>uv</category><guid>https://mgaitan.github.io/posts/dependencias-automaticas-scripts-python-autopep723/</guid><pubDate>Fri, 25 Jul 2025 11:00:00 GMT</pubDate></item><item><title>SVG animados para tus demos de programas CLI</title><link>https://mgaitan.github.io/posts/svg-animados-para-tus-demos-de-programas-cli/</link><dc:creator>Martín Gaitán</dc:creator><description>&lt;p&gt;¿Querés mostrar lo piola que es tu programa de línea de comandos con una demo de un uso real? ¿Querés evitar que la demo quede desactualizada facilmente? ¿Querés incluir la demo en sitios que no permiten videos ni javascript como los &lt;code&gt;README&lt;/code&gt; de Github o Pypi? &lt;/p&gt;
-&lt;p&gt;¡Los SVG animados generados programáticamente son la solución! Se incrustan como una imágen normal pero son más livianos que los GIFs, se reproducen automáticamente en la misma página, no requieren javascript y mantienen el texto nítido sin importar el zoom. &lt;/p&gt;
-&lt;p&gt;Además, automatizar tus demos te permite tener control total y regenerar el resultado visual de manera programática cuando la CLI cambie o quieras hacer cambios. &lt;/p&gt;
-&lt;p&gt;Como ejemplo, acá la demo un programita que hice hace poco llamado &lt;a href="https://github.com/mgaitan/cuitonline"&gt;cuitonline&lt;/a&gt; que luce así para su versión 0.1: &lt;/p&gt;
-&lt;p align="center"&gt;
-&lt;img width="90%" src="https://raw.githubusercontent.com/mgaitan/cuitonline/refs/tags/0.1/demo/usage.svg"&gt;
-&lt;/p&gt;
-
-&lt;h3&gt;¿Cómo lo hacemos?&lt;/h3&gt;
-&lt;p&gt;Vamos a utilizar las siguientes herramientas, todas open source. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/veracioux/tuterm"&gt;tuterm&lt;/a&gt;&lt;/strong&gt;: Es una herramienta bash para crear demos de programas CLI. Se define un "script" (en el mejor sentido de la palabra) que permite controlar los comandos que se ejecutan (¡de verdad!) en la consola, que comentario mostrar y qué otros comandos auxiliares ejecutar. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;uvx&lt;/strong&gt;: Es el equivalente a &lt;code&gt;pipx&lt;/code&gt; de &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt;. Lo usamos para ejecutar &lt;code&gt;asciinema&lt;/code&gt; gestionando las dependencias e instalandolo en un entorno virtual automáticamente. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.asciinema.org/manual/cli/"&gt;asciinema&lt;/a&gt;&lt;/strong&gt;: Graba sesiones de terminal y las guarda en un formato de texto. Por defecto estos archivos se suben y se comparten a traves de &lt;a href="https://asciinema.org/"&gt;asciinema.org&lt;/a&gt;, que es genial pero el reproductor requiere javascript lo que limita su uso. Por eso lo convertimos a SVG.  &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/marionebl/svg-term-cli"&gt;svg-term-cli&lt;/a&gt;&lt;/strong&gt;: Convierte grabaciones de asciinema en SVGs animados. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Paso a paso&lt;/h3&gt;
-&lt;h4&gt;1. Escribe el script&lt;/h4&gt;
-&lt;p&gt;Siguiendo el ejemplo de &lt;code&gt;cuitonline&lt;/code&gt; mostrado arriba. El script de &lt;code&gt;tuterm&lt;/code&gt; lo llameé &lt;code&gt;usage.tutorial&lt;/code&gt; con el siguiente contenido:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="c1"&gt;# file: &amp;gt; cuitonline_usage&lt;/span&gt;
-prompt&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-ne&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"\033[1;35m\$ \033[0;33m"&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-configure&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;DELAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.02
-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;DELAY_PROMPT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.2
-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;COLOR_MESSAGE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'1;32'&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-
-run&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;M&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Buscar por CUIT"&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;c&lt;span class="w"&gt; &lt;/span&gt;cuitonline&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;-22293909-8
-&lt;span class="w"&gt; &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;M&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Buscar por DNI"&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;c&lt;span class="w"&gt; &lt;/span&gt;cuitonline&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10433615&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;M&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Busca por nombre"&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;c&lt;span class="w"&gt; &lt;/span&gt;cuitonline&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"messi lionel andres"&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;clear
-&lt;span class="w"&gt; &lt;/span&gt;M&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Obtiene la página 2 de los resultados"&lt;/span&gt;
-&lt;span class="w"&gt; &lt;/span&gt;c&lt;span class="w"&gt; &lt;/span&gt;cuitonline&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"juan jose gonzalez"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-p2
-&lt;span class="w"&gt; &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Las líneas que empiezan por &lt;code&gt;M&lt;/code&gt; son los comentarios. &lt;code&gt;c&lt;/code&gt; son comandos que se van a ver, y el resto son comandos que se van a ejecutar pero no se muestran tipeados. &lt;/p&gt;
-&lt;h4&gt;2. Graba la sesión de la terminal&lt;/h4&gt;
-&lt;p&gt;Utiliza asciinema para grabar la sesión mientras tuterm ejecuta tu demo:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;uvx&lt;span class="w"&gt; &lt;/span&gt;asciinema&lt;span class="w"&gt; &lt;/span&gt;rec&lt;span class="w"&gt; &lt;/span&gt;--overwrite&lt;span class="w"&gt; &lt;/span&gt;-c&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'tuterm usage.tutorial --mode demo'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;usage.cast
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;3. Convierte la grabación en un SVG animado&lt;/h4&gt;
-&lt;p&gt;Con svg-term-cli definimos el aspecto de la "consola" y convertimos la grabación en un SVG animado:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;svg-term&lt;span class="w"&gt; &lt;/span&gt;--window&lt;span class="w"&gt; &lt;/span&gt;--width&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;75&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--height&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;24&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--padding&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--in&lt;span class="w"&gt; &lt;/span&gt;usage.cast&lt;span class="w"&gt; &lt;/span&gt;--out&lt;span class="w"&gt; &lt;/span&gt;usage.svg
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;4. Añade el SVG generado en tu archivo &lt;code&gt;README.md&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;Por ejemplo si lo subis a &lt;code&gt;/demo/usage.svg&lt;/code&gt; de tu repo, &lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&amp;lt;p align="center"&amp;gt;
-&amp;lt;img width="90%" src="https://raw.githubusercontent.com/&amp;lt;user&amp;gt;/&amp;lt;repo&amp;gt;/refs/heads/main/demo/usage.svg" /&amp;gt;
-&amp;lt;/p&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;¡Y listo! Ahora tenés una demo animada, nítida y mantenible programáticamente para tu programa CLI directamente en tu README de GitHub. 😎&lt;/p&gt;</description><guid>https://mgaitan.github.io/posts/svg-animados-para-tus-demos-de-programas-cli/</guid><pubDate>Thu, 23 Jan 2025 19:02:18 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://mgaitan.github.io/posts/dependencias-automaticas-scripts-python-autopep723/"&gt;Leer más…&lt;/a&gt; (restan 3 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>automation</category><category>dependencies</category><category>pep723</category><category>python</category><category>uv</category><guid>https://mgaitan.github.io/posts/dependencias-automaticas-scripts-python-autopep723/</guid><pubDate>Fri, 25 Jul 2025 11:00:00 GMT</pubDate></item></channel></rss>

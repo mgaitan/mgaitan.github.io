@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Un template Python moderno y mantenible con Copier, uv, ruff, ty, pytest, documentación en markdown y releases automáticos.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi plantilla personalizada para proyectos Python | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/posts/plantilla-personalizada-proyectos-python/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../ampliando-el-universo-python-con-rust/" title="Ampliando el universo Python con Rust" type="text/html">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Mi plantilla personalizada para proyectos Python">
+<meta property="og:url" content="https://mgaitan.github.io/posts/plantilla-personalizada-proyectos-python/">
+<meta property="og:description" content="Un template Python moderno y mantenible con Copier, uv, ruff, ty, pytest, documentación en markdown y releases automáticos.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-12-08T18:30:00-03:00">
+<meta property="article:tag" content="ci">
+<meta property="article:tag" content="copier">
+<meta property="article:tag" content="docs">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="tooling">
+<meta property="article:tag" content="uv">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+<link rel="alternate" hreflang="en" href="../../en/posts/custom-python-project-template/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="logo" href="../../">
+
+            <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Sobre mí</a>
+                </li>
+<li class="nav-item">
+<a href="../../charlas/" class="nav-link">Charlas</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archivos</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Categorías</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>            </li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Mi plantilla personalizada para proyectos Python</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-08T18:30:00-03:00" itemprop="datePublished" title="2025-12-08 18:30">2025-12-08 18:30</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/plantilla-personalizada-proyectos-python.html">Comentarios</a>
+
+
+            
+        </p>
+</div>
+                <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+                <p><a href="../../en/posts/custom-python-project-template/" rel="alternate" hreflang="en">English</a></p>
+        </div>
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Python, como el lenguaje pragmático que es, no exige mucho para empezar. Un archivo de texto con código válido, que por convención lleva la extensión <code>.py</code> y constituye un "módulo" en la jerga <em>pythónica</em>, ya es un pequeño programa (un <em>script</em>); lo ejecutamos con <code>python &lt;archivo&gt;</code> y a cobrar. Pero cuando esa simple pieza de código necesita crecer a más archivos o merece ser distribuida, quizás porque será dependencia de otro proyecto o simplemente porque consideramos que a alguien le servirá, entonces necesita algo de estructura y metadatos. </p>
+<p>Esto no es algo exclusivo de Python: cuando se comienza un proyecto de software siempre hay una serie de archivos y estructuras básicas que sirven como punto de partida; el conjunto mínimo de archivos y carpetas, configuraciones y código "básico" que se necesita cuando se desea compartir el código como una aplicación o biblioteca: el <em>boilerplate</em> de un proyecto. El boilerplate no define lógica, pero sí establece la base técnica, muchas veces basada en convenciones y otras en gustos personales, sobre la cual se construirá todo lo demás. </p>
+<p>Este artículo detalla las decisiones que hice para la plantilla e inicialización automatizada (el "bootstrapping") que uso para mis proyectos, basada en la herramienta <a href="https://copier.readthedocs.io/en/stable/">Copier</a>. </p>
+<p>Si querés probar, la plantilla está en <a href="https://github.com/mgaitan/python-package-copier-template">mgaitan/python-package-copier-template</a> y podés crear un proyecto nuevo a partir de ella así:</p>
+<div class="code"><pre class="code literal-block"><span class="go">uvx --with=copier-template-extensions copier copy --trust "gh:mgaitan/python-package-copier-template" /path/to/your/new/project</span>
+</pre></div>
+
+<p>Lo destacado:</p>
+<ul>
+<li>🐍 Paquete Python moderno (+3.12) con configuración centralizada en <code>pyproject.toml</code>. </li>
+<li>📦 Build y gestión de dependencias con <a href="https://astral.sh/uv">uv</a>, distinguidas por grupos (dev/qa/docs). </li>
+<li>🧹 Linter y formateado vía <a href="https://docs.astral.sh/ruff/">Ruff</a> con un conjunto amplio de reglas habilitadas.</li>
+<li>✅ Type checking vía <a href="https://github.com/astral-sh/ty">ty</a>.</li>
+<li>🧪 Tests con <a href="https://docs.pytest.org/en/stable/">pytest</a>, <a href="https://coverage.readthedocs.io/en/latest/">coverage.py</a> y otras extensiones</li>
+<li>📚 Documentación con <a href="https://www.sphinx-doc.org/en/master/">Sphinx</a>, <a href="https://myst-parser.readthedocs.io/en/stable/">MyST</a> y algunas extensiones, desplegada en <a href="https://pages.github.com/">GitHub Pages</a>
+</li>
+<li>🤖 Automatización de la creación de proyecto en GitHub vía <a href="https://cli.github.com/">GitHub CLI</a>
+</li>
+<li>⚙️ Workflow de CI en <a href="https://github.com/features/actions">GitHub Actions</a>
+</li>
+<li>🚀 Workflow para releases automáticos vía <a href="https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/">Trusted Publishing</a>
+</li>
+<li>🧠 Defaults vía introspección para minimizar las decisiones durante el cuestionario inicial </li>
+<li>🛠️ Makefile con algunos atajos para tareas comunes</li>
+<li>📄 Generación de documentos genéricos como LICENSE/CODE_OF_CONDUCTS/AGENTS.md, etc. </li>
+<li>🌀 Setup inicial del entorno de desarrollo y repositorio git</li>
+<li>♻️ Proyectos actualizables con <a href="https://copier.readthedocs.io/en/stable/updating/"><code>copier update</code></a>
+</li>
+</ul>
+<p>Y muchos más detalles que me estoy olvidando ahora. </p>
+<!-- TEASER_END -->
+
+<h3>Un bootstrapping mínimo en Python</h3>
+<p>Empezemos por dar algo de contexto. Un boilerplate mínimo para un proyecto Python actual, instalable y distribuible se puede crear con <code>[uv init](https://docs.astral.sh/uv/concepts/projects/init/#packaged-applications)</code> (que está fuertemente inspirado en <code>cargo init</code> para Rust):</p>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>uv<span class="w"> </span>init<span class="w"> </span>demo-project<span class="w"> </span>--package<span class="w"> </span>
+<span class="go">Initialized project `demo-project` at `/home/tin/lab/demo-project`</span>
+</pre></div>
+
+<p>Lo que resulta en esto</p>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>tree<span class="w"> </span>demo-project/
+<span class="go">demo-project/</span>
+<span class="go">├── pyproject.toml</span>
+<span class="go">├── README.md</span>
+<span class="go">└── src</span>
+<span class="go">    └── demo_project</span>
+<span class="go">        └── __init__.py</span>
+
+<span class="go">3 directories, 3 files</span>
+<span class="gp">$ </span>cat<span class="w"> </span>demo-project/pyproject.toml<span class="w"> </span>
+<span class="go">[project]</span>
+<span class="go">name = "demo-project"</span>
+<span class="go">version = "0.1.0"</span>
+<span class="go">description = "Add your description here"</span>
+<span class="go">readme = "README.md"</span>
+<span class="go">authors = [</span>
+<span class="go">    { name = "Martín Gaitán", email = "gaitan@gmail.com" }</span>
+<span class="go">]</span>
+<span class="go">requires-python = "&gt;=3.14"</span>
+<span class="go">dependencies = []</span>
+
+<span class="go">[project.scripts]</span>
+<span class="go">demo-project = "demo_project:main"</span>
+
+<span class="go">[build-system]</span>
+<span class="go">requires = ["uv_build&gt;=0.9.9,&lt;0.10.0"]</span>
+<span class="go">build-backend = "uv_build"</span>
+</pre></div>
+
+<p>Este boilerplate declara <code>demo-project</code> como CLI, asociado a la función <code>main</code> que es un placeholder para reemplazar con tu código. </p>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>demo-project/
+<span class="gp">$ </span>cat<span class="w"> </span>src/demo_project/__init__.py<span class="w"> </span>
+<span class="go">def main() -&gt; None:</span>
+<span class="go">    print("Hello from demo-project!")</span>
+
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>demo-project
+<span class="go">Using CPython 3.14.0</span>
+<span class="go">Creating virtual environment at: .venv</span>
+<span class="go">Installed 1 package in 6ms</span>
+<span class="go">Hello from demo-project!</span>
+</pre></div>
+
+<p>Si instalaras tu programa con <code>uv tool install .</code> desde el directorio del proyecto podrás ejecutar <code>demo-project</code> desde cualquier lado. </p>
+<h3>Un boilerplate a medida</h3>
+<p>Como dije, eso es <strong>lo mínimo</strong>. Cualquier proyecto que se precie define tests unitarios (y cómo ejecutarlos), declara dependencias auxiliares para desarrollo, configura uno o más linter con reglas de estilo, idealmente tiene documentación, incluye algún workflow de integración continua, se versiona con git, y hasta se le ponen "badges" en la cabecera del README. ¿Qué framework de tests usamos? ¿Con qué generamos la documentación? ¿El proyecto estará en un <a href="https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/">layout src/ o flat</a>? </p>
+<p>Son un montón de decisiones a tomar (que eventualmente pueden cambiar) y un montón de trabajo implementarlas a mano. Más aún, cuando nos acostumbramos a una manera, muchas veces queremos lo mismo en todos los proyectos. </p>
+<p>Acá es cuando entra el concepto de <em>scaffolding</em>, que es generar el boilerplate a partir de plantillas editables de manera centralizada. Quizás la manera más genérica y trivial de hacer estas plantillas para proyectos sea la de <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository">marcar un repositorio en GitHub como "template"</a> de modo que cuando uno inicia un proyecto, en vez de empezar con el repositorio vacío se inicia desde el estado <code>HEAD</code> del repositorio template (pero sin ser un fork de este). </p>
+<p>Pero iniciar un proyecto no es solo crear el boilerplate, sino también preparar el entorno de desarrollo, inicializar el repo, crear el proyecto en GitHub y quizás pushear un primer commit, revisar que el nombre que elegimos para el paquete no está ya registrado, etc. Todo ese "bootstrapping" de un proyecto también implica tareas repetitivas y consumidoras de tiempo. ¡Automatizémoslas!</p>
+<p>En Python la herramienta más conocida de scaffolding+bootstrapping es <a href="https://cookiecutter.readthedocs.io/">cookiecutter</a>. Aunque es una herramienta hecha en Python (los templates se definen con <a href="https://jinja.palletsprojects.com/en/stable/">Jinja</a>), no se limita a crear boilerplate para proyectos Python ¡Está lleno de <a href="https://github.com/search?q=cookiecutter&amp;amp%3Btype=Repositories&amp;type=repositories">templates cookiecutter para cualquier tipo de proyecto</a>!</p>
+<p><code>cookiecutter</code> es genial, pero sólo se ocupa del bootstrapping inicial de un proyecto. ¿Qué pasa cuando las convenciones cambian o adoptamos una nueva preferencia? Por ejemplo yo hace mucho <a href="https://mgaitan.github.io/posts/metiendose-cosas-en-la-nariz/">usaba Nose</a> como framework y runner de testing, y ahora uso Pytest. Python mismo reemplazó el viejo formato <code>setup.py</code> por <code>pyproject.toml</code>. Y así un montón de cosas. </p>
+<p>De nuevo, si tenemos muchos proyectos, cambiar lo mismo en muchos lados es un trabajo aburrido y repetitivo. </p>
+<p>Por ese motivo mi plantilla se basa en <a href="https://copier.readthedocs.io/en/stable/">copier</a> que es en muchos aspectos igual a cookiecutter (acá hay una <a href="https://copier.readthedocs.io/en/stable/comparisons/">tabla comparativa</a>) pero soporta <a href="https://copier.readthedocs.io/en/stable/updating/">actualizaciones</a> de los proyectos generados, es decir que cualquier proyecto que se inició con la plantilla puede aplicar las novedades con un simple comando. </p>
+<h3>Mi <strike>cuerpo</strike> plantilla, mi decisión</h3>
+<p>El template asume Python 3.12+ con layout <code>src/</code> y configuración unificada en el <code>pyproject.toml</code>. El backend para build 
+es <a href="https://docs.astral.sh/uv/concepts/build-backend/">uv_build</a> que es más que suficiente para proyectos "python puro" (sin extensiones compiladas). Se declara un script (opcional) como entrypoint que usa <a href="https://docs.python.org/3/library/argparse.html"><code>argparse</code></a> e incluye <code>--version</code> y <code>--help</code>. Si bien muchas veces prefiero <a href="https://typer.tiangolo.com/">typer</a> como framework para CLIs (especialmente por su autocomplete), mejor <a href="https://en.wikipedia.org/wiki/KISS_principle">dejarlo simple</a> por defecto. </p>
+<p>Obviamente uso <code>uv</code> para gestionar las dependencias y el entorno. Si bien el proyecto inicial no declara dependencias productivas (porque no se define ninguna "lógica de dominio" <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> ) sí declaro varios <a href="https://github.com/mgaitan/copier-uv/blob/6751063f461775b31514ef86dc595d0774cf126f/project/pyproject.toml.jinja#L98-L120"><code>dependency-groups</code></a>, un mecanismo definido en la <a href="https://peps.python.org/pep-0735/">PEP 735</a> que organiza dependencias en conjuntos separados según su propósito --por ejemplo, test, docs, etc-- evitando mezclar todo en las dependencias principales y facilitando instalaciones parciales según el entorno o la tarea. Esto permite, por ejemplo, que cuando instalamos dependencias para compilar la documentación no tengamos que instalar las dependencias de tests (ahorrando precioso tiempo de CI cuando se ejecutan), o cuando verificamos QA con ruff no hagan falta herramientas exclusivas para desarrollo como ipdb. Cuando <code>uv</code> instala o sincroniza las dependencias (por ejemplo, mediante <code>uv sync</code>) busca por defecto el grupo <code>"dev"</code>, que en mi template es un metagrupo que incluye dependencias de test, qa y otras cosas. </p>
+<p><a href="https://docs.astral.sh/ruff/">ruff</a>, ya que lo mencioné, es el linter canónico 
+en la actualidad. De los mismos creadores de uv (y también hecho en Rust) es realmente un misterio cómo logran semejante performance. Cubre lint (reemplazando a flake8, isort y decenas de plugins) y formateo (reemplazando al adelantado <a href="https://black.readthedocs.io/en/stable/">black</a>) con un límite de 120 caracteres por línea (porque los 79 <a href="https://pep8.org/#maximum-line-length">recomendados en PEP 8</a> me resultan escasos para las resoluciones actuales) con un <a href="https://github.com/mgaitan/copier-uv/blob/6751063f461775b31514ef86dc595d0774cf126f/project/pyproject.toml.jinja#L39-L65">conjunto amplio de reglas activadas</a>, la mayoría de las cuales tienen autofix (y cuando no, los agentes se encargan) así mantiene un estilo pythónico consistente que minimiza bugs. Quizás a futuro active aún <a href="https://docs.astral.sh/ruff/rules/#flake8-errmsg-em">más reglas</a>: si es gratis, automático y rápido, las quiero todas. </p>
+<p>El paquete incluye tipado "inline" e incluye el archivo <code>py.typed</code> (<a href="https://peps.python.org/pep-0561/">PEP 561</a>). Los chequeos de tipos se ejecutan con <a href="https://github.com/astral-sh/ty">ty</a>, otra de las herramientas de Astral que aún está en alpha, pero ya es usable para los fines de un proyecto nuevo. </p>
+<p>El stack de <strong>pruebas unitarias</strong> usa el estándar de facto, <a href="http://pytest.org/">pytest</a>, y <a href="https://coverage.readthedocs.io/en/7.13.0/">coverage.py</a> vía <a href="https://pytest-cov.readthedocs.io/en/latest/readme.html">pytest-cov</a> (configurado con un threshold del 100%) con plugins para <a href="https://pytest-mock.readthedocs.io/en/latest/index.html">mocks genéricos</a> y de <a href="https://github.com/pytest-dev/pytest-freezer">fechas</a>. Si bien perfectamente se podría usar <a href="https://docs.python.org/3/library/unittest.mock.html"><code>mock</code></a> incluido en la stdlib de Python, me gusta el fixture <code>mocker</code> porque no fuerza a usar context managers en el patching. Como <a href="https://pep20.org/#flat">dice el Zen</a>, "Flat is better than nested". </p>
+<p>Para un proyecto inicial que aún no define su finalidad puede pensarse que no hay mucho para documentar (y quizás basta con el <code>README</code>), pero tener el andamiaje preparado facilita que cuando haya algo sea trivial hacerlo. Por eso la plantilla incluye una carpeta <code>docs/</code> con la estructura inicial. Acá podría haber usado <a href="https://www.mkdocs.org/">mkdocs</a> que es una opción cada vez más popular, pero me mantuve en el clásico <a href="https://www.sphinx-doc.org/">Sphinx</a> usando <a href="https://myst-parser.readthedocs.io/">myst-parser</a> para escribir en <strong>Markdown</strong> (solía <a href="https://mgaitan.github.io/posts/un-procesador-de-restructuredtext/">gustarme reStructuredText</a> pero sé reconocer al <a href="https://ia.net/topics/markdown-and-the-slow-fade-of-the-formatting-fetish">campeón</a>). Incluyo un par de extensiones mías ya configuradas: <a href="https://github.com/mgaitan/sphinxcontrib-mermaid">sphinx-mermaid</a> para diagramas y <a href="https://github.com/mgaitan/richterm">richterm</a> para incluir "capturas". </p>
+<p>Luego de crear el código, <a href="https://github.com/mgaitan/copier-uv/blob/6751063f461775b31514ef86dc595d0774cf126f/copier.yml#L15-L20">ejecutamos algunas tareas</a>. Por ejemplo se hace el primer <code>sync</code> (que instala dependencias de desarrollo), y se crea un primer commit con <code>git</code>. Luego, si <a href="https://cli.github.com/">GitHub CLI</a> está instalado, se crea el repo en GitHub, se pushea y se lanza el primer workflow sin pasos manuales. </p>
+<p>Los tests creados así como los chequeos para que no se está infringiendo QA (ruff/ty) se verifican en un <strong>workflow de CI</strong> que se ejecuta en cada push o PR y corre los tests en todas las versiones de Python en una matriz. Las herramientas que lo soportan están configuradas para generar salidas de errores o warnings en formato de <a href="https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#setting-an-error-message">anotaciones de GitHub</a> de modo de poder navegarlos en el contexto del código. </p>
+<p>Otro workflow es el encargado de realizar los releases. El flujo típico de un release es <code>make bump</code> + <code>make release</code> (incrementar la versión y commitear e iniciar un release de GitHub). El Workflow detecta este evento, arma los wheels (vía <code>uv build</code>) que adjunta al release en GitHub y además usa el mecanismo de <a href="https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/">Trusted Publishing</a> para subir la nueva versión directamente a PyPI. Además, se compila y se actualiza la documentación que se sirve desde GitHub Pages (si el repo es público). </p>
+<p>El mecanismo tradicional para subir paquetes a PyPI implicaba usar herramientas como <a href="https://github.com/pypa/twine">twine</a> que requieren un token o un usuario y contraseña. El protocolo Trusted Publishing en cambio gestiona dinámicamente esta autenticación (usando el protocolo <a href="https://openid.net/developers/how-connect-works/">oidc</a>), por lo que no hay que gestionar (ni rotar) estos secretos. 
+Como lamentablemente este paso aún no se puede automatizar porque la API de PyPI no expone endpoints para este registro, lo único que hay que hacer de manera manual, por única vez, es registrar <a href="https://docs.pypi.org/trusted-publishers/adding-a-publisher/">el paquete y el workflow asociado</a>. En mi caso el workflow es <code>cd.yml</code> y el environment lo dejo en blanco. </p>
+<p>Cuando se ejecuta copier con una plantilla se lanza un cuestionario: nombre del paquete, autor, usuario de GitHub, esas cosas. Todo lo que pude automatizar aquí para ofrecer defaults con sentido lo hice, para que respondas lo mínimo imprescindible. Por ejemplo el nombre del proyecto se infiere del directorio que se pasa como argumento, el nombre e email del autor se obtienen de git y el usuario de GitHub desde la API vía GitHub CLI. </p>
+<p>Un detalle fruto de la experiencia: muchas veces me sucedió que ideo un nombre para un proyecto y a la hora de publicarlo me percaté de que el nombre ya está ocupado (mi reciente <a href="https://mgaitan.github.io/posts/textual-tetris/">textual-tetris</a> se llamaba "textris" originalmente, pero <a href="https://pypi.org/project/textris">alguien me ganó de mano</a>). Por eso el wizard se encarga de validar que el nombre que le queremos dar al paquete está disponible haciendo una simple consulta web a PyPI, y en caso de que esté ocupado nos propone un sufijo. </p>
+<p>En el proyecto generado definí un <code>Makefile</code> con una serie de atajos para "el día a día". Por ejemplo, si querés compilar la documentación localmente en <code>epub</code>, no tenés que acordarte los argumentos para Sphinx sino <code>make docs-epub</code> (y viene con un <code>make help</code> para más INRI). Si bien hay herramientas más modernas como <a href="https://github.com/casey/just">just</a> o <a href="https://github.com/jdx/mise">mise</a> (también existe <a href="https://www.pyinvoke.org/">invoke</a> pero lo aborrezco) el cincuentón <code>make</code> es ubicuo y suficiente para estos humildes fines. Targets como <code>qa</code>, <code>test</code>, <code>docs</code> y <code>release</code> encapsulan los comandos largos y dejan una interfaz uniforme para tareas recurrentes.</p>
+<p>Además de código se generan los documentos que típicamente son "copy &amp; paste" como <code>LICENSE</code> y <code>CODE_OF_CONDUCT.md</code> (copiado de <a href="https://www.contributor-covenant.org/">Contributor Covenant</a>). No creé por ejemplo un archivo de <code>CHANGELOG</code> porque aprovecho directamente la página de release de Githubs. </p>
+<p>Por otro lado, qué tiempos modernos, definí un <a href="https://agents.md/">AGENTS.md</a> con instrucciones básicas para que los agentes de código se ubiquen en el contexto donde meteran sus múltiples manos robóticas. </p>
+<h4>Actualizaciones con Copier</h4>
+<p>Quizás la feature más interesante de Copier es que puede actualizar los proyectos ya creados, porque todo programador/a que se precie tiene sus principios, pero con el tiempo los cambia por otros. </p>
+<p>Recomiendo la entrevista a Jairo Llopis (uno de los mantenedores de Copier) en este <a href="https://www.pythonpodcast.com/episodepage/project-scaffolding-that-evolves-with-your-software-using-copier">podcast</a> donde define a Copier como una "project life cycle management tool" (en contraposición con un gestor de scaffolding tradicional). </p>
+<p>Cuando todo está listo en el proyecto generado, copier deja un archivito <code>.copier-answers.yml</code> con metadatos con la información básica del template que se usó y las variables (las respuestas del cuestionario inicial) usadas. Si hay novedades en el template (por defecto busca tags), ejecutar <code>uvx copier update</code> basta para que se apliquen (o al menos se intente) al proyecto, aún cuando este haya mutado. </p>
+<p>El mecanismo que usa para esto no es trivial, implica un proceso de extracción y aplicación de diff (hay que recordar que el template y el proyecto son repositorios totalmente distintos que no comparten historia). Se resume en este diagrama que <a href="https://copier.readthedocs.io/en/stable/updating/#how-the-update-works">obtuve de la documentación</a></p>
+<p><a href="https://mermaid.live/edit#pako:eNqlVcuOmzAU_RXL1UgTlWSSTF4w1WyabVftqqWqPHAhNGAjY6rSJP_ea2wnQFGldrwA-_qc--IYn2gkYqABTSUrD-TTPuQhv7sjHK0Vmf73CLmCosyZgm8SSnEfUrcmel1lSsgmpJMOLqqlBK4Q-qCK8sHZ373I53u7RxRLJ32WflTjJLN144S8lOI7RApTSoE7jjW2lERCdfCIC_cDZJUJbuiOfMvTwexOD3VgeYIQ_SJFht1VEOsQY9i6jPU2wu1s1CMryzwbQ7WZx1mSEAvp55vUeY4k_WqIpWoK4_E1s17AkBvUFxfJ9aOTP8n4FDsdmU6jsShVxtOJXr4lsubY9upYEZayjIf0a8gjhDCpndoZUYKkoIjOvEXo7Bvcb983c8j1FCswlolVKMTpKxVK7OgpFT0-k3OaKRLlgsOZDPX5zzwjQ511n-XUY4jAQX8Jor_KtX1n0lOsCz1QYuvBNvVvkLNpbClhar47SrsTQkv1Vlwv8FiEDqYVuYYYuTjEoAMjiOuwOtOIwaEYQp14NLQVxNAVac3tflvvsCPu8PwBuA3Tp24y9mANfVlzr7uiUqPt1efPSrdSTQ6vkm6Us6raQ0Je8AweX4SMQaJbKY4QvJnP508W4trlmao9k2OH9EQ9WoAsWBbjJXDSBeKv-gAFhDTAaQwJq3P8L4T8glBWK_Gx4RENlKzBo1LU6YEGCcsrXJkg-4xh9YWDlIx_FqK7pMGJ_qTBcrmcPe4ed6vVeudv5_7Kow0NFtvZFlfrjb_119v18uLRXy19PvOXi9V242_mi91ysfN9Dy8tnbaNjjrHgt6LmivtBt1BrK-ZD-aCa--5y2-R6D_y"><img alt="" src="https://mermaid.ink/img/pako:eNqlVcuOmzAU_RXL1UgTlWSSTF4w1WyabVftqqWqPHAhNGAjY6rSJP_ea2wnQFGldrwA-_qc--IYn2gkYqABTSUrD-TTPuQhv7sjHK0Vmf73CLmCosyZgm8SSnEfUrcmel1lSsgmpJMOLqqlBK4Q-qCK8sHZ373I53u7RxRLJ32WflTjJLN144S8lOI7RApTSoE7jjW2lERCdfCIC_cDZJUJbuiOfMvTwexOD3VgeYIQ_SJFht1VEOsQY9i6jPU2wu1s1CMryzwbQ7WZx1mSEAvp55vUeY4k_WqIpWoK4_E1s17AkBvUFxfJ9aOTP8n4FDsdmU6jsShVxtOJXr4lsubY9upYEZayjIf0a8gjhDCpndoZUYKkoIjOvEXo7Bvcb983c8j1FCswlolVKMTpKxVK7OgpFT0-k3OaKRLlgsOZDPX5zzwjQ511n-XUY4jAQX8Jor_KtX1n0lOsCz1QYuvBNvVvkLNpbClhar47SrsTQkv1Vlwv8FiEDqYVuYYYuTjEoAMjiOuwOtOIwaEYQp14NLQVxNAVac3tflvvsCPu8PwBuA3Tp24y9mANfVlzr7uiUqPt1efPSrdSTQ6vkm6Us6raQ0Je8AweX4SMQaJbKY4QvJnP508W4trlmao9k2OH9EQ9WoAsWBbjJXDSBeKv-gAFhDTAaQwJq3P8L4T8glBWK_Gx4RENlKzBo1LU6YEGCcsrXJkg-4xh9YWDlIx_FqK7pMGJ_qTBcrmcPe4ed6vVeudv5_7Kow0NFtvZFlfrjb_119v18uLRXy19PvOXi9V242_mi91ysfN9Dy8tnbaNjjrHgt6LmivtBt1BrK-ZD-aCa--5y2-R6D_y?type=png"></a></p>
+<h3>No hay bala de plata</h3>
+<p>Tengo muchos años de Python encima, los últimos especificamente en el área de "<a href="https://en.wikipedia.org/wiki/Developer_Experience">developer experience</a>", y vi cómo fueron cambiando las convenciones y evolucionando las herramientas. En particular el packaging en Python siempre fue un trastorno por el cual muchas otras comunidades técnicas se burlaron de nosotros socarronamente. Por suerte en la actualidad se lograron estandarizaciones robustas y la aparición de <code>uv</code> parece haber terminado el debate. </p>
+<p>Más allá de que espero que no deba cambiar eso en particular, como se ha visto, hay un montón de otras decisiones tomadas que de acá a un tiempo quizás deba revisar. </p>
+<p>Si te interesa usar esta plantilla como base porque te gustan muchas de estas decisiones pero otras no te cierran y no te basta con resolverlas directamente en el proyecto generado (supongamos que no te interesa el <code>Makefile</code> porque usas Windows y te da fiaca: borrás el archivo y listo) entonces el camino es hacer un fork y hacer tus propios cambios. Estrictamente es lo que hice yo: todo comenzó como un fork de <a href="https://github.com/pawamoy/copier-uv">este template</a>. </p>
+<p>Espero que te sirva y ¡que viva el software libre!</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Así como en los últimos años hemos ido <a href="https://www.xataka.com/aplicaciones/se-acabaron-terminos-como-esclavo-lista-negra-linux-desarrolladores-tendran-que-usar-lenguaje-inclusivo">revisando y politizando el lenguaje</a> en nuestra industria evitando (o tratando de evitar) el lenguaje sexista, esclavista o belicista, también deberíamos dejar de pensar siempre en términos estrictamente capitalistas al software. Te estoy mirando a vos, "lógica de negocio". <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/ci/" rel="tag">ci</a></li>
+            <li><a class="tag p-category" href="../../categories/copier/" rel="tag">copier</a></li>
+            <li><a class="tag p-category" href="../../categories/docs/" rel="tag">docs</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/tooling/" rel="tag">tooling</a></li>
+            <li><a class="tag p-category" href="../../categories/uv/" rel="tag">uv</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../ampliando-el-universo-python-con-rust/" rel="prev" title="Ampliando el universo Python con Rust">Post anterior</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+                    <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="https://mgaitan.github.io/posts/plantilla-personalizada-proyectos-python/",
+        disqus_title="Mi plantilla personalizada para proyectos Python",
+        disqus_identifier="cache/posts/plantilla-personalizada-proyectos-python.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

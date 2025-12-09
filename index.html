@@ -18,7 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/">
 <link rel="next" href="index-22.html" type="text/html">
-<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/ampliando-el-universo-python-con-rust/" type="text/html">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="prefetch" href="posts/plantilla-personalizada-proyectos-python/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -77,7 +77,56 @@ navbar-light bg-light
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ampliando-el-universo-python-con-rust/" class="u-url">Ampliando el universo Python con Rust</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/plantilla-personalizada-proyectos-python/" class="u-url">Mi plantilla personalizada para proyectos Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="posts/plantilla-personalizada-proyectos-python/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-08T18:30:00-03:00" itemprop="datePublished" title="2025-12-08 18:30">2025-12-08 18:30</time></a>
+            </p>
+                <p class="commentline">        <a href="posts/plantilla-personalizada-proyectos-python/#disqus_thread" data-disqus-identifier="cache/posts/plantilla-personalizada-proyectos-python.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Python, como el lenguaje pragmático que es, no exige mucho para empezar. Un archivo de texto con código válido, que por convención lleva la extensión <code>.py</code> y constituye un "módulo" en la jerga <em>pythónica</em>, ya es un pequeño programa (un <em>script</em>); lo ejecutamos con <code>python &lt;archivo&gt;</code> y a cobrar. Pero cuando esa simple pieza de código necesita crecer a más archivos o merece ser distribuida, quizás porque será dependencia de otro proyecto o simplemente porque consideramos que a alguien le servirá, entonces necesita algo de estructura y metadatos. </p>
+<p>Esto no es algo exclusivo de Python: cuando se comienza un proyecto de software siempre hay una serie de archivos y estructuras básicas que sirven como punto de partida; el conjunto mínimo de archivos y carpetas, configuraciones y código "básico" que se necesita cuando se desea compartir el código como una aplicación o biblioteca: el <em>boilerplate</em> de un proyecto. El boilerplate no define lógica, pero sí establece la base técnica, muchas veces basada en convenciones y otras en gustos personales, sobre la cual se construirá todo lo demás. </p>
+<p>Este artículo detalla las decisiones que hice para la plantilla e inicialización automatizada (el "bootstrapping") que uso para mis proyectos, basada en la herramienta <a href="https://copier.readthedocs.io/en/stable/">Copier</a>. </p>
+<p>Si querés probar, la plantilla está en <a href="https://github.com/mgaitan/python-package-copier-template">mgaitan/python-package-copier-template</a> y podés crear un proyecto nuevo a partir de ella así:</p>
+<div class="code"><pre class="code literal-block"><span class="go">uvx --with=copier-template-extensions copier copy --trust "gh:mgaitan/python-package-copier-template" /path/to/your/new/project</span>
+</pre></div>
+
+<p>Lo destacado:</p>
+<ul>
+<li>🐍 Paquete Python moderno (+3.12) con configuración centralizada en <code>pyproject.toml</code>. </li>
+<li>📦 Build y gestión de dependencias con <a href="https://astral.sh/uv">uv</a>, distinguidas por grupos (dev/qa/docs). </li>
+<li>🧹 Linter y formateado vía <a href="https://docs.astral.sh/ruff/">Ruff</a> con un conjunto amplio de reglas habilitadas.</li>
+<li>✅ Type checking vía <a href="https://github.com/astral-sh/ty">ty</a>.</li>
+<li>🧪 Tests con <a href="https://docs.pytest.org/en/stable/">pytest</a>, <a href="https://coverage.readthedocs.io/en/latest/">coverage.py</a> y otras extensiones</li>
+<li>📚 Documentación con <a href="https://www.sphinx-doc.org/en/master/">Sphinx</a>, <a href="https://myst-parser.readthedocs.io/en/stable/">MyST</a> y algunas extensiones, desplegada en <a href="https://pages.github.com/">GitHub Pages</a>
+</li>
+<li>🤖 Automatización de la creación de proyecto en GitHub vía <a href="https://cli.github.com/">GitHub CLI</a>
+</li>
+<li>⚙️ Workflow de CI en <a href="https://github.com/features/actions">GitHub Actions</a>
+</li>
+<li>🚀 Workflow para releases automáticos vía <a href="https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/">Trusted Publishing</a>
+</li>
+<li>🧠 Defaults vía introspección para minimizar las decisiones durante el cuestionario inicial </li>
+<li>🛠️ Makefile con algunos atajos para tareas comunes</li>
+<li>📄 Generación de documentos genéricos como LICENSE/CODE_OF_CONDUCTS/AGENTS.md, etc. </li>
+<li>🌀 Setup inicial del entorno de desarrollo y repositorio git</li>
+<li>♻️ Proyectos actualizables con <a href="https://copier.readthedocs.io/en/stable/updating/"><code>copier update</code></a>
+</li>
+</ul>
+<p>Y muchos más detalles que me estoy olvidando ahora. </p>
+<p class="more"><a href="posts/plantilla-personalizada-proyectos-python/">Leer más…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ampliando-el-universo-python-con-rust/" class="u-url">Ampliando el universo Python con Rust</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Martín Gaitán
@@ -183,33 +232,6 @@ pero no en la mera habilidad de reemplazar unas palabras por otras o producir m�
     <div>
 <p>Charlando hace poco con Facundo Cruz, sociólogo investigador del Equipo de Investigación Política de la Revista Crisis (<a href="https://www.investigacionpolitica.com/">EdIPo</a>), le conté sobre un estudio "en joda" que hice una vez, el <a href="https://mgaitan.github.io/posts/el-padronazo-cordobes/">padronazo cordobés</a>, y recordé un trabajo más útil que supimos hacer desde <a href="https://www.opendatacordoba.org/">Open Data Córdoba</a> y que suele ser un tema de interés en la <a href="https://www.lavoz.com.ar/ciudadanos/cuales-son-las-localidades-de-cordoba-que-mas-estan-creciendo-en-habitantes-ahora/">prensa local</a>: <strong>analizar migraciones dentro de la provincia de Córdoba basado en los cambios de domicilio, según los padrones electorales</strong>. Como Facu se emocionó cuando le explicaba, le prometí que, si me conseguía el último padrón, se lo actualizaría.  Así que empecemos por el final. Quedó así: </p>
 <p class="more"><a href="posts/analizando-la-migracion-intraprovincial-en-cordoba/">Leer más…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/richterm-capturando-la-terminal-a-todo-color/" class="u-url">richterm, capturando la terminal a todo color</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Martín Gaitán
-            </span></p>
-            <p class="dateline">
-            <a href="posts/richterm-capturando-la-terminal-a-todo-color/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-11-03T22:26:32-03:00" itemprop="datePublished" title="2025-11-03 22:26">2025-11-03 22:26</time></a>
-            </p>
-                <p class="commentline">        <a href="posts/richterm-capturando-la-terminal-a-todo-color/#disqus_thread" data-disqus-identifier="cache/posts/richterm-capturando-la-terminal-a-todo-color.html">Comentarios</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Siempre estoy haciendo programitas de línea de comando y siempre quiero mostrar como se ve el resultado de algun comando. Si bien es texto que puedo copiar y pegar, muchas veces prefiero tomar capturas de pantalla de la terminal para mostrar como se ve el resultado, especialmente si tiene colores o algun formato especial.</p>
-<p>Cuando estaba escribiendo <a href="https://mgaitan.github.io/posts/un-cheatsheet-automatico-para-tu-cli-typer/">este post</a> necesitaba una captura, y encontré una manera de hacerlo:</p>
-<blockquote class="twitter-tweet">
-<p lang="en" dir="ltr">Tired of taking manual screenshots for CLI examples?<br>Try this:<br><br>$ alias rich-capture='uvx rich-codex --no-search --skip-git-checks --use-pty --no-confirm --img-paths cli_$(date -I).svg --command'<br><br>Then use it as a wrapper of your command. Eg. <br>$ rich-capture "uv run -m rich" <a href="https://t.co/U18Dr7p2Df">pic.twitter.com/U18Dr7p2Df</a></p>— Martín Gaitán ⭐⭐⭐ (@tin_nqn_) <a href="https://twitter.com/tin_nqn_/status/1983986531972116685?ref_src=twsrc%5Etfw">October 30, 2025</a>
-</blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>x.com//1983986531972116685</p>
-<p>El truco que propuse ahí es usar <a href="https://ewels.github.io/rich-codex/">rich-codex</a> pero, a decir verdad, la CLI de esta herramienta es un bastante complicada para este caso súper común: sólo quiero ejecutar un comando y quedarme con un SVG listo para incrustar en un post o en la documentación.</p>
-<p>Así que me armé una mini herramienta más simple: <a href="https://github.com/mgaitan/richterm"><strong>richterm</strong></a>.</p>
-<p class="more"><a href="posts/richterm-capturando-la-terminal-a-todo-color/">Leer más…</a></p>
 </div>
     </div>
     </article>
