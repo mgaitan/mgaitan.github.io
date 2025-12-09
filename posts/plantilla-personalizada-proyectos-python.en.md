@@ -1,5 +1,5 @@
-.. title: My Custom Template for Python Projects
-.. slug: custom-python-project-template
+.. title: My opinionated scaffolding for modern Python projects
+.. slug: opinionated-python-project-scaffolding
 .. date: 2025-12-08 18:30:00
 .. tags: python, tooling, copier, uv, ci, docs
 .. category: development
