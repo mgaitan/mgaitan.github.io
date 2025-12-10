@@ -320,6 +320,22 @@ pre code {
     padding: 0.15em 0.35em;
 }
 
+.rendered_html,
+.text_cell_render {
+    color: var(--text-color);
+}
+
+.rendered_html p,
+.rendered_html li,
+.rendered_html td,
+.rendered_html th,
+.text_cell_render p,
+.text_cell_render li,
+.text_cell_render td,
+.text_cell_render th {
+    color: var(--text-color);
+}
+
 .postlist .listdate,
 .metadata,
 .dateline a {
