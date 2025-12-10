@@ -117,7 +117,7 @@ navbar-light bg-light
 <p><em>sino cantar.</em></p>
 </blockquote>
 <p>Parafraseando (bastante lejos de esa belleza) yo podría decir:</p>
-<div class="code"><pre class="code text"><a id="rest_code_a6f88787a86349639a4520c72a68744b-1" name="rest_code_a6f88787a86349639a4520c72a68744b-1" href="#rest_code_a6f88787a86349639a4520c72a68744b-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
+<div class="code"><pre class="code text"><a id="rest_code_51e4694d35df41dc898e9c0759a0cd53-1" name="rest_code_51e4694d35df41dc898e9c0759a0cd53-1" href="#rest_code_51e4694d35df41dc898e9c0759a0cd53-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
 </pre></div>
 <p>Asi que ante la falta de talento natural para la edición audiovisual (entre todo el resto de las cosas), programé. Y así fue como hice un programita en Python que hace las ediciones por mí: <a class="reference external" href="http://github.com/mgaitan/miau">miau</a>.</p>
 <p>Sólo hay que darle la desgrabación del discurso original completo y el guión del discurso pretendido (basado en fragmentos textuales del original, en el orden que sea) y <code class="docutils literal">miau</code> se encarga de encontrar, recortar y concatenar para armar un clip de video o un audio remixado.</p>
@@ -148,11 +148,11 @@ navbar-light bg-light
 <li><p>Reusar el json intermedio que se produce con <cite>--dump</cite>, editarlo a gusto y pasarlo a una nueva ejecución de miau en reemplazo del txt de remix a <code class="docutils literal"><span class="pre">-r</span></code>. Este paso lo que hace justamente es saltearse la alineación automática y usar lo que le damos explícitamente.</p></li>
 <li>
 <p>Ponerle una metadata de ajuste al propio txt. La sintáxis que definí es un poco minimalista y se basa en ponerle signos <code class="docutils literal">+</code> y <code class="docutils literal">-</code> al final y/o al principio de cada linea, para estrechar o ensanchar el recorte. Cada símbolo equivale, por default, a 0.05s. Por ejemplo, si en el remix hay una línea que dice <em>"el único camino posible"</em> y nos damos cuenta que la detecta un instante tarde y la interrumpe antes de terminar, podemos corregirla poniendo un offset negativo al principio y uno positivo al final:</p>
-<div class="code"><pre class="code text"><a id="rest_code_6a78cfcb79274374a3b357c0a14307d0-1" name="rest_code_6a78cfcb79274374a3b357c0a14307d0-1" href="#rest_code_6a78cfcb79274374a3b357c0a14307d0-1"></a>--el único camino posible+++``
+<div class="code"><pre class="code text"><a id="rest_code_ac160ef7fc9c4a3399baf711b56d5008-1" name="rest_code_ac160ef7fc9c4a3399baf711b56d5008-1" href="#rest_code_ac160ef7fc9c4a3399baf711b56d5008-1"></a>--el único camino posible+++``
 </pre></div>
 <p>Miau filtra la línea con una función que hace esto:</p>
-<div class="code"><pre class="code python"><a id="rest_code_560b8cfc86734169b5eb5b52e0792033-1" name="rest_code_560b8cfc86734169b5eb5b52e0792033-1" href="#rest_code_560b8cfc86734169b5eb5b52e0792033-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
-<a id="rest_code_560b8cfc86734169b5eb5b52e0792033-2" name="rest_code_560b8cfc86734169b5eb5b52e0792033-2" href="#rest_code_560b8cfc86734169b5eb5b52e0792033-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
+<div class="code"><pre class="code python"><a id="rest_code_ccdd3ad39e894eceb84e160b01be2f46-1" name="rest_code_ccdd3ad39e894eceb84e160b01be2f46-1" href="#rest_code_ccdd3ad39e894eceb84e160b01be2f46-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
+<a id="rest_code_ccdd3ad39e894eceb84e160b01be2f46-2" name="rest_code_ccdd3ad39e894eceb84e160b01be2f46-2" href="#rest_code_ccdd3ad39e894eceb84e160b01be2f46-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
 </pre></div>
 </li>
 </ul>
