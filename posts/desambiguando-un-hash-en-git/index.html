@@ -72,7 +72,11 @@ navbar-light bg-light
             </li>
 </ul>
 <ul class="navbar-nav navbar-right">
-<li>            </li>
+<li class="nav-item">
+                    <button class="nav-link theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Tema: Automático (sistema). Click para pasar a claro." title="Tema: Automático (sistema). Click para pasar a claro." data-mode="auto">
+                        <svg class="theme-icon theme-icon-auto" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"></path></svg><svg class="theme-icon theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg><svg class="theme-icon theme-icon-dark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"></path></svg></button>
+                </li>
+                    <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
@@ -110,23 +114,23 @@ su hash sha1</a> :</p>
 </blockquote>
 <!-- TEASER_END -->
 <p>Pero a veces soy demasiado vago, y Git deja de llevarse bien conmigo: Estaba en una rama con varios commits y quería volver al pasado, deshaciendo commits, pero llevando uno. Fácil: <code class="docutils literal">reset</code> + <code class="docutils literal"><span class="pre">cherry-pick</span></code>. Pero copié muy pocos caracteres del hash que quería <em>cherrypickear</em>:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_351caee4b2714895aea1711895ff5a5c-1" name="rest_code_351caee4b2714895aea1711895ff5a5c-1" href="#rest_code_351caee4b2714895aea1711895ff5a5c-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>772dad9a775
-<a id="rest_code_351caee4b2714895aea1711895ff5a5c-2" name="rest_code_351caee4b2714895aea1711895ff5a5c-2" href="#rest_code_351caee4b2714895aea1711895ff5a5c-2"></a>HEAD<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>at<span class="w"> </span>772dad9<span class="w"> </span>making<span class="w"> </span>aqueous<span class="w"> </span>migration<span class="w"> </span>script<span class="w"> </span>more<span class="w"> </span>robust
-<a id="rest_code_351caee4b2714895aea1711895ff5a5c-3" name="rest_code_351caee4b2714895aea1711895ff5a5c-3" href="#rest_code_351caee4b2714895aea1711895ff5a5c-3"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$<span class="w"> </span>git<span class="w"> </span>cherry-pick<span class="w"> </span>c4396
-<a id="rest_code_351caee4b2714895aea1711895ff5a5c-4" name="rest_code_351caee4b2714895aea1711895ff5a5c-4" href="#rest_code_351caee4b2714895aea1711895ff5a5c-4"></a>error:<span class="w"> </span>short<span class="w"> </span>SHA1<span class="w"> </span>c4396<span class="w"> </span>is<span class="w"> </span>ambiguous.
-<a id="rest_code_351caee4b2714895aea1711895ff5a5c-5" name="rest_code_351caee4b2714895aea1711895ff5a5c-5" href="#rest_code_351caee4b2714895aea1711895ff5a5c-5"></a>error:<span class="w"> </span>short<span class="w"> </span>SHA1<span class="w"> </span>c4396<span class="w"> </span>is<span class="w"> </span>ambiguous
-<a id="rest_code_351caee4b2714895aea1711895ff5a5c-6" name="rest_code_351caee4b2714895aea1711895ff5a5c-6" href="#rest_code_351caee4b2714895aea1711895ff5a5c-6"></a>fatal:<span class="w"> </span>ambiguous<span class="w"> </span>argument<span class="w"> </span><span class="s1">'c4396'</span>:<span class="w"> </span>unknown<span class="w"> </span>revision<span class="w"> </span>or<span class="w"> </span>path<span class="w"> </span>not<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>working<span class="w"> </span>tree.
-<a id="rest_code_351caee4b2714895aea1711895ff5a5c-7" name="rest_code_351caee4b2714895aea1711895ff5a5c-7" href="#rest_code_351caee4b2714895aea1711895ff5a5c-7"></a>Use<span class="w"> </span><span class="s1">'--'</span><span class="w"> </span>to<span class="w"> </span>separate<span class="w"> </span>paths<span class="w"> </span>from<span class="w"> </span>revisions
-<a id="rest_code_351caee4b2714895aea1711895ff5a5c-8" name="rest_code_351caee4b2714895aea1711895ff5a5c-8" href="#rest_code_351caee4b2714895aea1711895ff5a5c-8"></a><span class="o">(</span>cpi<span class="o">)</span>mgaitan@gutemberg:~/laburo/cpi/code/cpi_mrp$
+<div class="code"><pre class="code bash"><a id="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-1" name="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-1" href="#rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>772dad9a775
+<a id="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-2" name="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-2" href="#rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-2"></a>HEAD<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>at<span class="w"> </span>772dad9<span class="w"> </span>making<span class="w"> </span>aqueous<span class="w"> </span>migration<span class="w"> </span>script<span class="w"> </span>more<span class="w"> </span>robust
+<a id="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-3" name="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-3" href="#rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-3"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$<span class="w"> </span>git<span class="w"> </span>cherry-pick<span class="w"> </span>c4396
+<a id="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-4" name="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-4" href="#rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-4"></a>error:<span class="w"> </span>short<span class="w"> </span>SHA1<span class="w"> </span>c4396<span class="w"> </span>is<span class="w"> </span>ambiguous.
+<a id="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-5" name="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-5" href="#rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-5"></a>error:<span class="w"> </span>short<span class="w"> </span>SHA1<span class="w"> </span>c4396<span class="w"> </span>is<span class="w"> </span>ambiguous
+<a id="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-6" name="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-6" href="#rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-6"></a>fatal:<span class="w"> </span>ambiguous<span class="w"> </span>argument<span class="w"> </span><span class="s1">'c4396'</span>:<span class="w"> </span>unknown<span class="w"> </span>revision<span class="w"> </span>or<span class="w"> </span>path<span class="w"> </span>not<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>working<span class="w"> </span>tree.
+<a id="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-7" name="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-7" href="#rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-7"></a>Use<span class="w"> </span><span class="s1">'--'</span><span class="w"> </span>to<span class="w"> </span>separate<span class="w"> </span>paths<span class="w"> </span>from<span class="w"> </span>revisions
+<a id="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-8" name="rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-8" href="#rest_code_3e54fde5a2e346c5ac833d4e8c695cdc-8"></a><span class="o">(</span>cpi<span class="o">)</span>mgaitan@gutemberg:~/laburo/cpi/code/cpi_mrp$
 </pre></div>
 <p>Recórcholis.</p>
 <p>Un poquito de bash y <em>git plumbing</em> al rescate:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_07c1cb306f4c43eab2b39beb0188cac9-1" name="rest_code_07c1cb306f4c43eab2b39beb0188cac9-1" href="#rest_code_07c1cb306f4c43eab2b39beb0188cac9-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>c4396<span class="o">{{</span><span class="m">0</span>..9<span class="o">}</span>,<span class="o">{</span>a..f<span class="o">}}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>git<span class="w"> </span>cat-file<span class="w"> </span>-e<span class="w"> </span><span class="nv">$hash</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>rev-parse<span class="w"> </span><span class="nv">$hash</span><span class="p">;</span><span class="w"> </span><span class="k">done</span><span class="w"> </span><span class="m">2</span>&gt;/dev/nul
-<a id="rest_code_07c1cb306f4c43eab2b39beb0188cac9-2" name="rest_code_07c1cb306f4c43eab2b39beb0188cac9-2" href="#rest_code_07c1cb306f4c43eab2b39beb0188cac9-2"></a>c4396586273b2a9ea5eae46c4ab2d98e236e7792
-<a id="rest_code_07c1cb306f4c43eab2b39beb0188cac9-3" name="rest_code_07c1cb306f4c43eab2b39beb0188cac9-3" href="#rest_code_07c1cb306f4c43eab2b39beb0188cac9-3"></a>c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
+<div class="code"><pre class="code bash"><a id="rest_code_0df07a2a7a33436d9e9739295c79f6ff-1" name="rest_code_0df07a2a7a33436d9e9739295c79f6ff-1" href="#rest_code_0df07a2a7a33436d9e9739295c79f6ff-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">hash</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>c4396<span class="o">{{</span><span class="m">0</span>..9<span class="o">}</span>,<span class="o">{</span>a..f<span class="o">}}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>git<span class="w"> </span>cat-file<span class="w"> </span>-e<span class="w"> </span><span class="nv">$hash</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>rev-parse<span class="w"> </span><span class="nv">$hash</span><span class="p">;</span><span class="w"> </span><span class="k">done</span><span class="w"> </span><span class="m">2</span>&gt;/dev/nul
+<a id="rest_code_0df07a2a7a33436d9e9739295c79f6ff-2" name="rest_code_0df07a2a7a33436d9e9739295c79f6ff-2" href="#rest_code_0df07a2a7a33436d9e9739295c79f6ff-2"></a>c4396586273b2a9ea5eae46c4ab2d98e236e7792
+<a id="rest_code_0df07a2a7a33436d9e9739295c79f6ff-3" name="rest_code_0df07a2a7a33436d9e9739295c79f6ff-3" href="#rest_code_0df07a2a7a33436d9e9739295c79f6ff-3"></a>c4396a2d64214a28791e4ba5a4a4017bdd9d14d6
 </pre></div>
 <p>Ahora tenemos el conjunto de hash con igual prefijo, y podemos revisarlos para ver cual era el que queriamos:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_8dfc986753114e28b168cbf7f68652be-1" name="rest_code_8dfc986753114e28b168cbf7f68652be-1" href="#rest_code_8dfc986753114e28b168cbf7f68652be-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$<span class="w"> </span>git<span class="w"> </span>show<span class="w"> </span>c4396586273b2a9ea5eae46c4ab2d98e236e7792
+<div class="code"><pre class="code bash"><a id="rest_code_2a2de41a754746bbbd1e66a6da22119b-1" name="rest_code_2a2de41a754746bbbd1e66a6da22119b-1" href="#rest_code_2a2de41a754746bbbd1e66a6da22119b-1"></a><span class="o">(</span>cpi<span class="o">)</span>tin@morochita:~/cpi$<span class="w"> </span>git<span class="w"> </span>show<span class="w"> </span>c4396586273b2a9ea5eae46c4ab2d98e236e7792
 </pre></div>
 <p>Y ese era el que quería.</p>
     </div>
@@ -170,6 +174,78 @@ su hash sha1</a> :</p>
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
     }});
+    </script><script>
+    (function() {
+        var storageKey = 'theme-mode';
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        var prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        var modes = ['auto', 'light', 'dark'];
+
+        function savedMode() {
+            var stored = localStorage.getItem(storageKey);
+            if (modes.indexOf(stored) !== -1) {
+                return stored;
+            }
+            return 'auto';
+        }
+
+        function resolvedTheme(mode) {
+            if (mode === 'light' || mode === 'dark') return mode;
+            return prefersDark && prefersDark.matches ? 'dark' : 'light';
+        }
+
+        function labels(mode, resolved) {
+            if (mode === 'auto') {
+                return {
+                    aria: "Tema: Automático (sistema). Click para pasar a claro.",
+                    next: 'light'
+                };
+            }
+            if (mode === 'light') {
+                return {
+                    aria: "Tema: Claro. Click para pasar a oscuro.",
+                    next: 'dark'
+                };
+            }
+            return {
+                aria: "Tema: Oscuro. Click para pasar a automático.",
+                next: 'auto'
+            };
+        }
+
+        function apply(mode) {
+            var resolved = resolvedTheme(mode);
+            document.body.setAttribute('data-theme', resolved);
+            document.body.setAttribute('data-theme-mode', mode);
+            toggle.dataset.mode = mode;
+            var label = labels(mode, resolved);
+            toggle.setAttribute('aria-pressed', resolved === 'dark');
+            toggle.setAttribute('aria-label', label.aria);
+            toggle.setAttribute('title', label.aria);
+        }
+
+        function setMode(mode) {
+            localStorage.setItem(storageKey, mode);
+            apply(mode);
+        }
+
+        apply(savedMode());
+
+        toggle.addEventListener('click', function() {
+            var current = document.body.getAttribute('data-theme-mode') || savedMode();
+            var next = labels(current).next;
+            setMode(next);
+        });
+
+        if (prefersDark && prefersDark.addEventListener) {
+            prefersDark.addEventListener('change', function() {
+                if (savedMode() === 'auto') {
+                    apply('auto');
+                }
+            });
+        }
+    })();
     </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 

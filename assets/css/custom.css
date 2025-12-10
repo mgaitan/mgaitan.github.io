@@ -1,7 +1,38 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700);
 
+:root {
+    --page-bg: #fdfdfd;
+    --text-color: #1c1c1c;
+    --muted-color: #4c4c4c;
+    --link-color: #2a6496;
+    --link-hover: #1c4d75;
+    --navbar-bg: rgba(235, 235, 235, 0.95);
+    --navbar-border: #d7d7d7;
+    --navbar-text: #404040;
+    --hr-color: rgba(0, 0, 0, 0.15);
+    --chip-bg: #e8e8e8;
+}
+
+body[data-theme="dark"] {
+    --page-bg: #171225;
+    --text-color: #e7e5f1;
+    --muted-color: #b8b4c7;
+    --link-color: #d2b8ff;
+    --link-hover: #f1deff;
+    --navbar-bg: rgba(24, 19, 38, 0.95);
+    --navbar-border: #2d253d;
+    --navbar-text: #f3f0ff;
+    --hr-color: rgba(255, 255, 255, 0.2);
+    --chip-bg: #2a2338;
+}
+
 body {
     margin-top: 0px;
+    background: var(--page-bg);
+    color: var(--text-color);
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
 p {
@@ -27,12 +58,16 @@ h1 {
 }
 
 a {
-    color: #2a6496;
+    color: var(--link-color);
 }
 
 h1 a,
 h1 a:hover {
-    color: #404040;
+    color: var(--navbar-text);
+}
+
+a:hover {
+    color: var(--link-hover);
 }
 
 .body-content {
@@ -40,15 +75,10 @@ h1 a:hover {
 }
 
 .body-content hr {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: rgba(0, 0, 0, 0.15) -moz-use-text-color -moz-use-text-color;
-    border-image: none;
     border-right: 0 none;
     border-style: solid none none;
     border-width: 1px 0 0;
+    border-color: var(--hr-color);
     display: block;
     margin: 30px auto 30px;
     width: 20%;
@@ -56,9 +86,9 @@ h1 a:hover {
 
 .navbar {
     min-height: 60px;
-    color: #000;
-    background-color: rgba(235, 235, 235, 0.95);
-    border-color: #d7d7d7;
+    color: var(--navbar-text);
+    background-color: var(--navbar-bg);
+    border-color: var(--navbar-border);
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
@@ -74,15 +104,32 @@ h1 a:hover {
     margin-right: 35px;
 }
 
+.navbar-light,
+.navbar-dark {
+    background-color: var(--navbar-bg) !important;
+    border-color: var(--navbar-border);
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--navbar-text);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--link-hover);
+}
+
 ul.navbar-nav li a {
     height: 60px;
-    color: #404040;
+    color: var(--navbar-text);
     font-family: sans-serif;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 ul.navbar-nav li a:hover {
+    color: var(--link-hover);
     text-decoration: underline;
 }
 
@@ -107,7 +154,7 @@ a.logo:hover {
     font-weight: 400;
     display: block;
     clear: left;
-    color: #111;
+    color: var(--muted-color);
     font-size: 11px;
     line-height: 13px;
     margin-top: 5px;
@@ -126,7 +173,7 @@ a.logo:hover {
 
 .dateline a {
     font-size: 13px;
-    color: #999;
+    color: var(--muted-color);
 }
 
 .byline,
@@ -158,7 +205,7 @@ div.prompt {
 }
 div.input_prompt {
     border-top: 1px solid transparent;
-    color: navy;
+    color: var(--link-color);
 }
 div.prompt {
     font-family: monospace;
@@ -198,4 +245,48 @@ div.prompt {
 
 blockquote {
     margin-left: 1rem;
+}
+
+.postlist .listdate,
+.metadata,
+.dateline a {
+    color: var(--muted-color);
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 60px;
+    padding: 0 10px;
+    color: var(--navbar-text);
+    font-family: sans-serif;
+    font-weight: normal;
+    background: none;
+    border: 1px solid transparent;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
+.theme-icon {
+    width: 18px;
+    height: 18px;
+    display: none;
+    fill: currentColor;
+}
+
+.theme-toggle[data-mode="auto"] .theme-icon-auto { display: block; }
+.theme-toggle[data-mode="light"] .theme-icon-light { display: block; }
+.theme-toggle[data-mode="dark"] .theme-icon-dark { display: block; }
 }

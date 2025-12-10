@@ -71,7 +71,11 @@ navbar-light bg-light
             </li>
 </ul>
 <ul class="navbar-nav navbar-right">
-<li>            </li>
+<li class="nav-item">
+                    <button class="nav-link theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Tema: Automático (sistema). Click para pasar a claro." title="Tema: Automático (sistema). Click para pasar a claro." data-mode="auto">
+                        <svg class="theme-icon theme-icon-auto" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"></path></svg><svg class="theme-icon theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg><svg class="theme-icon theme-icon-dark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"></path></svg></button>
+                </li>
+                    <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
@@ -134,7 +138,7 @@ para mostrar errores y fallos <em>on the fly</em>.</p>
 tracebacks a la parte útil, e incluye colores usados con criterio
 (basada en la genial biblioteca <a class="reference external" href="https://pypi.python.org/pypi/blessings">blessing</a>, del mismo autor).</p>
 <p>Para instalarlo, lo de siempre:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_72a880a63ea7465ba20a5bf22c87ba8a-1" name="rest_code_72a880a63ea7465ba20a5bf22c87ba8a-1" href="#rest_code_72a880a63ea7465ba20a5bf22c87ba8a-1"></a><span class="o">(</span>env<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nose-progressive
+<div class="code"><pre class="code bash"><a id="rest_code_e7bacd90bbe740b2864f5d221e085695-1" name="rest_code_e7bacd90bbe740b2864f5d221e085695-1" href="#rest_code_e7bacd90bbe740b2864f5d221e085695-1"></a><span class="o">(</span>env<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nose-progressive
 </pre></div>
 <p>Para usarlo, agregar <code class="docutils literal"><span class="pre">--with-progressive</span></code> como parámetros de <code class="docutils literal">nosetests</code>,
 o bien, para usarlo siempre, configurarlo en <code class="docutils literal">.noserc</code> o en la
@@ -175,23 +179,23 @@ métodos.</p>
 <p>Por eso existe <a class="reference external" href="https://github.com/iElectric/nose-selecttests">nose-selecttests</a>, que permite filtrar pruebas con
 determinada subcadena en el nombre del método.</p>
 <p>Por ejemplo:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_76a29787a20a452286e5722fc73929b5-1" name="rest_code_76a29787a20a452286e5722fc73929b5-1" href="#rest_code_76a29787a20a452286e5722fc73929b5-1"></a>$<span class="w"> </span>djntest<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span><span class="w"> </span>common/tests/test_sequence_diff.py
-<a id="rest_code_76a29787a20a452286e5722fc73929b5-2" name="rest_code_76a29787a20a452286e5722fc73929b5-2" href="#rest_code_76a29787a20a452286e5722fc73929b5-2"></a>
-<a id="rest_code_76a29787a20a452286e5722fc73929b5-3" name="rest_code_76a29787a20a452286e5722fc73929b5-3" href="#rest_code_76a29787a20a452286e5722fc73929b5-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_76a29787a20a452286e5722fc73929b5-4" name="rest_code_76a29787a20a452286e5722fc73929b5-4" href="#rest_code_76a29787a20a452286e5722fc73929b5-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_76a29787a20a452286e5722fc73929b5-5" name="rest_code_76a29787a20a452286e5722fc73929b5-5" href="#rest_code_76a29787a20a452286e5722fc73929b5-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_76a29787a20a452286e5722fc73929b5-6" name="rest_code_76a29787a20a452286e5722fc73929b5-6" href="#rest_code_76a29787a20a452286e5722fc73929b5-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_76a29787a20a452286e5722fc73929b5-7" name="rest_code_76a29787a20a452286e5722fc73929b5-7" href="#rest_code_76a29787a20a452286e5722fc73929b5-7"></a>
-<a id="rest_code_76a29787a20a452286e5722fc73929b5-8" name="rest_code_76a29787a20a452286e5722fc73929b5-8" href="#rest_code_76a29787a20a452286e5722fc73929b5-8"></a>----------------------------------------------------------------------
-<a id="rest_code_76a29787a20a452286e5722fc73929b5-9" name="rest_code_76a29787a20a452286e5722fc73929b5-9" href="#rest_code_76a29787a20a452286e5722fc73929b5-9"></a>Ran<span class="w"> </span><span class="m">4</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.375s
+<div class="code"><pre class="code bash"><a id="rest_code_1dec715551bc4cb886119863d58863cf-1" name="rest_code_1dec715551bc4cb886119863d58863cf-1" href="#rest_code_1dec715551bc4cb886119863d58863cf-1"></a>$<span class="w"> </span>djntest<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span><span class="w"> </span>common/tests/test_sequence_diff.py
+<a id="rest_code_1dec715551bc4cb886119863d58863cf-2" name="rest_code_1dec715551bc4cb886119863d58863cf-2" href="#rest_code_1dec715551bc4cb886119863d58863cf-2"></a>
+<a id="rest_code_1dec715551bc4cb886119863d58863cf-3" name="rest_code_1dec715551bc4cb886119863d58863cf-3" href="#rest_code_1dec715551bc4cb886119863d58863cf-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_1dec715551bc4cb886119863d58863cf-4" name="rest_code_1dec715551bc4cb886119863d58863cf-4" href="#rest_code_1dec715551bc4cb886119863d58863cf-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_1dec715551bc4cb886119863d58863cf-5" name="rest_code_1dec715551bc4cb886119863d58863cf-5" href="#rest_code_1dec715551bc4cb886119863d58863cf-5"></a><span class="c1">#2979 test_multiple_diff (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_1dec715551bc4cb886119863d58863cf-6" name="rest_code_1dec715551bc4cb886119863d58863cf-6" href="#rest_code_1dec715551bc4cb886119863d58863cf-6"></a><span class="c1">#2980 test_only_compare_same_type (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_1dec715551bc4cb886119863d58863cf-7" name="rest_code_1dec715551bc4cb886119863d58863cf-7" href="#rest_code_1dec715551bc4cb886119863d58863cf-7"></a>
+<a id="rest_code_1dec715551bc4cb886119863d58863cf-8" name="rest_code_1dec715551bc4cb886119863d58863cf-8" href="#rest_code_1dec715551bc4cb886119863d58863cf-8"></a>----------------------------------------------------------------------
+<a id="rest_code_1dec715551bc4cb886119863d58863cf-9" name="rest_code_1dec715551bc4cb886119863d58863cf-9" href="#rest_code_1dec715551bc4cb886119863d58863cf-9"></a>Ran<span class="w"> </span><span class="m">4</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.375s
 </pre></div>
 <p>En cambio:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_67f7b6f4958647d39ba5049ab9667681-1" name="rest_code_67f7b6f4958647d39ba5049ab9667681-1" href="#rest_code_67f7b6f4958647d39ba5049ab9667681-1"></a>$<span class="w"> </span>djntest<span class="w"> </span>--select-tests<span class="o">=</span>differ<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span><span class="w"> </span>apps/common/tests/test_sequence_diff.py
-<a id="rest_code_67f7b6f4958647d39ba5049ab9667681-2" name="rest_code_67f7b6f4958647d39ba5049ab9667681-2" href="#rest_code_67f7b6f4958647d39ba5049ab9667681-2"></a>
-<a id="rest_code_67f7b6f4958647d39ba5049ab9667681-3" name="rest_code_67f7b6f4958647d39ba5049ab9667681-3" href="#rest_code_67f7b6f4958647d39ba5049ab9667681-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_67f7b6f4958647d39ba5049ab9667681-4" name="rest_code_67f7b6f4958647d39ba5049ab9667681-4" href="#rest_code_67f7b6f4958647d39ba5049ab9667681-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
-<a id="rest_code_67f7b6f4958647d39ba5049ab9667681-5" name="rest_code_67f7b6f4958647d39ba5049ab9667681-5" href="#rest_code_67f7b6f4958647d39ba5049ab9667681-5"></a>----------------------------------------------------------------------
-<a id="rest_code_67f7b6f4958647d39ba5049ab9667681-6" name="rest_code_67f7b6f4958647d39ba5049ab9667681-6" href="#rest_code_67f7b6f4958647d39ba5049ab9667681-6"></a>Ran<span class="w"> </span><span class="m">2</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.088s
+<div class="code"><pre class="code bash"><a id="rest_code_482083ea51a64a19beedbca2da17a9e2-1" name="rest_code_482083ea51a64a19beedbca2da17a9e2-1" href="#rest_code_482083ea51a64a19beedbca2da17a9e2-1"></a>$<span class="w"> </span>djntest<span class="w"> </span>--select-tests<span class="o">=</span>differ<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span><span class="w"> </span>apps/common/tests/test_sequence_diff.py
+<a id="rest_code_482083ea51a64a19beedbca2da17a9e2-2" name="rest_code_482083ea51a64a19beedbca2da17a9e2-2" href="#rest_code_482083ea51a64a19beedbca2da17a9e2-2"></a>
+<a id="rest_code_482083ea51a64a19beedbca2da17a9e2-3" name="rest_code_482083ea51a64a19beedbca2da17a9e2-3" href="#rest_code_482083ea51a64a19beedbca2da17a9e2-3"></a><span class="c1">#2976 test_differ_in_fk (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_482083ea51a64a19beedbca2da17a9e2-4" name="rest_code_482083ea51a64a19beedbca2da17a9e2-4" href="#rest_code_482083ea51a64a19beedbca2da17a9e2-4"></a><span class="c1">#2977 test_differ_in_m2m (cpi_mrp.apps.common.tests.test_sequence_diff.TestInstanceDiff) ... ok</span>
+<a id="rest_code_482083ea51a64a19beedbca2da17a9e2-5" name="rest_code_482083ea51a64a19beedbca2da17a9e2-5" href="#rest_code_482083ea51a64a19beedbca2da17a9e2-5"></a>----------------------------------------------------------------------
+<a id="rest_code_482083ea51a64a19beedbca2da17a9e2-6" name="rest_code_482083ea51a64a19beedbca2da17a9e2-6" href="#rest_code_482083ea51a64a19beedbca2da17a9e2-6"></a>Ran<span class="w"> </span><span class="m">2</span><span class="w"> </span>tests<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.088s
 </pre></div>
 </section><section id="django-tests-autocomplete"><h2>django-tests-autocomplete</h2>
 <p>Esta herramienta no es estrictamente un plugin de nose, sino un helper
@@ -199,13 +203,13 @@ que aprovecha las posibilidades de bash para
 <a class="reference external" href="http://bash-completion.alioth.debian.org/">autocompletar</a> usando la tecla
 tab.</p>
 <p>¿Para qué sirve? nose acepta un path (o muchos) para especificar qué test correr:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_bf95d21b9f03425a9de4b90d1d1631af-1" name="rest_code_bf95d21b9f03425a9de4b90d1d1631af-1" href="#rest_code_bf95d21b9f03425a9de4b90d1d1631af-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py
+<div class="code"><pre class="code bash"><a id="rest_code_69fe17593e864ba2a936321e34a2795e-1" name="rest_code_69fe17593e864ba2a936321e34a2795e-1" href="#rest_code_69fe17593e864ba2a936321e34a2795e-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py
 </pre></div>
 <p>Pero también permite afinar la puntería y "meterse" adentro del módulo:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_60c116b0f8d9407b9746574d2d5642d9-1" name="rest_code_60c116b0f8d9407b9746574d2d5642d9-1" href="#rest_code_60c116b0f8d9407b9746574d2d5642d9-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py:MyImportantTestCase
+<div class="code"><pre class="code bash"><a id="rest_code_47218182189b48e2af465c339c6db10f-1" name="rest_code_47218182189b48e2af465c339c6db10f-1" href="#rest_code_47218182189b48e2af465c339c6db10f-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py:MyImportantTestCase
 </pre></div>
 <p>E incluso adentro del testcase:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_532ac173c22c4b5cbd5778373ae88bb2-1" name="rest_code_532ac173c22c4b5cbd5778373ae88bb2-1" href="#rest_code_532ac173c22c4b5cbd5778373ae88bb2-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py:MyImportantTestCase.test_super_important
+<div class="code"><pre class="code bash"><a id="rest_code_00414594ddde4ea6b42010bed77871bc-1" name="rest_code_00414594ddde4ea6b42010bed77871bc-1" href="#rest_code_00414594ddde4ea6b42010bed77871bc-1"></a>$<span class="w"> </span>nosetests<span class="w"> </span>path/to/test.py:MyImportantTestCase.test_super_important
 </pre></div>
 <p>Desde el <code class="docutils literal">:</code> en adelante estamos en Python y Bash ya no sabe autocompletar,
 salvo que usemos esta herramienta que instrospecciona y "alimenta" el
@@ -265,6 +269,78 @@ para meter en mi nariz?</p>
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
     }});
+    </script><script>
+    (function() {
+        var storageKey = 'theme-mode';
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        var prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        var modes = ['auto', 'light', 'dark'];
+
+        function savedMode() {
+            var stored = localStorage.getItem(storageKey);
+            if (modes.indexOf(stored) !== -1) {
+                return stored;
+            }
+            return 'auto';
+        }
+
+        function resolvedTheme(mode) {
+            if (mode === 'light' || mode === 'dark') return mode;
+            return prefersDark && prefersDark.matches ? 'dark' : 'light';
+        }
+
+        function labels(mode, resolved) {
+            if (mode === 'auto') {
+                return {
+                    aria: "Tema: Automático (sistema). Click para pasar a claro.",
+                    next: 'light'
+                };
+            }
+            if (mode === 'light') {
+                return {
+                    aria: "Tema: Claro. Click para pasar a oscuro.",
+                    next: 'dark'
+                };
+            }
+            return {
+                aria: "Tema: Oscuro. Click para pasar a automático.",
+                next: 'auto'
+            };
+        }
+
+        function apply(mode) {
+            var resolved = resolvedTheme(mode);
+            document.body.setAttribute('data-theme', resolved);
+            document.body.setAttribute('data-theme-mode', mode);
+            toggle.dataset.mode = mode;
+            var label = labels(mode, resolved);
+            toggle.setAttribute('aria-pressed', resolved === 'dark');
+            toggle.setAttribute('aria-label', label.aria);
+            toggle.setAttribute('title', label.aria);
+        }
+
+        function setMode(mode) {
+            localStorage.setItem(storageKey, mode);
+            apply(mode);
+        }
+
+        apply(savedMode());
+
+        toggle.addEventListener('click', function() {
+            var current = document.body.getAttribute('data-theme-mode') || savedMode();
+            var next = labels(current).next;
+            setMode(next);
+        });
+
+        if (prefersDark && prefersDark.addEventListener) {
+            prefersDark.addEventListener('change', function() {
+                if (savedMode() === 'auto') {
+                    apply('auto');
+                }
+            });
+        }
+    })();
     </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 

@@ -62,7 +62,11 @@ navbar-light bg-light
             </li>
 </ul>
 <ul class="navbar-nav navbar-right">
-<li>            </li>
+<li class="nav-item">
+                    <button class="nav-link theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Tema: Automático (sistema). Click para pasar a claro." title="Tema: Automático (sistema). Click para pasar a claro." data-mode="auto">
+                        <svg class="theme-icon theme-icon-auto" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"></path></svg><svg class="theme-icon theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg><svg class="theme-icon theme-icon-dark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"></path></svg></button>
+                </li>
+                    <li>            </li>
 <li class="nav-item"><a href="en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
@@ -137,16 +141,16 @@ original (aparentemente desmantenida), que resuelve bugs importantes</p>
 </aside><ol class="arabic" start="3">
 <li>
 <p>Configurá virtualenvwrapper</p>
-<div class="code"><pre class="code bash"><a id="rest_code_4a565e13d7804608b97ea77f2ff0d8ac-1" name="rest_code_4a565e13d7804608b97ea77f2ff0d8ac-1" href="posts/creando-un-nuevo-proyecto-python/#rest_code_4a565e13d7804608b97ea77f2ff0d8ac-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.virtualenvs<span class="w">           </span><span class="c1"># acá se van a guardar tus entornos virtuales</span>
-<a id="rest_code_4a565e13d7804608b97ea77f2ff0d8ac-2" name="rest_code_4a565e13d7804608b97ea77f2ff0d8ac-2" href="posts/creando-un-nuevo-proyecto-python/#rest_code_4a565e13d7804608b97ea77f2ff0d8ac-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/proyectos<span class="w">              </span><span class="c1"># acá se van a guardar tus proyectos</span>
-<a id="rest_code_4a565e13d7804608b97ea77f2ff0d8ac-3" name="rest_code_4a565e13d7804608b97ea77f2ff0d8ac-3" href="posts/creando-un-nuevo-proyecto-python/#rest_code_4a565e13d7804608b97ea77f2ff0d8ac-3"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.pip_download_cache<span class="w">     </span><span class="c1"># para no bajar paquetes cada vez</span>
+<div class="code"><pre class="code bash"><a id="rest_code_6dce352d92284395bbf21f0b29e0dd94-1" name="rest_code_6dce352d92284395bbf21f0b29e0dd94-1" href="posts/creando-un-nuevo-proyecto-python/#rest_code_6dce352d92284395bbf21f0b29e0dd94-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.virtualenvs<span class="w">           </span><span class="c1"># acá se van a guardar tus entornos virtuales</span>
+<a id="rest_code_6dce352d92284395bbf21f0b29e0dd94-2" name="rest_code_6dce352d92284395bbf21f0b29e0dd94-2" href="posts/creando-un-nuevo-proyecto-python/#rest_code_6dce352d92284395bbf21f0b29e0dd94-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/proyectos<span class="w">              </span><span class="c1"># acá se van a guardar tus proyectos</span>
+<a id="rest_code_6dce352d92284395bbf21f0b29e0dd94-3" name="rest_code_6dce352d92284395bbf21f0b29e0dd94-3" href="posts/creando-un-nuevo-proyecto-python/#rest_code_6dce352d92284395bbf21f0b29e0dd94-3"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.pip_download_cache<span class="w">     </span><span class="c1"># para no bajar paquetes cada vez</span>
 </pre></div>
 <p>Luego editá tu <code class="docutils literal"><span class="pre">~/.bashrc</span></code> agregando las siguientes líneas</p>
-<div class="code"><pre class="code bash"><a id="rest_code_ef9b031dc5f34680bbdd06626db51e06-1" name="rest_code_ef9b031dc5f34680bbdd06626db51e06-1" href="posts/creando-un-nuevo-proyecto-python/#rest_code_ef9b031dc5f34680bbdd06626db51e06-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<a id="rest_code_ef9b031dc5f34680bbdd06626db51e06-2" name="rest_code_ef9b031dc5f34680bbdd06626db51e06-2" href="posts/creando-un-nuevo-proyecto-python/#rest_code_ef9b031dc5f34680bbdd06626db51e06-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
-<a id="rest_code_ef9b031dc5f34680bbdd06626db51e06-3" name="rest_code_ef9b031dc5f34680bbdd06626db51e06-3" href="posts/creando-un-nuevo-proyecto-python/#rest_code_ef9b031dc5f34680bbdd06626db51e06-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
-<a id="rest_code_ef9b031dc5f34680bbdd06626db51e06-4" name="rest_code_ef9b031dc5f34680bbdd06626db51e06-4" href="posts/creando-un-nuevo-proyecto-python/#rest_code_ef9b031dc5f34680bbdd06626db51e06-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
-<a id="rest_code_ef9b031dc5f34680bbdd06626db51e06-5" name="rest_code_ef9b031dc5f34680bbdd06626db51e06-5" href="posts/creando-un-nuevo-proyecto-python/#rest_code_ef9b031dc5f34680bbdd06626db51e06-5"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
+<div class="code"><pre class="code bash"><a id="rest_code_37be1d11bd5c40fa95ac4fab200d016f-1" name="rest_code_37be1d11bd5c40fa95ac4fab200d016f-1" href="posts/creando-un-nuevo-proyecto-python/#rest_code_37be1d11bd5c40fa95ac4fab200d016f-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<a id="rest_code_37be1d11bd5c40fa95ac4fab200d016f-2" name="rest_code_37be1d11bd5c40fa95ac4fab200d016f-2" href="posts/creando-un-nuevo-proyecto-python/#rest_code_37be1d11bd5c40fa95ac4fab200d016f-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
+<a id="rest_code_37be1d11bd5c40fa95ac4fab200d016f-3" name="rest_code_37be1d11bd5c40fa95ac4fab200d016f-3" href="posts/creando-un-nuevo-proyecto-python/#rest_code_37be1d11bd5c40fa95ac4fab200d016f-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
+<a id="rest_code_37be1d11bd5c40fa95ac4fab200d016f-4" name="rest_code_37be1d11bd5c40fa95ac4fab200d016f-4" href="posts/creando-un-nuevo-proyecto-python/#rest_code_37be1d11bd5c40fa95ac4fab200d016f-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
+<a id="rest_code_37be1d11bd5c40fa95ac4fab200d016f-5" name="rest_code_37be1d11bd5c40fa95ac4fab200d016f-5" href="posts/creando-un-nuevo-proyecto-python/#rest_code_37be1d11bd5c40fa95ac4fab200d016f-5"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
 </pre></div>
 <p>y recargá tus cambios:</p>
 <pre class="literal-block">$ source ~/.bashrc</pre>
@@ -228,51 +232,51 @@ para "postear" <em>issues</em></p>
 <p>Pero no hay darse por vencido: se me ocurrió mirar el par de forks de cada
 proyecto y encontré <a class="reference external" href="https://github.com/davidmpaz/BitBucket-api/commit/e7d727f0a340ca9f2c131b04bd72d7cf5e4960dc">justo lo que estaba buscando</a>.</p>
 <p>Entonces bastó con instalar el fork de David Paz Reyes</p>
-<div class="code"><pre class="code bash"><a id="rest_code_d7eedf46ca744b92910feb5270448fb1-1" name="rest_code_d7eedf46ca744b92910feb5270448fb1-1" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_d7eedf46ca744b92910feb5270448fb1-1"></a>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/davidmpaz/BitBucket-api.git
+<div class="code"><pre class="code bash"><a id="rest_code_e53360a4e13741dd96b66c36abad559f-1" name="rest_code_e53360a4e13741dd96b66c36abad559f-1" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_e53360a4e13741dd96b66c36abad559f-1"></a>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/davidmpaz/BitBucket-api.git
 </pre></div>
 <p>he hice un script que migra todo los issues en estado <em>new</em>
 del repo original (<code class="docutils literal">gpec</code>) al nuevo (<code class="docutils literal">gpec</code>) y los potenciales comentarios que tenga.
 Como el autor  se pierde (dado que el nuevo quedará publicado con mi usuario)
 agrego un comentario avisando que es un <em>issue migrado</em>.</p>
-<div class="code"><pre class="code python"><a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-1" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-1" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-2" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-2" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-3" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-3" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-3"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-4" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-4" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">bitbucket</span><span class="w"> </span><span class="kn">import</span> <span class="n">bitbucket</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-5" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-5" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-5"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-6" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-6" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-6"></a><span class="n">gpec</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec'</span><span class="p">)</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-7" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-7" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-7"></a><span class="n">gpec3</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec3'</span><span class="p">)</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-8" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-8" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-8"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-9" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-9" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-9"></a><span class="c1"># request original ISSUES</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-10" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-10" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-10"></a><span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issues</span><span class="p">()</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-11" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-11" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-11"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-12" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-12" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-12"></a><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">'issues'</span><span class="p">][:]:</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-13" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-13" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-13"></a>    <span class="n">original_id</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-14" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-14" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-14"></a>    <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'new'</span><span class="p">:</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-15" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-15" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-15"></a>        <span class="k">continue</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-16" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-16" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-16"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-17" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-17" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-17"></a>    <span class="c1"># and post to the new repo</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-18" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-18" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-18"></a>    <span class="n">ok</span><span class="p">,</span> <span class="n">new_issue</span> <span class="o">=</span> <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue</span><span class="p">(</span><span class="o">**</span><span class="n">issue</span><span class="p">)</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-19" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-19" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-19"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-20" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-20" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-20"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-21" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-21" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-21"></a>        <span class="nb">print</span> <span class="s1">'Fail migrating #</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">original_id</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-22" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-22" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-22"></a>        <span class="k">continue</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-23" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-23" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-23"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-24" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-24" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-24"></a>    <span class="n">new_id</span> <span class="o">=</span> <span class="n">new_issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-25" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-25" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-25"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-26" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-26" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-26"></a>    <span class="nb">print</span> <span class="s1">'Migrated #</span><span class="si">%d</span><span class="s1"> as #</span><span class="si">%d</span><span class="s1"> in the new project'</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-27" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-27" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-27"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-28" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-28" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-28"></a>    <span class="c1"># add a comment to mark the migration</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-29" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-29" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-29"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'reported_by'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-30" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-30" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-30"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">who</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="k">if</span> <span class="n">who</span> <span class="k">else</span> <span class="s1">'anonymous'</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-31" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-31" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-31"></a>    <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Issue migrated from the original repo. "</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-32" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-32" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-32"></a>            <span class="s2">"Was #</span><span class="si">%d</span><span class="s2"> reported by </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">who</span><span class="p">))</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-33" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-33" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-33"></a>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-34" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-34" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-34"></a>    <span class="c1"># migrate comments</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-35" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-35" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-35"></a>    <span class="n">result</span><span class="p">,</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issue_comments</span><span class="p">(</span><span class="n">original_id</span><span class="p">)</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-36" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-36" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-36"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">:</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-37" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-37" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-37"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]:</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-38" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-38" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-38"></a>            <span class="k">continue</span>
-<a id="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-39" name="rest_code_b87d7296ff584ff4bd7f8d69573f12f8-39" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_b87d7296ff584ff4bd7f8d69573f12f8-39"></a>        <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
+<div class="code"><pre class="code python"><a id="rest_code_8b41b339333b4f7caf0805e35151d20c-1" name="rest_code_8b41b339333b4f7caf0805e35151d20c-1" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-2" name="rest_code_8b41b339333b4f7caf0805e35151d20c-2" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-3" name="rest_code_8b41b339333b4f7caf0805e35151d20c-3" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-3"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-4" name="rest_code_8b41b339333b4f7caf0805e35151d20c-4" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">bitbucket</span><span class="w"> </span><span class="kn">import</span> <span class="n">bitbucket</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-5" name="rest_code_8b41b339333b4f7caf0805e35151d20c-5" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-5"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-6" name="rest_code_8b41b339333b4f7caf0805e35151d20c-6" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-6"></a><span class="n">gpec</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec'</span><span class="p">)</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-7" name="rest_code_8b41b339333b4f7caf0805e35151d20c-7" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-7"></a><span class="n">gpec3</span> <span class="o">=</span> <span class="n">bitbucket</span><span class="o">.</span><span class="n">Bitbucket</span><span class="p">(</span><span class="s1">'tin_nqn'</span><span class="p">,</span> <span class="s1">'***'</span><span class="p">,</span> <span class="s1">'gpec3'</span><span class="p">)</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-8" name="rest_code_8b41b339333b4f7caf0805e35151d20c-8" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-8"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-9" name="rest_code_8b41b339333b4f7caf0805e35151d20c-9" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-9"></a><span class="c1"># request original ISSUES</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-10" name="rest_code_8b41b339333b4f7caf0805e35151d20c-10" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-10"></a><span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issues</span><span class="p">()</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-11" name="rest_code_8b41b339333b4f7caf0805e35151d20c-11" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-11"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-12" name="rest_code_8b41b339333b4f7caf0805e35151d20c-12" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-12"></a><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">'issues'</span><span class="p">][:]:</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-13" name="rest_code_8b41b339333b4f7caf0805e35151d20c-13" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-13"></a>    <span class="n">original_id</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-14" name="rest_code_8b41b339333b4f7caf0805e35151d20c-14" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-14"></a>    <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'new'</span><span class="p">:</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-15" name="rest_code_8b41b339333b4f7caf0805e35151d20c-15" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-15"></a>        <span class="k">continue</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-16" name="rest_code_8b41b339333b4f7caf0805e35151d20c-16" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-16"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-17" name="rest_code_8b41b339333b4f7caf0805e35151d20c-17" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-17"></a>    <span class="c1"># and post to the new repo</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-18" name="rest_code_8b41b339333b4f7caf0805e35151d20c-18" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-18"></a>    <span class="n">ok</span><span class="p">,</span> <span class="n">new_issue</span> <span class="o">=</span> <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue</span><span class="p">(</span><span class="o">**</span><span class="n">issue</span><span class="p">)</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-19" name="rest_code_8b41b339333b4f7caf0805e35151d20c-19" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-19"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-20" name="rest_code_8b41b339333b4f7caf0805e35151d20c-20" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-20"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-21" name="rest_code_8b41b339333b4f7caf0805e35151d20c-21" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-21"></a>        <span class="nb">print</span> <span class="s1">'Fail migrating #</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">original_id</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-22" name="rest_code_8b41b339333b4f7caf0805e35151d20c-22" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-22"></a>        <span class="k">continue</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-23" name="rest_code_8b41b339333b4f7caf0805e35151d20c-23" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-23"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-24" name="rest_code_8b41b339333b4f7caf0805e35151d20c-24" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-24"></a>    <span class="n">new_id</span> <span class="o">=</span> <span class="n">new_issue</span><span class="p">[</span><span class="s1">'local_id'</span><span class="p">]</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-25" name="rest_code_8b41b339333b4f7caf0805e35151d20c-25" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-25"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-26" name="rest_code_8b41b339333b4f7caf0805e35151d20c-26" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-26"></a>    <span class="nb">print</span> <span class="s1">'Migrated #</span><span class="si">%d</span><span class="s1"> as #</span><span class="si">%d</span><span class="s1"> in the new project'</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-27" name="rest_code_8b41b339333b4f7caf0805e35151d20c-27" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-27"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-28" name="rest_code_8b41b339333b4f7caf0805e35151d20c-28" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-28"></a>    <span class="c1"># add a comment to mark the migration</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-29" name="rest_code_8b41b339333b4f7caf0805e35151d20c-29" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-29"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'reported_by'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-30" name="rest_code_8b41b339333b4f7caf0805e35151d20c-30" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-30"></a>    <span class="n">who</span> <span class="o">=</span> <span class="n">who</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="k">if</span> <span class="n">who</span> <span class="k">else</span> <span class="s1">'anonymous'</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-31" name="rest_code_8b41b339333b4f7caf0805e35151d20c-31" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-31"></a>    <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Issue migrated from the original repo. "</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-32" name="rest_code_8b41b339333b4f7caf0805e35151d20c-32" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-32"></a>            <span class="s2">"Was #</span><span class="si">%d</span><span class="s2"> reported by </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_id</span><span class="p">,</span> <span class="n">who</span><span class="p">))</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-33" name="rest_code_8b41b339333b4f7caf0805e35151d20c-33" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-33"></a>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-34" name="rest_code_8b41b339333b4f7caf0805e35151d20c-34" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-34"></a>    <span class="c1"># migrate comments</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-35" name="rest_code_8b41b339333b4f7caf0805e35151d20c-35" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-35"></a>    <span class="n">result</span><span class="p">,</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">gpec</span><span class="o">.</span><span class="n">get_issue_comments</span><span class="p">(</span><span class="n">original_id</span><span class="p">)</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-36" name="rest_code_8b41b339333b4f7caf0805e35151d20c-36" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-36"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">:</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-37" name="rest_code_8b41b339333b4f7caf0805e35151d20c-37" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-37"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]:</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-38" name="rest_code_8b41b339333b4f7caf0805e35151d20c-38" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-38"></a>            <span class="k">continue</span>
+<a id="rest_code_8b41b339333b4f7caf0805e35151d20c-39" name="rest_code_8b41b339333b4f7caf0805e35151d20c-39" href="posts/migrando-issues-entre-proyectos-de-bitbucket/#rest_code_8b41b339333b4f7caf0805e35151d20c-39"></a>        <span class="n">gpec3</span><span class="o">.</span><span class="n">add_issue_comment</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="o">**</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 <p>¡Disfruten!</p>
     </div>
@@ -407,13 +411,13 @@ de nuevo. Mientras tanto, el Dios en el que no creo me pone
 en el camino de resultados de Google.</p>
 <p>"Ernesto, prabamos esto?" y no alcanzó a contestar
 antes de que esté poniendo los primeros comandos</p>
-<div class="code"><pre class="code bash"><a id="rest_code_4c00cb83bb6443969e761a2290be4752-1" name="rest_code_4c00cb83bb6443969e761a2290be4752-1" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_4c00cb83bb6443969e761a2290be4752-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>mke2fs<span class="w"> </span>-n<span class="w"> </span>/dev/sda3
-<a id="rest_code_4c00cb83bb6443969e761a2290be4752-2" name="rest_code_4c00cb83bb6443969e761a2290be4752-2" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_4c00cb83bb6443969e761a2290be4752-2"></a>
-<a id="rest_code_4c00cb83bb6443969e761a2290be4752-3" name="rest_code_4c00cb83bb6443969e761a2290be4752-3" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_4c00cb83bb6443969e761a2290be4752-3"></a>Superblock<span class="w"> </span>backups<span class="w"> </span>stored<span class="w"> </span>on<span class="w"> </span>blocks:
-<a id="rest_code_4c00cb83bb6443969e761a2290be4752-4" name="rest_code_4c00cb83bb6443969e761a2290be4752-4" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_4c00cb83bb6443969e761a2290be4752-4"></a><span class="m">32768</span>,<span class="w"> </span><span class="m">98304</span>,<span class="w"> </span><span class="m">163840</span>,<span class="w"> </span><span class="m">229376</span>,<span class="w"> </span><span class="m">294912</span>,<span class="w"> </span><span class="m">819200</span>,<span class="w"> </span><span class="m">884736</span>,<span class="w"> </span><span class="m">1605632</span>,<span class="w"> </span><span class="m">2654208</span>
+<div class="code"><pre class="code bash"><a id="rest_code_e73675ca78c5438ca0462f6c3c7153d0-1" name="rest_code_e73675ca78c5438ca0462f6c3c7153d0-1" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_e73675ca78c5438ca0462f6c3c7153d0-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>mke2fs<span class="w"> </span>-n<span class="w"> </span>/dev/sda3
+<a id="rest_code_e73675ca78c5438ca0462f6c3c7153d0-2" name="rest_code_e73675ca78c5438ca0462f6c3c7153d0-2" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_e73675ca78c5438ca0462f6c3c7153d0-2"></a>
+<a id="rest_code_e73675ca78c5438ca0462f6c3c7153d0-3" name="rest_code_e73675ca78c5438ca0462f6c3c7153d0-3" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_e73675ca78c5438ca0462f6c3c7153d0-3"></a>Superblock<span class="w"> </span>backups<span class="w"> </span>stored<span class="w"> </span>on<span class="w"> </span>blocks:
+<a id="rest_code_e73675ca78c5438ca0462f6c3c7153d0-4" name="rest_code_e73675ca78c5438ca0462f6c3c7153d0-4" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_e73675ca78c5438ca0462f6c3c7153d0-4"></a><span class="m">32768</span>,<span class="w"> </span><span class="m">98304</span>,<span class="w"> </span><span class="m">163840</span>,<span class="w"> </span><span class="m">229376</span>,<span class="w"> </span><span class="m">294912</span>,<span class="w"> </span><span class="m">819200</span>,<span class="w"> </span><span class="m">884736</span>,<span class="w"> </span><span class="m">1605632</span>,<span class="w"> </span><span class="m">2654208</span>
 </pre></div>
 <p>Me la juego con el primer backup:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_3416835cecc340498b0aebd951749a62-1" name="rest_code_3416835cecc340498b0aebd951749a62-1" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_3416835cecc340498b0aebd951749a62-1"></a>sudo<span class="w"> </span>e2fsck<span class="w"> </span>-b<span class="w"> </span><span class="m">32768</span><span class="w"> </span>/dev/sda3
+<div class="code"><pre class="code bash"><a id="rest_code_e0a0b90b893e4a40ab5afd68a896898b-1" name="rest_code_e0a0b90b893e4a40ab5afd68a896898b-1" href="posts/ext4-superblock-failure-y-la-cola-del-diablo/#rest_code_e0a0b90b893e4a40ab5afd68a896898b-1"></a>sudo<span class="w"> </span>e2fsck<span class="w"> </span>-b<span class="w"> </span><span class="m">32768</span><span class="w"> </span>/dev/sda3
 </pre></div>
 <p>Cientos de  <code class="docutils literal">Y</code> <code class="docutils literal">Enter</code> para mensajes estilo <em>"está roto, desea repararlo?"</em>
 (no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
@@ -540,6 +544,78 @@ RewriteRule ^blog/article/(.*)$ http://mgaitan.github.com/posts/$1.html [R=301]<
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
     }});
+    </script><script>
+    (function() {
+        var storageKey = 'theme-mode';
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        var prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        var modes = ['auto', 'light', 'dark'];
+
+        function savedMode() {
+            var stored = localStorage.getItem(storageKey);
+            if (modes.indexOf(stored) !== -1) {
+                return stored;
+            }
+            return 'auto';
+        }
+
+        function resolvedTheme(mode) {
+            if (mode === 'light' || mode === 'dark') return mode;
+            return prefersDark && prefersDark.matches ? 'dark' : 'light';
+        }
+
+        function labels(mode, resolved) {
+            if (mode === 'auto') {
+                return {
+                    aria: "Tema: Automático (sistema). Click para pasar a claro.",
+                    next: 'light'
+                };
+            }
+            if (mode === 'light') {
+                return {
+                    aria: "Tema: Claro. Click para pasar a oscuro.",
+                    next: 'dark'
+                };
+            }
+            return {
+                aria: "Tema: Oscuro. Click para pasar a automático.",
+                next: 'auto'
+            };
+        }
+
+        function apply(mode) {
+            var resolved = resolvedTheme(mode);
+            document.body.setAttribute('data-theme', resolved);
+            document.body.setAttribute('data-theme-mode', mode);
+            toggle.dataset.mode = mode;
+            var label = labels(mode, resolved);
+            toggle.setAttribute('aria-pressed', resolved === 'dark');
+            toggle.setAttribute('aria-label', label.aria);
+            toggle.setAttribute('title', label.aria);
+        }
+
+        function setMode(mode) {
+            localStorage.setItem(storageKey, mode);
+            apply(mode);
+        }
+
+        apply(savedMode());
+
+        toggle.addEventListener('click', function() {
+            var current = document.body.getAttribute('data-theme-mode') || savedMode();
+            var next = labels(current).next;
+            setMode(next);
+        });
+
+        if (prefersDark && prefersDark.addEventListener) {
+            prefersDark.addEventListener('change', function() {
+                if (savedMode() === 'auto') {
+                    apply('auto');
+                }
+            });
+        }
+    })();
     </script><script src="assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 

@@ -69,7 +69,11 @@ navbar-light bg-light
             </li>
 </ul>
 <ul class="navbar-nav navbar-right">
-<li>            </li>
+<li class="nav-item">
+                    <button class="nav-link theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Tema: Automático (sistema). Click para pasar a claro." title="Tema: Automático (sistema). Click para pasar a claro." data-mode="auto">
+                        <svg class="theme-icon theme-icon-auto" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"></path></svg><svg class="theme-icon theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg><svg class="theme-icon theme-icon-dark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"></path></svg></button>
+                </li>
+                    <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
@@ -117,7 +121,7 @@ navbar-light bg-light
 <p><em>sino cantar.</em></p>
 </blockquote>
 <p>Parafraseando (bastante lejos de esa belleza) yo podría decir:</p>
-<div class="code"><pre class="code text"><a id="rest_code_51e4694d35df41dc898e9c0759a0cd53-1" name="rest_code_51e4694d35df41dc898e9c0759a0cd53-1" href="#rest_code_51e4694d35df41dc898e9c0759a0cd53-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
+<div class="code"><pre class="code text"><a id="rest_code_c1846e200e1a425e978fd719acb6b1de-1" name="rest_code_c1846e200e1a425e978fd719acb6b1de-1" href="#rest_code_c1846e200e1a425e978fd719acb6b1de-1"></a>print("programo, programo, programar es mi mano alzada y fuerte...")
 </pre></div>
 <p>Asi que ante la falta de talento natural para la edición audiovisual (entre todo el resto de las cosas), programé. Y así fue como hice un programita en Python que hace las ediciones por mí: <a class="reference external" href="http://github.com/mgaitan/miau">miau</a>.</p>
 <p>Sólo hay que darle la desgrabación del discurso original completo y el guión del discurso pretendido (basado en fragmentos textuales del original, en el orden que sea) y <code class="docutils literal">miau</code> se encarga de encontrar, recortar y concatenar para armar un clip de video o un audio remixado.</p>
@@ -148,11 +152,11 @@ navbar-light bg-light
 <li><p>Reusar el json intermedio que se produce con <cite>--dump</cite>, editarlo a gusto y pasarlo a una nueva ejecución de miau en reemplazo del txt de remix a <code class="docutils literal"><span class="pre">-r</span></code>. Este paso lo que hace justamente es saltearse la alineación automática y usar lo que le damos explícitamente.</p></li>
 <li>
 <p>Ponerle una metadata de ajuste al propio txt. La sintáxis que definí es un poco minimalista y se basa en ponerle signos <code class="docutils literal">+</code> y <code class="docutils literal">-</code> al final y/o al principio de cada linea, para estrechar o ensanchar el recorte. Cada símbolo equivale, por default, a 0.05s. Por ejemplo, si en el remix hay una línea que dice <em>"el único camino posible"</em> y nos damos cuenta que la detecta un instante tarde y la interrumpe antes de terminar, podemos corregirla poniendo un offset negativo al principio y uno positivo al final:</p>
-<div class="code"><pre class="code text"><a id="rest_code_ac160ef7fc9c4a3399baf711b56d5008-1" name="rest_code_ac160ef7fc9c4a3399baf711b56d5008-1" href="#rest_code_ac160ef7fc9c4a3399baf711b56d5008-1"></a>--el único camino posible+++``
+<div class="code"><pre class="code text"><a id="rest_code_c329187591c9482a9799542dd90ba56e-1" name="rest_code_c329187591c9482a9799542dd90ba56e-1" href="#rest_code_c329187591c9482a9799542dd90ba56e-1"></a>--el único camino posible+++``
 </pre></div>
 <p>Miau filtra la línea con una función que hace esto:</p>
-<div class="code"><pre class="code python"><a id="rest_code_ccdd3ad39e894eceb84e160b01be2f46-1" name="rest_code_ccdd3ad39e894eceb84e160b01be2f46-1" href="#rest_code_ccdd3ad39e894eceb84e160b01be2f46-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
-<a id="rest_code_ccdd3ad39e894eceb84e160b01be2f46-2" name="rest_code_ccdd3ad39e894eceb84e160b01be2f46-2" href="#rest_code_ccdd3ad39e894eceb84e160b01be2f46-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
+<div class="code"><pre class="code python"><a id="rest_code_ad23fb243b36470d98626d5299a1c4f0-1" name="rest_code_ad23fb243b36470d98626d5299a1c4f0-1" href="#rest_code_ad23fb243b36470d98626d5299a1c4f0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">fine_tuning</span><span class="p">(</span><span class="s1">'--el único camino posible+++'</span><span class="p">):</span>
+<a id="rest_code_ad23fb243b36470d98626d5299a1c4f0-2" name="rest_code_ad23fb243b36470d98626d5299a1c4f0-2" href="#rest_code_ad23fb243b36470d98626d5299a1c4f0-2"></a><span class="p">{</span><span class="s1">'el único camino posible'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'start_offset'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'end_offset'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">}}</span>
 </pre></div>
 </li>
 </ul>
@@ -227,6 +231,78 @@ para trabajar todos los días.</pre>
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
     }});
+    </script><script>
+    (function() {
+        var storageKey = 'theme-mode';
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        var prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        var modes = ['auto', 'light', 'dark'];
+
+        function savedMode() {
+            var stored = localStorage.getItem(storageKey);
+            if (modes.indexOf(stored) !== -1) {
+                return stored;
+            }
+            return 'auto';
+        }
+
+        function resolvedTheme(mode) {
+            if (mode === 'light' || mode === 'dark') return mode;
+            return prefersDark && prefersDark.matches ? 'dark' : 'light';
+        }
+
+        function labels(mode, resolved) {
+            if (mode === 'auto') {
+                return {
+                    aria: "Tema: Automático (sistema). Click para pasar a claro.",
+                    next: 'light'
+                };
+            }
+            if (mode === 'light') {
+                return {
+                    aria: "Tema: Claro. Click para pasar a oscuro.",
+                    next: 'dark'
+                };
+            }
+            return {
+                aria: "Tema: Oscuro. Click para pasar a automático.",
+                next: 'auto'
+            };
+        }
+
+        function apply(mode) {
+            var resolved = resolvedTheme(mode);
+            document.body.setAttribute('data-theme', resolved);
+            document.body.setAttribute('data-theme-mode', mode);
+            toggle.dataset.mode = mode;
+            var label = labels(mode, resolved);
+            toggle.setAttribute('aria-pressed', resolved === 'dark');
+            toggle.setAttribute('aria-label', label.aria);
+            toggle.setAttribute('title', label.aria);
+        }
+
+        function setMode(mode) {
+            localStorage.setItem(storageKey, mode);
+            apply(mode);
+        }
+
+        apply(savedMode());
+
+        toggle.addEventListener('click', function() {
+            var current = document.body.getAttribute('data-theme-mode') || savedMode();
+            var next = labels(current).next;
+            setMode(next);
+        });
+
+        if (prefersDark && prefersDark.addEventListener) {
+            prefersDark.addEventListener('change', function() {
+                if (savedMode() === 'auto') {
+                    apply('auto');
+                }
+            });
+        }
+    })();
     </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 

@@ -75,7 +75,11 @@ navbar-light bg-light
             </li>
 </ul>
 <ul class="navbar-nav navbar-right">
-<li>            </li>
+<li class="nav-item">
+                    <button class="nav-link theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Tema: Automático (sistema). Click para pasar a claro." title="Tema: Automático (sistema). Click para pasar a claro." data-mode="auto">
+                        <svg class="theme-icon theme-icon-auto" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"></path></svg><svg class="theme-icon theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg><svg class="theme-icon theme-icon-dark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"></path></svg></button>
+                </li>
+                    <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
@@ -147,27 +151,27 @@ D.O.S.. WTF!</p>
 <p>La
 <a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html">solución</a>
 es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a></p>
-<div class="code"><pre class="code bash"><a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-1" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-1" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-1"></a><span class="c1"># obtener una imagen booteable de freeDOS y montarla en un directorio</span>
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-2" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-2" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-2"></a>wget<span class="w"> </span>http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-3" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-3" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-3"></a>gunzip<span class="w"> </span>FDOEM.144.gz
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-4" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-4" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-4"></a>mkdir<span class="w"> </span>/tmp/floppy
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-5" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-5" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-5"></a>mount<span class="w"> </span>-t<span class="w"> </span>vfat<span class="w"> </span>-o<span class="w"> </span>loop<span class="w"> </span>FDOEM.144<span class="w"> </span>/tmp/floppy
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-6" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-6" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-6"></a>
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-7" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-7" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-7"></a><span class="c1"># obtener la herramienta para actualizar el bios y la imagen, y moverlos</span>
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-8" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-8" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-8"></a>wget<span class="w"> </span>http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-9" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-9" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-9"></a>unzip<span class="w"> </span>AFUDOS211.zip
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-10" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-10" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-10"></a>mv<span class="w"> </span>AFUDOS.exe<span class="w"> </span>/tmp/floppy
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-11" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-11" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-11"></a>wget<span class="w"> </span>http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-12" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-12" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-12"></a>unzip<span class="w"> </span>K8n1011.zip
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-13" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-13" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-13"></a>mv<span class="w"> </span><span class="m">1011</span>.rom<span class="w"> </span>/tmp/floppy
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-14" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-14" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-14"></a>
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-15" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-15" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-15"></a><span class="c1"># desmontar</span>
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-16" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-16" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-16"></a>umount<span class="w"> </span>/tmp/floppy
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-17" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-17" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-17"></a>
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-18" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-18" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-18"></a><span class="c1"># crear una ISO y grabar a un disco virgen</span>
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-19" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-19" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-19"></a><span class="c1"># (tambien se podría grabar a un pendrive)</span>
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-20" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-20" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-20"></a>mkisofs<span class="w"> </span>-o<span class="w"> </span>bootcd.iso<span class="w"> </span>-b<span class="w"> </span>FDOEM.144<span class="w"> </span>FDOEM.144
-<a id="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-21" name="rest_code_418a6e6bcf294a8ab68b09e3ea15e346-21" href="#rest_code_418a6e6bcf294a8ab68b09e3ea15e346-21"></a>cdrecord<span class="w"> </span>-v<span class="w"> </span>bootcd.iso
+<div class="code"><pre class="code bash"><a id="rest_code_6a016b2979774ac9b635efd7c9a47948-1" name="rest_code_6a016b2979774ac9b635efd7c9a47948-1" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-1"></a><span class="c1"># obtener una imagen booteable de freeDOS y montarla en un directorio</span>
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-2" name="rest_code_6a016b2979774ac9b635efd7c9a47948-2" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-2"></a>wget<span class="w"> </span>http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-3" name="rest_code_6a016b2979774ac9b635efd7c9a47948-3" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-3"></a>gunzip<span class="w"> </span>FDOEM.144.gz
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-4" name="rest_code_6a016b2979774ac9b635efd7c9a47948-4" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-4"></a>mkdir<span class="w"> </span>/tmp/floppy
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-5" name="rest_code_6a016b2979774ac9b635efd7c9a47948-5" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-5"></a>mount<span class="w"> </span>-t<span class="w"> </span>vfat<span class="w"> </span>-o<span class="w"> </span>loop<span class="w"> </span>FDOEM.144<span class="w"> </span>/tmp/floppy
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-6" name="rest_code_6a016b2979774ac9b635efd7c9a47948-6" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-6"></a>
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-7" name="rest_code_6a016b2979774ac9b635efd7c9a47948-7" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-7"></a><span class="c1"># obtener la herramienta para actualizar el bios y la imagen, y moverlos</span>
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-8" name="rest_code_6a016b2979774ac9b635efd7c9a47948-8" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-8"></a>wget<span class="w"> </span>http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-9" name="rest_code_6a016b2979774ac9b635efd7c9a47948-9" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-9"></a>unzip<span class="w"> </span>AFUDOS211.zip
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-10" name="rest_code_6a016b2979774ac9b635efd7c9a47948-10" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-10"></a>mv<span class="w"> </span>AFUDOS.exe<span class="w"> </span>/tmp/floppy
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-11" name="rest_code_6a016b2979774ac9b635efd7c9a47948-11" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-11"></a>wget<span class="w"> </span>http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-12" name="rest_code_6a016b2979774ac9b635efd7c9a47948-12" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-12"></a>unzip<span class="w"> </span>K8n1011.zip
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-13" name="rest_code_6a016b2979774ac9b635efd7c9a47948-13" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-13"></a>mv<span class="w"> </span><span class="m">1011</span>.rom<span class="w"> </span>/tmp/floppy
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-14" name="rest_code_6a016b2979774ac9b635efd7c9a47948-14" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-14"></a>
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-15" name="rest_code_6a016b2979774ac9b635efd7c9a47948-15" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-15"></a><span class="c1"># desmontar</span>
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-16" name="rest_code_6a016b2979774ac9b635efd7c9a47948-16" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-16"></a>umount<span class="w"> </span>/tmp/floppy
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-17" name="rest_code_6a016b2979774ac9b635efd7c9a47948-17" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-17"></a>
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-18" name="rest_code_6a016b2979774ac9b635efd7c9a47948-18" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-18"></a><span class="c1"># crear una ISO y grabar a un disco virgen</span>
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-19" name="rest_code_6a016b2979774ac9b635efd7c9a47948-19" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-19"></a><span class="c1"># (tambien se podría grabar a un pendrive)</span>
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-20" name="rest_code_6a016b2979774ac9b635efd7c9a47948-20" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-20"></a>mkisofs<span class="w"> </span>-o<span class="w"> </span>bootcd.iso<span class="w"> </span>-b<span class="w"> </span>FDOEM.144<span class="w"> </span>FDOEM.144
+<a id="rest_code_6a016b2979774ac9b635efd7c9a47948-21" name="rest_code_6a016b2979774ac9b635efd7c9a47948-21" href="#rest_code_6a016b2979774ac9b635efd7c9a47948-21"></a>cdrecord<span class="w"> </span>-v<span class="w"> </span>bootcd.iso
 </pre></div>
 <p>Reinciar, bootear el CD de FreeDOS y ejecutar:</p>
 <pre class="literal-block">afudos /i1011.rom</pre>
@@ -213,6 +217,78 @@ es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a>
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
     }});
+    </script><script>
+    (function() {
+        var storageKey = 'theme-mode';
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        var prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        var modes = ['auto', 'light', 'dark'];
+
+        function savedMode() {
+            var stored = localStorage.getItem(storageKey);
+            if (modes.indexOf(stored) !== -1) {
+                return stored;
+            }
+            return 'auto';
+        }
+
+        function resolvedTheme(mode) {
+            if (mode === 'light' || mode === 'dark') return mode;
+            return prefersDark && prefersDark.matches ? 'dark' : 'light';
+        }
+
+        function labels(mode, resolved) {
+            if (mode === 'auto') {
+                return {
+                    aria: "Tema: Automático (sistema). Click para pasar a claro.",
+                    next: 'light'
+                };
+            }
+            if (mode === 'light') {
+                return {
+                    aria: "Tema: Claro. Click para pasar a oscuro.",
+                    next: 'dark'
+                };
+            }
+            return {
+                aria: "Tema: Oscuro. Click para pasar a automático.",
+                next: 'auto'
+            };
+        }
+
+        function apply(mode) {
+            var resolved = resolvedTheme(mode);
+            document.body.setAttribute('data-theme', resolved);
+            document.body.setAttribute('data-theme-mode', mode);
+            toggle.dataset.mode = mode;
+            var label = labels(mode, resolved);
+            toggle.setAttribute('aria-pressed', resolved === 'dark');
+            toggle.setAttribute('aria-label', label.aria);
+            toggle.setAttribute('title', label.aria);
+        }
+
+        function setMode(mode) {
+            localStorage.setItem(storageKey, mode);
+            apply(mode);
+        }
+
+        apply(savedMode());
+
+        toggle.addEventListener('click', function() {
+            var current = document.body.getAttribute('data-theme-mode') || savedMode();
+            var next = labels(current).next;
+            setMode(next);
+        });
+
+        if (prefersDark && prefersDark.addEventListener) {
+            prefersDark.addEventListener('change', function() {
+                if (savedMode() === 'auto') {
+                    apply('auto');
+                }
+            });
+        }
+    })();
     </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 

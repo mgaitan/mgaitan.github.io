@@ -70,7 +70,11 @@ navbar-light bg-light
             </li>
 </ul>
 <ul class="navbar-nav navbar-right">
-<li>            </li>
+<li class="nav-item">
+                    <button class="nav-link theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Tema: Automático (sistema). Click para pasar a claro." title="Tema: Automático (sistema). Click para pasar a claro." data-mode="auto">
+                        <svg class="theme-icon theme-icon-auto" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"></path></svg><svg class="theme-icon theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg><svg class="theme-icon theme-icon-dark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"></path></svg></button>
+                </li>
+                    <li>            </li>
 <li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
@@ -166,13 +170,13 @@ de nuevo. Mientras tanto, el Dios en el que no creo me pone
 en el camino de resultados de Google.</p>
 <p>"Ernesto, prabamos esto?" y no alcanzó a contestar
 antes de que esté poniendo los primeros comandos</p>
-<div class="code"><pre class="code bash"><a id="rest_code_4c00cb83bb6443969e761a2290be4752-1" name="rest_code_4c00cb83bb6443969e761a2290be4752-1" href="#rest_code_4c00cb83bb6443969e761a2290be4752-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>mke2fs<span class="w"> </span>-n<span class="w"> </span>/dev/sda3
-<a id="rest_code_4c00cb83bb6443969e761a2290be4752-2" name="rest_code_4c00cb83bb6443969e761a2290be4752-2" href="#rest_code_4c00cb83bb6443969e761a2290be4752-2"></a>
-<a id="rest_code_4c00cb83bb6443969e761a2290be4752-3" name="rest_code_4c00cb83bb6443969e761a2290be4752-3" href="#rest_code_4c00cb83bb6443969e761a2290be4752-3"></a>Superblock<span class="w"> </span>backups<span class="w"> </span>stored<span class="w"> </span>on<span class="w"> </span>blocks:
-<a id="rest_code_4c00cb83bb6443969e761a2290be4752-4" name="rest_code_4c00cb83bb6443969e761a2290be4752-4" href="#rest_code_4c00cb83bb6443969e761a2290be4752-4"></a><span class="m">32768</span>,<span class="w"> </span><span class="m">98304</span>,<span class="w"> </span><span class="m">163840</span>,<span class="w"> </span><span class="m">229376</span>,<span class="w"> </span><span class="m">294912</span>,<span class="w"> </span><span class="m">819200</span>,<span class="w"> </span><span class="m">884736</span>,<span class="w"> </span><span class="m">1605632</span>,<span class="w"> </span><span class="m">2654208</span>
+<div class="code"><pre class="code bash"><a id="rest_code_e73675ca78c5438ca0462f6c3c7153d0-1" name="rest_code_e73675ca78c5438ca0462f6c3c7153d0-1" href="#rest_code_e73675ca78c5438ca0462f6c3c7153d0-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>mke2fs<span class="w"> </span>-n<span class="w"> </span>/dev/sda3
+<a id="rest_code_e73675ca78c5438ca0462f6c3c7153d0-2" name="rest_code_e73675ca78c5438ca0462f6c3c7153d0-2" href="#rest_code_e73675ca78c5438ca0462f6c3c7153d0-2"></a>
+<a id="rest_code_e73675ca78c5438ca0462f6c3c7153d0-3" name="rest_code_e73675ca78c5438ca0462f6c3c7153d0-3" href="#rest_code_e73675ca78c5438ca0462f6c3c7153d0-3"></a>Superblock<span class="w"> </span>backups<span class="w"> </span>stored<span class="w"> </span>on<span class="w"> </span>blocks:
+<a id="rest_code_e73675ca78c5438ca0462f6c3c7153d0-4" name="rest_code_e73675ca78c5438ca0462f6c3c7153d0-4" href="#rest_code_e73675ca78c5438ca0462f6c3c7153d0-4"></a><span class="m">32768</span>,<span class="w"> </span><span class="m">98304</span>,<span class="w"> </span><span class="m">163840</span>,<span class="w"> </span><span class="m">229376</span>,<span class="w"> </span><span class="m">294912</span>,<span class="w"> </span><span class="m">819200</span>,<span class="w"> </span><span class="m">884736</span>,<span class="w"> </span><span class="m">1605632</span>,<span class="w"> </span><span class="m">2654208</span>
 </pre></div>
 <p>Me la juego con el primer backup:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_3416835cecc340498b0aebd951749a62-1" name="rest_code_3416835cecc340498b0aebd951749a62-1" href="#rest_code_3416835cecc340498b0aebd951749a62-1"></a>sudo<span class="w"> </span>e2fsck<span class="w"> </span>-b<span class="w"> </span><span class="m">32768</span><span class="w"> </span>/dev/sda3
+<div class="code"><pre class="code bash"><a id="rest_code_e0a0b90b893e4a40ab5afd68a896898b-1" name="rest_code_e0a0b90b893e4a40ab5afd68a896898b-1" href="#rest_code_e0a0b90b893e4a40ab5afd68a896898b-1"></a>sudo<span class="w"> </span>e2fsck<span class="w"> </span>-b<span class="w"> </span><span class="m">32768</span><span class="w"> </span>/dev/sda3
 </pre></div>
 <p>Cientos de  <code class="docutils literal">Y</code> <code class="docutils literal">Enter</code> para mensajes estilo <em>"está roto, desea repararlo?"</em>
 (no había una opción "Sí a todo", como si uno fuese capaz de arrepentirse
@@ -233,6 +237,78 @@ brazo.</p>
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
     }});
+    </script><script>
+    (function() {
+        var storageKey = 'theme-mode';
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        var prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        var modes = ['auto', 'light', 'dark'];
+
+        function savedMode() {
+            var stored = localStorage.getItem(storageKey);
+            if (modes.indexOf(stored) !== -1) {
+                return stored;
+            }
+            return 'auto';
+        }
+
+        function resolvedTheme(mode) {
+            if (mode === 'light' || mode === 'dark') return mode;
+            return prefersDark && prefersDark.matches ? 'dark' : 'light';
+        }
+
+        function labels(mode, resolved) {
+            if (mode === 'auto') {
+                return {
+                    aria: "Tema: Automático (sistema). Click para pasar a claro.",
+                    next: 'light'
+                };
+            }
+            if (mode === 'light') {
+                return {
+                    aria: "Tema: Claro. Click para pasar a oscuro.",
+                    next: 'dark'
+                };
+            }
+            return {
+                aria: "Tema: Oscuro. Click para pasar a automático.",
+                next: 'auto'
+            };
+        }
+
+        function apply(mode) {
+            var resolved = resolvedTheme(mode);
+            document.body.setAttribute('data-theme', resolved);
+            document.body.setAttribute('data-theme-mode', mode);
+            toggle.dataset.mode = mode;
+            var label = labels(mode, resolved);
+            toggle.setAttribute('aria-pressed', resolved === 'dark');
+            toggle.setAttribute('aria-label', label.aria);
+            toggle.setAttribute('title', label.aria);
+        }
+
+        function setMode(mode) {
+            localStorage.setItem(storageKey, mode);
+            apply(mode);
+        }
+
+        apply(savedMode());
+
+        toggle.addEventListener('click', function() {
+            var current = document.body.getAttribute('data-theme-mode') || savedMode();
+            var next = labels(current).next;
+            setMode(next);
+        });
+
+        if (prefersDark && prefersDark.addEventListener) {
+            prefersDark.addEventListener('change', function() {
+                if (savedMode() === 'auto') {
+                    apply('auto');
+                }
+            });
+        }
+    })();
     </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
     jQuery(document).ready(function() {
 
