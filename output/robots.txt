@@ -1,4 +1,0 @@
-Sitemap: https://mgaitan.github.io/sitemapindex.xml
-
-User-Agent: *
-Host: mgaitan.github.io
