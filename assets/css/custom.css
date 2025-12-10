@@ -285,6 +285,7 @@ pre.literal-block {
     border: 1px solid var(--code-border);
     border-radius: 6px;
     padding: 12px 14px;
+    overflow-x: auto;
 }
 
 pre code {
@@ -292,6 +293,31 @@ pre code {
     color: inherit;
     border: none;
     padding: 0;
+}
+
+.input_area,
+.output_area {
+    background: var(--code-bg);
+    color: var(--code-text);
+    border: 1px solid var(--code-border);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+}
+
+.input_area pre,
+.output_area pre {
+    background: transparent;
+    color: inherit;
+    border: none;
+}
+
+.rendered_html code {
+    background: var(--inline-code-bg);
+    color: var(--inline-code-text);
+    border: 1px solid var(--inline-code-border);
+    border-radius: 4px;
+    padding: 0.15em 0.35em;
 }
 
 .postlist .listdate,
