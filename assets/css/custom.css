@@ -222,7 +222,7 @@ div.input_prompt {
 div.prompt {
     font-family: monospace;
     line-height: 1.231em;
-    margin: 0;
+    margin: 0 !important;
     padding: 0.4em;
     text-align: right;
     width: 11ex;
@@ -305,11 +305,93 @@ pre code {
     margin-bottom: 12px;
 }
 
+.input_area {
+    margin: 0 !important;
+}
+
+.output_subarea {
+    background: var(--code-bg);
+    color: var(--code-text);
+}
+
 .input_area pre,
 .output_area pre {
     background: transparent;
     color: inherit;
     border: none;
+}
+
+.output_subarea,
+.output_stream,
+.output_stdout {
+    background: var(--code-bg);
+    color: var(--code-text);
+}
+
+.output_subarea pre {
+    background: transparent;
+    color: inherit;
+    border: none;
+    margin: 0;
+}
+
+.prompt,
+.input_prompt,
+.output_prompt {
+    background: var(--code-bg);
+    color: var(--muted-color);
+    border: 1px solid var(--code-border);
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    padding: 12px 10px;
+}
+
+.input_area,
+.output_area {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Force notebook prompts/areas in dark mode to override default light styling */
+body[data-theme="dark"] .prompt,
+body[data-theme="dark"] .input_prompt,
+body[data-theme="dark"] .output_prompt {
+    background: var(--code-bg) !important;
+    color: var(--muted-color) !important;
+    border: 1px solid var(--code-border) !important;
+    border-right: none !important;
+    border-radius: 6px 0 0 6px !important;
+    padding: 12px 10px;
+}
+
+body[data-theme="dark"] .input_area,
+body[data-theme="dark"] .output_area {
+    background: var(--code-bg) !important;
+    color: var(--code-text) !important;
+    border: 1px solid var(--code-border) !important;
+    border-left: none !important;
+    border-radius: 0 6px 6px 0 !important;
+    padding-top: 12px !important;
+}
+
+body[data-theme="dark"] .output_subarea,
+body[data-theme="dark"] .output_stream,
+body[data-theme="dark"] .output_stdout,
+body[data-theme="dark"] .output_text {
+    background: var(--code-bg) !important;
+    color: var(--code-text) !important;
+    border: 1px solid var(--code-border) !important;
+    border-left: none !important;
+    border-radius: 0 6px 6px 0 !important;
+    padding: 12px 14px;
+    margin-top: 0;
+}
+
+body[data-theme="dark"] .output_subarea pre {
+    background: transparent !important;
+    color: inherit !important;
+    border: none !important;
+    margin: 0;
 }
 
 .rendered_html code {
@@ -322,6 +404,21 @@ pre code {
 
 .rendered_html,
 .text_cell_render {
+    color: var(--text-color);
+}
+
+.rendered_html h1,
+.rendered_html h2,
+.rendered_html h3,
+.rendered_html h4,
+.rendered_html h5,
+.rendered_html h6,
+.text_cell_render h1,
+.text_cell_render h2,
+.text_cell_render h3,
+.text_cell_render h4,
+.text_cell_render h5,
+.text_cell_render h6 {
     color: var(--text-color);
 }
 
