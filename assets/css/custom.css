@@ -288,6 +288,16 @@ pre.literal-block {
     overflow-x: auto;
 }
 
+.codehilite pre,
+.highlight pre,
+div.code pre {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
 pre code {
     background: transparent;
     color: inherit;
@@ -307,6 +317,7 @@ pre code {
 
 .input_area {
     margin: 0 !important;
+    padding
 }
 
 .output_subarea {
