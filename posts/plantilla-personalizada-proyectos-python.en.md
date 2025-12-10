@@ -31,11 +31,16 @@ In short:
 
 And a bunch more details I am surely forgetting.
 
+
+<!-- TEASER_END -->
+
 If you want to try it, it is at [mgaitan/python-package-copier-template](https://github.com/mgaitan/python-package-copier-template) and you can spin up a project like this:
 
 ```console
 uvx --with=copier-template-extensions copier copy --trust "gh:mgaitan/python-package-copier-template" /path/to/your/new/project
 ```
+
+
 
 ## Minimal Bootstrapping in Python
 
