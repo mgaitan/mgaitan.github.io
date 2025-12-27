@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Un bot serverless que te manda posts de lobste.rs a Telegram con lectura limpia.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lobstersgram, un cliente rápido de lobste.rs en Telegram | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/posts/lobstersgram-cliente-rapido-lobsters/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../plantilla-personalizada-proyectos-python/" title="Mi plantilla personalizada para proyectos Python" type="text/html">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Lobstersgram, un cliente rápido de lobste.rs en Telegram">
+<meta property="og:url" content="https://mgaitan.github.io/posts/lobstersgram-cliente-rapido-lobsters/">
+<meta property="og:description" content="Un bot serverless que te manda posts de lobste.rs a Telegram con lectura limpia.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-12-26T23:02:16-03:00">
+<meta property="article:tag" content="github-actions">
+<meta property="article:tag" content="lobsters">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="rss">
+<meta property="article:tag" content="telegra.ph">
+<meta property="article:tag" content="telegram">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+<link rel="alternate" hreflang="en" href="../../en/posts/lobstersgram-cliente-rapido-lobsters/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="logo" href="../../">
+
+            <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Sobre mí</a>
+                </li>
+<li class="nav-item">
+<a href="../../charlas/" class="nav-link">Charlas</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archivos</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Categorías</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+                    <button class="nav-link theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Tema: Automático (sistema). Click para pasar a claro." title="Tema: Automático (sistema). Click para pasar a claro." data-mode="auto">
+                        <svg class="theme-icon theme-icon-auto" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"></path></svg><svg class="theme-icon theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg><svg class="theme-icon theme-icon-dark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"></path></svg></button>
+                </li>
+                    <li>            </li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Lobstersgram, un cliente rápido de lobste.rs en Telegram</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-26T23:02:16-03:00" itemprop="datePublished" title="2025-12-26 23:02">2025-12-26 23:02</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/lobstersgram-cliente-rapido-lobsters.html">Comentarios</a>
+
+
+            
+        </p>
+</div>
+                <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+                <p><a href="../../en/posts/lobstersgram-cliente-rapido-lobsters/" rel="alternate" hreflang="en">English</a></p>
+        </div>
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Lobsters (<a href="https://lobste.rs">lobste.rs</a>) es probablemente mi fuente principal<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> de lecturas técnicas: es una curación hecha por humanos que prioriza la calidad de los contenidos, sin clickbaiting ladino, publicidad abusiva o comentarios hostiles. Si bien no soy miembro (requiere una <a href="https://lobste.rs/about#invitations">invitación</a>), comulgo fuertemente con su <a href="https://lobste.rs/about">espíritu de la "vieja internet"</a>. </p>
+<p>Ayer, mayormente desde ChatGPT en el teléfono, hice Lobstersgram, un bot que funciona como un cliente rápido de lobste.rs en Telegram. </p>
+<p>Cada cierto tiempo, si el bot detecta que hay artículos nuevos publicados en el sitio, te manda un mensajito con una intro y un link del artículo copiado a <a href="https://telegra.ph">telegra.ph</a>, además del link a la fuente original y al hilo de discusión en el foro. ¿Por qué republicar en telegraph? Porque soporta el modo <a href="https://instantview.telegram.org/">instant view</a>, que permite precargar el contenido con un estilo simple y unificado, ideal para leer desde el móvil.</p>
+<p>Si tenés Telegram, podés probarlo en <a href="https://t.me/lobstersgram_bot">@lobstersgram_bot</a></p>
+<p>Comandos:</p>
+<ul>
+<li>
+<code>/start</code> para suscribirte</li>
+<li>
+<code>/unsubscribe</code> para dejar de recibir</li>
+</ul>
+<p>(Atención, solo funciona cada 2 horas, así que eventualmente te va a responder, pero no esperes inmediatez)</p>
+<p>Acá una demo que grabé capturando la pantalla del celu (con notificación de un mensaje al grupo familiar incluida)</p>
+<iframe height="660" width="355" src="https://www.youtube.com/embed/wdzIBFYjJ3Y" title="Lobstergram demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<!-- TEASER_END -->
+
+<h3>Buscando una mejor experiencia de lectura</h3>
+<p>Lobsters ofrece un RSS de tipo "agregación" que contiene los links a los artículos que se comparten, pero no incluye el contenido de cada uno. Entonces no hay mucha diferencia entre un lector RSS tradicional y ver el sitio directamente en la web, que es muy sencilla, donde básicamente clickeás en los títulos de los artículos que te interesan. </p>
+<p>Si bien la mayoría de las veces son artículos de blogs que no tienen publicidad y son muy livianos, igual la experiencia de usuario tiene el costo cognitivo de leer en distintos estilos y tener que ir y volver entre las fuentes y lobsters. Por otro lado, para las conexiones malas que aún se tienen por estos lares (por ejemplo, cuando estás de viaje por la Patagonia, como yo ahora), no viene mal que las lecturas ya estén disponibles, cualesquiera sean las condiciones.  </p>
+<p>Lobstersgram mejora esta experiencia de usuario principalmente para leer desde el teléfono. </p>
+<p>El flujo de lo que hace es el siguiente: </p>
+<ul>
+<li>lee el RSS de Lobsters</li>
+<li>de cada link extrae el contenido principal, o sea un "scraping dinámico" <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. </li>
+<li>Convierto el html a markdown</li>
+<li>Con el markdown hace un DOM de telegra.ph para crear un post programáticamente, creando la copia del artículo original. </li>
+<li>Con ese link, recortando un cachito del markdown y el resto de las urls (original + foro) sacadas del RSS, mando un mensaje a cada suscriptor del bot. </li>
+</ul>
+<h3>Mirá mamá, sin server y sin db (y gratis!)</h3>
+<p>Los bots de Telegram funcionan vía webhooks (el server hace un "push" del mensaje en tiempo real) o long polling, que es la que nos interesa: en vez de consultar constantemente si hay nuevos mensajes, el bot hace una petición al servidor que queda abierta un ratito esperando hasta que llegue un update o se acabe el tiempo, e inmediatamente o, <strong>cuando puede</strong>, vuelve a pedir otra.   </p>
+<p>GitHub Actions nos da un server básico (como dicen en <a href="https://www.youtube.com/@TiranosTembladTV">Tiranos Temblad</a>, ¡Que viva lo gratis!) que alcanza lo más bien para correr un programita sin muchas pretensiones por pocos minutos. Y nuestro bot es eso: un script Python que no demora demasiado. </p>
+<p>La acción que dispara el workflow es un "cron" (schedule, en la jerga de github actions) y entonces cada 2 horas el bot se fija si tiene que actualizar la lista de susbcriptores (se agregaron / desagregaron) y si hay historias que enviar. </p>
+<p>Para que la cosa funcione tambien hace falta una minima persistencia de datos. ¿De donde va a sacar el bot la lista de usuarios que quieren recibir las novedades? ¿Y cuando se lee Lobsters, como sabe cuales articulos ya envió en corridas anteriores? </p>
+<p>Para eso hay un <code>state.json</code> y un <code>subscribers.json</code> cuyo fin, espero, no requieren explicación.  </p>
+<p>Telegram no te deja enviar mensajes a chats que nunca interactuaron con el bot. Por eso el flujo es:</p>
+<ol>
+<li>el usuario manda <code>/start</code>
+</li>
+<li>el workflow corre en modo <code>--sync-subscribers</code>
+</li>
+<li>se agregan los <code>chat_id</code> en <code>subscribers.json</code>
+</li>
+<li>en el modo normal se manda cada post a esos chats</li>
+</ol>
+<p>Si alguien quiere dejar de recibir, manda <code>/unsubscribe</code> y en la proxima corrida se lo elimina.</p>
+<p>Acá un diagramita que resume el asunto:</p>
+<p><a href="https://mermaid.live/edit#pako:eNq1kz1v2zAQhv_K4aYGtRTZom2JQ4B-APLQqbGXQAtNXWy2EqnyI2hq-L-XivLRVFk6VBPJ97l7j3fUCaVpCDnW2tGPQFrSZyUOVnS1hvj1wnolVS-0hx0IBzsXhFVmqm6rQd5SS29HV5tBr5TfhD18kF4Z7abUR-MH7IvZO092zDRSu-TqaltxuHQ-8uPZtkriabXhEPpGeIKedKNIexr1ahPlmJJDkrh7LRMX9k5atSf76B3FJyTemg4CBPwBpd-c0S9kRHccpNG3ynZCqkH728nJIzWhJZCiEbA4TnxaIvh6fQ3vQVoS4MeOpf0rcrgp6TslQJuhObEnrwp7uyvwTge6MxDGIV38vy6NPi_gpJ6gn8V_r2LiSq3qlBbQ0GQ6OMODVQ1ybwPNsKM4mWGLpyFLjf5IHdXI47IR9nsdX_o5xsTXdmNM9xRmTTgckd-K1sXdWOHjj_CMxHrJfjJBe-TlQwbkJ_yJPJ9n6SLLssVyzdiKZcV6hvfI52U6z_NVUa7YnK1ZucjPM_z1YJqlJcuWZcGKdbFkWZaX59_j-CEj"><img alt="" src="https://mermaid.ink/img/pako:eNq1kz1v2zAQhv_K4aYGtRTZom2JQ4B-APLQqbGXQAtNXWy2EqnyI2hq-L-XivLRVFk6VBPJ97l7j3fUCaVpCDnW2tGPQFrSZyUOVnS1hvj1wnolVS-0hx0IBzsXhFVmqm6rQd5SS29HV5tBr5TfhD18kF4Z7abUR-MH7IvZO092zDRSu-TqaltxuHQ-8uPZtkriabXhEPpGeIKedKNIexr1ahPlmJJDkrh7LRMX9k5atSf76B3FJyTemg4CBPwBpd-c0S9kRHccpNG3ynZCqkH728nJIzWhJZCiEbA4TnxaIvh6fQ3vQVoS4MeOpf0rcrgp6TslQJuhObEnrwp7uyvwTge6MxDGIV38vy6NPi_gpJ6gn8V_r2LiSq3qlBbQ0GQ6OMODVQ1ybwPNsKM4mWGLpyFLjf5IHdXI47IR9nsdX_o5xsTXdmNM9xRmTTgckd-K1sXdWOHjj_CMxHrJfjJBe-TlQwbkJ_yJPJ9n6SLLssVyzdiKZcV6hvfI52U6z_NVUa7YnK1ZucjPM_z1YJqlJcuWZcGKdbFkWZaX59_j-CEj?type=png"></a></p>
+<p>Tanto <code>state.json</code> como <code>subscribers.json</code> se autocommitean (si cambiaron) dentro del workflow desde GitHub Actions. Esta idea de usar git como storage de datos está un poco inspirada en la técnica de <a href="https://simonwillison.net/2020/Oct/9/git-scraping/">Git scraping</a>. </p>
+<p>Ejemplos de uso del CLI:</p>
+<div class="code"><pre class="code literal-block"><span class="go">uv run python main.py --sync-subscribers</span>
+<span class="go">uv run python main.py --max-items 1</span>
+<span class="go">uv run python main.py --url https://mgaitan.github.io/posts/ampliando-el-universo-python-con-rust/</span>
+</pre></div>
+
+<p>El modo <code>--url</code> es interesante porque procesa una o más urls arbitrarias por fuera del RSS. Cuando el workflow de GitHub Actions se lanza manualmente (o vía API), se puede pasar una lista de urls y correrá en este modo, que llega igual, pero obviamente sin el link al foro: </p>
+<p><img width="568" height="281" alt="image" src="https://gist.github.com/user-attachments/assets/d18e12fc-361c-475e-a1a3-7fd54ea3c835"></p>
+<p>De paso, si querés forzar que los mensajes te lleguen solo a vos cuando estás desarrollando, exportá esta variable de entorno que tendrá prioridad sobre el json:</p>
+<div class="code"><pre class="code literal-block"><span class="nb">export</span><span class="w"> </span><span class="nv">TELEGRAM_DEV_CHAT_ID</span><span class="o">=</span><span class="m">123456789</span>
+</pre></div>
+
+<h3>¿Y qué sigue?</h3>
+<p>Probablemente nada, pero el repo está en <a href="https://github.com/mgaitan/lobstersgram">mgaitan/lobstersgram</a> y es todo tuyo para hacer un fork. El convertidor de "markdown to telegra.ph" necesita algunas mejoras y, como me pidió mi amigo <a href="https://alvarmaciel.gitlab.io/">Alvar Maciel</a>, el archivo <code>subscribers.json</code> deberia estar encriptado (lo podemos hacer via <a href="https://github.com/nhedger/setup-sops">sops</a>) para no exponer ninguna data.</p>
+<p>En cuanto a funcionalidades potenciales, fácilmente se podría permitir que los subscriptores definan la lista de feeds que quieren consumir, haciendolo un lector de RSS/Atom en Telegram general. </p>
+<p>También podría funcionar como una app "read it later" minimalista y/o una comunidad de lectura: le enviamos una url al bot y este, cuando corre, procesa todo lo que le llegó en modo <code>--url</code>.</p>
+<p>¿se te ocurre algo más?</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Otras partes de mi dieta informativa ñoña son el blog de <a href="https://simonwillison.net/">Simon Willison</a> y los <a href="https://github.com/trending">"trending" de Github</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Probé <a href="https://trafilatura.readthedocs.io/">trafilatura</a> pero me quedé con el viejo <a href="https://github.com/buriy/python-readability">readability</a> porque daba mejor resultado. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/github-actions/" rel="tag">github-actions</a></li>
+            <li><a class="tag p-category" href="../../categories/lobsters/" rel="tag">lobsters</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/rss/" rel="tag">rss</a></li>
+            <li><a class="tag p-category" href="../../categories/telegraph/" rel="tag">telegra.ph</a></li>
+            <li><a class="tag p-category" href="../../categories/telegram/" rel="tag">telegram</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../plantilla-personalizada-proyectos-python/" rel="prev" title="Mi plantilla personalizada para proyectos Python">Post anterior</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+                    <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="https://mgaitan.github.io/posts/lobstersgram-cliente-rapido-lobsters/",
+        disqus_title="Lobstersgram, un cliente r\u00e1pido de lobste.rs en Telegram",
+        disqus_identifier="cache/posts/lobstersgram-cliente-rapido-lobsters.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script>
+    (function() {
+        var storageKey = 'theme-mode';
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        var prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        var modes = ['auto', 'light', 'dark'];
+
+        function savedMode() {
+            var stored = localStorage.getItem(storageKey);
+            if (modes.indexOf(stored) !== -1) {
+                return stored;
+            }
+            return 'auto';
+        }
+
+        function resolvedTheme(mode) {
+            if (mode === 'light' || mode === 'dark') return mode;
+            return prefersDark && prefersDark.matches ? 'dark' : 'light';
+        }
+
+        function labels(mode, resolved) {
+            if (mode === 'auto') {
+                return {
+                    aria: "Tema: Automático (sistema). Click para pasar a claro.",
+                    next: 'light'
+                };
+            }
+            if (mode === 'light') {
+                return {
+                    aria: "Tema: Claro. Click para pasar a oscuro.",
+                    next: 'dark'
+                };
+            }
+            return {
+                aria: "Tema: Oscuro. Click para pasar a automático.",
+                next: 'auto'
+            };
+        }
+
+        function apply(mode) {
+            var resolved = resolvedTheme(mode);
+            document.body.setAttribute('data-theme', resolved);
+            document.body.setAttribute('data-theme-mode', mode);
+            toggle.dataset.mode = mode;
+            var label = labels(mode, resolved);
+            toggle.setAttribute('aria-pressed', resolved === 'dark');
+            toggle.setAttribute('aria-label', label.aria);
+            toggle.setAttribute('title', label.aria);
+        }
+
+        function setMode(mode) {
+            localStorage.setItem(storageKey, mode);
+            apply(mode);
+        }
+
+        apply(savedMode());
+
+        toggle.addEventListener('click', function() {
+            var current = document.body.getAttribute('data-theme-mode') || savedMode();
+            var next = labels(current).next;
+            setMode(next);
+        });
+
+        if (prefersDark && prefersDark.addEventListener) {
+            prefersDark.addEventListener('change', function() {
+                if (savedMode() === 'auto') {
+                    apply('auto');
+                }
+            });
+        }
+    })();
+    </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
