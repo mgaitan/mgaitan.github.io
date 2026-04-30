@@ -85,16 +85,16 @@ Ahí [intersphinx](https://www.sphinx-doc.org/en/master/usage/extensions/intersp
 
 Eso permite un esquema más simple:
 
-- el repo principal publica su `objects.inv` junto con el HTML final
+- el repo principal genera y versiona su `objects.inv`
 - ese inventario ya contiene también los docnames de las secciones externas integradas
-- los repos externos consumen ese único inventario como fuente de verdad
+- los repos externos consumen ese único inventario desde el repo principal
 - los enlaces cruzados se escriben siempre contra el mismo namespace
 
 Por ejemplo, en `ops-infra` se podría tener algo así:
 
 ```python
 intersphinx_mapping = {
-    "core-app": ("https://docs.example.org/", "https://docs.example.org/objects.inv"),
+    "core-app": ("https://docs.example.org/", "docs/_intersphinx/core-app.inv"),
 }
 ```
 
@@ -107,7 +107,7 @@ Para el procedimiento operativo relacionado:
 {external+core-app:doc}`integrations/webhook-retries`.
 ```
 
-Con esa convención, los repos externos validan referencias contra la estructura real del sitio publicado, no contra builds parciales. Si además hace falta que el build local no dependa de la red, se puede descargar ese `objects.inv` en CI antes de compilar o dejar una copia local de respaldo, pero la fuente de verdad sigue siendo una sola y vive en el repo principal.
+Con esa convención, los repos externos validan referencias contra la estructura real del sitio integrado, no contra builds parciales. Y si el sitio publicado es privado, no pasa nada: durante el build `intersphinx` usa el archivo local descargado desde el repo principal, mientras que la URL configurada en `intersphinx_mapping` sólo define a dónde apuntan los links finales.
 
 En la práctica, eso termina siendo una muy buena propiedad: las referencias cruzadas se validan tanto en los repos externos como en el ensamblado final, y la convención queda uniforme sin necesidad de mantener inventarios cruzados por separado.
 
