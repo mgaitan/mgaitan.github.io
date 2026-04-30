@@ -35,51 +35,32 @@ No obstante, para leer "más bonito", generar otros formatos y crossreferenciar 
 
 ## La propuesta
 
-La arquitectura queda así:
+En vez de compilar cada repo por separado y luego tratar de "pegar" HTMLs, el enfoque más limpio es ensamblar todo al nivel de las fuentes. La arquitectura quedaría así 
 
-1. `core-app` sigue siendo el ensamblador y publisher del sitio completo.
-2. `ops-infra` y `store-connectors` mantienen sólo sus propias fuentes de documentación.
-3. En cada build de documentación de `core-app`, el workflow hace checkout de esos repos externos y monta sus `docs/` dentro del árbol que Sphinx va a compilar.
-4. La publicación sigue siendo una sola: un único pipeline de salida, un único sitio público y un único punto de verdad sobre qué versión queda expuesta.
+En el ejemplo  `core-app` sigue siendo el ensamblador y publisher del sitio completo. `ops-infra` y `store-connectors` mantienen sólo sus propias fuentes de documentación y en cada build de documentación de `core-app`, el workflow hace checkout de esos repos externos y monta sus `docs/` dentro del árbol que Sphinx va a compilar. Es decir: las fuentes son distribuidas, pero la publicación es centralizada.
 
-Es decir: las fuentes son distribuidas, pero la publicación es centralizada.
-
-## Cómo se integra
-
-En vez de compilar cada repo por separado y luego tratar de "pegar" HTMLs, el enfoque más limpio es ensamblar todo al nivel de las fuentes.
-
-`core-app` define placeholders estables dentro de su propio árbol de docs, por ejemplo:
-
-- `docs/operations/`
-- `docs/integrations/`
-
-Durante la build en CI:
-
-- `ops-infra/docs` reemplaza `docs/operations/`
-- `store-connectors/docs` reemplaza `docs/integrations/`
-
-Después Sphinx corre una sola vez sobre ese árbol combinado.
-
-Ese paso único simplifica bastante el resultado: la navegación queda homogénea, todo el sitio comparte un mismo theme y un único índice, los links internos se mantienen consistentes y además la estrategia de publicación queda concentrada en un solo lugar, ya sea una imagen de contenedor, un paquete de artefactos, GitHub Pages o incluso un `rsync` a un servidor.
 
 ## Por qué no compilar cada repo por separado
 
 Una alternativa tentadora es que cada repo genere su propio HTML y luego el repo principal junte "sitios ya cocinados".
 
-No me termina de convencer, porque en ese esquema se mezclan artefactos ya construidos en lugar de trabajar con las fuentes, la navegación integrada se vuelve más incómoda, los links relativos quedan más frágiles y sostener un theme y una estructura comunes pasa a ser bastante más difícil. Además, se duplican decisiones de build que, si de verdad queremos un único sitio, deberían estar concentradas en un solo lugar.
+El problema es que en ese esquema se mezclan artefactos ya construidos en lugar de trabajar con las fuentes, la navegación integrada se vuelve más incómoda, los links relativos quedan más frágiles y sostener un theme y una estructura comunes pasa a ser bastante más difícil. Además, se duplican decisiones de build que, si de verdad queremos un único sitio, deberían estar concentradas en un solo lugar.
 
 Si el objetivo es tener **un solo sitio**, entonces tiene sentido hacer **una sola compilación**.
 
 ## Sanidad en los repos externos
 
-Que la publicación sea centralizada no implica que los repos externos deban quedar "ciegos".
+Que la publicación sea centralizada no implica que los repos externos deban quedar "ciegos". Cada docs/ de cada repo debe seguir pudiendo buildear por separado.  Para eso `core-app` define placeholders estables dentro de su propio árbol de docs, por ejemplo:
 
-Cada repo externo puede y debería tener:
+- `docs/operations/`
+- `docs/integrations/`
 
-- su propio `docs/`
-- su propio `conf.py`
-- un comando local del estilo `make docs`
-- un workflow de sanidad que valide que esa documentación compila
+Durante la build en CI: 
+
+- `ops-infra/docs` reemplaza `docs/operations/`
+- `store-connectors/docs` reemplaza `docs/integrations/`
+
+Después Sphinx corre una sola vez sobre ese árbol combinado.
 
 Eso permite que cada equipo itere sobre sus fuentes con feedback rápido, sin depender de correr el pipeline completo del sitio integrado para saber si algo básico se rompió.
 
@@ -94,51 +75,41 @@ Hay dos disparadores complementarios:
 
 Eso evita una falsa dicotomía entre "publica sólo el repo principal" y "cada repo publica lo suyo".
 
-El resultado es mejor:
-
-- `core-app` conserva la autoridad de la publicación
-- los repos externos conservan la autoridad de sus fuentes
-
 ## Referencias cruzadas entre repos
 
 Cuando cada repo compila su documentación por separado aparece un problema adicional: los links cruzados.
 
-Si `ops-infra` quiere enlazar a un capítulo de `core-app`, o `store-connectors` quiere enlazar a una guía operativa, un `:ref:` o `:doc:` interno ya no alcanza porque el build local no tiene las fuentes remotas.
+Si `ops-infra` quiere enlazar a un capítulo de `core-app`, o `store-connectors` quiere enlazar a una guía operativa, un enlace interno como `{ref}` o `{doc}` ya no alcanza porque el build local no tiene las fuentes remotas.
 
-Ahí `intersphinx` encaja muy bien. La idea es que cada repo externo compile con un inventario local de los otros proyectos, en vez de depender de que esas fuentes estén montadas durante el build:
+Ahí [intersphinx](https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html) encaja muy bien, pero en la práctica no hace falta que cada repo externo mantenga snapshots propios de otros inventarios. Si el sitio integrado se compila desde el repo principal, ese mismo build puede generar un único `objects.inv` que ya describe toda la estructura publicada, incluyendo las secciones montadas desde repos externos.
 
-- cada repo versiona snapshots mínimos de los `objects.inv` que necesita consumir
-- esos inventarios se referencian desde `conf.py` con un prefijo estable
-- los enlaces cruzados se escriben con referencias explícitas
-- el build local sigue siendo autosuficiente
-- el sitio integrado también puede resolver esos links sin depender de descargar inventarios en tiempo real
+Eso permite un esquema más simple:
+
+- el repo principal publica su `objects.inv` junto con el HTML final
+- ese inventario ya contiene también los docnames de las secciones externas integradas
+- los repos externos consumen ese único inventario como fuente de verdad
+- los enlaces cruzados se escriben siempre contra el mismo namespace
 
 Por ejemplo, en `ops-infra` se podría tener algo así:
 
 ```python
 intersphinx_mapping = {
-    "core-app": ("https://docs.example.org/", "docs/_intersphinx/core-app/objects.inv"),
-    "store-connectors": (
-        "https://docs.example.org/integrations/",
-        "docs/_intersphinx/store-connectors/objects.inv",
-    ),
+    "core-app": ("https://docs.example.org/", "https://docs.example.org/objects.inv"),
 }
 ```
 
-Y después los enlaces se escriben con roles explícitos, por ejemplo:
+Y después los enlaces se escriben con roles explícitos en MyST, por ejemplo:
 
-```rst
-Ver la guia principal en :external+core-app:doc:`architecture/index`.
+```md
+Ver la guia principal en {external+core-app:doc}`architecture/index`.
 
 Para el procedimiento operativo relacionado:
-:external+store-connectors:ref:`webhook-retries`.
+{external+core-app:doc}`integrations/webhook-retries`.
 ```
 
-Con esa convención, cada repo puede validar referencias cruzadas sin descargar nada en tiempo real y sin necesitar un checkout de los otros proyectos. Lo único que hay que mantener frescos son esos inventarios versionados, algo que incluso se puede automatizar con una tarea periódica o con un pequeño script de actualización.
+Con esa convención, los repos externos validan referencias contra la estructura real del sitio publicado, no contra builds parciales. Si además hace falta que el build local no dependa de la red, se puede descargar ese `objects.inv` en CI antes de compilar o dejar una copia local de respaldo, pero la fuente de verdad sigue siendo una sola y vive en el repo principal.
 
-Hay un matiz importante: si el sitio final se compila desde el repo central, ese build también necesita conocer el inventario del proyecto principal para que los capítulos montados puedan seguir apuntando "hacia afuera" con el mismo mecanismo.
-
-En la práctica, eso termina siendo una muy buena propiedad: las referencias cruzadas se validan tanto en los repos satélite como en el ensamblado final, y la convención queda uniforme.
+En la práctica, eso termina siendo una muy buena propiedad: las referencias cruzadas se validan tanto en los repos externos como en el ensamblado final, y la convención queda uniforme sin necesidad de mantener inventarios cruzados por separado.
 
 ## El flujo en un diagrama
 
@@ -282,9 +253,31 @@ jobs:
   build-docs:
     runs-on: ubuntu-latest
     steps:
+      - name: Create app token to read central inventory
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ vars.DOCS_APP_ID }}
+          private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
+          owner: acme
+          repositories: |
+            core-app
+          permission-contents: read
       - uses: actions/checkout@v5
+      - name: Checkout central objects.inv
+        uses: actions/checkout@v5
+        with:
+          repository: acme/core-app
+          ref: main
+          path: core-docs
+          token: ${{ steps.app-token.outputs.token }}
+          sparse-checkout: |
+            docs/_intersphinx/core-app.inv
+          sparse-checkout-cone-mode: false
       - uses: astral-sh/setup-uv@v7
-      - run: make docs
+      - env:
+          INTERSPHINX_CORE_APP_INVENTORY: ${{ github.workspace }}/core-docs/docs/_intersphinx/core-app.inv
+        run: make docs
 ```
 
 ### Workflow de dispatch en un repo externo
