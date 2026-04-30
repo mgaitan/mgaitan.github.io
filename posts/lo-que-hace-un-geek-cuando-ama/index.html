@@ -151,27 +151,27 @@ D.O.S.. WTF!</p>
 <p>La
 <a class="reference external" href="http://www.linuxinsight.com/how-to-flash-motherboard-bios-from-linux-no-dos-windows-no-floppy-drive.html">solución</a>
 es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a></p>
-<div class="code"><pre class="code bash"><a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-1" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-1" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-1"></a><span class="c1"># obtener una imagen booteable de freeDOS y montarla en un directorio</span>
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-2" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-2" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-2"></a>wget<span class="w"> </span>http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-3" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-3" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-3"></a>gunzip<span class="w"> </span>FDOEM.144.gz
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-4" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-4" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-4"></a>mkdir<span class="w"> </span>/tmp/floppy
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-5" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-5" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-5"></a>mount<span class="w"> </span>-t<span class="w"> </span>vfat<span class="w"> </span>-o<span class="w"> </span>loop<span class="w"> </span>FDOEM.144<span class="w"> </span>/tmp/floppy
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-6" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-6" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-6"></a>
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-7" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-7" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-7"></a><span class="c1"># obtener la herramienta para actualizar el bios y la imagen, y moverlos</span>
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-8" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-8" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-8"></a>wget<span class="w"> </span>http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-9" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-9" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-9"></a>unzip<span class="w"> </span>AFUDOS211.zip
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-10" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-10" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-10"></a>mv<span class="w"> </span>AFUDOS.exe<span class="w"> </span>/tmp/floppy
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-11" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-11" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-11"></a>wget<span class="w"> </span>http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-12" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-12" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-12"></a>unzip<span class="w"> </span>K8n1011.zip
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-13" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-13" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-13"></a>mv<span class="w"> </span><span class="m">1011</span>.rom<span class="w"> </span>/tmp/floppy
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-14" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-14" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-14"></a>
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-15" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-15" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-15"></a><span class="c1"># desmontar</span>
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-16" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-16" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-16"></a>umount<span class="w"> </span>/tmp/floppy
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-17" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-17" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-17"></a>
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-18" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-18" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-18"></a><span class="c1"># crear una ISO y grabar a un disco virgen</span>
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-19" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-19" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-19"></a><span class="c1"># (tambien se podría grabar a un pendrive)</span>
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-20" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-20" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-20"></a>mkisofs<span class="w"> </span>-o<span class="w"> </span>bootcd.iso<span class="w"> </span>-b<span class="w"> </span>FDOEM.144<span class="w"> </span>FDOEM.144
-<a id="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-21" name="rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-21" href="#rest_code_9d58ff10a8134c8e8d7d1fef9296c9e8-21"></a>cdrecord<span class="w"> </span>-v<span class="w"> </span>bootcd.iso
+<div class="code"><pre class="code bash"><a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-1" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-1" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-1"></a><span class="c1"># obtener una imagen booteable de freeDOS y montarla en un directorio</span>
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-2" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-2" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-2"></a>wget<span class="w"> </span>http://www.fdos.org/bootdisks/autogen/FDOEM.144.gz
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-3" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-3" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-3"></a>gunzip<span class="w"> </span>FDOEM.144.gz
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-4" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-4" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-4"></a>mkdir<span class="w"> </span>/tmp/floppy
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-5" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-5" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-5"></a>mount<span class="w"> </span>-t<span class="w"> </span>vfat<span class="w"> </span>-o<span class="w"> </span>loop<span class="w"> </span>FDOEM.144<span class="w"> </span>/tmp/floppy
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-6" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-6" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-6"></a>
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-7" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-7" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-7"></a><span class="c1"># obtener la herramienta para actualizar el bios y la imagen, y moverlos</span>
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-8" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-8" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-8"></a>wget<span class="w"> </span>http://dlcdnet.asus.com/pub/ASUS/mb/flash/AFUDOS211.zip
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-9" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-9" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-9"></a>unzip<span class="w"> </span>AFUDOS211.zip
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-10" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-10" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-10"></a>mv<span class="w"> </span>AFUDOS.exe<span class="w"> </span>/tmp/floppy
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-11" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-11" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-11"></a>wget<span class="w"> </span>http://dlcdnet.asus.com/pub/ASUS/mb/sock754/K8N/K8n1011.zip
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-12" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-12" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-12"></a>unzip<span class="w"> </span>K8n1011.zip
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-13" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-13" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-13"></a>mv<span class="w"> </span><span class="m">1011</span>.rom<span class="w"> </span>/tmp/floppy
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-14" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-14" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-14"></a>
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-15" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-15" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-15"></a><span class="c1"># desmontar</span>
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-16" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-16" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-16"></a>umount<span class="w"> </span>/tmp/floppy
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-17" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-17" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-17"></a>
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-18" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-18" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-18"></a><span class="c1"># crear una ISO y grabar a un disco virgen</span>
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-19" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-19" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-19"></a><span class="c1"># (tambien se podría grabar a un pendrive)</span>
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-20" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-20" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-20"></a>mkisofs<span class="w"> </span>-o<span class="w"> </span>bootcd.iso<span class="w"> </span>-b<span class="w"> </span>FDOEM.144<span class="w"> </span>FDOEM.144
+<a id="rest_code_67e76b18912b447fbfc2ee2e6de39be6-21" name="rest_code_67e76b18912b447fbfc2ee2e6de39be6-21" href="#rest_code_67e76b18912b447fbfc2ee2e6de39be6-21"></a>cdrecord<span class="w"> </span>-v<span class="w"> </span>bootcd.iso
 </pre></div>
 <p>Reinciar, bootear el CD de FreeDOS y ejecutar:</p>
 <pre class="literal-block">afudos /i1011.rom</pre>
@@ -205,7 +205,7 @@ es usar <a class="reference external" href="http://www.freedos.org/">FreeDOS</a>
 
 
         </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
-            Contents © 2025         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2026         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
