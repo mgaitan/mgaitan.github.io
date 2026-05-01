@@ -7,6 +7,7 @@
 .. link:
 .. description: Una arquitectura simple para publicar un único sitio de documentación a partir de fuentes mantenidas en múltiples repositorios.
 .. type: text
+.. status: draft
 -->
 
 En varios equipos aparece tarde o temprano el mismo problema: la documentación técnica está repartida entre repositorios distintos, pero el destino natural para publicarla es un solo sitio coherente.
