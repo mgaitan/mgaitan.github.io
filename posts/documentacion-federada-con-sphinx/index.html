@@ -18,7 +18,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
 <link rel="canonical" href="https://mgaitan.github.io/posts/documentacion-federada-con-sphinx/">
 <!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
-<meta name="robots" content="noindex">
+<link rel="prev" href="../lobstersgram-cliente-rapido-lobsters/" title="Lobstersgram, un cliente rápido de lobste.rs en Telegram" type="text/html">
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="Una arquitectura de documentación federada con Sphinx ">
 <meta property="og:url" content="https://mgaitan.github.io/posts/documentacion-federada-con-sphinx/">
@@ -32,6 +32,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta property="article:tag" content="sphinx">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator:id" content="40654511">
+<link rel="alternate" hreflang="en" href="../../en/posts/federated-documentation-with-sphinx/">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -101,18 +102,22 @@ navbar-light bg-light
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2026-04-28T01:26:03-03:00" itemprop="datePublished" title="2026-04-28 01:26">2026-04-28 01:26</time></a>
             </p>
-                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/documentacion-federada-con-un-unico-deploy.html">Comentarios</a>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/documentacion-federada-con-sphinx.html">Comentarios</a>
 
 
             
         </p>
 </div>
-        
+                <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+                <p><a href="../../en/posts/federated-documentation-with-sphinx/" rel="alternate" hreflang="en">English</a></p>
+        </div>
+
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>En varios equipos aparece tarde o temprano el mismo problema: la documentación técnica está repartida entre repositorios distintos, pero el destino natural para publicarla es un solo sitio coherente.</p>
-<p>Un proyecto central puede tener su propia documentación de desarrollo, pero además depender de guías operativas, manuales de infraestructura o documentación de integraciones que viven en otros repositorios y son mantenidas por otros equipos.</p>
-<p>La pregunta es cómo publicar todo eso junto, sin obligar a centralizar también las fuentes.</p>
-<p>La idea que estuvimos implementando estos días en <a href="https://www.fierro.com.ar/">Fierro</a> es bastante simple: <strong>un único sitio publicado, construido por un único repositorio, a partir de fuentes mantenidas en varios repos</strong>.</p>
+<p>Un proyecto central puede tener su propia documentación de desarrollo, pero además depender de guías operativas, manuales de infraestructura o documentación de integraciones que viven en otros repositorios y muchas veces son mantenidas por diferentes equipos.</p>
+<p>La pregunta es cómo publicar todo eso junto, con coherencia y navegabilidad, sin obligar a centralizar también las fuentes.</p>
+<p>La idea que estuvimos implementando estos días en <a href="https://www.fierro.com.ar/">Fierro</a> es bastante simple: <strong>un único sitio publicado, construido con sphinx desde un repositorio principal, pero a partir de fuentes mantenidas en varios repos</strong>.</p>
 <!-- TEASER_END -->
 
 <h3>El escenario</h3>
@@ -128,16 +133,16 @@ navbar-light bg-light
 </ul>
 <p>¿Por qué esta separación de fuentes?  Muchas veces la mantienen distintos equipos
 pero también es más útil cuando se consume directamente desde el fuente (por humanos o por agentes, leyendo markdown) que esté "al lado" del código. </p>
-<p>No obstante, para leer "más bonito", generar otros formatos y crossreferenciar (más sobre esto abajo) queremos que el sitio final siga siendo uno solo, con una única publicación y un único dominio.</p>
+<p>No obstante, para leer "más bonito", generar otros formatos y cross-referenciar (más sobre esto abajo) queremos que el sitio final siga siendo uno solo, con una única publicación y un único dominio.</p>
 <h3>La propuesta</h3>
-<p>En vez de compilar cada repo por separado y luego tratar de "pegar" HTMLs, el enfoque más limpio es ensamblar todo al nivel de las fuentes. La arquitectura quedaría así </p>
+<p>En vez de compilar cada repo por separado y luego tratar de "pegar" HTMLs, el enfoque más limpio es ensamblar todo al nivel de las fuentes. </p>
 <p>En el ejemplo  <code>core-app</code> sigue siendo el ensamblador y publisher del sitio completo. <code>ops-infra</code> y <code>store-connectors</code> mantienen sólo sus propias fuentes de documentación y en cada build de documentación de <code>core-app</code>, el workflow hace checkout de esos repos externos y monta sus <code>docs/</code> dentro del árbol que Sphinx va a compilar. Es decir: las fuentes son distribuidas, pero la publicación es centralizada.</p>
 <h3>Por qué no compilar cada repo por separado</h3>
 <p>Una alternativa tentadora es que cada repo genere su propio HTML y luego el repo principal junte "sitios ya cocinados".</p>
 <p>El problema es que en ese esquema se mezclan artefactos ya construidos en lugar de trabajar con las fuentes, la navegación integrada se vuelve más incómoda, los links relativos quedan más frágiles y sostener un theme y una estructura comunes pasa a ser bastante más difícil. Además, se duplican decisiones de build que, si de verdad queremos un único sitio, deberían estar concentradas en un solo lugar.</p>
 <p>Si el objetivo es tener <strong>un solo sitio</strong>, entonces tiene sentido hacer <strong>una sola compilación</strong>.</p>
 <h3>Sanidad en los repos externos</h3>
-<p>Que la publicación sea centralizada no implica que los repos externos deban quedar "ciegos". Cada docs/ de cada repo debe seguir pudiendo buildear por separado.  Para eso <code>core-app</code> define placeholders estables dentro de su propio árbol de docs, por ejemplo:</p>
+<p>Que la publicación sea centralizada no implica que los repos externos deban quedar "ciegos". Los <code>docs/</code> de cada repo deben seguir pudiendo buildear por separado, incluyendo el de <code>core-app</code> si no tiene los fuentes externas.  <code>core-app</code> define placeholders estables dentro de su propio árbol de docs, por ejemplo:</p>
 <ul>
 <li><code>docs/operations/</code></li>
 <li><code>docs/integrations/</code></li>
@@ -161,32 +166,27 @@ pero también es más útil cuando se consume directamente desde el fuente (por 
 <li>Si cambia la doc en un repo externo, ese repo puede disparar el workflow de <code>core-app</code> para forzar una nueva publicación del sitio integrado.</li>
 </ol>
 <p>Eso evita una falsa dicotomía entre "publica sólo el repo principal" y "cada repo publica lo suyo".</p>
-<h3>Referencias cruzadas entre repos</h3>
+<h3>Referencias cruzadas</h3>
 <p>Cuando cada repo compila su documentación por separado aparece un problema adicional: los links cruzados.</p>
 <p>Si <code>ops-infra</code> quiere enlazar a un capítulo de <code>core-app</code>, o <code>store-connectors</code> quiere enlazar a una guía operativa, un enlace interno como <code>{ref}</code> o <code>{doc}</code> ya no alcanza porque el build local no tiene las fuentes remotas.</p>
-<p>Ahí <a href="https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html">intersphinx</a> encaja muy bien, pero en la práctica no hace falta que cada repo externo mantenga snapshots propios de otros inventarios. Si el sitio integrado se compila desde el repo principal, ese mismo build puede generar un único <code>objects.inv</code> que ya describe toda la estructura publicada, incluyendo las secciones montadas desde repos externos.</p>
-<p>Eso permite un esquema más simple:</p>
-<ul>
-<li>el repo principal genera y versiona su <code>objects.inv</code>
-</li>
-<li>ese inventario ya contiene también los docnames de las secciones externas integradas</li>
-<li>los repos externos consumen ese único inventario desde el repo principal</li>
-<li>los enlaces cruzados se escriben siempre contra el mismo namespace</li>
-</ul>
+<p>Ahí <a href="https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html">intersphinx</a> encaja muy bien. </p>
+<p>El repo principal genera y versiona su <code>objects.inv</code> (el "inventario" de anchors que usa intersphinx) que está completo ya que contiene también los <code>docnames</code> de las secciones externas integradas</p>
+<p>Los repos externos consumen ese único inventario desde el repo principal y los enlaces cruzados se escriben siempre contra el mismo namespace</p>
 <p>Por ejemplo, en <code>ops-infra</code> se podría tener algo así:</p>
 <div class="code"><pre class="code literal-block"><span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"core-app"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"https://docs.example.org/"</span><span class="p">,</span> <span class="s2">"docs/_intersphinx/core-app.inv"</span><span class="p">),</span>
 <span class="p">}</span>
 </pre></div>
 
-<p>Y después los enlaces se escriben con roles explícitos en MyST, por ejemplo:</p>
+<p>Y después los enlaces se escriben con roles explícitos. En MyST, por ejemplo:</p>
 <div class="code"><pre class="code literal-block">Ver la guia principal en {external+core-app:doc}`architecture/index`.
 
 Para el procedimiento operativo relacionado:
 {external+core-app:doc}`integrations/webhook-retries`.
 </pre></div>
 
-<p>Con esa convención, los repos externos validan referencias contra la estructura real del sitio integrado, no contra builds parciales. Y si el sitio publicado es privado, no pasa nada: durante el build <code>intersphinx</code> usa el archivo local descargado desde el repo principal, mientras que la URL configurada en <code>intersphinx_mapping</code> sólo define a dónde apuntan los links finales.</p>
+<p>Con esa convención, los repos externos validan referencias contra la estructura real del sitio integrado, no contra builds parciales. </p>
+<p>Y si el sitio publicado es privado? No pasa nada: durante el build <code>intersphinx</code> puede usar el archivo local descargado desde el repo principal, mientras que la URL configurada en <code>intersphinx_mapping</code> sólo define a dónde apuntan los links finales.</p>
 <p>En la práctica, eso termina siendo una muy buena propiedad: las referencias cruzadas se validan tanto en los repos externos como en el ensamblado final, y la convención queda uniforme sin necesidad de mantener inventarios cruzados por separado.</p>
 <h3>El flujo en un diagrama</h3>
 <!--
@@ -405,19 +405,12 @@ Para el procedimiento operativo relacionado:
 </pre></div>
 
 <h3>Autenticación entre repos</h3>
-<p>La primera versión de esta arquitectura puede resolverse con un PAT compartido, pero no me parece la mejor parada para sostenerlo.</p>
-<p>Una GitHub App privada de la organización deja el esquema bastante más sano:</p>
-<ul>
-<li>el repo central pide tokens efímeros sólo para leer los repos externos</li>
-<li>cada repo externo pide tokens efímeros sólo para disparar <code>repository_dispatch</code> al repo central</li>
-<li>no hay credenciales persistentes reutilizadas entre repos</li>
-<li>la futura evolución hacia webhooks o automatizaciones propias de la app queda servida</li>
-</ul>
-<p>En este caso alcanza con permisos bastante acotados. Para que <code>core-app</code> pueda hacer checkout de <code>ops-infra</code> y <code>store-connectors</code>, la app necesita permiso de repositorio <code>Contents: Read</code> sobre esos repos. Para que un repo externo pueda disparar <code>POST /repos/{owner}/{repo}/dispatches</code> en <code>core-app</code>, necesita <code>Contents: Write</code> sobre el repo principal.</p>
+<p>Para que un workflow de un repo pueda clonar (parcialmente) otro y disparar workflows, aun cuando sean de la misma org, requiere un token con permisos especiales (no alcanza el <code>GITHUB_TOKEN</code> ). Esto puede resolverse con un Personal Access Token compartido, pero lo más correcto es una GitHub App privada de la organización deja el esquema bastante más sano:</p>
+<p>Para que <code>core-app</code> pueda hacer checkout de <code>ops-infra</code> y <code>store-connectors</code>, la app necesita permiso de repositorio <code>Contents: Read</code> sobre esos repos. Para que un repo externo pueda disparar <code>POST /repos/{owner}/{repo}/dispatches</code> en <code>core-app</code>, necesita <code>Contents: Write</code> sobre el repo principal.</p>
 <p>Crear la app también es bastante directo. En la organización hay que ir a <code>Settings -&gt; Developer settings -&gt; GitHub Apps -&gt; New GitHub App</code>, darle un nombre, dejarla como privada si sólo se va a usar dentro de la org, configurar los permisos mínimos anteriores y luego crearla. Después se genera una private key, se guarda el <code>App ID</code> como variable de Actions, la clave privada como secret, y finalmente se instala la app sólo en los repos que tiene que tocar: <code>core-app</code>, <code>ops-infra</code> y <code>store-connectors</code>, idealmente con selección explícita y no sobre todos los repos de la organización.</p>
 <p>El truco práctico en los workflows sigue siendo simple: guardar <code>APP_ID</code> como variable y la private key como secret, y generar installation tokens en cada job con <code>actions/create-github-app-token</code>.</p>
-<h3>Lo que me gusta de esta idea</h3>
-<p>Me gusta porque resuelve una tensión habitual sin mucha ceremonia:</p>
+<h3>Conclusiones</h3>
+<p>Con esta arquitectura resolvimos una tensión habitual sin mucha ceremonia:</p>
 <ul>
 <li>no fuerza un monorepo documental</li>
 <li>no multiplica sitios</li>
@@ -425,16 +418,6 @@ Para el procedimiento operativo relacionado:
 <li>no obliga a mover ownership de contenido</li>
 </ul>
 <p>Cada equipo conserva su repo, su workflow y su contexto, pero el resultado visible sigue siendo un único portal de documentación.</p>
-<p>Me parece una solución especialmente razonable para organizaciones donde un sistema principal convive con repos satélite de infraestructura, integraciones, tooling o despliegue.</p>
-<h3>El principio de fondo</h3>
-<p>Si varios equipos mantienen capítulos distintos de una misma historia técnica, no hace falta elegir entre "todo junto en un repo" y "todo desparramado en sitios separados".</p>
-<p>Se puede tener:</p>
-<ul>
-<li><strong>fuentes federadas</strong></li>
-<li><strong>build central</strong></li>
-<li><strong>publicación única</strong></li>
-</ul>
-<p>Y, muchas veces, esa combinación es justo el punto de equilibrio que estábamos necesitando.</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/arquitectura/" rel="tag">arquitectura</a></li>
@@ -442,13 +425,18 @@ Para el procedimiento operativo relacionado:
             <li><a class="tag p-category" href="../../categories/docs/" rel="tag">docs</a></li>
             <li><a class="tag p-category" href="../../categories/github-actions/" rel="tag">github-actions</a></li>
             <li><a class="tag p-category" href="../../categories/sphinx/" rel="tag">sphinx</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../lobstersgram-cliente-rapido-lobsters/" rel="prev" title="Lobstersgram, un cliente rápido de lobste.rs en Telegram">Post anterior</a>
+            </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
                     <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
             disqus_url="https://mgaitan.github.io/posts/documentacion-federada-con-sphinx/",
         disqus_title="Una arquitectura de documentaci\u00f3n federada con Sphinx ",
-        disqus_identifier="cache/posts/documentacion-federada-con-un-unico-deploy.html",
+        disqus_identifier="cache/posts/documentacion-federada-con-sphinx.html",
         disqus_config = function () {
             this.language = "es_ES";
         };
