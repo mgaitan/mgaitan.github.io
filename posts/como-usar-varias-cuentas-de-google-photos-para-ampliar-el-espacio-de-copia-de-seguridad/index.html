@@ -5,7 +5,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Creando un nuevo proyecto Python | tin_nqn</title>
+<title>Cómo usar varias cuentas de Google Photos para ampliar el espacio de copia de seguridad | tin_nqn</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
 <link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
@@ -15,21 +15,17 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
-<link rel="canonical" href="https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/">
+<link rel="canonical" href="https://mgaitan.github.io/posts/como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad/">
 <!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
-<link rel="prev" href="../migrando-issues-entre-proyectos-de-bitbucket/" title="Migrando issues entre proyectos de Bitbucket" type="text/html">
-<link rel="next" href="../metiendose-cosas-en-la-nariz/" title="Metiéndose cosas en la nariz" type="text/html">
+<link rel="prev" href="../documentacion-federada-con-sphinx/" title="Una arquitectura de documentación federada con Sphinx " type="text/html">
 <meta property="og:site_name" content="tin_nqn">
-<meta property="og:title" content="Creando un nuevo proyecto Python">
-<meta property="og:url" content="https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/">
-<meta property="og:description" content="¿Así que querés comenzar un nuevo proyecto usando Python?
-¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
-proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
-no se">
+<meta property="og:title" content="Cómo usar varias cuentas de Google Photos para ampliar el espacio de c">
+<meta property="og:url" content="https://mgaitan.github.io/posts/como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad/">
+<meta property="og:description" content="En El termo, un cuento que publiqué en mi otro blog, decía:
+
+Mi viejo lleva el termo en las manos. Lo quiero, lo deseo, pero no lo necesito en absoluto. Siento un placer que acepto tonto en encontrar ">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2012-11-12T00:34:23-03:00">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="tutorial">
+<meta property="article:published_time" content="2026-07-23T09:50:40-03:00">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator:id" content="40654511">
 </head>
@@ -91,7 +87,7 @@ navbar-light bg-light
     <div class="body-content">
         <!--Body content-->
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Creando un nuevo proyecto Python</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Cómo usar varias cuentas de Google Photos para ampliar el espacio de copia de seguridad</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -99,9 +95,9 @@ navbar-light bg-light
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2012-11-12T00:34:23-03:00" itemprop="datePublished" title="2012-11-12 00:34">2012-11-12 00:34</time></a>
+            <time class="published dt-published" datetime="2026-07-23T09:50:40-03:00" itemprop="datePublished" title="2026-07-23 09:50">2026-07-23 09:50</time></a>
             </p>
-                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/creando-un-nuevo-proyecto-python.html">Comentarios</a>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad.html">Comentarios</a>
 
 
             
@@ -109,128 +105,145 @@ navbar-light bg-light
 </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>¿Así que querés comenzar un nuevo proyecto usando Python?
-¡Felicitaciones! ¿Querés que tenga la estructura recomendada para
-proyectos modernos? ¿Querés que sea instalable fácilmente? ¿Querés que
-no se te arme lio de dependencias que colisionan con las de otros
-proyectos ? Bien, te propongo esta receta.</p>
-<section id="las-herramientas"><h2>Las herramientas</h2>
-<ul class="simple">
-<li><p><a class="reference external" href="http://www.virtualenv.org">Virtualenv</a>:  es una herramienta para aislar tu entorno de
-desarrollo python. Es muy pero muy útil para evitar conflictos entre las
-dependencias de tus distintos proyectos.</p></li>
-<li><p><a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper/">virtualenvwrapper</a>: es un conjunto de extensiones que
-hacen la vida del usuario <em>virtualenv</em> aun más feliz, permitiendo crear
-y borrar entornos virtuales, asociarlos a un proyecto, automatizar
-tareas al activar o desactivar uno, etc.</p></li>
-<li><p><a class="reference external" href="http://www.pip-installer.org">pip</a>: es la herramienta moderna, correcta y recomendada
-para administrar los paquetes python instalados en tu
-sistema/virtualenv. Es un reemplazo de <em>easy_install</em></p></li>
-<li><p><a class="reference external" href="http://packages.python.org/distribute/">Distribute</a>: es la herramienta moderna y recomendada para
-distribuir tu paquete python. Es un fork de <em>setuptools</em> (que es, a su
-vez, una mejora sobre el módulo estándar <em>distutils</em>)</p></li>
-<li><p><a class="reference external" href="https://github.com/stumitchell/skeleton">skeleton</a> es una herramienta que define <em>plantillas</em>
-para iniciar un proyecto, generando la estructura básica necesaria. Es
-similar a <a class="reference external" href="http://python.org.ar/pyar/PasteScript">PasteScript</a> pero enfocado en esta
-tarea concreta, sin dependencias y compatible con Python 3.x</p></li>
-</ul></section><section id="la-receta"><h2>La receta</h2>
-<ol class="arabic">
-<li>
-<p>Instalá pip:</p>
-<pre class="literal-block">$ sudo apt-get install python-pip</pre>
-<p>o bien directamente:</p>
-<pre class="literal-block">$ sudo curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python</pre>
-</li>
-<li>
-<p>Instalá virtualenwrapper y skeleton:</p>
-<pre class="literal-block">$ sudo pip install virtualenwrapper
-$ sudo pip install git+git://github.com/stumitchell/skeleton.git#egg=skeleton</pre>
-</li>
-</ol>
-<aside class="admonition note"><p class="admonition-title">Nota</p>
-<p>Notar que <em>skeleton</em> se está instalando desde un <em>fork</em> del proyecto
-original (aparentemente desmantenida), que resuelve bugs importantes</p>
-</aside><ol class="arabic" start="3">
-<li>
-<p>Configurá virtualenvwrapper</p>
-<div class="code"><pre class="code bash"><a id="rest_code_cd5b158b8aee4fb7b431de37ac42cc3b-1" name="rest_code_cd5b158b8aee4fb7b431de37ac42cc3b-1" href="#rest_code_cd5b158b8aee4fb7b431de37ac42cc3b-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.virtualenvs<span class="w">           </span><span class="c1"># acá se van a guardar tus entornos virtuales</span>
-<a id="rest_code_cd5b158b8aee4fb7b431de37ac42cc3b-2" name="rest_code_cd5b158b8aee4fb7b431de37ac42cc3b-2" href="#rest_code_cd5b158b8aee4fb7b431de37ac42cc3b-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/proyectos<span class="w">              </span><span class="c1"># acá se van a guardar tus proyectos</span>
-<a id="rest_code_cd5b158b8aee4fb7b431de37ac42cc3b-3" name="rest_code_cd5b158b8aee4fb7b431de37ac42cc3b-3" href="#rest_code_cd5b158b8aee4fb7b431de37ac42cc3b-3"></a>$<span class="w"> </span>mkdir<span class="w"> </span>~/.pip_download_cache<span class="w">     </span><span class="c1"># para no bajar paquetes cada vez</span>
-</pre></div>
-<p>Luego editá tu <code class="docutils literal"><span class="pre">~/.bashrc</span></code> agregando las siguientes líneas</p>
-<div class="code"><pre class="code bash"><a id="rest_code_88adfcff72944c76a64088680a29efde-1" name="rest_code_88adfcff72944c76a64088680a29efde-1" href="#rest_code_88adfcff72944c76a64088680a29efde-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<a id="rest_code_88adfcff72944c76a64088680a29efde-2" name="rest_code_88adfcff72944c76a64088680a29efde-2" href="#rest_code_88adfcff72944c76a64088680a29efde-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/proyectos
-<a id="rest_code_88adfcff72944c76a64088680a29efde-3" name="rest_code_88adfcff72944c76a64088680a29efde-3" href="#rest_code_88adfcff72944c76a64088680a29efde-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VIRTUALENV_DISTRIBUTE</span><span class="o">=</span><span class="nb">true</span>
-<a id="rest_code_88adfcff72944c76a64088680a29efde-4" name="rest_code_88adfcff72944c76a64088680a29efde-4" href="#rest_code_88adfcff72944c76a64088680a29efde-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PIP_DOWNLOAD_CACHE</span><span class="o">=</span><span class="nv">$HOME</span>/.pip_download_cache
-<a id="rest_code_88adfcff72944c76a64088680a29efde-5" name="rest_code_88adfcff72944c76a64088680a29efde-5" href="#rest_code_88adfcff72944c76a64088680a29efde-5"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
-</pre></div>
-<p>y recargá tus cambios:</p>
-<pre class="literal-block">$ source ~/.bashrc</pre>
-</li>
-<li>
-<p>Inicializá tu proyecto. Por ejemplo el proyecto <em>zaraza</em></p>
-<pre class="literal-block">$ mkproject -t package zaraza</pre>
-<p>Se te solicitarán algunos datos (nombre del proyecto, autor,
-licencia, etc.) y ¡(casi) listo! Estarás trabajando en tu proyecto
-<em>zaraza</em>. Tu prompt se verá así</p>
-<pre class="literal-block">(zaraza)tin@morocha:~/proyectos/zaraza$</pre>
-<p>¿Qué sucedió? Se creó un directorio <code class="docutils literal">~/proyectos/zaraza</code> para tu
-proyecto, asociado a un virtualenv ubicado en <code class="docutils literal"><span class="pre">~/.virtualenvs/zaraza</span></code>.
-<strong>skeleton</strong> automáticamente creó una estructura básica de
-paquete python en <code class="docutils literal">~/proyectos/zaraza/src</code> incluyendo un <code class="docutils literal">setup.py</code>
-basado en <em>distribute</em>.</p>
-</li>
-<li>
-<p>Instalá tu paquete en el virtualenv, para poder importarlo desde
-cualquier lado:</p>
-<pre class="literal-block">(zaraza) $ cd  ~/proyectos/zaraza/src
-(zaraza) $ pip install -e .</pre>
-<p>Esto agrega el directorio de desarrollo de tu proyecto al PYTHONPATH
-del virtualenv, de modo que puedes importar <em>zaraza</em> desde cualquier
-lado dentro del virtualenv (por ejemplo, cuando hagas una carpeta
-<em>src/test</em> al nivel de '/src/zaraza'</p>
-</li>
-</ol></section><section id="y-ahora"><h2>¿Y ahora?</h2>
-<p>Cada vez que quieras trabajar en tu proyecto <em>zaraza</em> ejecutás:</p>
-<pre class="literal-block">$ workon zaraza</pre>
-<p>Para salir del virtualenv:</p>
-<pre class="literal-block">(zaraza) $ deactivate</pre>
-</section><section id="algunos-tips-mas-a-modo-de-despedida"><h2>Algunos tips más a modo de despedida</h2>
-<p>Virtualenwrapper es totalmente hookeable y extensible. Esta receta
-propone usar <em>skeleton</em> (que funciona como plugin de
-<a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.project/">virtualenvwrapper.project</a>)
-para crear una estructura de paquete estándar básica, pero hay plugins
-para proyectos más específicos. Por ejemplo
-<a class="reference external" href="http://www.doughellmann.com/projects/virtualenvwrapper.django/">virtualenwrapper.django</a></p>
-<p>El comando <code class="docutils literal">mkproject</code> es un wrapper sobre el
-comando principal de virtualenvwrapper <code class="docutils literal">mkvirtualenv</code>, que acepta muchos
-parámetros opcionales. Ejecutá <code class="docutils literal">mkproject_help</code> o <code class="docutils literal">mkvirtualenv <span class="pre">--help</span></code>
-para saber más.</p>
-<p>Y ya sabés ...</p>
-<figure class="align-center"><img alt="http://python-distribute.org/pip_distribute.png" src="http://python-distribute.org/pip_distribute.png"></figure><hr class="docutils">
+    <p>En <a href="https://textosypretextos.pages.dev/blog/el-termo/">El termo</a>, un cuento que publiqué en mi otro blog, decía:</p>
 <blockquote>
-<p>Este artículo lo escribí originalmente para el <a class="reference external" href="http://python.org.ar/pyar/Recetario">Recetario de PyAr</a></p>
+<p>Mi viejo lleva el termo en las manos. Lo quiero, lo deseo, pero no lo necesito en absoluto. Siento un placer que acepto tonto en encontrar cosas o recuperarlas. Claro que me resulta más tranquilizador y satisfactorio cuando es evidente que fue un despojo deliberado, como esa vez que recogí dos valijas impecables (sólo debí cambiarles una rueda) en una vereda de Oxford. La ecología que abrazamos los ratas: gustar de las mercancías sin tener que pagarlas; consumir, pero si son sobras en oferta; capitalismo, pero sólo la puntita porque duele. Podría pedir el termo ahora mismo desde el celular y el señor Bezos en persona me lo llevaría en su camioncito Prime mañana a primera hora, pero no tendría gracia alguna. Y cuántos litros de combustible que ha de gastar ese hombre, ¿cierto?</p>
 </blockquote>
-</section>
-</div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
-            <li><a class="tag p-category" href="../../categories/tutorial/" rel="tag">tutorial</a></li>
-        </ul>
-<ul class="pager hidden-print">
+<p>Soy esa especie de <a href="https://es.wikipedia.org/wiki/Friganismo">frigano</a> tercermundista con particular enconno con las corpo, cuyos productos igual usufructo. Pero me resisto a darles un mango de más. </p>
+<p>Aquí uno de mis hacks ratas.</p>
+<!-- TEASER_END -->
+
+<h3>Backupear fotos en Google sin ponerla</h3>
+<p>Google Photos permite configurar una sola cuenta como destino activo de la copia de seguridad en cada dispositivo Android. Sin embargo, es posible distribuir las fotos entre varias cuentas de Google y compartirlas todas con una cuenta principal.</p>
+<p>Por ejemplo, se puede utilizar una estructura como esta:</p>
+<ul>
+<li>
+<code>gaitan@...</code>: cuenta principal, desde la que se consultan todas las fotos.</li>
+<li>
+<code>gaitan.archivo@...</code>: primera cuenta de almacenamiento.</li>
+<li>
+<code>gaitan.archivo2@...</code>: segunda cuenta de almacenamiento.</li>
+<li>
+<code>gaitan.archivo3@...</code>: tercera cuenta de almacenamiento.</li>
+</ul>
+<p>Cada cuenta secundaria utiliza su propio espacio gratuito de Google. Cuando una se llena, se cambia manualmente la cuenta utilizada para las nuevas copias de seguridad.</p>
+<h3>Cómo funciona</h3>
+<p>La configuración combina dos funciones de Google Photos:</p>
+<ol>
+<li>Una cuenta secundaria se utiliza para hacer la copia de seguridad de las fotos del teléfono.</li>
+<li>Esa cuenta comparte automáticamente todas sus fotos con la cuenta principal mediante la función <strong>Compartir con colaborador</strong>.</li>
+</ol>
+<p>De esta manera, las fotos quedan almacenadas en las distintas cuentas secundarias, pero aparecen juntas en la biblioteca de la cuenta principal.</p>
+<p>Google Photos no cambia automáticamente de cuenta cuando se agota el espacio. Cuando una cuenta se llena, es necesario seleccionar manualmente otra cuenta como destino de la copia de seguridad.</p>
+<h3>1. Agregar la nueva cuenta a Android</h3>
+<p>Abrir los ajustes del teléfono y entrar en:</p>
+<p><strong>Ajustes → Contraseñas y cuentas → Añadir cuenta → Google</strong></p>
+<p>La ruta puede variar según la marca del teléfono. También puede aparecer como:</p>
+<ul>
+<li><strong>Ajustes → Cuentas</strong></li>
+<li><strong>Ajustes → Usuarios y cuentas</strong></li>
+<li><strong>Ajustes → Administrar cuentas</strong></li>
+</ul>
+<p>Iniciar sesión con la nueva cuenta, por ejemplo:</p>
+<p><code>gaitan.archivo3@...</code></p>
+<p>Es importante agregarla al perfil personal de Android. Si se agrega dentro de un perfil de trabajo, una Carpeta Segura, un segundo espacio o un usuario diferente, la aplicación principal de Google Photos podría no verla.</p>
+<h3>2. Hacer que la cuenta aparezca en Google Photos</h3>
+<p>Abrir Google Photos y tocar la imagen de perfil, en la esquina superior derecha.</p>
+<p>Después:</p>
+<ol>
+<li>Tocar la flecha situada junto al correo electrónico actual.</li>
+<li>Buscar la nueva cuenta.</li>
+<li>Cambiar temporalmente a esa cuenta.</li>
+<li>Esperar unos segundos para que Google Photos la inicialice.</li>
+</ol>
+<p>Luego entrar en:</p>
+<p><strong>Foto de perfil → Configuración de Fotos → Copia de seguridad</strong></p>
+<p>La nueva cuenta debería aparecer como opción para la copia de seguridad.</p>
+<p>Si no aparece, probar lo siguiente:</p>
+<ol>
+<li>Cerrar completamente Google Photos y volver a abrirlo.</li>
+<li>Comprobar que la cuenta figure en los ajustes de cuentas de Android.</li>
+<li>Verificar que la sincronización de la cuenta esté habilitada.</li>
+<li>Actualizar Google Photos desde Play Store.</li>
+<li>Ir a <strong>Ajustes → Aplicaciones → Google Photos → Almacenamiento</strong> y borrar solamente la caché.</li>
+</ol>
+<p>No es recomendable borrar los datos de la aplicación como primera medida.</p>
+<h3>3. Cambiar la cuenta de copia de seguridad</h3>
+<p>Dentro de Google Photos, entrar en:</p>
+<p><strong>Foto de perfil → Configuración de Fotos → Copia de seguridad</strong></p>
+<p>Buscar la opción correspondiente a la cuenta utilizada para la copia de seguridad y seleccionar la nueva cuenta.</p>
+<p>Solo puede haber una cuenta de copia de seguridad activa a la vez.</p>
+<p>Antes de cambiarla, conviene comprobar que la cuenta anterior indique:</p>
+<p><strong>Copia de seguridad completa</strong></p>
+<p>También es recomendable revisar:</p>
+<ul>
+<li>La calidad de la copia de seguridad.</li>
+<li>Las carpetas del dispositivo incluidas.</li>
+<li>La copia de seguridad de WhatsApp, capturas de pantalla y otras carpetas.</li>
+<li>El espacio disponible en la nueva cuenta.</li>
+</ul>
+<h3>4. Compartir todas las fotos con la cuenta principal</h3>
+<p>Con la nueva cuenta secundaria seleccionada en Google Photos, entrar en:</p>
+<p><strong>Foto de perfil → Configuración de Fotos → Compartir → Compartir con colaborador</strong></p>
+<p>Seleccionar:</p>
+<ul>
+<li>La cuenta principal como destinataria.</li>
+<li>La opción para compartir todas las fotos.</li>
+<li>Una fecha de inicio, si fuera necesaria.</li>
+</ul>
+<p>Por ejemplo:</p>
+<p><code>gaitan.archivo3@...</code> comparte todas las fotos con <code>gaitan@...</code>.</p>
+<p>Después hay que abrir Google Photos con la cuenta principal, aceptar la invitación y activar la opción:</p>
+<p><strong>Guardar en tu cuenta → Todas las fotos</strong></p>
+<p>Así, las fotos almacenadas en la cuenta secundaria también aparecerán en la biblioteca principal.</p>
+<h3>5. Evitar que se vuelvan a subir todas las fotos del teléfono</h3>
+<p>Al cambiar la cuenta de copia de seguridad, Google Photos puede detectar como pendientes todas las imágenes que todavía estén físicamente almacenadas en el dispositivo.</p>
+<p>Esto puede provocar que la nueva cuenta se llene con copias de fotos que ya estaban respaldadas en la cuenta anterior.</p>
+<p>Para reducir ese riesgo:</p>
+<ol>
+<li>Confirmar que la cuenta anterior tenga la copia de seguridad completa.</li>
+<li>Verificar algunas fotos desde la versión web de Google Photos.</li>
+<li>Usar la función <strong>Liberar espacio en este dispositivo</strong> desde la cuenta anterior.</li>
+<li>Cambiar la copia de seguridad a la nueva cuenta.</li>
+<li>Sacar una foto de prueba.</li>
+<li>Comprobar que aparezca en la cuenta secundaria y en la principal.</li>
+</ol>
+<p>No se deben eliminar las fotos del teléfono antes de verificar que la copia de seguridad anterior esté completa.</p>
+<h3>6. Qué sucede cuando una cuenta se llena</h3>
+<p>Cuando la cuenta secundaria se queda sin espacio:</p>
+<ol>
+<li>Google Photos deja de realizar nuevas copias de seguridad.</li>
+<li>Las fotos anteriores continúan almacenadas en esa cuenta.</li>
+<li>Hay que agregar otra cuenta de Google.</li>
+<li>Se configura esa nueva cuenta como destino de las próximas copias.</li>
+<li>Se activa nuevamente <strong>Compartir con colaborador</strong> hacia la cuenta principal.</li>
+</ol>
+<p>La cuenta anterior no debería eliminarse, porque sigue siendo la propietaria de las fotografías que se guardaron allí.</p>
+<p>Con esta configuración, cada cuenta secundaria almacena una parte de las fotografías:</p>
+<ul>
+<li>
+<code>gaitan.archivo@...</code>: fotos más antiguas.</li>
+<li>
+<code>gaitan.archivo2@...</code>: siguiente período.</li>
+<li>
+<code>gaitan.archivo3@...</code>: fotos nuevas.</li>
+<li>
+<code>gaitan@...</code>: biblioteca principal donde se visualizan todas.</li>
+</ul>
+<p>Desde la cuenta principal es posible consultar las fotos compartidas, realizar búsquedas, ver recuerdos y navegar por la biblioteca sin tener que cambiar constantemente de cuenta.</p>
+<p>La principal limitación es que el cambio entre cuentas de copia de seguridad no es automático. Cada vez que una cuenta se llena, hay que configurar manualmente la siguiente.</p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
-                <a href="../migrando-issues-entre-proyectos-de-bitbucket/" rel="prev" title="Migrando issues entre proyectos de Bitbucket">Post anterior</a>
-            </li>
-            <li class="next">
-                <a href="../metiendose-cosas-en-la-nariz/" rel="next" title="Metiéndose cosas en la nariz">Siguiente post</a>
+                <a href="../documentacion-federada-con-sphinx/" rel="prev" title="Una arquitectura de documentación federada con Sphinx ">Post anterior</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
                     <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nqnwebs",
-            disqus_url="https://mgaitan.github.io/posts/creando-un-nuevo-proyecto-python/",
-        disqus_title="Creando un nuevo proyecto Python",
-        disqus_identifier="cache/posts/creando-un-nuevo-proyecto-python.html",
+            disqus_url="https://mgaitan.github.io/posts/como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad/",
+        disqus_title="C\u00f3mo usar varias cuentas de Google Photos para ampliar el espacio de copia de seguridad",
+        disqus_identifier="cache/posts/como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad.html",
         disqus_config = function () {
             this.language = "es_ES";
         };
