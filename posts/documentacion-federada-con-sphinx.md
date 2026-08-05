@@ -2,6 +2,7 @@
 .. title: Una arquitectura de documentación federada con Sphinx 
 .. slug: documentacion-federada-con-sphinx
 .. date: 2026-04-28 01:26:03 UTC-03:00
+.. updated: 2026-08-05 15:45:00 UTC-03:00
 .. tags: docs, sphinx, github-actions, arquitectura, devops
 .. category: development
 .. link:
@@ -64,6 +65,113 @@ Después Sphinx corre una sola vez sobre ese árbol combinado.
 Eso permite que cada equipo itere sobre sus fuentes con feedback rápido, sin depender de correr el pipeline completo del sitio integrado para saber si algo básico se rompió.
 
 La publicación final, sin embargo, sigue ocurriendo sólo desde `core-app`.
+
+## Cuidar la jerarquía del sidebar
+
+Hay un detalle que aparece recién cuando la documentación federada empieza a
+crecer: la navegación también necesita una única fuente de verdad.
+
+Si `operations/index.md` ya se titula `Operations`, este árbol en el repo
+central agrega un nivel visual que no representa una página:
+
+````md
+```{toctree}
+:caption: Operations
+
+operations/index.md
+```
+````
+
+Muchos themes lo muestran como `Operations → Operations → ...`: primero la
+caption y después el documento raíz. Algo parecido ocurre si el índice externo
+ya incluye `operations/runbooks/index.md` y el índice central vuelve a incluir
+ese documento por separado: `Runbooks` aparece dos veces y Sphinx además debe
+elegir uno de dos padres posibles.
+
+La regla que terminó funcionando bien es simple:
+
+- el repo central incluye cada raíz federada exactamente una vez y sin caption
+- cada `index` externo es dueño de su propio subárbol
+- el manifiesto central también define cuáles documentos son raíces visuales
+
+El índice central queda deliberadamente aburrido:
+
+````md
+```{toctree}
+:maxdepth: 2
+
+operations/index.md
+```
+
+```{toctree}
+:maxdepth: 2
+
+integrations/index.md
+```
+````
+
+Algunos themes agrupan visualmente los `toctree` sin caption con la sección
+anterior. Para mantener las raíces como enlaces reales —sin volver a introducir
+una caption duplicada— se pueden marcar los documentos declarados en el
+manifiesto cuando Sphinx termina de construir el environment:
+
+```python
+import tomllib
+from pathlib import Path
+
+from docutils import nodes
+
+DOCS_DIR = Path(__file__).parent
+
+
+def federated_docnames():
+    with (DOCS_DIR / "external_docs.toml").open("rb") as manifest:
+        sources = tomllib.load(manifest).get("source", [])
+
+    return {
+        f"{source['mount_path'].strip('/')}/{source.get('index', 'index').strip('/')}"
+        for source in sources
+    }
+
+
+def mark_federated_roots(_app, env):
+    for docname in federated_docnames():
+        toc = env.tocs.get(docname)
+        if toc is None:
+            continue
+
+        for reference in toc.findall(nodes.reference):
+            if reference.get("refuri") == docname and not reference.get("anchorname"):
+                if "federated-root" not in reference["classes"]:
+                    reference["classes"].append("federated-root")
+                break
+
+
+def setup(app):
+    app.connect("env-updated", mark_federated_roots)
+```
+
+Y en `conf.py` se registra una hoja de estilos:
+
+```python
+html_css_files = ["federated-nav.css"]
+```
+
+```css
+.bd-sidebar-primary a.federated-root {
+    color: var(--pst-color-text-base);
+    display: block;
+    font-weight: 600;
+}
+
+.bd-sidebar-primary li:has(> a.federated-root) {
+    margin-top: 1rem;
+}
+```
+
+Así la raíz sigue siendo una página navegable, sus hijos siguen viniendo del
+repo que los mantiene y sumar otro repositorio al manifiesto no requiere
+hardcodear su ruta en el CSS.
 
 ## Disparos del pipeline
 

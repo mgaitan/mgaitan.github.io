@@ -2,6 +2,7 @@
 .. title: A federated documentation architecture with Sphinx
 .. slug: federated-documentation-with-sphinx
 .. date: 2026-04-28 01:26:03 UTC-03:00
+.. updated: 2026-08-05 15:45:00 UTC-03:00
 .. tags: docs, sphinx, github-actions, architecture, devops
 .. category: development
 .. link:
@@ -63,6 +64,113 @@ Then Sphinx runs once over the combined tree.
 This lets each team iterate on their sources with fast feedback, without needing to run the full integrated site pipeline to know if something basic broke.
 
 Final publication, however, still happens only from `core-app`.
+
+## Keeping the sidebar hierarchy clean
+
+There is one detail that only becomes apparent as federated documentation
+grows: navigation also needs a single source of truth.
+
+If `operations/index.md` is already titled `Operations`, this tree in the main
+repo adds a visual level that does not represent a page:
+
+````md
+```{toctree}
+:caption: Operations
+
+operations/index.md
+```
+````
+
+Many themes render it as `Operations → Operations → ...`: first the caption,
+then the root document. A similar problem occurs when the external index
+already includes `operations/runbooks/index.md` and the main index includes
+that document again: `Runbooks` appears twice, and Sphinx must choose between
+two possible parents.
+
+The rule that worked well for us is simple:
+
+- the main repo includes every federated root exactly once and without a caption
+- each external `index` owns its own subtree
+- the main manifest also defines which documents are visual roots
+
+The main index stays deliberately boring:
+
+````md
+```{toctree}
+:maxdepth: 2
+
+operations/index.md
+```
+
+```{toctree}
+:maxdepth: 2
+
+integrations/index.md
+```
+````
+
+Some themes visually group uncaptioned toctrees with the previous section. To
+keep the roots as real links — without reintroducing a duplicate caption — the
+documents declared in the manifest can be marked after Sphinx finishes
+building the environment:
+
+```python
+import tomllib
+from pathlib import Path
+
+from docutils import nodes
+
+DOCS_DIR = Path(__file__).parent
+
+
+def federated_docnames():
+    with (DOCS_DIR / "external_docs.toml").open("rb") as manifest:
+        sources = tomllib.load(manifest).get("source", [])
+
+    return {
+        f"{source['mount_path'].strip('/')}/{source.get('index', 'index').strip('/')}"
+        for source in sources
+    }
+
+
+def mark_federated_roots(_app, env):
+    for docname in federated_docnames():
+        toc = env.tocs.get(docname)
+        if toc is None:
+            continue
+
+        for reference in toc.findall(nodes.reference):
+            if reference.get("refuri") == docname and not reference.get("anchorname"):
+                if "federated-root" not in reference["classes"]:
+                    reference["classes"].append("federated-root")
+                break
+
+
+def setup(app):
+    app.connect("env-updated", mark_federated_roots)
+```
+
+Then register a stylesheet in `conf.py`:
+
+```python
+html_css_files = ["federated-nav.css"]
+```
+
+```css
+.bd-sidebar-primary a.federated-root {
+    color: var(--pst-color-text-base);
+    display: block;
+    font-weight: 600;
+}
+
+.bd-sidebar-primary li:has(> a.federated-root) {
+    margin-top: 1rem;
+}
+```
+
+This keeps the root as a navigable page, keeps its children owned by the repo
+that maintains them, and lets new repositories be added to the manifest
+without hard-coding their paths in CSS.
 
 ## Pipeline triggers
 
