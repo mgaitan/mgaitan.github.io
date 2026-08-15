@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Una memoria agentica para encontrar, ordenar y cuidar las cosas del taller, la biblioteca y el mundo físico.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quilombo: agentes para organizar la vida real | tin_nqn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../en/rss.xml">
+<link rel="canonical" href="https://mgaitan.github.io/posts/quilombo-agentes-para-organizar-la-vida-real/">
+<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="author" content="Martín Gaitán">
+<link rel="prev" href="../como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad/" title="Cómo usar varias cuentas de Google Photos para ampliar el espacio de copia de seguridad" type="text/html">
+<meta property="og:site_name" content="tin_nqn">
+<meta property="og:title" content="Quilombo: agentes para organizar la vida real">
+<meta property="og:url" content="https://mgaitan.github.io/posts/quilombo-agentes-para-organizar-la-vida-real/">
+<meta property="og:description" content="Una memoria agentica para encontrar, ordenar y cuidar las cosas del taller, la biblioteca y el mundo físico.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-08-15T12:06:35-03:00">
+<meta property="article:tag" content="agentes">
+<meta property="article:tag" content="django">
+<meta property="article:tag" content="inventario">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="mcp">
+<meta property="article:tag" content="okf">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator:id" content="40654511">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="logo" href="../../">
+
+            <div id="blog-title">
+                    tin_nqn
+                    <span id="blog-description">&gt;&gt;&gt; me.geek.post()</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Sobre mí</a>
+                </li>
+<li class="nav-item">
+<a href="../../charlas/" class="nav-link">Charlas</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archivos</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Categorías</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+                    <button class="nav-link theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Tema: Automático (sistema). Click para pasar a claro." title="Tema: Automático (sistema). Click para pasar a claro." data-mode="auto">
+                        <svg class="theme-icon theme-icon-auto" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"></path></svg><svg class="theme-icon theme-icon-light" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg><svg class="theme-icon theme-icon-dark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"></path></svg></button>
+                </li>
+                    <li>            </li>
+<li class="nav-item"><a href="../../en/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Quilombo: agentes para organizar la vida real</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Martín Gaitán
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2026-08-15T12:06:35-03:00" itemprop="datePublished" title="2026-08-15 12:06">2026-08-15 12:06</time></a>
+            </p>
+                <p class="commentline">        <a href="#disqus_thread" data-disqus-identifier="cache/posts/quilombo-agentes-para-organizar-la-vida-real.html">Comentarios</a>
+
+
+            
+        </p>
+</div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Mi profesión consiste, en buena medida, en ordenar cosas con ordenadores. Datos en tablas,
+funciones en módulos, tareas en issues, cables invisibles entre servidores. Puedo pasar una tarde
+discutiendo el nombre exacto de una variable y después entrar a mi taller y no encontrar una mecha
+de 8 milímetros aunque estoy seguro de que tengo tres.</p>
+<p>La cajonera tiene ocho cajones. Cada cajón, veinticuatro compartimientos. Es decir: ciento noventa y
+dos oportunidades de guardar una cosa en un lugar perfectamente lógico que voy a olvidar media
+hora después.</p>
+<p>Mi profesión son los ordenadores. Mi taller es un quilombo. <strong>Quilombo</strong>, entonces, es el nombre
+inevitable de este proyecto: una memoria para organizar las cosas del mundo físico y poder
+conversar con ellas a través de un agente.</p>
+<p>La idea no es abrir una planilla para informar solemnemente que moví siete tornillos. Quiero decirle
+a ChatGPT o Claude «guardé los tornillos FIX de 35 mm en el cajón de arriba, junto a los tarugos» y,
+otro día, preguntar desde el teléfono «¿dónde había tornillos para madera?».</p>
+<p>El ordenador, por fin, ordenando.</p>
+<!-- TEASER_END -->
+
+<h3>El test Oscar</h3>
+<p>Mi suegro Oscar tiene un tallercito y le gusta conversar con la inteligencia artificial. No sabe
+qué es una API, un MCP o una clave foránea y no tiene ningún motivo para aprenderlo. Si para usar
+Quilombo tiene que modelar una base de datos, fracasamos.</p>
+<p>Oscar debería poder mostrar un cajón en una videollamada y decir:</p>
+<blockquote>
+<p>Acá tengo tornillos, unas pilas y esa cajita azul tiene arandelas. Anotá más o menos, después lo
+acomodamos.</p>
+</blockquote>
+<p>El agente que ve o escucha traduce esa conversación a datos. Quilombo no mira la foto ni ejecuta un
+modelo de inteligencia artificial: guarda hechos, cantidades, ubicaciones y la referencia que el
+cliente quiera dejar, por ejemplo «cambios inferidos de una foto procesada el 15 de agosto». La
+foto queda donde estaba. La inteligencia también.</p>
+<p>Esta separación es bastante importante. Quilombo puede ser una base de datos aburrida, predecible
+y barata. El agente puede ser tan listo como permita el modelo de turno, pedir confirmación antes
+de escribir y entender que «los fix largos» probablemente son los tornillos FIX de 35 mm. Cada uno
+hace su trabajo.</p>
+<p><a href="https://mermaid.ink/"><img alt="Flujo entre la observación, el agente y Quilombo" src="https://mermaid.ink/img/Zmxvd2NoYXJ0IExSOyBBW0ZvdG8gbyBjb252ZXJzYWNpw7NuXSAtLT4gQltBZ2VudGVdOyBCIC0tPiBDW1F1aWxvbWJvIE1DUF07IEMgLS0-IERbKFBvc3RncmVTUUwpXTsgRCAtLT4gQzsgQyAtLT4gQjsgQiAtLT4gRVtFbmNvbnRyYXIsIG1vdmVyLCByZXBvbmVyXQ?type=png"></a></p>
+<h3>Un mapa que admite el desorden</h3>
+<p>Un lugar en Quilombo puede contener otros lugares. <code>taller</code> contiene <code>cajonera</code>; <code>cajonera</code>
+contiene <code>cajon-1</code>; el cajón contiene <code>compartimiento-b4</code>. Si no hay etiquetas tan prolijas, también
+se pueden registrar relaciones: este estante está arriba de aquel, la caja roja está a la izquierda
+de la azul.</p>
+<p>Un <em>workspace</em> no es el estante superior de esa jerarquía. Es una frontera de acceso: quién puede
+ver y modificar un inventario. Dentro de <code>Home</code> puedo tener como ubicaciones de primer nivel el
+taller, la biblioteca y el galpón, y buscar solamente dentro del taller. Si algún día comparto el
+inventario de un club o una escuela, eso puede vivir en otro workspace con otras personas.</p>
+<p>Los objetos, por su parte, tienen nombre, alias, categoría, descripción y atributos libres. La
+descripción sirve para una pista humana: «caja roja, ancha, con letras blancas». Los atributos
+permiten guardar algo más regular: color del lomo, material, medida, marca. Una existencia une ese
+objeto con un lugar y agrega cantidad, unidad, aproximación y notas de esa copia concreta.</p>
+<p>Esto evita confundir dos tipos de dato:</p>
+<ul>
+<li>
+<em>Quilombo</em>, el libro como obra o edición, puede tener autor, ISBN y editorial.</li>
+<li>Mi ejemplar puede tener una dedicatoria y una esquina mordida.</li>
+</ul>
+<p>Cuando hay ISBN, el agente puede consultar <a href="https://openlibrary.org/developers/api">Open Library</a>,
+mostrar un borrador con título, autores, editorial y páginas, y guardar sólo lo que resulte útil.
+Más adelante se podría agregar otro proveedor, como Google Books. Una reseña no es bibliografía:
+es mejor conservarla como nota propia o como referencia externa, con su procedencia clara.</p>
+<h3>La biblioteca también es un quilombo</h3>
+<p>Supongamos que pregunto por un libro y Quilombo responde «segundo estante, a la izquierda». Voy,
+miro y no está. O, más probablemente, miro sin verlo.</p>
+<p>La ubicación sola no siempre alcanza. Una mejor respuesta sería:</p>
+<blockquote>
+<p>Está registrado en el segundo estante a la izquierda. Es una edición ancha, de lomo rojo y letras
+blancas. En ese mismo sector figura <em>Crónicas del Ángel Gris</em>, la edición de lomo azul.</p>
+</blockquote>
+<p>La descripción visual ayuda a reconocer el objeto. Los vecinos funcionan como mojones. Si tampoco
+aparece, el agente no debería insistir con la autoridad de un GPS: el registro puede estar viejo.
+Puede proponer revisar el lugar, corregir la ubicación o actualizar lo que efectivamente hay.</p>
+<p>La misma información sirve para ordenar. Si el primer cajón tiene mayormente tornillos pero quedaron
+dos paquetes en otro cajón mezclados con pilas, el agente puede leer el inventario y sugerir una
+reorganización. Quilombo no decide el movimiento: ofrece el estado; el agente razona, prepara un
+plan y espera la confirmación antes de actualizarlo.</p>
+<p>También quiero poder preguntar «¿qué me está faltando?». Para eso no hace falta futurología: cada
+objeto puede tener una cantidad mínima y una cantidad objetivo. Si quedan tres tornillos y el mínimo
+es diez, el sistema informa stock bajo y propone reponer hasta el objetivo. Predecir <em>cuándo</em> se van
+a acabar requerirá historial de consumo. Todavía no tenemos esa bola de cristal.</p>
+<p>Los préstamos son otra extensión natural. Un libro puede estar bien inventariado y, sin embargo,
+no estar en ningún estante porque se lo presté a alguien cuyo nombre ya no recuerdo. Registrar
+salida, persona y devolución esperada es bastante más honesto que declarar desaparecido al libro.</p>
+<h3>Una wiki para el mundo físico</h3>
+<p>Mientras pensaba Quilombo me encontré con dos ideas vecinas. En
+<a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">llm-wiki</a>, Andrej Karpathy
+propone que un agente mantenga entre sesiones una wiki de conocimiento que se va condensando,
+enlazando y corrigiendo. En vez de releer todas las fuentes crudas para cada pregunta, conserva una
+memoria navegable que mejora con el uso.</p>
+<p>El <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md">Open Knowledge Format</a>
+(OKF) apunta a una representación mínima, legible por humanos y máquinas, con Markdown, metadatos,
+enlaces, procedencia y ciclo de vida. Sirve para que el conocimiento no quede encerrado en una
+aplicación opaca.</p>
+<p>Quilombo no necesita guardar cada tornillo como una página Markdown. PostgreSQL es mejor para sumar
+cantidades, aislar usuarios y hacer un lote de miles de cambios en una transacción. Pero el patrón
+sí aplica: fuentes u observaciones relativamente inmutables, una memoria curada que se corrige con
+el tiempo, enlaces espaciales y procedencia. OKF, además, puede ser un gran formato de
+importación/exportación para que el inventario sea portable.</p>
+<p><a href="https://mermaid.ink/"><img alt="Relación conceptual entre fuentes, memoria agentica y Quilombo" src="https://mermaid.ink/img/Zmxvd2NoYXJ0IFRCOyBTW0Z1ZW50ZXMgeSBvYnNlcnZhY2lvbmVzXSAtLT4gQVtBZ2VudGUgcXVlIG1hbnRpZW5lIGNvbm9jaW1pZW50b107IEEgLS0-IFFbUXVpbG9tYm86IGhlY2hvcyBkZWwgbXVuZG8gZsOtc2ljb107IFEgLS0-IFJbQ29uc3VsdGFzIHkgYWNjaW9uZXNdOyBLW2xsbS13aWtpIC8gT0tGXSAtLiBwYXRyw7NuIGRlIG1lbW9yaWEsIGVubGFjZXMgeSBwcm9jZWRlbmNpYSAuLT4gQQ?type=png"></a></p>
+<h3>La parte aburrida que lo hace posible</h3>
+<p><a href="https://github.com/mgaitan/quilombo">Quilombo</a> es por ahora un monolito Django con PostgreSQL. Es
+multiusuario, separa los datos por workspace y expone una API HTTP y un servidor MCP con OAuth. La
+interfaz web existe para crear una cuenta, buscar inventario y conectar agentes, pero el camino
+principal es conversar.</p>
+<p>MCP permite que ChatGPT, Claude u otro cliente descubra herramientas como buscar, leer una vista
+general del inventario, mover existencias o hacer <em>upserts</em> masivos. Las escrituras son
+transaccionales e idempotentes: si una observación contiene cuarenta libros, se guardan todos o no
+se guarda ninguno; si el cliente reintenta la misma operación, no duplica el taller.</p>
+<p>Hay además una <em>skill</em>, una pequeña guía para el agente. Allí vive la política conversacional:
+buscar antes de afirmar, diferenciar «no registrado» de «no existe», mostrar un borrador antes de
+modificar y no fingir que Quilombo vio una foto que nunca recibió. La API, en cambio, hace lo que se
+le ordena. Storage y criterio están separados hasta en la documentación.</p>
+<h3>¿Y qué sigue?</h3>
+<p>La primera versión ya deja guardar ubicaciones anidadas, relaciones relativas, objetos, cantidades
+y procedencia; buscar dentro de una ubicación; y conversar vía MCP. Estoy trabajando en las pistas
+visuales, el enriquecimiento de libros por ISBN y los avisos de faltantes. Después vendrán los
+préstamos, los códigos QR y una forma conversada de inventariar por primera vez sin convertir el
+domingo en una carga de datos.</p>
+<p>El desafío interesante no es construir otra aplicación de inventario. Es conseguir que actualizar
+el inventario cueste menos que volver a perder las cosas. Por eso Oscar es el test: mostrar,
+conversar, corregir. Si él puede usarlo en su taller sin enterarse de que detrás hay Django, OAuth y
+un protocolo con siglas, quizás hayamos inventado un ordenador de verdad.</p>
+<p>Y quizás encuentre por fin las otras dos mechas de 8.</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/agentes/" rel="tag">agentes</a></li>
+            <li><a class="tag p-category" href="../../categories/django/" rel="tag">django</a></li>
+            <li><a class="tag p-category" href="../../categories/inventario/" rel="tag">inventario</a></li>
+            <li><a class="tag p-category" href="../../categories/llm/" rel="tag">LLM</a></li>
+            <li><a class="tag p-category" href="../../categories/mcp/" rel="tag">mcp</a></li>
+            <li><a class="tag p-category" href="../../categories/okf/" rel="tag">okf</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad/" rel="prev" title="Cómo usar varias cuentas de Google Photos para ampliar el espacio de copia de seguridad">Post anterior</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+                    <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nqnwebs",
+            disqus_url="https://mgaitan.github.io/posts/quilombo-agentes-para-organizar-la-vida-real/",
+        disqus_title="Quilombo: agentes para organizar la vida real",
+        disqus_identifier="cache/posts/quilombo-agentes-para-organizar-la-vida-real.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nqnwebs";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2026         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script><script src="../../assets/js/all.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script>
+    (function() {
+        var storageKey = 'theme-mode';
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        var prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        var modes = ['auto', 'light', 'dark'];
+
+        function savedMode() {
+            var stored = localStorage.getItem(storageKey);
+            if (modes.indexOf(stored) !== -1) {
+                return stored;
+            }
+            return 'auto';
+        }
+
+        function resolvedTheme(mode) {
+            if (mode === 'light' || mode === 'dark') return mode;
+            return prefersDark && prefersDark.matches ? 'dark' : 'light';
+        }
+
+        function labels(mode, resolved) {
+            if (mode === 'auto') {
+                return {
+                    aria: "Tema: Automático (sistema). Click para pasar a claro.",
+                    next: 'light'
+                };
+            }
+            if (mode === 'light') {
+                return {
+                    aria: "Tema: Claro. Click para pasar a oscuro.",
+                    next: 'dark'
+                };
+            }
+            return {
+                aria: "Tema: Oscuro. Click para pasar a automático.",
+                next: 'auto'
+            };
+        }
+
+        function apply(mode) {
+            var resolved = resolvedTheme(mode);
+            document.body.setAttribute('data-theme', resolved);
+            document.body.setAttribute('data-theme-mode', mode);
+            toggle.dataset.mode = mode;
+            var label = labels(mode, resolved);
+            toggle.setAttribute('aria-pressed', resolved === 'dark');
+            toggle.setAttribute('aria-label', label.aria);
+            toggle.setAttribute('title', label.aria);
+        }
+
+        function setMode(mode) {
+            localStorage.setItem(storageKey, mode);
+            apply(mode);
+        }
+
+        apply(savedMode());
+
+        toggle.addEventListener('click', function() {
+            var current = document.body.getAttribute('data-theme-mode') || savedMode();
+            var next = labels(current).next;
+            setMode(next);
+        });
+
+        if (prefersDark && prefersDark.addEventListener) {
+            prefersDark.addEventListener('change', function() {
+                if (savedMode() === 'auto') {
+                    apply('auto');
+                }
+            });
+        }
+    })();
+    </script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script>
+    jQuery(document).ready(function() {
+
+        if(jQuery('html').attr('lang') === 'es'){
+             jQuery.timeago.settings.strings = {
+               prefixAgo: "hace",
+               prefixFromNow: "dentro de",
+               suffixAgo: "",
+               suffixFromNow: "",
+               seconds: "menos de un minuto",
+               minute: "un minuto",
+               minutes: "unos %d minutos",
+               hour: "una hora",
+               hours: "%d horas",
+               day: "un día",
+               days: "%d días",
+               month: "un mes",
+               months: "%d meses",
+               year: "un año",
+               years: "%d años"
+            };
+        }
+        jQuery("time.published").timeago();
+
+        jQuery('article:not(:first)').before('<hr>');
+
+        jQuery('.highlight pre').addClass('code');
+    });
+    </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51074482-1', 'mgaitan.github.io');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
