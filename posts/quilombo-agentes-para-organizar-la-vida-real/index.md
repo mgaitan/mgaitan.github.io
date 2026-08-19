@@ -10,14 +10,13 @@
 .. author: Martín Gaitán
 -->
 
-Hace unos días resucité un proyecto que comencé hace más de dos años [^1]. Estaba haciendo un mueblecito y no encontraba unas bisagras que sabía que en algun lado tenía. Las busqué un montón hasta que claudiqué y las volví a comprar. Cuando regresé de la ferretería puse las baterías del taladro a cargar y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando" . 
+Hace unos días resucité un proyecto que comencé hace más de dos años [^1]. Estaba haciendo [un mueblecito](https://gist.github.com/user-attachments/assets/044aab2f-23bd-42e6-9a04-99fd918b960b) y no encontraba unas bisagras que sabía que en algun lado tenía. Las busqué un montón hasta que claudiqué y las volví a comprar. Cuando regresé de la ferretería puse las baterías del taladro a cargar y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando" . 
 
 [^1]: Lo empecé cuando ChatGPT sacó la funcionalidad de [customizar GPTs](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts) con un prompt y la especificación de una API web con la que podía interactuar. La prehistoria de un "agente". 
 
 El proyecto se llama **Quilombo** y es algo así como un _agentic inventory management system_, una memoria para que los agente de IA pueda entender y recordar el mundo físico que te rodea y ayudarte a encontrar cosas en él. 
 
 <!-- TEASER_END -->
-
 
 Les muestro [una conversación real de anoche en mi ChatGPT](https://chatgpt.com/share/6a844c39-1800-83e9-960a-e2c03da464c0) que está conectado a mi cuenta de Quilombo.
 
@@ -74,8 +73,7 @@ Un caso especial son los libros: el agente puede consultar [Open Library](https:
 
 Lo descripto arriba se resume más o menos en este diagrama 
 
-<img width="575" height="615" alt="image" src="https://gist.github.com/user-attachments/assets/d0e70bd1-ef2a-4f4a-8505-5ce60fa7831f" />
-
+![](files/images/quilombo_model.png)
 (ahora que lo veo dibujado, creo que se puede simplificar más este modelo!)
 
 El código es un monolito Django con PostgreSQL. Es
@@ -83,7 +81,7 @@ multiusuario, separa los datos por workspace y expone una API HTTP y un servidor
 
 La interfaz web por ahora es mínima y existe para crear una cuenta, buscar inventario cuando te quedaste sin tokens y conectar agentes, pero el camino principal es conversar.
 
-<img width="1366" height="734" alt="quilombo-architecture" src="https://gist.github.com/user-attachments/assets/0c58b7cf-bde9-40db-b821-35d2399a1684" />
+<img width="1366" height="734" alt="quilombo-architecture" src="https://mgaitan.github.io/quilombo/_images/quilombo-architecture.png" />
 
 Existe además una [skill](https://github.com/mgaitan/quilombo/blob/main/skills/manage-quilombo-inventory/SKILL.md), que ayuda al agente a usar el MCP. Ahí vive la política conversacional recomendada:
 buscar antes de afirmar, diferenciar «no registrado» de «no existe», mostrar un borrador antes de modificar, etc. 

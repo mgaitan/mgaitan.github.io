@@ -110,7 +110,7 @@ navbar-light bg-light
 </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>Hace unos días resucité un proyecto que comencé hace más de dos años <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Estaba haciendo un mueblecito y no encontraba unas bisagras que sabía que en algun lado tenía. Las busqué un montón hasta que claudiqué y las volví a comprar. Cuando regresé de la ferretería puse las baterías del taladro a cargar y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando" . </p>
+    <p>Hace unos días resucité un proyecto que comencé hace más de dos años <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Estaba haciendo <a href="https://gist.github.com/user-attachments/assets/044aab2f-23bd-42e6-9a04-99fd918b960b">un mueblecito</a> y no encontraba unas bisagras que sabía que en algun lado tenía. Las busqué un montón hasta que claudiqué y las volví a comprar. Cuando regresé de la ferretería puse las baterías del taladro a cargar y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando" . </p>
 <p>El proyecto se llama <strong>Quilombo</strong> y es algo así como un <em>agentic inventory management system</em>, una memoria para que los agente de IA pueda entender y recordar el mundo físico que te rodea y ayudarte a encontrar cosas en él. </p>
 <!-- TEASER_END -->
 
@@ -142,12 +142,12 @@ navbar-light bg-light
 <p>Un caso especial son los libros: el agente puede consultar <a href="https://openlibrary.org/developers/api">Open Library</a> para obtener metadata que aumente, sin esfuerzo, la info de los libros que inventariamos. <em>"Fijate entre mis libros, qué cuento me recomendárías para esta noche lluviosa"</em>  </p>
 <h2>La datita para nerds</h2>
 <p>Lo descripto arriba se resume más o menos en este diagrama </p>
-<p><img width="575" height="615" alt="image" src="https://gist.github.com/user-attachments/assets/d0e70bd1-ef2a-4f4a-8505-5ce60fa7831f"></p>
-<p>(ahora que lo veo dibujado, creo que se puede simplificar más este modelo!)</p>
+<p><img alt="" src="files/images/quilombo_model.png">
+(ahora que lo veo dibujado, creo que se puede simplificar más este modelo!)</p>
 <p>El código es un monolito Django con PostgreSQL. Es
 multiusuario, separa los datos por workspace y expone una API HTTP y un servidor MCP "remoto" (<a href="https://modelcontextprotocol.io/specification/draft/basic/transports/streamable-http">streameable-http</a> es la keyword) con OAuth. MCP es el estándar que permite al cliente (ChatGPT, Claude, OpenClaw o cualquier agente masomenos actualizado) descubra el servicio y así sepa como buscar, leer una vista general del inventario, mover existencias o hacer cambios en lote. </p>
 <p>La interfaz web por ahora es mínima y existe para crear una cuenta, buscar inventario cuando te quedaste sin tokens y conectar agentes, pero el camino principal es conversar.</p>
-<p><img width="1366" height="734" alt="quilombo-architecture" src="https://gist.github.com/user-attachments/assets/0c58b7cf-bde9-40db-b821-35d2399a1684"></p>
+<p><img width="1366" height="734" alt="quilombo-architecture" src="https://mgaitan.github.io/quilombo/_images/quilombo-architecture.png"></p>
 <p>Existe además una <a href="https://github.com/mgaitan/quilombo/blob/main/skills/manage-quilombo-inventory/SKILL.md">skill</a>, que ayuda al agente a usar el MCP. Ahí vive la política conversacional recomendada:
 buscar antes de afirmar, diferenciar «no registrado» de «no existe», mostrar un borrador antes de modificar, etc. </p>
 <h3>¿Y qué sigue?</h3>
