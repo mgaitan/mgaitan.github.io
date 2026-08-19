@@ -2,163 +2,94 @@
 .. title: Quilombo: agentes para organizar la vida real
 .. slug: quilombo-agentes-para-organizar-la-vida-real
 .. date: 2026-08-15 12:06:35 UTC-03:00
-.. status: draft
 .. tags: agentes, mcp, django, LLM, inventario, okf
 .. category: projects
 .. link:
-.. description: Una memoria agentica para encontrar, ordenar y cuidar las cosas del taller, la biblioteca y el mundo físico.
+.. description: Un sistema de inventario para que los agentes de IA puedan ayudarte a encontrar cosas del mundo real.
 .. type: text
 .. author: Martín Gaitán
 -->
+Hace unos días resucité un proyecto que comencé hace más de dos años [#]_. Como por enésima vez no encontraba unas bisagras que sabía que tenía por y tuve que ir a comprar, dejé las baterias del taladro cargando y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando " . 
 
-Mi profesión consiste, en buena medida, en ordenar cosas con ordenadores. Datos en tablas,
-funciones en módulos, tareas en issues, cables invisibles entre servidores. Puedo pasar una tarde
-discutiendo el nombre exacto de una variable y después entrar a mi taller y no encontrar una mecha
-de 8 milímetros aunque estoy seguro de que tengo tres.
+.. [#] Lo empecé cuando ChatGPT sacó la funcionalidad de [customizar GPTs](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts) con un prompt y la especificación de una API web con la que podía interactuar. La prehistoria de un "agente". 
 
-La cajonera tiene ocho cajones. Cada cajón, veinticuatro compartimientos. Es decir: ciento noventa y
-dos oportunidades de guardar una cosa en un lugar perfectamente lógico que voy a olvidar media
-hora después.
+El proyecto se llama **Quilombo** y es algo así como un _agentic inventory management system_, una memoria para que tu agente de IA pueda entender y recordar el mundo físico que te rodea y ayudarte a encontrar cosas en él. 
 
-Mi profesión son los ordenadores. Mi taller es un quilombo. **Quilombo**, entonces, es el nombre
-inevitable de este proyecto: una memoria para organizar las cosas del mundo físico y poder
-conversar con ellas a través de un agente.
+Les muestro [una conversación real de anoche en mi ChatGPT](https://chatgpt.com/share/6a844c39-1800-83e9-960a-e2c03da464c0.  ) que está conectado a mi cuenta de Quilombo.
 
-La idea no es abrir una planilla para informar solemnemente que moví siete tornillos. Quiero decirle
-a ChatGPT o Claude «guardé los tornillos FIX de 35 mm en el cajón de arriba, junto a los tarugos» y,
-otro día, preguntar desde el teléfono «¿dónde había tornillos para madera?».
+Se las resumo por si les dió fiaca el click:
 
-El ordenador, por fin, ordenando.
+— Ey, ¿dónde está el alicate?
+— En la mesa de luz, opa, ¿dónde va a estar?
+
+Fuera de chiste, la utilidad parece tonta si el lugar para un objeto es obvio o sos un obse que sabés exactamente donde guardás cada cosa. Pero en una biblioteca, un taller o ¿una mudanza?, por más que le asignemos un lugar a cada cosa es imposible recordar todo sin un sistema.
+
+De hecho creo que desde que para esto se inventaron las computadoras. (por algo en España le dicen "ordenadores" 🤣) y sus amigas las bases de datos. El tema es que para ser verdaderamente útiles, requieren tener la información a procesar al detalle y, aún si la tenemos, cargarla suele ser aburridísimo (de ahí el oficio "data entry" cuya tarea es (era?) llenar formularios con datos).  
+
+Ahora los **agentes de IA** tienen la capacidad de ahorrarnos esta parte tediosa de mantener un inventario actualizado: le podes contár qué hay, dónde y si querés cuánto, usando palabras comunes, el agente estructura y amplía si puede la información y la guarda en la base de Quilombo sin que te haga falta saber cómo. Esa base de datos luego se puede consultar "a mano" (como un clásico buscador), pero también el agente puede consultarla con versatilidad semántica y contestarte de nuevo en lenguaje natural. 
+
+Otro [ejemplo real](https://chatgpt.com/shar/6a8456eb-e8b0-83e9-97bc-f7d36b901a65), esta vez de carga de datos: 
+
+— Registrá la estantería de mi oficina. En el primer estánte tengo el Fluent Python de Ramalho, la versión 2. También la tercera edición de Crucial conversations. Está la cámara de fotos nikon y mi vapeador. Ah, y el estuche de los auriculares. 
+— Copy that. 
+
+Si hasta acá ya suena útil, sumale que los modelos más potentes tienen capacidad de visión, por lo que podés **enviarle una foto de ese cajón endemoniado** donde todavía tenés el cargador de tu primer Nokia, las tarjetas de crédito que ahora usas via NFC, y el reproductor MP3 tipo huevito con `Mayonesa_Remix_Chocolate_2001.mp3` a 96kbps bajado del Ares. El agente convertirá esa foto en una actualización masiva de Quilombo sin que tengas que apretar una tecla. 
+
+[Quilombo está online](https://quilombo-v1-mgaitan.onrender.com/) (Atención: de vez en cuando puede tardar un minutito en levantar porque uso el free-tier de Render que duerme la instancia, ya saben [por qué](https://mgaitan.github.io/posts/como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad/)) . Pueden sacarse una cuenta y configurar su agente via MCP para probarlo.  
+
+Por supuesto es [open source](https://github.com/mgaitan/quilombo/). 
 
 <!-- TEASER_END -->
 
 ## El test Oscar
 
-Mi suegro Oscar tiene un tallercito y le gusta conversar con la inteligencia artificial. No sabe
-qué es una API, un MCP o una clave foránea y no tiene ningún motivo para aprenderlo. Si para usar
-Quilombo tiene que modelar una base de datos, fracasamos.
+Mi suegro Oscar también tiene un galponcito, un taller multiuso donde se dedica a arreglar con pragmatismo supremo y un par de tablitas el apoyabrazos de una silla de compu recién rota, desarmar el carburador de su combi o construir con esmero [monoblocks de lujo para gorriones](https://textosypretextos.pages.dev/de-otros/gorriones/). 
 
-Oscar debería poder mostrar un cajón en una videollamada y decir:
+Ahí se pasa las horas con la radio puesta o a veces conversando por teléfono con algun amigo mientras busca y rebusca la tuerquita que le falta. 
 
-> Acá tengo tornillos, unas pilas y esa cajita azul tiene arandelas. Anotá más o menos, después lo
-> acomodamos.
+Oscar no tiene idea y no tiene por qué aprender qué es un MCP, un schema de API o una base de datos vectorial. Pero ya sabe, porque es muy curioso, como "preguntarle a la IA", a "la China", como bautizó a Deepkseek. Una interfaz universal, conversacional (vaya si es otra de las cosas que sabe hacer Oscar), que cualquier persona en cualquier idioma es capaz de hacer.  
 
-El agente que ve o escucha traduce esa conversación a datos. Quilombo no mira la foto ni ejecuta un
-modelo de inteligencia artificial: guarda hechos, cantidades, ubicaciones y la referencia que el
-cliente quiera dejar, por ejemplo «cambios inferidos de una foto procesada el 15 de agosto». La
-foto queda donde estaba. La inteligencia también.
+Mi suegro, y tantas otras personas como él, son los usuarios que imagino. Inteligencia artificial puesta al servicio de la vida real.   
 
-Esta separación es bastante importante. Quilombo puede ser una base de datos aburrida, predecible
-y barata. El agente puede ser tan listo como permita el modelo de turno, pedir confirmación antes
-de escribir y entender que «los fix largos» probablemente son los tornillos FIX de 35 mm. Cada uno
-hace su trabajo.
+## El modelo: admitir el desorden y precisar a demanda
 
-[![Flujo entre la observación, el agente y Quilombo](https://mermaid.ink/img/Zmxvd2NoYXJ0IExSOyBBW0ZvdG8gbyBjb252ZXJzYWNpw7NuXSAtLT4gQltBZ2VudGVdOyBCIC0tPiBDW1F1aWxvbWJvIE1DUF07IEMgLS0-IERbKFBvc3RncmVTUUwpXTsgRCAtLT4gQzsgQyAtLT4gQjsgQiAtLT4gRVtFbmNvbnRyYXIsIG1vdmVyLCByZXBvbmVyXQ?type=png)](https://mermaid.ink/)
+Modelé Quilombo para que se adapte al caos del mundo que nos rodea, sin  intentar forzar el mundo para que se adapte a un sistema informático. 
 
-## Un mapa que admite el desorden
+Un ejemplo: en mi taller tengo un armario con varios estantes y adentro de eso una caja de herramientas roja donde guardo masomenos las cosas de electrónica (el soldador, el estaño y el tester, ponele) pero también hay un organizador de 24 divisiones donde tengo componentes que recupero de cualquier bártulo que desarmo.   
 
-Un lugar en Quilombo puede contener otros lugares. `taller` contiene `cajonera`; `cajonera`
-contiene `cajon-1`; el cajón contiene `compartimiento-b4`. Si no hay etiquetas tan prolijas, también
-se pueden registrar relaciones: este estante está arriba de aquel, la caja roja está a la izquierda
-de la azul.
+Podría inventariar simplemente "todas las cosas de electrónica están en la caja roja en el armario" y ya sería útil. Pero más adelante idear un código a cada compartimiento del organizador, contar cuantos diodos led verdes tengo en el compatimiento A4 y, si quiero, avisarle cuando uso alguno para que haga la actualización de stock. 
 
-Un *workspace* no es el estante superior de esa jerarquía. Es una frontera de acceso: quién puede
-ver y modificar un inventario. Dentro de `Home` puedo tener como ubicaciones de primer nivel el
-taller, la biblioteca y el galpón, y buscar solamente dentro del taller. Si algún día comparto el
-inventario de un club o una escuela, eso puede vivir en otro workspace con otras personas.
+Las locaciones que reconoce Quilombo son recursivas, la división está en el organizador que está en la caja que está en el estante y este en el armario que está en el taller y es facil "afinar" la información. 
 
-Los objetos, por su parte, tienen nombre, alias, categoría, descripción y atributos libres. La
-descripción sirve para una pista humana: «caja roja, ancha, con letras blancas». Los atributos
-permiten guardar algo más regular: color del lomo, material, medida, marca. Una existencia une ese
-objeto con un lugar y agrega cantidad, unidad, aproximación y notas de esa copia concreta.
+Existe un concepto por fuera de la jerarquia de locaciones: el workspace. Una cuenta puede tener muchos workspaces (por omisión se crea Home), un workspace podría estar compartido entre usuarios y podes darle permiso a uno en particular a tu agente (y si querés, con permisos de sólo lectura)
 
-Esto evita confundir dos tipos de dato:
+Los objetos, por su parte, guardan nombre, alias, categoría, descripción y atributos libres. Básicamente, si el agente tiene más detalles para mandar que después le sean utiles para encontrar, bienvenido sean, hay lugar para todos. 
 
-- *Quilombo*, el libro como obra o edición, puede tener autor, ISBN y editorial.
-- Mi ejemplar puede tener una dedicatoria y una esquina mordida.
+Un caso especial son los libros: el agente puede consultar [Open Library](https://openlibrary.org/developers/api) para obtener metadata que aumente, sin esfuerzo, la info de los libros que inventariamos. _"Fijate entre mis libros, qué cuento me recomendárías para esta noche lluviosa"_  
 
-Cuando hay ISBN, el agente puede consultar [Open Library](https://openlibrary.org/developers/api),
-mostrar un borrador con título, autores, editorial y páginas, y guardar sólo lo que resulte útil.
-Más adelante se podría agregar otro proveedor, como Google Books. Una reseña no es bibliografía:
-es mejor conservarla como nota propia o como referencia externa, con su procedencia clara.
+# La datita para nerds
 
-## La biblioteca también es un quilombo
+Lo descripto arriba es más o menos este diagrama 
 
-Supongamos que pregunto por un libro y Quilombo responde «segundo estante, a la izquierda». Voy,
-miro y no está. O, más probablemente, miro sin verlo.
+<img width="575" height="615" alt="image" src="https://gist.github.com/user-attachments/assets/d0e70bd1-ef2a-4f4a-8505-5ce60fa7831f" />
+(ahora que lo veo dibujado, creo que se puede simplificar más este modelo!)
 
-La ubicación sola no siempre alcanza. Una mejor respuesta sería:
+El código es por ahora un monolito Django con PostgreSQL. Es
+multiusuario, separa los datos por workspace y expone una API HTTP y un servidor MCP "remoto" ([streameable-http](https://modelcontextprotocol.io/specification/draft/basic/transports/streamable-http) es la keyword) con OAuth. MCP es el estándar que permite que el cliente (ChatGPT, Claude, OpenClaw o cualquier agente masomenos actualizado) descubra el servicio y así sepa como buscar, leer una vista general del inventario, mover existencias o hacer cambios en lote. 
 
-> Está registrado en el segundo estante a la izquierda. Es una edición ancha, de lomo rojo y letras
-> blancas. En ese mismo sector figura *Crónicas del Ángel Gris*, la edición de lomo azul.
+La interfaz web por ahora es mínima y existe para crear una cuenta, buscar inventario cuando te quedaste sin tokens y conectar agentes, pero el camino principal es conversar.
 
-La descripción visual ayuda a reconocer el objeto. Los vecinos funcionan como mojones. Si tampoco
-aparece, el agente no debería insistir con la autoridad de un GPS: el registro puede estar viejo.
-Puede proponer revisar el lugar, corregir la ubicación o actualizar lo que efectivamente hay.
+<img width="1366" height="734" alt="quilombo-architecture" src="https://gist.github.com/user-attachments/assets/0c58b7cf-bde9-40db-b821-35d2399a1684" />
 
-La misma información sirve para ordenar. Si el primer cajón tiene mayormente tornillos pero quedaron
-dos paquetes en otro cajón mezclados con pilas, el agente puede leer el inventario y sugerir una
-reorganización. Quilombo no decide el movimiento: ofrece el estado; el agente razona, prepara un
-plan y espera la confirmación antes de actualizarlo.
-
-También quiero poder preguntar «¿qué me está faltando?». Para eso no hace falta futurología: cada
-objeto puede tener una cantidad mínima y una cantidad objetivo. Si quedan tres tornillos y el mínimo
-es diez, el sistema informa stock bajo y propone reponer hasta el objetivo. Predecir *cuándo* se van
-a acabar requerirá historial de consumo. Todavía no tenemos esa bola de cristal.
-
-Los préstamos son otra extensión natural. Un libro puede estar bien inventariado y, sin embargo,
-no estar en ningún estante porque se lo presté a alguien cuyo nombre ya no recuerdo. Registrar
-salida, persona y devolución esperada es bastante más honesto que declarar desaparecido al libro.
-
-## Una wiki para el mundo físico
-
-Mientras pensaba Quilombo me encontré con dos ideas vecinas. En
-[llm-wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f), Andrej Karpathy
-propone que un agente mantenga entre sesiones una wiki de conocimiento que se va condensando,
-enlazando y corrigiendo. En vez de releer todas las fuentes crudas para cada pregunta, conserva una
-memoria navegable que mejora con el uso.
-
-El [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
-(OKF) apunta a una representación mínima, legible por humanos y máquinas, con Markdown, metadatos,
-enlaces, procedencia y ciclo de vida. Sirve para que el conocimiento no quede encerrado en una
-aplicación opaca.
-
-Quilombo no necesita guardar cada tornillo como una página Markdown. PostgreSQL es mejor para sumar
-cantidades, aislar usuarios y hacer un lote de miles de cambios en una transacción. Pero el patrón
-sí aplica: fuentes u observaciones relativamente inmutables, una memoria curada que se corrige con
-el tiempo, enlaces espaciales y procedencia. OKF, además, puede ser un gran formato de
-importación/exportación para que el inventario sea portable.
-
-[![Relación conceptual entre fuentes, memoria agentica y Quilombo](https://mermaid.ink/img/Zmxvd2NoYXJ0IFRCOyBTW0Z1ZW50ZXMgeSBvYnNlcnZhY2lvbmVzXSAtLT4gQVtBZ2VudGUgcXVlIG1hbnRpZW5lIGNvbm9jaW1pZW50b107IEEgLS0-IFFbUXVpbG9tYm86IGhlY2hvcyBkZWwgbXVuZG8gZsOtc2ljb107IFEgLS0-IFJbQ29uc3VsdGFzIHkgYWNjaW9uZXNdOyBLW2xsbS13aWtpIC8gT0tGXSAtLiBwYXRyw7NuIGRlIG1lbW9yaWEsIGVubGFjZXMgeSBwcm9jZWRlbmNpYSAuLT4gQQ?type=png)](https://mermaid.ink/)
-
-## La parte aburrida que lo hace posible
-
-[Quilombo](https://github.com/mgaitan/quilombo) es por ahora un monolito Django con PostgreSQL. Es
-multiusuario, separa los datos por workspace y expone una API HTTP y un servidor MCP con OAuth. La
-interfaz web existe para crear una cuenta, buscar inventario y conectar agentes, pero el camino
-principal es conversar.
-
-MCP permite que ChatGPT, Claude u otro cliente descubra herramientas como buscar, leer una vista
-general del inventario, mover existencias o hacer *upserts* masivos. Las escrituras son
-transaccionales e idempotentes: si una observación contiene cuarenta libros, se guardan todos o no
-se guarda ninguno; si el cliente reintenta la misma operación, no duplica el taller.
-
-Hay además una *skill*, una pequeña guía para el agente. Allí vive la política conversacional:
-buscar antes de afirmar, diferenciar «no registrado» de «no existe», mostrar un borrador antes de
-modificar y no fingir que Quilombo vio una foto que nunca recibió. La API, en cambio, hace lo que se
-le ordena. Storage y criterio están separados hasta en la documentación.
+Hay además una [skill](https://github.com/mgaitan/quilombo/blob/main/skills/manage-quilombo-inventory/SKILL.md), que ayuda al agente a usar el MCP. Ahí vive la política conversacional recomendada:
+buscar antes de afirmar, diferenciar «no registrado» de «no existe», mostrar un borrador antes de modificar, etc. 
 
 ## ¿Y qué sigue?
 
-La primera versión ya deja guardar ubicaciones anidadas, relaciones relativas, objetos, cantidades
-y procedencia; buscar dentro de una ubicación; y conversar vía MCP. Estoy trabajando en las pistas
-visuales, el enriquecimiento de libros por ISBN y los avisos de faltantes. Después vendrán los
-préstamos, los códigos QR y una forma conversada de inventariar por primera vez sin convertir el
-domingo en una carga de datos.
+Por ahora ver si alguien quiere usarlo, le sirve y se copa en dar feedback o colaborar. 
 
-El desafío interesante no es construir otra aplicación de inventario. Es conseguir que actualizar
-el inventario cueste menos que volver a perder las cosas. Por eso Oscar es el test: mostrar,
-conversar, corregir. Si él puede usarlo en su taller sin enterarse de que detrás hay Django, OAuth y
-un protocolo con siglas, quizás hayamos inventado un ordenador de verdad.
+Más adelante quizas pongo unos mangos para hosting que no se duerma y registro un dominio recordable (se aceptan [cafecitos](https://cafecito.app/tin_nqn_)), luego mejoro un poco el diseño ascético (o acético, también le aplica) que tiene ahora  y eso me sirve para salir en el directorio de tools integrables de los principales "chats" de IA.  
 
-Y quizás encuentre por fin las otras dos mechas de 8.
+Pero sé que todavía ni Quilombo ni el ecosistema de agentes están maduros para que los "Oscares del mundo" puedan instalarse esto por su cuenta y usarlo domésticamente. Mientras tanto es un experimento que me permite aprender los cimientos de esta era "agéntica" (también hice mis pinitos con [telegram-acp-bot](https://mgaitan.github.io/telegram-acp-bot/) ) y me tiene particularmente entusiasmado. 
+
+Y ojalá sepa, para siempre, dónde está la mecha de 6mm que nunca encuentro.
