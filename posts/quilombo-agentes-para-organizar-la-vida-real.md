@@ -9,9 +9,9 @@
 .. type: text
 .. author: Martín Gaitán
 -->
-Hace unos días resucité un proyecto que comencé hace más de dos años [#]_. Como por enésima vez no encontraba unas bisagras que sabía que tenía por y tuve que ir a comprar, dejé las baterias del taladro cargando y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando " . 
+Hace unos días resucité un proyecto que comencé hace más de dos años [^1]. Como por enésima vez no encontraba unas bisagras que sabía que tenía por y tuve que ir a comprar, dejé las baterias del taladro cargando y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando " . 
 
-.. [#] Lo empecé cuando ChatGPT sacó la funcionalidad de [customizar GPTs](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts) con un prompt y la especificación de una API web con la que podía interactuar. La prehistoria de un "agente". 
+[^1]: Lo empecé cuando ChatGPT sacó la funcionalidad de [customizar GPTs](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts) con un prompt y la especificación de una API web con la que podía interactuar. La prehistoria de un "agente". 
 
 El proyecto se llama **Quilombo** y es algo así como un _agentic inventory management system_, una memoria para que tu agente de IA pueda entender y recordar el mundo físico que te rodea y ayudarte a encontrar cosas en él. 
 
@@ -19,7 +19,7 @@ Les muestro [una conversación real de anoche en mi ChatGPT](https://chatgpt.com
 
 Se las resumo por si les dió fiaca el click:
 
-— Ey, ¿dónde está el alicate?
+— Ey, ¿dónde está el alicate?<br>
 — En la mesa de luz, opa, ¿dónde va a estar?
 
 Fuera de chiste, la utilidad parece tonta si el lugar para un objeto es obvio o sos un obse que sabés exactamente donde guardás cada cosa. Pero en una biblioteca, un taller o ¿una mudanza?, por más que le asignemos un lugar a cada cosa es imposible recordar todo sin un sistema.
@@ -30,7 +30,7 @@ Ahora los **agentes de IA** tienen la capacidad de ahorrarnos esta parte tediosa
 
 Otro [ejemplo real](https://chatgpt.com/shar/6a8456eb-e8b0-83e9-97bc-f7d36b901a65), esta vez de carga de datos: 
 
-— Registrá la estantería de mi oficina. En el primer estánte tengo el Fluent Python de Ramalho, la versión 2. También la tercera edición de Crucial conversations. Está la cámara de fotos nikon y mi vapeador. Ah, y el estuche de los auriculares. 
+— Registrá la estantería de mi oficina. En el primer estánte tengo el Fluent Python de Ramalho, la versión 2. También la tercera edición de Crucial conversations. Está la cámara de fotos nikon y mi vapeador. Ah, y el estuche de los auriculares. <br>
 — Copy that. 
 
 Si hasta acá ya suena útil, sumale que los modelos más potentes tienen capacidad de visión, por lo que podés **enviarle una foto de ese cajón endemoniado** donde todavía tenés el cargador de tu primer Nokia, las tarjetas de crédito que ahora usas via NFC, y el reproductor MP3 tipo huevito con `Mayonesa_Remix_Chocolate_2001.mp3` a 96kbps bajado del Ares. El agente convertirá esa foto en una actualización masiva de Quilombo sin que tengas que apretar una tecla. 
