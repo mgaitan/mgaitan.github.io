@@ -142,7 +142,7 @@ navbar-light bg-light
 <p>Un caso especial son los libros: el agente puede consultar <a href="https://openlibrary.org/developers/api">Open Library</a> para obtener metadata que aumente, sin esfuerzo, la info de los libros que inventariamos. <em>"Fijate entre mis libros, qué cuento me recomendárías para esta noche lluviosa"</em>  </p>
 <h2>La datita para nerds</h2>
 <p>Lo descripto arriba se resume más o menos en este diagrama </p>
-<p><img alt="" src="files/images/quilombo_model.png">
+<p><img alt="" src="../../images/quilombo_model.png">
 (ahora que lo veo dibujado, creo que se puede simplificar más este modelo!)</p>
 <p>El código es un monolito Django con PostgreSQL. Es
 multiusuario, separa los datos por workspace y expone una API HTTP y un servidor MCP "remoto" (<a href="https://modelcontextprotocol.io/specification/draft/basic/transports/streamable-http">streameable-http</a> es la keyword) con OAuth. MCP es el estándar que permite al cliente (ChatGPT, Claude, OpenClaw o cualquier agente masomenos actualizado) descubra el servicio y así sepa como buscar, leer una vista general del inventario, mover existencias o hacer cambios en lote. </p>
