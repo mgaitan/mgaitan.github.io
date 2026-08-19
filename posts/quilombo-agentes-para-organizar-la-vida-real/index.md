@@ -14,7 +14,7 @@ Hace unos días resucité un proyecto que comencé hace más de dos años [^1]. 
 
 [^1]: Lo empecé cuando ChatGPT sacó la funcionalidad de [customizar GPTs](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts) con un prompt y la especificación de una API web con la que podía interactuar. La prehistoria de un "agente". 
 
-El proyecto se llama **Quilombo** y es algo así como un _agentic inventory management system_, una memoria para que los agente de IA pueda entender y recordar el mundo físico que te rodea y ayudarte a encontrar cosas en él. 
+El proyecto se llama **Quilombo** y es algo así como un _agentic inventory management system_, una memoria para que los agentes de IA pueda entender y recordar el mundo físico que te rodea y ayudarte a encontrar cosas en él. 
 
 <!-- TEASER_END -->
 
