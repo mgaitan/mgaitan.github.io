@@ -74,6 +74,7 @@ Un caso especial son los libros: el agente puede consultar [Open Library](https:
 Lo descripto arriba se resume más o menos en este diagrama 
 
 ![](/images/quilombo_model.png)
+
 (ahora que lo veo dibujado, creo que se puede simplificar más este modelo!)
 
 El código es un monolito Django con PostgreSQL. Es
