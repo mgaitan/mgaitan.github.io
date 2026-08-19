@@ -1,7 +1,7 @@
 <!--
 .. title: Quilombo: agentes para organizar la vida real
 .. slug: quilombo-agentes-para-organizar-la-vida-real
-.. date: 2026-08-19 12:06:35 UTC-03:00
+.. date: 2026-08-19 00:06:35 UTC-03:00
 .. tags: agentes, mcp, django, LLM, inventario, okf
 .. category: projects
 .. link:
