@@ -82,7 +82,7 @@ multiusuario, separa los datos por workspace y expone una API HTTP y un servidor
 
 La interfaz web por ahora es mínima y existe para crear una cuenta, buscar inventario cuando te quedaste sin tokens y conectar agentes, pero el camino principal es conversar.
 
-<img width="80%" alt="quilombo-architecture" src="https://mgaitan.github.io/quilombo/_images/quilombo-architecture.png" />
+<img alt="quilombo-architecture" src="https://mgaitan.github.io/quilombo/_images/quilombo-architecture.png" />
 
 Existe además una [skill](https://github.com/mgaitan/quilombo/blob/main/skills/manage-quilombo-inventory/SKILL.md), que ayuda al agente a usar el MCP. Ahí vive la política conversacional recomendada:
 buscar antes de afirmar, diferenciar «no registrado» de «no existe», mostrar un borrador antes de modificar, etc. 
