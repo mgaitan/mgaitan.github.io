@@ -10,11 +10,14 @@
 .. author: Martín Gaitán
 -->
 
-Hace unos días resucité un proyecto que comencé hace más de dos años [^1]. Como por enésima vez no encontraba unas bisagras que sabía que tenía por y tuve que ir a comprar, dejé las baterias del taladro cargando y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando " . 
+Hace unos días resucité un proyecto que comencé hace más de dos años [^1]. Estaba haciendo un muebleciro y no encontraba unas bisagras que sabía que en algun lado tenía hasta que claudique en búsqueda y las volví a comprar. Cuando volví dejé las baterias del taladro cargando y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando " . 
 
 [^1]: Lo empecé cuando ChatGPT sacó la funcionalidad de [customizar GPTs](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts) con un prompt y la especificación de una API web con la que podía interactuar. La prehistoria de un "agente". 
 
 El proyecto se llama **Quilombo** y es algo así como un _agentic inventory management system_, una memoria para que tu agente de IA pueda entender y recordar el mundo físico que te rodea y ayudarte a encontrar cosas en él. 
+
+<!-- TEASER_END -->
+
 
 Les muestro [una conversación real de anoche en mi ChatGPT](https://chatgpt.com/share/6a844c39-1800-83e9-960a-e2c03da464c0.  ) que está conectado a mi cuenta de Quilombo.
 
@@ -40,7 +43,6 @@ Si hasta acá ya suena útil, sumale que los modelos más potentes tienen capaci
 
 Por supuesto es [open source](https://github.com/mgaitan/quilombo/). 
 
-<!-- TEASER_END -->
 
 ## El test Oscar
 
