@@ -9,6 +9,7 @@
 .. type: text
 .. author: Martín Gaitán
 -->
+
 Hace unos días resucité un proyecto que comencé hace más de dos años [^1]. Como por enésima vez no encontraba unas bisagras que sabía que tenía por y tuve que ir a comprar, dejé las baterias del taladro cargando y me fui a promptear: "Retomá este proyecto porque lo sigo necesitando " . 
 
 [^1]: Lo empecé cuando ChatGPT sacó la funcionalidad de [customizar GPTs](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts) con un prompt y la especificación de una API web con la que podía interactuar. La prehistoria de un "agente". 
