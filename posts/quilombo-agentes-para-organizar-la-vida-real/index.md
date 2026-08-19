@@ -36,7 +36,7 @@ Otro [ejemplo real](https://chatgpt.com/share/6a8456eb-e8b0-83e9-97bc-f7d36b901a
 — Registrá la estantería de mi oficina. En el primer estánte tengo el Fluent Python de Ramalho, la versión 2. También la tercera edición de Crucial conversations. Está la cámara de fotos nikon y mi vapeador. Ah, y el estuche de los auriculares. <br>
 — Copy that. 
 
-Si hasta acá ya suena útil, sumale que los modelos más potentes tienen capacidad de visión, por lo que podés **enviarle una foto de ese cajón endemoniado** donde todavía tenés el cargador de tu primer Nokia, las tarjetas de crédito que ahora usas via NFC, y el reproductor MP3 tipo huevito con `Mayonesa_Remix_Chocolate_2001.mp3` a 96kbps bajado del Ares. El agente convertirá esa foto en una actualización masiva de Quilombo sin que tengas que apretar una tecla. 
+Si hasta acá ya suena útil, sumale que los modelos más potentes tienen capacidad de visión, por lo que podés **enviarle una foto de ese cajón endemoniado** donde todavía tenés el cargador de tu primer Nokia, las tarjetas de crédito que ahora usas via NFC, y el reproductor MP3 tipo huevito con [Mayonesa_Remix_Chocolate_2001.mp3](https://www.youtube.com/watch?v=T6NhuWYnxW0) a 96kbps bajado del Ares. El agente convertirá esa foto en una actualización masiva de Quilombo sin que tengas que apretar una tecla. 
 
 [Quilombo está online](https://quilombo-v1-mgaitan.onrender.com/) (**Atención**: de vez en cuando puede tardar un minutito en levantar porque uso el _free-tier_ de Render que duerme la instancia. ¿Por qué? ya saben [por qué](https://mgaitan.github.io/posts/como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad/)) . Pueden sacarse una cuenta y configurar su agente via MCP para probarlo.  
 
@@ -82,7 +82,7 @@ multiusuario, separa los datos por workspace y expone una API HTTP y un servidor
 
 La interfaz web por ahora es mínima y existe para crear una cuenta, buscar inventario cuando te quedaste sin tokens y conectar agentes, pero el camino principal es conversar.
 
-<img width="80%" alt="quilombo-architecture" src="https://mgaitan.github.io/quilombo/_images/quilombo-architecture.png" />
+<img alt="quilombo-architecture" src="https://mgaitan.github.io/quilombo/_images/quilombo-architecture.png" />
 
 Existe además una [skill](https://github.com/mgaitan/quilombo/blob/main/skills/manage-quilombo-inventory/SKILL.md), que ayuda al agente a usar el MCP. Ahí vive la política conversacional recomendada:
 buscar antes de afirmar, diferenciar «no registrado» de «no existe», mostrar un borrador antes de modificar, etc. 

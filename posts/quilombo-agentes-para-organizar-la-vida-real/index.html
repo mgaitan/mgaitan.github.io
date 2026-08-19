@@ -124,7 +124,7 @@ navbar-light bg-light
 <p>Otro <a href="https://chatgpt.com/share/6a8456eb-e8b0-83e9-97bc-f7d36b901a65">ejemplo real</a>, esta vez de carga de datos: </p>
 <p>— Registrá la estantería de mi oficina. En el primer estánte tengo el Fluent Python de Ramalho, la versión 2. También la tercera edición de Crucial conversations. Está la cámara de fotos nikon y mi vapeador. Ah, y el estuche de los auriculares. <br>
 — Copy that. </p>
-<p>Si hasta acá ya suena útil, sumale que los modelos más potentes tienen capacidad de visión, por lo que podés <strong>enviarle una foto de ese cajón endemoniado</strong> donde todavía tenés el cargador de tu primer Nokia, las tarjetas de crédito que ahora usas via NFC, y el reproductor MP3 tipo huevito con <code>Mayonesa_Remix_Chocolate_2001.mp3</code> a 96kbps bajado del Ares. El agente convertirá esa foto en una actualización masiva de Quilombo sin que tengas que apretar una tecla. </p>
+<p>Si hasta acá ya suena útil, sumale que los modelos más potentes tienen capacidad de visión, por lo que podés <strong>enviarle una foto de ese cajón endemoniado</strong> donde todavía tenés el cargador de tu primer Nokia, las tarjetas de crédito que ahora usas via NFC, y el reproductor MP3 tipo huevito con <a href="https://www.youtube.com/watch?v=T6NhuWYnxW0">Mayonesa_Remix_Chocolate_2001.mp3</a> a 96kbps bajado del Ares. El agente convertirá esa foto en una actualización masiva de Quilombo sin que tengas que apretar una tecla. </p>
 <p><a href="https://quilombo-v1-mgaitan.onrender.com/">Quilombo está online</a> (<strong>Atención</strong>: de vez en cuando puede tardar un minutito en levantar porque uso el <em>free-tier</em> de Render que duerme la instancia. ¿Por qué? ya saben <a href="https://mgaitan.github.io/posts/como-usar-varias-cuentas-de-google-photos-para-ampliar-el-espacio-de-copia-de-seguridad/">por qué</a>) . Pueden sacarse una cuenta y configurar su agente via MCP para probarlo.  </p>
 <p>Por supuesto es <a href="https://github.com/mgaitan/quilombo/">open source</a>. </p>
 <h3>El test Oscar</h3>
@@ -147,7 +147,7 @@ navbar-light bg-light
 <p>El código es un monolito Django con PostgreSQL. Es
 multiusuario, separa los datos por workspace y expone una API HTTP y un servidor MCP "remoto" (<a href="https://modelcontextprotocol.io/specification/draft/basic/transports/streamable-http">streameable-http</a> es la keyword) con OAuth. MCP es el estándar que permite al cliente (ChatGPT, Claude, OpenClaw o cualquier agente masomenos actualizado) descubra el servicio y así sepa como buscar, leer una vista general del inventario, mover existencias o hacer cambios en lote. </p>
 <p>La interfaz web por ahora es mínima y existe para crear una cuenta, buscar inventario cuando te quedaste sin tokens y conectar agentes, pero el camino principal es conversar.</p>
-<p><img width="80%" alt="quilombo-architecture" src="https://mgaitan.github.io/quilombo/_images/quilombo-architecture.png"></p>
+<p><img alt="quilombo-architecture" src="https://mgaitan.github.io/quilombo/_images/quilombo-architecture.png"></p>
 <p>Existe además una <a href="https://github.com/mgaitan/quilombo/blob/main/skills/manage-quilombo-inventory/SKILL.md">skill</a>, que ayuda al agente a usar el MCP. Ahí vive la política conversacional recomendada:
 buscar antes de afirmar, diferenciar «no registrado» de «no existe», mostrar un borrador antes de modificar, etc. </p>
 <h3>¿Y qué sigue?</h3>
