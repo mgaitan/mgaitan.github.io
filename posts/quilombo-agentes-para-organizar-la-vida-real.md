@@ -25,7 +25,7 @@ Se las resumo por si les dió fiaca el click:
 — Ey, ¿dónde está el alicate?<br>
 — En la mesa de luz, opa, ¿dónde va a estar?
 
-La utilidad parece tonta si el lugar para un objeto es obvio o sos un obse que siempre sabe exáctamente dónde guardás cada cosa. Pero en una biblioteca, un taller o ¿una mudanza?, por más que le asignemos un lugar a cada cosa (y lo respetemos) es imposible recordar todo sin un sistema.
+La utilidad parece tonta si el lugar para un objeto es obvio o sos un obse que siempre sabe exáctamente dónde guardás cada cosa. Pero en una biblioteca, un taller o tu próxima mudanza, por más que le asignemos un lugar a cada cosa (y lo respetemos) es imposible recordar todo sin un sistema.
 
 Creo que para esto se inventaron las computadoras (por algo en España le dicen "ordenadores" 🤣) y sus compañeras las bases de datos. Pero acá el obstáculo: para ser verdaderamente útiles, estos sistemas requieren tener la información a procesar al detalle y, aún si de alguna manera la generamos o la conseguimos, cargarla con una estructura en particular puede ser lento y aburridísimo (¿existe todavía oficio de "data entry" cuya tarea era llenar formularios con datos?). Un costo incompatible con mantener un inventario doméstico y desestructurado. 
 
