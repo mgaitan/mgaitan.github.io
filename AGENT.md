@@ -40,6 +40,9 @@
 - Mantener `category: projects` para proyectos propios salvo una razón clara para otra categoría.
 - Usar Mermaid mediante imágenes de `https://mermaid.ink/` cuando un diagrama explique mejor un
   flujo que varios párrafos.
+- Para las versiones en inglés, conservar la base del nombre de archivo en español y agregar el
+  sufijo `.en.md` (por ejemplo, `mi-post.md` y `mi-post.en.md`), para que queden vinculadas como
+  versiones equivalentes. El título, la metadata traducible y el contenido deben estar en inglés.
 - Conservar acentos y caracteres del español. Los ejemplos de código y claves técnicas deben usar
   el formato literal que corresponda.
 
