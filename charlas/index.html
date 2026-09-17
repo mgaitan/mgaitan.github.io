@@ -20,10 +20,10 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta property="og:site_name" content="tin_nqn">
 <meta property="og:title" content="Charlas y cursos">
 <meta property="og:url" content="https://mgaitan.github.io/charlas/">
-<meta property="og:description" content="Diez consejos para un mejor software (de) científico(s)
+<meta property="og:description" content="IA para la vida real
 
-En Phasety he lidiado (y aprendido) con el código escrito por científicos.
-Mentes brillantes, expertas en su campo de investigación, tienen com">
+Una charla sobre cómo llevar modelos y agentes de inteligencia artificial a problemas concretos,
+con menos magia en el título y más herramientas que efectivamente se puedan usar.">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-11-19T00:00:00-03:00">
 <meta name="twitter:card" content="summary">
@@ -56,6 +56,9 @@ navbar-light bg-light
                 </li>
 <li class="nav-item active">
 <a href="." class="nav-link">Charlas <span class="sr-only">(activo)</span></a>
+                </li>
+<li class="nav-item">
+<a href="../proyectos/" class="nav-link">Proyectos</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archivos</a>
@@ -91,561 +94,151 @@ navbar-light bg-light
 
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <section id="diez-consejos-para-un-mejor-software-de-cientifico-s"><h2>Diez consejos para un mejor software (de) científico(s)</h2>
+    <h3>IA para la vida real</h3>
 <blockquote>
-<p>En <a class="reference external" href="http://phasety.com">Phasety</a> he lidiado (y aprendido) con el código escrito por científicos.
-Mentes brillantes, expertas en su campo de investigación, tienen como herramienta principal un lenguaje
-de programación cuyo aprendizaje ha sido informal, de fuentes erróneas o anticuadas, siguiendo ejemplos
-llenos de vicios y malas prácticas transmitidas de generación en generación.</p>
-<p>No es este un curso de ingenieria de software. Ni siquiera de Python. Es un compendio de ideas
+<p>Una charla sobre cómo llevar modelos y agentes de inteligencia artificial a problemas concretos,
+con menos magia en el título y más herramientas que efectivamente se puedan usar.</p>
+</blockquote>
+<p><strong>presentación:</strong><br><a href="https://mgaitan.github.io/ia-para-la-vida-real/">ver online</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/ia-para-la-vida-real">https://github.com/mgaitan/ia-para-la-vida-real</a></p>
+<hr>
+<h3>Tooling moderno en Python</h3>
+<blockquote>
+<p>Una recorrida por herramientas para mejorar la experiencia de desarrollo en Python, con foco en
+<code>uv</code>, <code>uvx</code> y <code>ruff</code>.</p>
+</blockquote>
+<p><strong>presentación:</strong><br><a href="https://mgaitan.github.io/tooling-python-moderno/">ver online</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/tooling-python-moderno">https://github.com/mgaitan/tooling-python-moderno</a></p>
+<hr>
+<h3>Pasaron cosas: logging efectivo para entender qué sucedió</h3>
+<blockquote>
+<p>El logging es una técnica indispensable en el software productivo, pero hay muchos conceptos y
+una API confusa que hacen su uso innecesariamente complicado. Logger, filtros, niveles,
+propagación y logging estructurado: una charla para dejar de adivinar qué pasó en producción.</p>
+</blockquote>
+<p><strong>presentación:</strong><br><a href="https://mgaitan.github.io/pasaron-cosas/slides.html">ver online</a><br><strong>video:</strong><br><a href="https://www.youtube.com/watch?v=XvJNWj7jmMc">ver en YouTube</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/pasaron-cosas">https://github.com/mgaitan/pasaron-cosas</a><br><strong>evento:</strong> PyConAr 2020</p>
+<hr>
+<h3>Diez consejos para un mejor software (de) científico(s)</h3>
+<blockquote>
+<p>En <a href="http://phasety.com">Phasety</a> he lidiado (y aprendido) con el código escrito por científicos.
+Mentes brillantes, expertas en su campo de investigación, tienen como herramienta principal un
+lenguaje de programación cuyo aprendizaje ha sido informal, de fuentes erróneas o anticuadas,
+siguiendo ejemplos llenos de vicios y malas prácticas transmitidas de generación en generación.</p>
+<p>No es este un curso de ingeniería de software. Ni siquiera de Python. Es un compendio de ideas
 simples y consejos prácticos para que la programación científica de cada día sea una herramienta
 más efectiva, mantenible y entendible.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>presentación<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://mgaitan.github.io/10consejos/index.html">ver online</a></p>
-</dd>
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="https://github.com/mgaitan/10consejos">https://github.com/mgaitan/10consejos</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p>Scipycon Argentina 2014</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Universidad Nacional del Sur, Bahía Blanca, Argentina</p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>22 de octubre de 2014</p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="curso-de-python-cientifico"><h2>Curso de Python Científico</h2>
+<p><strong>presentación:</strong><br><a href="https://mgaitan.github.io/10consejos/">ver online</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/10consejos">https://github.com/mgaitan/10consejos</a><br><strong>evento:</strong> SciPyCon Argentina 2014<br><strong>lugar:</strong> Universidad Nacional del Sur, Bahía Blanca, Argentina<br><strong>fecha:</strong> 22 de octubre de 2014</p>
+<hr>
+<h3>Curso de Python para ciencias e ingenierías</h3>
 <blockquote>
-<p>Un curso de Python orientado a estudiantes de ingenieria, ingenieros e investigadores.</p>
+<p>Un curso de Python orientado a estudiantes de ingeniería, ingenieros e investigadores.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="https://github.com/mgaitan/curso-python-cientifico">https://github.com/mgaitan/curso-python-cientifico</a>&gt;</p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p>Scipycon Argentina 2014</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Universidad Nacional del Sur, Bahía Blanca, Argentina</p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>22 de octubre de 2014</p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="ingenieria-para-ganar-el-mundial"><h2>Ingeniería para ganar el mundial</h2>
+<p><strong>diapositivas:</strong><br><a href="https://github.com/mgaitan/curso-python-cientifico/blob/edenor/python-cientifico.pdf">descargar PDF</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/curso-python-cientifico">https://github.com/mgaitan/curso-python-cientifico</a><br><strong>material:</strong><br><a href="https://github.com/mgaitan/curso-python-cientifico/tree/edenor">notebooks del curso</a><br><strong>evento:</strong> SciPyCon Argentina 2014<br><strong>lugar:</strong> Universidad Nacional del Sur, Bahía Blanca, Argentina<br><strong>fecha:</strong> 22 de octubre de 2014</p>
+<hr>
+<h3>Ingeniería para ganar el mundial</h3>
 <blockquote>
-<p>Se dice que los ingenieros son <em>"quienes saben resolver problemas"</em>,
-usando (¡y creando!) tecnología. Pero ¿Cuáles problemas debemos resolver?
-¿Podemos elegir? ¿Qué rol cumplimos los ingenieros en la Argentina actual?
-Y ya que sabemos resolver problemas ¿Podemos ayudarle a Messi a ganar el Mundial?</p>
+<p>Se dice que los ingenieros son <em>quienes saben resolver problemas</em>, usando (¡y creando!)
+tecnología. Pero ¿cuáles problemas debemos resolver? ¿Podemos elegir? ¿Qué rol cumplimos los
+ingenieros en la Argentina actual? Y ya que sabemos resolver problemas, ¿podemos ayudarle a Messi
+a ganar el Mundial?</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://mgaitan.github.io/ganar_el_mundial/">http://mgaitan.github.io/ganar_el_mundial/</a></p>
-</dd>
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://github.com/mgaitan/ganar_el_mundial/">http://github.com/mgaitan/ganar_el_mundial/</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p>Ciclo de charlas "Ingeniería y emprendedorismo", (Gradiente - La Bisagra)</p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>15 de abril de 2014</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Facultad de Ciencias Exáctas, Físicas y Naturales, Córdoba, Argentina</p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="introduccion-a-git"><h2>Introducción a Git</h2>
-<dl class="field-list simple">
-<dt>presentación<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://mgaitan.github.io/intro-git/index.html">http://mgaitan.github.io/intro-git/index.html</a></p>
-</dd>
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="https://github.com/mgaitan/intro-git">https://github.com/mgaitan/intro-git</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p>8vas Jornadas de Software Libre de la UNNOBA</p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>29 de Noviembre de 2013</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Universidad Nacional del Noroeste de la Provincia de Buenos Aires, Junín, Buenos Aires.</p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="la-pythonicidad-al-palo"><h2>La pythonicidad al palo</h2>
+<p><strong>diapositivas:</strong><br><a href="https://mgaitan.github.io/ganar_el_mundial/">ver online</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/ganar_el_mundial">https://github.com/mgaitan/ganar_el_mundial</a><br><strong>evento:</strong> Ciclo de charlas “Ingeniería y emprendedorismo”, Gradiente - La Bisagra<br><strong>fecha:</strong> 15 de abril de 2014<br><strong>lugar:</strong> Facultad de Ciencias Exactas, Físicas y Naturales, Córdoba, Argentina</p>
+<hr>
+<h3>Introducción a Git</h3>
+<p><strong>presentación:</strong><br><a href="https://mgaitan.github.io/intro-git/">ver online</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/intro-git">https://github.com/mgaitan/intro-git</a><br><strong>evento:</strong> 8vas Jornadas de Software Libre de la UNNOBA<br><strong>fecha:</strong> 29 de noviembre de 2013<br><strong>lugar:</strong> Universidad Nacional del Noroeste de la Provincia de Buenos Aires, Junín, Buenos Aires</p>
+<hr>
+<h3>La pythonicidad al palo</h3>
 <blockquote>
-<p>¿Qué significa que un código sea "pythónico"?
-Una charla sobre python idiomático: características de este lenguaje para expresar de forma simple, elegante y potente.</p>
+<p>¿Qué significa que un código sea “pythónico”? Una charla sobre Python idiomático:
+características de este lenguaje para expresar de forma simple, elegante y potente.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://mgaitan.github.com/pythonicidad/">http://mgaitan.github.com/pythonicidad/</a></p>
-</dd>
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://github.com/mgaitan/pythonicidad/">http://github.com/mgaitan/pythonicidad/</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://ar.pycon.org/2013">PyCon Argentina 2013</a></p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Viernes 25 de octubre de 2013</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Rosario, Argentina</p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="myhdl-de-python-al-silicio"><h2>MyHDL, de Python al silicio</h2>
+<p><strong>diapositivas:</strong><br><a href="https://mgaitan.github.io/pythonicidad/">enlace histórico</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/pythonicidad">https://github.com/mgaitan/pythonicidad</a><br><strong>evento:</strong> <a href="http://ar.pycon.org/2013">PyCon Argentina 2013</a><br><strong>fecha:</strong> viernes 25 de octubre de 2013<br><strong>lugar:</strong> Rosario, Argentina</p>
+<hr>
+<h3>Things to make writing tests easier</h3>
 <blockquote>
-<p>En el mundo del hardware se usan lenguajes de descripción
-como VHDL o Verilog. <a class="reference external" href="http://myhdl.org">MyHDL</a> es un paquete que permite utilizar
-la potencia de alto nivel de Python como reemplazo (o abstracción)
-de un lenguaje de descripción de hardware tradicional.</p>
-<p>¿Imaginaste alguna vez diseñar tu propio procesador? O implementar
-un sistema de embebido en un chip? Esas cosas requieren lidiar con
-los lenguajes HDL (hardware description language), que si bien no
-son de bajo nivel como un ensamblador, tienen sitaxis y mañas complejas.
-No es para menos:  esos "programas" se sintetizan y se vuelven
-los planos internos de un chip, por ejemplo una FPGA.</p>
-<p>MyHDL permite reemplazarlos programando en Python, pudiendo simular
-y hacer test de manera mucho más fácil. Incluso se puede obtener
-código en lenguajes HDL sintetizables y hacer tu sueño
-realidad: ¡hacer hardware con Python!</p>
+<p>Una charla de PyCon 2013 sobre herramientas y bibliotecas para hacer más llevadera la escritura
+de tests en Python.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://mgaitan.github.com/myhdl-talk/">http://mgaitan.github.com/myhdl-talk/</a></p>
-</dd>
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://github.com/mgaitan/myhdl-talk/">http://github.com/mgaitan/myhdl-talk/</a></p>
-</dd>
-</dl>
-<section id="presentaciones"><h3>Presentaciones</h3>
-<dl class="field-list simple">
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://ar.pycon.org/2012">PyCon Argentina 2012</a></p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Sábado 17 de junio de 2012</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Univesidad Nacional de Quilmes, Bernal, Buenos Aires</p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://www.pyday.com.ar/cordoba2011/">PyDay Córdoba 2011</a></p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Sábado 30 de abril de 2011</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Universidad Tecnológica Nacional - Sede Córdoba</p>
-</dd>
-</dl></section></section><hr class="docutils">
-<section id="enaml-lightning-talk"><h2>Enaml (lightning talk)</h2>
+<p><strong>presentación:</strong><br><a href="https://mgaitan.github.io/python2013-testing/">ver online</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/python2013-testing">https://github.com/mgaitan/python2013-testing</a><br><strong>evento:</strong> PyCon Argentina 2013</p>
+<hr>
+<h3>MyHDL, de Python al silicio</h3>
 <blockquote>
-<p><a class="reference external" href="http://docs.enthought.com/enaml/">Enaml</a> es una herramienta para hacer interfaces gráficas duraderas
-que se banquen un desarrollo de largo plazo. Además permite
-utilizar una arquitectura MVC de manera fácil.</p>
+<p>En el mundo del hardware se usan lenguajes de descripción como VHDL o Verilog. MyHDL es un
+paquete que permite utilizar la potencia de alto nivel de Python como reemplazo o abstracción de
+un lenguaje de descripción de hardware tradicional.</p>
+<p>¿Imaginaste alguna vez diseñar tu propio procesador? MyHDL permite simular y hacer tests de
+manera mucho más fácil, e incluso obtener código en lenguajes HDL sintetizables.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://mgaitan.github.com/enaml-talk/">http://mgaitan.github.com/enaml-talk/</a></p>
-</dd>
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://github.com/mgaitan/enaml-talk/">http://github.com/mgaitan/enaml-talk/</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://ar.pycon.org/2012">PyCon Argentina 2012</a></p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Viernes 16 de junio de 2012</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Univesidad Nacional de Quilmes, Bernal, Buenos Aires</p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="doc-para-todos-y-todas"><h2>__doc__ """para todos y todas"""</h2>
+<p><strong>diapositivas:</strong><br><a href="https://mgaitan.github.io/myhdl-talk/">ver online</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/myhdl-talk">https://github.com/mgaitan/myhdl-talk</a><br><strong>evento:</strong> PyCon Argentina 2012 y PyDay Córdoba 2011<br><strong>lugar:</strong> Universidad Nacional de Quilmes y Universidad Tecnológica Nacional, Córdoba<br><strong>artículo:</strong><br><a href="../posts/charla-myhdl-de-python-al-siliicio.html">sobre la charla</a></p>
+<hr>
+<h3>Enaml (lightning talk)</h3>
 <blockquote>
-<p>No existe software de calidad sin una documentación que lo demuestre.
-Y Python no sólo se destaca como lenguaje y comunidad: también por
-su "cultura de la documentación". La charla dará ideas, herramientas,
-servicios y demás yerbas para ser un pythonista de ley, documentado.</p>
+<p>Enaml es una herramienta para hacer interfaces gráficas duraderas que se banquen un desarrollo
+de largo plazo. Además permite utilizar una arquitectura MVC de manera fácil.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://mgaitan.github.io/charla__doc__/presentacion.html">http://mgaitan.github.io/charla__doc__/presentacion.html</a></p>
-</dd>
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://github.com/mgaitan/charla__doc__/">http://github.com/mgaitan/charla__doc__/</a></p>
-</dd>
-</dl>
-<section id="presentaciones-1"><h3>Presentaciones</h3>
-<dl class="field-list simple">
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://utpl.edu.ec/isummit2012/">III Conferencia Internacional de Tecnología iSummit Loxa 2012</a></p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Viernes 26 de octubre de 2012</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Universidad Técnica Particular de Loja, Ecuador</p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://pydaycba.com.ar/">PyDay Córdoba 2012</a></p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Sábado 15 de septiembre de 2012</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>FaMAF, Universidad Nacional de Córdoba</p>
-</dd>
-</dl></section></section><hr class="docutils">
-<section id="django-el-framework-para-perfeccionistas"><h2>Django, el framework para perfeccionistas</h2>
+<p><strong>diapositivas:</strong><br><a href="https://mgaitan.github.io/enaml-talk/">ver online</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/enaml-talk">https://github.com/mgaitan/enaml-talk</a><br><strong>evento:</strong> <a href="http://ar.pycon.org/2012">PyCon Argentina 2012</a><br><strong>fecha:</strong> viernes 16 de junio de 2012<br><strong>lugar:</strong> Universidad Nacional de Quilmes, Bernal, Buenos Aires</p>
+<hr>
+<h3>
+<strong>doc</strong> “para todos y todas”</h3>
 <blockquote>
-<p>Taller de introducción a Python y Django de 8hs dictado en la
-III Conferencia Internacional de Tecnología
-<a class="reference external" href="http://www.utpl.edu.ec/isummit2012/">iSummit Loxa 2012</a> en
-la <a class="reference external" href="http://www.utpl.edu.ec/">Universidad Técnica Particular de Loja</a>,
+<p>No existe software de calidad sin una documentación que lo demuestre. Y Python no sólo se
+destaca como lenguaje y comunidad: también por su cultura de la documentación.</p>
+</blockquote>
+<p><strong>diapositivas:</strong><br><a href="https://mgaitan.github.io/charla__doc__/presentacion.html">enlace histórico</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/charla__doc__">https://github.com/mgaitan/charla__doc__</a><br><strong>evento:</strong> III Conferencia Internacional de Tecnología iSummit Loxa 2012 y PyDay Córdoba 2012<br><strong>lugar:</strong> Universidad Técnica Particular de Loja y FaMAF, Universidad Nacional de Córdoba</p>
+<hr>
+<h3>Django, el framework para perfeccionistas</h3>
+<blockquote>
+<p>Taller de introducción a Python y Django de ocho horas dictado en la III Conferencia
+Internacional de Tecnología iSummit Loxa 2012, en la Universidad Técnica Particular de Loja,
 Ecuador.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://mgaitan.github.com/curso-django/slides/dia1.html">Dia 1</a> y
-<a class="reference external" href="http://mgaitan.github.com/curso-django/slides/dia2.html">Dia 2</a></p>
-</dd>
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="https://github.com/mgaitan/curso-django">https://github.com/mgaitan/curso-django</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://utpl.edu.ec/isummit2012/">III Conferencia Internacional de Tecnología iSummit Loxa 2012</a></p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Lunes 22 y Miércoles 24 de octubre, 2012</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Loja, Ecuador</p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="pyquery-des-trozemos-la-web"><h2>Pyquery: (des)trozemos la web</h2>
+<p><strong>diapositivas:</strong><br><a href="https://mgaitan.github.io/curso-django/slides/dia1.html">día 1</a> y
+<a href="https://mgaitan.github.io/curso-django/slides/dia2.html">día 2</a><br><strong>repo:</strong><br><a href="https://github.com/mgaitan/curso-django">https://github.com/mgaitan/curso-django</a><br><strong>evento:</strong> III Conferencia Internacional de Tecnología iSummit Loxa 2012<br><strong>fecha:</strong> lunes 22 y miércoles 24 de octubre de 2012<br><strong>lugar:</strong> Loja, Ecuador</p>
+<hr>
+<h3>Pyquery: (des)trozemos la web</h3>
 <blockquote>
-<p>Lightning Talk (charla brevísima) presentada en PyCon Argentina 2011.
-<a class="reference external" href="http://packages.python.org/pyquery/">PyQuery</a> es una biblioteca que trae la API de selectores y traversing de jQuery a Python</p>
+<p>Lightning talk presentada en PyCon Argentina 2011. PyQuery es una biblioteca que trae la API de
+selectores y traversing de jQuery a Python.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://nqnwebs.github.com/pyquery-lightning-talk/pyquery-lt.html">http://nqnwebs.github.com/pyquery-lightning-talk/pyquery-lt.html</a></p>
-</dd>
-<dt>repo<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="https://github.com/nqnwebs/pyquery-lightning-talk">https://github.com/nqnwebs/pyquery-lightning-talk</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://ar.pycon.org/2011">PyCon Argentina 2011</a></p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Viernes 23 de septiembre de 2011</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Universidad Nacional del Noroeste de la Provincia de Buenos Aires,
-Junín, Prov. de Buenos Aires</p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="python-ingenieria"><h2>Python ❤ Ingeniería</h2>
+<p><strong>diapositivas:</strong><br><a href="http://nqnwebs.github.com/pyquery-lightning-talk/pyquery-lt.html">ver online</a><br><strong>repo:</strong><br><a href="https://github.com/nqnwebs/pyquery-lightning-talk">https://github.com/nqnwebs/pyquery-lightning-talk</a><br><strong>evento:</strong> <a href="http://ar.pycon.org/2011">PyCon Argentina 2011</a><br><strong>fecha:</strong> viernes 23 de septiembre de 2011<br><strong>lugar:</strong> Universidad Nacional del Noroeste de la Provincia de Buenos Aires, Junín</p>
+<hr>
+<h3>Python ❤ Ingeniería</h3>
 <blockquote>
-<p>Taller sobre Python de 6 horas orientado a estudiantes y profesores de Ingenierías
-(con conocimientos en algún lenguaje de programación de alto nivel).</p>
-<p>En el primer encuentro se recorren los tipos y estructuras de datos incorporados
-(tipos numéricos, cadenas, listas, tuplas, conjuntos, diccionarios),
-el manejo de archivos, las estructuras de control de flujo (if, for, while)
-y de código (funciones, generadores, clases).</p>
-<p>El segundo encuentro hace un repaso, brinda una somera introducción
-de numpy y matplotlib y se enfoca en distintos módulos útiles de la biblioteca estándar.</p>
+<p>Taller sobre Python de seis horas orientado a estudiantes y profesores de Ingenierías, con
+conocimientos en algún lenguaje de programación de alto nivel.</p>
+<p>En el primer encuentro se recorren los tipos y estructuras de datos incorporados, el manejo de
+archivos, las estructuras de control y las funciones, generadores y clases. El segundo encuentro
+brinda una introducción a NumPy y Matplotlib y recorre módulos útiles de la biblioteca estándar.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p>Curso de capacitación para profesores y estudiantes avanzados de FCEFyN, UNC</p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Noviembre de 2010</p>
-</dd>
-<dt>repositorio<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="https://github.com/mgaitan/python-ingenieria">https://github.com/mgaitan/python-ingenieria</a></p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="ipython-la-interactividad-al-poder"><h2>IPython, la interactividad al poder</h2>
+<p><strong>evento:</strong> Curso de capacitación para profesores y estudiantes avanzados de FCEFyN, UNC<br><strong>fecha:</strong> noviembre de 2010<br><strong>repositorio:</strong><br><a href="https://github.com/mgaitan/python-ingenieria">https://github.com/mgaitan/python-ingenieria</a></p>
+<hr>
+<h3>IPython, la interactividad al poder</h3>
 <blockquote>
-<p>El intérprete provisto con Python es un poco limitado para un uso
-interactivo extenso. IPython lo soluciona sorprendentemente.
-Daremos un recorrido por sus funcionalidades más importante: introspección,
-logging, historial, accesos al sistema, etc.</p>
-<p>Es una presentación interactiva que se <strong>ejecuta</strong> en IPython.
-Ver instrucciones en <code class="docutils literal">README.rst</code></p>
+<p>El intérprete provisto con Python es un poco limitado para un uso interactivo extenso. IPython lo
+soluciona sorprendentemente. Es una presentación interactiva que se <strong>ejecuta</strong> en IPython.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>repositorio<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="https://github.com/nqnwebs/IPython-interactive-talk/">https://github.com/nqnwebs/IPython-interactive-talk/</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://ar.pycon.org/2010">PyCon Argentina 2010</a></p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Viernes 15 de octubre de 2010</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>Universidad Siglo XXI, Córdoba, Argentina</p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="python-a-los-bifes-casos-reales-de-aplicacion-en-ingenieria"><h2>Python a los bifes: casos reales de aplicación en Ingeniería</h2>
+<p><strong>repositorio:</strong><br><a href="https://github.com/nqnwebs/IPython-interactive-talk">https://github.com/nqnwebs/IPython-interactive-talk</a><br><strong>evento:</strong> <a href="http://ar.pycon.org/2010">PyCon Argentina 2010</a><br><strong>fecha:</strong> viernes 15 de octubre de 2010<br><strong>lugar:</strong> Universidad Siglo XXI, Córdoba, Argentina</p>
+<hr>
+<h3>Python a los bifes: casos reales de aplicación en Ingeniería</h3>
 <blockquote>
-<p>Basta de hablar y hablar de lo bueno que está Python:
-en la cancha se ven los pingos. Mostraré
-problemas reales de la carrera resueltos con este poderoso (y
-simple) lenguaje. Trabajos de Sistemas de Computación, Sistemas
-Operativos II, Paradigmas de programación y mi proyecto integrador
-en curso"</p>
+<p>Basta de hablar y hablar de lo bueno que está Python: en la cancha se ven los pingos. Mostraré
+problemas reales de la carrera resueltos con este poderoso y simple lenguaje.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p>Conferencias de Ingeniería en Computación, Electrónica y Biomédica 2010</p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Jueves 7 de Octubre de 2010</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>FCEFyN, Universidad Nacional de Córdoba</p>
-</dd>
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html">http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html</a></p>
-</dd>
-<dt>fuentes<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="http://lab.nqnwebs.com/charlas/alosbifes/alosbifes.tar.gz">http://lab.nqnwebs.com/charlas/alosbifes/alosbifes.tar.gz</a></p>
-</dd>
-<dt>post<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="../posts/charla-python-a-los-bifes.html">/posts/charla-python-a-los-bifes.html</a></p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="ser-freelance-como-trabajar-en-ojotas-desde-el-living-de-tu-casa"><h2>Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa</h2>
+<p><strong>evento:</strong> Conferencias de Ingeniería en Computación, Electrónica y Biomédica 2010<br><strong>fecha:</strong> jueves 7 de octubre de 2010<br><strong>lugar:</strong> FCEFyN, Universidad Nacional de Córdoba<br><strong>diapositivas:</strong><br><a href="http://lab.nqnwebs.com/charlas/alosbifes/python_a_los_bifes.html">ver online</a><br><strong>fuentes:</strong><br><a href="http://lab.nqnwebs.com/charlas/alosbifes/alosbifes.tar.gz">descargar</a><br><strong>post:</strong><br><a href="../posts/charla-python-a-los-bifes.html">Python a los bifes</a></p>
+<hr>
+<h3>Ser Freelance: Cómo trabajar en ojotas desde el living de tu casa</h3>
 <blockquote>
-<p>En esta oportunidad pretendí un tema menos técnico pero de interés para un vasto sector de
-mis compañeros: cómo animarse a dar los primeros pasos profesionalmente
-sin ser empleado.</p>
-<p>La charla se basó en una presentación de <a class="reference external" href="http://www.desimone.com.ar/">Sebastián
-Desimone</a>, publicada bajo <a class="reference external" href="http://creativecommons.org/licenses/by-nc/2.5/ar/">Creative
-Commons by-nc-ar</a>
-que escuché en las <a class="reference external" href="http://jornadas.grulic.org.ar/7/">7mas Jornadas Regionales de Software
-Libre</a>, realizadas en Córdoba, en
-2007.</p>
+<p>Una charla sobre cómo animarse a dar los primeros pasos profesionalmente sin ser empleado.</p>
 </blockquote>
-<dl class="field-list simple">
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="../downloads/ojotas_copia_.odp">/downloads/ojotas_copia_.odp</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p>3º Jornadas Abiertas de Ingeniería en Computación</p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>Miércoles 15 de abril de 2009</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>FCEFyN, Universidad Nacional de Córdoba</p>
-</dd>
-<dt>post<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="../posts/charla-ser-freelance-como-trabajar.html">/posts/charla-ser-freelance-como-trabajar.html</a></p>
-</dd>
-<dt>video<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="https://www.youtube.com/watch?v=3pKPg11qBvM">https://www.youtube.com/watch?v=3pKPg11qBvM</a></p>
-</dd>
-</dl></section><hr class="docutils">
-<section id="utilizacion-de-control-de-versiones-con-subversion"><h2>Utilizacion de Control de Versiones con Subversion</h2>
+<p><strong>diapositivas:</strong><br><a href="../downloads/ojotas_copia_.odp">descargar</a><br><strong>evento:</strong> 3º Jornadas Abiertas de Ingeniería en Computación<br><strong>fecha:</strong> miércoles 15 de abril de 2009<br><strong>lugar:</strong> FCEFyN, Universidad Nacional de Córdoba<br><strong>post:</strong><br><a href="../posts/charla-ser-freelance-como-trabajar.html">Ser Freelance</a><br><strong>video:</strong><br><a href="https://www.youtube.com/watch?v=3pKPg11qBvM">ver en YouTube</a></p>
+<hr>
+<h3>Utilización de Control de Versiones con Subversion</h3>
 <blockquote>
-<p>Subversion es un sistema de control de versiones que ha reemplazado
-al caduco CVS. El énfasis de la charla estará puesto en la importancia
-y utilidad de un sistema de control de versiones,
-y se propone Subversion como una potente herramienta,
-libre, segura y de fácil uso. Se dará una demo con distintos
-clientes, tanto en GNU/Linux como en Windows.</p>
+<p>Subversion es un sistema de control de versiones que reemplazó al caduco CVS. La charla propone
+una introducción práctica, con una demo usando distintos clientes en GNU/Linux y Windows.</p>
 </blockquote>
-<p>Charla preparada y presentada junto a Pablo Martínez</p>
-<dl class="field-list simple">
-<dt>diapositivas<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="../downloads/charla-svn.pdf">/downloads/charla-svn.pdf</a></p>
-</dd>
-<dt>evento<span class="colon">:</span>
-</dt>
-<dd>
-<p>1ras Conferencias Abiertas de Ingeniería en Computación</p>
-</dd>
-<dt>fecha<span class="colon">:</span>
-</dt>
-<dd>
-<p>5 de junio de 2007</p>
-</dd>
-<dt>lugar<span class="colon">:</span>
-</dt>
-<dd>
-<p>FCEFyN, Universidad Nacional de Córdoba</p>
-</dd>
-<dt>post<span class="colon">:</span>
-</dt>
-<dd>
-<p><a class="reference external" href="../posts/Control-de-Versiones-con.html">/posts/Control-de-Versiones-con.html</a></p>
-</dd>
-</dl></section>
-</div>
+<p>Charla preparada y presentada junto a Pablo Martínez.</p>
+<p><strong>diapositivas:</strong><br><a href="../downloads/charla-svn.pdf">descargar PDF</a><br><strong>evento:</strong> 1ras Conferencias Abiertas de Ingeniería en Computación<br><strong>fecha:</strong> 5 de junio de 2007<br><strong>lugar:</strong> FCEFyN, Universidad Nacional de Córdoba<br><strong>post:</strong><br><a href="../posts/Control-de-Versiones-con.html">Control de Versiones con Subversion</a></p>
+    </div>
     
 </article><!--End of body content--><footer id="footer">
             Contents © 2026         <a href="mailto:gaitan@gmail.com">Martín Gaitán</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
