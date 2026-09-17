@@ -143,6 +143,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/about/', u'Sobre mí'),
         ('/charlas/', u'Charlas'),
+        ('/proyectos/', u'Proyectos'),
         ('/archive.html', 'Archivos'),
         ('/categories/index.html', u'Categorías'),
         ('/rss.xml', u'RSS'),
@@ -150,6 +151,7 @@ NAVIGATION_LINKS = {
 
     "en": (
         ("/en/about", "About me"),
+	    ("/en/proyectos/", "Projects"),
 	    # ("/en/talks.html", "Talks"),
 		('/en/archive.html', 'Archive'),
 		("/en/categories/index.html", "Tags"),
