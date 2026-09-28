@@ -1,5 +1,12 @@
 # Martin Gaitán's geek blog
 
-My techniocal weblog https://mgaitan.github.io  
+My technical weblog: https://mgaitan.github.io
 
-Use [Nikola](http://nikola.ralsina.com.ar)
+This site is built with [Nikola](https://getnikola.com/) and managed with
+[uv](https://docs.astral.sh/uv/).
+
+```sh
+uv sync
+uv run nikola build
+uv run nikola auto
+```

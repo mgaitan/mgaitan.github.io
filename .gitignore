@@ -8,6 +8,7 @@ cache
 .project
 __pycache__
 output/
+.venv/
 
 
 # Packages

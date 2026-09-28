@@ -1,0 +1,34 @@
+[
+  {
+    "label": "Nikola: nuevo post Markdown",
+    "command": "uv",
+    "args": ["run", "nikola", "new_post", "-e", "-f", "markdown"],
+    "env": {
+      "EDITOR": "zed"
+    },
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "Nikola: build",
+    "command": "uv",
+    "args": ["run", "nikola", "build"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "Nikola: build y vista previa local",
+    "command": "bash",
+    "args": ["-lc", "uv run nikola build && uv run nikola serve -b"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "reveal": "always"
+  },
+  {
+    "label": "Nikola: revisar links",
+    "command": "uv",
+    "args": ["run", "nikola", "check", "-l"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  }
+]

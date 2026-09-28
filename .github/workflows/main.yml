@@ -1,16 +1,45 @@
-on: [push]
+name: Build and deploy
+
+on:
+  push:
+    branches: [writing]
+
+permissions:
+  contents: write
 
 jobs:
   nikola_build:
     runs-on: ubuntu-latest
-    name: 'Deploy Nikola to GitHub Pages'
+    name: Build and deploy Nikola site
     steps:
-    - name: Check out
-      uses: actions/checkout@v4
-      with:
-        submodules: true
-        
-    - name: Build and Deploy Nikola
-      uses: getnikola/nikola-action@v8
-      with:
-        dry_run: false
+      - name: Check out
+        uses: actions/checkout@v7.0.1
+        with:
+          submodules: true
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.2.0
+        with:
+          version: 0.12.17
+          enable-cache: true
+          cache-python: true
+          cache-dependency-glob: |
+            **/pyproject.toml
+            **/uv.lock
+
+      - name: Sync dependencies
+        run: uv sync --locked
+
+      - name: Restore Nikola build cache
+        uses: actions/cache@v6
+        with:
+          path: |
+            .doit.db.db
+            cache/
+            output/
+          key: ${{ runner.os }}-nikola-v1-${{ hashFiles('conf.py', 'posts/**', 'stories/**', 'files/**', 'themes/**', 'pyproject.toml', 'uv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-nikola-v1-
+
+      - name: Build and deploy
+        run: uv run nikola github_deploy
