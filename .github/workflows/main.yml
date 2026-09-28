@@ -41,5 +41,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nikola-v1-
 
+      - name: Fetch deployment branch
+        run: git fetch --no-tags --depth=1 origin master:refs/remotes/origin/master
+
       - name: Build and deploy
         run: uv run nikola github_deploy
