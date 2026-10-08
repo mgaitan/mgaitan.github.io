@@ -1,0 +1,49 @@
+<!--
+.. title: Contra la valla
+.. slug: contra-la-valla
+.. date: 2026-10-08 09:12:11 UTC-03:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+-->
+
+Con un grupo de colegas programadores armamos en Telegram una especie de "grupo de autoayuda" para transitar la experiencia que estamos viviendo: la mutación vertiginosa de nuestra profesión y el impacto que está teniendo en nosotros como "nerds", en nuestras psiquis, en nuestros laburos y la industria del software en general. 
+
+Desde hace un par de años hemos ido pasando por todas las fases: desdén,  excitación, nostalgia, apatía, hartazgo y también, obvio, adaptación y usufructo. Estamos encontrándole la vuelta para que también vuelva el entusiasmo. 
+
+Es muy dificil explicarle a amigos y familiares de otros palos la profundidad del cambio, que todo el mundo sospecha o lee, pero nosotros estamos sintiendo aplastados contra las vallas del evento, si se me permite la metáfora de recital.  
+
+Todo viene siendo *demasiado* rápido pero aun no llega en plena potencia a laburos que, aun estando mediados por la digitalidad, vienen detrás. El famoso ensayo de febrero 2026 "[Something big is happening](https://somethingbig.ai/something-big-is-happening)" intentó una explicación, y desde entonces, en sólo algunos meses, los modelos han multiplicado su capacidad y abaratado sus costos. 
+
+Desarrolladores de software con décadas de experiencia vimos como el conocimiento y el know-how que cultivamos con horas y horas de dedicación, constituían gran parte de nuestra identidad y orgullo y, de yapa, tenian un altísimo valor de mercado, de repente valen menos en plata, utilidad y emoción. Ahora les pasa (con un impacto aun incuantificable) a los 
+
+La industria, mientras tanto, es un zafarrancho, un salvese quien pueda. Los modelos de negocios clásicos de la industria están crujiendo fuerte. El SaaS (software como servicio) tipico de las startups, basado en vender "seats" (acceso por usuario operativo) de productos "en la nube" a veces precarios pero que resultaban costosos de reemplazar, ahora ven como el "seat" se puede exprimr a velocidad agéntica aumentando costos operativos y reduciendo la necesidad de 
+y a la vez sufren un riesgo altisimo de sustitución funcional. ¿Quién no se puede promptear en una mañana un tablero estilo Trello que sólo deba escalar al puñado de usuarios de tu oficina? Si hasta hicieron a fuerza de tokens un clon libre, funcional y multiplataforma de [Photoshop](https://github.com/storytold/photocraft)! 
+
+En Argentina, las big-tech de software. La fábrica "tracción a nerds y café", Globant, hace malabares (mientras tira [manotazos](https://x.com/migoya/status/2085423749571174518))  para sostener su esquema basado en vender horas de expertos y extraer de ahí su historicamente suculenta tajada. En el último año su acción cayó entre el 40 y 50% (y fue mucho peor hace algunos meses) y ha despedido  
+
+Mercado Libre parece para sufrir el lastre de su propia escala para innovar y el fomento de la competencia interna se ha vuelto leonino, llevando a todos los niveles gerenciales a una psicosis por "aumentar la productividad" presionando a sus equipos, incluso con métricas evaluadas de manera automática por IA con criterios no del todo transparentes. Todo un coctel que ha ido dañando fuertemente el clima laboral que solía ser de prestigio, y que se puede palpar en el foro de Reddit [donde suelen conversar los desarrolladores de Meli](https://www.reddit.com/r/devsmeli) de manera anónima. 
+
+En mi caso, divisé el zafarrancho de primera mano a principio de año. En septiembre de 2025, despues de casi 6 años en Shiphero, tuve la osadía de tomarme unos meses sabáticos. En enero, cuando comencé a hacer entrevistas, me topé con que por  posiciones en roles similares a mi *expertise* y *seniority* y la misma cantidad de "horas" me ofrecian muchísima menos guita que la que cobraba. 
+
+Me pareció un tremendo e injusto engaña-pichanga: no sólo tengo un par de décadas en el oficio (mis contribuciones open-source, mis decenas de proyectos pre-vibecoding en github, mi cuello encorvado y mi presbicia repentina pueden dar fe) sino que fui bastante *early adopter* en el desarrollo asistido por agentes, me mantengo muy actualizado de las novedades, y sé laburar paralelizando tareas con multiples agentes, como si jugara partidas de ajedrez simultaneas. 
+
+Pero ese ritmo multi-agéntico no se puede hacer 8 horas al día de manera seria, aunque el C-level de turno crea que es "promptear y hacer botellas" y quiera demostrarlo con su PR o su demo 3D vibecodeada de mierda. 
+
+Aun yo, que laburo de manera remota desde un pueblo de Córdoba hace muchos años, tengo huerta, árboles, gallinas, pile, amigos, trato de hacer cosas "offline", y hago (algo) de actividad física, igual siento el tremendo estrés cognitivo de estas nuevas condiciones de laburo. Es un desgaste que va sedimentando como el relave de contaminantes que queda despues de que la megamineria se lleva el cerro.¿Hasta la ultima gota de plusvalia me querés sacar? 
+
+## ¿Y hay parte buena? 
+
+Yo creo que sí, en ambos aspectos.  
+
+Desde el espiritu nerd, el mandato debe superar la nostalgia y apre(he)nder las herramientas (¡o construirnoslas a medida!) para ir más profundo y ancho en nuestra exploración. 
+
+Siempre tuvimos más ideas que las que podiamos ejecutar. Entonces pongamos al puto robot a trabajar en algo que nos haga un poquito felices, que ayude a alguien, que embellezca aunque sea nuestra cuadra.  
+
+Boludeces que se hacen en una sentada, ya no recibirán el cariño obsesivo que le poniamos antes cuando finalmente nos embalabamos con hacer algo, pero finalmente pueden servirle a otros que aun no saben como, le ahorran un mango, lo divierte o lo infoma sin la logica del clickbait y el engagement aditivio,  le facilitan su labor para sacarle algun provecho individual aunque sea un rato antes de que su "mercado" recalibre la vara de productividad esperada. 
+
+Y desde desde lo laboral, no sé si estoy en lo correcto, pero creo que vuelve a tomar valor la cola larga. Hemos sido formateados en la logica de que si la tecnologica y su mercado no es  "exponencial" no sirve, de lo global, de lo frontera.  Yo creo que hay que volver a mirar con buenos ojos el sistemita a medida, a la pyme que sabe que tiene adaptarse y que puede tener una oportunidad, pero que tenia vedada la posibilidad de informatizarse debidamente por nuestros fees seniors, dolarizados y globales. 
+
+Por qué no pensar menos en "la industria del software" y más en la "industria con software" (si es que tal cosa sigue existiendo cuando se termine esta ignominia sicotica)
