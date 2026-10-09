@@ -15,16 +15,23 @@ Desde hace un par de años hemos ido pasando por todas las fases: desdén,  exci
 
 Es muy dificil explicarle a amigos y familiares de otros palos la profundidad del cambio, que todo el mundo sospecha o lee, pero nosotros estamos sintiendo aplastados contra las vallas del evento, si se me permite la metáfora de recital.  
 
-Todo viene siendo *demasiado* rápido pero aun no llega en plena potencia a laburos que, aun estando mediados por la digitalidad, vienen detrás. El famoso ensayo de febrero 2026 "[Something big is happening](https://somethingbig.ai/something-big-is-happening)" intentó una explicación, y desde entonces, en sólo algunos meses, los modelos han multiplicado su capacidad y abaratado sus costos. 
+Todo viene siendo *demasiado* acelerado (no ya "rápido") pero aún no llega en plena potencia a laburos que, aun estando mediados por la digitalidad, vienen detrás. El famoso ensayo de febrero 2026 "[Something big is happening](https://somethingbig.ai/something-big-is-happening)" intentó una explicación, pero desde entonces los modelos han multiplicado su capacidad y abaratado sus costos. 
 
-Desarrolladores de software con décadas de experiencia vimos como el conocimiento y el know-how que cultivamos con horas y horas de dedicación, constituían gran parte de nuestra identidad y orgullo y, de yapa, tenian un altísimo valor de mercado, de repente valen menos en plata, utilidad y emoción. Ahora les pasa (con un impacto aun incuantificable) a los 
+Desarrolladores de software con décadas de experiencia vimos, especialmente durante el último año, como el conocimiento y el know-how que cultivamos con horas y horas de dedicación, constituían gran parte de nuestra identidad y orgullo y, de yapa, tenian un altísimo valor de mercado, de repente valen menos en plata, utilidad y emoción. 
 
-La industria, mientras tanto, es un zafarrancho, un salvese quien pueda. Los modelos de negocios clásicos de la industria están crujiendo fuerte. El SaaS (software como servicio) tipico de las startups, basado en vender "seats" (acceso por usuario operativo) de productos "en la nube" a veces precarios pero que resultaban costosos de reemplazar, ahora ven como el "seat" se puede exprimr a velocidad agéntica aumentando costos operativos y reduciendo la necesidad de 
-y a la vez sufren un riesgo altisimo de sustitución funcional. ¿Quién no se puede promptear en una mañana un tablero estilo Trello que sólo deba escalar al puñado de usuarios de tu oficina? Si hasta hicieron a fuerza de tokens un clon libre, funcional y multiplataforma de [Photoshop](https://github.com/storytold/photocraft)! 
+No puedo meterme 
 
-En Argentina, las big-tech de software. La fábrica "tracción a nerds y café", Globant, hace malabares (mientras tira [manotazos](https://x.com/migoya/status/2085423749571174518))  para sostener su esquema basado en vender horas de expertos y extraer de ahí su historicamente suculenta tajada. En el último año su acción cayó entre el 40 y 50% (y fue mucho peor hace algunos meses) y ha despedido  
+## Un paseo por 
 
-Mercado Libre parece para sufrir el lastre de su propia escala para innovar y el fomento de la competencia interna se ha vuelto leonino, llevando a todos los niveles gerenciales a una psicosis por "aumentar la productividad" presionando a sus equipos, incluso con métricas evaluadas de manera automática por IA con criterios no del todo transparentes. Todo un coctel que ha ido dañando fuertemente el clima laboral que solía ser de prestigio, y que se puede palpar en el foro de Reddit [donde suelen conversar los desarrolladores de Meli](https://www.reddit.com/r/devsmeli) de manera anónima. 
+La industria, mientras tanto, es un zafarrancho, un sálvese quien pueda. Los modelos de negocios clásicos de la industria están crujiendo. El _SaaS_ (software como servicio) típico de las startups, basado en vender "seats" (acceso mensual o anual por usuario operativo) de productos "en la nube" (a veces incompletos y otras subutilizados, pero que cerraban en el "costo-beneficio", empiezan a ver como el "seat" historicamente para uso humano ahora se puede exprimir a velocidad agéntica,  incrementando costos operativos y a la vez, muchas veces, reduciendo la necesidad de colaboración entre equipos (y por lo tanto ingresos). 
+
+Pero sobre todo sufren un riesgo cada vez más alto de sustitución funcional.  ¿Quién no se puede _promptear_ en una mañana un tablero de tareas estilo Trello que sólo deba escalar al puñado de usuarios de una oficina? No tiene que ser el reemplazo completo, sólo de las 3 o 4 funcionalidades que usás (o usa tu agente) 
+Para ejemplificar la magnitud: a fuerza de tokens hicieron un clon libre, funcional y multiplataforma de [Photoshop](https://github.com/storytold/photocraft)! 
+
+En Argentina, mientras tanto, las big-tech de software tampoco están a resguardo. 
+La fábrica de software "tracción a café", Globant, intenta [pivotear sin elegancia](https://x.com/migoya/status/2085423749571174518) su modelo historicamente basado en exportar horas de expertos humanos y extraer de ese (simple?) pasamanos una suculenta tajada. En el último año su acción cayó entre el 40 y 50% (fue mucho peor hace algunos meses) y se estima ha despedido más del [9%](https://www.bloomberglinea.com/latinoamerica/argentina/globant-recorta-prevision-de-facturacion-en-2026-y-se-desploman-sus-acciones-en-wall-street/) de su fuerza laboral.  
+
+Mercado Libre parece sufrir el lastre de su propia escala para innovar estratégicamente y su politica de IA parece atolondrada u está generando mucha [fricción en sus clientes](https://x.com/FlorRocc/status/2106192784289902892) y burlas en sus usuarios. La competencia interna parece leonina llevando a todos los niveles gerenciales a una psicosis por "aumentar la productividad"  presionando a sus equipos, incluso con métricas evaluadas de manera automática por IA con criterios no del todo transparentes. Todo un coctel que ha ido dañando fuertemente el clima laboral que solía ser de prestigio, y que se puede palpar en el foro de Reddit [donde suelen conversar los desarrolladores de Meli](https://www.reddit.com/r/devsmeli) de manera anónima. 
 
 En mi caso, divisé el zafarrancho de primera mano a principio de año. En septiembre de 2025, despues de casi 6 años en Shiphero, tuve la osadía de tomarme unos meses sabáticos. En enero, cuando comencé a hacer entrevistas, me topé con que por  posiciones en roles similares a mi *expertise* y *seniority* y la misma cantidad de "horas" me ofrecian muchísima menos guita que la que cobraba. 
 
@@ -32,7 +39,7 @@ Me pareció un tremendo e injusto engaña-pichanga: no sólo tengo un par de dé
 
 Pero ese ritmo multi-agéntico no se puede hacer 8 horas al día de manera seria, aunque el C-level de turno crea que es "promptear y hacer botellas" y quiera demostrarlo con su PR o su demo 3D vibecodeada de mierda. 
 
-Aun yo, que laburo de manera remota desde un pueblo de Córdoba hace muchos años, tengo huerta, árboles, gallinas, pile, amigos, trato de hacer cosas "offline", y hago (algo) de actividad física, igual siento el tremendo estrés cognitivo de estas nuevas condiciones de laburo. Es un desgaste que va sedimentando como el relave de contaminantes que queda despues de que la megamineria se lleva el cerro.¿Hasta la ultima gota de plusvalia me querés sacar? 
+Aun yo, que laburo de manera remota desde un pueblo de Córdoba hace muchos años, tengo huerta, árboles, gallinas, pile, amigos, trato de hacer cosas "offline", y hago (algo) de actividad física, igual siento el tremendo estrés cognitivo de estas nuevas condiciones de laburo. Es un desgaste que va sedimentando como el relave de contaminantes que queda despues de que la megamineria se lleva el cerro.
 
 ## ¿Y hay parte buena? 
 
